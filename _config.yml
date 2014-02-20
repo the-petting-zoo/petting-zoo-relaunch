@@ -1,5 +1,5 @@
-name: SITE NAME
-url: http://SITE_URL.com
+name: The Petting Zoo
+url: http://pettingzoo.jayperryworks.com
 baseurl: 
 
 markdown: redcarpet

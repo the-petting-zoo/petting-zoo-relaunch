@@ -34,7 +34,7 @@ guard :concat, type: "js", files: %w(plugins/console plugins/transit plugins/enq
 # end
 
 guard 'livereload' do
-  watch(%r{.+\.(css|js|html)})
+  watch(%r{_site/.+})
 end
 
 # guard 'uglify', :destination_file => "assets/js/app.js" do

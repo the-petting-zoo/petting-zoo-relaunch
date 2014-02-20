@@ -17,7 +17,6 @@ group :development do
 
   # guard plugins
   gem 'guard-bundler'
-  # gem 'terminal-notifier-guard'
   gem 'guard-compass'
   gem 'guard-concat'
   # gem 'guard-uglify'
