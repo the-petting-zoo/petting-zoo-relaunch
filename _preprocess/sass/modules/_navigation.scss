@@ -16,7 +16,43 @@
 // ------- Global/main nav -------------------------------------------
 
 [role="navigation"].global {
+  $logo-w: 120px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 
+  ul {
+    @include inline-list;
+    @include rem(margin, 70px 0 0 0);
+  }
+  li {
+    $margin: 60px;
+    @include rem(margin-right, $margin);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.split {
+      @include rem(margin-left, ($logo-w + $margin));
+    }
+  }
+
+  a {
+    @include rem(width, 80px);
+    display: block;
+  }
+
+  .logo {
+    @include rem(top, 20px);
+    display: block;
+    position: absolute;
+    width: $logo-w;
+    left: 50%;
+    margin-left: -($logo-w/2);
+    z-index: $z--high;
+  }
 }
 
 

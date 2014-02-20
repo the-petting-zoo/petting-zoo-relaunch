@@ -21,6 +21,10 @@ $color-selection: red;
 // --------------------------------------------------------------------------
 
 $type-size--default: 16px;
+$type-size--small: 16px;
+$type-size--medium: 18px;
+$type-size--large: 21px;
+
 $type-line_height: 1.5;
 
 
@@ -30,8 +34,8 @@ $type-line_height: 1.5;
 // --- breakpoints ----------------------------------------------------------
 $xsmall: 480px;
 $small: 768px;
-$medium: 1240px;
-$large: 1440px;
+$medium: 1024px;
+$large: 1280px;
 
 $breakpoint-to-ems: true;
 

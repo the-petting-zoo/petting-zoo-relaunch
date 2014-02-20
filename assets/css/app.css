@@ -545,11 +545,24 @@ textarea {
 html {
   font-size: 100%;
   line-height: 1.5;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
+}
+@media (min-width: 48em) {
+  /* line 26, ../../_preprocess/sass/core/_base.scss */
+  html {
+    font-size: 100%;
+  }
+}
+@media (min-width: 64em) {
+  /* line 26, ../../_preprocess/sass/core/_base.scss */
+  html {
+    font-size: 112.5%;
+  }
+}
+@media (min-width: 80em) {
+  /* line 26, ../../_preprocess/sass/core/_base.scss */
+  html {
+    font-size: 131.25%;
+  }
 }
 
 /* line 53, ../../_preprocess/sass/core/_base.scss */
@@ -1168,4 +1181,69 @@ a {
   font-style: italic;
   font-weight: normal;
   font-size: 1.1em;
+}
+
+/* line 15, ../../_preprocess/sass/modules/_header.scss */
+[role="banner"].global {
+  height: 130px;
+}
+
+/* line 18, ../../_preprocess/sass/modules/_navigation.scss */
+[role="navigation"].global {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+/* line 25, ../../_preprocess/sass/modules/_navigation.scss */
+[role="navigation"].global ul {
+  list-style: none;
+  list-style-type: none;
+  margin: 70px 0 0 0;
+  margin: 4.375rem 0 0 0;
+}
+/* line 270, ../../_preprocess/sass/core/_helpers.scss */
+[role="navigation"].global ul li {
+  list-style: none;
+  list-style-type: none;
+}
+/* line 279, ../../_preprocess/sass/core/_helpers.scss */
+[role="navigation"].global ul li {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+/* line 29, ../../_preprocess/sass/modules/_navigation.scss */
+[role="navigation"].global li {
+  margin-right: 60px;
+  margin-right: 3.75rem;
+}
+/* line 33, ../../_preprocess/sass/modules/_navigation.scss */
+[role="navigation"].global li:last-child {
+  margin-right: 0;
+}
+/* line 37, ../../_preprocess/sass/modules/_navigation.scss */
+[role="navigation"].global li.split {
+  margin-left: 180px;
+  margin-left: 11.25rem;
+}
+/* line 42, ../../_preprocess/sass/modules/_navigation.scss */
+[role="navigation"].global a {
+  width: 80px;
+  width: 5rem;
+  display: block;
+}
+/* line 47, ../../_preprocess/sass/modules/_navigation.scss */
+[role="navigation"].global .logo {
+  top: 20px;
+  top: 1.25rem;
+  display: block;
+  position: absolute;
+  width: 120px;
+  left: 50%;
+  margin-left: -60px;
+  z-index: 2;
 }
