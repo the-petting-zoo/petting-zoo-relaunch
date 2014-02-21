@@ -64,7 +64,7 @@
 
 // ------- medium grid (4 cols) -------------------------------------------
 .grid.medium {
-  @include grid-inline(2 4);
+  @include grid-inline(2 4 6);
 }
 
 // ------- large grid (3 cols) -------------------------------------------

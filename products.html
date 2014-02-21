@@ -3,44 +3,59 @@ layout: default
 title: Products
 ---
 
-<section>
-  <h1>Catalogs</h1>
-  <p>Short blurb about your wide range of products. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, rem, veniam dolores eos est cupiditate minus eveniet praesentium maiores quidem itaque totam officiis corrupti! Vero, repudiandae beatae eligendi omnis voluptatem exercitationem voluptatum incidunt. Cumque, amet, laudantium natus quaerat dolor earum id? Quisquam, soluta, porro nihil veritatis corporis blanditiis labore voluptates aperiam tempore velit deserunt aspernatur accusamus facilis ea veniam cumque modi omnis corrupti hic commodi et. Velit, alias, fuga reiciendis eum quia delectus expedita placeat officia nisi repellendus consequuntur cum odit doloremque eaque laborum adipisci dolore natus hic ratione similique sed sunt et totam magnam iure at dolor soluta dignissimos.</p>
+<section class="strip">
+  <section class="strip-int">
+    <div class="wrapper narrow">
+      <h1>Catalogs</h1>
+      <p>Short blurb about your wide range of products. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, rem, veniam dolores eos est cupiditate minus eveniet praesentium maiores quidem itaque totam officiis corrupti! Vero, repudiandae beatae eligendi omnis voluptatem exercitationem voluptatum incidunt.</p>
+    </div>
+  </section>
 
-  <ul>
-    {% for i in (1..10) %}
-    <li>
-      <a href=""><img src="http://placehold.it/300x400" alt="catalog" /></a>
-      <h3><a href="#">Catalog Title</a></h3>
-      <a href="#">Download PDF</a>
-    </li>
-    {% endfor %}
-  </ul>
+  <div class="wrapper">
+    <ul class="grid medium">
+      {% for i in (1..10) %}
+      <li>
+        <a href="" class="tile"><img src="http://placehold.it/300x400" alt="catalog" /></a>
+        <h3><a href="#">Catalog Title</a></h3>
+        <a href="#">Download PDF</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 
-<section>
-  <h1>Custom Orders</h1>
-  <p>Short blurb about how custom orders work. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quod iure odio praesentium eveniet id dolorum temporibus facere et voluptatum. Ad, officiis, sint, architecto cumque at assumenda ab maiores eligendi quos maxime alias aspernatur id ipsa iure eos ullam nam vitae nesciunt ut voluptatem natus tempora veniam ipsum incidunt amet!</p>
+<section class="strip">
+  <section class="strip-int">
+    <div class="wrapper">
+      <h1>Custom Orders</h1>
+      <p>Short blurb about how custom orders work. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quod iure odio praesentium eveniet id dolorum temporibus facere et voluptatum. Ad, officiis, sint, architecto cumque at assumenda ab maiores eligendi quos maxime alias aspernatur id ipsa iure eos ullam nam vitae nesciunt ut voluptatem natus tempora veniam ipsum incidunt amet!</p>
 
-  <nav class="local tabs">
-    <ul>
-      <li><a href="#custom-plushes">Custom Plushes</a></li>
-      <li><a href="#custom-hoodies">Custom Hoodies</a></li>
-      <li><a href="#faq">FAQs</a></li>
-    </ul>
-  </nav>
-
-  <section id="custom-plushes">
-    <img src="http://placehold.it/800x500" alt="product photo(s)" />
-    <p>Custom plushes description here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, animi, esse, nulla expedita amet nisi obcaecati eveniet modi dicta dolorum voluptatem eius quibusdam iusto illo vel ipsa vitae ex quisquam odit fugit ea dignissimos error reiciendis deleniti eum. Dicta, labore quod quasi quo animi laborum sit minus recusandae excepturi eveniet?</p>
+      <nav class="local tabs">
+        <ul>
+          <li><a href="#custom-plushes">Custom Plushes</a></li>
+          <li><a href="#custom-hoodies">Custom Hoodies</a></li>
+          <li><a href="#faq">FAQs</a></li>
+        </ul>
+      </nav>
+    </div>
   </section>
 
-  <section id="custom-hoodies">
-    <img src="http://placehold.it/800x500" alt="product photo(s)" />
-    <p>Custom hoodies description here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, animi, esse, nulla expedita amet nisi obcaecati eveniet modi dicta dolorum voluptatem eius quibusdam iusto illo vel ipsa vitae ex quisquam odit fugit ea dignissimos error reiciendis deleniti eum. Dicta, labore quod quasi quo animi laborum sit minus recusandae excepturi eveniet?</p>
+  <section id="custom-plushes" class="strip-int">
+    <div class="wrapper narrow">
+      <img src="http://placehold.it/800x500" alt="product photo(s)" />
+      <p>Custom plushes description here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, animi, esse, nulla expedita amet nisi obcaecati eveniet modi dicta dolorum voluptatem eius quibusdam iusto illo vel ipsa vitae ex quisquam odit fugit ea dignissimos error reiciendis deleniti eum. Dicta, labore quod quasi quo animi laborum sit minus recusandae excepturi eveniet?</p>
+    </div>
   </section>
 
-  <section id="faq">
+  <section id="custom-hoodies" class="strip-int">
+    <div class="wrapper narrow">
+      <img src="http://placehold.it/800x500" alt="product photo(s)" />
+      <p>Custom hoodies description here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, animi, esse, nulla expedita amet nisi obcaecati eveniet modi dicta dolorum voluptatem eius quibusdam iusto illo vel ipsa vitae ex quisquam odit fugit ea dignissimos error reiciendis deleniti eum. Dicta, labore quod quasi quo animi laborum sit minus recusandae excepturi eveniet?</p>
+    </div>
+  </section>
+  
+  {% comment %}
+  <section id="faq" class="strip-int">
     <dl>
       {% for i in (1..12) %}
       <dt>Lorem ipsum dolor sit amet, consectetur?</dt>
@@ -48,16 +63,20 @@ title: Products
       {% endfor %}
     </dl>
   </section>
+  {% endcomment %}
 
-  <section>
-    <h2>Our Customers</h2>
-    <ul>
-      <li><img src="http://placehold.it/300x250" alt="logo"></li>
-      <li><img src="http://placehold.it/300x250" alt="logo"></li>
-      <li><img src="http://placehold.it/300x250" alt="logo"></li>
-      <li><img src="http://placehold.it/300x250" alt="logo"></li>
-      <li><img src="http://placehold.it/300x250" alt="logo"></li>
-      <li><img src="http://placehold.it/300x250" alt="logo"></li>
+</section>
+
+<section class="strip">
+  <div class="wrapper">
+    <h2>What our customers are saying</h2>
+    <ul class="grid large center">
+      {% for i in (1..3) %}
+      <li class="tile-quote">
+        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, ipsam necessitatibus fuga dignissimos accusantium in laudantium totam nam culpa voluptatibus!"</p>
+        <small>-Happy Customers</small>
+      </li>
+      {% endfor %}
     </ul>
-  </section>
+  </div>
 </section>

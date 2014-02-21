@@ -3,23 +3,25 @@ layout: default
 title: Contact Us
 ---
 
-<section>
-  <h1>Contact our staff</h1>
-  <ul>
-    {% for i in (1..8) %}
-    <li>
-      <img src="http://placehold.it/300x200" alt="portrait" />
-      <div class="info">
-        <h3>Lori Krenek</h3>
-        <h6>Job Title</h6>
-        <a href="#">lkrenek@pettingzooplush.com</a>
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
+<section class="strip">
+  <div class="wrapper">
+    <h1>Contact our staff</h1>
+    <ul class="grid large">
+      {% for i in (1..8) %}
+      <li class="media_box">
+        <img src="http://placehold.it/300x200" alt="portrait" />
+        <div class="info">
+          <h3>Lori Krenek</h3>
+          <h6>Job Title</h6>
+          <a href="#">lkrenek@pettingzooplush.com</a>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 
-<section>
+<section class="map">
   <h1>Our headquarters</h1>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3092.792838749759!2d-76.73003790000004!3d39.17942999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7e22b3001b74f%3A0x6888d7c1743d8f2f!2s7222+Parkway+Dr!5e0!3m2!1sen!2sus!4v1392861937913" width="600" height="450" frameborder="0" style="border:0"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3092.792838749759!2d-76.73003790000004!3d39.17942999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7e22b3001b74f%3A0x6888d7c1743d8f2f!2s7222+Parkway+Dr!5e0!3m2!1sen!2sus!4v1392861937913" width="100%" height="450" frameborder="0" style="border:0"></iframe>
 </section>
