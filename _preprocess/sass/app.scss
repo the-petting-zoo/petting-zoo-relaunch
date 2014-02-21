@@ -30,17 +30,20 @@
 // Modules & components
 // ===============================================================================
 
-// components
+// general components
 @import "modules/button";
+@import "modules/strip";
+@import "modules/grid-inline";
 
 // modules
 @import "modules/header";
-@import "modules/navigation";
 @import "modules/footer";
-@import "modules/button";
+@import "modules/navigation";
 @import "modules/post";
 
 // ===============================================================================
 // Styles of Shame
 // -> put quick and dirty hacks here, then clean up & organize later
 // ===============================================================================
+
+// shapes: http://www.paulund.co.uk/how-to-create-different-shapes-in-css

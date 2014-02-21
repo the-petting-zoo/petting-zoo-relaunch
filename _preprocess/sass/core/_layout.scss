@@ -2,3 +2,24 @@
 // Global layout styles
 // ==============================================================================
 
+@mixin grid-margins($property: padding) {
+  #{$property}-left: nth($layout-margins, 1);
+  #{$property}-right: nth($layout-margins, 1);
+
+  @for $i from 1 through length($layout-margins) {
+    @include breakpoint(nth($breakpoints, $i)) {
+      #{$property}-left: nth($layout-margins, $i);
+      #{$property}-right: nth($layout-margins, $i);
+    }
+  }
+}
+
+.wrapper {
+  @include grid-margins;
+  max-width: $layout-width;
+  margin: 0 auto;
+
+  &.narrow {
+    max-width: $layout-width--narrow;
+  }
+}

@@ -4,35 +4,38 @@ title: home
 ---
 
 <div class="hero">
-  <a href="#">
-    <img src="http://placehold.it/2000x600" alt="Hero banner" />
-  </a>
+  <a href="#"><img src="http://placehold.it/2000x600" alt="Hero banner" /></a>
 </div>
 
-<section>
+<section class="strip">
   <h3>Our Latest Catalogs</h3>
   <nav class="local">
-    <ul>
-      <li><a href=""><img src="http://placehold.it/200x300" alt=""></a></li>
-      <li><a href=""><img src="http://placehold.it/200x300" alt=""></a></li>
-      <li><a href=""><img src="http://placehold.it/200x300" alt=""></a></li>
-      <li><a href=""><img src="http://placehold.it/200x300" alt=""></a></li>
-      <li><a href=""><img src="http://placehold.it/200x300" alt=""></a></li>
-      <li><a href="">See more catalogs</a></li>
+    <ul class="grid small center">
+      {% for i in (1..5) %}
+      <li><a href="#" class="tile"><img src="http://placehold.it/400x600" alt="catalog"></a></li>
+      {% endfor %}
+      <li><a href="" class="tile more">See more catalogs</a></li>
     </ul>
   </nav>
 </section>
 
-<section>
-  <h2>For over 15 years <em>The Petting Zoo</em> has consistently offered the highest quality wholesape plush at the greatest value</h2>
-  <p>Our ever-expanding product line features a wide variety of items designed to best serve our retailers’ specific needs ranging from realistic Sealife and Wildlife creations, seasonal and holiday items, to our whimsical signature collection of Bright Eyes characters. We proudly invest in our creative resources to develop the newest, most trend-forward, and innovative plush products available on the market!</p>
-  <a href="{{ path }}/about.html" class="button">Learn more about <strong>The Petting Zoo</strong></a>
+<section class="strip">
+  <div class="wrapper narrow">
+    <hgroup>
+      <h1>For over 15 years</h1>
+      <h2><em>The Petting Zoo</em> has consistently offered the highest quality wholesale plush at the greatest value</h2>
+    </hgroup>
+    <p>Our ever-expanding product line features a wide variety of items designed to best serve our retailers’ specific needs ranging from realistic Sealife and Wildlife creations, seasonal and holiday items, to our whimsical signature collection of Bright Eyes characters. We proudly invest in our creative resources to develop the newest, most trend-forward, and innovative plush products available on the market!</p>
+    <a href="{{ path }}/about.html" class="button">Learn more about <strong>The Petting Zoo</strong></a>
+  </div>
 </section>
 
-<section>
-  <ul class="promos">
-    <li><a href=""><img src="http://placehold.it/600x350" alt="House/partner promo banner"></a></li>
-    <li><a href=""><img src="http://placehold.it/600x350" alt="House/partner promo banner"></a></li>
-    <li><a href=""><img src="http://placehold.it/600x350" alt="House/partner promo banner"></a></li>
-  </ul>
+<section class="strip">
+  <div class="wrapper">
+    <ul class="grid large center">
+      {% for i in (1..3) %}
+      <li><a href="#"><img src="http://placehold.it/600x350" alt="House/partner promo banner"></a></li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>

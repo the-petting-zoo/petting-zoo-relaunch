@@ -1,9 +1,13 @@
 <nav role="navigation" class="global">
   <a href="{{ path }}/" class="logo"><img src="http://placehold.it/120x120" alt="The Petting Zoo" /></a>
-  <ul>
+  <ul class="menu">
     <li><a href="{{ path }}/about.html"{% if page.title == "About Us" %} class="active"{% endif %}>About us</a></li>
     <li><a href="{{ path }}/products.html"{% if page.title == "Products" %} class="active"{% endif %}>Products</a></li>
-    <li><a href="{{ path }}/news.html"{% if page.title == "News" %} class="active"{% endif %}>News</a></li>
+    <li class="split"><a href="{{ path }}/news.html"{% if page.title == "News" %} class="active"{% endif %}>News</a></li>
     <li><a href="{{ path }}/contact.html"{% if page.title == "Contact Us" %} class="active"{% endif %}>Contact</a></li>
   </ul>
+
+  <select name="menu" class="menu-mobile">
+    <option value="" disabled selected>How can we help?</option>
+  </select>
 </nav>

@@ -60,10 +60,10 @@ jQuery(function($) {
 (function($) {
   
   // ================================================================
-  // SITE_NAME behaviors
+  // pettingzoo behaviors
   // ================================================================
 
-  var SITE_NAME = { // namespace setup
+  var pettingzoo = { // namespace setup
 
     config : {
 
@@ -76,7 +76,7 @@ jQuery(function($) {
     // Setup
     // ---------------------------------------------------------------
     init : function(config) {
-      $.extend(SITE_NAME.config, config);
+      $.extend(pettingzoo.config, config);
 
 
     },
@@ -89,6 +89,6 @@ jQuery(function($) {
 
   
   $(window).load(function() {
-    SITE_NAME.init();
+    pettingzoo.init();
   });
 })(jQuery);

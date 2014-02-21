@@ -29,25 +29,25 @@ html {
   // and we only have to change one thing
   font-size: percent($type-size--default);
 
-  // @include breakpoint($small) {
-  //     font-size: percent($base-font-size--small);
-  // }
+  @include breakpoint($small) {
+      font-size: percent($type-size--small);
+  }
 
-  // @include breakpoint($medium) {
-  //     font-size: percent($base-font-size--medium);
-  // }
+  @include breakpoint($medium) {
+      font-size: percent($type-size--medium);
+  }
 
-  // @include breakpoint($large) {
-  //     font-size: percent($base-font-size--large);
-  // }
+  @include breakpoint($large) {
+      font-size: percent($type-size--large);
+  }
 
   line-height: $type-line_height;
 
   // set everything to roll with border-box sizing
   // -> much easier than reg box model
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box;  
+  // -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  // -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  // box-sizing: border-box;  
 }
 
 main {

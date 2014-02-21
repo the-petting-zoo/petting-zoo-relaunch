@@ -21,22 +21,38 @@ $color-selection: red;
 // --------------------------------------------------------------------------
 
 $type-size--default: 16px;
+$type-size--small: 16px;
+$type-size--medium: 18px;
+$type-size--large: 21px;
+
 $type-line_height: 1.5;
 
 
 // Containers/layout
 // --------------------------------------------------------------------------
+$layout-margins: 18px 30px 48px; // margins on either side of live area
+
+$layout-width: 1280px; // maximum width of default container
+$layout-width--narrow: 800px; // max width of narrower container, ~10 cols at medium screen size
+
+$margin-whitespace: -5px; // a fix for gaps created by whitespace, an inline-block bug
 
 // --- breakpoints ----------------------------------------------------------
-$xsmall: 480px;
-$small: 768px;
-$medium: 1240px;
-$large: 1440px;
+// -> for breakpoint sass library
+
+$breakpoints: 480px 768px 1024px 1280px;
+
+$xsmall: nth($breakpoints, 1);
+$small: nth($breakpoints, 2);
+$medium: nth($breakpoints, 3);
+$large: nth($breakpoints, 4);
 
 $breakpoint-to-ems: true;
 
 
 // --- grid variables -------------------------------------------------------
+// -> for singularity.gs
+
 $grid-gutter: 24px; // convert to rem/em/percent
 
 // Singularity.gs setup
