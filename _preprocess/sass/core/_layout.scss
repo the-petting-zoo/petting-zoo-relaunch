@@ -18,8 +18,15 @@
   @include grid-margins;
   max-width: $layout-width;
   margin: 0 auto;
+}
 
-  &.narrow {
-    max-width: $layout-width--narrow;
+.narrow {
+  max-width: $layout-width--narrow;
+  margin: 0 auto;
+}
+
+[role="main"] {
+  #{headers()} {
+    text-align: center;
   }
 }
