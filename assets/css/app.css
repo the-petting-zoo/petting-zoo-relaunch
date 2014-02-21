@@ -1127,9 +1127,16 @@ p {
     padding-right: 48px;
   }
 }
-/* line 22, ../../_preprocess/sass/core/_layout.scss */
-.wrapper.narrow, .narrow[role="navigation"].local, nav.narrow.local {
+
+/* line 23, ../../_preprocess/sass/core/_layout.scss */
+.narrow {
   max-width: 800px;
+  margin: 0 auto;
+}
+
+/* line 29, ../../_preprocess/sass/core/_layout.scss */
+[role="main"] h1, [role="main"] h2, [role="main"] h3, [role="main"] h4, [role="main"] h5, [role="main"] h6 {
+  text-align: center;
 }
 
 /* line 6, ../../_preprocess/sass/core/_content.scss */
