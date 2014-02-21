@@ -7,7 +7,7 @@
 // -----------------------------------------------------------------------------
 
 [role="navigation"], .nav {
-	
+	// @extend .wrapper;
 }
 
 // SUBMODULES
@@ -22,10 +22,15 @@
   padding: 0;
   overflow: hidden;
 
-  ul {
+  .menu {
     @include inline-list;
     @include rem(margin, 70px 0 0 0);
   }
+
+  .menu-mobile {
+    display: none;
+  }
+
   li {
     $margin: 60px;
     @include rem(margin-right, $margin);
@@ -58,6 +63,6 @@
 
 // ------- Local nav -------------------------------------------
 
-[role="navigation"].local {
-
+[role="navigation"].local, nav.local {
+  @extend .wrapper;
 }

@@ -1099,88 +1099,238 @@ p {
 }
 
 /* Literal.Number.Integer.Long */
-/* line 10, ../../_preprocess/sass/core/_content.scss */
+/* line 17, ../../_preprocess/sass/core/_layout.scss */
+[role="main"], .wrapper, [role="navigation"].local, nav.local {
+  padding-left: 18px;
+  padding-right: 18px;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+@media (min-width: 30em) {
+  /* line 17, ../../_preprocess/sass/core/_layout.scss */
+  [role="main"], .wrapper, [role="navigation"].local, nav.local {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+@media (min-width: 48em) {
+  /* line 17, ../../_preprocess/sass/core/_layout.scss */
+  [role="main"], .wrapper, [role="navigation"].local, nav.local {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (min-width: 64em) {
+  /* line 17, ../../_preprocess/sass/core/_layout.scss */
+  [role="main"], .wrapper, [role="navigation"].local, nav.local {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+/* line 22, ../../_preprocess/sass/core/_layout.scss */
+[role="main"].narrow, .wrapper.narrow, .narrow[role="navigation"].local, nav.narrow.local {
+  max-width: 800px;
+}
+
+/* line 6, ../../_preprocess/sass/core/_content.scss */
+hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* line 12, ../../_preprocess/sass/core/_content.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 1em 0;
+}
+/* line 15, ../../_preprocess/sass/core/_content.scss */
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   color: inherit;
 }
-/* line 13, ../../_preprocess/sass/core/_content.scss */
+/* line 18, ../../_preprocess/sass/core/_content.scss */
 h1 a:hover, h1 a:active, h2 a:hover, h2 a:active, h3 a:hover, h3 a:active, h4 a:hover, h4 a:active, h5 a:hover, h5 a:active, h6 a:hover, h6 a:active {
   color: inherit;
   border-bottom: none;
 }
 
-/* line 20, ../../_preprocess/sass/core/_content.scss */
+/* line 25, ../../_preprocess/sass/core/_content.scss */
 h1 {
   font-size: 32px;
   font-size: 2rem;
 }
 
-/* line 24, ../../_preprocess/sass/core/_content.scss */
+/* line 29, ../../_preprocess/sass/core/_content.scss */
 h2 {
   font-size: 27px;
   font-size: 1.6875rem;
 }
 
-/* line 28, ../../_preprocess/sass/core/_content.scss */
+/* line 33, ../../_preprocess/sass/core/_content.scss */
 h3 {
   font-size: 18px;
   font-size: 1.125rem;
 }
 
-/* line 32, ../../_preprocess/sass/core/_content.scss */
+/* line 37, ../../_preprocess/sass/core/_content.scss */
 h4 {
   font-size: 18px;
   font-size: 1.125rem;
 }
 
-/* line 36, ../../_preprocess/sass/core/_content.scss */
+/* line 41, ../../_preprocess/sass/core/_content.scss */
 h5 {
   font-size: 14px;
   font-size: 0.875rem;
 }
 
-/* line 40, ../../_preprocess/sass/core/_content.scss */
+/* line 45, ../../_preprocess/sass/core/_content.scss */
 h6 {
   font-size: 12px;
   font-size: 0.75rem;
 }
 
-/* line 45, ../../_preprocess/sass/core/_content.scss */
+/* line 50, ../../_preprocess/sass/core/_content.scss */
 .intro {
   font-size: 21px;
   font-size: 1.3125rem;
 }
 
-/* line 49, ../../_preprocess/sass/core/_content.scss */
+/* line 54, ../../_preprocess/sass/core/_content.scss */
 p, table, li {
   font-size: 16px;
   font-size: 1rem;
 }
 
-/* line 53, ../../_preprocess/sass/core/_content.scss */
+/* line 58, ../../_preprocess/sass/core/_content.scss */
 ol, ul {
   margin-left: 1.5em;
 }
 @media (min-width: 48em) {
-  /* line 53, ../../_preprocess/sass/core/_content.scss */
+  /* line 58, ../../_preprocess/sass/core/_content.scss */
   ol, ul {
     margin-left: 0;
   }
 }
 
-/* line 61, ../../_preprocess/sass/core/_content.scss */
+/* line 66, ../../_preprocess/sass/core/_content.scss */
 a {
   -webkit-animation: all 0.5;
   -moz-animation: all 0.5;
   animation: all 0.5;
 }
 
-/* line 65, ../../_preprocess/sass/core/_content.scss */
+/* line 70, ../../_preprocess/sass/core/_content.scss */
 .amp {
   font-family: "Baskerville", "Palatino", "Book Antiqua", serif;
   font-style: italic;
   font-weight: normal;
   font-size: 1.1em;
+}
+
+/* line 16, ../../_preprocess/sass/modules/_strip.scss */
+.strip h1, .strip h2, .strip h3, .strip h4, .strip h5, .strip h6 {
+  text-align: center;
+}
+
+/* line 35, ../../_preprocess/sass/modules/_grid-inline.scss */
+.grid {
+  list-style: none;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+/* line 272, ../../_preprocess/sass/core/_helpers.scss */
+.grid li {
+  list-style: none;
+  list-style-type: none;
+}
+/* line 42, ../../_preprocess/sass/modules/_grid-inline.scss */
+.grid li {
+  display: block;
+}
+@media (min-width: 30em) {
+  /* line 42, ../../_preprocess/sass/modules/_grid-inline.scss */
+  .grid li {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    margin-right: -5px;
+  }
+}
+
+/* line 56, ../../_preprocess/sass/modules/_grid-inline.scss */
+.grid.center {
+  text-align: center;
+}
+
+@media (min-width: 30em) {
+  /* line 61, ../../_preprocess/sass/modules/_grid-inline.scss */
+  .grid.small {
+    margin-right: -24px;
+  }
+}
+@media (min-width: 48em) {
+  /* line 61, ../../_preprocess/sass/modules/_grid-inline.scss */
+  .grid.small {
+    margin-right: -24px;
+  }
+}
+@media (min-width: 30em) {
+  /* line 19, ../../_preprocess/sass/modules/_grid-inline.scss */
+  .grid.small > li {
+    width: 33.33333%;
+    padding-right: 24px;
+  }
+}
+@media (min-width: 48em) {
+  /* line 19, ../../_preprocess/sass/modules/_grid-inline.scss */
+  .grid.small > li {
+    width: 16.66667%;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 30em) {
+  /* line 66, ../../_preprocess/sass/modules/_grid-inline.scss */
+  .grid.medium {
+    margin-right: -24px;
+  }
+}
+@media (min-width: 48em) {
+  /* line 66, ../../_preprocess/sass/modules/_grid-inline.scss */
+  .grid.medium {
+    margin-right: -24px;
+  }
+}
+@media (min-width: 30em) {
+  /* line 19, ../../_preprocess/sass/modules/_grid-inline.scss */
+  .grid.medium > li {
+    width: 50%;
+    padding-right: 24px;
+  }
+}
+@media (min-width: 48em) {
+  /* line 19, ../../_preprocess/sass/modules/_grid-inline.scss */
+  .grid.medium > li {
+    width: 25%;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 48em) {
+  /* line 71, ../../_preprocess/sass/modules/_grid-inline.scss */
+  .grid.large {
+    margin-right: -24px;
+  }
+}
+@media (min-width: 48em) {
+  /* line 19, ../../_preprocess/sass/modules/_grid-inline.scss */
+  .grid.large > li {
+    width: 33.33333%;
+    padding-right: 24px;
+  }
 }
 
 /* line 15, ../../_preprocess/sass/modules/_header.scss */
@@ -1196,19 +1346,21 @@ a {
   overflow: hidden;
 }
 /* line 25, ../../_preprocess/sass/modules/_navigation.scss */
-[role="navigation"].global ul {
+[role="navigation"].global .menu {
   list-style: none;
   list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
   margin: 70px 0 0 0;
   margin: 4.375rem 0 0 0;
 }
-/* line 270, ../../_preprocess/sass/core/_helpers.scss */
-[role="navigation"].global ul li {
+/* line 272, ../../_preprocess/sass/core/_helpers.scss */
+[role="navigation"].global .menu li {
   list-style: none;
   list-style-type: none;
 }
-/* line 279, ../../_preprocess/sass/core/_helpers.scss */
-[role="navigation"].global ul li {
+/* line 281, ../../_preprocess/sass/core/_helpers.scss */
+[role="navigation"].global .menu li {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -1216,27 +1368,31 @@ a {
   zoom: 1;
   *display: inline;
 }
-/* line 29, ../../_preprocess/sass/modules/_navigation.scss */
+/* line 30, ../../_preprocess/sass/modules/_navigation.scss */
+[role="navigation"].global .menu-mobile {
+  display: none;
+}
+/* line 34, ../../_preprocess/sass/modules/_navigation.scss */
 [role="navigation"].global li {
   margin-right: 60px;
   margin-right: 3.75rem;
 }
-/* line 33, ../../_preprocess/sass/modules/_navigation.scss */
+/* line 38, ../../_preprocess/sass/modules/_navigation.scss */
 [role="navigation"].global li:last-child {
   margin-right: 0;
 }
-/* line 37, ../../_preprocess/sass/modules/_navigation.scss */
+/* line 42, ../../_preprocess/sass/modules/_navigation.scss */
 [role="navigation"].global li.split {
   margin-left: 180px;
   margin-left: 11.25rem;
 }
-/* line 42, ../../_preprocess/sass/modules/_navigation.scss */
+/* line 47, ../../_preprocess/sass/modules/_navigation.scss */
 [role="navigation"].global a {
   width: 80px;
   width: 5rem;
   display: block;
 }
-/* line 47, ../../_preprocess/sass/modules/_navigation.scss */
+/* line 52, ../../_preprocess/sass/modules/_navigation.scss */
 [role="navigation"].global .logo {
   top: 20px;
   top: 1.25rem;
