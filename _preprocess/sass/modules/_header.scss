@@ -13,5 +13,7 @@
 // -----------------------------------------------------------------------------
 
 [role="banner"].global {
+  @include rem(margin-bottom, 36px);
 	height: 130px;
+  overflow: hidden;
 }

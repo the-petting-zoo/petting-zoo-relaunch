@@ -16,11 +16,11 @@
 // ------- Global/main nav -------------------------------------------
 
 [role="navigation"].global {
-  $logo-w: 120px;
   text-align: center;
+  // position: relative;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
 
   .menu {
     @include inline-list;
@@ -57,6 +57,25 @@
     left: 50%;
     margin-left: -($logo-w/2);
     z-index: $z--high;
+  }
+}
+
+// copy of the main menu that appears in the footer
+footer.global [role="navigation"].global {
+  @include rem(margin, 0 0 24px 0);
+  position: relative;
+  z-index: $z--high;
+  overflow: visible;
+
+  .menu {
+    margin: 0;
+  }
+
+  .logo {
+    width: ($logo-w/2);
+    top: -10px;
+    left: 50%;
+    margin-left: -($logo-w/4);
   }
 }
 

@@ -228,41 +228,6 @@
 // General layout helpers
 // ==================================================================================
 
-// Add default layout margins at various breakpoints
-// -> Requires _settings.scss (and set up for Bourbon NEAT)
-// -------------------------------------------------------------------------------
-
-// @mixin base-grid-margins($property: margin, $full: false, $add-gutter: false) {
-//   $gutter: 0;
-//   @if ($add-gutter == true) {
-//     $gutter: $base-gutter/2; // foundation global var - already in ems
-//   }
-  
-//   @include rem($property, 0 ($base-margin--xsmall + $gutter), $type-size--default);
-//   // #{$property}: 0 (em-calc($base-margin--xsmall) + $gutter);
-
-//   @media #{$small} {
-//     @include rem($property, 0 ($base-margin--small + $gutter), $type-size--default);
-//     // #{$property}: 0 (em-calc($base-margin--small) + $gutter);
-//   }
-
-//   @media #{$medium} {
-//     @include rem($property, 0 ($base-margin--medium + $gutter), $type-size--default);
-//     // #{$property}: 0 (em-calc($base-margin--medium) + $gutter);
-//   }
-  
-//   @media #{$large} {
-//     @if ($full == true) {
-//       @include rem($property, 0 ($base-margin--large + $gutter), $type-size--default);
-//       // #{$property}: 0 (em-calc($base-margin--large) + $gutter);
-//     } @else {
-//       margin: 0 auto;
-//       // max-width: $row-width - (em-calc($base-margin--large) + $gutter);
-//       @include rem(max-width, $row-width - $base-margin--large, $type-size--default);
-//     }
-//   }
-// }
-
 @mixin unstyled-list {
   list-style: none;
   list-style-type: none;
@@ -298,16 +263,24 @@
   padding: 0;
 }
 
-@mixin inline-dl {
+@mixin inline-dl($break: false) {
   & > dt, & > dd {
     display: inline;
   }
   & > dt {
-    margin-right: em(6);
+    margin-right: em(3);
   }
   & > dd {
     margin-left: 0;
-    margin-right: em(12);
+
+    @if ($break == false) {
+      margin-right: em(12);
+    } @else {
+      &:after {
+        content: '\A';
+        white-space: pre;
+      }
+    }
   }
 }
 
