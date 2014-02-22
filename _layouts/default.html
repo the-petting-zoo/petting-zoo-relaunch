@@ -27,7 +27,7 @@
     </script>
   </head>
   <body id="{% if page.slug %}{{ page.slug | replace: " ", "-" | downcase }}{% else %}{{ page.title | replace: " ", "-" | downcase }}{% endif %}">
-    <header role="banner">
+    <header role="banner" class="global">
       {% include nav-global.html %}
     </header>
 
@@ -37,14 +37,18 @@
 
     {{ content }}
 
-    <footer role="contentinfo">
-      <section class="wrapper">
+    <footer role="contentinfo" class="global">
+      <section class="wrapper narrow">
         <h3>Get in Touch</h3>
         <form action="">
-          <label for="name">Your Name</label>
-          <input id="name" type="text" name="name" />
-          <label for="email">Your Email</label>
-          <input id="email" type="email" name="email" placeholder="yourname@email.com" />
+          <div class="control_group">
+            <label for="name">Your Name</label>
+            <input id="name" type="text" name="name" />
+          </div>
+          <div class="control_group">
+            <label for="email">Your Email</label>
+            <input id="email" type="email" name="email" placeholder="yourname@email.com" />
+          </div>
           <select name="subject">
             <option value="" disabled selected>How can we help?</option>
             <option value="order">I'd like to place an order</option>
@@ -52,11 +56,17 @@
             <option value="general">I have a general question</option>
             <option value="python">What is the capital of Assyria?</option>
           </select>
-          <label for="message">Your Message</label>
-          <textarea id="message" name="message" rows="10" cols="60"></textarea>
+          <div class="control_group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="8"></textarea>
+          </div>
+          <button name="contact-submit" id="contact-submit" class="button small">Send</button>
+          <div class="control_group">
+            <input type="checkbox" id="mailing-list" name="mailing-list" value="opted-in" /> Add me to <strong>The Petting Zoo's</strong> mailing list.
+          </div>
         </form>
 
-        <aside>
+        <aside class="meta contact">
           <h3>Call us!</h3>
           <dl>
             <dt>P</dt>
@@ -72,11 +82,13 @@
             <li><a href="#"><img src="http://placehold.it/25x25"></a></li>
             <li><a href="#"><img src="http://placehold.it/25x25"></a></li>
           </ul>
+        </aside>
       </section>
-      <section>
+      <section class="footer-menu">
         {% include nav-global.html %}
         <h5>Share &amp; Smile</h5>
         <small role="copyright">&copy; Copyright {{ site.time | date: "%Y" }} The Petting Zoo, Inc. All rights reserved.</small>
+      </section>
     </footer>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

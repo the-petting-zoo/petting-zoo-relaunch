@@ -17,6 +17,15 @@ $color-text--secondary: #999;
 $color-selection: red;
 
 
+// Hairlines
+// --------------------------------------------------------------------------
+
+$hairline-w: 1px;
+$hairline-w--thick: 4px;
+
+$hairline: $hairline-w solid #ccc;
+
+
 // Typography
 // --------------------------------------------------------------------------
 
@@ -30,10 +39,13 @@ $type-line_height: 1.5;
 
 // Containers/layout
 // --------------------------------------------------------------------------
+
 $layout-margins: 18px 30px 48px; // margins on either side of live area
 
 $layout-width: 1280px; // maximum width of default container
 $layout-width--narrow: 800px; // max width of narrower container, ~10 cols at medium screen size
+
+$logo-w: 120px;
 
 $margin-whitespace: -5px; // a fix for gaps created by whitespace, an inline-block bug
 
@@ -65,5 +77,5 @@ $gutters: add-gutter($grid-gutter);
 
 // --- default z-indexes ----------------------------------------------------
 $z--low: 0;
-$z--med: 1;
+$z--medium: 1;
 $z--high: 2;
