@@ -16,6 +16,7 @@ prose:
     - _config.yml
     - /_layouts
     - /_includes
+
   metadata:
     _posts/about:
       - name: 'layout'
@@ -25,14 +26,12 @@ prose:
       - name: 'categories'
         field:
           element: 'hidden'
-          value:
-          - 'about'
-          - 'intro'
-      - name: 'feature_image'
+          value: 'about intro'
+      - name: 'feature'
         field:
           element: 'text'
-          label: 'Feature Image Name (including extension)'
-          help: 'Enter the name of the uploaded feature image'
+          label: 'Feature Image'
+          help: 'Enter the name of the uploaded feature image (including extension)'
       - name: 'feature_caption'
         field:
           element: 'text'
