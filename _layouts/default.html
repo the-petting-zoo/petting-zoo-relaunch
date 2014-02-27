@@ -14,8 +14,7 @@
       
       {% capture level %}{{ page.url | append:'index.html' | split:'/' | size }}{% endcapture %}
       {% capture relativepath %}{% for i in (3..level) %}../{% endfor %}{% endcapture %}
-
-      {% capture path %}{{ path }}{% endcapture %}
+      {% capture path %}{{ relativepath }}{{ site.baseurl }}{% endcapture %}
 
       <link rel="stylesheet" href="{{ path }}assets/css/app.css">
       <script src="{{ path }}assets/js/vendor/modernizr.custom.11128.js"></script>

@@ -6,3 +6,39 @@ markdown: redcarpet
 pygments: true
 
 exclude: ["README.md", "config.rb", ".sublime-project", ".sublime-workspace", "Guardfile", "Gemfile", "Gemfile.lock", ".sass-cache"]
+
+prose:
+  rooturl: '_posts'
+  media: 'uploads'
+  ignore:
+    - index.md
+    - index.html
+    - _config.yml
+    - /_layouts
+    - /_includes
+  metadata:
+    _posts/about:
+      - name: 'category'
+      - field:
+        - element: 'hidden'
+        - value: 'about'
+    _posts/news:
+      - name: 'category'
+      - field:
+        - element: 'hidden'
+        - value: 'news'
+    _posts/products/catalogs:
+      - name: 'category'
+      - field:
+        - element: 'hidden'
+        - value: 'product'
+    _posts/products/custom:
+      - name: 'category'
+      - field:
+        - element: 'hidden'
+        - value: 'custom'
+    _posts/staff:
+      - name: 'category'
+      - field:
+        - element: 'hidden'
+        - value: 'staff'

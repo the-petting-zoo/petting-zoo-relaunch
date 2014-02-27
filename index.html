@@ -21,12 +21,15 @@ title: home
 
 <section class="strip">
   <div class="wrapper narrow">
-    <hgroup>
+    {% for post in site.categories.home %}
+      {{ post.content }}
+    {% endfor %}
+    <!-- <hgroup>
       <h1>For over 15 years</h1>
       <h2><em>The Petting Zoo</em> has consistently offered the highest quality wholesale plush at the greatest value</h2>
     </hgroup>
     <p>Our ever-expanding product line features a wide variety of items designed to best serve our retailers’ specific needs ranging from realistic Sealife and Wildlife creations, seasonal and holiday items, to our whimsical signature collection of Bright Eyes characters. We proudly invest in our creative resources to develop the newest, most trend-forward, and innovative plush products available on the market!</p>
-    <a href="{{ path }}/about.html" class="button">Learn more about <strong>The Petting Zoo</strong></a>
+    <a href="{{ path }}/about.html" class="button">Learn more about <strong>The Petting Zoo</strong></a> -->
   </div>
 </section>
 
