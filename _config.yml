@@ -18,55 +18,83 @@ prose:
     - /_includes
   metadata:
     _posts/about:
+      - name: 'layout'
+        field:
+          element: 'hidden'
+          value: 'default'
       - name: 'categories'
-      - field:
-        - element: 'hidden'
-        - value:
+        field:
+          element: 'hidden'
+          value:
           - 'about'
           - 'intro'
       - name: 'feature_image'
-      - field:
-        - element: 'text'
-        - label: 'Feature Image Name (including extension)'
-        - help: 'Enter the name of the uploaded feature image'
+        field:
+          element: 'text'
+          label: 'Feature Image Name (including extension)'
+          help: 'Enter the name of the uploaded feature image'
       - name: 'feature_caption'
-      - field:
-        - element: 'text'
-        - label: 'Feature Image Caption'
-        - help: 'Enter a caption (if needed) for the feature image'
+        field:
+          element: 'text'
+          label: 'Feature Image Caption'
+          help: 'Enter a caption (if needed) for the feature image'
 
     _posts/home:
+      - name: 'layout'
+        field:
+          element: 'hidden'
+          value: 'default'
       - name: 'categories'
-      - field:
-        - element: 'hidden'
-        - value: 'home'
+        field:
+          element: 'hidden'
+          value: 'home'
 
     _posts/news:
+      - name: 'layout'
+        field:
+          element: 'hidden'
+          value: 'default'
       - name: 'categories'
-      - field:
-        - element: 'hidden'
-        - value: 'news'
+        field:
+          element: 'hidden'
+          value: 'news'
 
     _posts/products/catalogs:
+      - name: 'layout'
+        field:
+          element: 'hidden'
+          value: 'default'
       - name: 'categories'
-      - field:
-        - element: 'hidden'
-        - value: 'catalog'
+        field:
+          element: 'hidden'
+          value: 'catalog'
 
     _posts/products/custom:
+      - name: 'layout'
+        field:
+          element: 'hidden'
+          value: 'default'
       - name: 'categories'
-      - field:
-        - element: 'hidden'
-        - value: 'custom'
+        field:
+          element: 'hidden'
+          value: 'custom'
 
     _posts/staff:
+      - name: 'layout'
+        field:
+          element: 'hidden'
+          value: 'default'
       - name: 'categories'
-      - field:
-        - element: 'hidden'
-        - value: 'staff'
+        field:
+          element: 'hidden'
+          value: 'staff'
 
     _posts/testimonials:
+      - name: 'layout'
+        field:
+          element: 'hidden'
+          value: 'default'
       - name: 'categories'
-      - field:
-        - element: 'hidden'
-        - value: 'testimonial'
+        field:
+          element: 'hidden'
+          value: 'testimonial'
