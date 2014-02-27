@@ -1,7 +1,6 @@
 ---
 layout: default
 title:  "Custom Plushes"
-date:   2014-02-27 19:22:05
 categories: custom
 ---
 

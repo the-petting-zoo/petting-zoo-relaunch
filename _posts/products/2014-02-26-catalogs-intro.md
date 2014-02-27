@@ -1,7 +1,6 @@
 ---
 layout: default
 title:  "Catalogs"
-date:   2014-02-26 19:22:05
 categories: 
   - catalog
   - intro
