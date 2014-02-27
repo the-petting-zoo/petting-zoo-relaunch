@@ -1,0 +1,13 @@
+- address:
+  street: "7222 Parkway Drive"
+  city: "Hanover"
+  state: "MD"
+  zip: "21076"
+
+- phone:
+  office: "888.867.4059"
+  fax: "410.760.5560"
+
+- social:
+  facebook: "http://www.facebook.com"
+  twitter: "http://www.twitter.com"
