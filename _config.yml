@@ -18,27 +18,43 @@ prose:
     - /_includes
   metadata:
     _posts/about:
-      - name: 'category'
+      - name: 'categories'
       - field:
         - element: 'hidden'
         - value: 'about'
+
+    _posts/home:
+      - name: 'categories'
+      - field:
+        - element: 'hidden'
+        - value: 'home'
+
     _posts/news:
-      - name: 'category'
+      - name: 'categories'
       - field:
         - element: 'hidden'
         - value: 'news'
+
     _posts/products/catalogs:
-      - name: 'category'
+      - name: 'categories'
       - field:
         - element: 'hidden'
-        - value: 'product'
+        - value: 'catalog'
+
     _posts/products/custom:
-      - name: 'category'
+      - name: 'categories'
       - field:
         - element: 'hidden'
         - value: 'custom'
+
     _posts/staff:
-      - name: 'category'
+      - name: 'categories'
       - field:
         - element: 'hidden'
         - value: 'staff'
+
+    _posts/testimonials:
+      - name: 'categories'
+      - field:
+        - element: 'hidden'
+        - value: 'testimonial'
