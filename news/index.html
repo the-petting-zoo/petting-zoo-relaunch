@@ -4,7 +4,25 @@ title: News
 ---
 
 <main role="main" class="wrapper narrow">
+{% for post in site.categories.blog %}
+  <article class="post">
+    <div class="">
+      <h1>{{ post.title }}</h1>
+      {{ post.content }}
+    </div>
+    <aside class="meta">
+      <dl>
+        <dt><time datetime="{{ post.date }}">{{ post.date | date: "%B %d" }}</time></dt>
+        <dt>Tags</dt>
+        {% for tag in post.tags %}
+        <dd>{{ tag }}</dd>
+        {% endfor %}
+      </dl>
+    </aside>
+  </article>
+{% endfor %}
 
+  {% comment %}
   {% for i in (1..6) %}
   <article class="post">
     <div class="">
@@ -22,4 +40,5 @@ title: News
     </aside>
   </article>
   {% endfor %}
+  {% endcomment %}
 </main>
