@@ -1,3 +1,4 @@
+# jekyll settings
 name: The Petting Zoo
 url: http://pettingzoo.jayperryworks.com
 baseurl: 
@@ -7,9 +8,10 @@ pygments: true
 
 exclude: ["README.md", "config.rb", ".sublime-project", ".sublime-workspace", "Guardfile", "Gemfile", "Gemfile.lock", ".sass-cache"]
 
+# prose.io settings
 prose:
-  rooturl: '_posts'
-  media: 'uploads'
+  rooturl: "_posts"
+  media: "uploads"
   ignore:
     - index.md
     - index.html
@@ -19,81 +21,81 @@ prose:
 
   metadata:
     _posts/about:
-      - name: 'layout'
+      - name: "layout"
         field:
-          element: 'hidden'
-          value: 'default'
-      - name: 'categories'
+          element: "hidden"
+          value: "default"
+      - name: "categories"
         field:
-          element: 'hidden'
-          value: 'about intro'
-      - name: 'feature'
+          element: "hidden"
+          value: "about"
+      - name: "feature"
         field:
-          element: 'text'
-          label: 'Feature Image'
-          help: 'Enter the name of the uploaded feature image (including extension)'
-      - name: 'feature_caption'
+          element: "text"
+          label: "Feature Image"
+          help: "Enter the name of the uploaded feature image (including extension)"
+      - name: "feature_caption"
         field:
-          element: 'text'
-          label: 'Feature Image Caption'
-          help: 'Enter a caption (if needed) for the feature image'
+          element: "text"
+          label: "Feature Image Caption"
+          help: "Enter a caption (if needed) for the feature image"
 
     _posts/home:
-      - name: 'layout'
+      - name: "layout"
         field:
-          element: 'hidden'
-          value: 'default'
-      - name: 'categories'
+          element: "hidden"
+          value: "default"
+      - name: "categories"
         field:
-          element: 'hidden'
-          value: 'home'
+          element: "hidden"
+          value: "home"
 
     _posts/news:
-      - name: 'layout'
+      - name: "layout"
         field:
-          element: 'hidden'
-          value: 'default'
-      - name: 'categories'
+          element: "hidden"
+          value: "default"
+      - name: "categories"
         field:
-          element: 'hidden'
-          value: 'news'
+          element: "hidden"
+          value: "news"
 
     _posts/products/catalogs:
-      - name: 'layout'
+      - name: "layout"
         field:
-          element: 'hidden'
-          value: 'default'
-      - name: 'categories'
+          element: "hidden"
+          value: "default"
+      - name: "categories"
         field:
-          element: 'hidden'
-          value: 'catalog'
+          element: "hidden"
+          value: "catalog"
 
     _posts/products/custom:
-      - name: 'layout'
+      - name: "layout"
         field:
-          element: 'hidden'
-          value: 'default'
-      - name: 'categories'
+          element: "hidden"
+          value: "default"
+      - name: "categories"
         field:
-          element: 'hidden'
-          value: 'custom'
+          element: "hidden"
+          value: "custom"
 
     _posts/staff:
-      - name: 'layout'
+      - name: "layout"
         field:
-          element: 'hidden'
-          value: 'default'
-      - name: 'categories'
+          element: "hidden"
+          value: "default"
+      - name: "categories"
         field:
-          element: 'hidden'
-          value: 'staff'
+          element: "hidden"
+          value: "staff"
 
     _posts/testimonials:
-      - name: 'layout'
+      - name: "layout"
         field:
-          element: 'hidden'
-          value: 'default'
-      - name: 'categories'
+          element: "hidden"
+          value: "default"
+      - name: "categories"
         field:
-          element: 'hidden'
-          value: 'testimonial'
+          element: "hidden"
+          value: "testimonial"
