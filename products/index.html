@@ -19,16 +19,9 @@ title: Products
 
   <div class="wrapper">
     <ul class="grid medium">
-    {% for catalog in site.categories.catalog %}
-      {% unless catalog.categories contains "intro" %}
-      <li>
-        <a href="" class="tile"><img src="{{ catalog.cover }}" alt="{{ catalog.title }}" /></a>
-        <h3><a href="{{ catalog.url }}">{{ catalog.title }}</a></h3>
-        <a href="{{ catalog.pdf }}">Download PDF</a>
-      </li>
-      {% endunless %}
-    {% endfor %}
-
+    {% include html/catalogs.html %}
+    
+    {% comment %}
       {% for i in (1..10) %}
       <li>
         <a href="" class="tile"><img src="http://placehold.it/300x400" alt="catalog" /></a>
@@ -36,6 +29,7 @@ title: Products
         <a href="#">Download PDF</a>
       </li>
       {% endfor %}
+    {% endcomment %}
     </ul>
   </div>
 </section>

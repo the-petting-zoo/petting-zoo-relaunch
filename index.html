@@ -3,18 +3,19 @@ layout: default
 title: home
 ---
 
-<div class="hero">
-  <a href="#"><img src="http://placehold.it/2000x600" alt="Hero banner" /></a>
+<div class="hero carousel">
+  {% for post in site.categories.carousel %}
+  {{ post.content }}
+  {% endfor %}
+  <!-- <a href="#"><img src="http://placehold.it/2000x600" alt="Hero banner" /></a> -->
 </div>
 
 <section class="strip">
   <h3>Our Latest Catalogs</h3>
   <nav class="local">
     <ul class="grid small center">
-      {% for i in (1..5) %}
-      <li><a href="#" class="tile"><img src="http://placehold.it/400x600" alt="catalog"></a></li>
-      {% endfor %}
-      <li><a href="" class="tile more">See more catalogs</a></li>
+      {% include html/catalogs.html limit="5" text="false" %}
+      <li><a href="{{ site.url }}/products/" class="tile more">See more catalogs</a></li>
     </ul>
   </nav>
 </section>
@@ -24,21 +25,29 @@ title: home
     {% for post in site.categories.home %}
       {{ post.content }}
     {% endfor %}
+
     <!-- <hgroup>
       <h1>For over 15 years</h1>
       <h2><em>The Petting Zoo</em> has consistently offered the highest quality wholesale plush at the greatest value</h2>
     </hgroup>
     <p>Our ever-expanding product line features a wide variety of items designed to best serve our retailers’ specific needs ranging from realistic Sealife and Wildlife creations, seasonal and holiday items, to our whimsical signature collection of Bright Eyes characters. We proudly invest in our creative resources to develop the newest, most trend-forward, and innovative plush products available on the market!</p>
-    <a href="{{ path }}/about.html" class="button">Learn more about <strong>The Petting Zoo</strong></a> -->
+    <a href="{{ site.url }}/about.html" class="button">Learn more about <strong>The Petting Zoo</strong></a> -->
   </div>
 </section>
 
-<section class="strip">
+{% if site.categories.promos.size > 0 %}
+<section class="promos strip">
   <div class="wrapper">
+    {% for post in site.categories.promos %}
+      {{ post.content }}
+    {% endfor %}
+    {% comment %}
     <ul class="grid large center">
       {% for i in (1..3) %}
       <li><a href="#"><img src="http://placehold.it/450x300" alt="House/partner promo banner"></a></li>
       {% endfor %}
     </ul>
+    {% endcomment %}
   </div>
 </section>
+{% endif %}

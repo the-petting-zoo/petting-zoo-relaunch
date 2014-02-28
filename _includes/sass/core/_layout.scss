@@ -1,0 +1,51 @@
+// ==============================================================================
+// Global layout styles
+// ==============================================================================
+
+// Quickly set grid-margins on a container across multiple breakpoints
+@mixin grid-margins($property: padding) {
+  #{$property}-left: nth($layout-margins, 1);
+  #{$property}-right: nth($layout-margins, 1);
+
+  @for $i from 1 through length($layout-margins) {
+    @include breakpoint(nth($breakpoints, $i)) {
+      #{$property}-left: nth($layout-margins, $i);
+      #{$property}-right: nth($layout-margins, $i);
+    }
+  }
+}
+
+// A helper to quickly create grid-span() includes across multiple breakpoints
+// Saves having to write breakpoint calls over and over again
+@mixin grid-span-break($cols, $start, $opts: false) {
+  @include grid-span(nth($cols, 1), nth($start, 1), $options: $opts);
+
+  @for $i from 1 through (length($cols) - 1) {
+    @include breakpoint(nth($breakpoints, $i)) {
+      @include grid-span(nth($cols, $i), nth($start, $i), $options: $opts);
+    }
+  }
+}
+
+.wrapper {
+  @include grid-margins;
+  max-width: $layout-width;
+  margin: 0 auto;
+  clear: both;
+  overflow: hidden;
+}
+
+.narrow {
+  max-width: $layout-width--narrow;
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+[role="main"] {
+  #{headers()} {
+    text-align: center;
+  }
+}

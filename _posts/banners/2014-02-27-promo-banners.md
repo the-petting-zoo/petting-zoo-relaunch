@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Promo Banners"
-category: "carousel"
+category: "promos"
 ---
 
 - ![Promo banner](http://placehold.it/450x300)

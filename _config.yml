@@ -1,13 +1,25 @@
 # jekyll settings
 name: The Petting Zoo
 tag: "Share & Smile"
-url: http://pettingzoo.jayperryworks.com
+# url: http://pettingzoo.jayperryworks.com
 baseurl: 
 
 markdown: redcarpet
 pygments: true
 
 exclude: ["README.md", "config.rb", ".sublime-project", ".sublime-workspace", "Guardfile", "Gemfile", "Gemfile.lock", ".sass-cache"]
+
+# asset paths
+assets:
+  img: '/assets/images/'
+  css: '/assets/css/'
+  js: '/assets/js/'
+  carousel: '/assets/media/banners/carousel/'
+  promos: '/assets/media/banners/promos/'
+  catalog: '/assets/media/catalogs/'
+  product: '/assets/media/products/'
+  staff: '/assets/media/staff/'
+  blog: '/assets/media/blog/'
 
 # prose.io settings
 prose:

@@ -16,8 +16,8 @@
       {% capture relativepath %}{% for i in (3..level) %}../{% endfor %}{% endcapture %}
       {% capture path %}{{ relativepath }}{{ site.baseurl }}{% endcapture %}
 
-      <link rel="stylesheet" href="{{ path }}assets/css/app.css">
-      <script src="{{ path }}assets/js/vendor/modernizr.custom.11128.js"></script>
+      <link rel="stylesheet" href="{{ site.url }}{{ site.assets.css }}app.css">
+      <script src="{{ site.url }}{{ site.assets.js }}vendor/modernizr.custom.11128.js"></script>
       <script>
         // add the "main" element to html5 shiv -- modernizr does not include yet
         // http://drublic.de/blog/add-main-element-modernizr/
@@ -27,7 +27,7 @@
   </head>
   <body id="{% if page.slug %}{{ page.slug | replace: " ", "-" | downcase }}{% else %}{{ page.title | replace: " ", "-" | downcase }}{% endif %}">
     <header role="banner" class="global">
-      {% include nav-global.html %}
+      {% include html/nav-global.html %}
     </header>
 
     <!--[if lt IE 7]>
@@ -69,30 +69,33 @@
           <h3>Call us!</h3>
           <dl>
             <dt>P</dt>
-            <dd>888.867.4059</dd>
+            <dd>{{ site.data.contact.phone.office }}</dd>
             <dt>F</dt>
-            <dd>410.760.5560</dd>
+            <dd>{{ site.data.contact.phone.fax }}</dd>
           </dl>
           <p>
-            7222 Parkway Drive<br />
-            Hanover, MD 21076
+            {{ site.data.contact.address.street }}<br />
+            {{ site.data.contact.address.city }}, {{ site.data.contact.address.state }} {{ site.data.contact.address.zip }}
           </p>
+          {% if site.data.contact.social.size > 0 %}
           <ul class="social">
-            <li><a href="#"><img src="http://placehold.it/25x25"></a></li>
-            <li><a href="#"><img src="http://placehold.it/25x25"></a></li>
+            {% for profile in site.data.contact.social %}
+            <li><a href="{{ profile.url }}"><img src="{{ profile.icon }}" alt="{{ profile.platform }}"></a></li>
+            {% endfor %}
           </ul>
+          {% endif %}
         </aside>
       </section>
       <section class="footer-menu">
-        {% include nav-global.html %}
-        <h5>Share &amp; Smile</h5>
+        {% include html/nav-global.html %}
+        <h5>{{ site.tag | xml_escape }}</h5>
         <small role="copyright">&copy; Copyright {{ site.time | date: "%Y" }} The Petting Zoo, Inc. All rights reserved.</small>
       </section>
     </footer>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="{{ path }}assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-    <script src="{{ path }}assets/js/app.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ site.url }}{{ site.assets.js }}vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="{{ site.url }}{{ site.assets.js }}app.js"></script>
 
     <!-- For livereload: http://stackoverflow.com/questions/8395526/using-live-reload-with-jekyll -->
     <script src="http://localhost:35729/livereload.js"></script>
