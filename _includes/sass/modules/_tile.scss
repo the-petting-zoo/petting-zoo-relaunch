@@ -1,0 +1,37 @@
+// ==========================================================================
+//  Tile modules
+// -> a self-contained, stackable unit, usually contained in an inline grid
+// -> and usually linking to/summarizing other content
+// ==========================================================================
+
+
+// BASE
+// -----------------------------------------------------------------------------
+
+.tile {
+  
+}
+
+// MODIFIERS
+// -----------------------------------------------------------------------------
+.tile.horizontal {
+  overflow: hidden;
+  margin-bottom: gutter-span();
+  vertical-align: top;
+  text-align: left;
+
+  @include layout(6) {
+    .portrait {
+      @include grid-span(2, 1);
+    }
+
+    .info {
+      @include grid-span(4, 3, $options: right);
+      text-align: left;
+    }
+  }
+
+  #{headers()}, a, small, p {
+    text-align: left;
+  }
+}

@@ -12,59 +12,43 @@ title: Products
       {{ post.content }}
       {% endif %}
     {% endfor %}
-      <!-- <h1>Catalogs</h1>
-      <p>Short blurb about your wide range of products. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, rem, veniam dolores eos est cupiditate minus eveniet praesentium maiores quidem itaque totam officiis corrupti! Vero, repudiandae beatae eligendi omnis voluptatem exercitationem voluptatum incidunt.</p> -->
     </div>
   </section>
 
   <div class="wrapper">
     <ul class="grid medium">
     {% include html/catalogs.html %}
-    
-    {% comment %}
-      {% for i in (1..10) %}
-      <li>
-        <a href="" class="tile"><img src="http://placehold.it/300x400" alt="catalog" /></a>
-        <h3><a href="#">Catalog Title</a></h3>
-        <a href="#">Download PDF</a>
-      </li>
-      {% endfor %}
-    {% endcomment %}
     </ul>
   </div>
 </section>
 
 <section class="strip">
   <section class="strip-int">
-    <div class="wrapper">
+    <div class="wrapper narrow">
     {% for post in site.categories.custom %}
       {% if post.categories contains "intro" %}
       <h1>{{ post.title }}</h1>
       {{ post.content }}
       {% endif %}
     {% endfor %}
-
-      <!-- <h1>Custom Orders</h1>
-      <p>Short blurb about how custom orders work. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quod iure odio praesentium eveniet id dolorum temporibus facere et voluptatum. Ad, officiis, sint, architecto cumque at assumenda ab maiores eligendi quos maxime alias aspernatur id ipsa iure eos ullam nam vitae nesciunt ut voluptatem natus tempora veniam ipsum incidunt amet!</p> -->
-
-      <nav class="local tabs">
-        <ul>
-        {% for post in site.categories.custom %}
-          {% unless post.categories contains "intro" %}
-          <li><a href="#{{ post.title | replace: " ", "-" | downcase }}">{{ post.title }}</a></li>
-          {% endunless %}
-        {% endfor %}
-          <!-- <li><a href="#custom-plushes">Custom Plushes</a></li>
-          <li><a href="#custom-hoodies">Custom Hoodies</a></li> -->
-        </ul>
-      </nav>
     </div>
   </section>
 
+  <nav class="local tabs">
+    <ul>
+    {% for post in site.categories.custom %}
+      {% unless post.categories contains "intro" %}
+      <li><a href="#{{ post.title | replace: " ", "-" | downcase }}">{{ post.title }}</a></li>
+      {% endunless %}
+    {% endfor %}
+    </ul>
+  </nav>
+
   {% for post in site.categories.custom %}
   {% unless post.categories contains "intro" %}
-  <section id="{{ post.title | replace: " ", "-" | downcase }}" class="strip-int">
-    <div class="wrapper narrow">
+  <section id="{{ post.title | replace: " ", "-" | downcase }}" class="tabs-content strip-int">
+    <h4 class="accordion-header"><a href="#{{ post.title | replace: " ", "-" | downcase }}-content">{{ post.title }}</a></h4>
+    <div class="accordion-content wrapper narrow" id="{{ post.title | replace: " ", "-" | downcase }}-content">
       {{ post.content }}
       <!-- <img src="http://placehold.it/800x500" alt="product photo(s)" />
       <p>Custom plushes description here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, animi, esse, nulla expedita amet nisi obcaecati eveniet modi dicta dolorum voluptatem eius quibusdam iusto illo vel ipsa vitae ex quisquam odit fugit ea dignissimos error reiciendis deleniti eum. Dicta, labore quod quasi quo animi laborum sit minus recusandae excepturi eveniet?</p> -->
@@ -79,17 +63,6 @@ title: Products
       <p>Custom hoodies description here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, animi, esse, nulla expedita amet nisi obcaecati eveniet modi dicta dolorum voluptatem eius quibusdam iusto illo vel ipsa vitae ex quisquam odit fugit ea dignissimos error reiciendis deleniti eum. Dicta, labore quod quasi quo animi laborum sit minus recusandae excepturi eveniet?</p>
     </div>
   </section> -->
-  
-  {% comment %}
-  <section id="faq" class="strip-int">
-    <dl>
-      {% for i in (1..12) %}
-      <dt>Lorem ipsum dolor sit amet, consectetur?</dt>
-      <dd>Adipisicing elit. Earum, veniam consequuntur sequi eius quis architecto eum.</dd>
-      {% endfor %}
-    </dl>
-  </section>
-  {% endcomment %}
 
 </section>
 

@@ -12,12 +12,12 @@ title: home
 
 <section class="strip">
   <h3>Our Latest Catalogs</h3>
-  <nav class="local">
+  <div class="wrapper">
     <ul class="grid small center">
       {% include html/catalogs.html limit="5" text="false" %}
       <li><a href="{{ site.url }}/products/" class="tile more">See more catalogs</a></li>
     </ul>
-  </nav>
+  </div>
 </section>
 
 <section class="strip">

@@ -34,7 +34,7 @@ guard :concat, type: "js", files: %w(plugins/console plugins/flexslider plugins/
 # end
 
 guard 'livereload' do
-  watch(%r{_site/.+})
+  watch(%r{_site/.+\.(css|js|html)})
 end
 
 # guard 'uglify', :destination_file => "assets/js/app.js" do

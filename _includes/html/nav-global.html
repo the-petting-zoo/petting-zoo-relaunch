@@ -8,6 +8,10 @@
   </ul>
 
   <select name="menu" class="menu-mobile">
-    <option value="" disabled selected>How can we help?</option>
+    <option value="" disabled selected>Select a page</option>
+    <option value="about"{% if page.title == "About Us" %} selected{% endif %}>About Us</option>
+    <option value="products"{% if page.title == "Products" %} selected{% endif %}>Products</option>
+    <option value="news"{% if page.title == "News" %} selected{% endif %}>News</option>
+    <option value="contact"{% if page.title == "Contacts Us" %} selected{% endif %}>Contacts</option>
   </select>
 </nav>

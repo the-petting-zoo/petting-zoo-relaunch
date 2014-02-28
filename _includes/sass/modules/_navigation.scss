@@ -16,6 +16,8 @@
 // ------- Global/main nav -------------------------------------------
 
 [role="navigation"].global {
+  $top: 70px;
+
   text-align: center;
   // position: relative;
   margin: 0;
@@ -24,11 +26,21 @@
 
   .menu {
     @include inline-list;
-    @include rem(margin, 70px 0 0 0);
+    @include rem(margin, $top 0 0 0);
+    @include hidden;
+
+    @include breakpoint($small) {
+      @include restore-visible;
+    }
   }
 
   .menu-mobile {
-    display: none;
+    @include rem(margin, $top 0 0 0);
+    float: right;
+
+    @include breakpoint($small) {
+      @include hidden;
+    }
   }
 
   li {
@@ -83,5 +95,52 @@ footer.global [role="navigation"].global {
 // ------- Local nav -------------------------------------------
 
 [role="navigation"].local, nav.local {
-  @extend .wrapper;
+  // @extend .wrapper;
 }
+
+// ------- Tabs/accordions -------------------------------------------
+.local.tabs {
+  border-bottom: 1px solid #ccc;
+  @include hidden;
+
+  @include breakpoint($small) {
+    @include restore-visible;
+  }
+
+  ul {
+    @extend .wrapper;
+    @extend .narrow;
+    @include inline-list;
+    @include grid-margins;
+  }
+  
+}
+
+  .tabs-content {
+    @include breakpoint($small) {
+      @include hidden;
+    }
+
+    &.is-open {
+      @include restore-visible;
+    }
+  }
+
+  .accordion-header {
+    
+    @include breakpoint($small) {
+      @include hidden;
+    }
+  }
+
+  .accordion-content {
+    @include hidden;
+
+    @include breakpoint($small) {
+      @include restore-visible;
+    }
+
+    &.is-open {
+      @include restore-visible;
+    }
+  }

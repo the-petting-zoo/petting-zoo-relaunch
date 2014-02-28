@@ -21,8 +21,9 @@
   @include grid-span(nth($cols, 1), nth($start, 1), $options: $opts);
 
   @for $i from 1 through (length($cols) - 1) {
-    @include breakpoint(nth($breakpoints, $i)) {
-      @include grid-span(nth($cols, $i), nth($start, $i), $options: $opts);
+    $num: ($i + 1);
+    @include breakpoint(nth($breakpoints, $num)) {
+      @include grid-span(nth($cols, $num), nth($start, $num), $options: $opts);
     }
   }
 }
