@@ -5,7 +5,7 @@
   <li>
     <a href="" class="tile vertical"><img src="{{ site.url }}{{ site.assets.catalog }}{{ catalog.cover }}" alt="{{ catalog.title }}" /></a>
     {% unless include.text == "false" %}
-    <h3><a href="{{ catalog.url }}">{{ catalog.title }}</a></h3>
+    <h3><a href="{{ site.url }}{{ site.assets.catalog }}{{ catalog.pdf }}">{{ catalog.title }}</a></h3>
     <a href="{{ site.url }}{{ site.assets.catalog }}{{ catalog.pdf }}">Download PDF</a>
     {% endunless %}
   </li>
