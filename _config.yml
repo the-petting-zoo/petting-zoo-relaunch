@@ -53,42 +53,71 @@ prose:
           label: "Feature Image Caption"
           help: "Enter a caption (if needed) for the feature image"
 
-    _posts/home:
+    _posts/banners:
       - name: "layout"
         field:
           element: "hidden"
           value: "default"
       - name: "categories"
         field:
+          element: "select"
+          options:
+            - name: "Carousel"
+              value: "carousel"
+            - name: "Promos"
+              value: "promos"
+
+    _posts/home:
+      - name: "layout"
+        field:
           element: "hidden"
-          value: "home"
+          value: "default"
 
     _posts/news:
       - name: "layout"
         field:
           element: "hidden"
           value: "default"
-      - name: "categories"
+      - name: "category"
         field:
           element: "hidden"
-          value: "news"
+          value: "blog"
+      - name: "categories"
+        field:
+          element: "multiselect"
+          label: "Add Tags"
+          placeholder: "Choose Tags"
+          alterable: "true"
+          options:
+            - name: "Shows"
+              value: "shows"
 
     _posts/products/catalogs:
       - name: "layout"
         field:
           element: "hidden"
           value: "default"
-      - name: "categories"
+      - name: "category"
         field:
           element: "hidden"
           value: "catalog"
+      - name: "pdf"
+        field:
+          element: "text"
+          label: "PDF Version"
+          help: "Enter the name of the uploaded PDF (including extension)"
+      - name: "cover"
+        field:
+          element: "text"
+          label: "Cover Image"
+          help: "Enter the name of the uploaded cover image (including extension)"
 
     _posts/products/custom:
       - name: "layout"
         field:
           element: "hidden"
           value: "default"
-      - name: "categories"
+      - name: "category"
         field:
           element: "hidden"
           value: "custom"
@@ -98,17 +127,30 @@ prose:
         field:
           element: "hidden"
           value: "default"
-      - name: "categories"
+      - name: "category"
         field:
           element: "hidden"
           value: "staff"
+      - name: "job_title"
+        field:
+          element: "text"
+          label: "Job Title"
+      - name: "email"
+        field:
+          element: "text"
+          label: "Email Address"
+      - name: "portrait"
+        field:
+          element: "text"
+          label: "Portrait Image"
+          help: "Enter the name of the uploaded portrait image (including extension)"
 
     _posts/testimonials:
       - name: "layout"
         field:
           element: "hidden"
           value: "default"
-      - name: "categories"
+      - name: "category"
         field:
           element: "hidden"
-          value: "testimonial"
+          value: "testimonials"
