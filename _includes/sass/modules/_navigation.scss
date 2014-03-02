@@ -17,12 +17,12 @@
 
 [role="navigation"].global {
   $top: 70px;
-
   text-align: center;
   // position: relative;
   margin: 0;
   padding: 0;
   overflow: visible;
+  z-index: $z--high;
 
   .menu {
     @include inline-list;
@@ -57,7 +57,8 @@
   }
 
   a {
-    @include rem(width, 80px);
+    @extend %intro;
+    @include rem(width, 100px);
     display: block;
   }
 

@@ -8,7 +8,7 @@
 }
 
 /* line 23, ../../_includes/sass/core/_fonts.scss */
-h1, h3 {
+h1, h3, [role="navigation"].global a {
   font-family: "intro-regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -31,14 +31,14 @@ h1, h3 {
 }
 
 /* line 51, ../../_includes/sass/core/_fonts.scss */
-h2, h4, h5, label {
+h2, h4, h5, label, .control_group {
   font-family: "enriqueta-regular", Georgia, Cambria, "Times New Roman", Times, serif;
   font-weight: normal;
   font-style: normal;
 }
 
 /* line 57, ../../_includes/sass/core/_fonts.scss */
-h2, h4, h5, label {
+h2, h4, h5, label, .control_group {
   font-family: "enriqueta-bold", Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
@@ -1307,32 +1307,39 @@ h6 {
 p, table, li {
   font-size: 16px;
   font-size: 1rem;
+  line-height: 1.5;
 }
 
-/* line 77, ../../_includes/sass/core/_content.scss */
+/* line 78, ../../_includes/sass/core/_content.scss */
 ol, ul {
   margin-left: 1.5em;
 }
 @media (min-width: 48em) {
-  /* line 77, ../../_includes/sass/core/_content.scss */
+  /* line 78, ../../_includes/sass/core/_content.scss */
   ol, ul {
     margin-left: 0;
   }
 }
 
-/* line 85, ../../_includes/sass/core/_content.scss */
+/* line 86, ../../_includes/sass/core/_content.scss */
 a {
   -webkit-animation: all 0.5;
   -moz-animation: all 0.5;
   animation: all 0.5;
+  text-decoration: none;
 }
 
-/* line 89, ../../_includes/sass/core/_content.scss */
+/* line 95, ../../_includes/sass/core/_content.scss */
 .amp {
   font-family: "Baskerville", "Palatino", "Book Antiqua", serif;
   font-style: italic;
   font-weight: normal;
   font-size: 1.1em;
+}
+
+/* line 106, ../../_includes/sass/core/_content.scss */
+.icon {
+  background-repeat: none;
 }
 
 /* line 15, ../../_includes/sass/modules/_strip.scss */
@@ -1691,7 +1698,11 @@ footer.global .meta.contact .social li, .footer.global .meta.contact .social li 
   clear: both;
 }
 
-/* line 18, ../../_includes/sass/modules/_hero.scss */
+/* line 17, ../../_includes/sass/modules/_hero.scss */
+.hero.carousel {
+  z-index: 1;
+}
+/* line 20, ../../_includes/sass/modules/_hero.scss */
 .hero.carousel ul {
   list-style: none;
   list-style-type: none;
@@ -1704,12 +1715,12 @@ footer.global .meta.contact .social li, .footer.global .meta.contact .social li 
   list-style: none;
   list-style-type: none;
 }
-/* line 28, ../../_includes/sass/modules/_hero.scss */
+/* line 30, ../../_includes/sass/modules/_hero.scss */
 .hero.carousel img {
   width: 100%;
 }
 
-/* line 33, ../../_includes/sass/modules/_hero.scss */
+/* line 35, ../../_includes/sass/modules/_hero.scss */
 .carousel-control-nav {
   list-style: none;
   list-style-type: none;
@@ -1732,7 +1743,7 @@ footer.global .meta.contact .social li, .footer.global .meta.contact .social li 
   zoom: 1;
   *display: inline;
 }
-/* line 38, ../../_includes/sass/modules/_hero.scss */
+/* line 40, ../../_includes/sass/modules/_hero.scss */
 .carousel-control-nav a {
   color: transparent;
   font: 0/0 a;
@@ -1748,7 +1759,7 @@ footer.global .meta.contact .social li, .footer.global .meta.contact .social li 
   border-radius: 100px;
   border: 1px solid #999;
 }
-/* line 50, ../../_includes/sass/modules/_hero.scss */
+/* line 52, ../../_includes/sass/modules/_hero.scss */
 .carousel-control-nav .carousel-active {
   background: #333;
 }
@@ -1759,6 +1770,7 @@ footer.global .meta.contact .social li, .footer.global .meta.contact .social li 
   margin: 0;
   padding: 0;
   overflow: visible;
+  z-index: 2;
 }
 /* line 27, ../../_includes/sass/modules/_navigation.scss */
 [role="navigation"].global .menu {
@@ -1815,28 +1827,28 @@ footer.global .meta.contact .social li, .footer.global .meta.contact .social li 
 }
 /* line 54, ../../_includes/sass/modules/_navigation.scss */
 [role="navigation"].global li.split {
-  margin-left: 180px;
-  margin-left: 11.25rem;
+  margin-left: 260px;
+  margin-left: 16.25rem;
 }
 /* line 59, ../../_includes/sass/modules/_navigation.scss */
 [role="navigation"].global a {
-  width: 80px;
-  width: 5rem;
+  width: 100px;
+  width: 6.25rem;
   display: block;
 }
-/* line 64, ../../_includes/sass/modules/_navigation.scss */
+/* line 65, ../../_includes/sass/modules/_navigation.scss */
 [role="navigation"].global .logo {
   top: 20px;
   top: 1.25rem;
   display: block;
   position: absolute;
-  width: 120px;
+  width: 200px;
   left: 50%;
-  margin-left: -60px;
+  margin-left: -100px;
   z-index: 2;
 }
 
-/* line 76, ../../_includes/sass/modules/_navigation.scss */
+/* line 77, ../../_includes/sass/modules/_navigation.scss */
 footer.global [role="navigation"].global {
   margin: 0 0 24px 0;
   margin: 0 0 1.5rem 0;
@@ -1844,32 +1856,32 @@ footer.global [role="navigation"].global {
   z-index: 2;
   overflow: visible;
 }
-/* line 82, ../../_includes/sass/modules/_navigation.scss */
+/* line 83, ../../_includes/sass/modules/_navigation.scss */
 footer.global [role="navigation"].global .menu {
   margin: 0;
 }
-/* line 86, ../../_includes/sass/modules/_navigation.scss */
+/* line 87, ../../_includes/sass/modules/_navigation.scss */
 footer.global [role="navigation"].global .logo {
-  width: 60px;
+  width: 100px;
   top: -10px;
   left: 50%;
-  margin-left: -30px;
+  margin-left: -50px;
 }
 
-/* line 102, ../../_includes/sass/modules/_navigation.scss */
+/* line 103, ../../_includes/sass/modules/_navigation.scss */
 .local.tabs {
   border-bottom: 1px solid #ccc;
   display: none;
   visibility: hidden;
 }
 @media (min-width: 48em) {
-  /* line 102, ../../_includes/sass/modules/_navigation.scss */
+  /* line 103, ../../_includes/sass/modules/_navigation.scss */
   .local.tabs {
     display: block;
     visibility: visible;
   }
 }
-/* line 110, ../../_includes/sass/modules/_navigation.scss */
+/* line 111, ../../_includes/sass/modules/_navigation.scss */
 .local.tabs ul {
   list-style: none;
   list-style-type: none;
@@ -1892,21 +1904,21 @@ footer.global [role="navigation"].global .logo {
   *display: inline;
 }
 @media (min-width: 30em) {
-  /* line 110, ../../_includes/sass/modules/_navigation.scss */
+  /* line 111, ../../_includes/sass/modules/_navigation.scss */
   .local.tabs ul {
     padding-left: 18px;
     padding-right: 18px;
   }
 }
 @media (min-width: 48em) {
-  /* line 110, ../../_includes/sass/modules/_navigation.scss */
+  /* line 111, ../../_includes/sass/modules/_navigation.scss */
   .local.tabs ul {
     padding-left: 30px;
     padding-right: 30px;
   }
 }
 @media (min-width: 64em) {
-  /* line 110, ../../_includes/sass/modules/_navigation.scss */
+  /* line 111, ../../_includes/sass/modules/_navigation.scss */
   .local.tabs ul {
     padding-left: 48px;
     padding-right: 48px;
@@ -1914,39 +1926,39 @@ footer.global [role="navigation"].global .logo {
 }
 
 @media (min-width: 48em) {
-  /* line 119, ../../_includes/sass/modules/_navigation.scss */
+  /* line 120, ../../_includes/sass/modules/_navigation.scss */
   .tabs-content {
     display: none;
     visibility: hidden;
   }
 }
-/* line 124, ../../_includes/sass/modules/_navigation.scss */
+/* line 125, ../../_includes/sass/modules/_navigation.scss */
 .tabs-content.is-open {
   display: block;
   visibility: visible;
 }
 
 @media (min-width: 48em) {
-  /* line 129, ../../_includes/sass/modules/_navigation.scss */
+  /* line 130, ../../_includes/sass/modules/_navigation.scss */
   .accordion-header {
     display: none;
     visibility: hidden;
   }
 }
 
-/* line 136, ../../_includes/sass/modules/_navigation.scss */
+/* line 137, ../../_includes/sass/modules/_navigation.scss */
 .accordion-content {
   display: none;
   visibility: hidden;
 }
 @media (min-width: 48em) {
-  /* line 136, ../../_includes/sass/modules/_navigation.scss */
+  /* line 137, ../../_includes/sass/modules/_navigation.scss */
   .accordion-content {
     display: block;
     visibility: visible;
   }
 }
-/* line 143, ../../_includes/sass/modules/_navigation.scss */
+/* line 144, ../../_includes/sass/modules/_navigation.scss */
 .accordion-content.is-open {
   display: block;
   visibility: visible;

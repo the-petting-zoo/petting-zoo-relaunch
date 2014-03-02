@@ -60,6 +60,7 @@ h6, %h6 {
 p, table, li {
 	@extend %centrale;
 	@include rem(font-size, 16px);
+	line-height: 1.5;
 }
 
 dl, ul, ol {
@@ -70,7 +71,7 @@ small {
 	@extend %centrale;
 }
 
-label {
+label, .control_group {
 	@extend %enriqueta-bold;
 }
 
@@ -84,6 +85,11 @@ ol, ul {
 
 a {
 	@include animation(all $base-duration);
+	text-decoration: none;
+
+	&:hover, &:active {
+		// border-bottom: 1px dotted 
+	}
 }
 
 .amp {
@@ -91,6 +97,14 @@ a {
 	font-style: italic;
 	font-weight: normal;
 	font-size: 1.1em; // relative to whatever type surrounds it -- it renders slightly bigger
+}
+
+// ==============================================================================
+// 	Icons (see icons.data...css stylesheets)
+// ==============================================================================
+
+.icon {
+  background-repeat: none;
 }
 
 

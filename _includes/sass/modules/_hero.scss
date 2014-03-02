@@ -15,6 +15,8 @@
 // -----------------------------------------------------------------------------
 
 .hero.carousel {
+  z-index: $z--medium;
+
   ul {
     @include unstyled-list;
     margin-left: 0;
