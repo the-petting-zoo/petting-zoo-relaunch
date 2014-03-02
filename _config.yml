@@ -1,7 +1,7 @@
 # jekyll settings
 name: The Petting Zoo
 tag: "Share & Smile"
-url: http://pettingzoo.jayperryworks.com
+# url: http://pettingzoo.jayperryworks.com
 baseurl: 
 
 markdown: redcarpet
@@ -14,12 +14,14 @@ assets:
   img: '/assets/images/'
   css: '/assets/css/'
   js: '/assets/js/'
-  carousel: '/assets/media/banners/carousel/'
-  promos: '/assets/media/banners/promos/'
-  catalog: '/assets/media/catalogs/'
-  product: '/assets/media/products/'
-  staff: '/assets/media/staff/'
-  blog: '/assets/media/blog/'
+  fonts: '/assets/fonts/'
+  s3: 'http://pettingzoo.s3.amazonaws.com'
+  carousel: '/banners/carousel/'
+  promos: '/banners/promos/'
+  catalog: '/catalogs/'
+  product: '/products/'
+  staff: '/staff/'
+  blog: '/blog/'
 
 # prose.io settings
 prose:

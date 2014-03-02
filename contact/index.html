@@ -9,12 +9,12 @@ title: Contact Us
     <ul class="grid large">
       {% for post in site.categories.staff %}
       <li class="tile horizontal">
-        <img src="{{ post.portrait }}" class="portrait" alt="{{ post.title }}" />
-        <div class="info">
+        {% comment %}<img src="{{ post.portrait }}" class="portrait" alt="{{ post.title }}" />{% endcomment %}
+        <!-- <div class="info"> -->
           <h3>{{ post.title }}</h3>
           <h6>{{ post.job_title }}</h6>
           <a href="mailto:{{ post.email }}">{{ post.email }}</a>
-        </div>
+        <!-- </div> -->
       </li>
       {% endfor %}
     </ul>
