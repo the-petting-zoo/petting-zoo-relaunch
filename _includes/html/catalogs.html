@@ -3,10 +3,10 @@
 {% for catalog in site.categories.catalog limit: limit %}
   {% unless catalog.categories contains "intro" %}
   <li>
-    <a href="" class="tile vertical"><img src="{{ site.url }}{{ site.assets.catalog }}{{ catalog.cover }}" alt="{{ catalog.title }}" /></a>
+    <a href="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.pdf }}" class="tile vertical"><img src="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.cover }}" alt="{{ catalog.title }}" /></a>
     {% unless include.text == "false" %}
-    <h3><a href="{{ site.url }}{{ site.assets.catalog }}{{ catalog.pdf }}">{{ catalog.title }}</a></h3>
-    <a href="{{ site.url }}{{ site.assets.catalog }}{{ catalog.pdf }}">Download PDF</a>
+    <h3><a href="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.pdf }}">{{ catalog.title }}</a></h3>
+    <a href="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.pdf }}">Download PDF</a>
     {% endunless %}
   </li>
   {% endunless %}

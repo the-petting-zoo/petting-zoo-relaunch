@@ -23,26 +23,32 @@ hgroup {
 }
 
 h1, %h1 {
+	@extend %intro;
 	@include rem(font-size, 32px);
 }
 
 h2, %h2 {
+	@extend %enriqueta-bold;
 	@include rem(font-size, 27px);
 }
 
 h3, %h3 {
+	@extend %intro;
 	@include rem(font-size, 18px);
 }
 
 h4, %h4 {
+	@extend %enriqueta-bold;
 	@include rem(font-size, 18px);
 }
 
 h5, %h5 {
-	@include rem(font-size, 14px);
+	@extend %enriqueta-bold;
+	@include rem(font-size, 16px);
 }
 
 h6, %h6 {
+	@extend %centrale-bold;
 	@include rem(font-size, 12px);
 }
 
@@ -52,7 +58,20 @@ h6, %h6 {
 }
 
 p, table, li {
+	@extend %centrale;
 	@include rem(font-size, 16px);
+}
+
+dl, ul, ol {
+	@extend %centrale;
+}
+
+small {
+	@extend %centrale;
+}
+
+label {
+	@extend %enriqueta-bold;
 }
 
 ol, ul {
