@@ -1,9 +1,12 @@
 ---
 layout: default
-title:  "Custom Plushes"
+title:  "Custom Designed Plush"
 categories: custom
 ---
 
 ![Feature image](http://placehold.it/800x500)
 
-Custom plushes description here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, animi, esse, nulla expedita amet nisi obcaecati eveniet modi dicta dolorum voluptatem eius quibusdam iusto illo vel ipsa vitae ex quisquam odit fugit ea dignissimos error reiciendis deleniti eum. Dicta, labore quod quasi quo animi laborum sit minus recusandae excepturi eveniet?
+Do you have a mascot, character, logo or idea your looking to translate
+into plush? Let our in house design team create art and help you bring your vision
+to life. We offer a custom design and sample in plush and related plush
+product -- if you can dream it we can help make it.

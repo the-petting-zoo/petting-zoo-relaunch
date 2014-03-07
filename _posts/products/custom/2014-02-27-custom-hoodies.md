@@ -1,9 +1,0 @@
----
-layout: default
-title:  "Custom Hoodies"
-categories: custom
----
-
-![Feature image](http://placehold.it/800x500)
-
-Custom hoodies description here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, animi, esse, nulla expedita amet nisi obcaecati eveniet modi dicta dolorum voluptatem eius quibusdam iusto illo vel ipsa vitae ex quisquam odit fugit ea dignissimos error reiciendis deleniti eum. Dicta, labore quod quasi quo animi laborum sit minus recusandae excepturi eveniet?
