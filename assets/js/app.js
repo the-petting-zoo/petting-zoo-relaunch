@@ -133,9 +133,8 @@ jQuery(function($) {
         $.fn.transition = $.fn.animate;
       }
 
-      pettingzoo.tabs.init(pettingzoo.config.accordion);
-
       pettingzoo.registerBreakpoints();
+      pettingzoo.tabs.init(pettingzoo.config.accordion); // set up accordion version of tabs (mobile/default)
 
       $(pettingzoo.config.carousel).flexslider({
         selector: "ul > li",
@@ -217,6 +216,8 @@ jQuery(function($) {
 
           // Bind the click event handler
           $(this).on('click', 'a', function(e){
+
+            console.log("multiple: " + pettingzoo.tabs.multiple);
 
             // if multiple active tabs are not allowed...
             if (pettingzoo.tabs.multiple != true) {

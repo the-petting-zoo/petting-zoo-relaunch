@@ -57,7 +57,7 @@
   }
 
   a {
-    @extend %intro;
+    @extend %gentleman-bold;
     @include rem(width, 100px);
     display: block;
   }

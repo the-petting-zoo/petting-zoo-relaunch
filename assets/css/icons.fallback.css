@@ -1,15 +1,23 @@
 ---
 ---
 
+.icon.logo-pettingzoo {
+	background-image: url('{{site.url }}{{ site.assets.css }}petting-zoo-logo-optimized.png');
+	background-repeat: no-repeat;
+}
 .icon.doc {
-	background-image: url('{{ site.url }}{{ site.assets.css }}/icon-doc.png');
+	background-image: url('{{site.url }}{{ site.assets.css }}icon-doc.png');
+	background-repeat: no-repeat;
 }
 .icon.facebook {
-	background-image: url('{{ site.url }}{{ site.assets.css }}/icon-facebook.png');
+	background-image: url('{{site.url }}{{ site.assets.css }}icon-facebook.png');
+	background-repeat: no-repeat;
 }
 .icon.pdf {
-	background-image: url('{{ site.url }}{{ site.assets.css }}/icon-pdf.png');
+	background-image: url('{{site.url }}{{ site.assets.css }}icon-pdf.png');
+	background-repeat: no-repeat;
 }
 .icon.twitter {
-	background-image: url('{{ site.url }}{{ site.assets.css }}/icon-twitter.png');
+	background-image: url('{{site.url }}{{ site.assets.css }}icon-twitter.png');
+	background-repeat: no-repeat;
 }
