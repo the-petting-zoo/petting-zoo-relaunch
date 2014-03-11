@@ -22,6 +22,27 @@
 // MODIFIERS
 // -----------------------------------------------------------------------------
 
+.strip.blurb {
+  h1 {
+    @extend .callout;
+  }
 
+  h2 {
+    @extend .highlight;
+  }
+}
 
-// ------- small grid (6 cols) -------------------------------------------
+// SUBMODULES
+// -----------------------------------------------------------------------------
+
+.strip-leader {
+  @include rem(margin-top, -$header-padding);
+  @include rem(padding, $header-padding 0 24px 0);
+}
+
+.strip-int {
+  @include rem(margin-top, 12px);
+  @include rem(padding, 18px 0);
+  border-top-width: $border-w--thin;
+  border-top-style: solid;
+}

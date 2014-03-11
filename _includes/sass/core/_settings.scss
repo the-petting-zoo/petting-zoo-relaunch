@@ -14,8 +14,9 @@ $base-duration: 0.5s; // in seconds
 // --------------------------------------------------------------------------
 
 // baseline palette
+// -> for reference only. when applying a theme use labels like $color-primary
 $turquoise--light: #b7d1d8;
-$turquoise: #66b4c2;
+$turquoise: #7dbfcb;
 
 $blue--light: #5899fc;
 $blue: #3b57a0;
@@ -27,15 +28,22 @@ $pink: #f035a6;
 
 $gray: #ebf0f0;  
 
+// basic colors
 $color-primary: $blue;
-$color-secondary: $pink;           
+$color-secondary: $pink; 
+$color-tertiary: $yellow;          
 
 // bgs
-$color-bg--dark: $blue--dark;
+$color-bg-reverse: $blue--dark;
+$color-bg-well: $gray;
+$color-bg-wash--primary: $turquoise;
+$color-bg-wash--secondary: lighten($blue--light, 8);
+$color-bg-flood: $pink;
 
 // text
 $color-text--primary: $blue--dark;
 $color-text--secondary: #666d7d;
+$color-text--tertiary: darken($gray, 30);
 $color-text--highlight: $pink;
 
 $color-selection: $turquoise;
@@ -69,9 +77,12 @@ $layout-margins: 18px 30px 48px; // margins on either side of live area
 $layout-width: 1280px; // maximum width of default container
 $layout-width--narrow: 800px; // max width of narrower container, ~10 cols at medium screen size
 
+$strip-padding: 18px;
+
 $logo-w: 145px;
 
 $header-h: 60px;
+$header-padding: 148px; // padding for elements "under" the (absolutely positioned) header
 $header-ribbon-bottom: -13px; // how far down the ribbon ends are positioned, relative to the haeder.
 $header-ribbon-inset: 8px 13px; // how wide the "cutout" is on each side of the ribbon.
 $header-ribbon-margins: 4px 12px 16px; // how far the ribbon end is from the left and right sides of the screen.
@@ -79,6 +90,9 @@ $header-ribbon-extend: 6px 12px; // the ribbon is usually the width of the layou
 
 
 $margin-whitespace: -5px; // a fix for gaps created by whitespace, an inline-block bug
+
+$border-w--thin: 1px;
+$border-w--thick: 6px;
 
 // --- breakpoints ----------------------------------------------------------
 // -> for breakpoint sass library

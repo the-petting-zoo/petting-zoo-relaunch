@@ -15,7 +15,7 @@
 // ------- Global/main nav -------------------------------------------
 
 [role="navigation"].global {
-  $logo-top: 31px;
+  $logo-top: 34px;
 
   @function ribbon-offset($i) {
     @return (nth-last($header-ribbon-margins, $i) + $header-h - nth($layout-margins, $i));
@@ -37,7 +37,7 @@
     position: absolute;
     display: block;
     border-style: solid;
-    border-color: lighten($blue--dark, 25) transparent transparent transparent;
+    border-color: lighten($color-bg-reverse, 25) transparent transparent transparent;
   }
 
   &:before {
@@ -87,7 +87,7 @@
       text-transform: uppercase;
 
       &:hover, &:active {
-        background: darken($gray, 3);
+        background: darken($gray, 5);
       }
 
       &.active {
@@ -132,20 +132,46 @@
 
 // copy of the main menu that appears in the footer
 footer.global [role="navigation"].global {
-  @include rem(margin, 0 0 24px 0);
+  @include rem(margin, 0 0 6px 0);
   position: relative;
   z-index: $z--high;
   overflow: visible;
+  background: transparent;
+
+  &:before, &:after {
+    content: none;
+    border: none;
+  }
 
   .menu {
     margin: 0;
   }
 
+  .split {
+    @include rem(margin-left, (($logo-w/2) + 18px));
+  }
+
+  a {
+    @include rem(font-size, 16px);
+    @include rem(width, 108px);
+    color: white;
+
+    &:hover, &:active {
+      color: lighten($color-bg-wash--primary, 25);
+      background: transparent;
+    }
+
+    &.active {
+      color: $color-text--primary;
+      background: transparent;
+    }
+  }
+
   .logo {
-    width: ($logo-w/2);
-    top: -10px;
-    left: 50%;
-    margin-left: -($logo-w/4);
+    @include rem(width, ($logo-w/2));
+    @include rem(margin-left, -($logo-w/4));
+    @include rem(top, -10px);
+    // left: 50%;
   }
 }
 
@@ -175,6 +201,7 @@ footer.global [role="navigation"].global {
 }
 
   .tabs-content {
+
     @include breakpoint($small) {
       @include hidden;
     }

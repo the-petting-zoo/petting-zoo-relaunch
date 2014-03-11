@@ -14,10 +14,10 @@ footer, .footer {
 
 // global/main footer @ bottom of each page
 footer.global, .footer.global {
+  @extend %theme-reverse;
   @include rem(margin-top, 24px);
   @include rem(padding, 24px 0 0 0);
   position: relative;
-  background: #eee;
 
   h3 {
     text-align: center;
@@ -28,6 +28,7 @@ footer.global, .footer.global {
     @include grid-span-break(6 6 8, 1 1 1);
 
     label {
+      @extend .highlight;
       @include inline-block;
       width: 40%;
       margin: $margin;
@@ -48,7 +49,6 @@ footer.global, .footer.global {
   }
 
   .meta.contact {
-    // @include grid-span(4, 5, $options: right);
     @include grid-span-break(6 3 4, 1 7 9);
     text-align: left;
 
@@ -56,9 +56,18 @@ footer.global, .footer.global {
       text-align: left;
     }
 
-    & > dl {
+    dl {
+      @extend %theme-reverse;
       @include inline-dl(true);
-      border-bottom: $hairline;
+      margin-top: 0;
+      padding-bottom: 1em;
+      border-bottom-width: $border-w--thin;
+      border-bottom-style: solid;
+    }
+
+    dt {
+      @extend %gentleman-bold;
+      @extend .highlight;
     }
 
     .social {
@@ -75,11 +84,20 @@ footer.global, .footer.global {
 // -----------------------------------------------------------------------------
 
 .footer-menu {
+  @extend %theme-wash--primary;
   @include rem(padding-bottom, 18px);
   @include rem(margin-top, 48px);
   position: relative;
   text-align: center;
+  line-height: 1.2;
   z-index: $z--medium;
 
-  background: #ddd;
+  h5 {
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+
+  [role="copyright"] {
+    @extend %positive;
+  }
 }

@@ -7,6 +7,7 @@
 // -----------------------------------------------------------------------------
 
 .hero {
+  @include grid-margins(margin);
   position: relative;
   clear: both;
 }
@@ -15,13 +16,18 @@
 // -----------------------------------------------------------------------------
 
 .hero.carousel {
+  @extend %theme-reverse;
   z-index: $z--medium;
 
   ul {
+    @extend %theme-reverse;
     @include unstyled-list;
     margin-left: 0;
+    margin-top: 0;
     // width: 100%;
     overflow: hidden;
+    border-style: solid;
+    border-width: $border-w--thick;
 
   }
   li {

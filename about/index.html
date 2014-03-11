@@ -4,17 +4,17 @@ title: About Us
 ---
 
 <main role="main" class="wrapper">
-  <h1>Company Overview</h1>
   {% for post in site.categories.about %}
-    {% if post.feature %}
-    <figure>
-      <img src="{{ post.feature }}" alt="{{ post.feature_caption }}" />
-      <figcaption>{{ post.feature_caption }}</figcaption>
-    </figure>
-    {% endif %}
+  <h1 class="title highlight">{{ post.title }}</h1>
+  {% if post.feature %}
+  <figure>
+    <img src="{{ post.feature }}" alt="{{ post.feature_caption }}" />
+    <figcaption>{{ post.feature_caption }}</figcaption>
+  </figure>
+  {% endif %}
 
-    <div class="narrow">
-      {{ post.content }}
-    </div>
+  <div class="narrow">
+    {{ post.content }}
+  </div>
   {% endfor %}
 </main>
