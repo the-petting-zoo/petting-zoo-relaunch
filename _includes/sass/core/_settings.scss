@@ -4,16 +4,41 @@
 
 $path-images: "../images/";
 
-$base-duration: 0.5; // in seconds
+$base-duration: 0.5s; // in seconds
+
+%base-transition {
+  @include transition (all $base-duration);
+}
 
 // Colors
 // --------------------------------------------------------------------------
 
-// text
-$color-text--primary: #333;
-$color-text--secondary: #999;
+// baseline palette
+$turquoise--light: #b7d1d8;
+$turquoise: #66b4c2;
 
-$color-selection: red;
+$blue--light: #5899fc;
+$blue: #3b57a0;
+$blue--dark: #3c4b72;
+
+$yellow: #fed341;
+
+$pink: #f035a6;
+
+$gray: #ebf0f0;  
+
+$color-primary: $blue;
+$color-secondary: $pink;           
+
+// bgs
+$color-bg--dark: $blue--dark;
+
+// text
+$color-text--primary: $blue--dark;
+$color-text--secondary: #666d7d;
+$color-text--highlight: $pink;
+
+$color-selection: $turquoise;
 
 
 // Hairlines
@@ -44,7 +69,14 @@ $layout-margins: 18px 30px 48px; // margins on either side of live area
 $layout-width: 1280px; // maximum width of default container
 $layout-width--narrow: 800px; // max width of narrower container, ~10 cols at medium screen size
 
-$logo-w: 200px;
+$logo-w: 145px;
+
+$header-h: 60px;
+$header-ribbon-bottom: -13px; // how far down the ribbon ends are positioned, relative to the haeder.
+$header-ribbon-inset: 8px 13px; // how wide the "cutout" is on each side of the ribbon.
+$header-ribbon-margins: 4px 12px 16px; // how far the ribbon end is from the left and right sides of the screen.
+$header-ribbon-extend: 6px 12px; // the ribbon is usually the width of the layout margins. at smaller screen sizes, extend it a bit further.
+
 
 $margin-whitespace: -5px; // a fix for gaps created by whitespace, an inline-block bug
 

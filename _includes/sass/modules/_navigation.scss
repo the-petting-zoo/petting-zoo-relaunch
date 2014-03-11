@@ -2,7 +2,6 @@
 //  Navigation modules
 // ==========================================================================
 
-
 // BASE
 // -----------------------------------------------------------------------------
 
@@ -16,26 +15,90 @@
 // ------- Global/main nav -------------------------------------------
 
 [role="navigation"].global {
-  $top: 70px;
+  $logo-top: 31px;
+
+  @function ribbon-offset($i) {
+    @return (nth-last($header-ribbon-margins, $i) + $header-h - nth($layout-margins, $i));
+  }
+
+  @include rem(height, $header-h);
+  @include rem(margin-top, $logo-top);
   text-align: center;
-  // position: relative;
-  margin: 0;
+  position: relative;
   padding: 0;
   overflow: visible;
-  z-index: $z--high;
+  background: $gray;
+
+  &:before, &:after {
+    border-width: 0;
+    @include rem(bottom, $header-ribbon-bottom);
+    @include rem(border-top-width, abs($header-ribbon-bottom));
+    content: " ";
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-color: lighten($blue--dark, 25) transparent transparent transparent;
+  }
+
+  &:before {
+    border-left-width: ribbon-offset(1);
+    left: 0;
+
+    @include breakpoint($small) {
+      border-left-width: ribbon-offset(2);
+    }
+
+    @include breakpoint($medium) {
+      border-left-width: ribbon-offset(3);
+    }
+  }
+
+  &:after {
+    border-right-width: ribbon-offset(1);
+    right: 0;
+
+    @include breakpoint($small) {
+      border-right-width: ribbon-offset(2);
+    }
+
+    @include breakpoint($medium) {
+      border-right-width: ribbon-offset(3);
+    }
+  }
 
   .menu {
     @include inline-list;
-    @include rem(margin, $top 0 0 0);
+    @include rem(height, $header-h);
+    @include rem(font-size, 16px);
     @include hidden;
+    text-transform: uppercase;
 
     @include breakpoint($small) {
       @include restore-visible;
     }
+
+    a {
+      @extend %gentleman-bold;
+      @include inline-block--centered($header-h);
+      @include rem(width, 120px);
+      @include rem(height, $header-h);
+      display: block;
+      color: lighten($blue--dark, 4);
+      text-transform: uppercase;
+
+      &:hover, &:active {
+        background: darken($gray, 3);
+      }
+
+      &.active {
+        background: $pink;
+        color: white;
+      }
+    }
   }
 
   .menu-mobile {
-    @include rem(margin, $top 0 0 0);
+    // @include rem(margin, $top 0 0 0);
     float: right;
 
     @include breakpoint($small) {
@@ -44,7 +107,7 @@
   }
 
   li {
-    $margin: 60px;
+    $margin: 1px;
     @include rem(margin-right, $margin);
 
     &:last-child {
@@ -52,23 +115,17 @@
     }
 
     &.split {
-      @include rem(margin-left, ($logo-w + $margin));
+      @include rem(margin-left, ($logo-w + 36px + $margin));
     }
   }
 
-  a {
-    @extend %intro;
-    @include rem(width, 100px);
-    display: block;
-  }
-
   .logo {
-    @include rem(top, 20px);
+    @include rem(top, -$logo-top);
+    @include rem(width, $logo-w);
+    @include rem(margin-left, -($logo-w/2));
     display: block;
     position: absolute;
-    width: $logo-w;
     left: 50%;
-    margin-left: -($logo-w/2);
     z-index: $z--high;
   }
 }

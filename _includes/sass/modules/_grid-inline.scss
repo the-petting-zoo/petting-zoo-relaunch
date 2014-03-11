@@ -72,7 +72,7 @@
   }
 }
 
-#home .promos {
+#home .promos, #products .accordion-content {
   ul {
     @extend .grid;
     @extend %grid-large;

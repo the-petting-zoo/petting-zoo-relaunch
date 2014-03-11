@@ -133,10 +133,16 @@ jQuery(function($) {
         $.fn.transition = $.fn.animate;
       }
 
-      pettingzoo.tabs.init(pettingzoo.config.accordion);
+      // if SVG isn't supported, swap out SVGs for corresponding PNGs
+      if (!Modernizr.svg) {
+        $(".logo img").attr("src", "assets/images/logo-pettingzoo.png");
+      }
 
+      // set up enquire.js stuff
       pettingzoo.registerBreakpoints();
+      pettingzoo.tabs.init(pettingzoo.config.accordion); // set up accordion version of tabs (mobile/default)
 
+      // set up hero carousel
       $(pettingzoo.config.carousel).flexslider({
         selector: "ul > li",
         allowOneSlide: false,
@@ -217,6 +223,8 @@ jQuery(function($) {
 
           // Bind the click event handler
           $(this).on('click', 'a', function(e){
+
+            console.log("multiple: " + pettingzoo.tabs.multiple);
 
             // if multiple active tabs are not allowed...
             if (pettingzoo.tabs.multiple != true) {
