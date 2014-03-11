@@ -21,10 +21,15 @@
 
 [role="banner"].global {
   @include grid-margins;
-  @include rem(margin-top, 36px);
+  @include rem(margin-top, 12px);
   @include rem(margin-bottom, 36px);
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  // width: 100%;
   overflow: visible;
+  z-index: $z--high;
 
   &:before, &:after {
     @include box-sizing('border-box');

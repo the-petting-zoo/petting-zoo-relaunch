@@ -2,6 +2,9 @@
 // 	Global type
 // ==============================================================================
 
+// Header groups
+// ------------------------------------------------------------------------------
+
 hgroup {
 	#{headers()} {
 		margin: 0;
@@ -10,7 +13,7 @@ hgroup {
 }
 
 #{headers()} {
-	margin: 0 0 1em 0;
+	margin: 0;
 
 	a {
 		color: inherit;
@@ -22,14 +25,20 @@ hgroup {
 	}
 }
 
+// Headers
+// ------------------------------------------------------------------------------
+
 h1, %h1 {
 	@extend %gentleman-bold;
 	@include rem(font-size, 32px);
+	line-height: 1.2;
+	letter-spacing: -0.02em;
 }
 
 h2, %h2 {
 	@extend %aleo;
 	@include rem(font-size, 27px);
+	line-height: 1.2;
 }
 
 h3, %h3 {
@@ -52,15 +61,39 @@ h6, %h6 {
 	@include rem(font-size, 12px);
 }
 
+// big headline for page title
+.title {
+	// @extend %gentleman;
+	@extend .callout;
+	@include rem(margin, 18px 0 12px 0);
+	@include rem(font-size, 36px);
+	
+	& + img, & + figure {
+		@include rem(margin-top, 18px);
+	}
+}
+
+.callout {
+	text-transform: uppercase;
+}
+
+// Body, inline content
+// ------------------------------------------------------------------------------
+
 // bigger first paragraph
-.intro {
-	@include rem(font-size, 21px);
+.intro, p:first-child {
+	@include rem(font-size, 18px);
 }
 
 p, table, li {
 	@extend %gentleman;
 	@include rem(font-size, 16px);
+	margin: 0 0 1em 0;
 	line-height: 1.5;
+}
+
+em, strong {
+	@extend %gentleman-bold;
 }
 
 dl, ul, ol {
@@ -72,7 +105,7 @@ small {
 }
 
 label, .control_group {
-	@extend %aleo-bold;
+	@extend %aleo;
 }
 
 ol, ul {
@@ -92,6 +125,15 @@ a {
 	}
 }
 
+figcaption {
+	@extend %gentleman;
+	@include rem(font-size, 13px);
+	margin-top: 0.5em;
+	text-align: right;
+	line-height: 1.5;
+	color: $color-text--tertiary;
+}
+
 .amp {
 	font-family: "Baskerville", "Palatino", "Book Antiqua", serif;
 	font-style: italic;
@@ -106,10 +148,5 @@ a {
 .icon {
   background-repeat: none;
 }
-
-
-// ==============================================================================
-// 	Themes
-// ==============================================================================
 
 

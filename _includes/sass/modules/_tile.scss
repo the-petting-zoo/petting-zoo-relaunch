@@ -9,7 +9,12 @@
 // -----------------------------------------------------------------------------
 
 .tile {
-  
+  vertical-align: top;
+  text-align: left;
+
+  #{headers()}, a, small, p {
+    text-align: left;
+  }
 }
 
 // MODIFIERS
@@ -17,8 +22,6 @@
 .tile.horizontal {
   overflow: hidden;
   margin-bottom: gutter-span();
-  vertical-align: top;
-  text-align: left;
 
   @include layout(6) {
     .portrait {
@@ -30,8 +33,12 @@
       text-align: left;
     }
   }
+}
 
-  #{headers()}, a, small, p {
-    text-align: left;
+.tile.vertical {
+  
+  .thumb {
+    display: block;
+    margin-bottom: 0.5em;
   }
 }

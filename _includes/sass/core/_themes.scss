@@ -1,0 +1,107 @@
+// ==============================================================================
+//  Color themes
+// ==============================================================================
+
+// Default/base
+// ------------------------------------------------------------------------------
+
+.highlight {
+  color: $color-text--highlight;
+  background: transparent;
+}
+
+.default, html {
+  color: $color-text--secondary;
+  background: white;
+
+  #{headers()} {
+    color: $color-text--primary;
+
+    a {
+      color: inherit;
+
+      &:hover, &:active {
+        color: inherit;
+      }
+    }
+  }
+
+  a {
+    color: $color-text--highlight;
+
+    &:hover, &:active {
+      color: darken($color-text--highlight, 12);
+    }
+  }
+}
+
+
+// Variations
+// ------------------------------------------------------------------------------
+
+// reverse: light FG over dark BG
+%theme-reverse, .reverse {
+  color: white;
+  background: $color-bg-reverse;
+  border-color: lighten($color-bg-reverse, 20);
+
+  #{headers()} {
+    color: white;
+  }
+
+  .highlight {
+    color: $color-tertiary !important;
+  }
+
+  .island {
+    color: lighten($color-bg-reverse, 20);
+  }
+}
+
+%theme-well, .well {
+  background: $color-bg-well;
+}
+
+// wash: midtone BG, fairly subdued
+%theme-wash, .wash {
+  color: $color-text--primary;
+
+  #{headers()} {
+    color: white;
+  }
+
+  a {
+    color: white;
+  }
+
+  .highlight {
+    color: $color-tertiary !important;
+  }
+
+  %positive, .positive {
+    color: $color-text--primary;
+  }
+}
+
+  %theme-wash--primary, .wash.primary {
+    @extend %theme-wash;
+    background: $color-bg-wash--primary;
+
+    a:hover, a:active {
+      color: lighten($color-bg-wash--primary, 20);
+    }
+  }
+
+  %theme-wash--secondary, .wash.secondary {
+    background: $color-bg-wash--secondary;
+
+    a:hover, a:active {
+      color: lighten($color-bg-wash--secondary, 20);
+    }
+  }
+
+// flood: bright BG with light FG. For obnoxious callouts.
+%theme-flood, .flood {
+  color: white;
+  background: $color-bg-flood;
+}
