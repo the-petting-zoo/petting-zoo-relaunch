@@ -1665,12 +1665,17 @@ footer.global .meta.contact .social li, .footer.global .meta.contact .social li 
   list-style: none;
   list-style-type: none;
 }
-/* line 36, ../../_includes/sass/modules/_hero.scss */
+/* line 33, ../../_includes/sass/modules/_hero.scss */
+.hero.carousel li {
+  margin: 0;
+  padding: 0;
+}
+/* line 38, ../../_includes/sass/modules/_hero.scss */
 .hero.carousel img {
   width: 100%;
 }
 
-/* line 41, ../../_includes/sass/modules/_hero.scss */
+/* line 43, ../../_includes/sass/modules/_hero.scss */
 .carousel-control-nav {
   list-style: none;
   list-style-type: none;
@@ -1693,7 +1698,7 @@ footer.global .meta.contact .social li, .footer.global .meta.contact .social li 
   zoom: 1;
   *display: inline;
 }
-/* line 46, ../../_includes/sass/modules/_hero.scss */
+/* line 48, ../../_includes/sass/modules/_hero.scss */
 .carousel-control-nav a {
   color: transparent;
   font: 0/0 a;
@@ -1709,7 +1714,7 @@ footer.global .meta.contact .social li, .footer.global .meta.contact .social li 
   border-radius: 100px;
   border: 1px solid #999;
 }
-/* line 58, ../../_includes/sass/modules/_hero.scss */
+/* line 60, ../../_includes/sass/modules/_hero.scss */
 .carousel-control-nav .carousel-active {
   background: #333;
 }
