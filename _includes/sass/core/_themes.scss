@@ -32,6 +32,14 @@
     &:hover, &:active {
       color: darken($color-text--highlight, 12);
     }
+
+    &.active {
+      color: $color-text--primary;
+
+      &:hover, &:active {
+        color: $color-text--primary;
+      }
+    }
   }
 }
 
@@ -87,16 +95,38 @@
     @extend %theme-wash;
     background: $color-bg-wash--primary;
 
-    a:hover, a:active {
-      color: lighten($color-bg-wash--primary, 20);
+    a {
+
+      &:hover, &:active {
+        color: lighten($color-bg-wash--primary, 20);
+      }
+
+      &.active {
+      color: $color-text--primary;
+
+        &:hover, &:active {
+          color: $color-text--primary;
+        }
+      }
     }
   }
 
   %theme-wash--secondary, .wash.secondary {
     background: $color-bg-wash--secondary;
 
-    a:hover, a:active {
-      color: lighten($color-bg-wash--secondary, 20);
+    a {
+
+      &:hover, &:active {
+        color: lighten($color-bg-wash--secondary, 16);
+      }
+
+      &.active {
+      color: $color-text--primary;
+
+        &:hover, &:active {
+          color: $color-text--primary;
+        }
+      }
     }
   }
 
@@ -104,4 +134,13 @@
 %theme-flood, .flood {
   color: white;
   background: $color-bg-flood;
+  
+  #{headers()} {
+    color: white;
+  }
+
+  a {
+    color: white;
+  }
+
 }
