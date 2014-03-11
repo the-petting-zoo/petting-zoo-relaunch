@@ -84,7 +84,7 @@ ol, ul {
 }
 
 a {
-	@include animation(all $base-duration);
+	@extend %base-transition;
 	text-decoration: none;
 
 	&:hover, &:active {

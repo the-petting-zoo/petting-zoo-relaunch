@@ -44,6 +44,17 @@
   } 
 }
 
+// return the nth value of an array
+// unless the value is bigger than the array's length
+// then return the last value
+@function nth-last($array, $i) {
+  @if ($i < length($array)) {
+    @return nth($array, $i);
+  } @else {
+    @return nth($array, length($array));
+  }
+}
+
 // ==================================================================================
 // Special effects & CSS graphical stuff
 // ==================================================================================
