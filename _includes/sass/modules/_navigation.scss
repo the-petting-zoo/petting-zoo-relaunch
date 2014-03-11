@@ -184,7 +184,6 @@ footer.global [role="navigation"].global {
 
 // ------- Tabs/accordions -------------------------------------------
 .local.tabs {
-  border-bottom: 1px solid #ccc;
   @include hidden;
 
   @include breakpoint($small) {
@@ -193,14 +192,34 @@ footer.global [role="navigation"].global {
 
   ul {
     @extend .wrapper;
-    @extend .narrow;
+    // @extend .narrow;
     @include inline-list;
     @include grid-margins;
+    text-align: center;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    @extend %aleo;
+    @include rem(font-size, 18px);
+    display: block;
+    position: relative;
+    margin: 0 0.5em;
+    padding: 0 0 1em 0;
+
+    &.active {
+      @include triangle--centered($dir: up, $side: bottom, $width: 20px, $color: white);
+    }
   }
   
 }
 
   .tabs-content {
+    @include rem(padding, 18px 0);
 
     @include breakpoint($small) {
       @include hidden;

@@ -15,7 +15,7 @@ footer, .footer {
 // global/main footer @ bottom of each page
 footer.global, .footer.global {
   @extend %theme-reverse;
-  @include rem(margin-top, 24px);
+  // @include rem(margin-top, 24px);
   @include rem(padding, 24px 0 0 0);
   position: relative;
 

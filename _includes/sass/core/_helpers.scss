@@ -119,7 +119,7 @@
 		content: " ";
 		position: absolute;
 		#{$side}: $loc;
-		z-index: $base-z--med;
+		z-index: $z--medium;
 
 		@if ($side == top){
 			left: 50%;
