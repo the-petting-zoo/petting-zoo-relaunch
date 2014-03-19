@@ -163,7 +163,7 @@
         $link.addClass(pettingzoo.tabs.active);
         $($link.attr('href')).addClass(pettingzoo.tabs.open);
       }
-    },
+    }
     
   };
 

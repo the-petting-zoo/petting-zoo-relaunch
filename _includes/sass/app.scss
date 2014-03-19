@@ -50,3 +50,18 @@
 // ===============================================================================
 
 // shapes: http://www.paulund.co.uk/how-to-create-different-shapes-in-css
+
+.promos {
+  li > img, li > a {
+    border: $hairline-w--thick solid $color-bg-well;
+  }
+
+  li > a {
+    display: block;
+    overflow: hidden;
+  }
+
+  a:hover {
+    border: $hairline-w--thick solid $color-secondary;
+  }
+}

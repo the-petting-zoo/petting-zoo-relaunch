@@ -5,14 +5,10 @@
 // Default/base
 // ------------------------------------------------------------------------------
 
-.highlight {
-  color: $color-text--highlight;
-  background: transparent;
-}
-
 .default, html {
   color: $color-text--secondary;
   background: white;
+  border-color: $color-bg-well;
 
   #{headers()} {
     color: $color-text--primary;
@@ -41,6 +37,15 @@
       }
     }
   }
+
+  .button.primary {
+    background: $color-primary;
+  }
+}
+
+.highlight {
+  color: $color-text--highlight;
+  background: transparent;
 }
 
 
@@ -54,6 +59,7 @@
   border-color: lighten($color-bg-reverse, 20);
 
   #{headers()} {
+    @include reverse-text-fix;
     color: white;
   }
 
@@ -63,6 +69,10 @@
 
   .island {
     color: lighten($color-bg-reverse, 20);
+  }
+
+  .button.primary {
+    background: $blue--light;
   }
 }
 
