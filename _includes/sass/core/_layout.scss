@@ -41,7 +41,7 @@
 }
 
 .narrow {
-  max-width: $layout-width--narrow;
+  max-width: ($layout-width--narrow + (last($layout-margins) * 2));
   margin: 0 auto;
 }
 

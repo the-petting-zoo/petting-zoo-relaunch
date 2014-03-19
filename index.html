@@ -4,12 +4,15 @@ title: home
 ---
 
 <section class="strip reverse">
+
+  <!-- hero carousel/feature banners -->
   <div class="hero carousel">
     {% for post in site.categories.carousel %}
     {{ post.content }}
     {% endfor %}
   </div>
 
+  <!-- catalogs -->
   <section class="strip-int margins reverse">
     <h3 class="callout">Our Latest Catalogs</h3>
     <div class="wrapper">
@@ -21,16 +24,18 @@ title: home
   </section>
 </section>
 
-<section class="strip blurb well">
+<!-- intro copy -->
+<section class="strip blurb well center">
   <div class="wrapper narrow">
     {% for post in site.categories.home %}
       {{ post.content }}
     {% endfor %}
 
-    <a href="{{ site.url }}/about/" class="button primary center">Learn more about The Petting Zoo &rsaquo;</a>
+    <a href="{{ site.url }}/about/" class="button primary large">Learn more about The Petting Zoo &rsaquo;</a>
   </div>
 </section>
 
+<!-- promo banners -->
 {% if site.categories.promos.size > 0 %}
 <section class="promos strip">
   <div class="wrapper">

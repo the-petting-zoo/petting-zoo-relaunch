@@ -23,6 +23,10 @@ hgroup {
 			border-bottom: none;
 		}
 	}
+
+	& + p {
+		margin-top: 1em;
+	}
 }
 
 // Headers
