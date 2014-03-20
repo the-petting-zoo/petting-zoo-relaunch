@@ -4,40 +4,26 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>{{ site.name }}{% unless page.title == "home" %} | {{ page.title }}{% endunless %}</title>
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ site.name }}{% unless page.title == "home" %} | {{ page.title }}{% endunless %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-      
-      {% capture level %}{{ page.url | append:'index.html' | split:'/' | size }}{% endcapture %}
-      {% capture relativepath %}{% for i in (3..level) %}../{% endfor %}{% endcapture %}
-      {% capture path %}{{ relativepath }}{{ site.baseurl }}{% endcapture %}
-
-      <link rel="stylesheet" href="{{ site.url }}{{ site.assets.css }}app.css">
-      <script src="{{ site.url }}{{ site.assets.js }}vendor/modernizr.custom.11128.js"></script>
-      <script>
-        // add the "main" element to html5 shiv -- modernizr does not include yet
-        // http://drublic.de/blog/add-main-element-modernizr/
-        window.html5.elements = 'main'; // add to list
-        window.html5.shivDocument(document); // re-invoke the `shivDocument` method
-    </script>
+    <link rel="stylesheet" href="{{ site.url }}{{ site.assets.css }}app.css">
+    <script src="{{ site.url }}{{ site.assets.js }}vendor/modernizr.custom.11128.js"></script>
     <script>
-    /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
-    window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
-    grunticon( [ "{{ site.url }}{{ site.assets.css }}/icons.data.svg.css", "{{ site.url }}{{ site.assets.css }}/icons.data.png.css", "{{ site.url }}{{ site.assets.css }}/icons.fallback.css" ] );</script>
-    <noscript><link href="{{ site.url }}{{ site.assets.css }}/icons.fallback.css" rel="stylesheet"></noscript>
+      // add the "main" element to html5 shiv -- modernizr does not include yet
+      // http://drublic.de/blog/add-main-element-modernizr/
+      window.html5.elements = 'main'; // add to list
+      window.html5.shivDocument(document); // re-invoke the `shivDocument` method
+    </script>
+    {% include html/grunticon.html %}
   </head>
   <body id="{% if page.slug %}{{ page.slug | replace: " ", "-" | downcase }}{% else %}{{ page.title | replace: " ", "-" | downcase }}{% endif %}">
     <header role="banner" class="global">
       {% include html/nav-global.html %}
     </header>
-
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
     {{ content }}
 
@@ -53,18 +39,18 @@
             <label for="email">Your Email</label>
             <input id="email" type="email" name="email" placeholder="yourname@email.com" />
           </div>
-          <select name="subject">
-            <option value="" disabled selected>How can we help?</option>
-            <option value="order">I'd like to place an order</option>
-            <option value="sales">I'd like to speak to a sales representative</option>
-            <option value="general">I have a general question</option>
-            <option value="python">What is the capital of Assyria?</option>
-          </select>
+            <select name="subject" class="full">
+              <option value="" disabled selected>How can we help?</option>
+              <option value="order">I'd like to place an order</option>
+              <option value="sales">I'd like to speak to a sales representative</option>
+              <option value="general">I have a general question</option>
+              <option value="python">What is the capital of Assyria?</option>
+            </select>
           <div class="control_group">
             <label for="message">Your Message</label>
             <textarea id="message" name="message" rows="8"></textarea>
           </div>
-          <button name="contact-submit" id="contact-submit" class="button small">Send</button>
+          <button name="contact-submit" id="contact-submit" type="submit" class="button primary small">Send</button>
           <div class="control_group">
             <input type="checkbox" id="mailing-list" name="mailing-list" value="opted-in" /> Add me to <strong>The Petting Zoo's</strong> mailing list.
           </div>

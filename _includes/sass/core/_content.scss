@@ -108,8 +108,13 @@ small {
 	@extend %gentleman;
 }
 
-label, .control_group {
+label {
 	@extend %aleo;
+}
+
+input, textarea, select {
+	@extend %gentleman;
+	@include rem(font-size, 13px);
 }
 
 ol, ul {

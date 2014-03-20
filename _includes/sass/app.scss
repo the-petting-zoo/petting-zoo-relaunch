@@ -9,10 +9,9 @@
 // Settings & resets
 // ===============================================================================
 
-@import "core/fonts";
-
 @import "core/settings";
 @import "core/normalize";
+@import "core/fonts";
 
 
 // ===============================================================================
@@ -62,6 +61,6 @@
   }
 
   a:hover {
-    border: $hairline-w--thick solid $color-secondary;
+    border: $hairline-w--thick solid $color--secondary;
   }
 }

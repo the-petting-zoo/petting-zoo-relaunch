@@ -3,11 +3,11 @@
 {% for catalog in site.categories.catalog limit: limit %}
   {% unless catalog.categories contains "intro" %}
   <li class="tile vertical">
-    <a href="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.pdf }}" class="thumb"><img src="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.cover }}" alt="{{ catalog.title }}" /></a>
+    <a href="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.pdf }}" class="thumb"><img src="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.cover }}" alt="{{ catalog.title }}" /></a
     {% unless include.text == "false" %}
-    <h3><a href="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.pdf }}">{{ catalog.title }}</a></h3>
-    <a href="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.pdf }}">Download PDF</a>
+    ><h3><a href="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.pdf }}">{{ catalog.title }}</a></h3><!-- whitespace hack -->
+    <a href="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.pdf }}">Download PDF</a
     {% endunless %}
-  </li>
+  ></li><!-- whitespace hack -->
   {% endunless %}
 {% endfor %}

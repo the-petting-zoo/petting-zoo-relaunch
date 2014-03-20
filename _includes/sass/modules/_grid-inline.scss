@@ -35,9 +35,12 @@
 .grid {
   @include unstyled-list;
   margin-left: 0;
+  overflow: hidden;
 
   li {
     display: block;
+    padding: 0;
+    overflow: hidden;
 
     @include breakpoint($xsmall) {
       @include inline-block;
@@ -72,7 +75,9 @@
   }
 }
 
-#home .promos, #products .accordion-content {
+// make a grid from markdown-generated lists for certain posts
+#home .promos, 
+#products .accordion-content {
   ul {
     @extend .grid;
     @extend %grid-large;

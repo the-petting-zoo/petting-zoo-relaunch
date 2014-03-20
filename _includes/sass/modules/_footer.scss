@@ -37,14 +37,20 @@ footer.global, .footer.global {
 
     .control_group {
       clear: both;
+      // overflow: hidden;
     }
 
     input[type="text"], input[type="email"], select, textarea, button {
       @include inline-block;
-      margin: $margin;
       vertical-align: top;
       width: 55%;
+      margin: $margin;
       float: right;
+    }
+
+    .full {
+      // float: none;
+      // clear: both;
     }
   }
 
