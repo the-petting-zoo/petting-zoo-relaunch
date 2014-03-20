@@ -2,98 +2,256 @@
 //  Color themes
 // ==============================================================================
 
-// Default/base
+// CONFIG
 // ------------------------------------------------------------------------------
 
-.default, html {
-  color: $color-text--secondary;
-  background: white;
-  border-color: $color-bg-well;
+// ----- default placeholders & classes ------------------------------------------
 
-  #{headers()} {
-    color: $color-text--primary;
+// http://www.guyroutledge.co.uk/blog/generating-multiple-colour-schemes-with-sass/
+// http://www.sitepoint.com/dealing-color-schemes-sass/
+%color-background {
+  background-color: $color-bg-default;
+}
 
-    a {
-      color: inherit;
-
-      &:hover, &:active {
-        color: inherit;
-      }
-    }
-  }
+%color-headers {
+  color: $color-text--primary;
 
   a {
-    color: $color-text--highlight;
+    color: inherit;
 
     &:hover, &:active {
-      color: darken($color-text--highlight, 12);
+      color: inherit;
     }
-
-    &.active {
-      color: $color-text--primary;
-
-      &:hover, &:active {
-        color: $color-text--primary;
-      }
-    }
-  }
-
-  .button.primary {
-    background: $color-primary;
   }
 }
 
+%color-copy {
+  color: $color-text--secondary;
+}
+
+%color-border {
+  border-color: $color-border;
+}
+
+%color-link {
+  color: $color-text--highlight;
+
+  &:hover, &:active {
+    color: darken($color-text--highlight, 12);
+  }
+
+  // &.active {
+  //   color: $color-text--primary;
+
+  //   &:hover, &:active {
+  //     color: $color-text--primary;
+  //   }
+  // }
+}
+
+%color-button--primary {
+  color: white;
+  background: $color--primary;
+
+  &:hover, &:active {
+    color: white !important;
+    background: lighten($color--primary, 8);
+  }
+}
+
+%color-input {
+  @include form-placeholder-color(lighten($color-text--secondary, 10));
+  background: $color-bg-well;
+  box-shadow: inset 0 1px $color-border;
+  border-color: $color-border;
+
+  &:hover {
+    border-color: darken($color-border, 15);
+  }
+
+  &:focus {
+    border-color: $color--secondary;
+  }
+}
+
+%color-select {
+  background: $color-bg-well;
+  border-color: $color-border;
+}
+
+// text that needs to be stand out
 .highlight {
   color: $color-text--highlight;
   background: transparent;
 }
 
+// an area that subtly stands out from the background
+.island {
+  background: $gray;
+}
 
-// Variations
+// ----- generator mixin -------------------------------------------------------
+// -> keeps color scheme selectors a little more DRY
+
+// -> the $link param is a list: [normal] [:hover]
+// -> the $button param is a list: [normal] [:hover]
+@mixin color-theme(
+  $background: $color-bg-default, 
+  $border: $color-border, 
+  $headers: $color-text--primary, 
+  $copy: $color-text--secondary, 
+  $link: $color-text--highlight, 
+  $button: $color--primary, 
+  $input: $color-bg-well,
+  $select: $color-bg-well
+) {
+
+  background: $background;
+  border-color: $border;
+
+  // override the placeholders for a new color scheme
+
+  // %color-background {
+  //   background: $background;
+  // }
+  %color-headers {
+    color: $headers;
+  }
+  %color-copy {
+    color: $copy;
+  }
+  %color-link {
+    color: first($link);
+
+    &:hover, &:active {
+      // if only one $link color is given...
+      @if (length($link) == 1) {
+        // darken the first color on hover
+        color: darken(first($link), 12);
+      } @else {
+        // otherwise, use the given value
+        color: nth-last($link, 2);
+      }
+    }
+  }
+  %color-button--primary {
+    background: first($button);
+
+    &:hover, &:active {
+      @if (length($link) == 1) {
+        background: lighten(first($button), 8);
+      } @else {
+        background: nth-last($link, 2);
+      }
+    }
+  }
+  // %color-border {
+  //   border-color: $border;
+  // }
+  %color-input {
+    color: $copy;
+    background: $input;
+    box-shadow: inset 0 1px darken($background, 10);
+    border-color: darken($background, 10);
+
+    &:hover {
+      border-color: darken($background, 15);
+    }
+
+    &:focus {
+      border-color: $link;
+    }
+  }
+
+  %color-select {
+    background: $color-bg-well;
+    border-color: $color-border;
+  }
+}
+
+// BASE
+// -> Global elements to be themed
+// -> Specific themes override the %placeholders & properties for these elements
 // ------------------------------------------------------------------------------
 
-// reverse: light FG over dark BG
-%theme-reverse, .reverse {
-  color: white;
-  background: $color-bg-reverse;
-  border-color: lighten($color-bg-reverse, 20);
+.default, body {
+  @extend %color-background;
+  @extend %color-copy;
+  @extend %color-border;
+}
 
-  #{headers()} {
+#{headers()} {
+  @extend %color-headers;
+}
+
+p, li, dl, td, label {
+  @extend %color-copy;
+}
+
+a {
+  @extend %color-link;
+}
+
+.button.primary {
+  @extend %color-button--primary;
+}
+
+input, textarea {
+  @extend %color-input;
+}
+
+select {
+  @extend %color-select;
+}
+
+// THEMES
+// ------------------------------------------------------------------------------
+
+// ----- Reverse -------------------------------------------------------
+// -> light FG over dark BG
+
+%theme-reverse, .reverse {
+  @include color-theme(
+    $background: $color-bg-reverse, 
+    $headers: white, 
+    $copy: white, 
+    $link: $color--tertiary, 
+    $button: $blue--light, 
+    $border: lighten($color-bg-reverse, 20),
+    $input: darken($color-bg-reverse, 5)
+  );
+
+  #{headers()}, a, p {
     @include reverse-text-fix;
-    color: white;
   }
 
   .highlight {
-    color: $color-tertiary !important;
+    color: $color--tertiary !important;
   }
 
   .island {
-    color: lighten($color-bg-reverse, 20);
-  }
-
-  .button.primary {
-    background: $blue--light;
+    background: lighten($color-bg-reverse, 20);
   }
 }
 
 %theme-well, .well {
-  background: $color-bg-well;
+  @include color-theme(
+    $background: $color-bg-well
+  );
 }
 
-// wash: midtone BG, fairly subdued
+// ----- Wash -------------------------------------------------------
+// -> midtone BG, fairly subdued
+
 %theme-wash, .wash {
-  color: $color-text--primary;
-
-  #{headers()} {
-    color: white;
-  }
-
-  a {
-    color: white;
-  }
+  @include color-theme(
+    $headers: white, 
+    $copy: $color-text--primary, 
+    $link: white
+  );
 
   .highlight {
-    color: $color-tertiary !important;
+    color: $color--tertiary !important;
   }
 
   %positive, .positive {
@@ -101,56 +259,51 @@
   }
 }
 
+  // Primary Wash
   %theme-wash--primary, .wash.primary {
     @extend %theme-wash;
-    background: $color-bg-wash--primary;
+    @include color-theme(
+      $background: $color-bg-wash--primary, 
+      $link: white lighten($color-bg-wash--primary, 20),
+      $button: $blue--light, 
+      $border: lighten($color-bg-reverse, 20)
+    );
 
-    a {
-
-      &:hover, &:active {
-        color: lighten($color-bg-wash--primary, 20);
-      }
-
-      &.active {
+    a.active {
       color: $color-text--primary;
 
-        &:hover, &:active {
-          color: $color-text--primary;
-        }
+      &:hover, &:active {
+        color: $color-text--primary;
       }
     }
   }
-
-  %theme-wash--secondary, .wash.secondary {
-    background: $color-bg-wash--secondary;
-
-    a {
-
-      &:hover, &:active {
-        color: lighten($color-bg-wash--secondary, 16);
-      }
-
-      &.active {
-      color: $color-text--primary;
-
-        &:hover, &:active {
-          color: $color-text--primary;
-        }
-      }
-    }
-  }
-
-// flood: bright BG with light FG. For obnoxious callouts.
-%theme-flood, .flood {
-  color: white;
-  background: $color-bg-flood;
   
-  #{headers()} {
-    color: white;
-  }
+  // Secondary Wash
+  %theme-wash--secondary, .wash.secondary {
+    @include color-theme(
+      $background: $color-bg-wash--secondary, 
+      $link: white lighten($color-bg-wash--secondary, 16),
+      $button: $blue--light, 
+      $border: lighten($color-bg-reverse, 20)
+    );
 
-  a {
-    color: white;
-  }
+    a.active {
+      color: $color-text--primary;
 
+      &:hover, &:active {
+        color: $color-text--primary;
+      }
+    }
+  } 
+
+// ----- Flood -------------------------------------------------------
+// -> bright BG with light FG. For obnoxious callouts.
+
+%theme-flood, .flood {
+  @include color-theme(
+    $background: $color-bg-flood, 
+    $headers: white, 
+    $copy: white, 
+    $link: white
+  );
 }

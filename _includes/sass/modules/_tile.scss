@@ -36,6 +36,10 @@
 }
 
 .tile.vertical {
+
+  &.more {
+    height: 100%;
+  }
   
   .thumb {
     display: block;

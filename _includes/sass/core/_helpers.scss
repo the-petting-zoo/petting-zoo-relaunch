@@ -44,6 +44,20 @@
   } 
 }
 
+// ==================================================================================
+// Fun with SASS lists
+// -> check it: http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
+// ==================================================================================
+
+// get last and first values of a list
+@function last($list) {
+  @return nth($list, length($list));
+}
+
+@function first($list) {
+  @return nth($list, 1);
+}
+
 // return the nth value of an array
 // unless the value is bigger than the array's length
 // then return the last value
@@ -53,32 +67,6 @@
   } @else {
     @return nth($array, length($array));
   }
-}
-
-// ==================================================================================
-// Fun with SASS lists
-// -> check it: http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
-// ==================================================================================
-
-// add a counter to a list
-@mixin counter($style: default, $append: ". ", $color: $color-text--primary, $item: li) {
-  list-style: none;
-  counter-reset: $item;
-
-  #{$item}:before {
-    content: counter(#{$item}) "#{$append}";
-    counter-increment: $item;
-    color: $color;
-  }
-}
-
-// get last and first values of a list
-@function last($list) {
-  @return nth($list, length($list));
-}
-
-@function first($list) {
-  @return nth($list, 1);
 }
 
 // ==================================================================================
@@ -113,6 +101,25 @@
 // ==================================================================================
 // Special effects & graphical stuff
 // ==================================================================================
+
+// style the color of a form placeholder
+@mixin form-placeholder-color($color: $color-text--secondary) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    color: $color;  
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+    color: $color;  
+  }
+
+  &:-ms-input-placeholder {  
+    color: $color;  
+  }
+}
 
 // use an invisible text-shadow to slim down light text over a dark background
 // in OSX/webkit
@@ -264,6 +271,9 @@
 // General layout helpers
 // ==================================================================================
 
+// Lists
+// ------------------------------------------------------------------------------
+
 @mixin unstyled-list {
   list-style: none;
   list-style-type: none;
@@ -299,6 +309,18 @@
   padding: 0;
 }
 
+// add a counter to a list (mimic an ordered list)
+@mixin counter($style: default, $append: ". ", $color: $color-text--primary, $item: li) {
+  list-style: none;
+  counter-reset: $item;
+
+  #{$item}:before {
+    content: counter(#{$item}) "#{$append}";
+    counter-increment: $item;
+    color: $color;
+  }
+}
+
 @mixin inline-dl($break: false) {
   & > dt, & > dd {
     display: inline;
@@ -319,6 +341,9 @@
     }
   }
 }
+
+// Display & positioning
+// ------------------------------------------------------------------------------
 
 // vertically center the children of an inline block element
 @mixin inline-block--centered($height: auto) {

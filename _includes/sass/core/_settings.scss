@@ -14,7 +14,7 @@ $base-duration: 0.5s; // in seconds
 // --------------------------------------------------------------------------
 
 // baseline palette
-// -> for reference only. when applying a theme use labels like $color-primary
+// -> for reference only. when applying a theme use labels like $color--primary
 $turquoise--light: #b7d1d8;
 $turquoise: #7dbfcb;
 
@@ -29,11 +29,12 @@ $pink: #f035a6;
 $gray: #ebf0f0;  
 
 // basic colors
-$color-primary: $blue;
-$color-secondary: $pink; 
-$color-tertiary: $yellow;          
+$color--primary: $blue;
+$color--secondary: $pink; 
+$color--tertiary: $yellow;          
 
 // bgs
+$color-bg-default: white;
 $color-bg-reverse: $blue--dark;
 $color-bg-well: $gray;
 $color-bg-wash--primary: $turquoise;
@@ -44,12 +45,15 @@ $color-bg-flood: $pink;
 $color-text--primary: $blue--dark;
 $color-text--secondary: #666d7d;
 $color-text--tertiary: darken($gray, 30);
-$color-text--highlight: $pink;
+$color-text--highlight: $pink; // links and highlights
 
 $color-selection: $turquoise;
 
+// borders, accents
+$color-border: $gray;
 
-// Hairlines
+
+// Hairlines/borders
 // --------------------------------------------------------------------------
 
 $hairline-w: 1px;
