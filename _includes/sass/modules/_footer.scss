@@ -14,6 +14,8 @@ footer, .footer {
 
 // global/main footer @ bottom of each page
 footer.global, .footer.global {
+  $form-margin: 0.5em 0;
+
   @extend %theme-reverse;
   // @include rem(margin-top, 24px);
   @include rem(padding, 24px 0 0 0);
@@ -24,35 +26,48 @@ footer.global, .footer.global {
   }
 	
   form {
-    $margin: 0.5em 0;
     @include grid-span-break(6 6 8, 1 1 1);
+    font-size: 0;
+  }
 
     label {
       @extend .highlight;
       @include inline-block;
-      width: 40%;
-      margin: $margin;
+      @include rem(font-size, 16px);
+      width: 30%;
+      margin: $form-margin;
+      padding-right: 1em;
       text-align: right;
     }
 
     .control_group {
+      position: relative;
       clear: both;
       // overflow: hidden;
     }
 
-    input[type="text"], input[type="email"], select, textarea, button {
+    input[type="text"], input[type="email"], select, textarea, button, .mailing-list {
       @include inline-block;
+      @include rem(font-size, 13px);
       vertical-align: top;
-      width: 55%;
-      margin: $margin;
+      width: 69%;
+      margin: $form-margin;
       float: right;
     }
 
-    .full {
-      // float: none;
-      // clear: both;
+    .mailing-list {
+      margin: 0;
+
+      label {
+        @extend %gentleman;
+        @include rem(font-size, 13px);
+        width: auto;
+        margin-left: 0.2em;
+        color: white;
+        text-align: left;
+        line-height: 1.2;
+      }
     }
-  }
 
   .meta.contact {
     @include grid-span-break(6 3 4, 1 7 9);
@@ -75,11 +90,24 @@ footer.global, .footer.global {
       @extend %gentleman-bold;
       @extend .highlight;
     }
+  }
+
+    .address {
+      margin-top: 1em;
+    }
 
     .social {
       @include inline-list;
+
+      .icon {
+        @extend .island;
+        width: 1.5em;
+        height: 1.5em;
+        padding: 0.3em;
+        border-radius: em(3);
+        margin: 0;
+      }
     }
-  }
 }
 
 .map + footer.global {

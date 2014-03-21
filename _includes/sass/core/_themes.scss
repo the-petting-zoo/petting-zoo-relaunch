@@ -75,8 +75,12 @@
 }
 
 %color-select {
-  background: $color-bg-well;
-  border-color: $color-border;
+  @extend %icon-arrow-down--blue;
+  background-color: $color-bg-well;
+  background-position: right 0.8em center;
+  background-repeat: no-repeat;
+  background-size: 0.6em 0.6em;
+  border-color: darken($color-border, 10);
 }
 
 // text that needs to be stand out
@@ -95,6 +99,7 @@
 
 // -> the $link param is a list: [normal] [:hover]
 // -> the $button param is a list: [normal] [:hover]
+
 @mixin color-theme(
   $background: $color-bg-default, 
   $border: $color-border, 
@@ -164,8 +169,17 @@
   }
 
   %color-select {
-    background: $color-bg-well;
-    border-color: $color-border;
+    color: $copy;
+    background-color: $select;
+    border-color: darken($background, 10);
+
+    &:hover {
+      border-color: darken($background, 10);
+    }
+
+    &:focus {
+      // border-color: $link;
+    }
   }
 }
 
@@ -218,7 +232,8 @@ select {
     $link: $color--tertiary, 
     $button: $blue--light, 
     $border: lighten($color-bg-reverse, 20),
-    $input: darken($color-bg-reverse, 5)
+    $input: darken($color-bg-reverse, 5),
+    $select: lighten($color-bg-reverse, 10)
   );
 
   #{headers()}, a, p {
@@ -226,11 +241,19 @@ select {
   }
 
   .highlight {
-    color: $color--tertiary !important;
+    color: $color--tertiary;
   }
 
   .island {
     background: lighten($color-bg-reverse, 20);
+  }
+
+  a.island:hover {
+    background: lighten($color-bg-reverse, 25);
+  }
+
+  select {
+    @extend %icon-arrow-down--white;
   }
 }
 
@@ -244,14 +267,9 @@ select {
 // -> midtone BG, fairly subdued
 
 %theme-wash, .wash {
-  @include color-theme(
-    $headers: white, 
-    $copy: $color-text--primary, 
-    $link: white
-  );
 
   .highlight {
-    color: $color--tertiary !important;
+    color: $color--tertiary;
   }
 
   %positive, .positive {
@@ -263,9 +281,11 @@ select {
   %theme-wash--primary, .wash.primary {
     @extend %theme-wash;
     @include color-theme(
+      $headers: white, 
+      $copy: $color-text--primary,
       $background: $color-bg-wash--primary, 
       $link: white lighten($color-bg-wash--primary, 20),
-      $button: $blue--light, 
+      $button: $yellow, 
       $border: lighten($color-bg-reverse, 20)
     );
 
@@ -281,6 +301,8 @@ select {
   // Secondary Wash
   %theme-wash--secondary, .wash.secondary {
     @include color-theme(
+      $headers: white, 
+      $copy: $color-text--primary,
       $background: $color-bg-wash--secondary, 
       $link: white lighten($color-bg-wash--secondary, 16),
       $button: $blue--light, 

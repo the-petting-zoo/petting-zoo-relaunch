@@ -39,21 +39,22 @@
             <label for="email">Your Email</label>
             <input id="email" type="email" name="email" placeholder="yourname@email.com" />
           </div>
-            <select name="subject" class="full">
-              <option value="" disabled selected>How can we help?</option>
-              <option value="order">I'd like to place an order</option>
-              <option value="sales">I'd like to speak to a sales representative</option>
-              <option value="general">I have a general question</option>
-              <option value="python">What is the capital of Assyria?</option>
-            </select>
+          <select name="subject">
+            <option value="" disabled selected>How can we help?</option>
+            <option value="order">I'd like to place an order</option>
+            <option value="sales">I'd like to speak to a sales representative</option>
+            <option value="general">I have a general question</option>
+            <option value="python">What is the capital of Assyria?</option>
+          </select>
           <div class="control_group">
             <label for="message">Your Message</label>
             <textarea id="message" name="message" rows="8"></textarea>
           </div>
-          <button name="contact-submit" id="contact-submit" type="submit" class="button primary small">Send</button>
-          <div class="control_group">
-            <input type="checkbox" id="mailing-list" name="mailing-list" value="opted-in" /> Add me to <strong>The Petting Zoo's</strong> mailing list.
+          <div class="control_group mailing-list">
+            <input type="checkbox" id="mailing-list" name="mailing-list" value="opted-in" />
+            <label for="mailing-list"=>Add me to <strong>The Petting Zoo's</strong> mailing list.</label>
           </div>
+          <button name="contact-submit" id="contact-submit" type="submit" class="button primary small">Send</button>
         </form>
 
         <aside class="meta contact">
@@ -64,21 +65,25 @@
             <dt>F</dt>
             <dd>{{ site.data.contact.phone.fax }}</dd>
           </dl>
-          <p>
+          <p class="address">
             {{ site.data.contact.address.street }}<br />
             {{ site.data.contact.address.city }}, {{ site.data.contact.address.state }} {{ site.data.contact.address.zip }}
           </p>
           {% if site.data.contact.social.size > 0 %}
           <ul class="social">
             {% for profile in site.data.contact.social %}
-            <li><a href="{{ profile.url }}"><img src="{{ profile.icon }}" alt="{{ profile.platform }}"></a></li>
+            <li>
+              <a href="{{ profile.url }}" class="icon">
+                <span class="icon-social-{{ profile.icon }}--yellow" aria-hidden="true"></span><span class="screen-reader-text">{{ profile.platform }}</span>
+              </a>
+            </li>
             {% endfor %}
           </ul>
           {% endif %}
         </aside>
       </section>
       <section class="footer-menu">
-        {% include html/nav-global.html %}
+        {% include html/nav-global.html mobile=false %}
         <h5>{{ site.tag | xml_escape }}</h5>
         <small role="copyright">&copy; Copyright {{ site.time | date: "%Y" }} The Petting Zoo, Inc. All rights reserved.</small>
       </section>

@@ -58,5 +58,9 @@
 // for the first section on a page...
 // make the bg bleed under the header and add padding to keep stuff from overlapping
 [role="banner"].global + .hero, [role="banner"].global + .strip, [role="banner"].global + .wrapper, .first {
-  @include rem(padding-top, $header-padding);
+  @include rem(padding-top, first($header-padding));
+
+  @include breakpoint($xsmall) {
+    @include rem(padding-top, nth-last($header-padding, 2));
+  }
 }

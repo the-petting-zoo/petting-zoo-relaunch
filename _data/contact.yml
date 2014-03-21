@@ -9,9 +9,9 @@ phone:
   fax: "410.760.5560"
 
 social:
-  - platform: facebook
+  - platform: Facebook
     url: "http://www.facebook.com"
-    icon: "http://placehold.it/25x25"
-  - platform: twitter
-    url: "http://www.twitter.com"
-    icon: "http://placehold.it/25x25"
+    icon: "fb"
+  # - platform: twitter
+  #   url: "http://www.twitter.com"
+  #   icon: "twitter"

@@ -15,19 +15,19 @@
 // ------- Global/main nav -------------------------------------------
 
 [role="navigation"].global {
-  $logo-top: 34px;
+  $bg: $gray;
 
   @function ribbon-offset($i) {
     @return (nth-last($header-ribbon-margins, $i) + $header-h - nth($layout-margins, $i));
   }
 
   @include rem(height, $header-h);
-  @include rem(margin-top, $logo-top);
+  @include rem(margin-top, abs(first($logo-top)));
   text-align: center;
   position: relative;
   padding: 0;
   overflow: visible;
-  background: $gray;
+  background: $bg;
 
   &:before, &:after {
     border-width: 0;
@@ -66,10 +66,13 @@
     }
   }
 
+  @include breakpoint($xsmall) {
+    @include rem(margin-top, abs(nth-last($logo-top, 2)));
+  }
+
   .menu {
     @include inline-list;
     @include rem(height, $header-h);
-    @include rem(font-size, 16px);
     @include hidden;
     text-transform: uppercase;
 
@@ -80,8 +83,9 @@
     a {
       @extend %gentleman-bold;
       @include inline-block--centered($header-h);
-      @include rem(width, 120px);
+      @include rem(width, 108px);
       @include rem(height, $header-h);
+      @include rem(font-size, 14px);
       display: block;
       color: lighten($blue--dark, 4);
       text-transform: uppercase;
@@ -94,12 +98,27 @@
         background: $pink;
         color: white;
       }
+
+      @include breakpoint($medium) {
+        @include rem(font-size, 16px);
+        @include rem(width, 120px);
+      }
     }
   }
 
   .menu-mobile {
-    // @include rem(margin, $top 0 0 0);
+    $height: 2.5em;
+    position: relative;
+    top: 50%;
+    height: $height;
+    margin: -($height/2) 1em 0 0;
     float: right;
+    vertical-align: center;
+    background-color: lighten($bg, 5);
+
+    @include breakpoint($small) {
+      margin-right: 2em;
+    }
 
     @include breakpoint($small) {
       @include hidden;
@@ -115,18 +134,29 @@
     }
 
     &.split {
-      @include rem(margin-left, ($logo-w + 36px + $margin));
+      @include rem(margin-left, (first($logo-w) + 24px + $margin));
+
+      @include breakpoint($small) {
+        @include rem(margin-left, (nth-last($logo-w, 2) + 36px + $margin));
+      }
     }
   }
 
   .logo {
-    @include rem(top, -$logo-top);
-    @include rem(width, $logo-w);
-    @include rem(margin-left, -($logo-w/2));
+    @include rem(top, first($logo-top));
+    @include rem(width, first($logo-w));
+    @include rem(margin-left, -(first($logo-w)/2));
     display: block;
     position: absolute;
-    left: 50%;
+    
+      left: 50%;
     z-index: $z--high;
+
+    @include breakpoint($xsmall) {
+      @include rem(top, nth-last($logo-top, 2));
+      @include rem(width, nth-last($logo-w, 2));
+      @include rem(margin-left, -(nth-last($logo-w, 2)/2));
+    }
   }
 }
 
@@ -145,6 +175,10 @@ footer.global [role="navigation"].global {
 
   .menu {
     margin: 0;
+
+    @include breakpoint($xsmall) {
+      @include restore-visible;
+    }
   }
 
   .split {

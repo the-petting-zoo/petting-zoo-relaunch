@@ -1,23 +1,56 @@
----
----
-
-.icon.logo-pettingzoo {
-	background-image: url('{{site.url }}{{ site.assets.css }}petting-zoo-logo-optimized.png');
+.icon-arrow-down--blue {
+	background-image: url('png/arrow-down--blue.png');
 	background-repeat: no-repeat;
 }
-.icon.doc {
-	background-image: url('{{site.url }}{{ site.assets.css }}icon-doc.png');
+.icon-arrow-down--white {
+	background-image: url('png/arrow-down--white.png');
 	background-repeat: no-repeat;
 }
-.icon.facebook {
-	background-image: url('{{site.url }}{{ site.assets.css }}icon-facebook.png');
+.icon-arrow-down--yellow {
+	background-image: url('png/arrow-down--yellow.png');
 	background-repeat: no-repeat;
 }
-.icon.pdf {
-	background-image: url('{{site.url }}{{ site.assets.css }}icon-pdf.png');
+.icon-arrow-left--blue {
+	background-image: url('png/arrow-left--blue.png');
 	background-repeat: no-repeat;
 }
-.icon.twitter {
-	background-image: url('{{site.url }}{{ site.assets.css }}icon-twitter.png');
+.icon-arrow-left--white {
+	background-image: url('png/arrow-left--white.png');
+	background-repeat: no-repeat;
+}
+.icon-arrow-left--yellow {
+	background-image: url('png/arrow-left--yellow.png');
+	background-repeat: no-repeat;
+}
+.icon-arrow-right--blue {
+	background-image: url('png/arrow-right--blue.png');
+	background-repeat: no-repeat;
+}
+.icon-arrow-right--white {
+	background-image: url('png/arrow-right--white.png');
+	background-repeat: no-repeat;
+}
+.icon-arrow-right--yellow {
+	background-image: url('png/arrow-right--yellow.png');
+	background-repeat: no-repeat;
+}
+.icon-pdf--blue {
+	background-image: url('png/pdf--blue.png');
+	background-repeat: no-repeat;
+}
+.icon-pdf--pink {
+	background-image: url('png/pdf--pink.png');
+	background-repeat: no-repeat;
+}
+.icon-pdf--yellow {
+	background-image: url('png/pdf--yellow.png');
+	background-repeat: no-repeat;
+}
+.icon-social-fb--yellow {
+	background-image: url('png/social-fb--yellow.png');
+	background-repeat: no-repeat;
+}
+.icon-social-twitter--yellow {
+	background-image: url('png/social-twitter--yellow.png');
 	background-repeat: no-repeat;
 }
