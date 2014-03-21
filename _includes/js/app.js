@@ -13,7 +13,9 @@
       // --------------------------------------------------------------- 
       carousel: ".carousel", // class of carousel elements
       tabs: "nav.local.tabs",
-      accordion: ".accordion-header"
+      accordion: ".accordion-header",
+      fallback: "fallback", // "fallback" data attribute value
+      menuMobile: "#js-menu-mobile"
     },
 
     // Setup
@@ -28,13 +30,24 @@
       }
 
       // if SVG isn't supported, swap out SVGs for corresponding PNGs
+      // looks for a "data-fallback" attribute on the img tag
       if (!Modernizr.svg) {
-        $(".logo img").attr("src", "assets/images/logo-pettingzoo.png");
+        $("img").each(function() {
+          var $img = $(this);
+          if ($img.data("fallback")) $img.attr("src", $img.data(pettingzoo.config.fallback));
+        });
       }
 
       // set up enquire.js stuff
       pettingzoo.registerBreakpoints();
       pettingzoo.tabs.init(pettingzoo.config.accordion); // set up accordion version of tabs (mobile/default)
+
+      $("#js-menu-mobile").change(function(){
+        if ($(this).val()!='') {
+          window.location.href = $(this).val();
+          console.log("menu: " + $(this).val());
+        }
+      });
 
       // set up hero carousel
       $(pettingzoo.config.carousel).flexslider({
@@ -85,7 +98,7 @@
       // ----------------------------------------------------------------------------------
       active : "active", // the class of the active (current) tab
       open: "is-open", // the class of the content currently displayed
-      multiple: true, // can multiple tabs be open? (for accordion state)
+      multiple: false, // can multiple tabs be open? (for accordion state)
 
       // methods
       // ----------------------------------------------------------------------------------

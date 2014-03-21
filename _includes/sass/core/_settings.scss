@@ -52,6 +52,16 @@ $color-selection: $turquoise;
 // borders, accents
 $color-border: $gray;
 
+// color themes (nested lists)
+// -> headers, text, highlight, button, background
+// $themes: 
+//   "default" $color-text--primary $color-text--secondary white,
+//   "reverse" 
+//   (wash primary)
+//   (wash secondary)
+//   "flood"
+
+
 
 // Hairlines/borders
 // --------------------------------------------------------------------------
@@ -83,13 +93,14 @@ $layout-width--narrow: 800px; // max width of narrower container, ~10 cols at me
 
 $strip-padding: 18px;
 
-$logo-w: 145px;
+$logo-w: 90px 145px;
+$logo-top: -10px -34px;
 
 $header-h: 60px;
-$header-padding: 148px; // padding for elements "under" the (absolutely positioned) header
+$header-padding: 120px 160px; // padding for elements "under" the (absolutely positioned) header
 $header-ribbon-bottom: -13px; // how far down the ribbon ends are positioned, relative to the haeder.
 $header-ribbon-inset: 8px 13px; // how wide the "cutout" is on each side of the ribbon.
-$header-ribbon-margins: 4px 12px 24px; // how far the ribbon end is from the left and right sides of the screen.
+$header-ribbon-margins: 8px 12px 24px; // how far the ribbon end is from the left and right sides of the screen.
 
 
 $margin-whitespace: -5px; // a fix for gaps created by whitespace, an inline-block bug
