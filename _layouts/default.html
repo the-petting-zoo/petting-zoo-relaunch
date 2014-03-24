@@ -30,31 +30,48 @@
     <footer role="contentinfo" class="global">
       <h3 class="callout">Get in Touch</h3>
       <section class="wrapper narrow">
-        <form action="">
+        
+        <script src="http://cdn.jotfor.ms/static/jotform.js?3.2.1053" type="text/javascript"></script>
+<script type="text/javascript">
+   JotForm.init();
+</script>
+     <form class="jotform-form" action="http://submit.jotform.us/submit/40826352421145/" method="post" name="form_40826352421145" id="40826352421145" accept-charset="utf-8">
+        <input type="hidden" name="formID" value="40826352421145" />
           <div class="control_group">
             <label for="name">Your Name</label>
-            <input id="name" type="text" name="name" />
+            <input type="text" class=" form-textbox validate[required]" data-type="input-textbox" id="input_3" name="q3_yourName" size="20" value="" required/>
           </div>
           <div class="control_group">
             <label for="email">Your Email</label>
-            <input id="email" type="email" name="email" placeholder="yourname@email.com" />
+            <input type="email" class=" form-textbox validate[required, Email]" data-type="input-textbox" id="input_4" name="q4_yourEmail" size="20" value="" required/>
           </div>
-          <select name="subject">
+          <div class="control_group">
+          <select class="form-dropdown" id="input_5" name="q5_input5">
             <option value="" disabled selected>How can we help?</option>
             <option value="order">I'd like to place an order</option>
             <option value="sales">I'd like to speak to a sales representative</option>
             <option value="general">I have a general question</option>
             <option value="python">What is the capital of Assyria?</option>
           </select>
+          </div>
           <div class="control_group">
             <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="8"></textarea>
+            <textarea id="input_6" class="form-textarea validate[required]" name="q6_yourMessage" cols="40" rows="6" required></textarea>
           </div>
+          <input type="hidden" class="form-hidden" value="SITE URL" id="input_9" name="q9_url9" />
           <div class="control_group mailing-list">
             <input type="checkbox" id="mailing-list" name="mailing-list" value="opted-in" />
             <label for="mailing-list">Add me to <strong>The Petting Zoo's</strong> mailing&nbsp;list.</label>
           </div>
           <button name="contact-submit" id="contact-submit" type="submit" class="button primary small">Send</button>
+
+          <span style="display:none">
+        Should be Empty:
+            <input type="text" name="website" value="" />
+          </span>
+          <script type="text/javascript">
+          document.getElementById("si" + "mple" + "_spc").value = "40826352421145-40826352421145";
+          </script>
         </form>
 
         <aside class="meta contact">
@@ -81,6 +98,8 @@
           </ul>
           {% endif %}
         </aside>
+
+
       </section>
       <section class="footer-menu">
         {% include html/nav-global.html mobile=false %}
