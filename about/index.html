@@ -8,7 +8,7 @@ title: About Us
   <h1 class="title highlight">{{ post.title }}</h1>
   {% if post.feature %}
   <figure>
-    <img src="{{ post.feature }}" alt="{{ post.feature_caption }}" />
+    <img src="{{ post.feature }}" alt="{{ post.feature_caption | xml_escape }}" />
     <figcaption>{{ post.feature_caption }}</figcaption>
   </figure>
   {% endif %}
