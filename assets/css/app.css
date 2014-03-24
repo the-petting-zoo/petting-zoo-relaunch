@@ -1364,74 +1364,74 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 }
 
 /* line 271, ../../_includes/sass/core/_themes.scss */
-.footer-menu .highlight, .wash.primary .highlight, .footer-menu .strip.blurb h2, .strip.blurb .footer-menu h2, .wash.primary .strip.blurb h2, .strip.blurb .wash.primary h2, .footer-menu footer.global label, footer.global .footer-menu label, .wash.primary footer.global label, footer.global .wash.primary label, .footer-menu .footer.global label, .footer.global .footer-menu label, .wash.primary .footer.global label, .footer.global .wash.primary label, .footer-menu footer.global .meta.contact dt, footer.global .meta.contact .footer-menu dt, .wash.primary footer.global .meta.contact dt, footer.global .meta.contact .wash.primary dt, .footer-menu .footer.global .meta.contact dt, .footer.global .meta.contact .footer-menu dt, .wash.primary .footer.global .meta.contact dt, .footer.global .meta.contact .wash.primary dt, .wash .highlight, .wash .strip.blurb h2, .strip.blurb .wash h2, .wash footer.global label, footer.global .wash label, .wash .footer.global label, .footer.global .wash label, .wash footer.global .meta.contact dt, footer.global .meta.contact .wash dt, .wash .footer.global .meta.contact dt, .footer.global .meta.contact .wash dt {
+.footer-menu .highlight, footer.global [role="navigation"].global .menu li .highlight, .wash.primary .highlight, .footer-menu .strip.blurb h2, .strip.blurb .footer-menu h2, footer.global [role="navigation"].global .menu li .strip.blurb h2, .strip.blurb footer.global [role="navigation"].global .menu li h2, .wash.primary .strip.blurb h2, .strip.blurb .wash.primary h2, .footer-menu footer.global label, footer.global .footer-menu label, footer.global [role="navigation"].global .menu li label, .wash.primary footer.global label, footer.global .wash.primary label, .footer-menu .footer.global label, .footer.global .footer-menu label, .wash.primary .footer.global label, .footer.global .wash.primary label, .footer-menu footer.global .meta.contact dt, footer.global .meta.contact .footer-menu dt, footer.global [role="navigation"].global .menu li .meta.contact dt, footer.global .meta.contact [role="navigation"].global .menu li dt, .wash.primary footer.global .meta.contact dt, footer.global .meta.contact .wash.primary dt, .footer-menu .footer.global .meta.contact dt, .footer.global .meta.contact .footer-menu dt, .footer.global .meta.contact footer.global [role="navigation"].global .menu li dt, .wash.primary .footer.global .meta.contact dt, .footer.global .meta.contact .wash.primary dt, .wash .highlight, .wash .strip.blurb h2, .strip.blurb .wash h2, .wash footer.global label, footer.global .wash label, .wash .footer.global label, .footer.global .wash label, .wash footer.global .meta.contact dt, footer.global .meta.contact .wash dt, .wash .footer.global .meta.contact dt, .footer.global .meta.contact .wash dt {
   color: #fed341;
 }
 /* line 275, ../../_includes/sass/core/_themes.scss */
-.footer-menu [role="copyright"], .footer-menu .positive, .wash.primary .positive, .wash .footer-menu [role="copyright"], .footer-menu .wash [role="copyright"], .wash .positive {
+.footer-menu [role="copyright"], footer.global [role="navigation"].global .menu li .footer-menu [role="copyright"], .footer-menu footer.global [role="navigation"].global .menu li [role="copyright"], .footer-menu .positive, footer.global [role="navigation"].global .menu li .positive, .wash.primary .positive, .wash .footer-menu [role="copyright"], .footer-menu .wash [role="copyright"], .wash .positive {
   color: #3c4b72;
 }
 
 /* line 281, ../../_includes/sass/core/_themes.scss */
-.footer-menu, .wash.primary {
+.footer-menu, footer.global [role="navigation"].global .menu li, .wash.primary {
   background: #7dbfcb;
-  border-color: #667aae;
+  border-color: #48a3b4;
 }
 /* line 122, ../../_includes/sass/core/_themes.scss */
-.footer-menu h1, .footer-menu h2, .footer-menu h3, .footer-menu h4, .footer-menu h5, .footer-menu h6, .wash.primary h1, .wash.primary h2, .wash.primary h3, .wash.primary h4, .wash.primary h5, .wash.primary h6 {
+.footer-menu h1, footer.global [role="navigation"].global .menu li h1, .footer-menu h2, footer.global [role="navigation"].global .menu li h2, .footer-menu h3, footer.global [role="navigation"].global .menu li h3, .footer-menu h4, footer.global [role="navigation"].global .menu li h4, .footer-menu h5, footer.global [role="navigation"].global .menu li h5, .footer-menu h6, footer.global [role="navigation"].global .menu li h6, .wash.primary h1, .wash.primary h2, .wash.primary h3, .wash.primary h4, .wash.primary h5, .wash.primary h6 {
   color: white;
 }
 /* line 125, ../../_includes/sass/core/_themes.scss */
-.footer-menu .default, .footer-menu body, .footer-menu p, .footer-menu li, .footer-menu dl, .footer-menu td, .footer-menu label, .wash.primary .default, .wash.primary body, .wash.primary p, .wash.primary li, .wash.primary dl, .wash.primary td, .wash.primary label {
+.footer-menu .default, footer.global [role="navigation"].global .menu li .default, .footer-menu body, footer.global [role="navigation"].global .menu li body, .footer-menu p, footer.global [role="navigation"].global .menu li p, .footer-menu li, footer.global [role="navigation"].global .menu li li, .footer-menu dl, footer.global [role="navigation"].global .menu li dl, .footer-menu td, footer.global [role="navigation"].global .menu li td, .footer-menu label, footer.global [role="navigation"].global .menu li label, .wash.primary .default, .wash.primary body, .wash.primary p, .wash.primary li, .wash.primary dl, .wash.primary td, .wash.primary label {
   color: #3c4b72;
 }
 /* line 128, ../../_includes/sass/core/_themes.scss */
-.footer-menu a, .wash.primary a {
+.footer-menu a, footer.global [role="navigation"].global .menu li a, .wash.primary a {
   color: white;
 }
 /* line 131, ../../_includes/sass/core/_themes.scss */
-.footer-menu a:hover, .footer-menu a:active, .wash.primary a:hover, .wash.primary a:active {
+.footer-menu a:hover, footer.global [role="navigation"].global .menu li a:hover, .footer-menu a:active, footer.global [role="navigation"].global .menu li a:active, .wash.primary a:hover, .wash.primary a:active {
   color: #c6e3e8;
 }
 /* line 142, ../../_includes/sass/core/_themes.scss */
-.footer-menu .button.primary, .wash.primary .button.primary {
+.footer-menu .button.primary, footer.global [role="navigation"].global .menu li .button.primary, .wash.primary .button.primary {
   background: #fed341;
 }
 /* line 145, ../../_includes/sass/core/_themes.scss */
-.footer-menu .button.primary:hover, .footer-menu .button.primary:active, .wash.primary .button.primary:hover, .wash.primary .button.primary:active {
+.footer-menu .button.primary:hover, footer.global [role="navigation"].global .menu li .button.primary:hover, .footer-menu .button.primary:active, footer.global [role="navigation"].global .menu li .button.primary:active, .wash.primary .button.primary:hover, .wash.primary .button.primary:active {
   background: #c6e3e8;
 }
 /* line 156, ../../_includes/sass/core/_themes.scss */
-.footer-menu input, .footer-menu textarea, .wash.primary input, .wash.primary textarea {
+.footer-menu input, footer.global [role="navigation"].global .menu li input, .footer-menu textarea, footer.global [role="navigation"].global .menu li textarea, .wash.primary input, .wash.primary textarea {
   color: #3c4b72;
   background: #ebf0f0;
   box-shadow: inset 0 1px #59adbc;
   border-color: #59adbc;
 }
 /* line 162, ../../_includes/sass/core/_themes.scss */
-.footer-menu input:hover, .footer-menu textarea:hover, .wash.primary input:hover, .wash.primary textarea:hover {
+.footer-menu input:hover, footer.global [role="navigation"].global .menu li input:hover, .footer-menu textarea:hover, footer.global [role="navigation"].global .menu li textarea:hover, .wash.primary input:hover, .wash.primary textarea:hover {
   border-color: #48a3b4;
 }
 /* line 166, ../../_includes/sass/core/_themes.scss */
-.footer-menu input:focus, .footer-menu textarea:focus, .wash.primary input:focus, .wash.primary textarea:focus {
+.footer-menu input:focus, footer.global [role="navigation"].global .menu li input:focus, .footer-menu textarea:focus, footer.global [role="navigation"].global .menu li textarea:focus, .wash.primary input:focus, .wash.primary textarea:focus {
   border-color: white #c6e3e8;
 }
 /* line 171, ../../_includes/sass/core/_themes.scss */
-.footer-menu select, .wash.primary select {
+.footer-menu select, footer.global [role="navigation"].global .menu li select, .wash.primary select {
   color: #3c4b72;
   background-color: #ebf0f0;
   border-color: #59adbc;
 }
 /* line 176, ../../_includes/sass/core/_themes.scss */
-.footer-menu select:hover, .wash.primary select:hover {
+.footer-menu select:hover, footer.global [role="navigation"].global .menu li select:hover, .wash.primary select:hover {
   border-color: #59adbc;
 }
 /* line 292, ../../_includes/sass/core/_themes.scss */
-.footer-menu a.active, .wash.primary a.active {
+.footer-menu a.active, footer.global [role="navigation"].global .menu li a.active, .wash.primary a.active {
   color: #3c4b72;
 }
 /* line 295, ../../_includes/sass/core/_themes.scss */
-.footer-menu a.active:hover, .footer-menu a.active:active, .wash.primary a.active:hover, .wash.primary a.active:active {
+.footer-menu a.active:hover, footer.global [role="navigation"].global .menu li a.active:hover, .footer-menu a.active:active, footer.global [role="navigation"].global .menu li a.active:active, .wash.primary a.active:hover, .wash.primary a.active:active {
   color: #3c4b72;
 }
 
@@ -2164,6 +2164,13 @@ footer.global .social .icon, .footer.global .social .icon {
 .footer-menu h5 {
   line-height: 1.2;
   margin-bottom: 0;
+  margin-top: 1em;
+}
+@media (min-width: 30em) {
+  /* line 180, ../../_includes/sass/modules/_footer.scss */
+  .footer-menu h5 {
+    margin-top: 0;
+  }
 }
 
 /* line 9, ../../_includes/sass/modules/_hero.scss */
@@ -2486,29 +2493,54 @@ footer.global .social .icon, .footer.global .social .icon {
 footer.global [role="navigation"].global {
   margin: 0 0 6px 0;
   margin: 0 0 0.375rem 0;
+  padding: 65px 0 0 0;
+  padding: 4.0625rem 0 0 0;
   position: relative;
+  height: auto;
   z-index: 2;
   overflow: visible;
   background: transparent;
 }
-/* line 171, ../../_includes/sass/modules/_navigation.scss */
+/* line 173, ../../_includes/sass/modules/_navigation.scss */
 footer.global [role="navigation"].global:before, footer.global [role="navigation"].global:after {
   content: none;
   border: none;
 }
-/* line 176, ../../_includes/sass/modules/_navigation.scss */
+@media (min-width: 30em) {
+  /* line 164, ../../_includes/sass/modules/_navigation.scss */
+  footer.global [role="navigation"].global {
+    height: 60px;
+    height: 3.75rem;
+    padding: 0;
+  }
+}
+/* line 183, ../../_includes/sass/modules/_navigation.scss */
 footer.global [role="navigation"].global .menu {
   display: block;
   visibility: visible;
   width: 100%;
-  margin: 0;
-}
-/* line 181, ../../_includes/sass/modules/_navigation.scss */
-footer.global [role="navigation"].global .menu li {
-  display: block;
+  height: auto;
 }
 @media (min-width: 30em) {
-  /* line 181, ../../_includes/sass/modules/_navigation.scss */
+  /* line 183, ../../_includes/sass/modules/_navigation.scss */
+  footer.global [role="navigation"].global .menu {
+    height: 60px;
+    height: 3.75rem;
+  }
+}
+/* line 192, ../../_includes/sass/modules/_navigation.scss */
+footer.global [role="navigation"].global .menu li {
+  display: block;
+  margin-bottom: 0;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+}
+/* line 199, ../../_includes/sass/modules/_navigation.scss */
+footer.global [role="navigation"].global .menu li:last-child {
+  border-bottom-width: 1px;
+}
+@media (min-width: 30em) {
+  /* line 192, ../../_includes/sass/modules/_navigation.scss */
   footer.global [role="navigation"].global .menu li {
     display: -moz-inline-stack;
     display: inline-block;
@@ -2516,28 +2548,32 @@ footer.global [role="navigation"].global .menu li {
     *vertical-align: auto;
     zoom: 1;
     *display: inline;
+    border: 0;
   }
 }
-/* line 189, ../../_includes/sass/modules/_navigation.scss */
+/* line 209, ../../_includes/sass/modules/_navigation.scss */
 footer.global [role="navigation"].global .menu a {
   font-size: 13px;
   font-size: 0.8125rem;
+  padding: 12px 0;
+  padding: 0.75rem 0;
   height: auto;
+  width: 100%;
   color: white;
   display: block;
 }
-/* line 195, ../../_includes/sass/modules/_navigation.scss */
+/* line 217, ../../_includes/sass/modules/_navigation.scss */
 footer.global [role="navigation"].global .menu a:hover, footer.global [role="navigation"].global .menu a:active {
   color: #d8ecef;
   background: transparent;
 }
-/* line 200, ../../_includes/sass/modules/_navigation.scss */
+/* line 222, ../../_includes/sass/modules/_navigation.scss */
 footer.global [role="navigation"].global .menu a.active {
   color: #3c4b72;
   background: transparent;
 }
 @media (min-width: 30em) {
-  /* line 189, ../../_includes/sass/modules/_navigation.scss */
+  /* line 209, ../../_includes/sass/modules/_navigation.scss */
   footer.global [role="navigation"].global .menu a {
     display: -moz-inline-stack;
     display: inline-block;
@@ -2559,7 +2595,7 @@ footer.global [role="navigation"].global .menu a.active {
   }
 }
 @media (min-width: 48em) {
-  /* line 189, ../../_includes/sass/modules/_navigation.scss */
+  /* line 209, ../../_includes/sass/modules/_navigation.scss */
   footer.global [role="navigation"].global .menu a {
     font-size: 16px;
     font-size: 1rem;
@@ -2567,18 +2603,18 @@ footer.global [role="navigation"].global .menu a.active {
     width: 6.75rem;
   }
 }
-/* line 217, ../../_includes/sass/modules/_navigation.scss */
+/* line 239, ../../_includes/sass/modules/_navigation.scss */
 footer.global [role="navigation"].global .split {
   margin-left: 0;
 }
 @media (min-width: 30em) {
-  /* line 217, ../../_includes/sass/modules/_navigation.scss */
+  /* line 239, ../../_includes/sass/modules/_navigation.scss */
   footer.global [role="navigation"].global .split {
     margin-left: 90.5px;
     margin-left: 5.65625rem;
   }
 }
-/* line 226, ../../_includes/sass/modules/_navigation.scss */
+/* line 248, ../../_includes/sass/modules/_navigation.scss */
 footer.global [role="navigation"].global .logo {
   width: 90px;
   width: 5.625rem;
@@ -2588,7 +2624,7 @@ footer.global [role="navigation"].global .logo {
   top: -0.625rem;
 }
 @media (min-width: 30em) {
-  /* line 226, ../../_includes/sass/modules/_navigation.scss */
+  /* line 248, ../../_includes/sass/modules/_navigation.scss */
   footer.global [role="navigation"].global .logo {
     width: 72.5px;
     width: 4.53125rem;
@@ -2597,19 +2633,19 @@ footer.global [role="navigation"].global .logo {
   }
 }
 
-/* line 246, ../../_includes/sass/modules/_navigation.scss */
+/* line 268, ../../_includes/sass/modules/_navigation.scss */
 .local.tabs {
   display: none;
   visibility: hidden;
 }
 @media (min-width: 48em) {
-  /* line 246, ../../_includes/sass/modules/_navigation.scss */
+  /* line 268, ../../_includes/sass/modules/_navigation.scss */
   .local.tabs {
     display: block;
     visibility: visible;
   }
 }
-/* line 253, ../../_includes/sass/modules/_navigation.scss */
+/* line 275, ../../_includes/sass/modules/_navigation.scss */
 .local.tabs ul {
   list-style: none;
   list-style-type: none;
@@ -2633,32 +2669,32 @@ footer.global [role="navigation"].global .logo {
   *display: inline;
 }
 @media (min-width: 30em) {
-  /* line 253, ../../_includes/sass/modules/_navigation.scss */
+  /* line 275, ../../_includes/sass/modules/_navigation.scss */
   .local.tabs ul {
     padding-left: 24px;
     padding-right: 24px;
   }
 }
 @media (min-width: 48em) {
-  /* line 253, ../../_includes/sass/modules/_navigation.scss */
+  /* line 275, ../../_includes/sass/modules/_navigation.scss */
   .local.tabs ul {
     padding-left: 48px;
     padding-right: 48px;
   }
 }
 @media (min-width: 64em) {
-  /* line 253, ../../_includes/sass/modules/_navigation.scss */
+  /* line 275, ../../_includes/sass/modules/_navigation.scss */
   .local.tabs ul {
     padding-left: 72px;
     padding-right: 72px;
   }
 }
-/* line 261, ../../_includes/sass/modules/_navigation.scss */
+/* line 283, ../../_includes/sass/modules/_navigation.scss */
 .local.tabs li {
   margin: 0;
   padding: 0;
 }
-/* line 266, ../../_includes/sass/modules/_navigation.scss */
+/* line 288, ../../_includes/sass/modules/_navigation.scss */
 .local.tabs a {
   font-size: 18px;
   font-size: 1.125rem;
@@ -2683,45 +2719,45 @@ footer.global [role="navigation"].global .logo {
   margin-left: -10px;
 }
 
-/* line 281, ../../_includes/sass/modules/_navigation.scss */
+/* line 303, ../../_includes/sass/modules/_navigation.scss */
 .tabs-content {
   padding: 18px 0;
   padding: 1.125rem 0;
 }
 @media (min-width: 48em) {
-  /* line 281, ../../_includes/sass/modules/_navigation.scss */
+  /* line 303, ../../_includes/sass/modules/_navigation.scss */
   .tabs-content {
     display: none;
     visibility: hidden;
   }
 }
-/* line 288, ../../_includes/sass/modules/_navigation.scss */
+/* line 310, ../../_includes/sass/modules/_navigation.scss */
 .tabs-content.is-open {
   display: block;
   visibility: visible;
 }
 
 @media (min-width: 48em) {
-  /* line 293, ../../_includes/sass/modules/_navigation.scss */
+  /* line 315, ../../_includes/sass/modules/_navigation.scss */
   .accordion-header {
     display: none;
     visibility: hidden;
   }
 }
 
-/* line 300, ../../_includes/sass/modules/_navigation.scss */
+/* line 322, ../../_includes/sass/modules/_navigation.scss */
 .accordion-content {
   display: none;
   visibility: hidden;
 }
 @media (min-width: 48em) {
-  /* line 300, ../../_includes/sass/modules/_navigation.scss */
+  /* line 322, ../../_includes/sass/modules/_navigation.scss */
   .accordion-content {
     display: block;
     visibility: visible;
   }
 }
-/* line 307, ../../_includes/sass/modules/_navigation.scss */
+/* line 329, ../../_includes/sass/modules/_navigation.scss */
 .accordion-content.is-open {
   display: block;
   visibility: visible;

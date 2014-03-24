@@ -1,9 +1,10 @@
 ---
 layout: default
-title:  "Catalogs"
+title: Catalogs
 categories: 
   - catalog
   - intro
+published: true
 ---
 
-Short blurb about your wide range of products. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, rem, veniam dolores eos est cupiditate minus eveniet praesentium maiores quidem itaque totam officiis corrupti! Vero, repudiandae beatae eligendi omnis voluptatem exercitationem voluptatum incidunt.
+At the petting zoo we pride ourselves in making great quality product at terrific prices with the best design. The 2014 line can be found in the catalogs featured here. Our in house design & sales teams have worked together to bring you design, style and on trend plush  for the entire  marketplace. We are proud to present  the 2014 product line and treasured souvenirs.
