@@ -21,6 +21,7 @@
 
 [role="banner"].global {
   @include grid-margins;
+  // @extend .wrapper;
   @include rem(margin-top, 12px);
   @include rem(margin-bottom, 18px);
   position: absolute;

@@ -6,7 +6,24 @@
 // BASE
 // -----------------------------------------------------------------------------
 
+// include layout, 5 cols?
+// set sidebar to col 5
 .post {
+  position: relative;
+  clear: both;
+  // margin-left: -20%;
+
+  @include layout(5) {
+    .post-body {
+      @include grid-span(4, 1);
+    }
+
+    .meta {
+      @include grid-span(1, 5, $options: right);
+      padding-right: 0;
+    }
+  }
+
   #{headers()} {
     text-align: left;
   }	
@@ -14,23 +31,19 @@
 
 // SUBMODULES
 // -----------------------------------------------------------------------------
-
-// ------- Full-length post -------------------------------------------
-
-.post.full {
-	
-}
-
-
-// ------- Excerpt -------------------------------------------
-
-.post.excerpt {
-
+.post-body {
+  margin-top: 1em;
 }
 
 
 // ------- Meta/info -------------------------------------------
 
-.meta {
-
+.post {
+  .meta {
+    // position: absolute;
+    // // float: left;
+    // width: 30%;
+    // right: -30%;
+    // padding-left: 24px;
+  }
 }

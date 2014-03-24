@@ -3,11 +3,11 @@ layout: default
 title: News
 ---
 
-<main role="main" class="wrapper narrow">
+<main role="main" class="wrapper narrow sidebar-right">
 {% for post in site.categories.blog %}
   <article class="post">
-    <div class="">
-      <h1>{{ post.title }}</h1>
+    <h1>{{ post.title }}</h1>
+    <div class="post-body">
       {{ post.content }}
     </div>
     <aside class="meta">
