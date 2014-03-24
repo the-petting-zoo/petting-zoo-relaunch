@@ -180,6 +180,10 @@
     
   };
 
+  // JOT FORM 
+    JotForm.init();
+  // -----
+
   $(window).load(function() {
     pettingzoo.init();
   });
