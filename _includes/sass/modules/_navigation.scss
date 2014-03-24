@@ -180,10 +180,37 @@ footer.global [role="navigation"].global {
 
     li {
       display: block;
+
+      @include breakpoint($xsmall) {
+        @include inline-block;
+      }
     }
 
-    @include breakpoint($xsmall) {
-      
+    a {
+      @include rem(font-size, 13px);
+      height: auto;
+      color: white;
+      display: block;
+
+      &:hover, &:active {
+        color: lighten($color-bg-wash--primary, 25);
+        background: transparent;
+      }
+
+      &.active {
+        color: $color-text--primary;
+        background: transparent;
+      }
+
+      @include breakpoint($xsmall) {
+        @include inline-block--centered($header-h);
+        @include rem(width, 80px);
+      }
+
+      @include breakpoint($small) {
+        @include rem(font-size, 16px);
+        @include rem(width, 108px);
+      }
     }
   }
 
@@ -193,33 +220,6 @@ footer.global [role="navigation"].global {
 
     @include breakpoint($xsmall) {
       @include rem(margin-left, ((nth-last($logo-w, 2)/2) + 18px));
-    }
-  }
-
-  a {
-    @include rem(font-size, 13px);
-    height: auto;
-    color: white;
-    display: block;
-
-    &:hover, &:active {
-      color: lighten($color-bg-wash--primary, 25);
-      background: transparent;
-    }
-
-    &.active {
-      color: $color-text--primary;
-      background: transparent;
-    }
-
-    @include breakpoint($xsmall) {
-      @include inline-block--centered($header-h);
-      @include rem(width, 80px);
-    }
-
-    @include breakpoint($small) {
-      @include rem(font-size, 16px);
-      @include rem(width, 108px);
     }
   }
 
