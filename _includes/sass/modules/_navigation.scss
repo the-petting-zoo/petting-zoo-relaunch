@@ -148,8 +148,7 @@
     @include rem(margin-left, -(first($logo-w)/2));
     display: block;
     position: absolute;
-    
-      left: 50%;
+    left: 50%;
     z-index: $z--high;
 
     @include breakpoint($xsmall) {
@@ -161,6 +160,7 @@
 }
 
 // copy of the main menu that appears in the footer
+// ------- Local nav -------------------------------------------
 footer.global [role="navigation"].global {
   @include rem(margin, 0 0 6px 0);
   position: relative;
@@ -174,21 +174,33 @@ footer.global [role="navigation"].global {
   }
 
   .menu {
+    @include restore-visible;
+    width: 100%;
     margin: 0;
 
+    li {
+      display: block;
+    }
+
     @include breakpoint($xsmall) {
-      @include restore-visible;
+      
     }
   }
 
   .split {
-    @include rem(margin-left, (($logo-w/2) + 18px));
+    margin-left: 0;
+    // @include rem(margin-left, ((first($logo-w)/2) + 18px));
+
+    @include breakpoint($xsmall) {
+      @include rem(margin-left, ((nth-last($logo-w, 2)/2) + 18px));
+    }
   }
 
   a {
-    @include rem(font-size, 16px);
-    @include rem(width, 108px);
+    @include rem(font-size, 13px);
+    height: auto;
     color: white;
+    display: block;
 
     &:hover, &:active {
       color: lighten($color-bg-wash--primary, 25);
@@ -199,13 +211,27 @@ footer.global [role="navigation"].global {
       color: $color-text--primary;
       background: transparent;
     }
+
+    @include breakpoint($xsmall) {
+      @include inline-block--centered($header-h);
+      @include rem(width, 80px);
+    }
+
+    @include breakpoint($small) {
+      @include rem(font-size, 16px);
+      @include rem(width, 108px);
+    }
   }
 
   .logo {
-    @include rem(width, ($logo-w/2));
-    @include rem(margin-left, -($logo-w/4));
+    @include rem(width, (first($logo-w)));
+    @include rem(margin-left, -(first($logo-w)/2));
     @include rem(top, -10px);
-    // left: 50%;
+
+    @include breakpoint($xsmall) {
+      @include rem(width, (nth-last($logo-w, 2)/2));
+      @include rem(margin-left, -(nth-last($logo-w, 2)/4));
+    }
   }
 }
 

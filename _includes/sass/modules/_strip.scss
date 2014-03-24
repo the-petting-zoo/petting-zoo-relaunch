@@ -44,8 +44,13 @@
 // -----------------------------------------------------------------------------
 
 .strip-leader {
-  @include rem(margin-top, -$header-padding);
-  @include rem(padding, $header-padding 0 24px 0);
+  @include rem(margin-top, -(first($header-padding)));
+  @include rem(padding, first($header-padding) 0 24px 0);
+
+  @include breakpoint($xsmall) {
+    @include rem(margin-top, -(nth-last($header-padding, 2)));
+    @include rem(padding, nth-last($header-padding, 2) 0 24px 0);
+  }
 }
 
 .strip-int {

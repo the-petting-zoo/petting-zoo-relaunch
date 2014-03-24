@@ -8,6 +8,8 @@
 
 .hero {
   @include grid-margins(margin);
+  padding: 0 $border-w--thick;
+  // @extend .wrapper;
   position: relative;
   clear: both;
 }
