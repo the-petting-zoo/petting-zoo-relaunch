@@ -131,12 +131,14 @@
           // Bind the click event handler
           $(this).on('click', 'a', function(e){
 
+            // console.log("active tab: " + $active);
+
             console.log("multiple: " + pettingzoo.tabs.multiple);
 
             // if multiple active tabs are not allowed...
             if (pettingzoo.tabs.multiple != true) {
               // Make the old tab inactive.
-              $active.removeClass(pettingzoo.tabs.active);
+              $links.removeClass(pettingzoo.tabs.active);
               $content.removeClass(pettingzoo.tabs.open);
 
               // Update the variables with the new link and content
