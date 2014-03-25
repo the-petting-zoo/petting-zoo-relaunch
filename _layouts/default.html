@@ -31,7 +31,7 @@
       <h3 class="callout">Get in Touch</h3>
       <section class="wrapper narrow">
  
-     <form id="ajax-form" action="#" method="post">
+     <form id="ajax-form" action="#">
           <div class="control_group">
             <label for="name">Your Name</label>
             <input type="text" class="form-textbox" data-type="input-textbox" id="name" name="name" size="20" value="" required/>
@@ -60,6 +60,15 @@
           </div>
           <button name="contact-submit" id="contact-submit" type="submit" class="button primary small">Send</button>
         </form>
+
+        <form id="mc-form" style="display:none;">
+          <input id="mc-email" type="email" name="mc-email" placeholder="email">
+          <label for="mc-email"></label>
+          <input type="text" value="" name="FNAME" name="mc-fname" class="" id="mc-FNAME">
+          <label for="mc-FNAME"></label>
+          <button type="submit">Submit</button>
+        </form>
+
         <aside class="meta contact">
           <h4 class="highlight">Call us!</h4>
           <dl>
@@ -97,6 +106,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ site.url }}{{ site.assets.js }}vendor/jquery-1.10.2.min.js"><\/script>')</script>
     <script src="{{ site.url }}{{ site.assets.js }}app.js"></script>
+    <script src="{{ site.url }}{{ site.assets.js }}vendor/ajaxchimp.js"></script>
 
     <!-- For livereload: http://stackoverflow.com/questions/8395526/using-live-reload-with-jekyll -->
     <script src="http://localhost:35729/livereload.js"></script>
