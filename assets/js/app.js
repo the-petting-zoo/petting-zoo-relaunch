@@ -307,7 +307,6 @@ jQuery(function($) {
           $("footer aside" ).fadeOut(1000);
           $("#ajax-form" ).fadeOut(1000);
         });
-
           //If Mailchimp checked submit mailchimp form
           if(mailchimp){
             $('input#mc-email').val(email_text);
@@ -318,7 +317,7 @@ jQuery(function($) {
                 url: 'http://bivee.us8.list-manage1.com/subscribe/post?u=0eb271cf853e657ebe61f0e9f&id=ceab22e526'
             });
 
-            $("#mc-form" ).submit;
+            $("#mc-form").submit();
           }
 
         return false; //to stop the form from submitting  
@@ -328,7 +327,6 @@ jQuery(function($) {
       function mailchimpResult (resp) {
           if (resp.result === 'success') {
             $("footer div.success").prepend( '<div class="mailchimp-email"><h3><em>Thank you for subscribing. We have sent you a confirmation email.</em></h3></div>' );
-            alert('yay');
           }
       }
 
