@@ -180,9 +180,32 @@
     
   };
 
-  // JOT FORM 
-    JotForm.init();
-  // -----
+
+// Ajax Form Submit
+// ----------------------------------------------------------------------------------
+  
+      $('#ajax-form').submit(function(){
+        $.ajax({
+          dataType: 'jsonp',
+          url: "http://getsimpleform.com/messages/ajax?form_api_token=40adcbc671a42a6b6a2bf078797161d4",
+          data: $('#ajax-form').serialize() 
+        }).done(function() {
+          //callback which can be used to show a thank you message
+          //and reset the form
+          $("footer h3.callout").prepend( '<div class="success"><h2>Success!</h2></div>' );
+          $( "footer aside" ).hide("slow");
+          $( "#ajax-form" ).hide("slow");
+          $("#ajax-form")[0].reset();
+        });
+        return false; //to stop the form from submitting
+      
+      $( "input:checkbox:checked" ).val();
+
+
+      });
+
+
+// ----------------------------------------------------------------------------------
 
   $(window).load(function() {
     pettingzoo.init();
