@@ -3,6 +3,7 @@ layout: default
 title: Products
 ---
 
+<!-- catalogs -->
 <section class="strip">
   <section class="strip-leader wash primary">
     <div class="wrapper narrow">
@@ -22,6 +23,7 @@ title: Products
   </div>
 </section>
 
+<!-- custom products -->
 <section class="strip full_bleed-bottom wash secondary">
   <section class="strip-leader">
     <div class="wrapper narrow">
@@ -34,6 +36,7 @@ title: Products
     </div>
   </section>
 
+<section class="strip-int js-tabs">
   <nav class="local tabs">
     <ul>
     {% for post in site.categories.custom %}
@@ -46,16 +49,18 @@ title: Products
 
   {% for post in site.categories.custom %}
   {% unless post.categories contains "intro" %}
-  <section id="{{ post.title | replace: " ", "-" | downcase }}" class="tabs-content default">
-    <h4 class="accordion-header"><a href="#{{ post.title | replace: " ", "-" | downcase }}-content">{{ post.title }}</a></h4>
-    <div class="accordion-content wrapper narrow" id="{{ post.title | replace: " ", "-" | downcase }}-content">
-      {{ post.content }}
-    </div>
-  </section>
+    <section id="{{ post.title | replace: " ", "-" | downcase }}" class="tabs-content">
+      <h4 class="accordion-header"><a href="#{{ post.title | replace: " ", "-" | downcase }}-content">{{ post.title }}</a></h4>
+      <div class="accordion-content wrapper narrow" id="{{ post.title | replace: " ", "-" | downcase }}-content">
+        {{ post.content }}
+      </div>
+    </section>
   {% endunless %}
   {% endfor %}
+  </section>
 </section>
 
+<!-- testimonials -->
 {% if site.categories.testimonials.size > 0 %}
 <section class="strip flood">
   <div class="wrapper">

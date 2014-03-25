@@ -302,10 +302,14 @@ footer.global [role="navigation"].global {
 
   .tabs-content {
     @extend %base-transition;
+    @extend %theme-wash--secondary;
     @include rem(padding, 18px 0);
+    border-width: $border-w--thin 0 0 0;
+    border-style: solid;
 
     @include breakpoint($small) {
       @include hidden;
+      border: none;
     }
 
     &.is-open {
@@ -314,6 +318,11 @@ footer.global [role="navigation"].global {
   }
 
   .accordion-header {
+    color: black;
+
+    a {
+      display: block;
+    }
     
     @include breakpoint($small) {
       @include hidden;

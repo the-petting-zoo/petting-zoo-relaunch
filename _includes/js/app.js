@@ -12,7 +12,7 @@
       // -> global vars go here
       // --------------------------------------------------------------- 
       carousel: ".carousel", // class of carousel elements
-      tabs: "nav.local.tabs",
+      tabs: ".js-tabs",
       accordion: ".accordion-header",
       fallback: "fallback", // "fallback" data attribute value
       menuMobile: "#js-menu-mobile"
@@ -71,7 +71,7 @@
         deferSetup : true,
 
         setup : function() {
-          pettingzoo.tabs.init(pettingzoo.config.tabs);
+          // pettingzoo.tabs.init(pettingzoo.config.tabs);
         },
 
         match : function() {
@@ -98,7 +98,7 @@
       // ----------------------------------------------------------------------------------
       active : "active", // the class of the active (current) tab
       open: "is-open", // the class of the content currently displayed
-      multiple: false, // can multiple tabs be open? (for accordion state)
+      multiple: true, // can multiple tabs be open? (for accordion state)
 
       // methods
       // ----------------------------------------------------------------------------------
@@ -154,6 +154,7 @@
               // Update the variables with the new link and content
               $active = $(this);
               $content = $($(this).attr('href'));
+              console.log("content: " + $content.attr('id'));
 
               // Make the tab active.
               $active.toggleClass(pettingzoo.tabs.active);
