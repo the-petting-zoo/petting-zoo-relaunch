@@ -40,7 +40,7 @@
 
       // set up enquire.js stuff
       pettingzoo.registerBreakpoints();
-      pettingzoo.tabs.init(pettingzoo.config.accordion); // set up accordion version of tabs (mobile/default)
+      pettingzoo.tabs.init(pettingzoo.config.tabs); // set up accordion version of tabs (mobile/default)
 
       $("#js-menu-mobile").change(function(){
         if ($(this).val()!='') {
@@ -116,6 +116,7 @@
           // If the location.hash matches one of the links, use that as the active tab.
           // If no match is found, use the first link as the initial active tab.
           $active = $links.filter("." + pettingzoo.tabs.active);
+          console.log("content init: " + $active.attr('href'));
           $content = $($active.attr('href'));
 
           // console.log("active tab: " + $active);
@@ -131,12 +132,15 @@
           // Bind the click event handler
           $(this).on('click', 'a', function(e){
 
+            // console.log("active tab: " + $active);
+
             console.log("multiple: " + pettingzoo.tabs.multiple);
 
             // if multiple active tabs are not allowed...
             if (pettingzoo.tabs.multiple != true) {
               // Make the old tab inactive.
-              $active.removeClass(pettingzoo.tabs.active);
+              $links.removeClass(pettingzoo.tabs.active);
+              console.log("content: " + $content.attr('id'));
               $content.removeClass(pettingzoo.tabs.open);
 
               // Update the variables with the new link and content

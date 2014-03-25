@@ -301,6 +301,7 @@ footer.global [role="navigation"].global {
 }
 
   .tabs-content {
+    @extend %base-transition;
     @include rem(padding, 18px 0);
 
     @include breakpoint($small) {
