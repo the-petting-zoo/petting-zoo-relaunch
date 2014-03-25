@@ -1,5 +1,5 @@
 /* line 9, ../../_includes/sass/core/_settings.scss */
-input, textarea, select, a, .button {
+input, textarea, select, a, .button, .tabs-content {
   -webkit-transition: all 0.5s false;
   -moz-transition: all 0.5s false false;
   -o-transition: all 0.5s false false;
@@ -2731,33 +2731,33 @@ footer.global [role="navigation"].global .logo {
     visibility: hidden;
   }
 }
-/* line 310, ../../_includes/sass/modules/_navigation.scss */
+/* line 311, ../../_includes/sass/modules/_navigation.scss */
 .tabs-content.is-open {
   display: block;
   visibility: visible;
 }
 
 @media (min-width: 48em) {
-  /* line 315, ../../_includes/sass/modules/_navigation.scss */
+  /* line 316, ../../_includes/sass/modules/_navigation.scss */
   .accordion-header {
     display: none;
     visibility: hidden;
   }
 }
 
-/* line 322, ../../_includes/sass/modules/_navigation.scss */
+/* line 323, ../../_includes/sass/modules/_navigation.scss */
 .accordion-content {
   display: none;
   visibility: hidden;
 }
 @media (min-width: 48em) {
-  /* line 322, ../../_includes/sass/modules/_navigation.scss */
+  /* line 323, ../../_includes/sass/modules/_navigation.scss */
   .accordion-content {
     display: block;
     visibility: visible;
   }
 }
-/* line 329, ../../_includes/sass/modules/_navigation.scss */
+/* line 330, ../../_includes/sass/modules/_navigation.scss */
 .accordion-content.is-open {
   display: block;
   visibility: visible;
