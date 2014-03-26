@@ -3,14 +3,17 @@ layout: default
 title: News
 ---
 
-<main role="main" class="wrapper narrow sidebar-right">
+<main role="main" class="wrapper narrow">
 {% for post in site.categories.blog %}
   <article class="post">
-    <h1>{{ post.title }}</h1>
-    <div class="post-body">
+    <hgroup>
+      <h1>{{ post.title }}</h1>
+      <h6><time datetime="{{ post.date }}">{{ post.date | date: "%B %d" }}</time></h6>
+    </hgroup>
+    <!-- <div class="post-body"> -->
       {{ post.content }}
-    </div>
-    <aside class="meta">
+    <!-- </div> -->
+   <!--  <aside class="meta">
       <dl>
         <dt><time datetime="{{ post.date }}">{{ post.date | date: "%B %d" }}</time></dt>
         <dt>Tags</dt>
@@ -18,7 +21,7 @@ title: News
         <dd>{{ tag }}</dd>
         {% endfor %}
       </dl>
-    </aside>
+    </aside> -->
   </article>
 {% endfor %}
 </main>

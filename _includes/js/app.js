@@ -14,7 +14,11 @@
       carousel: ".carousel", // class of carousel elements
       tabs: ".js-tabs",
       fallback: "fallback", // "fallback" data attribute value
-      menuMobile: "#js-menu-mobile"
+
+      menuMobile: "#js-menu-mobile",
+
+      postImg: "js-post-img", // class to add to images in posts (workaround for jekyll markdown parsing)
+      postTxt: "js-post-text" // class to add to body text in posts (workaround for jekyll markdown parsing)
     },
 
     // Setup
@@ -55,6 +59,10 @@
         namespace: "carousel-",
         directionNav: false
       });
+
+      $("#js-catalogs").equalsize({ children: 'li' });
+
+      $(".post > p").has("img").addClass(pettingzoo.config.postImg); // add a class to images in the blog so we can float them to the left (jekyll/markdown workaround)
     },
 
     // Methods
