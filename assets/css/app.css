@@ -903,34 +903,45 @@ p {
 }
 
 /* line 44, ../../_includes/sass/core/_layout.scss */
+.wide {
+  max-width: 1584px;
+  margin: 0 auto;
+}
+
+/* line 49, ../../_includes/sass/core/_layout.scss */
 .narrow {
   max-width: 944px;
   margin: 0 auto;
 }
 
-/* line 49, ../../_includes/sass/core/_layout.scss */
+/* line 54, ../../_includes/sass/core/_layout.scss */
 .center, #home .promos ul,
 #products .tabs-content-body ul {
   text-align: center;
 }
 
-/* line 65, ../../_includes/sass/core/_layout.scss */
+/* line 70, ../../_includes/sass/core/_layout.scss */
 .map {
   margin-top: 2em;
 }
 
-/* line 70, ../../_includes/sass/core/_layout.scss */
+/* line 74, ../../_includes/sass/core/_layout.scss */
+[role="main"] {
+  padding-bottom: 24px;
+  padding-bottom: 1.5rem;
+}
+/* line 77, ../../_includes/sass/core/_layout.scss */
 [role="main"] h1, [role="main"] h2, [role="main"] h3, [role="main"] h4, [role="main"] h5, [role="main"] h6 {
   text-align: center;
 }
 
-/* line 77, ../../_includes/sass/core/_layout.scss */
+/* line 84, ../../_includes/sass/core/_layout.scss */
 [role="banner"].global + .hero, [role="banner"].global + .strip, [role="banner"].global + .wrapper, .local.tabs [role="banner"].global + ul, .first {
   padding-top: 120px;
   padding-top: 7.5rem;
 }
 @media (min-width: 30em) {
-  /* line 77, ../../_includes/sass/core/_layout.scss */
+  /* line 84, ../../_includes/sass/core/_layout.scss */
   [role="banner"].global + .hero, [role="banner"].global + .strip, [role="banner"].global + .wrapper, .local.tabs [role="banner"].global + ul, .first {
     padding-top: 160px;
     padding-top: 10rem;
@@ -1015,22 +1026,22 @@ h6 {
   text-transform: uppercase;
 }
 
-/* line 85, ../../_includes/sass/core/_content.scss */
+/* line 86, ../../_includes/sass/core/_content.scss */
 .justify-left {
   text-align: left !important;
 }
-/* line 88, ../../_includes/sass/core/_content.scss */
+/* line 89, ../../_includes/sass/core/_content.scss */
 .justify-left h1, .justify-left h2, .justify-left h3, .justify-left h4, .justify-left h5, .justify-left h6 {
   text-align: left !important;
 }
 
-/* line 97, ../../_includes/sass/core/_content.scss */
+/* line 98, ../../_includes/sass/core/_content.scss */
 .intro, p:first-child {
   font-size: 18px;
   font-size: 1.125rem;
 }
 
-/* line 101, ../../_includes/sass/core/_content.scss */
+/* line 102, ../../_includes/sass/core/_content.scss */
 p, table, li {
   font-size: 16px;
   font-size: 1rem;
@@ -1038,34 +1049,34 @@ p, table, li {
   line-height: 1.5;
 }
 
-/* line 124, ../../_includes/sass/core/_content.scss */
+/* line 125, ../../_includes/sass/core/_content.scss */
 input, textarea, select {
   font-size: 13px;
   font-size: 0.8125rem;
 }
 
-/* line 129, ../../_includes/sass/core/_content.scss */
+/* line 130, ../../_includes/sass/core/_content.scss */
 ol, ul {
   margin-left: 1.5em;
 }
 @media (min-width: 48em) {
-  /* line 129, ../../_includes/sass/core/_content.scss */
+  /* line 130, ../../_includes/sass/core/_content.scss */
   ol, ul {
     margin-left: 0;
   }
 }
 
-/* line 137, ../../_includes/sass/core/_content.scss */
+/* line 138, ../../_includes/sass/core/_content.scss */
 a {
   text-decoration: none;
 }
 
-/* line 146, ../../_includes/sass/core/_content.scss */
+/* line 147, ../../_includes/sass/core/_content.scss */
 figure {
   margin: 1em 0;
 }
 
-/* line 150, ../../_includes/sass/core/_content.scss */
+/* line 151, ../../_includes/sass/core/_content.scss */
 figcaption {
   font-size: 13px;
   font-size: 0.8125rem;
@@ -1075,7 +1086,7 @@ figcaption {
   color: #94aeae;
 }
 
-/* line 159, ../../_includes/sass/core/_content.scss */
+/* line 160, ../../_includes/sass/core/_content.scss */
 .amp {
   font-family: "Baskerville", "Palatino", "Book Antiqua", serif;
   font-style: italic;
@@ -1083,7 +1094,7 @@ figcaption {
   font-size: 1.1em;
 }
 
-/* line 170, ../../_includes/sass/core/_content.scss */
+/* line 171, ../../_includes/sass/core/_content.scss */
 .icon {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1096,7 +1107,7 @@ figcaption {
   line-height: 0;
 }
 
-/* line 177, ../../_includes/sass/core/_content.scss */
+/* line 178, ../../_includes/sass/core/_content.scss */
 [class^="icon-"] {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1115,7 +1126,7 @@ figcaption {
   speak: none;
 }
 
-/* line 192, ../../_includes/sass/core/_content.scss */
+/* line 193, ../../_includes/sass/core/_content.scss */
 .screen-reader-text {
   /* For text that explains what the icon is (ie "RSS" or "Menu") */
   border: 0;
@@ -1128,25 +1139,25 @@ figcaption {
   width: 1px;
 }
 
-/* line 196, ../../_includes/sass/core/_content.scss */
+/* line 197, ../../_includes/sass/core/_content.scss */
 .tabs-content-header .active:after {
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20width%3D%2219px%22%20height%3D%2213px%22%20viewBox%3D%220%200%2019%2013%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20xmlns%3Asketch%3D%22http%3A//www.bohemiancoding.com/sketch/ns%22%3E%0A%20%20%20%20%3Ctitle%3Earrow-up--pink%3C/title%3E%0A%20%20%20%20%3Cdescription%3ECreated%20with%20Sketch%20%28http%3A//www.bohemiancoding.com/sketch%29%3C/description%3E%0A%20%20%20%20%3Cdefs%3E%3C/defs%3E%0A%20%20%20%20%3Cg%20id%3D%22spare-parts%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20sketch%3Atype%3D%22MSPage%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22arrow-up--pink%22%20sketch%3Atype%3D%22MSArtboardGroup%22%20transform%3D%22translate%28-3.000000%2C%20-6.000000%29%22%20fill%3D%22%23F41FA7%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M7.1073224%2C17.9561778%20C6.31455903%2C18.7253332%206.29542098%2C19.9915186%207.06457637%2C20.7842819%20C7.83373176%2C21.5770453%209.09991709%2C21.5961834%209.89268046%2C20.827028%20L16.8926805%2C14.0354835%20L18.3287421%2C12.6421868%20L16.9348088%2C11.206743%20L9.93480886%2C3.99828755%20C9.16530203%2C3.2058653%207.89910833%2C3.18728868%207.10668608%2C3.95679551%20C6.31426384%2C4.72630234%206.29568722%2C5.99249603%207.06519405%2C6.78491828%20L12.6825112%2C12.5695155%22%20id%3D%22Path-6-copy-3%22%20sketch%3Atype%3D%22MSShapeGroup%22%20transform%3D%22translate%2812.500000%2C%2012.391602%29%20scale%281%2C%20-1%29%20rotate%28-270.000000%29%20translate%28-12.500000%2C%20-12.391602%29%20%22%3E%3C/path%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E");
   background-repeat: no-repeat;
 }
 
-/* line 201, ../../_includes/sass/core/_content.scss */
+/* line 202, ../../_includes/sass/core/_content.scss */
 body select, .tabs-content select, .tabs-content-header a:after {
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20width%3D%2219px%22%20height%3D%2213px%22%20viewBox%3D%220%200%2019%2013%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20xmlns%3Asketch%3D%22http%3A//www.bohemiancoding.com/sketch/ns%22%3E%0A%20%20%20%20%3Ctitle%3Earrow-down--blue%3C/title%3E%0A%20%20%20%20%3Cdescription%3ECreated%20with%20Sketch%20%28http%3A//www.bohemiancoding.com/sketch%29%3C/description%3E%0A%20%20%20%20%3Cdefs%3E%3C/defs%3E%0A%20%20%20%20%3Cg%20id%3D%22spare-parts%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20sketch%3Atype%3D%22MSPage%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22arrow-down--blue%22%20sketch%3Atype%3D%22MSArtboardGroup%22%20transform%3D%22translate%28-3.000000%2C%20-7.000000%29%22%20fill%3D%22%233C4B72%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M7.1073224%2C18.9561778%20C6.31455903%2C19.7253332%206.29542098%2C20.9915186%207.06457637%2C21.7842819%20C7.83373176%2C22.5770453%209.09991709%2C22.5961834%209.89268046%2C21.827028%20L16.8926805%2C15.0354835%20L18.3287421%2C13.6421868%20L16.9348088%2C12.206743%20L9.93480886%2C4.99828755%20C9.16530203%2C4.2058653%207.89910833%2C4.18728868%207.10668608%2C4.95679551%20C6.31426384%2C5.72630234%206.29568722%2C6.99249603%207.06519405%2C7.78491828%20L12.6825112%2C13.5695155%22%20id%3D%22Path-6-copy-2%22%20sketch%3Atype%3D%22MSShapeGroup%22%20transform%3D%22translate%2812.500000%2C%2013.391602%29%20rotate%28-270.000000%29%20translate%28-12.500000%2C%20-13.391602%29%20%22%3E%3C/path%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E");
   background-repeat: no-repeat;
 }
 
-/* line 207, ../../_includes/sass/core/_content.scss */
+/* line 208, ../../_includes/sass/core/_content.scss */
 footer.global select, .footer.global select, footer.global .meta.contact dl select, .footer.global .meta.contact dl select, .hero.carousel select, .reverse select {
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20width%3D%2219px%22%20height%3D%2213px%22%20viewBox%3D%220%200%2019%2013%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20xmlns%3Asketch%3D%22http%3A//www.bohemiancoding.com/sketch/ns%22%3E%0A%20%20%20%20%3Ctitle%3Earrow-down--white%3C/title%3E%0A%20%20%20%20%3Cdescription%3ECreated%20with%20Sketch%20%28http%3A//www.bohemiancoding.com/sketch%29%3C/description%3E%0A%20%20%20%20%3Cdefs%3E%3C/defs%3E%0A%20%20%20%20%3Cg%20id%3D%22spare-parts%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20sketch%3Atype%3D%22MSPage%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22arrow-down--white%22%20sketch%3Atype%3D%22MSArtboardGroup%22%20transform%3D%22translate%28-3.000000%2C%20-7.000000%29%22%20fill%3D%22%23FFFFFF%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M7.1073224%2C18.9561778%20C6.31455903%2C19.7253332%206.29542098%2C20.9915186%207.06457637%2C21.7842819%20C7.83373176%2C22.5770453%209.09991709%2C22.5961834%209.89268046%2C21.827028%20L16.8926805%2C15.0354835%20L18.3287421%2C13.6421868%20L16.9348088%2C12.206743%20L9.93480886%2C4.99828755%20C9.16530203%2C4.2058653%207.89910833%2C4.18728868%207.10668608%2C4.95679551%20C6.31426384%2C5.72630234%206.29568722%2C6.99249603%207.06519405%2C7.78491828%20L12.6825112%2C13.5695155%22%20id%3D%22Path-6-copy-4%22%20sketch%3Atype%3D%22MSShapeGroup%22%20transform%3D%22translate%2812.500000%2C%2013.391602%29%20rotate%28-270.000000%29%20translate%28-12.500000%2C%20-13.391602%29%20%22%3E%3C/path%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E");
   background-repeat: no-repeat;
 }
 
-/* line 213, ../../_includes/sass/core/_content.scss */
+/* line 214, ../../_includes/sass/core/_content.scss */
 .tile.vertical.more a:after {
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20width%3D%2213px%22%20height%3D%2218px%22%20viewBox%3D%220%200%2013%2018%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20xmlns%3Asketch%3D%22http%3A//www.bohemiancoding.com/sketch/ns%22%3E%0A%20%20%20%20%3Ctitle%3Earrow-right--yellow%3C/title%3E%0A%20%20%20%20%3Cdescription%3ECreated%20with%20Sketch%20%28http%3A//www.bohemiancoding.com/sketch%29%3C/description%3E%0A%20%20%20%20%3Cdefs%3E%3C/defs%3E%0A%20%20%20%20%3Cg%20id%3D%22spare-parts%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20sketch%3Atype%3D%22MSPage%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22arrow-right--yellow%22%20sketch%3Atype%3D%22MSArtboardGroup%22%20transform%3D%22translate%28-6.000000%2C%20-3.000000%29%22%20fill%3D%22%23FED341%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M7.1073224%2C17.5645763%20C6.31455903%2C18.3337317%206.29542098%2C19.599917%207.06457637%2C20.3926804%20C7.83373176%2C21.1854438%209.09991709%2C21.2045818%209.89268046%2C20.4354264%20L16.8926805%2C13.6438819%20L18.3287421%2C12.2505852%20L16.9348088%2C10.8151415%20L9.93480886%2C3.60668598%20C9.16530203%2C2.81426374%207.89910833%2C2.79568712%207.10668608%2C3.56519395%20C6.31426384%2C4.33470077%206.29568722%2C5.60089447%207.06519405%2C6.39331672%20L12.6825112%2C12.1779139%22%20id%3D%22Path-6%22%20sketch%3Atype%3D%22MSShapeGroup%22%3E%3C/path%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E");
   background-repeat: no-repeat;
@@ -1609,23 +1620,15 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 .strip {
   padding: 24px 0;
   padding: 1.5rem 0;
+  overflow: visible;
+  position: relative;
 }
-/* line 17, ../../_includes/sass/modules/_strip.scss */
+/* line 20, ../../_includes/sass/modules/_strip.scss */
 .strip h1, .strip h2, .strip h3, .strip h4, .strip h5, .strip h6 {
   text-align: center;
 }
 
-/* line 35, ../../_includes/sass/modules/_strip.scss */
-.strip.full_bleed-bottom {
-  padding-bottom: 0;
-}
-
-/* line 39, ../../_includes/sass/modules/_strip.scss */
-.strip.full_bleed-top {
-  padding-top: 0;
-}
-
-/* line 46, ../../_includes/sass/modules/_strip.scss */
+/* line 41, ../../_includes/sass/modules/_strip.scss */
 .strip-leader {
   margin-top: -120px;
   margin-top: -7.5rem;
@@ -1633,7 +1636,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   padding: 7.5rem 0 1.5rem 0;
 }
 @media (min-width: 30em) {
-  /* line 46, ../../_includes/sass/modules/_strip.scss */
+  /* line 41, ../../_includes/sass/modules/_strip.scss */
   .strip-leader {
     margin-top: -160px;
     margin-top: -10rem;
@@ -1642,7 +1645,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   }
 }
 
-/* line 56, ../../_includes/sass/modules/_strip.scss */
+/* line 52, ../../_includes/sass/modules/_strip.scss */
 .strip-int {
   margin-top: 12px;
   margin-top: 0.75rem;
@@ -1652,12 +1655,74 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   border-top-style: solid;
 }
 
-/* line 35, ../../_includes/sass/modules/_grid-inline.scss */
+/* line 62, ../../_includes/sass/modules/_strip.scss */
+.full_bleed-bottom {
+  padding-bottom: 0;
+}
+
+/* line 66, ../../_includes/sass/modules/_strip.scss */
+.full_bleed-top {
+  padding-top: 0;
+}
+
+/* line 85, ../../_includes/sass/modules/_strip.scss */
+.pointer, .pointer-well, .pointer-wash--primary, .pointer-wash--secondary, .pointer-reverse {
+  padding-top: 36px;
+  padding-top: 2.25rem;
+  margin-top: 0;
+}
+/* line 71, ../../_includes/sass/modules/_strip.scss */
+.pointer:after, .pointer-well:after, .pointer-wash--primary:after, .pointer-wash--secondary:after, .pointer-reverse:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -18px;
+  top: 0;
+  height: 18px;
+  width: 36px;
+  border-radius: 0 0 36px 36px;
+  background: white;
+}
+
+/* line 94, ../../_includes/sass/modules/_strip.scss */
+.pointer-well:after {
+  background: #ebf0f0;
+}
+
+/* line 103, ../../_includes/sass/modules/_strip.scss */
+.pointer-wash--primary:after {
+  background: #7dbfcb;
+}
+
+/* line 112, ../../_includes/sass/modules/_strip.scss */
+.pointer-wash--secondary:after {
+  background: #80b1fd;
+}
+
+/* line 120, ../../_includes/sass/modules/_strip.scss */
+.pointer-reverse:after {
+  background: #3c4b72;
+}
+
+/* line 125, ../../_includes/sass/modules/_strip.scss */
+.halfCircleBottom {
+  height: 45px;
+  width: 90px;
+  border-radius: 0 0 90px 90px;
+  -moz-border-radius: 0 0 90px 90px;
+  -webkit-border-radius: 0 0 90px 90px;
+  background: green;
+}
+
+/* line 39, ../../_includes/sass/modules/_grid-inline.scss */
 .grid, #about-us .narrow ul, #home .promos ul,
 #products .tabs-content-body ul {
   list-style: none;
   list-style-type: none;
   padding-left: 0;
+  padding: 18px 0;
+  padding: 1.125rem 0;
   font-size: 0;
   margin-left: 0;
   overflow: hidden;
@@ -1668,7 +1733,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   list-style: none;
   list-style-type: none;
 }
-/* line 41, ../../_includes/sass/modules/_grid-inline.scss */
+/* line 46, ../../_includes/sass/modules/_grid-inline.scss */
 .grid li, #about-us .narrow ul li, #home .promos ul li,
 #products .tabs-content-body ul li {
   display: block;
@@ -1676,29 +1741,22 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   overflow: hidden;
 }
 @media (min-width: 30em) {
-  /* line 41, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 46, ../../_includes/sass/modules/_grid-inline.scss */
   .grid li, #about-us .narrow ul li, #home .promos ul li,
   #products .tabs-content-body ul li {
-    display: -moz-inline-stack;
-    display: inline-block;
-    vertical-align: middle;
-    *vertical-align: auto;
-    zoom: 1;
-    *display: inline;
-    vertical-align: top;
     margin-right: -5px;
   }
 }
 
 @media (min-width: 30em) {
-  /* line 59, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 64, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.small, #about-us .narrow ul.small, #home .promos ul.small,
   #products .tabs-content-body ul.small {
     margin-right: -24px;
   }
 }
 @media (min-width: 48em) {
-  /* line 59, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 64, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.small, #about-us .narrow ul.small, #home .promos ul.small,
   #products .tabs-content-body ul.small {
     margin-right: -24px;
@@ -1708,6 +1766,13 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   /* line 19, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.small > li, #about-us .narrow ul.small > li, #home .promos ul.small > li,
   #products .tabs-content-body ul.small > li {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
     width: 33.33333%;
     padding-right: 24px;
   }
@@ -1716,27 +1781,34 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   /* line 19, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.small > li, #about-us .narrow ul.small > li, #home .promos ul.small > li,
   #products .tabs-content-body ul.small > li {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
     width: 16.66667%;
     padding-right: 24px;
   }
 }
 
 @media (min-width: 30em) {
-  /* line 64, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 69, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
   #products .tabs-content-body ul.medium {
     margin-right: -24px;
   }
 }
 @media (min-width: 48em) {
-  /* line 64, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 69, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
   #products .tabs-content-body ul.medium {
     margin-right: -24px;
   }
 }
 @media (min-width: 64em) {
-  /* line 64, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 69, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
   #products .tabs-content-body ul.medium {
     margin-right: -24px;
@@ -1746,6 +1818,13 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   /* line 19, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium > li, #about-us .narrow ul.medium > li, #home .promos ul.medium > li,
   #products .tabs-content-body ul.medium > li {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
     width: 50%;
     padding-right: 24px;
   }
@@ -1754,6 +1833,13 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   /* line 19, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium > li, #about-us .narrow ul.medium > li, #home .promos ul.medium > li,
   #products .tabs-content-body ul.medium > li {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
     width: 25%;
     padding-right: 24px;
   }
@@ -1762,17 +1848,40 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   /* line 19, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium > li, #about-us .narrow ul.medium > li, #home .promos ul.medium > li,
   #products .tabs-content-body ul.medium > li {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
     width: 16.66667%;
     padding-right: 24px;
   }
 }
 
 @media (min-width: 48em) {
-  /* line 69, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 74, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.large, #about-us .narrow ul.large, #home .promos ul.large,
   #products .tabs-content-body ul.large, #about-us .narrow ul, #home .promos ul,
   #products .tabs-content-body ul {
     margin-right: -24px;
+  }
+}
+@media (min-width: 64em) {
+  /* line 74, ../../_includes/sass/modules/_grid-inline.scss */
+  .grid.large, #about-us .narrow ul.large, #home .promos ul.large,
+  #products .tabs-content-body ul.large, #about-us .narrow ul, #home .promos ul,
+  #products .tabs-content-body ul {
+    margin-right: -24px;
+  }
+}
+@media (min-width: 30em) {
+  /* line 19, ../../_includes/sass/modules/_grid-inline.scss */
+  .grid.large > li, #about-us .narrow ul.large > li, #home .promos ul.large > li,
+  #products .tabs-content-body ul.large > li, #about-us .narrow ul > li, #home .promos ul > li,
+  #products .tabs-content-body ul > li {
+    display: block;
   }
 }
 @media (min-width: 48em) {
@@ -1780,9 +1889,38 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   .grid.large > li, #about-us .narrow ul.large > li, #home .promos ul.large > li,
   #products .tabs-content-body ul.large > li, #about-us .narrow ul > li, #home .promos ul > li,
   #products .tabs-content-body ul > li {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
+    width: 50%;
+    padding-right: 24px;
+  }
+}
+@media (min-width: 64em) {
+  /* line 19, ../../_includes/sass/modules/_grid-inline.scss */
+  .grid.large > li, #about-us .narrow ul.large > li, #home .promos ul.large > li,
+  #products .tabs-content-body ul.large > li, #about-us .narrow ul > li, #home .promos ul > li,
+  #products .tabs-content-body ul > li {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
     width: 33.33333%;
     padding-right: 24px;
   }
+}
+
+/* line 79, ../../_includes/sass/modules/_grid-inline.scss */
+#about-us .narrow ul {
+  display: block;
+  padding-top: 1em;
 }
 
 /* line 11, ../../_includes/sass/modules/_tile.scss */
@@ -1797,34 +1935,26 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 
 /* line 22, ../../_includes/sass/modules/_tile.scss */
 .tile.horizontal {
-  overflow: hidden;
   margin-bottom: 24px;
 }
-/* line 27, ../../_includes/sass/modules/_tile.scss */
-.tile.horizontal .portrait {
-  width: 33.33333%;
-  float: left;
-  margin-right: -100%;
-  margin-left: 0%;
-  clear: none;
-  padding-right: 24px;
+/* line 37, ../../_includes/sass/modules/_tile.scss */
+.tile.horizontal a[href^="mailto:"] {
+  font-size: 13px;
+  font-size: 0.8125rem;
 }
-/* line 31, ../../_includes/sass/modules/_tile.scss */
-.tile.horizontal .info {
-  width: 66.66667%;
-  float: right;
-  margin-left: 0;
-  margin-right: 0;
-  clear: right;
-  padding-right: 24px;
-  text-align: left;
+@media (min-width: 64em) {
+  /* line 37, ../../_includes/sass/modules/_tile.scss */
+  .tile.horizontal a[href^="mailto:"] {
+    font-size: 16px;
+    font-size: 1rem;
+  }
 }
 
-/* line 38, ../../_includes/sass/modules/_tile.scss */
+/* line 46, ../../_includes/sass/modules/_tile.scss */
 .tile.vertical {
   position: relative;
 }
-/* line 41, ../../_includes/sass/modules/_tile.scss */
+/* line 49, ../../_includes/sass/modules/_tile.scss */
 .tile.vertical.more a {
   font-size: 13px;
   font-size: 0.8125rem;
@@ -1836,7 +1966,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   vertical-align: middle;
   text-transform: uppercase;
 }
-/* line 51, ../../_includes/sass/modules/_tile.scss */
+/* line 59, ../../_includes/sass/modules/_tile.scss */
 .tile.vertical.more a:after {
   right: 8px;
   right: 0.5rem;
@@ -1849,7 +1979,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   background-size: contain;
   background-position: center center;
 }
-/* line 66, ../../_includes/sass/modules/_tile.scss */
+/* line 74, ../../_includes/sass/modules/_tile.scss */
 .tile.vertical .thumb {
   display: block;
   margin-bottom: 0.5em;
@@ -2223,32 +2353,9 @@ footer.global .social .icon, .footer.global .social .icon {
 
 /* line 9, ../../_includes/sass/modules/_hero.scss */
 .hero {
-  margin-left: 24px;
-  margin-right: 24px;
   padding: 0 6px;
   position: relative;
   clear: both;
-}
-@media (min-width: 30em) {
-  /* line 9, ../../_includes/sass/modules/_hero.scss */
-  .hero {
-    margin-left: 24px;
-    margin-right: 24px;
-  }
-}
-@media (min-width: 48em) {
-  /* line 9, ../../_includes/sass/modules/_hero.scss */
-  .hero {
-    margin-left: 48px;
-    margin-right: 48px;
-  }
-}
-@media (min-width: 64em) {
-  /* line 9, ../../_includes/sass/modules/_hero.scss */
-  .hero {
-    margin-left: 72px;
-    margin-right: 72px;
-  }
 }
 
 /* line 20, ../../_includes/sass/modules/_hero.scss */

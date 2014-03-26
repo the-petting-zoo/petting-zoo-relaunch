@@ -78,8 +78,9 @@ h6, %h6 {
 }
 
 .callout {
-	text-transform: uppercase;
 	@extend %gentleman-bold;
+	text-transform: uppercase;
+	// margin-bottom: 1em;
 }
 
 .justify-left {
