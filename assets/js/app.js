@@ -119,7 +119,6 @@ jQuery(function($) {
       // --------------------------------------------------------------- 
       carousel: ".carousel", // class of carousel elements
       tabs: ".js-tabs",
-      accordion: ".accordion-header",
       fallback: "fallback", // "fallback" data attribute value
       menuMobile: "#js-menu-mobile"
     },
@@ -182,7 +181,7 @@ jQuery(function($) {
 
         match : function() {
           console.log("match");
-          // pettingzoo.tabs.kill(pettingzoo.config.accordion);
+          pettingzoo.tabs.kill(pettingzoo.config.tabs);
           pettingzoo.tabs.multiple = false;
           pettingzoo.tabs.reset(pettingzoo.config.tabs);
           // pettingzoo.tabs.init(pettingzoo.config.tabs);
@@ -190,7 +189,7 @@ jQuery(function($) {
 
         unmatch : function() {
           console.log("unmatch");
-          // pettingzoo.tabs.kill(pettingzoo.config.tabs);
+          pettingzoo.tabs.kill(pettingzoo.config.tabs);
           pettingzoo.tabs.multiple = true;
           // pettingzoo.tabs.init(pettingzoo.config.accordion);
         }
@@ -204,6 +203,7 @@ jQuery(function($) {
       // ----------------------------------------------------------------------------------
       active : "active", // the class of the active (current) tab
       open: "is-open", // the class of the content currently displayed
+      content: ".tabs-content-body", // content that we need to leave alone
       multiple: true, // can multiple tabs be open? (for accordion state)
 
       // methods
@@ -237,16 +237,16 @@ jQuery(function($) {
 
           // Bind the click event handler
           $(this).on('click', 'a', function(e){
+            $active = $links.filter("." + pettingzoo.tabs.active);
+            $content = $($active.attr('href'));
 
-            // console.log("active tab: " + $active);
-
-            console.log("multiple: " + pettingzoo.tabs.multiple);
+            // console.log("multiple: " + pettingzoo.tabs.multiple);
+            // console.log("content id: " + $content.attr('id'));
 
             // if multiple active tabs are not allowed...
             if (pettingzoo.tabs.multiple != true) {
               // Make the old tab inactive.
-              $links.removeClass(pettingzoo.tabs.active);
-              console.log("content: " + $content.attr('id'));
+              $active.removeClass(pettingzoo.tabs.active);
               $content.removeClass(pettingzoo.tabs.open);
 
               // Update the variables with the new link and content
@@ -260,7 +260,7 @@ jQuery(function($) {
               // Update the variables with the new link and content
               $active = $(this);
               $content = $($(this).attr('href'));
-              console.log("content: " + $content.attr('id'));
+              // console.log("content: " + $content.attr('id'));
 
               // Make the tab active.
               $active.toggleClass(pettingzoo.tabs.active);
@@ -272,6 +272,8 @@ jQuery(function($) {
           });
         });
       },
+
+      update : function(el) {},
 
       kill : function(el) {
         $(el).each(function() {

@@ -910,7 +910,7 @@ p {
 
 /* line 49, ../../_includes/sass/core/_layout.scss */
 .center, #home .promos ul,
-#products .accordion-content ul {
+#products .tabs-content-body ul {
   text-align: center;
 }
 
@@ -1633,7 +1633,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 
 /* line 35, ../../_includes/sass/modules/_grid-inline.scss */
 .grid, #about-us .narrow ul, #home .promos ul,
-#products .accordion-content ul {
+#products .tabs-content-body ul {
   list-style: none;
   list-style-type: none;
   padding-left: 0;
@@ -1642,13 +1642,13 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 }
 /* line 283, ../../_includes/sass/core/_helpers.scss */
 .grid li, #about-us .narrow ul li, #home .promos ul li,
-#products .accordion-content ul li {
+#products .tabs-content-body ul li {
   list-style: none;
   list-style-type: none;
 }
 /* line 40, ../../_includes/sass/modules/_grid-inline.scss */
 .grid li, #about-us .narrow ul li, #home .promos ul li,
-#products .accordion-content ul li {
+#products .tabs-content-body ul li {
   display: block;
   padding: 0;
   overflow: hidden;
@@ -1656,7 +1656,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 @media (min-width: 30em) {
   /* line 40, ../../_includes/sass/modules/_grid-inline.scss */
   .grid li, #about-us .narrow ul li, #home .promos ul li,
-  #products .accordion-content ul li {
+  #products .tabs-content-body ul li {
     display: -moz-inline-stack;
     display: inline-block;
     vertical-align: middle;
@@ -1670,21 +1670,21 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 @media (min-width: 30em) {
   /* line 57, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.small, #about-us .narrow ul.small, #home .promos ul.small,
-  #products .accordion-content ul.small {
+  #products .tabs-content-body ul.small {
     margin-right: -24px;
   }
 }
 @media (min-width: 48em) {
   /* line 57, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.small, #about-us .narrow ul.small, #home .promos ul.small,
-  #products .accordion-content ul.small {
+  #products .tabs-content-body ul.small {
     margin-right: -24px;
   }
 }
 @media (min-width: 30em) {
   /* line 19, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.small > li, #about-us .narrow ul.small > li, #home .promos ul.small > li,
-  #products .accordion-content ul.small > li {
+  #products .tabs-content-body ul.small > li {
     width: 33.33333%;
     padding-right: 24px;
   }
@@ -1692,7 +1692,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 @media (min-width: 48em) {
   /* line 19, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.small > li, #about-us .narrow ul.small > li, #home .promos ul.small > li,
-  #products .accordion-content ul.small > li {
+  #products .tabs-content-body ul.small > li {
     width: 16.66667%;
     padding-right: 24px;
   }
@@ -1701,28 +1701,28 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 @media (min-width: 30em) {
   /* line 62, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
-  #products .accordion-content ul.medium {
+  #products .tabs-content-body ul.medium {
     margin-right: -24px;
   }
 }
 @media (min-width: 48em) {
   /* line 62, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
-  #products .accordion-content ul.medium {
+  #products .tabs-content-body ul.medium {
     margin-right: -24px;
   }
 }
 @media (min-width: 64em) {
   /* line 62, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
-  #products .accordion-content ul.medium {
+  #products .tabs-content-body ul.medium {
     margin-right: -24px;
   }
 }
 @media (min-width: 30em) {
   /* line 19, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium > li, #about-us .narrow ul.medium > li, #home .promos ul.medium > li,
-  #products .accordion-content ul.medium > li {
+  #products .tabs-content-body ul.medium > li {
     width: 50%;
     padding-right: 24px;
   }
@@ -1730,7 +1730,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 @media (min-width: 48em) {
   /* line 19, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium > li, #about-us .narrow ul.medium > li, #home .promos ul.medium > li,
-  #products .accordion-content ul.medium > li {
+  #products .tabs-content-body ul.medium > li {
     width: 25%;
     padding-right: 24px;
   }
@@ -1738,7 +1738,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 @media (min-width: 64em) {
   /* line 19, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium > li, #about-us .narrow ul.medium > li, #home .promos ul.medium > li,
-  #products .accordion-content ul.medium > li {
+  #products .tabs-content-body ul.medium > li {
     width: 16.66667%;
     padding-right: 24px;
   }
@@ -1747,16 +1747,16 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 @media (min-width: 48em) {
   /* line 67, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.large, #about-us .narrow ul.large, #home .promos ul.large,
-  #products .accordion-content ul.large, #about-us .narrow ul, #home .promos ul,
-  #products .accordion-content ul {
+  #products .tabs-content-body ul.large, #about-us .narrow ul, #home .promos ul,
+  #products .tabs-content-body ul {
     margin-right: -24px;
   }
 }
 @media (min-width: 48em) {
   /* line 19, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.large > li, #about-us .narrow ul.large > li, #home .promos ul.large > li,
-  #products .accordion-content ul.large > li, #about-us .narrow ul > li, #home .promos ul > li,
-  #products .accordion-content ul > li {
+  #products .tabs-content-body ul.large > li, #about-us .narrow ul > li, #home .promos ul > li,
+  #products .tabs-content-body ul > li {
     width: 33.33333%;
     padding-right: 24px;
   }
@@ -2741,35 +2741,35 @@ footer.global [role="navigation"].global .logo {
 }
 
 /* line 320, ../../_includes/sass/modules/_navigation.scss */
-.accordion-header {
+.tabs-content-header {
   color: black;
 }
 /* line 323, ../../_includes/sass/modules/_navigation.scss */
-.accordion-header a {
+.tabs-content-header a {
   display: block;
 }
 @media (min-width: 48em) {
   /* line 320, ../../_includes/sass/modules/_navigation.scss */
-  .accordion-header {
+  .tabs-content-header {
     display: none;
     visibility: hidden;
   }
 }
 
 /* line 332, ../../_includes/sass/modules/_navigation.scss */
-.accordion-content {
+.tabs-content-body {
   display: none;
   visibility: hidden;
 }
 @media (min-width: 48em) {
   /* line 332, ../../_includes/sass/modules/_navigation.scss */
-  .accordion-content {
+  .tabs-content-body {
     display: block;
     visibility: visible;
   }
 }
 /* line 339, ../../_includes/sass/modules/_navigation.scss */
-.accordion-content.is-open {
+.tabs-content-body.is-open {
   display: block;
   visibility: visible;
 }

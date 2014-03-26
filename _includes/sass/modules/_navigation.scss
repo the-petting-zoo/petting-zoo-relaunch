@@ -317,7 +317,7 @@ footer.global [role="navigation"].global {
     }
   }
 
-  .accordion-header {
+  .tabs-content-header {
     color: black;
 
     a {
@@ -329,7 +329,7 @@ footer.global [role="navigation"].global {
     }
   }
 
-  .accordion-content {
+  .tabs-content-body {
     @include hidden;
 
     @include breakpoint($small) {

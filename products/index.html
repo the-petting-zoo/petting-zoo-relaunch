@@ -50,8 +50,8 @@ title: Products
   {% for post in site.categories.custom %}
   {% unless post.categories contains "intro" %}
     <section id="{{ post.title | replace: " ", "-" | downcase }}" class="tabs-content">
-      <h4 class="accordion-header"><a href="#{{ post.title | replace: " ", "-" | downcase }}-content">{{ post.title }}</a></h4>
-      <div class="accordion-content wrapper narrow" id="{{ post.title | replace: " ", "-" | downcase }}-content">
+      <h4 class="tabs-content-header"><a href="#{{ post.title | replace: " ", "-" | downcase }}-content">{{ post.title }}</a></h4>
+      <div class="tabs-content-body wrapper narrow" id="{{ post.title | replace: " ", "-" | downcase }}-content">
         {{ post.content }}
       </div>
     </section>
