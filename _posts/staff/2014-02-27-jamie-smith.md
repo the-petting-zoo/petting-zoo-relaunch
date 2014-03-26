@@ -1,7 +1,7 @@
 ---
 category: staff
 layout: default
-title: Jamie P. Smith
+title: "Jamie Porter-Smith"
 job_title: Florida Region
 email: "jsmith@pettingzooplush.com"
 portrait: "http://placehold.it/300x200"
