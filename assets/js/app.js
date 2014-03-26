@@ -86,6 +86,18 @@ pauseText:"Pause",playText:"Play",controlsContainer:"",manualControls:"",sync:""
  */
 
 (function(t,i,n){var e=i.matchMedia;"undefined"!=typeof module&&module.exports?module.exports=n(e):"function"==typeof define&&define.amd?define(function(){return i[t]=n(e)}):i[t]=n(e)})("enquire",this,function(t){"use strict";function i(t,i){var n,e=0,s=t.length;for(e;s>e&&(n=i(t[e],e),n!==!1);e++);}function n(t){return"[object Array]"===Object.prototype.toString.apply(t)}function e(t){return"function"==typeof t}function s(t){this.options=t,!t.deferSetup&&this.setup()}function o(i,n){this.query=i,this.isUnconditional=n,this.handlers=[],this.mql=t(i);var e=this;this.listener=function(t){e.mql=t,e.assess()},this.mql.addListener(this.listener)}function r(){if(!t)throw Error("matchMedia not present, legacy browsers require a polyfill");this.queries={},this.browserIsIncapable=!t("only all").matches}return s.prototype={setup:function(){this.options.setup&&this.options.setup(),this.initialised=!0},on:function(){!this.initialised&&this.setup(),this.options.match&&this.options.match()},off:function(){this.options.unmatch&&this.options.unmatch()},destroy:function(){this.options.destroy?this.options.destroy():this.off()},equals:function(t){return this.options===t||this.options.match===t}},o.prototype={addHandler:function(t){var i=new s(t);this.handlers.push(i),this.matches()&&i.on()},removeHandler:function(t){var n=this.handlers;i(n,function(i,e){return i.equals(t)?(i.destroy(),!n.splice(e,1)):void 0})},matches:function(){return this.mql.matches||this.isUnconditional},clear:function(){i(this.handlers,function(t){t.destroy()}),this.mql.removeListener(this.listener),this.handlers.length=0},assess:function(){var t=this.matches()?"on":"off";i(this.handlers,function(i){i[t]()})}},r.prototype={register:function(t,s,r){var h=this.queries,u=r&&this.browserIsIncapable;return h[t]||(h[t]=new o(t,u)),e(s)&&(s={match:s}),n(s)||(s=[s]),i(s,function(i){h[t].addHandler(i)}),this},unregister:function(t,i){var n=this.queries[t];return n&&(i?n.removeHandler(i):(n.clear(),delete this.queries[t])),this}},new r});
+/**
+ * equalsize.js
+ * Author & copyright (c) 2013: Jorn Bakhuys
+ * MIT & GPL license
+ *
+ * A jQuery plugin for equalizing the size of a parents children.
+ *
+ * USAGE:
+ * $('ul').equalsize(); // equalize the height (default) of a parents children
+ * $('ul').equalsize({ type: 'width' }); // equalize the width of a parents children
+ * $('ul').equalsize({ children: 'p' }); // equalize specific children of a parent
+ */(function(e){e.fn.equalsize=function(t){var n=e.extend({containers:e(this),type:"height",children:!1},t);return n.containers.each(function(){var t=n.children?e(this).find(n.children):e(this).children(),r=0;t.each(function(){var t;t=e(this)[n.type]();t>r&&(r=t)});t.css(n.type,r+"px")})}})(jQuery);
 // ================================================================
 // Widon't & Best Ampersand
 // -> http://justinhileman.info/article/a-jquery-widont-snippet/
@@ -118,10 +130,13 @@ jQuery(function($) {
       // -> global vars go here
       // --------------------------------------------------------------- 
       carousel: ".carousel", // class of carousel elements
-      tabs: "nav.local.tabs",
-      accordion: ".accordion-header",
+      tabs: ".js-tabs",
       fallback: "fallback", // "fallback" data attribute value
-      menuMobile: "#js-menu-mobile"
+
+      menuMobile: "#js-menu-mobile",
+
+      postImg: "js-post-img", // class to add to images in posts (workaround for jekyll markdown parsing)
+      postTxt: "js-post-text" // class to add to body text in posts (workaround for jekyll markdown parsing)
     },
 
     // Setup
@@ -162,6 +177,10 @@ jQuery(function($) {
         namespace: "carousel-",
         directionNav: false
       });
+
+      $("#js-catalogs").equalsize({ children: 'li' });
+
+      $(".post > p").has("img").addClass(pettingzoo.config.postImg); // add a class to images in the blog so we can float them to the left (jekyll/markdown workaround)
     },
 
     // Methods
@@ -177,12 +196,12 @@ jQuery(function($) {
         deferSetup : true,
 
         setup : function() {
-          pettingzoo.tabs.init(pettingzoo.config.tabs);
+          // pettingzoo.tabs.init(pettingzoo.config.tabs);
         },
 
         match : function() {
           console.log("match");
-          // pettingzoo.tabs.kill(pettingzoo.config.accordion);
+          pettingzoo.tabs.kill(pettingzoo.config.tabs);
           pettingzoo.tabs.multiple = false;
           pettingzoo.tabs.reset(pettingzoo.config.tabs);
           // pettingzoo.tabs.init(pettingzoo.config.tabs);
@@ -190,7 +209,7 @@ jQuery(function($) {
 
         unmatch : function() {
           console.log("unmatch");
-          // pettingzoo.tabs.kill(pettingzoo.config.tabs);
+          pettingzoo.tabs.kill(pettingzoo.config.tabs);
           pettingzoo.tabs.multiple = true;
           // pettingzoo.tabs.init(pettingzoo.config.accordion);
         }
@@ -204,7 +223,8 @@ jQuery(function($) {
       // ----------------------------------------------------------------------------------
       active : "active", // the class of the active (current) tab
       open: "is-open", // the class of the content currently displayed
-      multiple: false, // can multiple tabs be open? (for accordion state)
+      content: ".tabs-content-body", // content that we need to leave alone
+      multiple: true, // can multiple tabs be open? (for accordion state)
 
       // methods
       // ----------------------------------------------------------------------------------
@@ -237,16 +257,16 @@ jQuery(function($) {
 
           // Bind the click event handler
           $(this).on('click', 'a', function(e){
+            $active = $links.filter("." + pettingzoo.tabs.active);
+            $content = $($active.attr('href'));
 
-            // console.log("active tab: " + $active);
-
-            console.log("multiple: " + pettingzoo.tabs.multiple);
+            // console.log("multiple: " + pettingzoo.tabs.multiple);
+            // console.log("content id: " + $content.attr('id'));
 
             // if multiple active tabs are not allowed...
             if (pettingzoo.tabs.multiple != true) {
               // Make the old tab inactive.
-              $links.removeClass(pettingzoo.tabs.active);
-              console.log("content: " + $content.attr('id'));
+              $active.removeClass(pettingzoo.tabs.active);
               $content.removeClass(pettingzoo.tabs.open);
 
               // Update the variables with the new link and content
@@ -260,6 +280,7 @@ jQuery(function($) {
               // Update the variables with the new link and content
               $active = $(this);
               $content = $($(this).attr('href'));
+              // console.log("content: " + $content.attr('id'));
 
               // Make the tab active.
               $active.toggleClass(pettingzoo.tabs.active);
@@ -271,6 +292,8 @@ jQuery(function($) {
           });
         });
       },
+
+      update : function(el) {},
 
       kill : function(el) {
         $(el).each(function() {

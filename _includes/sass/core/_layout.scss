@@ -50,15 +50,20 @@
   text-align: center;
 }
 
-.sidebar-right {
-  max-width: ($layout-width--narrow + ($layout-width--narrow * .2) + (last($layout-margins) * 2));
-  // overflow: visible;
+// .sidebar-right {
+//   max-width: ($layout-width--narrow + ($layout-width--narrow * .2) + (last($layout-margins) * 2));
+//   // overflow: visible;
   
 
-  @include breakpoint($large) {
-    left: ($layout-width--narrow * .2);
-    padding-left: 0;
-  }
+//   @include breakpoint($large) {
+//     left: ($layout-width--narrow * .2);
+//     padding-left: 0;
+//   }
+// }
+
+// container for embedded google map
+.map {
+  margin-top: 2em;
 }
 
 [role="main"] {
