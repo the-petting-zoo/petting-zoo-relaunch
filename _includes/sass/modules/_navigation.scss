@@ -302,10 +302,11 @@ footer.global [role="navigation"].global {
 
   .tabs-content {
     @extend %base-transition;
-    @extend %theme-wash--secondary;
+    @extend %theme-default;
     @include rem(padding, 18px 0);
     border-width: $border-w--thin 0 0 0;
     border-style: solid;
+    border-color: darken($color-border, 10);
 
     @include breakpoint($small) {
       @include hidden;
@@ -318,10 +319,37 @@ footer.global [role="navigation"].global {
   }
 
   .tabs-content-header {
-    color: black;
+    @include grid-margins;
+    position: relative;
+    display: block;
+    text-align: left !important;
 
     a {
       display: block;
+      position: relative;
+      color: $blue--dark !important;
+
+      &:after {
+        $size: 0.6em;
+        @extend %icon-arrow-down--blue;
+        content: " ";
+        position: absolute;
+        width: $size;
+        height: $size;
+        top: 50%;
+        right: 0.5em;
+        margin-top: -($size/2);
+        background-size: contain;
+        background-position: center center;
+      }
+    }
+
+    .active {
+      color: $pink !important;
+
+      &:after {
+        @extend %icon-arrow-up--pink;
+      }
     }
     
     @include breakpoint($small) {
@@ -331,9 +359,11 @@ footer.global [role="navigation"].global {
 
   .tabs-content-body {
     @include hidden;
+    margin-top: 1em;
 
     @include breakpoint($small) {
       @include restore-visible;
+      margin-top: 0;
     }
 
     &.is-open {
