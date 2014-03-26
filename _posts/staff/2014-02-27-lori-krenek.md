@@ -1,8 +1,10 @@
 ---
+category: staff
 layout: default
-title: "Lori Krenek"
-job_title: "Sales Representative"
-email: lkrenek@pettingzooplush.com
+title: Lori Krenek
+job_title: "SC & South East Region"
+email: "lkrenek@pettingzooplush.com"
 portrait: "http://placehold.it/300x200"
-category: "staff"
+published: true
 ---
+
