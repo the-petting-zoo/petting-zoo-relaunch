@@ -245,8 +245,13 @@
 // Flip PDF JS
 // ----------------------------------------------------------------------------------
 
-$('#listing').directorySlider({ height: 400}
-  );
+$('#listing').directorySlider();
+
+$('#listing').flexslider({
+    animation: "slide",
+    selector: "ul > li",
+    controlNav: false
+  });
 
 
 // Google Maps
@@ -274,7 +279,7 @@ $('#listing').directorySlider({ height: 400}
       title:"div",
       zIndex: 3
     });
-
+}
 // ----------------------------------------------------------------------------------
 
   $(window).load(function() {

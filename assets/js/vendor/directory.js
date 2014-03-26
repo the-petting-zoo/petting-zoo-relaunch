@@ -33,14 +33,14 @@
        }, options || {});
 
        // set slideshow dimensions if set
-       if (config.height) {
-        $(elem).css('height', config.height);
-       }
-       if (config.width) {
-        $(elem).css('width', config.width);
-       }
+       // if (config.height) {
+       //  $(elem).css('height', config.height);
+       // }
+       // if (config.width) {
+       //  $(elem).css('width', config.width);
+       // }
 
-       $(elem).css('overflow', 'hidden');
+       // $(elem).css('overflow', 'hidden');
 
 
        // Get slides
@@ -54,58 +54,20 @@
          slideNumber = ('0' + slideNumber).slice(-2);
          }
          var imgURL = config.directory + config.filebase + slideNumber + '.' + config.extension;
-         slides.push('<li data-thumb="imgURL"<img src="' + imgURL + '" />');
+         slides.push('<li data-thumb="' + imgURL +'"><img src="' + imgURL + '" /></li>');
          slideNumber++;
        }
 
 
        //@Bivee Converted to use FlexSlider2 - https://github.com/woothemes/FlexSlider
-       
-
-
-       // append slideshow
-       // apply slide wrap 1st
-       var slideWrap = $('<div class="' + elemId + '-slide-wrap" ></div>');
+  
+       var slideWrap = $('<ul class="slides"></ul>');
            slideWrap.appendTo(elem);
 
         // append slide and position absolutley
        $.each(slides, function(index, val) {
-         $(val).css({
-           position: 'absolute',
-           top: 0,
-           left: 0
-         }).appendTo(slideWrap);
+         $(val).appendTo(slideWrap);
        });
-
-    setInterval(function(){
-       var firstSlide = elem.find('img:first-child'),
-           lastSlide = elem.find('img:last-child');
-       // Apply animation
-       switch(config.animation){
-
-        case 'fade':
-            $(lastSlide).animate({
-              opacity: 0},
-              config.speed, function() {
-              $(this).insertBefore(firstSlide).css('opacity', 1);
-            });
-        break;
-
-        case 'uncover':
-            lastSlide.animate({
-              marginLeft: -$(this).width()},
-              config.speed, function() {
-              $(this).insertBefore(firstSlide).css('marginLeft', 0);
-            });
-            break;
-        default:
-            $(lastSlide).animate({
-              opacity: 0},
-              config.speed, function() {
-              $(this).insertBefore(firstSlide).css('opacity', 1);
-            });
-       }
-    }, config.timeout);
 
    };
 
