@@ -21,27 +21,11 @@
 
        // Merge config settings
        var config = $.extend({
-           animation: 'slide',
            filebase: filebase,
            extension: extension,
-           speed: 1000,
-           timeout: 4000,
            directory: directory,
-           numslides: numslides,
-           height: null,
-           width: null
+           numslides: numslides
        }, options || {});
-
-       // set slideshow dimensions if set
-       // if (config.height) {
-       //  $(elem).css('height', config.height);
-       // }
-       // if (config.width) {
-       //  $(elem).css('width', config.width);
-       // }
-
-       // $(elem).css('overflow', 'hidden');
-
 
        // Get slides
        var slides = [],
@@ -54,13 +38,11 @@
          slideNumber = ('0' + slideNumber).slice(-2);
          }
          var imgURL = config.directory + config.filebase + slideNumber + '.' + config.extension;
-         slides.push('<li data-thumb="' + imgURL +'"><img src="' + imgURL + '" /></li>');
+         slides.push('<li><img src="' + imgURL + '" /></li>');
          slideNumber++;
        }
 
-
        //@Bivee Converted to use FlexSlider2 - https://github.com/woothemes/FlexSlider
-  
        var slideWrap = $('<ul class="slides"></ul>');
            slideWrap.appendTo(elem);
 
@@ -68,7 +50,6 @@
        $.each(slides, function(index, val) {
          $(val).appendTo(slideWrap);
        });
-
    };
 
    $.fn.directorySlider = function(options)

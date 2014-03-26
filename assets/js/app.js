@@ -351,16 +351,11 @@ jQuery(function($) {
 // Flip PDF JS
 // ----------------------------------------------------------------------------------
 
-$('#listing').directorySlider();
+$('#pdf-viewer').directorySlider();
+$('#pdf-thumb').directorySlider();
 
-$('#listing').flexslider({
-    animation: "slide",
-    selector: "ul > li",
-    controlNav: false
-  });
-
-// Google Maps
-// ----------------------------------------------------------------------------------
+// // Google Maps
+// // ----------------------------------------------------------------------------------
   var map;
   var address = new google.maps.LatLng(39.17943,-76.730038);
 
@@ -390,5 +385,24 @@ $('#listing').flexslider({
 
   $(window).load(function() {
     pettingzoo.init();
+
+ $('#pdf-thumb').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 210,
+    itemMargin: 5,
+    asNavFor: '#pdf-viewer'
+  });
+   
+  $('#pdf-viewer').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    sync: "#pdf-thumb"
+  });
+
   });
 })(jQuery);
