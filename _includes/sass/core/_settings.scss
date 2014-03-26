@@ -38,7 +38,7 @@ $color-bg-default: white;
 $color-bg-reverse: $blue--dark;
 $color-bg-well: $gray;
 $color-bg-wash--primary: $turquoise;
-$color-bg-wash--secondary: lighten($blue--light, 8);
+$color-bg-wash--secondary: lighten($blue--light, 12);
 $color-bg-flood: $pink;
 
 // text
@@ -90,6 +90,7 @@ $layout-margins: 24px 48px 72px; // margins on either side of live area
 
 $layout-width: 1280px; // maximum width of default container
 $layout-width--narrow: 800px; // max width of narrower container, ~10 cols at medium screen size
+$layout-width--wide: 1440px;
 
 $strip-padding: 18px;
 

@@ -3,7 +3,8 @@ layout: default
 title: home
 ---
 
-<section class="strip reverse">
+<section class="strip full_bleed-bottom reverse">
+  <div class="wrapper wide">
 
   <!-- hero carousel/feature banners -->
   <div class="hero carousel">
@@ -13,7 +14,7 @@ title: home
   </div>
 
   <!-- catalogs -->
-  <section class="strip-int margins reverse" id="js-catalogs">
+  <section class="strip-int reverse" id="js-catalogs">
     <h3 class="callout">Our Latest Catalogs</h3>
     <div class="wrapper">
       <ul class="grid small center">
@@ -22,10 +23,11 @@ title: home
       </ul>
     </div>
   </section>
+</div>
 </section>
 
 <!-- intro copy -->
-<section class="strip blurb well center">
+<section class="strip blurb pointer-reverse well center">
   <div class="wrapper narrow">
     {% for post in site.categories.home %}
       {{ post.content }}
@@ -37,7 +39,7 @@ title: home
 
 <!-- promo banners -->
 {% if site.categories.promos.size > 0 %}
-<section class="promos strip">
+<section class="promos strip pointer-well">
   <div class="wrapper">
     {% for post in site.categories.promos %}
       {{ post.content }}

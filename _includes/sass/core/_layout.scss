@@ -41,6 +41,11 @@
   overflow: hidden;
 }
 
+.wide {
+  max-width: ($layout-width--wide + (last($layout-margins) * 2));
+  margin: 0 auto;
+}
+
 .narrow {
   max-width: ($layout-width--narrow + (last($layout-margins) * 2));
   margin: 0 auto;
@@ -67,6 +72,8 @@
 }
 
 [role="main"] {
+  @include rem(padding-bottom, 24px);
+
   #{headers()} {
     text-align: center;
   }

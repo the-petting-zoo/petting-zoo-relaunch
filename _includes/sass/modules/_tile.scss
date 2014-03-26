@@ -20,17 +20,25 @@
 // MODIFIERS
 // -----------------------------------------------------------------------------
 .tile.horizontal {
-  overflow: hidden;
+  // overflow: hidden;
   margin-bottom: gutter-span();
 
-  @include layout(6) {
-    .portrait {
-      @include grid-span(2, 1);
-    }
+  // @include layout(6) {
+  //   .portrait {
+  //     @include grid-span(2, 1);
+  //   }
 
-    .info {
-      @include grid-span(4, 3, $options: right);
-      text-align: left;
+  //   .info {
+  //     @include grid-span(4, 3, $options: right);
+  //     text-align: left;
+  //   }
+  // }
+
+  a[href^="mailto:"] {
+    @include rem(font-size, 13px);
+
+    @include breakpoint($medium) {
+      @include rem(font-size, 16px);
     }
   }
 }

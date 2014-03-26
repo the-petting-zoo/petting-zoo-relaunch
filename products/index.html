@@ -16,7 +16,7 @@ title: Products
     </div>
   </section>
 
-  <div class="wrapper">
+  <div class="wrapper pointer-wash--primary">
     <ul class="grid medium">
     {% include html/catalogs.html %}
     </ul>
@@ -24,8 +24,8 @@ title: Products
 </section>
 
 <!-- custom products -->
-<section class="strip full_bleed-bottom wash secondary">
-  <section class="strip-leader">
+<section class="strip pointer full_bleed-bottom wash secondary">
+  <section class="strip-leader full_bleed-bottom">
     <div class="wrapper narrow">
     {% for post in site.categories.custom %}
       {% if post.categories contains "intro" %}
@@ -36,6 +36,7 @@ title: Products
     </div>
   </section>
 
+<!-- tabs -->
 <section class="js-tabs">
   <nav class="local tabs">
     <ul>
