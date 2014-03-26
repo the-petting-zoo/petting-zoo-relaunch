@@ -231,6 +231,39 @@
           }
       }
 
+// Flip PDF JS
+// ----------------------------------------------------------------------------------
+
+$('#listing').directorySlider({ height: 400}
+  );
+
+
+// Google Maps
+// ----------------------------------------------------------------------------------
+
+  var map;
+  var address = new google.maps.LatLng(39.17943,-76.730038);
+
+  function initialize() {
+
+    var mapOptions = {
+      zoom:15,
+      center: address,
+      mapTypeControlOptions: {
+         mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'div']
+      }
+    };
+    
+    map = new google.maps.Map(document.getElementById("map_canvas"),
+        mapOptions);
+
+    var marker = new google.maps.Marker({
+      position: address,
+      map: map,
+      title:"div",
+      zIndex: 3
+    });
+
 // ----------------------------------------------------------------------------------
 
   $(window).load(function() {

@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+
+<main role="main" class="wrapper">
+
+<div id="listing" data-directory="https://s3.amazonaws.com/pettingzoo/catalogs/{{ page.directory }}/" data-filebase="{{ page.filebase }}" data-extension="{{ page.extension }}" data-numslides="{{ page.numslides }}"></div>
+
+  <img src="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ page.cover }}" alt="{{ page.title }}" />
+
+</main>
