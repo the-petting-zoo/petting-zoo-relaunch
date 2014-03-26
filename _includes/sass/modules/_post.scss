@@ -9,24 +9,54 @@
 // include layout, 5 cols?
 // set sidebar to col 5
 .post {
+  @include rem(margin-bottom, 24px);
+  @include rem(padding-bottom, 18px);
   position: relative;
   clear: both;
+  overflow: hidden;
+  border-width: 0 0 $border-w--thin 0;
+  border-style: solid;
   // margin-left: -20%;
 
-  @include layout(5) {
-    .post-body {
-      @include grid-span(4, 1);
-    }
+  &:last-child {
+    border: none;
+  }
 
-    .meta {
-      @include grid-span(1, 5, $options: right);
-      padding-right: 0;
+  @include layout(4) {
+    // .post-body {
+    //   @include grid-span(4, 1);
+    // }
+
+    // .meta {
+    //   @include grid-span(1, 5, $options: right);
+    //   padding-right: 0;
+    // }
+
+    
+
+    @include breakpoint($small) {
+      p {
+        @include grid-span(2, 3, $options: right);
+        padding-right: 0;
+      }
+      
+      .js-post-img {
+        @include grid-span(2, 1);
+      }
     }
   }
 
   #{headers()} {
     text-align: left;
-  }	
+  }
+
+  & > hgroup {
+    margin-bottom: 1em;
+  }
+
+  h6 {
+    color: darken($gray, 20);
+  }
 }
 
 // SUBMODULES

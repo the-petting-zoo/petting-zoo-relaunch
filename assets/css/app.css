@@ -443,14 +443,14 @@ table {
 }
 
 /* line 57, ../../_includes/sass/core/_fonts.scss */
-h3, .callout, .strip.blurb h1, em, strong, footer.global .meta.contact dt, .footer.global .meta.contact dt, [role="navigation"].global .menu a, h1, h6, p, table, li, dl, ul, ol, small, input, textarea, select, figcaption, .button, footer.global .mailing-list label, .footer.global .mailing-list label {
+h3, .callout, em, strong, footer.global .meta.contact dt, .footer.global .meta.contact dt, [role="navigation"].global .menu a, h1, h6, p, table, li, dl, ul, ol, small, input, textarea, select, figcaption, .button, footer.global .mailing-list label, .footer.global .mailing-list label {
   font-family: "gentleman-book", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
 /* line 63, ../../_includes/sass/core/_fonts.scss */
-h3, .callout, .strip.blurb h1, em, strong, footer.global .meta.contact dt, .footer.global .meta.contact dt, [role="navigation"].global .menu a {
+h3, .callout, em, strong, footer.global .meta.contact dt, .footer.global .meta.contact dt, [role="navigation"].global .menu a {
   font-family: "gentleman-bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -914,30 +914,23 @@ p {
   text-align: center;
 }
 
-/* line 53, ../../_includes/sass/core/_layout.scss */
-.sidebar-right {
-  max-width: 1104px;
-}
-@media (min-width: 80em) {
-  /* line 53, ../../_includes/sass/core/_layout.scss */
-  .sidebar-right {
-    left: 160px;
-    padding-left: 0;
-  }
+/* line 65, ../../_includes/sass/core/_layout.scss */
+.map {
+  margin-top: 2em;
 }
 
-/* line 65, ../../_includes/sass/core/_layout.scss */
+/* line 70, ../../_includes/sass/core/_layout.scss */
 [role="main"] h1, [role="main"] h2, [role="main"] h3, [role="main"] h4, [role="main"] h5, [role="main"] h6 {
   text-align: center;
 }
 
-/* line 72, ../../_includes/sass/core/_layout.scss */
+/* line 77, ../../_includes/sass/core/_layout.scss */
 [role="banner"].global + .hero, [role="banner"].global + .strip, [role="banner"].global + .wrapper, .local.tabs [role="banner"].global + ul, .first {
   padding-top: 120px;
   padding-top: 7.5rem;
 }
 @media (min-width: 30em) {
-  /* line 72, ../../_includes/sass/core/_layout.scss */
+  /* line 77, ../../_includes/sass/core/_layout.scss */
   [role="banner"].global + .hero, [role="banner"].global + .strip, [role="banner"].global + .wrapper, .local.tabs [role="banner"].global + ul, .first {
     padding-top: 160px;
     padding-top: 10rem;
@@ -1018,17 +1011,26 @@ h6 {
 }
 
 /* line 80, ../../_includes/sass/core/_content.scss */
-.callout, .strip.blurb h1 {
+.callout {
   text-transform: uppercase;
 }
 
-/* line 89, ../../_includes/sass/core/_content.scss */
+/* line 85, ../../_includes/sass/core/_content.scss */
+.justify-left {
+  text-align: left !important;
+}
+/* line 88, ../../_includes/sass/core/_content.scss */
+.justify-left h1, .justify-left h2, .justify-left h3, .justify-left h4, .justify-left h5, .justify-left h6 {
+  text-align: left !important;
+}
+
+/* line 97, ../../_includes/sass/core/_content.scss */
 .intro, p:first-child {
   font-size: 18px;
   font-size: 1.125rem;
 }
 
-/* line 93, ../../_includes/sass/core/_content.scss */
+/* line 101, ../../_includes/sass/core/_content.scss */
 p, table, li {
   font-size: 16px;
   font-size: 1rem;
@@ -1036,34 +1038,34 @@ p, table, li {
   line-height: 1.5;
 }
 
-/* line 116, ../../_includes/sass/core/_content.scss */
+/* line 124, ../../_includes/sass/core/_content.scss */
 input, textarea, select {
   font-size: 13px;
   font-size: 0.8125rem;
 }
 
-/* line 121, ../../_includes/sass/core/_content.scss */
+/* line 129, ../../_includes/sass/core/_content.scss */
 ol, ul {
   margin-left: 1.5em;
 }
 @media (min-width: 48em) {
-  /* line 121, ../../_includes/sass/core/_content.scss */
+  /* line 129, ../../_includes/sass/core/_content.scss */
   ol, ul {
     margin-left: 0;
   }
 }
 
-/* line 129, ../../_includes/sass/core/_content.scss */
+/* line 137, ../../_includes/sass/core/_content.scss */
 a {
   text-decoration: none;
 }
 
-/* line 138, ../../_includes/sass/core/_content.scss */
+/* line 146, ../../_includes/sass/core/_content.scss */
 figure {
   margin: 1em 0;
 }
 
-/* line 142, ../../_includes/sass/core/_content.scss */
+/* line 150, ../../_includes/sass/core/_content.scss */
 figcaption {
   font-size: 13px;
   font-size: 0.8125rem;
@@ -1073,7 +1075,7 @@ figcaption {
   color: #94aeae;
 }
 
-/* line 151, ../../_includes/sass/core/_content.scss */
+/* line 159, ../../_includes/sass/core/_content.scss */
 .amp {
   font-family: "Baskerville", "Palatino", "Book Antiqua", serif;
   font-style: italic;
@@ -1081,7 +1083,7 @@ figcaption {
   font-size: 1.1em;
 }
 
-/* line 162, ../../_includes/sass/core/_content.scss */
+/* line 170, ../../_includes/sass/core/_content.scss */
 .icon {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1094,7 +1096,7 @@ figcaption {
   line-height: 0;
 }
 
-/* line 169, ../../_includes/sass/core/_content.scss */
+/* line 177, ../../_includes/sass/core/_content.scss */
 [class^="icon-"] {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1113,7 +1115,7 @@ figcaption {
   speak: none;
 }
 
-/* line 184, ../../_includes/sass/core/_content.scss */
+/* line 192, ../../_includes/sass/core/_content.scss */
 .screen-reader-text {
   /* For text that explains what the icon is (ie "RSS" or "Menu") */
   border: 0;
@@ -1126,21 +1128,27 @@ figcaption {
   width: 1px;
 }
 
-/* line 188, ../../_includes/sass/core/_content.scss */
+/* line 196, ../../_includes/sass/core/_content.scss */
 .tabs-content-header .active:after {
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20width%3D%2219px%22%20height%3D%2213px%22%20viewBox%3D%220%200%2019%2013%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20xmlns%3Asketch%3D%22http%3A//www.bohemiancoding.com/sketch/ns%22%3E%0A%20%20%20%20%3Ctitle%3Earrow-up--pink%3C/title%3E%0A%20%20%20%20%3Cdescription%3ECreated%20with%20Sketch%20%28http%3A//www.bohemiancoding.com/sketch%29%3C/description%3E%0A%20%20%20%20%3Cdefs%3E%3C/defs%3E%0A%20%20%20%20%3Cg%20id%3D%22spare-parts%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20sketch%3Atype%3D%22MSPage%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22arrow-up--pink%22%20sketch%3Atype%3D%22MSArtboardGroup%22%20transform%3D%22translate%28-3.000000%2C%20-6.000000%29%22%20fill%3D%22%23F41FA7%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M7.1073224%2C17.9561778%20C6.31455903%2C18.7253332%206.29542098%2C19.9915186%207.06457637%2C20.7842819%20C7.83373176%2C21.5770453%209.09991709%2C21.5961834%209.89268046%2C20.827028%20L16.8926805%2C14.0354835%20L18.3287421%2C12.6421868%20L16.9348088%2C11.206743%20L9.93480886%2C3.99828755%20C9.16530203%2C3.2058653%207.89910833%2C3.18728868%207.10668608%2C3.95679551%20C6.31426384%2C4.72630234%206.29568722%2C5.99249603%207.06519405%2C6.78491828%20L12.6825112%2C12.5695155%22%20id%3D%22Path-6-copy-3%22%20sketch%3Atype%3D%22MSShapeGroup%22%20transform%3D%22translate%2812.500000%2C%2012.391602%29%20scale%281%2C%20-1%29%20rotate%28-270.000000%29%20translate%28-12.500000%2C%20-12.391602%29%20%22%3E%3C/path%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E");
   background-repeat: no-repeat;
 }
 
-/* line 193, ../../_includes/sass/core/_content.scss */
+/* line 201, ../../_includes/sass/core/_content.scss */
 body select, .tabs-content select, .tabs-content-header a:after {
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20width%3D%2219px%22%20height%3D%2213px%22%20viewBox%3D%220%200%2019%2013%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20xmlns%3Asketch%3D%22http%3A//www.bohemiancoding.com/sketch/ns%22%3E%0A%20%20%20%20%3Ctitle%3Earrow-down--blue%3C/title%3E%0A%20%20%20%20%3Cdescription%3ECreated%20with%20Sketch%20%28http%3A//www.bohemiancoding.com/sketch%29%3C/description%3E%0A%20%20%20%20%3Cdefs%3E%3C/defs%3E%0A%20%20%20%20%3Cg%20id%3D%22spare-parts%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20sketch%3Atype%3D%22MSPage%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22arrow-down--blue%22%20sketch%3Atype%3D%22MSArtboardGroup%22%20transform%3D%22translate%28-3.000000%2C%20-7.000000%29%22%20fill%3D%22%233C4B72%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M7.1073224%2C18.9561778%20C6.31455903%2C19.7253332%206.29542098%2C20.9915186%207.06457637%2C21.7842819%20C7.83373176%2C22.5770453%209.09991709%2C22.5961834%209.89268046%2C21.827028%20L16.8926805%2C15.0354835%20L18.3287421%2C13.6421868%20L16.9348088%2C12.206743%20L9.93480886%2C4.99828755%20C9.16530203%2C4.2058653%207.89910833%2C4.18728868%207.10668608%2C4.95679551%20C6.31426384%2C5.72630234%206.29568722%2C6.99249603%207.06519405%2C7.78491828%20L12.6825112%2C13.5695155%22%20id%3D%22Path-6-copy-2%22%20sketch%3Atype%3D%22MSShapeGroup%22%20transform%3D%22translate%2812.500000%2C%2013.391602%29%20rotate%28-270.000000%29%20translate%28-12.500000%2C%20-13.391602%29%20%22%3E%3C/path%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E");
   background-repeat: no-repeat;
 }
 
-/* line 199, ../../_includes/sass/core/_content.scss */
+/* line 207, ../../_includes/sass/core/_content.scss */
 footer.global select, .footer.global select, footer.global .meta.contact dl select, .footer.global .meta.contact dl select, .hero.carousel select, .reverse select {
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20width%3D%2219px%22%20height%3D%2213px%22%20viewBox%3D%220%200%2019%2013%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20xmlns%3Asketch%3D%22http%3A//www.bohemiancoding.com/sketch/ns%22%3E%0A%20%20%20%20%3Ctitle%3Earrow-down--white%3C/title%3E%0A%20%20%20%20%3Cdescription%3ECreated%20with%20Sketch%20%28http%3A//www.bohemiancoding.com/sketch%29%3C/description%3E%0A%20%20%20%20%3Cdefs%3E%3C/defs%3E%0A%20%20%20%20%3Cg%20id%3D%22spare-parts%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20sketch%3Atype%3D%22MSPage%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22arrow-down--white%22%20sketch%3Atype%3D%22MSArtboardGroup%22%20transform%3D%22translate%28-3.000000%2C%20-7.000000%29%22%20fill%3D%22%23FFFFFF%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M7.1073224%2C18.9561778%20C6.31455903%2C19.7253332%206.29542098%2C20.9915186%207.06457637%2C21.7842819%20C7.83373176%2C22.5770453%209.09991709%2C22.5961834%209.89268046%2C21.827028%20L16.8926805%2C15.0354835%20L18.3287421%2C13.6421868%20L16.9348088%2C12.206743%20L9.93480886%2C4.99828755%20C9.16530203%2C4.2058653%207.89910833%2C4.18728868%207.10668608%2C4.95679551%20C6.31426384%2C5.72630234%206.29568722%2C6.99249603%207.06519405%2C7.78491828%20L12.6825112%2C13.5695155%22%20id%3D%22Path-6-copy-4%22%20sketch%3Atype%3D%22MSShapeGroup%22%20transform%3D%22translate%2812.500000%2C%2013.391602%29%20rotate%28-270.000000%29%20translate%28-12.500000%2C%20-13.391602%29%20%22%3E%3C/path%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E");
+  background-repeat: no-repeat;
+}
+
+/* line 213, ../../_includes/sass/core/_content.scss */
+.tile.vertical.more a:after {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20width%3D%2213px%22%20height%3D%2218px%22%20viewBox%3D%220%200%2013%2018%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20xmlns%3Asketch%3D%22http%3A//www.bohemiancoding.com/sketch/ns%22%3E%0A%20%20%20%20%3Ctitle%3Earrow-right--yellow%3C/title%3E%0A%20%20%20%20%3Cdescription%3ECreated%20with%20Sketch%20%28http%3A//www.bohemiancoding.com/sketch%29%3C/description%3E%0A%20%20%20%20%3Cdefs%3E%3C/defs%3E%0A%20%20%20%20%3Cg%20id%3D%22spare-parts%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20sketch%3Atype%3D%22MSPage%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22arrow-right--yellow%22%20sketch%3Atype%3D%22MSArtboardGroup%22%20transform%3D%22translate%28-6.000000%2C%20-3.000000%29%22%20fill%3D%22%23FED341%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M7.1073224%2C17.5645763%20C6.31455903%2C18.3337317%206.29542098%2C19.599917%207.06457637%2C20.3926804%20C7.83373176%2C21.1854438%209.09991709%2C21.2045818%209.89268046%2C20.4354264%20L16.8926805%2C13.6438819%20L18.3287421%2C12.2505852%20L16.9348088%2C10.8151415%20L9.93480886%2C3.60668598%20C9.16530203%2C2.81426374%207.89910833%2C2.79568712%207.10668608%2C3.56519395%20C6.31426384%2C4.33470077%206.29568722%2C5.60089447%207.06519405%2C6.39331672%20L12.6825112%2C12.1779139%22%20id%3D%22Path-6%22%20sketch%3Atype%3D%22MSShapeGroup%22%3E%3C/path%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E");
   background-repeat: no-repeat;
 }
 
@@ -1591,6 +1599,11 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   padding: 0.5em 1.5em 0.4375em;
   border-radius: 0.3125em;
 }
+/* line 49, ../../_includes/sass/modules/_button.scss */
+.button.center, #home .promos ul.button,
+#products .tabs-content-body ul.button {
+  margin: 0 auto;
+}
 
 /* line 15, ../../_includes/sass/modules/_strip.scss */
 .strip {
@@ -1645,6 +1658,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   list-style: none;
   list-style-type: none;
   padding-left: 0;
+  font-size: 0;
   margin-left: 0;
   overflow: hidden;
 }
@@ -1654,7 +1668,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   list-style: none;
   list-style-type: none;
 }
-/* line 40, ../../_includes/sass/modules/_grid-inline.scss */
+/* line 41, ../../_includes/sass/modules/_grid-inline.scss */
 .grid li, #about-us .narrow ul li, #home .promos ul li,
 #products .tabs-content-body ul li {
   display: block;
@@ -1662,7 +1676,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   overflow: hidden;
 }
 @media (min-width: 30em) {
-  /* line 40, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 41, ../../_includes/sass/modules/_grid-inline.scss */
   .grid li, #about-us .narrow ul li, #home .promos ul li,
   #products .tabs-content-body ul li {
     display: -moz-inline-stack;
@@ -1671,19 +1685,20 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
     *vertical-align: auto;
     zoom: 1;
     *display: inline;
+    vertical-align: top;
     margin-right: -5px;
   }
 }
 
 @media (min-width: 30em) {
-  /* line 57, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 59, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.small, #about-us .narrow ul.small, #home .promos ul.small,
   #products .tabs-content-body ul.small {
     margin-right: -24px;
   }
 }
 @media (min-width: 48em) {
-  /* line 57, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 59, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.small, #about-us .narrow ul.small, #home .promos ul.small,
   #products .tabs-content-body ul.small {
     margin-right: -24px;
@@ -1707,21 +1722,21 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 }
 
 @media (min-width: 30em) {
-  /* line 62, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 64, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
   #products .tabs-content-body ul.medium {
     margin-right: -24px;
   }
 }
 @media (min-width: 48em) {
-  /* line 62, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 64, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
   #products .tabs-content-body ul.medium {
     margin-right: -24px;
   }
 }
 @media (min-width: 64em) {
-  /* line 62, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 64, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
   #products .tabs-content-body ul.medium {
     margin-right: -24px;
@@ -1753,7 +1768,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 }
 
 @media (min-width: 48em) {
-  /* line 67, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 69, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.large, #about-us .narrow ul.large, #home .promos ul.large,
   #products .tabs-content-body ul.large, #about-us .narrow ul, #home .promos ul,
   #products .tabs-content-body ul {
@@ -1805,11 +1820,36 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   text-align: left;
 }
 
-/* line 40, ../../_includes/sass/modules/_tile.scss */
-.tile.vertical.more {
-  height: 100%;
+/* line 38, ../../_includes/sass/modules/_tile.scss */
+.tile.vertical {
+  position: relative;
 }
-/* line 44, ../../_includes/sass/modules/_tile.scss */
+/* line 41, ../../_includes/sass/modules/_tile.scss */
+.tile.vertical.more a {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  padding: 12px 24px 12px 12px;
+  padding: 0.75rem 1.5rem 0.75rem 0.75rem;
+  display: block;
+  position: relative;
+  height: 100%;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+/* line 51, ../../_includes/sass/modules/_tile.scss */
+.tile.vertical.more a:after {
+  right: 8px;
+  right: 0.5rem;
+  content: " ";
+  position: absolute;
+  width: 1.2em;
+  height: 1.2em;
+  top: 50%;
+  margin-top: -0.6em;
+  background-size: contain;
+  background-position: center center;
+}
+/* line 66, ../../_includes/sass/modules/_tile.scss */
 .tile.vertical .thumb {
   display: block;
   margin-bottom: 0.5em;
@@ -2830,34 +2870,55 @@ footer.global [role="navigation"].global .logo {
 
 /* line 11, ../../_includes/sass/modules/_post.scss */
 .post {
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+  padding-bottom: 18px;
+  padding-bottom: 1.125rem;
   position: relative;
   clear: both;
-}
-/* line 17, ../../_includes/sass/modules/_post.scss */
-.post .post-body {
-  width: 80%;
-  float: left;
-  margin-right: -100%;
-  margin-left: 0%;
-  clear: none;
-  padding-right: 24px;
+  overflow: hidden;
+  border-width: 0 0 1px 0;
+  border-style: solid;
 }
 /* line 21, ../../_includes/sass/modules/_post.scss */
-.post .meta {
-  width: 20%;
-  float: right;
-  margin-left: 0;
-  margin-right: 0;
-  clear: right;
-  padding-right: 24px;
-  padding-right: 0;
+.post:last-child {
+  border: none;
 }
-/* line 27, ../../_includes/sass/modules/_post.scss */
+@media (min-width: 48em) {
+  /* line 38, ../../_includes/sass/modules/_post.scss */
+  .post p {
+    width: 50%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: right;
+    padding-right: 24px;
+    padding-right: 0;
+  }
+  /* line 43, ../../_includes/sass/modules/_post.scss */
+  .post .js-post-img {
+    width: 50%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0%;
+    clear: none;
+    padding-right: 24px;
+  }
+}
+/* line 49, ../../_includes/sass/modules/_post.scss */
 .post h1, .post h2, .post h3, .post h4, .post h5, .post h6 {
   text-align: left;
 }
+/* line 53, ../../_includes/sass/modules/_post.scss */
+.post > hgroup {
+  margin-bottom: 1em;
+}
+/* line 57, ../../_includes/sass/modules/_post.scss */
+.post h6 {
+  color: #b1c4c4;
+}
 
-/* line 34, ../../_includes/sass/modules/_post.scss */
+/* line 64, ../../_includes/sass/modules/_post.scss */
 .post-body {
   margin-top: 1em;
 }
