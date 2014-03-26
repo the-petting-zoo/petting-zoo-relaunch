@@ -236,17 +236,16 @@
       });
 
       function mailchimpResult (resp) {
-          if (resp.result === 'success') {
-            //Show success if sucessful
-            $("footer div.success").append( '<div class="mailchimp-email"><h3><em>Thank you for subscribing. We have sent you a confirmation email.</em></h3></div>' );
-          }
+        if (resp.result === 'success') {
+          //Show success if sucessful
+          $("footer div.success").append( '<div class="mailchimp-email"><h3><em>Thank you for subscribing. We have sent you a confirmation email.</em></h3></div>' );
+        }
       }
 
 // Flip PDF JS
 // ----------------------------------------------------------------------------------
 
-$('#listing').directorySlider({ height: 400}
-  );
+$('#listing').directorySlider({ height: 400 });
 
 
 // Google Maps
@@ -274,6 +273,7 @@ $('#listing').directorySlider({ height: 400}
       title:"div",
       zIndex: 3
     });
+  }
 
 // ----------------------------------------------------------------------------------
 
