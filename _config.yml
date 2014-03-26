@@ -3,9 +3,11 @@ name: The Petting Zoo
 tag: "Share & Smile"
 # url: http://pettingzoo.jayperryworks.com
 baseurl: 
+permalink: /:categories/:title/
 
 markdown: redcarpet
 pygments: true
+
 
 exclude: ["README.md", "config.rb", ".sublime-project", ".sublime-workspace", "Guardfile", "Gemfile", "Gemfile.lock", ".sass-cache", "assets/media/*"]
 

@@ -77,7 +77,7 @@
 
 // make a grid from markdown-generated lists for certain posts
 #home .promos, 
-#products .accordion-content {
+#products .tabs-content-body {
   ul {
     @extend .grid;
     @extend %grid-large;

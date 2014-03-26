@@ -188,34 +188,38 @@
 // -> Specific themes override the %placeholders & properties for these elements
 // ------------------------------------------------------------------------------
 
-.default, body {
+%theme-default {
   @extend %color-background;
   @extend %color-copy;
   @extend %color-border;
+
+  #{headers()} {
+    @extend %color-headers;
+  }
+
+  p, li, dl, td, label {
+    @extend %color-copy;
+  }
+
+  a {
+    @extend %color-link;
+  }
+
+  .button.primary {
+    @extend %color-button--primary;
+  }
+
+  input, textarea {
+    @extend %color-input;
+  }
+
+  select {
+    @extend %color-select;
+  }
 }
 
-#{headers()} {
-  @extend %color-headers;
-}
-
-p, li, dl, td, label {
-  @extend %color-copy;
-}
-
-a {
-  @extend %color-link;
-}
-
-.button.primary {
-  @extend %color-button--primary;
-}
-
-input, textarea {
-  @extend %color-input;
-}
-
-select {
-  @extend %color-select;
+body {
+  @extend %theme-default;
 }
 
 // THEMES
