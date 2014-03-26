@@ -250,7 +250,6 @@ $('#listing').directorySlider({ height: 400 });
 
 // Google Maps
 // ----------------------------------------------------------------------------------
-
   var map;
   var address = new google.maps.LatLng(39.17943,-76.730038);
 
@@ -274,6 +273,7 @@ $('#listing').directorySlider({ height: 400 });
       zIndex: 3
     });
   }
+  google.maps.event.addDomListener(window, 'load', initialize);
 
 // ----------------------------------------------------------------------------------
 

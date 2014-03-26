@@ -20,7 +20,7 @@
     </script>
     {% include html/grunticon.html %}
   </head>
-  <body id="{% if page.slug %}{{ page.slug | replace: " ", "-" | downcase }}{% else %}{{ page.title | replace: " ", "-" | downcase }}{% endif %}" onload="initialize()">
+  <body id="{% if page.slug %}{{ page.slug | replace: " ", "-" | downcase }}{% else %}{{ page.title | replace: " ", "-" | downcase }}{% endif %}">
     <header role="banner" class="global">
       {% include html/nav-global.html %}
     </header>
@@ -103,9 +103,9 @@
       </section>
     </footer>
 
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=&amp;sensor=false"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ site.url }}{{ site.assets.js }}vendor/jquery-1.10.2.min.js"><\/script>')</script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=&amp;sensor=false"></script>
     <script src="{{ site.url }}{{ site.assets.js }}vendor/directory.js"></script>
     <script src="{{ site.url }}{{ site.assets.js }}app.js"></script>
     <script src="{{ site.url }}{{ site.assets.js }}vendor/ajaxchimp.js"></script>
