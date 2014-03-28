@@ -177,6 +177,25 @@ jQuery(function($) {
         directionNav: false
       });
 
+      // set up PDF viewer carousels
+      $('#pdf-thumb').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 160,
+        itemMargin: 5,
+        asNavFor: '#pdf-viewer'
+      });
+       
+      $('#pdf-viewer').flexslider({
+        animation: "fade",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        sync: "#pdf-thumb"
+      });
+
       $("#js-catalogs").equalsize({ children: 'li' });
 
       // for news page
@@ -406,24 +425,5 @@ $('#pdf-thumb').directorySlider();
 
   $(window).load(function() {
     pettingzoo.init();
-
- $('#pdf-thumb').flexslider({
-    animation: "slide",
-    controlNav: false,
-    animationLoop: false,
-    slideshow: false,
-    itemWidth: 160,
-    itemMargin: 5,
-    asNavFor: '#pdf-viewer'
-  });
-   
-  $('#pdf-viewer').flexslider({
-    animation: "fade",
-    controlNav: false,
-    animationLoop: false,
-    slideshow: false,
-    sync: "#pdf-thumb"
-  });
-
   });
 })(jQuery);
