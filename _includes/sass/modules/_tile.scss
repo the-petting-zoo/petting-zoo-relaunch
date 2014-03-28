@@ -1,0 +1,78 @@
+// ==========================================================================
+//  Tile modules
+// -> a self-contained, stackable unit, usually contained in an inline grid
+// -> and usually linking to/summarizing other content
+// ==========================================================================
+
+
+// BASE
+// -----------------------------------------------------------------------------
+
+.tile {
+  vertical-align: top;
+  text-align: left;
+
+  #{headers()}, a, small, p {
+    text-align: left;
+  }
+}
+
+// MODIFIERS
+// -----------------------------------------------------------------------------
+.tile.horizontal {
+  // overflow: hidden;
+  margin-bottom: gutter-span();
+
+  // @include layout(6) {
+  //   .portrait {
+  //     @include grid-span(2, 1);
+  //   }
+
+  //   .info {
+  //     @include grid-span(4, 3, $options: right);
+  //     text-align: left;
+  //   }
+  // }
+
+  a[href^="mailto:"] {
+    @include rem(font-size, 13px);
+
+    @include breakpoint($medium) {
+      @include rem(font-size, 16px);
+    }
+  }
+}
+
+.tile.vertical {
+  position: relative;
+
+  &.more a {
+    @include rem(font-size, 13px);
+    @include rem(padding, 12px 24px 12px 12px);
+    display: block;
+    position: relative;
+    // @include inline-block--centered;
+    height: 100%;
+    vertical-align: middle;
+    text-transform: uppercase;
+
+    &:after {
+      $size: 1.2em;
+      @extend %icon-arrow-right--yellow;
+      @include rem(right, 8px);
+      content: " ";
+      position: absolute;
+      width: $size;
+      height: $size;
+      top: 50%;
+      margin-top: -($size/2);
+      background-size: contain;
+      background-position: center center;
+    }
+  }
+  
+  .thumb {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+}

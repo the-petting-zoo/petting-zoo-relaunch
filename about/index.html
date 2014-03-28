@@ -1,0 +1,21 @@
+---
+layout: default
+title: About Us
+---
+
+<main role="main" class="wrapper">
+  {% for post in site.categories.about %}
+  <h1 class="title highlight">{{ post.title }}</h1>
+
+  <div class="narrow">
+    {% if post.feature %}
+    <figure>
+      <img src="{{ post.feature }}" alt="{{ post.feature_caption | xml_escape }}" />
+      <figcaption>{{ post.feature_caption }}</figcaption>
+    </figure>
+    {% endif %}
+    
+    {{ post.content }}
+  </div>
+  {% endfor %}
+</main>

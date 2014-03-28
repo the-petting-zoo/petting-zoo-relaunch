@@ -1,0 +1,65 @@
+// ==========================================================================
+//  Hero modules
+// ==========================================================================
+
+
+// BASE
+// -----------------------------------------------------------------------------
+
+.hero {
+  // @include grid-margins(margin);
+  padding: 0 $border-w--thick;
+  // @extend .wrapper;
+  position: relative;
+  clear: both;
+}
+
+// MODIFIERS
+// -----------------------------------------------------------------------------
+
+.hero.carousel {
+  @extend %theme-reverse;
+  z-index: $z--medium;
+
+  ul {
+    @extend %theme-reverse;
+    @include unstyled-list;
+    margin-left: 0;
+    margin-top: 0;
+    // width: 100%;
+    overflow: hidden;
+    border-style: solid;
+    border-width: $border-w--thick;
+
+  }
+  li {
+    // width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+  .carousel-control-nav {
+    @include inline-list;
+    @include rem(margin-top, 12px);
+    text-align: center;
+
+    a {
+      $size: 8px;
+      @include hide-text;
+      @include rem(width, $size);
+      @include rem(height, $size);
+      @include rem(margin-right, ($size * 1));
+      display: block;
+      background: #ccc;
+      border-radius: 100px;
+      border: 1px solid #999;
+    }
+
+    .carousel-active {
+      background: #333;
+    }
+  }

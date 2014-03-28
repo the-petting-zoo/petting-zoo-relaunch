@@ -1,0 +1,198 @@
+# jekyll settings
+name: The Petting Zoo
+tag: "Share & Smile"
+# url: http://pettingzoo.jayperryworks.com
+baseurl: 
+permalink: /:categories/:title/
+
+markdown: redcarpet
+pygments: true
+
+
+exclude: ["README.md", "config.rb", ".sublime-project", ".sublime-workspace", "Guardfile", "Gemfile", "Gemfile.lock", ".sass-cache", "assets/media/*"]
+
+# asset paths
+assets:
+  img: "/assets/images/"
+  css: "/assets/css/"
+  js: "/assets/js/"
+  fonts: "/assets/fonts/"
+  s3: "http://pettingzoo-website.s3.amazonaws.com"
+  carousel: "/banners/carousel/"
+  promos: "/banners/promos/"
+  catalog: "/products/catalogs/"
+  custom: "/products/custom/"
+  staff: "/staff/"
+  blog: "/blog/"
+
+# prose.io settings
+prose:
+  rooturl: "_posts"
+  media: "uploads"
+  ignore:
+    - index.md
+    - index.html
+    - _config.yml
+    - /_layouts
+    - /_includes
+
+  metadata:
+    _posts/about:
+      - name: "title"
+        field:
+          element: "text"
+          label: "Page Title"
+          help: "Enter the title of the about page"
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "default"
+      - name: "categories"
+        field:
+          element: "hidden"
+          value: "about"
+      - name: "feature"
+        field:
+          element: "text"
+          label: "Feature Image"
+          help: "Enter the name of the uploaded feature image (including extension)"
+      - name: "feature_caption"
+        field:
+          element: "text"
+          label: "Feature Image Caption"
+          help: "Enter a caption (if needed) for the feature image"
+
+    _posts/banners:
+      - name: "title"
+        field:
+          element: "hidden"
+          value: "Promo Banners"
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "default"
+      - name: "categories"
+        field:
+          element: "select"
+          options:
+            - name: "Carousel"
+              value: "carousel"
+            - name: "Promos"
+              value: "promos"
+
+    _posts/home:
+      - name: "title"
+        field:
+          element: "hidden"
+          value: "Home"
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "default"
+
+    _posts/news:
+      - name: "title"
+        field:
+          element: "text"
+          label: "News Title"
+          help: "Enter the title of the news post"
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "default"
+      - name: "category"
+        field:
+          element: "hidden"
+          value: "blog"
+      - name: "categories"
+        field:
+          element: "multiselect"
+          label: "Add Tags"
+          placeholder: "Choose Tags"
+          alterable: "true"
+          options:
+            - name: "Shows"
+              value: "shows"
+
+    _posts/products/catalogs:
+      - name: "title"
+        field:
+          element: "text"
+          label: "Page Title"
+          help: "Enter the title of the about page"
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "default"
+      - name: "category"
+        field:
+          element: "hidden"
+          value: "catalog"
+      - name: "pdf"
+        field:
+          element: "text"
+          label: "PDF Version"
+          help: "Enter the name of the uploaded PDF (including extension)"
+      - name: "cover"
+        field:
+          element: "text"
+          label: "Cover Image"
+          help: "Enter the name of the uploaded cover image (including extension)"
+
+    _posts/products/custom:
+      - name: "title"
+        field:
+          element: "text"
+          label: "Product Name"
+          help: "Enter the name of the custom product"
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "default"
+      - name: "category"
+        field:
+          element: "hidden"
+          value: "custom"
+
+    _posts/staff:
+      - name: "title"
+        field:
+          element: "text"
+          label: "Staff Name"
+          help: "Enter the staff member's name"
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "default"
+      - name: "category"
+        field:
+          element: "hidden"
+          value: "staff"
+      - name: "job_title"
+        field:
+          element: "text"
+          label: "Job Title or Region"
+      - name: "email"
+        field:
+          element: "text"
+          label: "Email Address"
+      - name: "portrait"
+        field:
+          element: "text"
+          label: "Portrait Image"
+          help: "Enter the name of the uploaded portrait image (including extension)"
+
+    _posts/testimonials:
+      - name: 'title'
+        field:
+          element: 'text'
+          label: 'Customer Name'
+          help: 'Enter the name of your happy customer'
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "default"
+      - name: "category"
+        field:
+          element: "hidden"
+          value: "testimonials"

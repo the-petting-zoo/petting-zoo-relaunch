@@ -1,0 +1,90 @@
+// ==============================================================================
+// Global layout styles
+// ==============================================================================
+
+// Quickly set grid-margins on a container across multiple breakpoints
+@mixin grid-margins($property: padding) {
+  #{$property}-left: nth($layout-margins, 1);
+  #{$property}-right: nth($layout-margins, 1);
+
+  @for $i from 1 through length($layout-margins) {
+    @include breakpoint(nth($breakpoints, $i)) {
+      #{$property}-left: nth($layout-margins, $i);
+      #{$property}-right: nth($layout-margins, $i);
+    }
+  }
+}
+
+// A helper to quickly create grid-span() includes across multiple breakpoints
+// Saves having to write breakpoint calls over and over again
+@mixin grid-span-break($cols, $start, $opts: false) {
+  @include grid-span(nth($cols, 1), nth($start, 1), $options: $opts);
+
+  @for $i from 1 through (length($cols) - 1) {
+    $num: ($i + 1);
+    @include breakpoint(nth($breakpoints, $num)) {
+      @include grid-span(nth($cols, $num), nth($start, $num), $options: $opts);
+    }
+  }
+}
+
+.margins {
+  @include grid-margins(margin);
+}
+
+.wrapper {
+  @include grid-margins;
+  position: relative;
+  max-width: ($layout-width + (last($layout-margins) * 2));
+  margin: 0 auto;
+  clear: both;
+  overflow: hidden;
+}
+
+.wide {
+  max-width: ($layout-width--wide + (last($layout-margins) * 2));
+  margin: 0 auto;
+}
+
+.narrow {
+  max-width: ($layout-width--narrow + (last($layout-margins) * 2));
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+// .sidebar-right {
+//   max-width: ($layout-width--narrow + ($layout-width--narrow * .2) + (last($layout-margins) * 2));
+//   // overflow: visible;
+  
+
+//   @include breakpoint($large) {
+//     left: ($layout-width--narrow * .2);
+//     padding-left: 0;
+//   }
+// }
+
+// container for embedded google map
+.map {
+  margin-top: 2em;
+}
+
+[role="main"] {
+  @include rem(padding-bottom, 24px);
+
+  #{headers()} {
+    text-align: center;
+  }
+}
+
+// for the first section on a page...
+// make the bg bleed under the header and add padding to keep stuff from overlapping
+[role="banner"].global + .hero, [role="banner"].global + .strip, [role="banner"].global + .wrapper, .first {
+  @include rem(padding-top, first($header-padding));
+
+  @include breakpoint($xsmall) {
+    @include rem(padding-top, nth-last($header-padding, 2));
+  }
+}
