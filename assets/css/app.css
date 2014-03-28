@@ -1261,28 +1261,23 @@ p {
   text-align: center;
 }
 
-/* line 70, ../../_includes/sass/core/_layout.scss */
-.map {
-  margin-top: 2em;
-}
-
-/* line 74, ../../_includes/sass/core/_layout.scss */
+/* line 69, ../../_includes/sass/core/_layout.scss */
 [role="main"] {
   padding-bottom: 24px;
   padding-bottom: 1.5rem;
 }
-/* line 77, ../../_includes/sass/core/_layout.scss */
+/* line 72, ../../_includes/sass/core/_layout.scss */
 [role="main"] h1, [role="main"] h2, [role="main"] h3, [role="main"] h4, [role="main"] h5, [role="main"] h6 {
   text-align: center;
 }
 
-/* line 84, ../../_includes/sass/core/_layout.scss */
+/* line 79, ../../_includes/sass/core/_layout.scss */
 [role="banner"].global + .hero, [role="banner"].global + .strip, [role="banner"].global + .wrapper, .local.tabs [role="banner"].global + ul, .first {
   padding-top: 120px;
   padding-top: 7.5rem;
 }
 @media (min-width: 30em) {
-  /* line 84, ../../_includes/sass/core/_layout.scss */
+  /* line 79, ../../_includes/sass/core/_layout.scss */
   [role="banner"].global + .hero, [role="banner"].global + .strip, [role="banner"].global + .wrapper, .local.tabs [role="banner"].global + ul, .first {
     padding-top: 160px;
     padding-top: 10rem;
@@ -3459,33 +3454,43 @@ footer.global [role="navigation"].global .logo {
   font-size: 1.2em;
 }
 
-/* line 56, ../../_includes/sass/app.scss */
+/* line 3, ../../_includes/sass/modules/_map.scss */
+.map {
+  margin: 24px 0;
+  margin: 1.5rem 0;
+  height: 250px;
+  height: 15.625rem;
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  clear: both;
+  z-index: 0;
+  border-width: 6px;
+  border-style: solid;
+}
+@media (min-width: 48em) {
+  /* line 3, ../../_includes/sass/modules/_map.scss */
+  .map {
+    height: 400px;
+    height: 25rem;
+  }
+}
+/* line 23, ../../_includes/sass/modules/_map.scss */
+.map img {
+  max-width: none;
+}
+
+/* line 57, ../../_includes/sass/app.scss */
 .promos li > img, .promos li > a {
   border: 4px solid #ebf0f0;
 }
-/* line 60, ../../_includes/sass/app.scss */
+/* line 61, ../../_includes/sass/app.scss */
 .promos li > a {
   display: block;
   overflow: hidden;
 }
-/* line 65, ../../_includes/sass/app.scss */
+/* line 66, ../../_includes/sass/app.scss */
 .promos a:hover {
   border: 4px solid #f035a6;
-}
-
-/* line 78, ../../_includes/sass/app.scss */
-#map_canvas {
-  display: block;
-  clear: both;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 450px;
-  position: relative;
-  z-index: 0;
-}
-
-/* line 88, ../../_includes/sass/app.scss */
-#map_canvas img {
-  max-width: none;
 }

@@ -426,6 +426,7 @@ jQuery(function($) {
 // // ----------------------------------------------------------------------------------
   var map;
   var address = new google.maps.LatLng(39.17943,-76.730038);
+  var mapEl = "js-map_canvas";
 
   function initialize() {
 
@@ -437,7 +438,7 @@ jQuery(function($) {
       }
     };
     
-    map = new google.maps.Map(document.getElementById("map_canvas"),
+    map = new google.maps.Map(document.getElementById(mapEl),
         mapOptions);
 
     var marker = new google.maps.Marker({
