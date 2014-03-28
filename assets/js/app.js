@@ -178,24 +178,9 @@ jQuery(function($) {
       });
 
       // set up PDF viewer carousels
-      $('#pdf-thumb').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        itemWidth: 160,
-        itemMargin: 5,
-        asNavFor: '#pdf-viewer'
-      });
-       
-      $('#pdf-viewer').flexslider({
-        animation: "fade",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        sync: "#pdf-thumb"
-      });
+      pettingzoo.pdfViewer.init();
 
+      // make the height of the recent catalog tiles equal
       $("#js-catalogs").equalsize({ children: 'li' });
 
       // for news page
@@ -242,6 +227,54 @@ jQuery(function($) {
           // pettingzoo.tabs.init(pettingzoo.config.accordion);
         }
       });
+    },
+
+    // --- PDF viewer carousels ------------------------------------------------
+    pdfViewer : {
+
+      // config
+      viewer : "#pdf-viewer",
+      thumbNav : "#pdf-thumb",
+      controlPrev : ".prev",
+      controlNext : ".next",
+
+      init : function() {
+        var $viewer = $(pettingzoo.pdfViewer.viewer);
+        var $thumbNav = $(pettingzoo.pdfViewer.thumbNav);
+        // pull in slides from the specified directory
+        $viewer.directorySlider();
+        $thumbNav.directorySlider();
+
+        // set up carousels
+        $viewer.flexslider({
+          animation: Modernizr.touch ? "slide" : "fade",
+          controlNav: false,
+          directionNav: false,
+          animationLoop: false,
+          slideshow: false,
+          sync: pettingzoo.pdfViewer.thumbNav
+        });
+
+        $(pettingzoo.pdfViewer.controlPrev).on('click', function(){
+          $viewer.flexslider('prev');
+          return false;
+        })
+
+        $(pettingzoo.pdfViewer.controlNext).on('click', function(){
+          $viewer.flexslider('next');
+          return false;
+        })
+
+        $thumbNav.flexslider({
+          animation: "slide",
+          controlNav: false,
+          animationLoop: false,
+          slideshow: false,
+          itemWidth: 160,
+          itemMargin: 5,
+          asNavFor: pettingzoo.pdfViewer.viewer
+        });
+      }
     },
 
     // --- Local navigation (tabs & accordion) --------------------------------------
@@ -388,11 +421,6 @@ jQuery(function($) {
         }
       }
 
-// Flip PDF JS
-// ----------------------------------------------------------------------------------
-
-$('#pdf-viewer').directorySlider();
-$('#pdf-thumb').directorySlider();
 
 // // Google Maps
 // // ----------------------------------------------------------------------------------

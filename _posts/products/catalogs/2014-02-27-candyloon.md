@@ -1,5 +1,6 @@
 ---
 layout: catalog
+slug: products
 title: "Candyloons"
 category: "catalog"
 directory: candyloon

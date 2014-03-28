@@ -1,5 +1,6 @@
 ---
 layout: catalog
+slug: products
 title: "Lolly Plush"
 category: "catalog"
 pdf: lollyplush2013.pdf

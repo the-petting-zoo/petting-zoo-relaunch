@@ -1,5 +1,6 @@
 ---
 layout: catalog
+slug: products
 title: "Valentines"
 category: "catalog"
 pdf: Val-2014-Catalog.pdf

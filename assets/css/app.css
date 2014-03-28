@@ -1277,18 +1277,12 @@ p {
 }
 
 /* line 84, ../../_includes/sass/core/_layout.scss */
-#pdf-viewer {
-  width: 46.15385%;
-  margin: 0 auto;
-}
-
-/* line 92, ../../_includes/sass/core/_layout.scss */
 [role="banner"].global + .hero, [role="banner"].global + .strip, [role="banner"].global + .wrapper, .local.tabs [role="banner"].global + ul, .first {
   padding-top: 120px;
   padding-top: 7.5rem;
 }
 @media (min-width: 30em) {
-  /* line 92, ../../_includes/sass/core/_layout.scss */
+  /* line 84, ../../_includes/sass/core/_layout.scss */
   [role="banner"].global + .hero, [role="banner"].global + .strip, [role="banner"].global + .wrapper, .local.tabs [role="banner"].global + ul, .first {
     padding-top: 160px;
     padding-top: 10rem;
@@ -3378,21 +3372,103 @@ footer.global [role="navigation"].global .logo {
   margin-top: 1em;
 }
 
-/* line 55, ../../_includes/sass/app.scss */
+/* line 3, ../../_includes/sass/modules/_pdf-viewer.scss */
+.flexslider {
+  position: relative;
+  background: #334061;
+  border: 6px solid #ebf0f0;
+  box-shadow: none;
+}
+
+/* line 10, ../../_includes/sass/modules/_pdf-viewer.scss */
+#pdf-viewer {
+  width: 30.90909%;
+  margin: 0 auto;
+  background: #ebf0f0;
+}
+/* line 22, ../../_includes/sass/modules/_pdf-viewer.scss */
+#pdf-viewer.spread {
+  width: 61.81818%;
+}
+/* line 26, ../../_includes/sass/modules/_pdf-viewer.scss */
+#pdf-viewer .flex-active-slide, #pdf-viewer li {
+  margin-bottom: 0;
+}
+/* line 30, ../../_includes/sass/modules/_pdf-viewer.scss */
+#pdf-viewer .prev, #pdf-viewer .next {
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
+  width: 36px;
+  width: 2.25rem;
+  height: 54px;
+  height: 3.375rem;
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -27px;
+  z-index: 1000;
+  background-color: #ebf0f0;
+  background-position: center center;
+  background-size: 18px;
+}
+/* line 44, ../../_includes/sass/modules/_pdf-viewer.scss */
+#pdf-viewer .prev:hover, #pdf-viewer .next:hover {
+  background-color: #dce5e5;
+}
+/* line 49, ../../_includes/sass/modules/_pdf-viewer.scss */
+#pdf-viewer .prev {
+  left: -48px;
+  left: -3rem;
+}
+/* line 53, ../../_includes/sass/modules/_pdf-viewer.scss */
+#pdf-viewer .next {
+  right: -48px;
+  right: -3rem;
+}
+
+/* line 58, ../../_includes/sass/modules/_pdf-viewer.scss */
+#pdf-thumb {
+  margin: 12px 0;
+  margin: 0.75rem 0;
+}
+/* line 61, ../../_includes/sass/modules/_pdf-viewer.scss */
+#pdf-thumb .flex-active-slide {
+  opacity: 0.75;
+}
+/* line 65, ../../_includes/sass/modules/_pdf-viewer.scss */
+#pdf-thumb li {
+  margin-bottom: 0;
+}
+/* line 69, ../../_includes/sass/modules/_pdf-viewer.scss */
+#pdf-thumb .flex-prev, #pdf-thumb .flex-next {
+  width: 24px;
+  width: 1.5rem;
+  height: 28.8px;
+  height: 1.8rem;
+  top: 50%;
+  margin-top: -14.4px;
+}
+/* line 77, ../../_includes/sass/modules/_pdf-viewer.scss */
+#pdf-thumb .flex-prev:before, #pdf-thumb .flex-next:before {
+  font-size: 1.2em;
+}
+
+/* line 56, ../../_includes/sass/app.scss */
 .promos li > img, .promos li > a {
   border: 4px solid #ebf0f0;
 }
-/* line 59, ../../_includes/sass/app.scss */
+/* line 60, ../../_includes/sass/app.scss */
 .promos li > a {
   display: block;
   overflow: hidden;
 }
-/* line 64, ../../_includes/sass/app.scss */
+/* line 65, ../../_includes/sass/app.scss */
 .promos a:hover {
   border: 4px solid #f035a6;
 }
 
-/* line 77, ../../_includes/sass/app.scss */
+/* line 78, ../../_includes/sass/app.scss */
 #map_canvas {
   display: block;
   clear: both;
@@ -3404,7 +3480,7 @@ footer.global [role="navigation"].global .logo {
   z-index: 0;
 }
 
-/* line 87, ../../_includes/sass/app.scss */
+/* line 88, ../../_includes/sass/app.scss */
 #map_canvas img {
   max-width: none;
 }

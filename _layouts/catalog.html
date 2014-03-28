@@ -7,7 +7,10 @@ layout: default
   <h1 class="title">{{ page.title }}</h1>
     
   <!-- catalog: main carousel -->
-  <div id="pdf-viewer" class="flexslider{% if page.spread == true %} spread{% endif %}" data-directory="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ page.directory }}/" data-filebase="{{ page.filebase | xml_escape }}" data-extension="{{ page.extension }}" data-numslides="{{ page.numslides }}" ></div>
+  <div id="pdf-viewer" class="flexslider{% if page.spread == true %} spread{% endif %}" data-directory="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ page.directory }}/" data-filebase="{{ page.filebase | xml_escape }}" data-extension="{{ page.extension }}" data-numslides="{{ page.numslides }}" >
+    <a href="#" class="prev icon-arrow-left--blue">&lsaquo; Previous</a>
+    <a href="#" class="next icon-arrow-right--blue">Next &rsaquo;</a>
+  </div>
 
   <!-- thumbnail nav -->
   <div id="pdf-thumb" class="flexslider" data-directory="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ page.directory }}/" data-filebase="{{ page.filebase | xml_escape }}" data-extension="{{ page.extension }}" data-numslides="{{ page.numslides }}"></div>

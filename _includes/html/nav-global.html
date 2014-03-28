@@ -4,7 +4,7 @@
   </a>
   <ul class="menu">
     <li><a href="{{ site.url }}/about/"{% if page.title == "About Us" %} class="active"{% endif %}>About us</a></li>
-    <li><a href="{{ site.url }}/products/"{% if page.title == "Products" %} class="active"{% endif %}>Products</a></li>
+    <li><a href="{{ site.url }}/products/"{% if page.slug == "products" %}  class="active"{% elsif page.title == "Products" %} class="active"{% endif %}>Products</a></li>
     <li class="split"><a href="{{ site.url }}/news/"{% if page.title == "News" %} class="active"{% endif %}>News</a></li>
     <li><a href="{{ site.url }}/contact/"{% if page.title == "Contact Us" %} class="active"{% endif %}>Contact</a></li>
   </ul>

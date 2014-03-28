@@ -1,5 +1,6 @@
 ---
 layout: catalog
+slug: products
 title: "Zootiques"
 category: "catalog"
 pdf: TRI_FOLD_RESIN_2013.pdf

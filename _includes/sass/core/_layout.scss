@@ -79,14 +79,6 @@
   }
 }
 
-// carousel for catalog PDFs
-// http://stackoverflow.com/questions/13202867/fixed-size-of-flexslider
-#pdf-viewer {
-  $h: 60%;
-  width: ($h/1.3);
-  margin: 0 auto;
-}
-
 // for the first section on a page...
 // make the bg bleed under the header and add padding to keep stuff from overlapping
 [role="banner"].global + .hero, [role="banner"].global + .strip, [role="banner"].global + .wrapper, .first {
