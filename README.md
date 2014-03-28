@@ -1,4 +1,4 @@
-the-petting-zoo.github.io
+The Petting Zoo
 =========================
 
-The Petting Zoo's website
+pettingzooplush.com
