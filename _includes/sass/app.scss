@@ -4,6 +4,7 @@
 
 @import "vendor/bourbon/bourbon";
 @import "singularitygs";
+@import "vendor/flexslider";
 
 // ===============================================================================
 // Settings & resets
@@ -42,9 +43,6 @@
 @import "modules/hero";
 @import "modules/navigation";
 @import "modules/post";
-
-//Vendor / Flexslider
-@import "vendor/flexslider";
 
 // ===============================================================================
 // Styles of Shame

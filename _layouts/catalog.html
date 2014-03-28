@@ -2,11 +2,18 @@
 layout: default
 ---
 
-
 <main role="main" class="wrapper">
 
-<div id="pdf-viewer" class="flexslider" data-directory="https://s3.amazonaws.com/pettingzoo/catalogs/{{ page.directory }}/" data-filebase="{{ page.filebase }}" data-extension="{{ page.extension }}" data-numslides="{{ page.numslides }}" ></div>
+  <h1 class="title">{{ page.title }}</h1>
+    
+  <!-- catalog: main carousel -->
+  <div id="pdf-viewer" class="flexslider" data-directory="https://s3.amazonaws.com/pettingzoo/catalogs/{{ page.directory }}/" data-filebase="{{ page.filebase }}" data-extension="{{ page.extension }}" data-numslides="{{ page.numslides }}" ></div>
 
-<div id="pdf-thumb" class="flexslider" data-directory="https://s3.amazonaws.com/pettingzoo/catalogs/{{ page.directory }}/" data-filebase="{{ page.filebase }}" data-extension="{{ page.extension }}" data-numslides="{{ page.numslides }}"></div>
+  <!-- thumbnail nav -->
+  <div id="pdf-thumb" class="flexslider" data-directory="https://s3.amazonaws.com/pettingzoo/catalogs/{{ page.directory }}/" data-filebase="{{ page.filebase }}" data-extension="{{ page.extension }}" data-numslides="{{ page.numslides }}"></div>
+
+  <div class="center">
+    <a href="{{ page.pdf }}" class="button large">Download a PDF of this catalog</a>
+  </div>
 
 </main>

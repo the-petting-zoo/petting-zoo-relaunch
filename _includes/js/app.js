@@ -285,13 +285,13 @@ $('#pdf-thumb').directorySlider();
     controlNav: false,
     animationLoop: false,
     slideshow: false,
-    itemWidth: 210,
+    itemWidth: 160,
     itemMargin: 5,
     asNavFor: '#pdf-viewer'
   });
    
   $('#pdf-viewer').flexslider({
-    animation: "slide",
+    animation: "fade",
     controlNav: false,
     animationLoop: false,
     slideshow: false,
