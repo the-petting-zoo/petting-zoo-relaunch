@@ -35,7 +35,7 @@
 .wrapper {
   @include grid-margins;
   position: relative;
-  max-width: $layout-width;
+  max-width: ($layout-width + (last($layout-margins) * 2));
   margin: 0 auto;
   clear: both;
   overflow: hidden;
@@ -77,6 +77,12 @@
   #{headers()} {
     text-align: center;
   }
+}
+
+#pdf-viewer {
+  $h: 60%;
+  width: ($h/1.3);
+  margin: 0 auto;
 }
 
 // for the first section on a page...

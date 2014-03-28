@@ -1,11 +1,14 @@
 ---
 layout: default
-title:  "Custom Orders"
-categories:
+title: Custom Orders
+categories: 
   - custom
   - intro
+published: true
 ---
 
-Short blurb about how custom orders work. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quod iure odio praesentium eveniet id dolorum temporibus facere et voluptatum. Ad, officiis, sint, architecto cumque at assumenda ab maiores eligendi quos maxime alias aspernatur id ipsa iure eos ullam nam vitae nesciunt ut voluptatem natus tempora veniam ipsum incidunt amet!
+The petting zoo prides itself on its ability to offer a wide range of
+custom product. If you are looking to tailor a product with your very
+own logo, location or design we can help. 
 
 [Frequently Asked Questions &rsaquo;]({{ site.url }}/products/faq/)
