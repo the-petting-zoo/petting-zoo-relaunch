@@ -140,6 +140,7 @@
     }
   }
   %color-button--primary {
+    color: white;
     background: first($button);
 
     &:hover, &:active {
