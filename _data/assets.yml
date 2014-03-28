@@ -1,0 +1,12 @@
+# Petting Zoo logo
+# main is an SVG for supporting browsers
+# fallback is a PNG for older browsers
+# uses site.assets.img path
+logo:
+  main: "logo-pettingzoo.svg"
+  fallback: "logo-pettingzoo.png"
+
+# downloadable forms
+# uses site.assets.s3 path
+forms:
+  credit: "/forms/MASTER+CREDIT+APPLICATION.pdf"

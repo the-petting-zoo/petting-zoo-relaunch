@@ -4,7 +4,7 @@ title:  "Heat Press"
 categories: custom
 ---
 
-![Kahlu the Elephant](http://pettingzoo.s3.amazonaws.com/catalogs/custom/Kahlu_Elephant_pink.png)
+![Kahlu the Elephant]({{ site.assets.s3 }}/catalogs/custom/Kahlu_Elephant_pink.png)
 
 We currently offer a custom name drop option for our plush
 and backpacks. Want to show off where you sell? Let us press a name drop
