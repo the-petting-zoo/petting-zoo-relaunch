@@ -3338,9 +3338,22 @@ footer.global [role="navigation"].global .logo {
 .post:last-child {
   border: none;
 }
+/* line 25, ../../_includes/sass/modules/_post.scss */
+.post h1, .post h2, .post h3, .post h4, .post h5, .post h6 {
+  text-align: left;
+}
+/* line 29, ../../_includes/sass/modules/_post.scss */
+.post > hgroup {
+  margin-bottom: 1em;
+}
+/* line 33, ../../_includes/sass/modules/_post.scss */
+.post h6 {
+  color: #b1c4c4;
+}
+
 @media (min-width: 48em) {
-  /* line 38, ../../_includes/sass/modules/_post.scss */
-  .post p {
+  /* line 43, ../../_includes/sass/modules/_post.scss */
+  .js .post.has-image p {
     width: 50%;
     float: right;
     margin-left: 0;
@@ -3349,8 +3362,8 @@ footer.global [role="navigation"].global .logo {
     padding-right: 24px;
     padding-right: 0;
   }
-  /* line 43, ../../_includes/sass/modules/_post.scss */
-  .post .js-post-img {
+  /* line 48, ../../_includes/sass/modules/_post.scss */
+  .js .post.has-image p.has-image {
     width: 50%;
     float: left;
     margin-right: -100%;
@@ -3359,20 +3372,8 @@ footer.global [role="navigation"].global .logo {
     padding-right: 24px;
   }
 }
-/* line 49, ../../_includes/sass/modules/_post.scss */
-.post h1, .post h2, .post h3, .post h4, .post h5, .post h6 {
-  text-align: left;
-}
-/* line 53, ../../_includes/sass/modules/_post.scss */
-.post > hgroup {
-  margin-bottom: 1em;
-}
-/* line 57, ../../_includes/sass/modules/_post.scss */
-.post h6 {
-  color: #b1c4c4;
-}
 
-/* line 64, ../../_includes/sass/modules/_post.scss */
+/* line 57, ../../_includes/sass/modules/_post.scss */
 .post-body {
   margin-top: 1em;
 }
