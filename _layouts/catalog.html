@@ -16,7 +16,7 @@ layout: default
   <div id="pdf-thumb" class="flexslider" data-directory="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ page.directory }}/" data-filebase="{{ page.filebase | xml_escape }}" data-extension="{{ page.extension }}" data-numslides="{{ page.numslides }}"></div>
 
   <div class="center">
-    <a href="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.directory }}/{{ page.pdf }}" class="button small">Download a PDF of this catalog</a>
+    <a href="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ page.directory }}/{{ page.pdf }}" class="button small">Download a PDF of this catalog</a>
   </div>
 
 </main>
