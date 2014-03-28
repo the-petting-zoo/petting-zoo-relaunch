@@ -22,30 +22,6 @@
     border: none;
   }
 
-  @include layout(4) {
-    // .post-body {
-    //   @include grid-span(4, 1);
-    // }
-
-    // .meta {
-    //   @include grid-span(1, 5, $options: right);
-    //   padding-right: 0;
-    // }
-
-    
-
-    @include breakpoint($small) {
-      p {
-        @include grid-span(2, 3, $options: right);
-        padding-right: 0;
-      }
-      
-      .js-post-img {
-        @include grid-span(2, 1);
-      }
-    }
-  }
-
   #{headers()} {
     text-align: left;
   }
@@ -56,6 +32,23 @@
 
   h6 {
     color: darken($gray, 20);
+  }
+}
+
+// JS is used to add classes to images
+// make them half-width
+.js .post.has-image {
+  @include layout(4) {
+    @include breakpoint($small) {
+      p {
+        @include grid-span(2, 3, $options: right);
+        padding-right: 0;
+      }
+      
+      p.has-image {
+        @include grid-span(2, 1);
+      }
+    }
   }
 }
 

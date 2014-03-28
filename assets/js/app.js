@@ -135,8 +135,7 @@ jQuery(function($) {
 
       menuMobile: "#js-menu-mobile",
 
-      postImg: "js-post-img", // class to add to images in posts (workaround for jekyll markdown parsing)
-      postTxt: "js-post-text" // class to add to body text in posts (workaround for jekyll markdown parsing)
+      postImg: "has-image" // class to add to images in posts (workaround for jekyll markdown parsing)
     },
 
     // Setup
@@ -180,7 +179,17 @@ jQuery(function($) {
 
       $("#js-catalogs").equalsize({ children: 'li' });
 
-      $(".post > p").has("img").addClass(pettingzoo.config.postImg); // add a class to images in the blog so we can float them to the left (jekyll/markdown workaround)
+      // for news page
+      // check to see if a post contains an image
+      // if so, add a ".has-image" class
+      $(".post").each(function() {
+        var $post = $(this);
+        var $hasImg = $post.find("p").has("img");
+        if ($hasImg.length > 0) {
+          $post.addClass(pettingzoo.config.postImg);
+          $hasImg.addClass(pettingzoo.config.postImg);
+        }
+      });
     },
 
     // Methods
