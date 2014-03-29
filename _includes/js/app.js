@@ -42,8 +42,14 @@
 
       // set up enquire.js stuff
       pettingzoo.registerBreakpoints();
-      pettingzoo.tabs.init(pettingzoo.config.tabs); // set up accordion version of tabs (mobile/default)
 
+      // set up various plugins, behaviors
+      pettingzoo.tabs.init(pettingzoo.config.tabs); // set up accordion version of tabs (mobile/default)
+      pettingzoo.contactForm.init();
+      pettingzoo.map.init(); // google map embed
+      pettingzoo.pdfViewer.init(); // set up PDF viewer carousels
+
+      // the menu select on mobile screens
       $("#js-menu-mobile").change(function(){
         if ($(this).val()!='') {
           window.location.href = $(this).val();
@@ -58,9 +64,6 @@
         namespace: "carousel-",
         directionNav: false
       });
-
-      // set up PDF viewer carousels
-      pettingzoo.pdfViewer.init();
 
       // make the height of the recent catalog tiles equal
       $("#js-catalogs").equalsize({ children: 'li' });
@@ -171,7 +174,6 @@
 
       // methods
       // ----------------------------------------------------------------------------------
-
       init : function(el) {
         // ----- Local nav (tabs) -------------------------------------------------------------
         //  -> http://www.jacklmoore.com/notes/jquery-tabs/
@@ -252,89 +254,99 @@
         $link.addClass(pettingzoo.tabs.active);
         $($link.attr('href')).addClass(pettingzoo.tabs.open);
       }
-    }
-    
-  };
+    },
 
+    // --- Contact form & mailing list opt-in --------------------------------------
 
-// Ajax Form Submit
-// ----------------------------------------------------------------------------------
-  
-      $('#ajax-form').submit(function(){
+    contactForm : {
 
-          var email_text = $('input[name="email"]').val();
-          var name = $('input[name="name"]').val();
-          var mailchimp = $('#ajax-form input:checkbox:checked').val();
+      simpleformToken : "40adcbc671a42a6b6a2bf078797161d4",
 
-        //Send email via ajax & simpleform
-        $.ajax({
-          dataType: 'jsonp',
-          url: "http://getsimpleform.com/messages/ajax?form_api_token=40adcbc671a42a6b6a2bf078797161d4",
-          data: $('#ajax-form').serialize() 
-        }).done(function() {
-          //Remove form and show success message.
-          $("footer h3.callout").prepend( '<div class="success"><h2>Success!</h2></div>' );
-          $("footer aside" ).fadeOut(1000);
-          $("#ajax-form" ).fadeOut(1000);
-        });
+      init : function() {
 
-        //If Mailchimp checked submit mailchimp form
-        if(mailchimp){
-          $('input#mc-email').val(email_text);
-          $('input#mc-FNAME ').val(name);  
-          
-          //Sets up form for ajax submit
-          $('#mc-form').ajaxChimp({
-              callback: mailchimpResult,
-              url: 'http://bivee.us8.list-manage1.com/subscribe/post?u=0eb271cf853e657ebe61f0e9f&id=ceab22e526'
+        $('#ajax-form').submit(function(){
+
+            var email_text = $('input[name="email"]').val();
+            var name = $('input[name="name"]').val();
+            var mailchimp = $('#ajax-form input:checkbox:checked').val();
+
+          //Send email via ajax & simpleform
+          $.ajax({
+            dataType: 'jsonp',
+            url: "http://getsimpleform.com/messages/ajax?form_api_token=" + pettingzoo.contactForm.simpleformToken,
+            data: $('#ajax-form').serialize() 
+          }).done(function() {
+            //Remove form and show success message.
+            $("footer h3.callout").prepend( '<div class="success"><h2>Success!</h2></div>' );
+            $("footer aside" ).fadeOut(1000);
+            $("#ajax-form" ).fadeOut(1000);
           });
-          //Submits mailchimp form
-          $("#mc-form").submit();
-        }
 
-        return false; //to stop the form from submitting
-      
-      });
+          //If Mailchimp checked submit mailchimp form
+          if(mailchimp){
+            $('input#mc-email').val(email_text);
+            $('input#mc-FNAME ').val(name);  
+            
+            //Sets up form for ajax submit
+            $('#mc-form').ajaxChimp({
+                callback: pettingzoo.contactForm.mailchimpResult,
+                url: 'http://bivee.us8.list-manage1.com/subscribe/post?u=0eb271cf853e657ebe61f0e9f&id=ceab22e526'
+            });
+            //Submits mailchimp form
+            $("#mc-form").submit();
+          }
 
-      function mailchimpResult (resp) {
+          return false; //to stop the form from submitting
+
+        });
+      },
+
+      mailchimpResult : function(resp) {
         if (resp.result === 'success') {
           //Show success if sucessful
           $("footer div.success").append( '<div class="mailchimp-email"><h3><em>Thank you for subscribing. We have sent you a confirmation email.</em></h3></div>' );
         }
       }
+    },
 
+    // --- Google map embed --------------------------------------------------
 
-// // Google Maps
-// // ----------------------------------------------------------------------------------
-  var map;
-  var address = new google.maps.LatLng(39.17943,-76.730038);
-  var mapEl = "js-map_canvas";
+    map : {
 
-  function initialize() {
+      address : new google.maps.LatLng(39.17943,-76.730038),
+      el : "js-map_canvas",
 
-    var mapOptions = {
-      zoom:15,
-      center: address,
-      mapTypeControlOptions: {
-         mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'div']
+      init : function() {
+        var map;
+
+        var mapOptions = {
+          zoom:15,
+          center: pettingzoo.map.address,
+          mapTypeControlOptions: {
+             mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'div']
+          }
+        };
+        
+        map = new google.maps.Map(document.getElementById(pettingzoo.map.el),
+            mapOptions);
+
+        var marker = new google.maps.Marker({
+          position: pettingzoo.map.address,
+          map: map,
+          title:"div",
+          zIndex: 3
+        });
       }
-    };
+    }
     
-    map = new google.maps.Map(document.getElementById(mapEl),
-        mapOptions);
+  };
 
-    var marker = new google.maps.Marker({
-      position: address,
-      map: map,
-      title:"div",
-      zIndex: 3
-    });
-  }
-  google.maps.event.addDomListener(window, 'load', initialize);
 
+// Start it all up
 // ----------------------------------------------------------------------------------
 
   $(window).load(function() {
     pettingzoo.init();
   });
+
 })(jQuery);
