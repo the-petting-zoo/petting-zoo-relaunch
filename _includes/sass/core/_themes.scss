@@ -91,7 +91,7 @@
 
 // an area that subtly stands out from the background
 .island {
-  background: $gray;
+  background-color: $gray;
 }
 
 // ----- generator mixin -------------------------------------------------------
@@ -250,11 +250,11 @@ body {
   }
 
   .island {
-    background: lighten($color-bg-reverse, 20);
+    background-color: lighten($color-bg-reverse, 10);
   }
 
   a.island:hover {
-    background: lighten($color-bg-reverse, 25);
+    background-color: lighten($color-bg-reverse, 15);
   }
 
   select {
