@@ -50,7 +50,7 @@
       pettingzoo.tabs.init(pettingzoo.config.tabs); // set up accordion version of tabs (mobile/default)
       pettingzoo.contactForm.init(); // contact form & mailing list opt-in
       if ($("body#contact-us").length > 0) pettingzoo.map.init(); // google map embed (only on contact page)
-      // pettingzoo.pdfViewer.init(); // set up PDF viewer carousels
+      pettingzoo.pdfViewer.init(); // set up PDF viewer carousels
 
       // the menu select on mobile screens
       $("#js-menu-mobile").change(function(){
