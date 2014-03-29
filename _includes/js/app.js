@@ -50,7 +50,7 @@
       pettingzoo.tabs.init(pettingzoo.config.tabs); // set up accordion version of tabs (mobile/default)
       pettingzoo.contactForm.init(); // contact form & mailing list opt-in
       if ($("body#contact-us").length > 0) pettingzoo.map.init(); // google map embed (only on contact page)
-      pettingzoo.pdfViewer.init(); // set up PDF viewer carousels
+      // pettingzoo.pdfViewer.init(); // set up PDF viewer carousels
 
       // the menu select on mobile screens
       $("#js-menu-mobile").change(function(){
@@ -61,24 +61,26 @@
       });
 
       // set up hero carousel
-      $(pettingzoo.config.carousel).flexslider({
+      var $carousel = $(pettingzoo.config.carousel);
+
+      $carousel.flexslider({
+        animation: Modernizr.touch ? "slide" : "fade",
         selector: "ul > li",
         allowOneSlide: false,
         namespace: "carousel-",
         directionNav: false
       });
 
-      var $carousel = $(pettingzoo.config.carousel);
-
-      $(pettingzoo.config.carouselPrev).on('click', function(){
+      $(pettingzoo.config.carousel + " > " + pettingzoo.config.carouselPrev).on('click', function(){
+        console.log("hello");
         $carousel.flexslider('prev');
         return false;
-      })
+      });
 
-      $(pettingzoo.config.carouselNext).on('click', function(){
+      $(pettingzoo.config.carousel + " > " + pettingzoo.config.carouselNext).on('click', function(){
         $carousel.flexslider('next');
         return false;
-      })
+      });
 
       // make the height of the recent catalog tiles equal
       $("#js-catalogs").equalsize({ children: 'li' });
@@ -155,15 +157,15 @@
           sync: pettingzoo.pdfViewer.thumbNav
         });
 
-        $(pettingzoo.pdfViewer.controlPrev).on('click', function(){
+        $(pettingzoo.pdfViewer.viewer + " > " + pettingzoo.pdfViewer.controlPrev).on('click', function(){
           $viewer.flexslider('prev');
           return false;
-        })
+        });
 
-        $(pettingzoo.pdfViewer.controlNext).on('click', function(){
+        $(pettingzoo.pdfViewer.viewer + " > " + pettingzoo.pdfViewer.controlNext).on('click', function(){
           $viewer.flexslider('next');
           return false;
-        })
+        });
 
         $thumbNav.flexslider({
           animation: "slide",

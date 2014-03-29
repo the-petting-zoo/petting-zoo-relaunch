@@ -8,11 +8,11 @@ title: home
 
   <!-- hero carousel/feature banners -->
   <div class="hero carousel">
-    <a href="#" class="prev icon-arrow-left--yellow">&lsaquo; Previous</a>
-    <a href="#" class="next icon-arrow-right--yellow">Next &rsaquo;</a>
     {% for post in site.categories.carousel %}
     {{ post.content }}
     {% endfor %}
+    <a href="#" class="prev icon-arrow-left--yellow">&lsaquo; Previous</a>
+    <a href="#" class="next icon-arrow-right--yellow">Next &rsaquo;</a>
   </div>
 
   <!-- catalogs -->
