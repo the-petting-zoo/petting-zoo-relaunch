@@ -50,7 +50,7 @@
 }
 
 .strip-int {
-  @include rem(margin-top, 12px);
+  // @include rem(margin-top, 12px);
   @include rem(padding, 18px 0);
   border-top-width: $border-w--thin;
   border-top-style: solid;

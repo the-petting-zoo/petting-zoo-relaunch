@@ -130,6 +130,9 @@ jQuery(function($) {
       // -> global vars go here
       // --------------------------------------------------------------- 
       carousel: ".carousel", // class of carousel elements
+      carouselPrev: ".prev",
+      carouselNext: ".next",
+
       tabs: ".js-tabs",
       fallback: "fallback", // "fallback" data attribute value
 
@@ -163,8 +166,8 @@ jQuery(function($) {
 
       // set up various plugins, behaviors
       pettingzoo.tabs.init(pettingzoo.config.tabs); // set up accordion version of tabs (mobile/default)
-      pettingzoo.contactForm.init();
-      pettingzoo.map.init(); // google map embed
+      pettingzoo.contactForm.init(); // contact form & mailing list opt-in
+      if ($("body#contact-us").length > 0) pettingzoo.map.init(); // google map embed (only on contact page)
       pettingzoo.pdfViewer.init(); // set up PDF viewer carousels
 
       // the menu select on mobile screens
@@ -182,6 +185,18 @@ jQuery(function($) {
         namespace: "carousel-",
         directionNav: false
       });
+
+      var $carousel = $(pettingzoo.config.carousel);
+
+      $(pettingzoo.config.carouselPrev).on('click', function(){
+        $carousel.flexslider('prev');
+        return false;
+      })
+
+      $(pettingzoo.config.carouselNext).on('click', function(){
+        $carousel.flexslider('next');
+        return false;
+      })
 
       // make the height of the recent catalog tiles equal
       $("#js-catalogs").equalsize({ children: 'li' });
