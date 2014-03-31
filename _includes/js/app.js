@@ -208,7 +208,7 @@
         //Send email via ajax & simpleform
         $.ajax({
           dataType: 'jsonp',
-          url: "http://getsimpleform.com/messages/ajax?form_api_token=40adcbc671a42a6b6a2bf078797161d4",
+          url: "http://getsimpleform.com/messages/ajax?form_api_token=9e785bffbf9337d08052b2b07bb8ef67",
           data: $('#ajax-form').serialize() 
         }).done(function() {
           //Remove form and show success message.
@@ -225,7 +225,7 @@
           //Sets up form for ajax submit
           $('#mc-form').ajaxChimp({
               callback: mailchimpResult,
-              url: 'http://bivee.us8.list-manage1.com/subscribe/post?u=0eb271cf853e657ebe61f0e9f&id=ceab22e526'
+              url: 'http://pettingzooplush.us8.list-manage.com/subscribe/post?u=63768868a43809514e63f3953&amp;id=0caa307af8'
           });
           //Submits mailchimp form
           $("#mc-form").submit();
