@@ -279,6 +279,12 @@
 
       simpleformToken : "9e785bffbf9337d08052b2b07bb8ef67",
 
+      // messages that appear when the form is submitted
+      successMessage: '<div class="success"><h3>Thanks for contacting us!</h3><p class="center">We\'ll be in touch with you soon.</p></div>',
+      mailChimpMessage: '<p class="center">Thank you for subscribing to our mailing list. We have sent you a confirmation email.</p>',
+
+      mailChimpSuccess : false, // flag -- was the newsletter signup successful?
+
       init : function() {
 
         $('#ajax-form').submit(function(){
@@ -295,8 +301,11 @@
           }).done(function() {
             //Remove form and show success message.
             $("footer h3.callout").fadeOut(1000, function() {
-              console.log($(this).attr("class"));
-              $("footer.global").prepend( '<div class="success"><h3>Thanks for contacting us!</h3><p class="center">We\'ll be in touch with you soon.</p></div>' );
+              $("footer.global").prepend(pettingzoo.contactForm.successMessage);
+              if (pettingzoo.contactForm.mailChimpSuccess == true) {
+                console.log("mailchimp success");
+                $(".success").append(pettingzoo.contactForm.mailChimpMessage);
+              }
             });
 
             $("footer aside" ).fadeOut(1000);
@@ -306,7 +315,7 @@
           //If Mailchimp checked submit mailchimp form
           if(mailchimp){
             $('input#mc-email').val(email_text);
-            $('input#mc-FNAME ').val(name);  
+            $('input#mc-FNAME ').val(name);
             
             //Sets up form for ajax submit
             $('#mc-form').ajaxChimp({
@@ -324,8 +333,10 @@
 
       mailchimpResult : function(resp) {
         if (resp.result === 'success') {
+          
           //Show success if sucessful
-          $("footer div.success").append( '<p>Thank you for subscribing to our mailing list. We have sent you a confirmation email.</p>' );
+          // $(".success").append( '' ).fadeIn(1000);
+          pettingzoo.contactForm.mailChimpSuccess = true;
         }
       }
     },
