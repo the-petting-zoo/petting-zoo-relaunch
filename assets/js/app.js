@@ -168,7 +168,7 @@ jQuery(function($) {
       pettingzoo.tabs.init(pettingzoo.config.tabs); // set up accordion version of tabs (mobile/default)
       pettingzoo.contactForm.init(); // contact form & mailing list opt-in
       if ($("body#contact-us").length > 0) pettingzoo.map.init(); // google map embed (only on contact page)
-      pettingzoo.pdfViewer.init(); // set up PDF viewer carousels
+      // pettingzoo.pdfViewer.init(); // set up PDF viewer carousels
 
       // the menu select on mobile screens
       $("#js-menu-mobile").change(function(){
@@ -395,7 +395,7 @@ jQuery(function($) {
 
     contactForm : {
 
-      simpleformToken : "40adcbc671a42a6b6a2bf078797161d4",
+      simpleformToken : "9e785bffbf9337d08052b2b07bb8ef67",
 
       init : function() {
 
@@ -412,7 +412,11 @@ jQuery(function($) {
             data: $('#ajax-form').serialize() 
           }).done(function() {
             //Remove form and show success message.
-            $("footer h3.callout").prepend( '<div class="success"><h2>Success!</h2></div>' );
+            $("footer h3.callout").fadeOut(1000, function() {
+              console.log($(this).attr("class"));
+              $("footer.global").prepend( '<div class="success"><h3>Thanks for contacting us!</h3><p class="center">We\'ll be in touch with you soon.</p></div>' );
+            });
+
             $("footer aside" ).fadeOut(1000);
             $("#ajax-form" ).fadeOut(1000);
           });
@@ -425,7 +429,7 @@ jQuery(function($) {
             //Sets up form for ajax submit
             $('#mc-form').ajaxChimp({
                 callback: pettingzoo.contactForm.mailchimpResult,
-                url: 'http://bivee.us8.list-manage1.com/subscribe/post?u=0eb271cf853e657ebe61f0e9f&id=ceab22e526'
+                url: 'http://pettingzooplush.us8.list-manage.com/subscribe/post?u=63768868a43809514e63f3953&id=0caa307af8'
             });
             //Submits mailchimp form
             $("#mc-form").submit();
@@ -439,7 +443,7 @@ jQuery(function($) {
       mailchimpResult : function(resp) {
         if (resp.result === 'success') {
           //Show success if sucessful
-          $("footer div.success").append( '<div class="mailchimp-email"><h3><em>Thank you for subscribing. We have sent you a confirmation email.</em></h3></div>' );
+          $("footer div.success").append( '<p>Thank you for subscribing to our mailing list. We have sent you a confirmation email.</p>' );
         }
       }
     },

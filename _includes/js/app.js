@@ -294,7 +294,11 @@
             data: $('#ajax-form').serialize() 
           }).done(function() {
             //Remove form and show success message.
-            $("footer h3.callout").prepend( '<div class="success"><h2>Success!</h2></div>' );
+            $("footer h3.callout").fadeOut(1000, function() {
+              console.log($(this).attr("class"));
+              $("footer.global").prepend( '<div class="success"><h3>Thanks for contacting us!</h3><p class="center">We\'ll be in touch with you soon.</p></div>' );
+            });
+
             $("footer aside" ).fadeOut(1000);
             $("#ajax-form" ).fadeOut(1000);
           });
@@ -321,7 +325,7 @@
       mailchimpResult : function(resp) {
         if (resp.result === 'success') {
           //Show success if sucessful
-          $("footer div.success").append( '<div class="mailchimp-email"><h3><em>Thank you for subscribing. We have sent you a confirmation email.</em></h3></div>' );
+          $("footer div.success").append( '<p>Thank you for subscribing to our mailing list. We have sent you a confirmation email.</p>' );
         }
       }
     },
