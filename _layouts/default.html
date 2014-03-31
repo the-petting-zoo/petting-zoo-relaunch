@@ -31,7 +31,7 @@
       <h3 class="callout">Get in Touch</h3>
       <section class="wrapper narrow">
  
-     <form id="ajax-form" action="#">
+        <form id="ajax-form" action="#">
           <div class="control_group">
             <label for="name">Your Name</label>
             <input type="text" class="form-textbox" data-type="input-textbox" id="name" name="name" size="20" value="" required/>
@@ -42,11 +42,10 @@
           </div>
           <div class="control_group">
           <select class="form-dropdown" id="subject" name="subject">
-            <option value="" disabled selected>How can we help?</option>
-            <option value="order">I'd like to place an order</option>
-            <option value="sales">I'd like to speak to a sales representative</option>
-            <option value="general">I have a general question</option>
-            <option value="python">What is the capital of Assyria?</option>
+            <option value="" disabled selected>{{ site.data.contact.contact_subjects.question | xml_escape }}</option>
+            {% for subject in site.data.contact.contact_subjects.answers %}
+            <option value="{{ subject.value }}">{{ subject.option | xml_escape }}</option>
+            {% endfor %}
           </select>
           </div>
           <div class="control_group">

@@ -17,9 +17,18 @@
 // MODIFIERS
 // -----------------------------------------------------------------------------
 
+$control-size: 36px;
+$control-nav-size: 8px;
+$control-nav-margin: 12px;
+$control-nav-h: 18px;
+
 .hero.carousel {
   @extend %theme-reverse;
+  @include rem(margin-bottom, -($control-nav-size/2));
+  background: transparent;
   z-index: $z--medium;
+
+  .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
 
   ul {
     @extend %theme-reverse;
@@ -40,26 +49,69 @@
   img {
     width: 100%;
   }
+
+  .prev, .next {
+    $h: $control-size * 1.5;
+    @extend .island;
+    @include hide-text;
+    @include rem(width, $control-size);
+    @include rem(height, $h);
+    display: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -(($h/2) + $control-nav-margin + $control-nav-h);
+    z-index: 1000;
+    background-color: $color-bg-well;
+    background-position: center center;
+    background-size: ($control-size/2);
+
+    &:hover {
+      background-color: darken($color-bg-well, 5);
+    }
+
+    @include breakpoint($small) {
+      display: block;
+    }
+  }
+
+  .prev {
+    @include rem(left, -($control-size));
+  }
+
+  .next {
+    @include rem(right, -($control-size));
+  }
 }
 
   .carousel-control-nav {
+    // @extend %theme-reverse;
     @include inline-list;
-    @include rem(margin-top, 12px);
+    @include rem(margin-top, $control-nav-margin);
+    @include rem(height, $control-nav-h);
     text-align: center;
 
+    li {
+      @extend %theme-reverse;
+
+      &:first-child {
+        @include rem(padding-left, $control-nav-size);
+      }
+    }
+
     a {
-      $size: 8px;
       @include hide-text;
-      @include rem(width, $size);
-      @include rem(height, $size);
-      @include rem(margin-right, ($size * 1));
+      @include rem(width, $control-nav-size);
+      @include rem(height, $control-nav-size);
+      @include rem(margin-right, $control-nav-size);
       display: block;
-      background: #ccc;
+      background: $color--tertiary;
       border-radius: 100px;
-      border: 1px solid #999;
+      border: none;
     }
 
     .carousel-active {
-      background: #333;
+      background: white;
+      // @include rem(width, 10px);
+      // @include rem(height, 10px);
     }
   }

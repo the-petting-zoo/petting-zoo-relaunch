@@ -35,7 +35,7 @@
 .wrapper {
   @include grid-margins;
   position: relative;
-  max-width: $layout-width;
+  max-width: ($layout-width + (last($layout-margins) * 2));
   margin: 0 auto;
   clear: both;
   overflow: hidden;
@@ -65,11 +65,6 @@
 //     padding-left: 0;
 //   }
 // }
-
-// container for embedded google map
-.map {
-  margin-top: 2em;
-}
 
 [role="main"] {
   @include rem(padding-bottom, 24px);

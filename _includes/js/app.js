@@ -12,13 +12,15 @@
       // -> global vars go here
       // --------------------------------------------------------------- 
       carousel: ".carousel", // class of carousel elements
+      carouselPrev: ".prev",
+      carouselNext: ".next",
+
       tabs: ".js-tabs",
       fallback: "fallback", // "fallback" data attribute value
 
       menuMobile: "#js-menu-mobile",
 
-      postImg: "js-post-img", // class to add to images in posts (workaround for jekyll markdown parsing)
-      postTxt: "js-post-text" // class to add to body text in posts (workaround for jekyll markdown parsing)
+      postImg: "has-image" // class to add to images in posts (workaround for jekyll markdown parsing)
     },
 
     // Setup
@@ -43,8 +45,14 @@
 
       // set up enquire.js stuff
       pettingzoo.registerBreakpoints();
-      pettingzoo.tabs.init(pettingzoo.config.tabs); // set up accordion version of tabs (mobile/default)
 
+      // set up various plugins, behaviors
+      pettingzoo.tabs.init(pettingzoo.config.tabs); // set up accordion version of tabs (mobile/default)
+      pettingzoo.contactForm.init(); // contact form & mailing list opt-in
+      if ($("body#contact-us").length > 0) pettingzoo.map.init(); // google map embed (only on contact page)
+      pettingzoo.pdfViewer.init(); // set up PDF viewer carousels
+
+      // the menu select on mobile screens
       $("#js-menu-mobile").change(function(){
         if ($(this).val()!='') {
           window.location.href = $(this).val();
@@ -53,16 +61,41 @@
       });
 
       // set up hero carousel
-      $(pettingzoo.config.carousel).flexslider({
+      var $carousel = $(pettingzoo.config.carousel);
+
+      $carousel.flexslider({
+        animation: Modernizr.touch ? "slide" : "fade",
         selector: "ul > li",
         allowOneSlide: false,
         namespace: "carousel-",
         directionNav: false
       });
 
+      $(pettingzoo.config.carousel + " > " + pettingzoo.config.carouselPrev).on('click', function(){
+        console.log("hello");
+        $carousel.flexslider('prev');
+        return false;
+      });
+
+      $(pettingzoo.config.carousel + " > " + pettingzoo.config.carouselNext).on('click', function(){
+        $carousel.flexslider('next');
+        return false;
+      });
+
+      // make the height of the recent catalog tiles equal
       $("#js-catalogs").equalsize({ children: 'li' });
 
-      $(".post > p").has("img").addClass(pettingzoo.config.postImg); // add a class to images in the blog so we can float them to the left (jekyll/markdown workaround)
+      // for news page
+      // check to see if a post contains an image
+      // if so, add a ".has-image" class
+      $(".post").each(function() {
+        var $post = $(this);
+        var $hasImg = $post.find("p").has("img");
+        if ($hasImg.length > 0) {
+          $post.addClass(pettingzoo.config.postImg);
+          $hasImg.addClass(pettingzoo.config.postImg);
+        }
+      });
     },
 
     // Methods
@@ -98,6 +131,54 @@
       });
     },
 
+    // --- PDF viewer carousels ------------------------------------------------
+    pdfViewer : {
+
+      // config
+      viewer : "#pdf-viewer",
+      thumbNav : "#pdf-thumb",
+      controlPrev : ".prev",
+      controlNext : ".next",
+
+      init : function() {
+        var $viewer = $(pettingzoo.pdfViewer.viewer);
+        var $thumbNav = $(pettingzoo.pdfViewer.thumbNav);
+        // pull in slides from the specified directory
+        $viewer.directorySlider();
+        $thumbNav.directorySlider();
+
+        // set up carousels
+        $viewer.flexslider({
+          animation: Modernizr.touch ? "slide" : "fade",
+          controlNav: false,
+          directionNav: false,
+          animationLoop: false,
+          slideshow: false,
+          sync: pettingzoo.pdfViewer.thumbNav
+        });
+
+        $(pettingzoo.pdfViewer.viewer + " > " + pettingzoo.pdfViewer.controlPrev).on('click', function(){
+          $viewer.flexslider('prev');
+          return false;
+        });
+
+        $(pettingzoo.pdfViewer.viewer + " > " + pettingzoo.pdfViewer.controlNext).on('click', function(){
+          $viewer.flexslider('next');
+          return false;
+        });
+
+        $thumbNav.flexslider({
+          animation: "slide",
+          controlNav: false,
+          animationLoop: false,
+          slideshow: false,
+          itemWidth: 160,
+          itemMargin: 5,
+          asNavFor: pettingzoo.pdfViewer.viewer
+        });
+      }
+    },
+
     // --- Local navigation (tabs & accordion) --------------------------------------
     tabs : {
 
@@ -110,7 +191,6 @@
 
       // methods
       // ----------------------------------------------------------------------------------
-
       init : function(el) {
         // ----- Local nav (tabs) -------------------------------------------------------------
         //  -> http://www.jacklmoore.com/notes/jquery-tabs/
@@ -191,112 +271,99 @@
         $link.addClass(pettingzoo.tabs.active);
         $($link.attr('href')).addClass(pettingzoo.tabs.open);
       }
-    }
-    
-  };
+    },
 
+    // --- Contact form & mailing list opt-in --------------------------------------
 
-// Ajax Form Submit
-// ----------------------------------------------------------------------------------
-  
-      $('#ajax-form').submit(function(){
+    contactForm : {
 
-          var email_text = $('input[name="email"]').val();
-          var name = $('input[name="name"]').val();
-          var mailchimp = $('#ajax-form input:checkbox:checked').val();
+      simpleformToken : "9e785bffbf9337d08052b2b07bb8ef67",
 
-        //Send email via ajax & simpleform
-        $.ajax({
-          dataType: 'jsonp',
-          url: "http://getsimpleform.com/messages/ajax?form_api_token=9e785bffbf9337d08052b2b07bb8ef67",
-          data: $('#ajax-form').serialize() 
-        }).done(function() {
-          //Remove form and show success message.
-          $("footer h3.callout").prepend( '<div class="success"><h2>Success!</h2></div>' );
-          $("footer aside" ).fadeOut(1000);
-          $("#ajax-form" ).fadeOut(1000);
-        });
+      init : function() {
 
-        //If Mailchimp checked submit mailchimp form
-        if(mailchimp){
-          $('input#mc-email').val(email_text);
-          $('input#mc-FNAME ').val(name);  
-          
-          //Sets up form for ajax submit
-          $('#mc-form').ajaxChimp({
-              callback: mailchimpResult,
-              url: 'http://pettingzooplush.us8.list-manage.com/subscribe/post?u=63768868a43809514e63f3953&amp;id=0caa307af8'
+        $('#ajax-form').submit(function(){
+
+            var email_text = $('input[name="email"]').val();
+            var name = $('input[name="name"]').val();
+            var mailchimp = $('#ajax-form input:checkbox:checked').val();
+
+          //Send email via ajax & simpleform
+          $.ajax({
+            dataType: 'jsonp',
+            url: "http://getsimpleform.com/messages/ajax?form_api_token=" + pettingzoo.contactForm.simpleformToken,
+            data: $('#ajax-form').serialize() 
+          }).done(function() {
+            //Remove form and show success message.
+            $("footer h3.callout").prepend( '<div class="success"><h2>Success!</h2></div>' );
+            $("footer aside" ).fadeOut(1000);
+            $("#ajax-form" ).fadeOut(1000);
           });
-          //Submits mailchimp form
-          $("#mc-form").submit();
-        }
 
-        return false; //to stop the form from submitting
-      
-      });
+          //If Mailchimp checked submit mailchimp form
+          if(mailchimp){
+            $('input#mc-email').val(email_text);
+            $('input#mc-FNAME ').val(name);  
+            
+            //Sets up form for ajax submit
+            $('#mc-form').ajaxChimp({
+                callback: pettingzoo.contactForm.mailchimpResult,
+                url: 'http://pettingzooplush.us8.list-manage.com/subscribe/post?u=63768868a43809514e63f3953&id=0caa307af8'
+            });
+            //Submits mailchimp form
+            $("#mc-form").submit();
+          }
 
-      function mailchimpResult (resp) {
+          return false; //to stop the form from submitting
+
+        });
+      },
+
+      mailchimpResult : function(resp) {
         if (resp.result === 'success') {
           //Show success if sucessful
           $("footer div.success").append( '<div class="mailchimp-email"><h3><em>Thank you for subscribing. We have sent you a confirmation email.</em></h3></div>' );
         }
       }
+    },
 
-// Flip PDF JS
-// ----------------------------------------------------------------------------------
+    // --- Google map embed --------------------------------------------------
 
-$('#pdf-viewer').directorySlider();
-$('#pdf-thumb').directorySlider();
+    map : {
 
-// // Google Maps
-// // ----------------------------------------------------------------------------------
-  var map;
-  var address = new google.maps.LatLng(39.17943,-76.730038);
+      address : new google.maps.LatLng(39.17943,-76.730038),
+      el : "js-map_canvas",
 
-  function initialize() {
+      init : function() {
+        var map;
 
-    var mapOptions = {
-      zoom:15,
-      center: address,
-      mapTypeControlOptions: {
-         mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'div']
+        var mapOptions = {
+          zoom:15,
+          center: pettingzoo.map.address,
+          mapTypeControlOptions: {
+             mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'div']
+          }
+        };
+        
+        map = new google.maps.Map(document.getElementById(pettingzoo.map.el),
+            mapOptions);
+
+        var marker = new google.maps.Marker({
+          position: pettingzoo.map.address,
+          map: map,
+          title:"div",
+          zIndex: 3
+        });
       }
-    };
+    }
     
-    map = new google.maps.Map(document.getElementById("map_canvas"),
-        mapOptions);
+  };
 
-    var marker = new google.maps.Marker({
-      position: address,
-      map: map,
-      title:"div",
-      zIndex: 3
-    });
-  }
-  google.maps.event.addDomListener(window, 'load', initialize);
 
+// Start it all up
 // ----------------------------------------------------------------------------------
 
   $(window).load(function() {
     pettingzoo.init();
-
- $('#pdf-thumb').flexslider({
-    animation: "slide",
-    controlNav: false,
-    animationLoop: false,
-    slideshow: false,
-    itemWidth: 210,
-    itemMargin: 5,
-    asNavFor: '#pdf-viewer'
-  });
-   
-  $('#pdf-viewer').flexslider({
-    animation: "slide",
-    controlNav: false,
-    animationLoop: false,
-    slideshow: false,
-    sync: "#pdf-thumb"
   });
 
-  });
 })(jQuery);

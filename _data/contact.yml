@@ -8,6 +8,10 @@ phone:
   office: "888.867.4059"
   fax: "410.760.5560"
 
+email:
+  sales: "CS@pettingzooplush.com"
+
+# social media channels
 social:
   - platform: Facebook
     url: "http://www.facebook.com"
@@ -15,3 +19,15 @@ social:
   # - platform: twitter
   #   url: "http://www.twitter.com"
   #   icon: "twitter"
+
+# for the "subject" dropdown on the contact form
+# asks the user to specify what their question is
+contact_subjects:
+  question: "How can we help?"
+  answers:
+    - option: "I'd like to place an order"
+      value: "order"
+    - option: "I'd like to speak to a sales representative"
+      value: "sales"
+    - option: "Just saying hi"
+      value: "general"

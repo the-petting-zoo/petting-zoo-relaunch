@@ -34,9 +34,9 @@
        while(slideNumber <= config.numslides){
          
          //@Bivee change to add 0 infront of < 10 numbers  
-         if (slideNumber < 10) {
-         slideNumber = ('0' + slideNumber).slice(-2);
-         }
+         // if (slideNumber < 10) {
+         // slideNumber = ('0' + slideNumber).slice(-2);
+         // }
          var imgURL = config.directory + config.filebase + slideNumber + '.' + config.extension;
          slides.push('<li><img src="' + imgURL + '" /></li>');
          slideNumber++;
