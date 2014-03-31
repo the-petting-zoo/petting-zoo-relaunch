@@ -50,7 +50,7 @@
       pettingzoo.tabs.init(pettingzoo.config.tabs); // set up accordion version of tabs (mobile/default)
       pettingzoo.contactForm.init(); // contact form & mailing list opt-in
       if ($("body#contact-us").length > 0) pettingzoo.map.init(); // google map embed (only on contact page)
-      pettingzoo.pdfViewer.init(); // set up PDF viewer carousels
+      // pettingzoo.pdfViewer.init(); // set up PDF viewer carousels
 
       // the menu select on mobile screens
       $("#js-menu-mobile").change(function(){
@@ -307,7 +307,7 @@
             //Sets up form for ajax submit
             $('#mc-form').ajaxChimp({
                 callback: pettingzoo.contactForm.mailchimpResult,
-                url: 'http://pettingzooplush.us8.list-manage.com/subscribe/post?u=63768868a43809514e63f3953&id=0caa307af8'
+                url: 'http://pettingzooplush.us8.list-manage.com/subscribe/post?u=63768868a43809514e63f3953&amp;id=0caa307af8'
             });
             //Submits mailchimp form
             $("#mc-form").submit();

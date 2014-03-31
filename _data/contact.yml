@@ -14,7 +14,7 @@ email:
 # social media channels
 social:
   - platform: Facebook
-    url: "http://www.facebook.com"
+    url: "https://www.facebook.com/pages/The-Petting-Zoo/564056906971473"
     icon: "fb"
   # - platform: twitter
   #   url: "http://www.twitter.com"
@@ -27,6 +27,8 @@ contact_subjects:
   answers:
     - option: "I'd like to place an order"
       value: "order"
+    - option: "I have a question about an order I placed"
+      value: "order_question"
     - option: "I'd like to speak to a sales representative"
       value: "sales"
     - option: "Just saying hi"
