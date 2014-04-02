@@ -3,7 +3,7 @@ category: staff
 layout: default
 title: John Lizewski
 job_title: National Region
-email: "lizewski@pettingzooplush.com"
+email: "JLizewski@pettingzooplush.com"
 portrait: "http://placehold.it/300x200"
 published: true
 ---
