@@ -185,7 +185,7 @@ jQuery(function($) {
         animation: Modernizr.touch ? "slide" : "fade",
         selector: "ul > li",
         allowOneSlide: false,
-        namespace: "carousel-",
+        // namespace: "carousel-",
         directionNav: false
       });
 

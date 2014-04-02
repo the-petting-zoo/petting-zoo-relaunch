@@ -18,36 +18,43 @@
 // -----------------------------------------------------------------------------
 
 $control-size: 36px;
+$control-margin: 4px;
 $control-nav-size: 8px;
-$control-nav-margin: 12px;
-$control-nav-h: 18px;
+$control-nav-margin: 20px;
+$control-nav-h: $control-nav-size;
 
 .hero.carousel {
   @extend %theme-reverse;
   @include rem(margin-bottom, -($control-nav-size/2));
+  padding: 0;
+  font-size: 0;
   background: transparent;
   z-index: $z--medium;
+  border: none;
 
-  .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+  // .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
 
   ul {
     @extend %theme-reverse;
     @include unstyled-list;
     margin-left: 0;
-    margin-top: 0;
+    margin: 0;
+    padding: 0;
     // width: 100%;
     overflow: hidden;
     border-style: solid;
     border-width: $border-w--thick;
 
   }
-  li {
+  .flex-active-slide, li {
     // width: 100%;
     margin: 0;
     padding: 0;
   }
   img {
+    display: block;
     width: 100%;
+    margin-bottom: 0;
   }
 
   .prev, .next {
@@ -75,20 +82,24 @@ $control-nav-h: 18px;
   }
 
   .prev {
-    @include rem(left, -($control-size));
+    @include rem(left, -($control-size + $control-margin));
   }
 
   .next {
-    @include rem(right, -($control-size));
+    @include rem(right, -($control-size + $control-margin));
   }
 }
 
-  .carousel-control-nav {
+  .flex-control-nav, .flex-control-paging {
     // @extend %theme-reverse;
     @include inline-list;
     @include rem(margin-top, $control-nav-margin);
     @include rem(height, $control-nav-h);
+    position: relative;
+    bottom: 0;
+    padding: 0;
     text-align: center;
+    
 
     li {
       @extend %theme-reverse;
@@ -104,13 +115,14 @@ $control-nav-h: 18px;
       @include rem(height, $control-nav-size);
       @include rem(margin-right, $control-nav-size);
       display: block;
-      background: $color--tertiary;
+      background: $color--tertiary !important;
       border-radius: 100px;
       border: none;
+      box-shadow: none;
     }
 
-    .carousel-active {
-      background: white;
+    .flex-active {
+      background: white !important;
       // @include rem(width, 10px);
       // @include rem(height, 10px);
     }
