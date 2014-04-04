@@ -7,9 +7,11 @@
     <a href="{{ catalog.url }}" class="thumb"><img src="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.directory }}/{{ catalog.cover }}" alt="{{ catalog.title }}" /></a
     {% unless include.text == "false" %}
     ><h3><a href="{{ catalog.url }}">{{ catalog.title }}</a></h3><!-- whitespace hack -->
-    <a href="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.directory }}/{{ catalog.pdf }}">Download PDF</a
+    {% if catalog.pdf != false %}
+    <a href="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.directory }}/{{ catalog.pdf }}">Download PDF</a>
+    {% endif %}
     {% endunless %}
     {% endunless %}
-  ></li><!-- whitespace hack -->
+  </li><!-- whitespace hack -->
   {% endunless %}
 {% endfor %}

@@ -44,14 +44,20 @@
   overflow: hidden;
 
   li {
+    @include rem(margin-bottom, 16px);
     display: block;
     padding: 0;
     overflow: hidden;
+    font-size: 0;
+
+    & > * {
+      @include rem(font-size, 16px);
+    }
 
     @include breakpoint($xsmall) {
       
       
-      margin-right: $margin-whitespace;
+      // margin-right: $margin-whitespace;
     }
     
   }

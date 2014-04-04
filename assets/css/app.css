@@ -2075,27 +2075,29 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 /* line 46, ../../_includes/sass/modules/_grid-inline.scss */
 .grid li, #about-us .narrow ul li, #home .promos ul li,
 #products .tabs-content-body ul li {
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
   display: block;
   padding: 0;
   overflow: hidden;
+  font-size: 0;
 }
-@media (min-width: 30em) {
-  /* line 46, ../../_includes/sass/modules/_grid-inline.scss */
-  .grid li, #about-us .narrow ul li, #home .promos ul li,
-  #products .tabs-content-body ul li {
-    margin-right: -5px;
-  }
+/* line 53, ../../_includes/sass/modules/_grid-inline.scss */
+.grid li > *, #about-us .narrow ul li > *, #home .promos ul li > *,
+#products .tabs-content-body ul li > * {
+  font-size: 16px;
+  font-size: 1rem;
 }
 
 @media (min-width: 30em) {
-  /* line 64, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 70, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.small, #about-us .narrow ul.small, #home .promos ul.small,
   #products .tabs-content-body ul.small {
     margin-right: -24px;
   }
 }
 @media (min-width: 48em) {
-  /* line 64, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 70, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.small, #about-us .narrow ul.small, #home .promos ul.small,
   #products .tabs-content-body ul.small {
     margin-right: -24px;
@@ -2133,21 +2135,21 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 }
 
 @media (min-width: 30em) {
-  /* line 69, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 75, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
   #products .tabs-content-body ul.medium {
     margin-right: -24px;
   }
 }
 @media (min-width: 48em) {
-  /* line 69, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 75, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
   #products .tabs-content-body ul.medium {
     margin-right: -24px;
   }
 }
 @media (min-width: 64em) {
-  /* line 69, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 75, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
   #products .tabs-content-body ul.medium {
     margin-right: -24px;
@@ -2200,7 +2202,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 }
 
 @media (min-width: 48em) {
-  /* line 74, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 80, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.large, #about-us .narrow ul.large, #home .promos ul.large,
   #products .tabs-content-body ul.large, #about-us .narrow ul, #home .promos ul,
   #products .tabs-content-body ul {
@@ -2208,7 +2210,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   }
 }
 @media (min-width: 64em) {
-  /* line 74, ../../_includes/sass/modules/_grid-inline.scss */
+  /* line 80, ../../_includes/sass/modules/_grid-inline.scss */
   .grid.large, #about-us .narrow ul.large, #home .promos ul.large,
   #products .tabs-content-body ul.large, #about-us .narrow ul, #home .promos ul,
   #products .tabs-content-body ul {
@@ -2256,7 +2258,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   }
 }
 
-/* line 79, ../../_includes/sass/modules/_grid-inline.scss */
+/* line 85, ../../_includes/sass/modules/_grid-inline.scss */
 #about-us .narrow ul {
   display: block;
   padding-top: 1em;
