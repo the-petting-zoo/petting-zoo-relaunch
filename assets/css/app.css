@@ -2323,7 +2323,6 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 /* line 74, ../../_includes/sass/modules/_tile.scss */
 .tile.vertical .thumb {
   display: block;
-  margin-bottom: 0.5em;
 }
 
 /* line 22, ../../_includes/sass/modules/_header.scss */
