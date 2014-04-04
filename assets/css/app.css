@@ -2296,6 +2296,10 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   position: relative;
 }
 /* line 49, ../../_includes/sass/modules/_tile.scss */
+.tile.vertical > h3 {
+  margin-top: 0.5em;
+}
+/* line 53, ../../_includes/sass/modules/_tile.scss */
 .tile.vertical.more a {
   font-size: 13px;
   font-size: 0.8125rem;
@@ -2307,7 +2311,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   vertical-align: middle;
   text-transform: uppercase;
 }
-/* line 59, ../../_includes/sass/modules/_tile.scss */
+/* line 63, ../../_includes/sass/modules/_tile.scss */
 .tile.vertical.more a:after {
   right: 8px;
   right: 0.5rem;
@@ -2320,7 +2324,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   background-size: contain;
   background-position: center center;
 }
-/* line 74, ../../_includes/sass/modules/_tile.scss */
+/* line 78, ../../_includes/sass/modules/_tile.scss */
 .tile.vertical .thumb {
   display: block;
 }
