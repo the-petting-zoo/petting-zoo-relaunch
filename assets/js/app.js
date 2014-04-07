@@ -105,7 +105,7 @@ pauseText:"Pause",playText:"Play",controlsContainer:"",manualControls:"",sync:""
 // ================================================================
 
 jQuery(function($) {
-    $('h1, h2, h3, h4, h5, h6, p, li, a').each(function() {
+    $('h1, h2, h3, h4, h5, h6, p, li, a, figcaption').each(function() {
       $(this).html(
         $(this).html()
         	// for any $amp; element, wrap in a span with class ".amp" 
@@ -168,7 +168,7 @@ jQuery(function($) {
       pettingzoo.tabs.init(pettingzoo.config.tabs); // set up accordion version of tabs (mobile/default)
       pettingzoo.contactForm.init(); // contact form & mailing list opt-in
       if ($("body#contact-us").length > 0) pettingzoo.map.init(); // google map embed (only on contact page)
-      // pettingzoo.pdfViewer.init(); // set up PDF viewer carousels
+      pettingzoo.pdfViewer.init(); // set up PDF viewer carousels
 
       // the menu select on mobile screens
       $("#js-menu-mobile").change(function(){
@@ -185,7 +185,7 @@ jQuery(function($) {
         animation: Modernizr.touch ? "slide" : "fade",
         selector: "ul > li",
         allowOneSlide: false,
-        namespace: "carousel-",
+        // namespace: "carousel-",
         directionNav: false
       });
 
@@ -264,6 +264,8 @@ jQuery(function($) {
         // pull in slides from the specified directory
         $viewer.directorySlider();
         $thumbNav.directorySlider();
+
+        console.log("pdfs");
 
         // set up carousels
         $viewer.flexslider({

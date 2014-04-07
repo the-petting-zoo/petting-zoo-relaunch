@@ -46,6 +46,10 @@
 .tile.vertical {
   position: relative;
 
+  & > h3 {
+    margin-top: 0.5em;
+  }
+
   &.more a {
     @include rem(font-size, 13px);
     @include rem(padding, 12px 24px 12px 12px);
@@ -73,6 +77,6 @@
   
   .thumb {
     display: block;
-    margin-bottom: 0.5em;
+    // margin-bottom: 0.5em;
   }
 }

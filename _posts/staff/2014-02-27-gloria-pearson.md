@@ -1,9 +1,9 @@
 ---
 category: staff
 layout: default
-title: Gloria Pearson
+title: Gloria Pearson Dunkle
 job_title: Texas/TOLA Region
-email: "gpearson@pettingzooplush.com"
+email: "gdunkle@pettingzooplush.com"
 portrait: "http://placehold.it/300x200"
 published: true
 ---
