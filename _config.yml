@@ -1,7 +1,7 @@
 # jekyll settings
 name: The Petting Zoo
 tag: "Share & Smile"
-# url: http://pettingzoo.jayperryworks.com
+url: 'http://pettingzooplush.com'
 baseurl: 
 permalink: /:categories/:title/
 
