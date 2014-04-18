@@ -22,4 +22,4 @@ group :development do
   # gem 'guard-uglify'
   # gem 'guard-jekyll-plus' not compatible with github-pages : (
   gem 'guard-livereload'
-end
+end 
