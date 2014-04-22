@@ -18,11 +18,11 @@
       window.html5.elements = 'main'; // add to list
       window.html5.shivDocument(document); // re-invoke the `shivDocument` method
     </script>
-    {% include html/grunticon.html %}
+    {% include grunticon.html %}
   </head>
   <body id="{% if page.slug %}{{ page.slug | replace: " ", "-" | downcase }}{% else %}{{ page.title | replace: " ", "-" | downcase }}{% endif %}">
     <header role="banner" class="global">
-      {% include html/nav-global.html %}
+      {% include nav-global.html %}
     </header>
 
     {{ content }}
@@ -96,7 +96,7 @@
 
       </section>
       <section class="footer-menu">
-        {% include html/nav-global.html mobile=false %}
+        {% include nav-global.html mobile=false %}
         <h5>{{ site.tag | xml_escape }}</h5>
         <small role="copyright">&copy; Copyright {{ site.time | date: "%Y" }} The Petting Zoo, Inc. All rights reserved.</small>
       </section>
@@ -105,9 +105,6 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=&amp;sensor=false"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ site.url }}{{ site.assets.js }}vendor/jquery-1.10.2.min.js"><\/script>')</script>
-    <script src="{{ site.url }}{{ site.assets.js }}vendor/directory.js"></script>
-    <script src="{{ site.url }}{{ site.assets.js }}vendor/equalsize.js"></script>
     <script src="{{ site.url }}{{ site.assets.js }}app.js"></script>
-    <script src="{{ site.url }}{{ site.assets.js }}vendor/ajaxchimp.js"></script>
   </body>
 </html>

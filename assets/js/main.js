@@ -14,6 +14,7 @@
       carousel: ".carousel", // class of carousel elements
       carouselPrev: ".prev",
       carouselNext: ".next",
+      test: "test",
 
       tabs: ".js-tabs",
       fallback: "fallback", // "fallback" data attribute value
@@ -256,8 +257,6 @@
           });
         });
       },
-
-      update : function(el) {},
 
       kill : function(el) {
         $(el).each(function() {

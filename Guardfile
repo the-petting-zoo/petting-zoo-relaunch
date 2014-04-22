@@ -26,7 +26,7 @@ end
 guard :compass, compile_on_start: true
 
 # This will concatenate the javascript files specified in :files to public/js/all.js
-guard :concat, type: "js", files: %w(plugins/console plugins/flexslider plugins/transit plugins/enquire plugins/equalsize plugins/typography app), input_dir: "_includes/js", output: "assets/js/app"
+guard :concat, type: "js", files: %w(_libs/console _libs/flexslider _libs/transit _libs/enquire _libs/equalsize _libs/typography _libs/ajaxchimp _libs/directory main), input_dir: "assets/js", output: "assets/js/app"
 
 # guard "jekyll-plus", :serve => true do
 #   watch /.*/
@@ -37,6 +37,6 @@ guard 'livereload' do
   watch(%r{_site/.+\.(css|js|html)})
 end
 
-# guard 'uglify', :destination_file => "assets/js/app.js" do
+# guard 'uglify', :destination_file => "assets/js/app.min.js" do
 #   watch (%r{assets/js/app.js})
 # end
