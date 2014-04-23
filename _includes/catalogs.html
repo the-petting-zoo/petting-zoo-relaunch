@@ -4,7 +4,7 @@
   {% unless catalog.categories contains "intro" %}
   {% unless catalog.title == page.title %}
   <li class="tile vertical">
-    <a href="{{ catalog.url }}" class="thumb"><img src="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.directory }}/{{ catalog.cover }}" alt="{{ catalog.title }}" /></a
+    <a href="{{ catalog.url }}" class="tile-thumb"><img src="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.directory }}/{{ catalog.cover }}" alt="{{ catalog.title }}" /></a
     {% unless include.text == "false" %}
     ><h3><a href="{{ catalog.url }}">{{ catalog.title }}</a></h3><!-- whitespace hack -->
     {% if catalog.pdf != false %}

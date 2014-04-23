@@ -80,33 +80,8 @@
     }
   }
   
-  .thumb {
+  .tile-thumb {
     display: block;
     // margin-bottom: 0.5em;
-
-    &.product {
-      @include rem(height, 220px);
-      @include rem(padding, 6px);
-      // display: table-cell;
-      position: relative;
-      width: 100%;
-      vertical-align: middle;
-      text-align: center;
-      overflow: hidden;
-      border: $border-w--thick solid $gray;
-
-      @include breakpoint($medium) {
-        @include rem(height, 160px);
-      }
-
-      & > img {
-        // http://davidwalsh.name/css-vertical-center
-        @include transform(translateY(-50%)); // use translate to vertically center when we don't know the height of the img
-        position: relative;
-        top: 50%;
-        max-height: 100%;
-        width: auto;
-      }
-    }
   }
 }

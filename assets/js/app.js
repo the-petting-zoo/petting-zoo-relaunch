@@ -359,13 +359,17 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
 
       menuMobile: "#js-menu-mobile",
 
-      postImg: "has-image" // class to add to images in posts (workaround for jekyll markdown parsing)
+      postImg: "has-image", // class to add to images in posts (workaround for jekyll markdown parsing)
+
+      scaleHeight: ".js-scale-height img"
     },
 
     // Setup
     // ---------------------------------------------------------------
     init : function(config) {
       $.extend(pettingzoo.config, config);
+
+      console.log("hello");
 
       // fall back to .animate() frame animation is CSS transitions are not supported
       // -> for transit.js
@@ -386,7 +390,7 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
       pettingzoo.registerBreakpoints();
 
       // scale product images to window height
-      pettingzoo.scaleToWindow.update(".js-scale-height", "height");
+      pettingzoo.scaleToWindow.update(pettingzoo.config.scaleHeight, "height");
       // $(window).resize(pettingzoo.scaleToWindow.update(".js-scale-height", "height"));
 
       // set up various plugins, behaviors
@@ -741,13 +745,15 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
   };
 
 
-// Start it all up
+// Start it all up -- load handlers
 // ----------------------------------------------------------------------------------
 
   $(window).load(function() {
     pettingzoo.init();
   });
 
-  $(window).resize(pettingzoo.scaleToWindow.update(".js-scale-height", "height"));
+  $(window).resize(function() {
+    pettingzoo.scaleToWindow.update(pettingzoo.config.scaleHeight, "height")
+  });
 
 })(jQuery);

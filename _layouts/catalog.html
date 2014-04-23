@@ -14,6 +14,7 @@ active: products
   
   {% capture cat_name %}{{ page.title | downcase | replace: " ", "-" }}{% endcapture %}
 
+
   <div id="filter-nav">
     <div class="filter active" onclick="$('#filter-container').mixItUp('filter','all')">Show All</div> 
     <p>Type</p>  
@@ -38,6 +39,12 @@ active: products
       <a href="{{ post.url }}" class="thumb product"><img src="{{ post.photos | first }}" alt="{{ post.title }}" /></a>
       <h5 class="tile-title"><a href="{{ post.url }}">{{ post.title }}</a></h5>
     </li>
+
+
+  <ul class="grid medium">
+  {% for product in site.categories.products %}
+  {% if product.catalog == page.slug %}
+    {% include product-tile.html post=product %}
 
   {% endif %}
   {% endfor %}
