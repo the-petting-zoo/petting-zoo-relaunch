@@ -403,13 +403,15 @@
   };
 
 
-// Start it all up
+// Start it all up -- load handlers
 // ----------------------------------------------------------------------------------
 
   $(window).load(function() {
     pettingzoo.init();
   });
 
-  $(window).resize(pettingzoo.scaleToWindow.update(".js-scale-height", "height"));
+  $(window).resize(function() {
+    pettingzoo.scaleToWindow.update(".js-scale-height", "height")
+  });
 
 })(jQuery);

@@ -1,0 +1,4 @@
+<li class="tile vertical">
+  <a href="{{ post.url }}" class="thumb product"><img src="{% for photo in post.photos limit: 1 %}{{ photo.src }}{% endfor %}" alt="{{ post.title }}" /></a>
+  <h5 class="tile-title"><a href="{{ post.url }}">{{ post.title }}</a></h5>
+</li>

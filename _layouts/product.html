@@ -14,7 +14,7 @@ active: products
     <figure class="product js-scale-height">
     <img src="{{ photo.src }}" alt="{% if photo.caption %}{{ photo.caption }}{% else %}{{ page.title }}{% endif %}" class="product-image" />
     {% if photo.caption %}
-    <figcaption>{{ photo.caption }}</figcaption>
+    <figcaption class="product-caption">{{ photo.caption }}</figcaption>
     {% endif %}
   </figure>
 

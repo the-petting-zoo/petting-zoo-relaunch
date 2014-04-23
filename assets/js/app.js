@@ -741,13 +741,15 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
   };
 
 
-// Start it all up
+// Start it all up -- load handlers
 // ----------------------------------------------------------------------------------
 
   $(window).load(function() {
     pettingzoo.init();
   });
 
-  $(window).resize(pettingzoo.scaleToWindow.update(".js-scale-height", "height"));
+  $(window).resize(function() {
+    pettingzoo.scaleToWindow.update(".js-scale-height", "height")
+  });
 
 })(jQuery);
