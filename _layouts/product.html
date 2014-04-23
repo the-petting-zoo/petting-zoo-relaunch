@@ -39,10 +39,9 @@ active: products
   <h3 class="callout">More products in this collection</h3>
   <div class="wrapper">
     <ul class="grid medium center">
-      <li>
-        <a href="#"><img src="http://placehold.it/300x150" alt=""></a>
-        <h3><a href="#">Product title</a></h3>
-      </li>
+    {% for product in site.categories.products %}
+      {% include product-tile.html post=product %}
+    {% endfor %}
     </ul>
   </div>
 </section>

@@ -340,7 +340,7 @@ html[xmlns] .slides {
   }
 }
 /* line 9, ../_sass/core/_settings.scss */
-input, textarea, select, a, .button, .tabs-content, .product-caption {
+input, textarea, select, a, .button, .tabs-content, .product-caption, .product-thumb {
   -webkit-transition: all 0.5s false;
   -moz-transition: all 0.5s false false;
   -o-transition: all 0.5s false false;
@@ -2327,41 +2327,8 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   background-position: center center;
 }
 /* line 83, ../_sass/modules/_tile.scss */
-.tile.vertical .thumb {
+.tile.vertical .tile-thumb {
   display: block;
-}
-/* line 87, ../_sass/modules/_tile.scss */
-.tile.vertical .thumb.product {
-  height: 220px;
-  height: 13.75rem;
-  padding: 6px;
-  padding: 0.375rem;
-  position: relative;
-  width: 100%;
-  vertical-align: middle;
-  text-align: center;
-  overflow: hidden;
-  border: 6px solid #ebf0f0;
-}
-@media (min-width: 64em) {
-  /* line 87, ../_sass/modules/_tile.scss */
-  .tile.vertical .thumb.product {
-    height: 160px;
-    height: 10rem;
-  }
-}
-/* line 102, ../_sass/modules/_tile.scss */
-.tile.vertical .thumb.product > img {
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  display: block;
-  position: relative;
-  top: 50%;
-  max-height: 100%;
-  width: auto;
 }
 
 /* line 22, ../_sass/modules/_header.scss */
@@ -3600,19 +3567,21 @@ footer.global [role="navigation"].global .logo {
   display: block;
   position: relative;
   width: 100%;
-  border: 6px solid #ebf0f0;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #ebf0f0;
   text-align: center;
 }
-/* line 81, ../_sass/app.scss */
+/* line 83, ../_sass/app.scss */
 .product .product-caption {
   opacity: 0;
 }
-/* line 85, ../_sass/app.scss */
+/* line 87, ../_sass/app.scss */
 .product:hover .product-caption {
   opacity: 100;
 }
 
-/* line 90, ../_sass/app.scss */
+/* line 92, ../_sass/app.scss */
 .product-image {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -3631,7 +3600,7 @@ footer.global [role="navigation"].global .logo {
   width: auto;
 }
 
-/* line 102, ../_sass/app.scss */
+/* line 104, ../_sass/app.scss */
 .product-caption {
   bottom: 12px;
   bottom: 0.75rem;
@@ -3645,4 +3614,56 @@ footer.global [role="navigation"].global .logo {
   position: absolute;
   background-color: #ebf0f0;
   text-align: left;
+}
+
+/* line 116, ../_sass/app.scss */
+.product-thumb {
+  height: 220px;
+  height: 13.75rem;
+  padding: 6px;
+  padding: 0.375rem;
+  display: block;
+  position: relative;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center !important;
+  overflow: hidden;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #ebf0f0;
+}
+/* line 130, ../_sass/app.scss */
+.product-thumb:hover {
+  border-color: #f035a6;
+}
+@media (min-width: 64em) {
+  /* line 116, ../_sass/app.scss */
+  .product-thumb {
+    height: 160px;
+    height: 10rem;
+  }
+}
+/* line 138, ../_sass/app.scss */
+.product-thumb > img {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+  max-height: 100%;
+  width: auto;
+}
+
+/* line 149, ../_sass/app.scss */
+.well .product-thumb {
+  background-color: white;
+  border-color: #dce5e5;
 }
