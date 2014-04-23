@@ -8,8 +8,8 @@ active: products
   <h1 class="title">{{ page.title }}</h1>
     
   <!-- catalog: main carousel -->
-  <div class="narrow">
-    {% for photo in page.photos %}
+  <div class="narrow product js-scale-height">
+    {% comment %}{% for photo in page.photos %}
      
     <figure class="product js-scale-height">
     <img src="{{ photo.src }}" alt="{% if photo.caption %}{{ photo.caption }}{% else %}{{ page.title }}{% endif %}" class="product-image" />
@@ -18,10 +18,11 @@ active: products
     {% endif %}
   </figure>
 
-    {% endfor %}
+    {% endfor %}{% endcomment %}
+    {{ content }}
   </div>
 
-  <aside class="product-meta" role="contentinfo">
+  <aside class="narrow product-meta" role="contentinfo">
     <dl>
       <dt>Item:</dt>
       <dd>{{ page.item }}</dd>
@@ -30,8 +31,6 @@ active: products
       <dt>Master Case:</dt>
       <dd>{{ page.master }}</dd>
     </dl>
-
-    {{ content }}
   </aside>
 </main>
 
