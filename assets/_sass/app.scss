@@ -106,20 +106,13 @@
   }
 }
 
-<<<<<<< HEAD
-.product-image {
-  // @include rem(margin-bottom, 12px);
-  // display: block;
-  // border: $border-w--thick solid $gray;
-}
-
 #filter-container .mix {
   display: none;
 }
 .filter.active {
   background: #ff0000;
 }
-=======
+
   .product-image {
     @include transform(translateY(-50%)); // use translate to vertically center when we don't know the height of the img
     @include inline-block;
