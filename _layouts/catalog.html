@@ -1,11 +1,28 @@
 ---
 layout: default
+active: products
 ---
 
 <main role="main" class="wrapper">
 
+  {% comment %}{% for category in site.categories %}
+    <h2>{{ category | first }}</h2>
+  {% endfor %}{% endcomment %}
+
   <h1 class="title">{{ page.title }}</h1>
-    
+
+  
+  {% capture cat_name %}{{ page.title | downcase | replace: " ", "-" }}{% endcapture %}
+
+  <ul class="grid medium">
+  {% for product in site.categories.products %}
+  {% if product.catalog == page.slug %}
+    {% include product-tile.html post=product %}
+  {% endif %}
+  {% endfor %}
+  </ul>
+  
+  {% if page.filebase %}
   <!-- catalog: main carousel -->
   <div id="pdf-viewer" class="flexslider{% if page.spread == true %} spread{% endif %}" data-directory="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ page.directory }}/" data-filebase="{{ page.filebase | xml_escape }}" data-extension="{{ page.extension }}" data-numslides="{{ page.numslides }}" >
     <a href="#" class="prev icon-arrow-left--blue">&lsaquo; Previous</a>
@@ -14,6 +31,7 @@ layout: default
 
   <!-- thumbnail nav -->
   <div id="pdf-thumb" class="flexslider" data-directory="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ page.directory }}/" data-filebase="{{ page.filebase | xml_escape }}" data-extension="{{ page.extension }}" data-numslides="{{ page.numslides }}"></div>
+  {% endif %}
 
   <div class="center">
     {% if page.pdf %}
@@ -27,7 +45,7 @@ layout: default
   <h3 class="callout">More catalogs</h3>
   <div class="wrapper">
     <ul class="grid medium center">
-    {% include html/catalogs.html %}
+    {% include catalogs.html %}
     </ul>
   </div>
 </section>

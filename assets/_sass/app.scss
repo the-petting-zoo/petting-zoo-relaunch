@@ -68,11 +68,85 @@
   }
 }
 
-// Book Flip CSS
-//==========================
+.product {
+  @include rem(margin-bottom, 12px);
+  @include rem(padding, 16px);
+  display: block;
+  position: relative;
+  width: 100%;
+  border-width: $border-w--thick;
+  border-style: solid;
+  border-color: $gray;
+  // background-color: lighten($gray, 5);
+  text-align: center;
 
+  .product-caption {
+    opacity: 0;
+  }
 
+  &:hover .product-caption {
+    opacity: 100;
+  }
+}
 
-// Nico Map
-//==========================
+  .product-image {
+    @include transform(translateY(-50%)); // use translate to vertically center when we don't know the height of the img
+    @include inline-block;
+    position: relative;
+    top: 50%;
+    max-height: 100%;
+    width: auto;
+    // @include rem(margin-bottom, 12px);
+    // display: block;
+    // border: $border-w--thick solid $gray;
+  }
 
+  .product-caption {
+    @extend %base-transition;
+    @include rem(bottom, 12px);
+    @include rem(left, 12px);
+    @include rem(right, 12px);
+    @include rem(padding, 6px);
+    display: block;
+    position: absolute;
+    background-color: $gray;
+    text-align: left;
+  }
+
+  .product-thumb {
+    @extend %base-transition;
+    @include rem(height, 220px);
+    @include rem(padding, 6px);
+    display: block;
+    position: relative;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center !important;
+    overflow: hidden;
+    border-width: $border-w--thick;
+    border-style: solid;
+    border-color: $gray;
+
+    &:hover {
+      border-color: $color-text--highlight;
+    }
+
+    @include breakpoint($medium) {
+      @include rem(height, 160px);
+    }
+
+    & > img {
+      // http://davidwalsh.name/css-vertical-center
+      @include inline-block;
+      @include transform(translateY(-50%)); // use translate to vertically center when we don't know the height of the img
+      position: relative;
+      top: 50%;
+      max-height: 100%;
+      width: auto;
+    }
+  }
+
+  .well .product-thumb {
+    background-color: white;
+    border-color: darken($gray, 5);
+  }
