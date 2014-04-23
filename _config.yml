@@ -145,6 +145,14 @@ prose:
           element: "text"
           label: "Product Name"
           help: "Enter the product name"
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "product"
+      - name: "category"
+        field:
+          element: "hidden"
+          value: "products"
       - name: "catalog"
         field:
           element: "text"
@@ -155,14 +163,11 @@ prose:
           element: "text"
           label: "Collection Name"
           help: "(Optional) Enter the collection this product is a part of"
-      - name: "layout"
+      - name: "thumb"
         field:
-          element: "hidden"
-          value: "product"
-      - name: "category"
-        field:
-          element: "hidden"
-          value: "products"
+          element: "text"
+          label: "Product Thumbnail"
+          help: "Add a URL for a product photo to use as a thumbnail image."
       - name: "item"
         field:
           element: "text"

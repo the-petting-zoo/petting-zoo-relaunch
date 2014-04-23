@@ -1,4 +1,5 @@
 <li class="tile vertical">
-  <a href="{{ include.post.url }}" class="product-thumb"><img src="{% for photo in include.post.photos limit: 1 %}{{ photo.src }}{% endfor %}" alt="{{ include.post.title }}" /></a>
+  <a href="{{ include.post.url }}" class="product-thumb"><img src="{{ include.post.thumb }}" alt="{{ include.post.title }}" /></a>
   <h5 class="tile-title"><a href="{{ include.post.url }}">{{ include.post.title }}</a></h5>
 </li>
+{% comment %}{% for photo in include.post.photos limit: 1 %}{{ photo.src }}{% endfor %}{% endcomment %}
