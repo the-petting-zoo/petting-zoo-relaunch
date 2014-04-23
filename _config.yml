@@ -155,6 +155,12 @@ prose:
           element: "text"
           label: "Collection Name"
           help: "(Optional) Enter the collection this product is a part of"
+      - name: "photos"
+        field:
+          element: "multiselect"
+          label: "Add Product Photos"
+          placeholder: "Choose Tags"
+          alterable: "true"
       - name: "layout"
         field:
           element: "hidden"
