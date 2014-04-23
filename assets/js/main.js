@@ -31,6 +31,8 @@
     init : function(config) {
       $.extend(pettingzoo.config, config);
 
+      console.log("hello");
+
       // fall back to .animate() frame animation is CSS transitions are not supported
       // -> for transit.js
       if (!$.support.transition) {
