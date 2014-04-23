@@ -1,5 +1,6 @@
 ---
 layout: default
+active: products
 ---
 
 <main role="main" class="wrapper">
@@ -8,16 +9,29 @@ layout: default
     
   <!-- catalog: main carousel -->
   <div class="narrow">
-    {{ content }}
+    {% for photo in page.photos %}
+     
+    <figure class="product js-scale-height">
+    <img src="{{ photo.src }}" alt="{% if photo.caption %}{{ photo.caption }}{% else %}{{ page.title }}{% endif %}" class="product-image" />
+    {% if photo.caption %}
+    <figcaption>{{ photo.caption }}</figcaption>
+    {% endif %}
+  </figure>
+
+    {% endfor %}
   </div>
 
-  <aside class="meta">
+  <aside class="product-meta" role="contentinfo">
     <dl>
-      <dt>Item</dt>
-      <dd>[ item number here ]</dd>
-      <dt>Available in</dt>
-      <dd>in 4 or 54 packs</dd>
+      <dt>Item:</dt>
+      <dd>{{ page.item }}</dd>
+      <dt>Case PK:</dt>
+      <dd>{{ page.case }}</dd>
+      <dt>Master Case:</dt>
+      <dd>{{ page.master }}</dd>
     </dl>
+
+    {{ content }}
   </aside>
 </main>
 

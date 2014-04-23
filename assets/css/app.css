@@ -1001,19 +1001,22 @@ img,
 video {
   vertical-align: middle;
   max-width: 100%;
+  height: auto;
+  width: auto\9;
+  /* ie8 */
 }
 
 /*
  * Remove default fieldset styles.
  */
-/* line 102, ../_sass/core/_base.scss */
+/* line 104, ../_sass/core/_base.scss */
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-/* line 108, ../_sass/core/_base.scss */
+/* line 110, ../_sass/core/_base.scss */
 input, textarea, select {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1025,14 +1028,14 @@ input, textarea, select {
   border-style: solid;
   text-shadow: none;
 }
-/* line 118, ../_sass/core/_base.scss */
+/* line 120, ../_sass/core/_base.scss */
 input:focus, textarea:focus, select:focus {
   outline: 0;
   outline: thin dotted \9;
   /* IE6-9 */
 }
 
-/* line 124, ../_sass/core/_base.scss */
+/* line 126, ../_sass/core/_base.scss */
 [type="submit"] {
   -webkit-appearance: none;
   box-shadow: none;
@@ -1041,7 +1044,7 @@ input:focus, textarea:focus, select:focus {
   border: none;
 }
 
-/* line 132, ../_sass/core/_base.scss */
+/* line 134, ../_sass/core/_base.scss */
 input[type="search"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1050,7 +1053,7 @@ input[type="search"] {
   border-radius: 100px;
   box-shadow: inset 0 1px #ebf0f0;
 }
-/* line 142, ../_sass/core/_base.scss */
+/* line 144, ../_sass/core/_base.scss */
 input[type="search"]:focus {
   outline: 0;
   outline: thin dotted \9;
@@ -1061,11 +1064,11 @@ input[type="search"]:focus {
 /*
  * Allow only vertical resizing of textareas.
  */
-/* line 153, ../_sass/core/_base.scss */
+/* line 155, ../_sass/core/_base.scss */
 textarea {
   resize: vertical;
 }
-/* line 156, ../_sass/core/_base.scss */
+/* line 158, ../_sass/core/_base.scss */
 textarea:focus {
   outline: 0;
   outline: thin dotted \9;
@@ -1073,7 +1076,7 @@ textarea:focus {
   border-color: #f035a6;
 }
 
-/* line 163, ../_sass/core/_base.scss */
+/* line 165, ../_sass/core/_base.scss */
 select {
   padding-right: 2em;
   -webkit-appearance: none !important;
@@ -1085,12 +1088,12 @@ select {
 /*
  * Allow only vertical resizing of textareas.
  */
-/* line 175, ../_sass/core/_base.scss */
+/* line 177, ../_sass/core/_base.scss */
 textarea {
   resize: vertical;
 }
 
-/* line 180, ../_sass/core/_base.scss */
+/* line 182, ../_sass/core/_base.scss */
 ol, ul, dl {
   margin-bottom: 0;
 }
@@ -1098,14 +1101,14 @@ ol, ul, dl {
 /*
  * Reset lists that appear in nav elements
  */
-/* line 187, ../_sass/core/_base.scss */
+/* line 189, ../_sass/core/_base.scss */
 nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* line 193, ../_sass/core/_base.scss */
+/* line 195, ../_sass/core/_base.scss */
 p {
   text-align: left;
 }
@@ -2072,7 +2075,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   list-style: none;
   list-style-type: none;
 }
-/* line 46, ../_sass/modules/_grid-inline.scss */
+/* line 48, ../_sass/modules/_grid-inline.scss */
 .grid li, #about-us .narrow ul li, #home .promos ul li,
 #products .tabs-content-body ul li {
   margin-bottom: 16px;
@@ -2082,22 +2085,16 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   overflow: hidden;
   font-size: 0;
 }
-/* line 53, ../_sass/modules/_grid-inline.scss */
-.grid li > *, #about-us .narrow ul li > *, #home .promos ul li > *,
-#products .tabs-content-body ul li > * {
-  font-size: 16px;
-  font-size: 1rem;
-}
 
 @media (min-width: 30em) {
-  /* line 70, ../_sass/modules/_grid-inline.scss */
+  /* line 72, ../_sass/modules/_grid-inline.scss */
   .grid.small, #about-us .narrow ul.small, #home .promos ul.small,
   #products .tabs-content-body ul.small {
     margin-right: -24px;
   }
 }
 @media (min-width: 48em) {
-  /* line 70, ../_sass/modules/_grid-inline.scss */
+  /* line 72, ../_sass/modules/_grid-inline.scss */
   .grid.small, #about-us .narrow ul.small, #home .promos ul.small,
   #products .tabs-content-body ul.small {
     margin-right: -24px;
@@ -2135,21 +2132,21 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 }
 
 @media (min-width: 30em) {
-  /* line 75, ../_sass/modules/_grid-inline.scss */
+  /* line 77, ../_sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
   #products .tabs-content-body ul.medium {
     margin-right: -24px;
   }
 }
 @media (min-width: 48em) {
-  /* line 75, ../_sass/modules/_grid-inline.scss */
+  /* line 77, ../_sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
   #products .tabs-content-body ul.medium {
     margin-right: -24px;
   }
 }
 @media (min-width: 64em) {
-  /* line 75, ../_sass/modules/_grid-inline.scss */
+  /* line 77, ../_sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
   #products .tabs-content-body ul.medium {
     margin-right: -24px;
@@ -2202,7 +2199,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 }
 
 @media (min-width: 48em) {
-  /* line 80, ../_sass/modules/_grid-inline.scss */
+  /* line 82, ../_sass/modules/_grid-inline.scss */
   .grid.large, #about-us .narrow ul.large, #home .promos ul.large,
   #products .tabs-content-body ul.large, #about-us .narrow ul, #home .promos ul,
   #products .tabs-content-body ul {
@@ -2210,7 +2207,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   }
 }
 @media (min-width: 64em) {
-  /* line 80, ../_sass/modules/_grid-inline.scss */
+  /* line 82, ../_sass/modules/_grid-inline.scss */
   .grid.large, #about-us .narrow ul.large, #home .promos ul.large,
   #products .tabs-content-body ul.large, #about-us .narrow ul, #home .promos ul,
   #products .tabs-content-body ul {
@@ -2258,7 +2255,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   }
 }
 
-/* line 85, ../_sass/modules/_grid-inline.scss */
+/* line 87, ../_sass/modules/_grid-inline.scss */
 #about-us .narrow ul {
   display: block;
   padding-top: 1em;
@@ -2296,10 +2293,15 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   position: relative;
 }
 /* line 49, ../_sass/modules/_tile.scss */
-.tile.vertical > h3 {
+.tile.vertical > h3, .tile.vertical .tile-title {
   margin-top: 0.5em;
+  line-height: 1.4;
 }
 /* line 53, ../_sass/modules/_tile.scss */
+.tile.vertical > h3 a:hover, .tile.vertical .tile-title a:hover {
+  color: #f035a6;
+}
+/* line 58, ../_sass/modules/_tile.scss */
 .tile.vertical.more a {
   font-size: 13px;
   font-size: 0.8125rem;
@@ -2311,7 +2313,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   vertical-align: middle;
   text-transform: uppercase;
 }
-/* line 63, ../_sass/modules/_tile.scss */
+/* line 68, ../_sass/modules/_tile.scss */
 .tile.vertical.more a:after {
   right: 8px;
   right: 0.5rem;
@@ -2324,9 +2326,41 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   background-size: contain;
   background-position: center center;
 }
-/* line 78, ../_sass/modules/_tile.scss */
+/* line 83, ../_sass/modules/_tile.scss */
 .tile.vertical .thumb {
   display: block;
+}
+/* line 87, ../_sass/modules/_tile.scss */
+.tile.vertical .thumb.product {
+  height: 220px;
+  height: 13.75rem;
+  padding: 6px;
+  padding: 0.375rem;
+  position: relative;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  overflow: hidden;
+  border: 6px solid #ebf0f0;
+}
+@media (min-width: 64em) {
+  /* line 87, ../_sass/modules/_tile.scss */
+  .tile.vertical .thumb.product {
+    height: 160px;
+    height: 10rem;
+  }
+}
+/* line 102, ../_sass/modules/_tile.scss */
+.tile.vertical .thumb.product > img {
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+  max-height: 100%;
+  width: auto;
 }
 
 /* line 22, ../_sass/modules/_header.scss */
@@ -3554,4 +3588,16 @@ footer.global [role="navigation"].global .logo {
 /* line 66, ../_sass/app.scss */
 .promos a:hover {
   border: 4px solid #f035a6;
+}
+
+/* line 71, ../_sass/app.scss */
+.product {
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
+  padding: 16px;
+  padding: 1rem;
+  display: block;
+  width: 100%;
+  border: 6px solid #ebf0f0;
+  text-align: center;
 }

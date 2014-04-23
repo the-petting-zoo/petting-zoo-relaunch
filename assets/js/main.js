@@ -47,6 +47,10 @@
       // set up enquire.js stuff
       pettingzoo.registerBreakpoints();
 
+      // scale product images to window height
+      pettingzoo.scaleToWindow.update(".js-scale-height", "height");
+      // $(window).resize(pettingzoo.scaleToWindow.update(".js-scale-height", "height"));
+
       // set up various plugins, behaviors
       pettingzoo.tabs.init(pettingzoo.config.tabs); // set up accordion version of tabs (mobile/default)
       pettingzoo.contactForm.init(); // contact form & mailing list opt-in
@@ -132,6 +136,32 @@
       });
     },
 
+    // --- Scale an element to the size of the browser window --------------------------
+    scaleToWindow : {
+
+      defaultHeight : 70, // percentage of window height
+      defaultWidth : 70, // percentage of window width
+
+      update: function(el, axis, percentage) {
+        
+        // default values for optional params
+        var axis = axis || "height";
+        var percentage = percentage || pettingzoo.scaleToWindow.defaultHeight;
+
+        // set the size on the right axis
+        switch(axis) {
+          case "height":
+            var size = $(window).height() * (percentage/100);
+            $(el).css("height", size);
+            break;
+          case "width":
+            var size = $(window).width() * (percentage/100);
+            $(el).css("width", size);
+            break;
+        }
+      }
+    },
+
     // --- PDF viewer carousels ------------------------------------------------
     pdfViewer : {
 
@@ -147,8 +177,6 @@
         // pull in slides from the specified directory
         $viewer.directorySlider();
         $thumbNav.directorySlider();
-
-        console.log("pdfs");
 
         // set up carousels
         $viewer.flexslider({
@@ -381,5 +409,7 @@
   $(window).load(function() {
     pettingzoo.init();
   });
+
+  $(window).resize(pettingzoo.scaleToWindow.update(".js-scale-height", "height"));
 
 })(jQuery);

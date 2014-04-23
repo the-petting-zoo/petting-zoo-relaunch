@@ -67,3 +67,19 @@
     border: $hairline-w--thick solid $color--secondary;
   }
 }
+
+.product {
+  @include rem(margin-bottom, 12px);
+  @include rem(padding, 16px);
+  display: block;
+  width: 100%;
+  border: $border-w--thick solid $gray;
+  // background-color: lighten($gray, 5);
+  text-align: center;
+}
+
+.product-image {
+  // @include rem(margin-bottom, 12px);
+  // display: block;
+  // border: $border-w--thick solid $gray;
+}

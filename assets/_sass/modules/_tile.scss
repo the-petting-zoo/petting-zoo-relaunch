@@ -23,7 +23,7 @@
   // overflow: hidden;
   margin-bottom: gutter-span();
 
-  // @include layout(6) {
+  // @include layout(6) {p
   //   .portrait {
   //     @include grid-span(2, 1);
   //   }
@@ -46,8 +46,13 @@
 .tile.vertical {
   position: relative;
 
-  & > h3 {
+  & > h3, .tile-title {
     margin-top: 0.5em;
+    line-height: 1.4;
+
+    a:hover {
+      color: $color-text--highlight;
+    }
   }
 
   &.more a {
@@ -78,5 +83,30 @@
   .thumb {
     display: block;
     // margin-bottom: 0.5em;
+
+    &.product {
+      @include rem(height, 220px);
+      @include rem(padding, 6px);
+      // display: table-cell;
+      position: relative;
+      width: 100%;
+      vertical-align: middle;
+      text-align: center;
+      overflow: hidden;
+      border: $border-w--thick solid $gray;
+
+      @include breakpoint($medium) {
+        @include rem(height, 160px);
+      }
+
+      & > img {
+        // http://davidwalsh.name/css-vertical-center
+        @include transform(translateY(-50%)); // use translate to vertically center when we don't know the height of the img
+        position: relative;
+        top: 50%;
+        max-height: 100%;
+        width: auto;
+      }
+    }
   }
 }
