@@ -157,10 +157,9 @@ prose:
           help: "(Optional) Enter the collection this product is a part of"
       - name: "photos"
         field:
-          element: "multiselect"
-          label: "Add Product Photos"
-          placeholder: "Choose Tags"
-          alterable: "true"
+          element: "textarea"
+          label: "Product Photos"
+          help: "Add URLs for product photos. Put a '-' in front of each."
       - name: "layout"
         field:
           element: "hidden"
