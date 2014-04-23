@@ -1,6 +1,6 @@
 ---
 layout: product
-title: '10" Floppy Bunny Assortment'
+title: 'Floppy Bunny Assortment'
 category: products
 catalog: "spring"
 size: 10"
@@ -9,7 +9,7 @@ case: 24
 master: 24
 
 photos:
-  - src: http://pettingzoo-website.s3.amazonaws.com/products/catalogs/spring/brown_bunny_cxa12-063-25E.png
-  - src: http://pettingzoo-website.s3.amazonaws.com/products/catalogs/spring/Brown_white_bunny_cxa12-063-25F.jpg
-  - src: http://pettingzoo-website.s3.amazonaws.com/products/catalogs/spring/cxa12-063-25A.png
+  - http://pettingzoo-website.s3.amazonaws.com/products/catalogs/spring/brown_bunny_cxa12-063-25E.png
+  - http://pettingzoo-website.s3.amazonaws.com/products/catalogs/spring/Brown_white_bunny_cxa12-063-25F.jpg
+  - http://pettingzoo-website.s3.amazonaws.com/products/catalogs/spring/cxa12-063-25A.png
 ---
