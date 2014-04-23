@@ -83,3 +83,10 @@
   // display: block;
   // border: $border-w--thick solid $gray;
 }
+
+#filter-container .mix {
+  display: none;
+}
+.filter.active {
+  background: #ff0000;
+}

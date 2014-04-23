@@ -14,11 +14,27 @@ active: products
   
   {% capture cat_name %}{{ page.title | downcase | replace: " ", "-" }}{% endcapture %}
 
-  <ul class="grid medium">
+  <div id="filter-nav">
+    <div class="filter active" onclick="$('#filter-container').mixItUp('filter','all')">Show All</div> 
+    <p>Type</p>  
+    {% for post in site.categories.products %}
+      {% for type in post.type %}
+        <div class="filter" data-filter=".{{ type }}">{{ type }}</div>
+      {% endfor %}
+    {% endfor %}
+    <p>Size</p>
+    {% for post in site.categories.products %}
+      {% for size in post.size %}
+        <div class="filter" data-filter=".{{ size }}">{{ size }}</div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+
+  <ul id="filter-container" class="grid medium">
   {% for post in site.categories.products %}
   {% if post.catalog == page.slug %}
     
-    <li class="tile vertical">
+    <li class="tile vertical mix{% for type in post.type %} {{ type | downcase | replace: ' ','' }}{% endfor %}{% for size in post.size %} {{ size | downcase | replace: ' ','' }}{% endfor %}">
       <a href="{{ post.url }}" class="thumb product"><img src="{{ post.photos | first }}" alt="{{ post.title }}" /></a>
       <h5 class="tile-title"><a href="{{ post.url }}">{{ post.title }}</a></h5>
     </li>

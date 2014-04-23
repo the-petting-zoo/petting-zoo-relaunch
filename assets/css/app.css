@@ -3601,3 +3601,13 @@ footer.global [role="navigation"].global .logo {
   border: 6px solid #ebf0f0;
   text-align: center;
 }
+
+/* line 87, ../_sass/app.scss */
+#filter-container .mix {
+  display: none;
+}
+
+/* line 90, ../_sass/app.scss */
+.filter.active {
+  background: #ff0000;
+}

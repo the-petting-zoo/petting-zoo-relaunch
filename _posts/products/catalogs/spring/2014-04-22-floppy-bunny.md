@@ -7,6 +7,8 @@ size: 10"
 item: 513213
 case: 24
 master: 24
+type: [bunny, rabbit]
+size: 10in
 
 photos:
   - src: http://pettingzoo-website.s3.amazonaws.com/products/catalogs/spring/brown_bunny_cxa12-063-25E.png
