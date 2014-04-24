@@ -289,7 +289,7 @@
 @mixin inline-list {
   @include unstyled-list;
 
-  li {
+  li, dt, dd {
     @include inline-block;
   }
 }
@@ -323,7 +323,7 @@
 
 @mixin inline-dl($break: false) {
   & > dt, & > dd {
-    display: inline;
+    @include inline-block;
   }
   & > dt {
     margin-right: em(3);

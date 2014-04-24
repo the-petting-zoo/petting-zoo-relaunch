@@ -5,49 +5,36 @@ active: products
 
 <main role="main" class="wrapper">
 
-  {% comment %}{% for category in site.categories %}
-    <h2>{{ category | first }}</h2>
-  {% endfor %}{% endcomment %}
-
   <h1 class="title">{{ page.title }}</h1>
-
   
-  {% capture cat_name %}{{ page.title | downcase | replace: " ", "-" }}{% endcapture %}
+  {% comment %}{% capture cat_name %}{{ page.title | downcase | replace: " ", "-" }}{% endcapture %}{% endcomment %}
 
 
-  <div id="filter-nav">
-    <div class="filter active" onclick="$('#filter-container').mixItUp('filter','all')">Show All</div> 
-    <p>Type</p>  
-    {% for post in site.categories.products %}
-      {% for type in post.type %}
-        <div class="filter" data-filter=".{{ type }}">{{ type }}</div>
+  <aside id="filter-nav" class="filter-nav">
+    <h3 class="callout filter-label">Filters</h3>
+    <dl class="filter-controls">
+      <dd class="filter active" onclick="$('#filter-container').mixItUp('filter','all')"><a href="#">Show All</a></dd>
+      <dt class="filter-cat callout">Type</dt>
+      {% for post in site.categories.products %}
+        {% for type in post.type %}
+          <dd class="filter" data-filter=".{{ type }}"><a href="#">{{ type }}</a></dd>
+        {% endfor %}
       {% endfor %}
-    {% endfor %}
-    <p>Size</p>
-    {% for post in site.categories.products %}
-      {% for size in post.size %}
-        <div class="filter" data-filter=".{{ size }}">{{ size }}</div>
+      <dt class="filter-cat callout">Size</dt>
+      {% for post in site.categories.products %}
+        {% for size in post.size %}
+          <dd class="filter" data-filter=".{{ size }}"><a href="#">{{ size }}</a></dd>
+        {% endfor %}
       {% endfor %}
-    {% endfor %}
-  </div>
+    </dl>
+  </aside>
 
   <ul id="filter-container" class="grid medium">
-  {% for post in site.categories.products %}
-  {% if post.catalog == page.slug %}
-    
-    <li class="tile vertical mix{% for type in post.type %} {{ type | downcase | replace: ' ','' }}{% endfor %}{% for size in post.size %} {{ size | downcase | replace: ' ','' }}{% endfor %}">
-      <a href="{{ post.url }}" class="thumb product"><img src="{{ post.photos | first }}" alt="{{ post.title }}" /></a>
-      <h5 class="tile-title"><a href="{{ post.url }}">{{ post.title }}</a></h5>
-    </li>
-
-
-  <ul class="grid medium">
-  {% for product in site.categories.products %}
-  {% if product.catalog == page.slug %}
-    {% include product-tile.html post=product %}
-
-  {% endif %}
-  {% endfor %}
+    {% for product in site.categories.products %}
+    {% if product.catalog == page.slug %}
+      {% include product-tile.html post=product filter=true %}
+    {% endif %}
+    {% endfor %}
   </ul>
   
   {% if page.filebase %}
