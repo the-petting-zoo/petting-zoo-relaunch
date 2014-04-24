@@ -267,27 +267,73 @@ footer.global [role="navigation"].global {
 // ------- Pagination -------------------------------------------
 
 nav.local.page {
+  @include hidden;
+  @include grid-margins(margin);
+  @include rem(margin-top, 24px);
+  @include rem(margin-bottom, 18px);
+  @include clearfix;
+  position: relative;
+  padding: 0;
+  background: $gray;
+  overflow: hidden;
+  // font-size: 0;
 
+  @include breakpoint($small) {
+    @include restore-visible;
+    position: absolute;
+    background: transparent;
+    left: -1000px;
+    top: -1000px;
+  }
 }
 
   .page-button {
+    // @include inline-block;
     @include rem(padding, 12px);
-    @include transform(translateY(-50%));
-    display: block;
-    position: fixed;
-    top: 50%;
-    background: $gray;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    border-right: $hairline-w solid white;
 
     &:hover, &:active {
       background: $turquoise;
     }
 
-    &.next {
-      right: 0;
+    &.prev {
+      text-align: left;
+      float: left;
     }
 
-    &.prev {
-      left: 0;
+    &.next {
+      text-align: right;
+      float: right;
+    }
+
+    @include breakpoint($small) {
+      @include transform(translateY(-50%));
+      @include rem(padding, 16px 12px);
+      display: block;
+      position: fixed;
+      width: auto;
+      height: auto;
+      top: 50%;
+      z-index: 0;
+      background: $gray;
+
+      &.prev {
+        left: 0;
+      }
+
+      &.next {
+        right: 0;
+      }
+
+      .page-title {
+        @include visuallyhidden;
+        // @include inline-block;
+        // @include rem(margin, -12px 0);
+        // @include rem(padding, 0 12px);
+      }
     }
   }
 
