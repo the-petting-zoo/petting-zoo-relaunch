@@ -343,6 +343,14 @@ $filter-highlight: $turquoise;
 .filter-nav {
   @include rem(padding, 0 0 12px 0);
   border-bottom: $hairline-w solid $color-border;
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    &:focus {
+        outline: 0 none;
+    }
+  }
 }
 
 .filter-label, .filter-controls {
@@ -368,7 +376,7 @@ $filter-highlight: $turquoise;
   font-size: 0;
 }
 
-.filter {
+.filter, #reset {
   @include rem(font-size, 13px);
   padding: 0.05em 0.7em;
   margin: 0 0.1em !important;

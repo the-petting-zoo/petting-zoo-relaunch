@@ -21,28 +21,61 @@ active: products
 
   {% else %}
 
+
+        <ul>
+       
+        </ul>
+
+
+
   <aside id="filter-nav" class="filter-nav">
-  <h3 class="callout filter-label">Filters</h3>
-  <dl class="filter-controls">
-    <dd class="filter active" onclick="$('#filter-container').mixItUp('filter','all')"><a href="#">Show All</a></dd>
-    <dt class="filter-cat callout">Type</dt>
-    {% for post in site.categories.products %}
-    {% if post.catalog == page.slug %}
-      {% for type in post.type %}
-        <dd class="filter" data-filter=".{{ type }}"><a href="#">{{ type }}</a></dd>
-      {% endfor %}
-    {% endif %}
-    {% endfor %}
-    <dt class="filter-cat callout">Size</dt>
-    {% for post in site.categories.products %}
-    {% if post.catalog == page.slug %}
-      {% for size in post.size %}
-        <dd class="filter" data-filter=".{{ size }}"><a href="#">{{ size }}</a></dd>
-      {% endfor %}
-    {% endif %}
-    {% endfor %}
-  </dl>
-</aside>
+    <form id="filters" class="controls">
+      <h3 class="callout filter-label">Filters</h3>
+      <button id="reset">Show All</button>
+      <fieldset>
+        <span class="filter-cat callout">Type</span>
+         {% assign typeList = ',' %}
+        {% for product in site.categories.products %}
+          {% for item in product.type %}
+            {% capture compareType %},{{ item }},{% endcapture %}
+            {% if typeList contains compareType %}{% else %}
+              <button class="filter" data-filter='.{{ item }}'>{{ item }}</button>
+              {% capture tempList %}{{ typeList }}{{ item }},{% endcapture %}
+              {% assign typeList = tempList %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </fieldset>
+      <fieldset>
+        <span class="filter-cat callout">Size</span>
+         {% assign typeList = ',' %}
+        {% for product in site.categories.products %}
+          {% for item in product.size %}
+            {% capture compareType %},{{ item }},{% endcapture %}
+            {% if typeList contains compareType %}{% else %}
+              <button class="filter" data-filter='.{{ item }}'>{{ item }}</button>
+              {% capture tempList %}{{ typeList }}{{ item }},{% endcapture %}
+              {% assign typeList = tempList %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </fieldset>
+      <fieldset>
+        <span class="filter-cat callout">Color</span>
+         {% assign typeList = ',' %}
+        {% for product in site.categories.products %}
+          {% for item in product.color %}
+            {% capture compareType %},{{ item }},{% endcapture %}
+            {% if typeList contains compareType %}{% else %}
+              <button class="filter" data-filter='.{{ item }}'>{{ item }}</button>
+              {% capture tempList %}{{ typeList }}{{ item }},{% endcapture %}
+              {% assign typeList = tempList %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </fieldset>
+    </form>
+  </aside>
 
 <ul id="filter-container" class="grid medium">
   {% for product in site.categories.products %}
