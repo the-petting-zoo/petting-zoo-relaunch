@@ -5,21 +5,40 @@ active: products
 
 <main role="main" class="wrapper">
 
-  {% comment %}{% for category in site.categories %}
-    <h2>{{ category | first }}</h2>
-  {% endfor %}{% endcomment %}
-
   <h1 class="title">{{ page.title }}</h1>
-
   
-  {% capture cat_name %}{{ page.title | downcase | replace: " ", "-" }}{% endcapture %}
+  {% comment %}{% capture cat_name %}{{ page.title | downcase | replace: " ", "-" }}{% endcapture %}{% endcomment %}
 
-  <ul class="grid medium">
-  {% for product in site.categories.products %}
-  {% if product.catalog == page.slug %}
-    {% include product-tile.html post=product %}
-  {% endif %}
-  {% endfor %}
+
+  <aside id="filter-nav" class="filter-nav">
+    <h3 class="callout filter-label">Filters</h3>
+    <dl class="filter-controls">
+      <dd class="filter active" onclick="$('#filter-container').mixItUp('filter','all')"><a href="#">Show All</a></dd>
+      <dt class="filter-cat callout">Type</dt>
+      {% for post in site.categories.products %}
+      {% if post.catalog == page.slug %}
+        {% for type in post.type %}
+          <dd class="filter" data-filter=".{{ type }}"><a href="#">{{ type }}</a></dd>
+        {% endfor %}
+      {% endif %}
+      {% endfor %}
+      <dt class="filter-cat callout">Size</dt>
+      {% for post in site.categories.products %}
+      {% if post.catalog == page.slug %}
+        {% for size in post.size %}
+          <dd class="filter" data-filter=".{{ size }}"><a href="#">{{ size }}</a></dd>
+        {% endfor %}
+      {% endif %}
+      {% endfor %}
+    </dl>
+  </aside>
+
+  <ul id="filter-container" class="grid medium">
+    {% for product in site.categories.products %}
+    {% if product.catalog == page.slug %}
+      {% include product-tile.html post=product filter=true %}
+    {% endif %}
+    {% endfor %}
   </ul>
   
   {% if page.filebase %}

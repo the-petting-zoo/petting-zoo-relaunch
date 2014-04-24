@@ -383,8 +383,6 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
     init : function(config) {
       $.extend(pettingzoo.config, config);
 
-      console.log("hello");
-
       // fall back to .animate() frame animation is CSS transitions are not supported
       // -> for transit.js
       if (!$.support.transition) {
@@ -405,7 +403,17 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
 
       // scale product images to window height
       pettingzoo.scaleToWindow.update(pettingzoo.config.scaleHeight, "height");
-      // $(window).resize(pettingzoo.scaleToWindow.update(".js-scale-height", "height"));
+
+      // set up filters for catalog pages
+      $('#filter-container').mixItUp({
+        controls: {
+          toggleFilterButtons: true,
+          toggleLogic: 'and'
+        },
+        animation: {
+            effects: 'fade'
+        }
+      });
 
       // set up various plugins, behaviors
       pettingzoo.tabs.init(pettingzoo.config.tabs); // set up accordion version of tabs (mobile/default)
@@ -433,7 +441,6 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
       });
 
       $(pettingzoo.config.carousel + " > " + pettingzoo.config.carouselPrev).on('click', function(){
-        console.log("hello");
         $carousel.flexslider('prev');
         return false;
       });
@@ -508,15 +515,17 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
         switch(axis) {
           case "height":
             var size = $(window).height() * (percentage/100);
-            $(el).css("height", size);
+            $(el).css("max-height", size);
             break;
           case "width":
             var size = $(window).width() * (percentage/100);
-            $(el).css("width", size);
+            $(el).css("max-width", size);
             break;
         }
       }
     },
+
+    
 
     // --- PDF viewer carousels ------------------------------------------------
     pdfViewer : {

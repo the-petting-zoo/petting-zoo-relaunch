@@ -264,6 +264,95 @@ footer.global [role="navigation"].global {
   // @extend .wrapper;
 }
 
+// ------- Pagination -------------------------------------------
+
+nav.local.page {
+
+}
+
+  .page-button {
+    @include rem(padding, 12px);
+    @include transform(translateY(-50%));
+    display: block;
+    position: fixed;
+    top: 50%;
+    background: $gray;
+
+    &:hover, &:active {
+      background: $turquoise;
+    }
+
+    &.next {
+      right: 0;
+    }
+
+    &.prev {
+      left: 0;
+    }
+  }
+
+// ------- Filter nav -------------------------------------------
+$filter-highlight: $turquoise;
+
+.filter-nav {
+  @include rem(padding, 0 0 12px 0);
+  border-bottom: $hairline-w solid $color-border;
+}
+
+.filter-label, .filter-controls {
+  @include inline-block;
+}
+
+.filter-label {
+  @include rem(font-size, 13px);
+}
+
+.filter-controls {
+  margin: 0 0 0 0.5em;
+}
+
+.filter-cat {
+  @include rem(font-size, 13px);
+  margin: 0 0.7em;
+  color: lighten($color-text--primary, 50);
+}
+
+.filter-controls {
+  @include inline-dl;
+  font-size: 0;
+}
+
+.filter {
+  @include rem(font-size, 13px);
+  padding: 0.05em 0.7em;
+  margin: 0 0.1em !important;
+  color: $filter-highlight;
+
+  & > a {
+    color: $filter-highlight;
+
+    &:hover {
+      color: darken($filter-highlight, 10);
+    }
+  }
+  
+  
+  &.active {
+    color: white;
+    border-radius: 100px;
+
+    & > a {
+      color: white;
+    }
+
+    background: $filter-highlight;
+  }
+}
+
+#filter-container .mix {
+  display: none;
+}
+
 // ------- Tabs/accordions -------------------------------------------
 .local.tabs {
   @include hidden;
