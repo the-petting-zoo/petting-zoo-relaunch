@@ -264,6 +264,33 @@ footer.global [role="navigation"].global {
   // @extend .wrapper;
 }
 
+// ------- Pagination -------------------------------------------
+
+nav.local.page {
+
+}
+
+  .page-button {
+    @include rem(padding, 12px);
+    @include transform(translateY(-50%));
+    display: block;
+    position: fixed;
+    top: 50%;
+    background: $gray;
+
+    &:hover, &:active {
+      background: $turquoise;
+    }
+
+    &.next {
+      right: 0;
+    }
+
+    &.prev {
+      left: 0;
+    }
+  }
+
 // ------- Filter nav -------------------------------------------
 $filter-highlight: $turquoise;
 

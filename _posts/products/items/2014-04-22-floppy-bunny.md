@@ -4,7 +4,7 @@ title: 'Floppy Bunny Assortment'
 category: products
 catalog: "spring"
 size: 10"
-item: 513213
+item: "513213"
 case: 24
 master: 24
 thumb: "http://pettingzoo-website.s3.amazonaws.com/products/catalogs/spring/brown_bunny_cxa12-063-25E.png"

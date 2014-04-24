@@ -8,7 +8,7 @@ active: products
   <h1 class="title">{{ page.title }}</h1>
     
   <!-- catalog: main carousel -->
-  <div class="narrow product js-scale-height">
+  <div class="product js-scale-height">
     {% comment %}{% for photo in page.photos %}
      
     <figure class="product js-scale-height">
@@ -22,7 +22,7 @@ active: products
     {{ content }}
   </div>
 
-  <aside class="narrow product-meta" role="contentinfo">
+  <aside class="product-meta" role="contentinfo">
     <dl>
       <dt>Item:</dt>
       <dd>{{ page.item }}</dd>
@@ -36,11 +36,17 @@ active: products
 
 <nav class="local page">
   {% if page.previous.url %}
-    <a class="page-prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a> 
+    <a class="page-button prev" href="{{ page.previous.url }}">
+      <span class="icon-alone icon-arrow-left--blue"></span>
+      {% comment %}{{ page.previous.title }}{% endcomment %}
+    </a> 
   {% endif %}
 
   {% if page.next.url %}
-    <a class="page-next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a> 
+    <a class="page-button next" href="{{ page.next.url }}">
+      <span class="icon-alone icon-arrow-right--blue"></span>
+      {% comment %}{{ page.next.title }}{% endcomment %}
+    </a> 
   {% endif %}
 </nav>
 

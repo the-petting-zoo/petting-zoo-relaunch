@@ -784,14 +784,14 @@ table {
 }
 
 /* line 57, ../_sass/core/_fonts.scss */
-h3, .callout, em, strong, footer.global .meta.contact dt, .footer.global .meta.contact dt, [role="navigation"].global .menu a, h1, h6, p, table, li, dl, ul, ol, small, input, textarea, select, figcaption, .button, footer.global .mailing-list label, .footer.global .mailing-list label {
+h3, .callout, em, strong, footer.global .meta.contact dt, .footer.global .meta.contact dt, [role="navigation"].global .menu a, .product-thumb-name, h1, h6, p, table, li, dl, ul, ol, small, input, textarea, select, figcaption, .button, footer.global .mailing-list label, .footer.global .mailing-list label, .product-thumb-num {
   font-family: "gentleman-book", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
 /* line 63, ../_sass/core/_fonts.scss */
-h3, .callout, em, strong, footer.global .meta.contact dt, .footer.global .meta.contact dt, [role="navigation"].global .menu a {
+h3, .callout, em, strong, footer.global .meta.contact dt, .footer.global .meta.contact dt, [role="navigation"].global .menu a, .product-thumb-name {
   font-family: "gentleman-bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -1434,7 +1434,7 @@ figcaption {
 }
 
 /* line 171, ../_sass/core/_content.scss */
-.icon {
+.icon, [class*="icon-"], .icon-alone {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -1500,6 +1500,45 @@ footer.global select, .footer.global select, footer.global .meta.contact dl sele
 .tile.vertical.more a:after {
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20width%3D%2213px%22%20height%3D%2218px%22%20viewBox%3D%220%200%2013%2018%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20xmlns%3Asketch%3D%22http%3A//www.bohemiancoding.com/sketch/ns%22%3E%0A%20%20%20%20%3Ctitle%3Earrow-right--yellow%3C/title%3E%0A%20%20%20%20%3Cdescription%3ECreated%20with%20Sketch%20%28http%3A//www.bohemiancoding.com/sketch%29%3C/description%3E%0A%20%20%20%20%3Cdefs%3E%3C/defs%3E%0A%20%20%20%20%3Cg%20id%3D%22spare-parts%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20sketch%3Atype%3D%22MSPage%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22arrow-right--yellow%22%20sketch%3Atype%3D%22MSArtboardGroup%22%20transform%3D%22translate%28-6.000000%2C%20-3.000000%29%22%20fill%3D%22%23FED341%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M7.1073224%2C17.5645763%20C6.31455903%2C18.3337317%206.29542098%2C19.599917%207.06457637%2C20.3926804%20C7.83373176%2C21.1854438%209.09991709%2C21.2045818%209.89268046%2C20.4354264%20L16.8926805%2C13.6438819%20L18.3287421%2C12.2505852%20L16.9348088%2C10.8151415%20L9.93480886%2C3.60668598%20C9.16530203%2C2.81426374%207.89910833%2C2.79568712%207.10668608%2C3.56519395%20C6.31426384%2C4.33470077%206.29568722%2C5.60089447%207.06519405%2C6.39331672%20L12.6825112%2C12.1779139%22%20id%3D%22Path-6%22%20sketch%3Atype%3D%22MSShapeGroup%22%3E%3C/path%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E");
   background-repeat: no-repeat;
+}
+
+/* usage: 
+  <span aria-hidden="true" data-icon="&#xf008;"></span>
+  <span class="screen-reader-text">Menu</span> */
+/* line 225, ../_sass/core/_content.scss */
+.icon, [class*="icon-"], .icon-alone {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  width: 1em;
+  height: 1em;
+  line-height: 0;
+}
+
+/* line 232, ../_sass/core/_content.scss */
+[class*="icon-"] {
+  margin: -0.15em 0 0 0;
+  padding: 0;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  line-height: inherit;
+  speak: none;
+}
+
+/* line 248, ../_sass/core/_content.scss */
+.icon-alone {
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
+  width: 16px;
+  width: 1rem;
+  height: 16px;
+  height: 1rem;
 }
 
 /* line 12, ../_sass/core/_themes.scss */
@@ -2081,20 +2120,28 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   margin-bottom: 16px;
   margin-bottom: 1rem;
   display: block;
+  width: 100%;
   padding: 0;
   overflow: hidden;
   font-size: 0;
 }
+/* line 56, ../_sass/modules/_grid-inline.scss */
+.grid li > a, #about-us .narrow ul li > a, #home .promos ul li > a,
+#products .tabs-content-body ul li > a, .grid li > p, #about-us .narrow ul li > p, #home .promos ul li > p,
+#products .tabs-content-body ul li > p {
+  font-size: 16px;
+  font-size: 1rem;
+}
 
 @media (min-width: 30em) {
-  /* line 72, ../_sass/modules/_grid-inline.scss */
+  /* line 73, ../_sass/modules/_grid-inline.scss */
   .grid.small, #about-us .narrow ul.small, #home .promos ul.small,
   #products .tabs-content-body ul.small {
     margin-right: -24px;
   }
 }
 @media (min-width: 48em) {
-  /* line 72, ../_sass/modules/_grid-inline.scss */
+  /* line 73, ../_sass/modules/_grid-inline.scss */
   .grid.small, #about-us .narrow ul.small, #home .promos ul.small,
   #products .tabs-content-body ul.small {
     margin-right: -24px;
@@ -2132,21 +2179,21 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 }
 
 @media (min-width: 30em) {
-  /* line 77, ../_sass/modules/_grid-inline.scss */
+  /* line 78, ../_sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
   #products .tabs-content-body ul.medium {
     margin-right: -24px;
   }
 }
 @media (min-width: 48em) {
-  /* line 77, ../_sass/modules/_grid-inline.scss */
+  /* line 78, ../_sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
   #products .tabs-content-body ul.medium {
     margin-right: -24px;
   }
 }
 @media (min-width: 64em) {
-  /* line 77, ../_sass/modules/_grid-inline.scss */
+  /* line 78, ../_sass/modules/_grid-inline.scss */
   .grid.medium, #about-us .narrow ul.medium, #home .promos ul.medium,
   #products .tabs-content-body ul.medium {
     margin-right: -24px;
@@ -2199,7 +2246,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 }
 
 @media (min-width: 48em) {
-  /* line 82, ../_sass/modules/_grid-inline.scss */
+  /* line 83, ../_sass/modules/_grid-inline.scss */
   .grid.large, #about-us .narrow ul.large, #home .promos ul.large,
   #products .tabs-content-body ul.large, #about-us .narrow ul, #home .promos ul,
   #products .tabs-content-body ul {
@@ -2207,7 +2254,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   }
 }
 @media (min-width: 64em) {
-  /* line 82, ../_sass/modules/_grid-inline.scss */
+  /* line 83, ../_sass/modules/_grid-inline.scss */
   .grid.large, #about-us .narrow ul.large, #home .promos ul.large,
   #products .tabs-content-body ul.large, #about-us .narrow ul, #home .promos ul,
   #products .tabs-content-body ul {
@@ -2255,7 +2302,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   }
 }
 
-/* line 87, ../_sass/modules/_grid-inline.scss */
+/* line 88, ../_sass/modules/_grid-inline.scss */
 #about-us .narrow ul {
   display: block;
   padding-top: 1em;
@@ -2274,34 +2321,35 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
 /* line 22, ../_sass/modules/_tile.scss */
 .tile.horizontal {
   margin-bottom: 24px;
+  width: 100%;
 }
-/* line 37, ../_sass/modules/_tile.scss */
+/* line 38, ../_sass/modules/_tile.scss */
 .tile.horizontal a[href^="mailto:"] {
   font-size: 13px;
   font-size: 0.8125rem;
 }
 @media (min-width: 64em) {
-  /* line 37, ../_sass/modules/_tile.scss */
+  /* line 38, ../_sass/modules/_tile.scss */
   .tile.horizontal a[href^="mailto:"] {
     font-size: 16px;
     font-size: 1rem;
   }
 }
 
-/* line 46, ../_sass/modules/_tile.scss */
+/* line 47, ../_sass/modules/_tile.scss */
 .tile.vertical {
   position: relative;
 }
-/* line 49, ../_sass/modules/_tile.scss */
+/* line 50, ../_sass/modules/_tile.scss */
 .tile.vertical > h3, .tile.vertical .tile-title {
   margin-top: 0.5em;
   line-height: 1.4;
 }
-/* line 53, ../_sass/modules/_tile.scss */
+/* line 54, ../_sass/modules/_tile.scss */
 .tile.vertical > h3 a:hover, .tile.vertical .tile-title a:hover {
   color: #f035a6;
 }
-/* line 58, ../_sass/modules/_tile.scss */
+/* line 59, ../_sass/modules/_tile.scss */
 .tile.vertical.more a {
   font-size: 13px;
   font-size: 0.8125rem;
@@ -2313,7 +2361,7 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   vertical-align: middle;
   text-transform: uppercase;
 }
-/* line 68, ../_sass/modules/_tile.scss */
+/* line 69, ../_sass/modules/_tile.scss */
 .tile.vertical.more a:after {
   right: 8px;
   right: 0.5rem;
@@ -2326,9 +2374,15 @@ footer.global a.island:hover, .footer.global a.island:hover, .hero.carousel a.is
   background-size: contain;
   background-position: center center;
 }
-/* line 83, ../_sass/modules/_tile.scss */
+/* line 84, ../_sass/modules/_tile.scss */
 .tile.vertical .tile-thumb {
   display: block;
+}
+/* line 89, ../_sass/modules/_tile.scss */
+.tile.vertical .tile-download {
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
 }
 
 /* line 22, ../_sass/modules/_header.scss */
@@ -3197,14 +3251,41 @@ footer.global [role="navigation"].global .logo {
   }
 }
 
-/* line 270, ../_sass/modules/_navigation.scss */
+/* line 273, ../_sass/modules/_navigation.scss */
+.page-button {
+  padding: 12px;
+  padding: 0.75rem;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: block;
+  position: fixed;
+  top: 50%;
+  background: #ebf0f0;
+}
+/* line 281, ../_sass/modules/_navigation.scss */
+.page-button:hover, .page-button:active {
+  background: #7dbfcb;
+}
+/* line 285, ../_sass/modules/_navigation.scss */
+.page-button.next {
+  right: 0;
+}
+/* line 289, ../_sass/modules/_navigation.scss */
+.page-button.prev {
+  left: 0;
+}
+
+/* line 297, ../_sass/modules/_navigation.scss */
 .filter-nav {
   padding: 0 0 12px 0;
   padding: 0 0 0.75rem 0;
   border-bottom: 1px solid #ebf0f0;
 }
 
-/* line 275, ../_sass/modules/_navigation.scss */
+/* line 302, ../_sass/modules/_navigation.scss */
 .filter-label, .filter-controls {
   display: -moz-inline-stack;
   display: inline-block;
@@ -3214,18 +3295,18 @@ footer.global [role="navigation"].global .logo {
   *display: inline;
 }
 
-/* line 279, ../_sass/modules/_navigation.scss */
+/* line 306, ../_sass/modules/_navigation.scss */
 .filter-label {
   font-size: 13px;
   font-size: 0.8125rem;
 }
 
-/* line 283, ../_sass/modules/_navigation.scss */
+/* line 310, ../_sass/modules/_navigation.scss */
 .filter-controls {
   margin: 0 0 0 0.5em;
 }
 
-/* line 287, ../_sass/modules/_navigation.scss */
+/* line 314, ../_sass/modules/_navigation.scss */
 .filter-cat {
   font-size: 13px;
   font-size: 0.8125rem;
@@ -3233,7 +3314,7 @@ footer.global [role="navigation"].global .logo {
   color: #cad1e3;
 }
 
-/* line 293, ../_sass/modules/_navigation.scss */
+/* line 320, ../_sass/modules/_navigation.scss */
 .filter-controls {
   font-size: 0;
 }
@@ -3256,7 +3337,7 @@ footer.global [role="navigation"].global .logo {
   margin-right: 0.75em;
 }
 
-/* line 298, ../_sass/modules/_navigation.scss */
+/* line 325, ../_sass/modules/_navigation.scss */
 .filter {
   font-size: 13px;
   font-size: 0.8125rem;
@@ -3264,43 +3345,43 @@ footer.global [role="navigation"].global .logo {
   margin: 0 0.1em !important;
   color: #7dbfcb;
 }
-/* line 304, ../_sass/modules/_navigation.scss */
+/* line 331, ../_sass/modules/_navigation.scss */
 .filter > a {
   color: #7dbfcb;
 }
-/* line 307, ../_sass/modules/_navigation.scss */
+/* line 334, ../_sass/modules/_navigation.scss */
 .filter > a:hover {
   color: #59adbc;
 }
-/* line 313, ../_sass/modules/_navigation.scss */
+/* line 340, ../_sass/modules/_navigation.scss */
 .filter.active {
   color: white;
   border-radius: 100px;
   background: #7dbfcb;
 }
-/* line 317, ../_sass/modules/_navigation.scss */
+/* line 344, ../_sass/modules/_navigation.scss */
 .filter.active > a {
   color: white;
 }
 
-/* line 325, ../_sass/modules/_navigation.scss */
+/* line 352, ../_sass/modules/_navigation.scss */
 #filter-container .mix {
   display: none;
 }
 
-/* line 330, ../_sass/modules/_navigation.scss */
+/* line 357, ../_sass/modules/_navigation.scss */
 .local.tabs {
   display: none;
   visibility: hidden;
 }
 @media (min-width: 48em) {
-  /* line 330, ../_sass/modules/_navigation.scss */
+  /* line 357, ../_sass/modules/_navigation.scss */
   .local.tabs {
     display: block;
     visibility: visible;
   }
 }
-/* line 337, ../_sass/modules/_navigation.scss */
+/* line 364, ../_sass/modules/_navigation.scss */
 .local.tabs ul {
   list-style: none;
   list-style-type: none;
@@ -3324,32 +3405,32 @@ footer.global [role="navigation"].global .logo {
   *display: inline;
 }
 @media (min-width: 30em) {
-  /* line 337, ../_sass/modules/_navigation.scss */
+  /* line 364, ../_sass/modules/_navigation.scss */
   .local.tabs ul {
     padding-left: 24px;
     padding-right: 24px;
   }
 }
 @media (min-width: 48em) {
-  /* line 337, ../_sass/modules/_navigation.scss */
+  /* line 364, ../_sass/modules/_navigation.scss */
   .local.tabs ul {
     padding-left: 48px;
     padding-right: 48px;
   }
 }
 @media (min-width: 64em) {
-  /* line 337, ../_sass/modules/_navigation.scss */
+  /* line 364, ../_sass/modules/_navigation.scss */
   .local.tabs ul {
     padding-left: 72px;
     padding-right: 72px;
   }
 }
-/* line 345, ../_sass/modules/_navigation.scss */
+/* line 372, ../_sass/modules/_navigation.scss */
 .local.tabs li {
   margin: 0;
   padding: 0;
 }
-/* line 350, ../_sass/modules/_navigation.scss */
+/* line 377, ../_sass/modules/_navigation.scss */
 .local.tabs a {
   font-size: 18px;
   font-size: 1.125rem;
@@ -3374,7 +3455,7 @@ footer.global [role="navigation"].global .logo {
   margin-left: -10px;
 }
 
-/* line 365, ../_sass/modules/_navigation.scss */
+/* line 392, ../_sass/modules/_navigation.scss */
 .tabs-content {
   padding: 18px 0;
   padding: 1.125rem 0;
@@ -3383,20 +3464,20 @@ footer.global [role="navigation"].global .logo {
   border-color: #cedada;
 }
 @media (min-width: 48em) {
-  /* line 365, ../_sass/modules/_navigation.scss */
+  /* line 392, ../_sass/modules/_navigation.scss */
   .tabs-content {
     display: none;
     visibility: hidden;
     border: none;
   }
 }
-/* line 378, ../_sass/modules/_navigation.scss */
+/* line 405, ../_sass/modules/_navigation.scss */
 .tabs-content.is-open {
   display: block;
   visibility: visible;
 }
 
-/* line 383, ../_sass/modules/_navigation.scss */
+/* line 410, ../_sass/modules/_navigation.scss */
 .tabs-content-header {
   padding-left: 24px;
   padding-right: 24px;
@@ -3405,33 +3486,33 @@ footer.global [role="navigation"].global .logo {
   text-align: left !important;
 }
 @media (min-width: 30em) {
-  /* line 383, ../_sass/modules/_navigation.scss */
+  /* line 410, ../_sass/modules/_navigation.scss */
   .tabs-content-header {
     padding-left: 24px;
     padding-right: 24px;
   }
 }
 @media (min-width: 48em) {
-  /* line 383, ../_sass/modules/_navigation.scss */
+  /* line 410, ../_sass/modules/_navigation.scss */
   .tabs-content-header {
     padding-left: 48px;
     padding-right: 48px;
   }
 }
 @media (min-width: 64em) {
-  /* line 383, ../_sass/modules/_navigation.scss */
+  /* line 410, ../_sass/modules/_navigation.scss */
   .tabs-content-header {
     padding-left: 72px;
     padding-right: 72px;
   }
 }
-/* line 389, ../_sass/modules/_navigation.scss */
+/* line 416, ../_sass/modules/_navigation.scss */
 .tabs-content-header a {
   display: block;
   position: relative;
   color: #3c4b72 !important;
 }
-/* line 394, ../_sass/modules/_navigation.scss */
+/* line 421, ../_sass/modules/_navigation.scss */
 .tabs-content-header a:after {
   content: " ";
   position: absolute;
@@ -3443,33 +3524,33 @@ footer.global [role="navigation"].global .logo {
   background-size: contain;
   background-position: center center;
 }
-/* line 409, ../_sass/modules/_navigation.scss */
+/* line 436, ../_sass/modules/_navigation.scss */
 .tabs-content-header .active {
   color: #f035a6 !important;
 }
 @media (min-width: 48em) {
-  /* line 383, ../_sass/modules/_navigation.scss */
+  /* line 410, ../_sass/modules/_navigation.scss */
   .tabs-content-header {
     display: none;
     visibility: hidden;
   }
 }
 
-/* line 422, ../_sass/modules/_navigation.scss */
+/* line 449, ../_sass/modules/_navigation.scss */
 .tabs-content-body {
   display: none;
   visibility: hidden;
   margin-top: 1em;
 }
 @media (min-width: 48em) {
-  /* line 422, ../_sass/modules/_navigation.scss */
+  /* line 449, ../_sass/modules/_navigation.scss */
   .tabs-content-body {
     display: block;
     visibility: visible;
     margin-top: 0;
   }
 }
-/* line 431, ../_sass/modules/_navigation.scss */
+/* line 458, ../_sass/modules/_navigation.scss */
 .tabs-content-body.is-open {
   display: block;
   visibility: visible;
@@ -3773,4 +3854,15 @@ footer.global [role="navigation"].global .logo {
 .well .product-thumb {
   background-color: white;
   border-color: #dce5e5;
+}
+
+/* line 168, ../_sass/app.scss */
+.product-thumb-name {
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+/* line 174, ../_sass/app.scss */
+.product-thumb-num {
+  color: #94aeae;
 }

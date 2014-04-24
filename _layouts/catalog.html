@@ -16,15 +16,19 @@ active: products
       <dd class="filter active" onclick="$('#filter-container').mixItUp('filter','all')"><a href="#">Show All</a></dd>
       <dt class="filter-cat callout">Type</dt>
       {% for post in site.categories.products %}
+      {% if post.catalog == page.slug %}
         {% for type in post.type %}
           <dd class="filter" data-filter=".{{ type }}"><a href="#">{{ type }}</a></dd>
         {% endfor %}
+      {% endif %}
       {% endfor %}
       <dt class="filter-cat callout">Size</dt>
       {% for post in site.categories.products %}
+      {% if post.catalog == page.slug %}
         {% for size in post.size %}
           <dd class="filter" data-filter=".{{ size }}"><a href="#">{{ size }}</a></dd>
         {% endfor %}
+      {% endif %}
       {% endfor %}
     </dl>
   </aside>
