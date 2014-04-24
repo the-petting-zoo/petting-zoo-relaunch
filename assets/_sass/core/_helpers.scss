@@ -280,7 +280,7 @@
   // margin-left: 0;
   padding-left: 0;
 
-  li {
+  li, dt, dd {
     list-style: none;
     list-style-type: none;
   }
@@ -323,7 +323,12 @@
 
 @mixin inline-dl($break: false) {
   & > dt, & > dd {
-    @include inline-block;
+    @if ($break == false) {
+      @include inline-block;
+    } @else {
+      display: inline;
+    }
+    
   }
   & > dt {
     margin-right: em(3);

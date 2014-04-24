@@ -134,6 +134,8 @@ $grids: add-grid(9 at $small);
 $grids: add-grid(12 at $medium);
 $gutters: add-gutter($grid-gutter);
 
+$output: 'isolation';
+
 
 // --- default z-indexes ----------------------------------------------------
 $z--low: 0;
