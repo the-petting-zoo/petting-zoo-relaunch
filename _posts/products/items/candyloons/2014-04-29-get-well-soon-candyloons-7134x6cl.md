@@ -4,7 +4,7 @@ layout: product
 published: true
 title: Get Well Soon Candyloons 7134X6CL
 thumb: "https://s3.amazonaws.com/pettingzoo-website/products/catalogs/candyloon/Product+Images/GWSBalloonAsst.jpg"
-catalog: Candyloon Catalog
+catalog: candyloons
 collection: Candyloons
 item: 7134X6CL
 size: "12\" including balloon"
