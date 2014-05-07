@@ -1,7 +1,7 @@
 ---
 layout: catalog
-slug: products
 title: "Candyloons"
+slug: candyloons
 category: "catalog"
 directory: candyloon
 pdf: candyloon-brochure.pdf
