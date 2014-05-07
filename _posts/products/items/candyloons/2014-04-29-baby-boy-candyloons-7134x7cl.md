@@ -3,7 +3,7 @@ category: products
 layout: product
 published: true
 title: Baby Boy Candyloons 7134X7CL
-catalog: Candyloon Catalog
+catalog: candyloons
 collection: Candyloons
 thumb: "https://s3.amazonaws.com/pettingzoo-website/products/catalogs/candyloon/Product+Images/babyBoyAsst.jpg"
 item: 7134X7CL
