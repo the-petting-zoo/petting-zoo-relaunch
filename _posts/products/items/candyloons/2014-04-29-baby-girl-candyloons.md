@@ -3,7 +3,7 @@ category: products
 layout: product
 published: true
 title: Baby Girl Candyloons
-catalog: Candyloon Catalog
+catalog: candyloons
 collection: Candyloons
 thumb: "https://s3.amazonaws.com/pettingzoo-website/products/catalogs/candyloon/Product+Images/babyGirlAsst.jpg"
 item: 7134X8CL
