@@ -1,7 +1,7 @@
 ---
 category: products
 layout: product
-published: false
+published: true
 title: Baby Boy Candyloons 7134X7CL
 catalog: Candyloon Catalog
 collection: Candyloons
