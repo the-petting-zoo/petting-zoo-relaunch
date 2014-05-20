@@ -3,6 +3,7 @@ layout: catalog
 slug: products
 title: "Zootiques"
 category: "catalog"
+show_products: false
 pdf: TRI_FOLD_RESIN_2013.pdf
 cover: TRI_FOLD_RESIN_2013-cover.jpg
 directory: zootiques

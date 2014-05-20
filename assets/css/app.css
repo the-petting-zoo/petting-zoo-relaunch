@@ -3518,7 +3518,7 @@ nav.local.page {
     margin-right: 72px;
   }
 }
-/* line 65, ../../../../../.rvm/gems/ruby-2.1.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
+/* line 65, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
 nav.local.page:after {
   content: "";
   display: table;
@@ -3602,20 +3602,22 @@ nav.local.page:after {
 .filter-nav {
   padding: 0 0 12px 0;
   padding: 0 0 0.75rem 0;
+  margin-top: 24px;
+  margin-top: 1.5rem;
   border-bottom: 1px solid #ebf0f0;
 }
-/* line 346, ../_sass/modules/_navigation.scss */
+/* line 348, ../_sass/modules/_navigation.scss */
 .filter-nav button {
   border: none;
   background: none;
   cursor: pointer;
 }
-/* line 350, ../_sass/modules/_navigation.scss */
+/* line 352, ../_sass/modules/_navigation.scss */
 .filter-nav button:focus {
   outline: 0 none;
 }
 
-/* line 356, ../_sass/modules/_navigation.scss */
+/* line 358, ../_sass/modules/_navigation.scss */
 .filter-label, .filter-controls {
   display: -moz-inline-stack;
   display: inline-block;
@@ -3625,26 +3627,48 @@ nav.local.page:after {
   *display: inline;
 }
 
-/* line 360, ../_sass/modules/_navigation.scss */
+/* line 362, ../_sass/modules/_navigation.scss */
 .filter-label {
   font-size: 13px;
   font-size: 0.8125rem;
 }
 
-/* line 364, ../_sass/modules/_navigation.scss */
+/* line 366, ../_sass/modules/_navigation.scss */
 .filter-controls {
   margin: 0 0 0 0.5em;
 }
 
-/* line 368, ../_sass/modules/_navigation.scss */
+/* line 370, ../_sass/modules/_navigation.scss */
+.filter-set {
+  display: block;
+  margin-left: 0;
+  padding-left: 0;
+  border: none;
+}
+@media (min-width: 30em) {
+  /* line 370, ../_sass/modules/_navigation.scss */
+  .filter-set {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    margin-left: 0.2em;
+    padding-left: 0.7em;
+    border-left: 1px solid #ebf0f0;
+  }
+}
+
+/* line 384, ../_sass/modules/_navigation.scss */
 .filter-cat {
   font-size: 13px;
   font-size: 0.8125rem;
-  margin: 0 0.7em;
+  margin-right: 0.7em;
   color: #cad1e3;
 }
 
-/* line 374, ../_sass/modules/_navigation.scss */
+/* line 390, ../_sass/modules/_navigation.scss */
 .filter-controls {
   font-size: 0;
 }
@@ -3667,51 +3691,54 @@ nav.local.page:after {
   margin-right: 0.75em;
 }
 
-/* line 379, ../_sass/modules/_navigation.scss */
+/* line 395, ../_sass/modules/_navigation.scss */
 .filter, #reset {
   font-size: 13px;
   font-size: 0.8125rem;
-  padding: 0.05em 0.7em;
-  margin: 0 0.1em !important;
+  padding: 0.2em 0.5em;
   color: #7dbfcb;
 }
-/* line 385, ../_sass/modules/_navigation.scss */
+/* line 412, ../_sass/modules/_navigation.scss */
 .filter > a, #reset > a {
   color: #7dbfcb;
 }
-/* line 388, ../_sass/modules/_navigation.scss */
+/* line 415, ../_sass/modules/_navigation.scss */
 .filter > a:hover, #reset > a:hover {
   color: #59adbc;
 }
-/* line 394, ../_sass/modules/_navigation.scss */
+/* line 421, ../_sass/modules/_navigation.scss */
 .filter.active, #reset.active {
   color: white;
   border-radius: 100px;
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+  margin-left: -0.2em;
+  margin-right: -0.2em;
   background: #7dbfcb;
 }
-/* line 398, ../_sass/modules/_navigation.scss */
+/* line 429, ../_sass/modules/_navigation.scss */
 .filter.active > a, #reset.active > a {
   color: white;
 }
 
-/* line 406, ../_sass/modules/_navigation.scss */
+/* line 437, ../_sass/modules/_navigation.scss */
 #filter-container .mix {
   display: none;
 }
 
-/* line 411, ../_sass/modules/_navigation.scss */
+/* line 442, ../_sass/modules/_navigation.scss */
 .local.tabs {
   display: none;
   visibility: hidden;
 }
 @media (min-width: 48em) {
-  /* line 411, ../_sass/modules/_navigation.scss */
+  /* line 442, ../_sass/modules/_navigation.scss */
   .local.tabs {
     display: block;
     visibility: visible;
   }
 }
-/* line 418, ../_sass/modules/_navigation.scss */
+/* line 449, ../_sass/modules/_navigation.scss */
 .local.tabs ul {
   list-style: none;
   list-style-type: none;
@@ -3735,32 +3762,32 @@ nav.local.page:after {
   *display: inline;
 }
 @media (min-width: 30em) {
-  /* line 418, ../_sass/modules/_navigation.scss */
+  /* line 449, ../_sass/modules/_navigation.scss */
   .local.tabs ul {
     padding-left: 24px;
     padding-right: 24px;
   }
 }
 @media (min-width: 48em) {
-  /* line 418, ../_sass/modules/_navigation.scss */
+  /* line 449, ../_sass/modules/_navigation.scss */
   .local.tabs ul {
     padding-left: 48px;
     padding-right: 48px;
   }
 }
 @media (min-width: 64em) {
-  /* line 418, ../_sass/modules/_navigation.scss */
+  /* line 449, ../_sass/modules/_navigation.scss */
   .local.tabs ul {
     padding-left: 72px;
     padding-right: 72px;
   }
 }
-/* line 426, ../_sass/modules/_navigation.scss */
+/* line 457, ../_sass/modules/_navigation.scss */
 .local.tabs li {
   margin: 0;
   padding: 0;
 }
-/* line 431, ../_sass/modules/_navigation.scss */
+/* line 462, ../_sass/modules/_navigation.scss */
 .local.tabs a {
   font-size: 18px;
   font-size: 1.125rem;
@@ -3785,7 +3812,7 @@ nav.local.page:after {
   margin-left: -10px;
 }
 
-/* line 446, ../_sass/modules/_navigation.scss */
+/* line 477, ../_sass/modules/_navigation.scss */
 .tabs-content {
   padding: 18px 0;
   padding: 1.125rem 0;
@@ -3794,20 +3821,20 @@ nav.local.page:after {
   border-color: #cedada;
 }
 @media (min-width: 48em) {
-  /* line 446, ../_sass/modules/_navigation.scss */
+  /* line 477, ../_sass/modules/_navigation.scss */
   .tabs-content {
     display: none;
     visibility: hidden;
     border: none;
   }
 }
-/* line 459, ../_sass/modules/_navigation.scss */
+/* line 490, ../_sass/modules/_navigation.scss */
 .tabs-content.is-open {
   display: block;
   visibility: visible;
 }
 
-/* line 464, ../_sass/modules/_navigation.scss */
+/* line 495, ../_sass/modules/_navigation.scss */
 .tabs-content-header {
   padding-left: 24px;
   padding-right: 24px;
@@ -3816,33 +3843,33 @@ nav.local.page:after {
   text-align: left !important;
 }
 @media (min-width: 30em) {
-  /* line 464, ../_sass/modules/_navigation.scss */
+  /* line 495, ../_sass/modules/_navigation.scss */
   .tabs-content-header {
     padding-left: 24px;
     padding-right: 24px;
   }
 }
 @media (min-width: 48em) {
-  /* line 464, ../_sass/modules/_navigation.scss */
+  /* line 495, ../_sass/modules/_navigation.scss */
   .tabs-content-header {
     padding-left: 48px;
     padding-right: 48px;
   }
 }
 @media (min-width: 64em) {
-  /* line 464, ../_sass/modules/_navigation.scss */
+  /* line 495, ../_sass/modules/_navigation.scss */
   .tabs-content-header {
     padding-left: 72px;
     padding-right: 72px;
   }
 }
-/* line 470, ../_sass/modules/_navigation.scss */
+/* line 501, ../_sass/modules/_navigation.scss */
 .tabs-content-header a {
   display: block;
   position: relative;
   color: #3c4b72 !important;
 }
-/* line 475, ../_sass/modules/_navigation.scss */
+/* line 506, ../_sass/modules/_navigation.scss */
 .tabs-content-header a:after {
   content: " ";
   position: absolute;
@@ -3854,33 +3881,33 @@ nav.local.page:after {
   background-size: contain;
   background-position: center center;
 }
-/* line 490, ../_sass/modules/_navigation.scss */
+/* line 521, ../_sass/modules/_navigation.scss */
 .tabs-content-header .active {
   color: #f035a6 !important;
 }
 @media (min-width: 48em) {
-  /* line 464, ../_sass/modules/_navigation.scss */
+  /* line 495, ../_sass/modules/_navigation.scss */
   .tabs-content-header {
     display: none;
     visibility: hidden;
   }
 }
 
-/* line 503, ../_sass/modules/_navigation.scss */
+/* line 534, ../_sass/modules/_navigation.scss */
 .tabs-content-body {
   display: none;
   visibility: hidden;
   margin-top: 1em;
 }
 @media (min-width: 48em) {
-  /* line 503, ../_sass/modules/_navigation.scss */
+  /* line 534, ../_sass/modules/_navigation.scss */
   .tabs-content-body {
     display: block;
     visibility: visible;
     margin-top: 0;
   }
 }
-/* line 512, ../_sass/modules/_navigation.scss */
+/* line 543, ../_sass/modules/_navigation.scss */
 .tabs-content-body.is-open {
   display: block;
   visibility: visible;
@@ -3952,19 +3979,22 @@ nav.local.page:after {
 
 /* line 10, ../_sass/modules/_pdf-viewer.scss */
 #pdf-viewer {
-  width: 30.90909%;
-  margin: 0 auto;
-  background: #ebf0f0;
+  margin: 24px auto 0 auto;
+  margin: 1.5rem auto 0 auto;
+  background: #3c4b72;
 }
-/* line 22, ../_sass/modules/_pdf-viewer.scss */
-#pdf-viewer.spread {
-  width: 61.81818%;
-}
-/* line 26, ../_sass/modules/_pdf-viewer.scss */
+/* line 27, ../_sass/modules/_pdf-viewer.scss */
 #pdf-viewer .flex-active-slide, #pdf-viewer li {
   margin-bottom: 0;
+  text-align: center;
 }
-/* line 30, ../_sass/modules/_pdf-viewer.scss */
+/* line 34, ../_sass/modules/_pdf-viewer.scss */
+#pdf-viewer .slides img {
+  margin: 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+/* line 41, ../_sass/modules/_pdf-viewer.scss */
 #pdf-viewer .prev, #pdf-viewer .next {
   color: transparent;
   font: 0/0 a;
@@ -3982,35 +4012,35 @@ nav.local.page:after {
   background-position: center center;
   background-size: 18px;
 }
-/* line 44, ../_sass/modules/_pdf-viewer.scss */
+/* line 55, ../_sass/modules/_pdf-viewer.scss */
 #pdf-viewer .prev:hover, #pdf-viewer .next:hover {
   background-color: #dce5e5;
 }
-/* line 49, ../_sass/modules/_pdf-viewer.scss */
+/* line 60, ../_sass/modules/_pdf-viewer.scss */
 #pdf-viewer .prev {
   left: -48px;
   left: -3rem;
 }
-/* line 53, ../_sass/modules/_pdf-viewer.scss */
+/* line 64, ../_sass/modules/_pdf-viewer.scss */
 #pdf-viewer .next {
   right: -48px;
   right: -3rem;
 }
 
-/* line 58, ../_sass/modules/_pdf-viewer.scss */
+/* line 69, ../_sass/modules/_pdf-viewer.scss */
 #pdf-thumb {
   margin: 12px 0;
   margin: 0.75rem 0;
 }
-/* line 61, ../_sass/modules/_pdf-viewer.scss */
+/* line 72, ../_sass/modules/_pdf-viewer.scss */
 #pdf-thumb .flex-active-slide {
   opacity: 0.75;
 }
-/* line 65, ../_sass/modules/_pdf-viewer.scss */
+/* line 76, ../_sass/modules/_pdf-viewer.scss */
 #pdf-thumb li {
   margin-bottom: 0;
 }
-/* line 69, ../_sass/modules/_pdf-viewer.scss */
+/* line 80, ../_sass/modules/_pdf-viewer.scss */
 #pdf-thumb .flex-prev, #pdf-thumb .flex-next {
   width: 24px;
   width: 1.5rem;
@@ -4019,7 +4049,7 @@ nav.local.page:after {
   top: 50%;
   margin-top: -14.4px;
 }
-/* line 77, ../_sass/modules/_pdf-viewer.scss */
+/* line 88, ../_sass/modules/_pdf-viewer.scss */
 #pdf-thumb .flex-prev:before, #pdf-thumb .flex-next:before {
   font-size: 1.2em;
 }

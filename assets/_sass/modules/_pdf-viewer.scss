@@ -14,17 +14,28 @@
   $aspect: ($slide-h/$slide-w);
   $aspect-spread: (($slide-w * 2)/$slide-h);
   $viewer-h: 40%;
-
-  width: ($viewer-h/$aspect);
-  margin: 0 auto;
-  background: $color-bg-well;
+  
+  @include rem(margin, 24px auto 0 auto);
+  // width: ($viewer-h/$aspect);
+  // margin: 0 auto;
+  background: $color-bg-reverse;
 
   &.spread {
-    width: ($viewer-h * $aspect-spread);
+    // width: ($viewer-h * $aspect-spread);
   }
 
   .flex-active-slide, li {
     margin-bottom: 0;
+    text-align: center;
+  }
+
+  .slides {
+
+    img {
+      margin: 0 auto;
+      width: auto;
+      max-width: 100%;
+    }
   }
 
   .prev, .next {

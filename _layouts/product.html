@@ -9,12 +9,18 @@ active: products
 
   <aside class="product-meta" role="contentinfo">
     <dl>
+      {% if page.item %}
       <dt class="callout">Item:</dt>
       <dd>{{ page.item }}</dd>
+      {% endif %}
+      {% if page.case %}
       <dt class="callout">Case PK:</dt>
       <dd>{{ page.case }}</dd>
+      {% endif %}
+      {% if page.master %}
       <dt class="callout">Master Case:</dt>
       <dd>{{ page.master }}</dd>
+      {% endif %}
     </dl>
   </aside>
     

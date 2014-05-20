@@ -11,7 +11,7 @@ master: 24
 thumb: "http://pettingzoo-website.s3.amazonaws.com/products/catalogs/spring/brown_bunny_cxa12-063-25E.png"
 
 
-type: rabbit
+type: bunny
 size: medium
 color: green
 
