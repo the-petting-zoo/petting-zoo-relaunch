@@ -148,7 +148,7 @@ prose:
         field:
           element: "text"
           label: "PDF Directory"
-          help: "Enter the name of the directory where you uploaded the PDF catalog"
+          help: "Enter the name of the directory where you uploaded the PDF catalog. We assume it's located in products/catalogs/, so you can leave that off."
       - name: "pdf"
         field:
           element: "text"
