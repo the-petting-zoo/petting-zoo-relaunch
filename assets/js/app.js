@@ -404,139 +404,31 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
       // scale product images to window height
       pettingzoo.scaleToWindow.update(pettingzoo.config.scaleHeight, "height");
 
-      // set up filters for catalog pages
-      // To keep our code clean and modular, all custom functionality will be contained inside a single object literal called "buttonFilter".
-
-      var buttonFilter = {
-        
-        // Declare any variables we will need as properties of the object
-        
-        $filters: null,
-        $reset: null,
-        groups: [],
-        outputArray: [],
-        outputString: '',
-        
-        // The "init" method will run on document ready and cache any jQuery objects we will need.
-        
-        init: function(){
-          var self = this; // As a best practice, in each method we will asign "this" to the variable "self" so that it remains scope-agnostic. We will use it to refer to the parent "buttonFilter" object so that we can share methods and properties between all parts of the object.
-          
-          self.$filters = $('#filters');
-          self.$reset = $('#reset');
-          self.$container = $('#filter-container');
-          
-          self.$filters.find('fieldset').each(function(){
-            self.groups.push({
-              $buttons: $(this).find('.filter'),
-              active: ''
-            });
-          });
-          
-          self.bindHandlers();
-        },
-        
-        // The "bindHandlers" method will listen for whenever a button is clicked. 
-        
-        bindHandlers: function(){
-          var self = this;
-          
-          // Handle filter clicks
-          
-          self.$filters.on('click', '.filter', function(e){
-            e.preventDefault();
-            
-            var $button = $(this);
-            
-            // If the button is active, remove the active class, else make active and deactivate others.
-            
-            $button.hasClass('active') ?
-              $button.removeClass('active') :
-              $button.addClass('active').siblings('.filter').removeClass('active');
-            
-            self.parseFilters();
-          });
-          
-          // Handle reset click
-          
-          self.$reset.on('click', function(e){
-            e.preventDefault();
-            
-            self.$filters.find('.filter').removeClass('active');
-            
-            self.parseFilters();
-          });
-        },
-        
-        // The parseFilters method checks which filters are active in each group:
-        
-        parseFilters: function(){
-          var self = this;
-       
-          // loop through each filter group and grap the active filter from each one.
-          
-          for(var i = 0, group; group = self.groups[i]; i++){
-            group.active = group.$buttons.filter('.active').attr('data-filter') || '';
-          }
-          
-          self.concatenate();
-        },
-        
-        // The "concatenate" method will crawl through each group, concatenating filters as desired:
-        
-        concatenate: function(){
-          var self = this;
-          
-          self.outputString = ''; // Reset output string
-          
-          for(var i = 0, group; group = self.groups[i]; i++){
-            self.outputString += group.active;
-          }
-          
-          // If the output string is empty, show all rather than none:
-          
-          !self.outputString.length && (self.outputString = 'all'); 
-          
-          console.log(self.outputString); 
-          
-          // ^ we can check the console here to take a look at the filter string that is produced
-          
-          // Send the output string to MixItUp via the 'filter' method:
-          
-          if(self.$container.mixItUp('isLoaded')){
-            self.$container.mixItUp('filter', self.outputString);
-          }
-        }
-      };
-        
-      // On document ready, initialise our code.
-
-      $(function(){
-            
-        // Initialize buttonFilter code
-            
-        buttonFilter.init();
-            
-        // Instantiate MixItUp
-            
-        $('#filter-container').mixItUp({
-          controls: {
-            enable: false // we won't be needing these
-          },
-          callbacks: {
-            onMixFail: function(){
-              //Do whatever when no results found
-            }
-          }
-        });    
-      });
-
 
       // set up various plugins, behaviors
       pettingzoo.tabs.init(pettingzoo.config.tabs); // set up accordion version of tabs (mobile/default)
       pettingzoo.contactForm.init(); // contact form & mailing list opt-in
       if ($("body#contact-us").length > 0) pettingzoo.map.init(); // google map embed (only on contact page)
       pettingzoo.pdfViewer.init(); // set up PDF viewer carousels
+
+      // set up filters on the catalog pages
+      pettingzoo.buttonFilter.init();
+            
+      // Instantiate MixItUp
+      $('#filter-container').mixItUp({
+        controls: {
+          enable: false // we won't be needing these
+        },
+        animation: {
+          effects: 'fade',
+          duration: '300'
+        },
+        callbacks: {
+          onMixFail: function(){
+            //Do whatever when no results found
+          }
+        }
+      });   
 
       // the menu select on mobile screens
       $("#js-menu-mobile").change(function(){
@@ -642,7 +534,109 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
       }
     },
 
-    
+    // --- Filters for catalog pages --------------------------------------------------    
+    buttonFilter : {
+        
+      // Declare any variables we will need as properties of the object
+      
+      $filters: null,
+      $reset: null,
+      groups: [],
+      outputArray: [],
+      outputString: '',
+
+      active: 'active',
+        
+      init: function(){
+        var self = this; // As a best practice, in each method we will asign "this" to the variable "self" so that it remains scope-agnostic. We will use it to refer to the parent "buttonFilter" object so that we can share methods and properties between all parts of the object.
+        
+        self.$filters = $('#js-filters');
+        self.$reset = $('#js-reset');
+        self.$container = $('#filter-container');
+        
+        self.$filters.find('fieldset').each(function(){
+          self.groups.push({
+            $buttons: $(this).find('.filter'),
+            active: ''
+          });
+        });
+        
+        self.bindHandlers();
+      },
+        
+      // The "bindHandlers" method will listen for whenever a button is clicked. 
+      bindHandlers: function(){
+        var self = this;
+        
+        // Handle filter clicks
+        
+        self.$filters.on('click', '.filter', function(e){
+          e.preventDefault();
+          
+          var $button = $(this);
+
+          self.$reset.removeClass(pettingzoo.buttonFilter.active);
+          
+          // If the button is active, remove the active class, else make active and deactivate others.
+          $button.hasClass(pettingzoo.buttonFilter.active) ?
+            $button.removeClass(pettingzoo.buttonFilter.active) :
+            $button.addClass(pettingzoo.buttonFilter.active).siblings('.filter').removeClass(pettingzoo.buttonFilter.active);
+          
+          self.parseFilters();
+        });
+        
+        // Handle reset click
+        
+        self.$reset.on('click', function(e){
+          e.preventDefault();
+          
+          self.$reset.addClass(pettingzoo.buttonFilter.active);
+          self.$filters.find('.filter').removeClass(pettingzoo.buttonFilter.active);
+          
+          self.parseFilters();
+        });
+      },
+        
+      // The parseFilters method checks which filters are active in each group:
+      
+      parseFilters: function(){
+        var self = this;
+     
+        // loop through each filter group and grap the active filter from each one.
+        
+        for(var i = 0, group; group = self.groups[i]; i++){
+          group.active = group.$buttons.filter('.active').attr('data-filter') || '';
+        }
+        
+        self.concatenate();
+      },
+        
+      // The "concatenate" method will crawl through each group, concatenating filters as desired:
+      concatenate: function(){
+        var self = this;
+        
+        self.outputString = ''; // Reset output string
+        
+        for(var i = 0, group; group = self.groups[i]; i++){
+          self.outputString += group.active;
+        }
+        
+        // If the output string is empty, show all rather than none:
+        
+        !self.outputString.length && (self.outputString = 'all'); 
+        
+        console.log(self.outputString); 
+        
+        // ^ we can check the console here to take a look at the filter string that is produced
+        
+        // Send the output string to MixItUp via the 'filter' method:
+        
+        if(self.$container.mixItUp('isLoaded')){
+          self.$container.mixItUp('filter', self.outputString);
+        }
+      }
+
+    },
 
     // --- PDF viewer carousels ------------------------------------------------
     pdfViewer : {

@@ -61,10 +61,12 @@
     @include rem(padding, 12px 24px 12px 12px);
     display: block;
     position: relative;
-    // @include inline-block--centered;
     height: 100%;
-    vertical-align: middle;
     text-transform: uppercase;
+
+    & > * {
+      @include vertical-center;
+    }
 
     &:after {
       $size: 1.2em;
@@ -84,10 +86,40 @@
   .tile-thumb {
     display: block;
     // margin-bottom: 0.5em;
+    border-width: $border-w--thick;
+    border-style: solid;
+    border-color: $gray;
+
+    &:hover {
+      border-color: darken($gray, 5);
+    }
   }
 
   .tile-download {
     @include rem(font-size, 12px);
     text-transform: uppercase;
+  }
+}
+
+.well {
+
+  .tile-title a {
+    color: $color-text--primary;
+  }
+
+  .tile.vertical .tile-thumb {
+    border-color: darken($gray, 5);
+
+    &:hover {
+      border-color: darken($gray, 10);
+    }
+  }
+}
+
+.reverse .tile.vertical .tile-thumb {
+  border-color: lighten($color-bg-reverse, 10);
+
+  &:hover {
+    border-color: lighten($color-bg-reverse, 15);
   }
 }

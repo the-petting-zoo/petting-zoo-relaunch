@@ -6,12 +6,12 @@
   <li class="tile vertical">
     <a href="{{ catalog.url }}" class="tile-thumb"><img src="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.directory }}/{{ catalog.cover }}" alt="{{ catalog.title }}" /></a
     {% unless include.text == "false" %}
-    ><h3><a href="{{ catalog.url }}">{{ catalog.title }}</a></h3><!-- whitespace hack -->
+    ><h3 class="tile-title"><a href="{{ catalog.url }}">{{ catalog.title }}</a></h3><!-- whitespace hack -->
     {% if catalog.pdf != false %}
     <a href="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ catalog.directory }}/{{ catalog.pdf }}" class="tile-download">Download PDF</a>
     {% endif %}
     {% endunless %}
     {% endunless %}
-  </li><!-- whitespace hack -->
+  </li>
   {% endunless %}
 {% endfor %}

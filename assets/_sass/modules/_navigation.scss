@@ -361,6 +361,7 @@ $filter-highlight: $turquoise;
 
 .filter-label {
   @include rem(font-size, 13px);
+  margin-right: 0.5em;
 }
 
 .filter-controls {
@@ -392,7 +393,7 @@ $filter-highlight: $turquoise;
   font-size: 0;
 }
 
-.filter, #reset {
+.filter, #reset, %filter {
   $padding-default: 0.5em;
   $padding-active: 0.7em;
 
