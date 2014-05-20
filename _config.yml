@@ -118,7 +118,7 @@ prose:
       - name: "title"
         field:
           element: "text"
-          label: "Page Title"
+          label: "Catalog Title"
           help: "Enter the title of the about page"
       - name: "layout"
         field:
@@ -128,21 +128,52 @@ prose:
         field:
           element: "hidden"
           value: "catalog"
-      - name: "pdf"
+      - name: "slug"
         field:
           element: "text"
-          label: "PDF Version"
-          help: "Enter the name of the uploaded PDF (including extension)"
-      - name: "cover"
-        field:
-          element: "text"
-          label: "Cover Image"
-          help: "Enter the name of the uploaded cover image (including extension)"
+          label: "Catalog Slug"
+          help: "Enter a short, lowercase name for the catalog (preferably one word)."
       - name: "show_products"
         field:
           element: "checkbox"
           label: "Show Product Listings"
           help: "Do you want to display product listings for this catalog, or just the PDF?"
+          value: "false"
+      - name: "cover"
+        field:
+          element: "text"
+          label: "Cover Image"
+          help: "Enter the name of the uploaded cover image (including extension)"
+      - name: "directory"
+        field:
+          element: "text"
+          label: "PDF Directory"
+          help: "Enter the name of the directory where you uploaded the PDF catalog"
+      - name: "pdf"
+        field:
+          element: "text"
+          label: "PDF Filename"
+          help: "Enter the name of the uploaded PDF file (including extension)"
+      - name: "filebase"
+        field:
+          element: "text"
+          label: "PDF Images Path"
+          help: "Enter a path (URL-encoded) for the uploaded print catalog JPGs"
+      - name: "extension"
+        field:
+          element: "text"
+          label: "PDF Images Extension"
+          help: "Enter the extension (.jpg, .png, etc.) of the uploaded print catalog JPGs"
+      - name: "numslides"
+        field:
+          element: "number"
+          label: "Number of PDF Images"
+          help: "Enter the number of PDF images for this catalog, ie the number of slides in the carousel"
+      - name: "spread"
+        field:
+          element: "checkbox"
+          label: "PDF images are spreads (2 pages each)"
+          help: "Do the PDF images (slides in the carousel) each show a 2-page spread, or just 1 page?"
           value: "false"
 
     _posts/products/items:
