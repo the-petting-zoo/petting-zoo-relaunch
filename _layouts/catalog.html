@@ -11,7 +11,7 @@ active: products
 
   {% if page.filebase %}
   <!-- catalog: main carousel -->
-  <div id="pdf-viewer" class="flexslider{% if page.spread == true %} spread{% endif %}" data-directory="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ page.directory }}/" data-filebase="{{ page.filebase | xml_escape }}" data-extension="{{ page.extension }}" data-numslides="{{ page.numslides }}" >
+  <div id="pdf-viewer" class="flexslider{% if page.spread == true %} spread{% endif %} js-scale-height" data-directory="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ page.directory }}/" data-filebase="{{ page.filebase | xml_escape }}" data-extension="{{ page.extension }}" data-numslides="{{ page.numslides }}" >
     <a href="#" class="prev icon-arrow-left--blue">&lsaquo; Previous</a>
     <a href="#" class="next icon-arrow-right--blue">Next &rsaquo;</a>
   </div>
@@ -19,38 +19,70 @@ active: products
   <!-- thumbnail nav -->
   <div id="pdf-thumb" class="flexslider" data-directory="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ page.directory }}/" data-filebase="{{ page.filebase | xml_escape }}" data-extension="{{ page.extension }}" data-numslides="{{ page.numslides }}"></div>
 
-  {% else %}
-
-  <aside id="filter-nav" class="filter-nav">
-  <h3 class="callout filter-label">Filters</h3>
-  <dl class="filter-controls">
-    <dd class="filter active" onclick="$('#filter-container').mixItUp('filter','all')"><a href="#">Show All</a></dd>
-    <dt class="filter-cat callout">Type</dt>
-    {% for post in site.categories.products %}
-    {% if post.catalog == page.slug %}
-      {% for type in post.type %}
-        <dd class="filter" data-filter=".{{ type }}"><a href="#">{{ type }}</a></dd>
-      {% endfor %}
-    {% endif %}
-    {% endfor %}
-    <dt class="filter-cat callout">Size</dt>
-    {% for post in site.categories.products %}
-    {% if post.catalog == page.slug %}
-      {% for size in post.size %}
-        <dd class="filter" data-filter=".{{ size }}"><a href="#">{{ size }}</a></dd>
-      {% endfor %}
-    {% endif %}
-    {% endfor %}
-  </dl>
-</aside>
-
-<ul id="filter-container" class="grid medium">
-  {% for product in site.categories.products %}
-  {% if product.catalog == page.slug %}
-    {% include product-tile.html post=product filter=true %}
   {% endif %}
-  {% endfor %}
-</ul>
+
+  {% if page.show_products == true %}
+
+  <section class="strip">
+    <h2>Products in this catalog</h2>
+
+    <aside id="filter-nav" class="filter-nav">
+      <form id="js-filters" class="controls">
+        <h3 class="callout filter-label">Filters</h3>
+        <button id="js-reset" class="filter active">Show All</button>
+        <fieldset class="filter-set">
+          <span class="filter-cat callout">Type</span>
+           {% assign typeList = ',' %}
+          {% for product in site.categories.products %}
+            {% for item in product.type %}
+              {% capture compareType %},{{ item }},{% endcapture %}
+              {% if typeList contains compareType %}{% else %}
+                <button class="filter" data-filter='.{{ item }}'>{{ item | capitalize }}</button>
+                {% capture tempList %}{{ typeList }}{{ item }},{% endcapture %}
+                {% assign typeList = tempList %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </fieldset>
+        <fieldset class="filter-set">
+          <span class="filter-cat callout">Size</span>
+           {% assign typeList = ',' %}
+          {% for product in site.categories.products %}
+            {% for item in product.size %}
+              {% capture compareType %},{{ item }},{% endcapture %}
+              {% if typeList contains compareType %}{% else %}
+                <button class="filter" data-filter='.{{ item }}'>{{ item | capitalize }}</button>
+                {% capture tempList %}{{ typeList }}{{ item }},{% endcapture %}
+                {% assign typeList = tempList %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </fieldset>
+        <fieldset class="filter-set">
+          <span class="filter-cat callout">Color</span>
+           {% assign typeList = ',' %}
+          {% for product in site.categories.products %}
+            {% for item in product.color %}
+              {% capture compareType %},{{ item }},{% endcapture %}
+              {% if typeList contains compareType %}{% else %}
+                <button class="filter" data-filter='.{{ item }}'>{{ item | capitalize }}</button>
+                {% capture tempList %}{{ typeList }}{{ item }},{% endcapture %}
+                {% assign typeList = tempList %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </fieldset>
+      </form>
+    </aside>
+
+    <ul id="filter-container" class="grid medium">
+      {% for product in site.categories.products %}
+      {% if product.catalog == page.slug %}
+        {% include product-tile.html post=product filter=true %}
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
 
   {% endif %}
 

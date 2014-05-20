@@ -3,6 +3,7 @@ layout: catalog
 title: "Candyloons"
 slug: candyloons
 category: "catalog"
+show_products: false
 directory: candyloon
 pdf: candyloon-brochure.pdf
 cover: candyloon-brochure-cover.jpg

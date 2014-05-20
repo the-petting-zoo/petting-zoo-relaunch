@@ -9,12 +9,18 @@ active: products
 
   <aside class="product-meta" role="contentinfo">
     <dl>
+      {% if page.item %}
       <dt class="callout">Item:</dt>
       <dd>{{ page.item }}</dd>
+      {% endif %}
+      {% if page.case %}
       <dt class="callout">Case PK:</dt>
       <dd>{{ page.case }}</dd>
+      {% endif %}
+      {% if page.master %}
       <dt class="callout">Master Case:</dt>
       <dd>{{ page.master }}</dd>
+      {% endif %}
     </dl>
   </aside>
     
@@ -51,12 +57,31 @@ active: products
 </nav>
 
 <section class="strip well pointer">
-  <h3 class="callout">More products in this collection</h3>
+  {% if page.collection %}
+  <h3 class="callout">More products in the <span class="highlight">{{ page.collection }}</span> collection</h3>
   <div class="wrapper">
     <ul class="grid medium center">
     {% for product in site.categories.products %}
+      {% if product.collection == page.collection %}
+      {% unless product.title == page.title %}
       {% include product-tile.html post=product %}
+      {% endunless %}
+      {% endif %}
     {% endfor %}
     </ul>
   </div>
+  {% else %}
+  <h3 class="callout">More products in the <span class="highlight">{{ page.catalog }}</span> catalog</h3>
+  <div class="wrapper">
+    <ul class="grid medium center">
+    {% for product in site.categories.products %}
+      {% if product.catalog == page.catalog %}
+      {% unless product.title == page.title %}
+      {% include product-tile.html post=product %}
+      {% endunless %}
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
 </section>

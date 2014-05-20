@@ -342,7 +342,17 @@ $filter-highlight: $turquoise;
 
 .filter-nav {
   @include rem(padding, 0 0 12px 0);
+  @include rem(margin-top, 24px);
   border-bottom: $hairline-w solid $color-border;
+
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    &:focus {
+        outline: 0 none;
+    }
+  }
 }
 
 .filter-label, .filter-controls {
@@ -351,15 +361,30 @@ $filter-highlight: $turquoise;
 
 .filter-label {
   @include rem(font-size, 13px);
+  margin-right: 0.5em;
 }
 
 .filter-controls {
   margin: 0 0 0 0.5em;
 }
 
+.filter-set {
+  display: block;
+  margin-left: 0;
+  padding-left: 0;
+  border: none;
+
+  @include breakpoint($xsmall) {
+    @include inline-block;
+    margin-left: 0.2em;
+    padding-left: 0.7em;
+    border-left: $hairline-w solid $color-border;
+  }
+}
+
 .filter-cat {
   @include rem(font-size, 13px);
-  margin: 0 0.7em;
+  margin-right: 0.7em;
   color: lighten($color-text--primary, 50);
 }
 
@@ -368,11 +393,22 @@ $filter-highlight: $turquoise;
   font-size: 0;
 }
 
-.filter {
+.filter, #reset, %filter {
+  $padding-default: 0.5em;
+  $padding-active: 0.7em;
+
   @include rem(font-size, 13px);
-  padding: 0.05em 0.7em;
-  margin: 0 0.1em !important;
+  padding: 0.2em $padding-default;
+  // margin: 0 0.1em !important;
   color: $filter-highlight;
+
+  // &:last-child {
+  //   margin-right: 0.4em;
+
+  //   &.active {
+  //     margin-right: 0.1em;
+  //   }
+  // }
 
   & > a {
     color: $filter-highlight;
@@ -386,6 +422,10 @@ $filter-highlight: $turquoise;
   &.active {
     color: white;
     border-radius: 100px;
+    padding-left: $padding-active;
+    padding-right: $padding-active;
+    margin-left: -($padding-active - $padding-default);
+    margin-right: -($padding-active - $padding-default);
 
     & > a {
       color: white;
