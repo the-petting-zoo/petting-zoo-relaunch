@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Heat Press"
-categories: custom
+category: custom
 ---
 
 ![Kahlu the Elephant]({{ site.assets.s3 }}{{ site.assets.custom }}Kahlu_Elephant_pink.png)

@@ -1,7 +1,7 @@
 ---
 layout: catalog
-slug: products
 title: "Candyloons"
+slug: candyloons
 category: "catalog"
 show_products: "false"
 directory: candyloon
