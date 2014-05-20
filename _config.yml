@@ -138,13 +138,13 @@ prose:
           element: "text"
           label: "Cover Image"
           help: "Enter the name of the uploaded cover image (including extension)"
-      - name: "show_products"
-        field:
-          element: "button"
-          label: "Show Product Listings"
-          help: "Do you want to display product listings for this catalog, or just the PDF?"
-          on: "true"
-          off: "false"
+      # - name: "show_products"
+      #   field:
+      #     element: "button"
+      #     label: "Show Product Listings"
+      #     help: "Do you want to display product listings for this catalog, or just the PDF?"
+      #     on: "true"
+      #     off: "false"
 
     _posts/products/items:
       - name: "title"
