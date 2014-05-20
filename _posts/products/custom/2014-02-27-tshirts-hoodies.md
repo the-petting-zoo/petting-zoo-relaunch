@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Embroidery"
-categories: custom
+category: custom
 ---
 
 - ![Feature image]({{ site.assets.s3 }}{{ site.assets.custom }}hoodie_Trex_Red.png)
