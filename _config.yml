@@ -141,7 +141,7 @@ prose:
       - name: "show_products"
         field:
           element: "button"
-          label: "Show Product Listings?"
+          label: "Show Product Listings"
           help: "Do you want to display product listings for this catalog, or just the PDF?"
           on: "true"
           off: "false"
