@@ -3,7 +3,7 @@ layout: catalog
 slug: products
 title: "Lolly Plush"
 category: "catalog"
-show_products: false
+show_products: "false"
 pdf: lollyplush2013.pdf
 cover: lollyplush2013-cover.jpg
 directory: lolly-plush
