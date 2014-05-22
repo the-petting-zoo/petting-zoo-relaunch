@@ -210,11 +210,6 @@ prose:
           element: "text"
           label: "Item Number"
           help: "Enter the item code"
-      - name: "size"
-        field:
-          element: "text"
-          label: "Size"
-          help: "Enter the product's size"
       - name: "case"
         field:
           element: "text"
@@ -263,6 +258,8 @@ prose:
               value: "medium"
             - name: "Large"
               value: "large"
+            - name: "Jumbo"
+              value: "jumbo"
       - name: "color"
         field:
           element: "multiselect"
