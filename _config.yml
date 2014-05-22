@@ -158,7 +158,7 @@ prose:
         field:
           element: "text"
           label: "PDF Images Path"
-          help: "Enter a path and filename for the uploaded print catalog JPGs, relative to the catalog directory listed above. Do not include the page number (number at end of filename) or extension (.jpg, .png, etc.)."
+          help: "Enter a path and filename for the uploaded print catalog images, relative to the catalog directory listed above. Do not include the page number (number at end of filename) or extension (.jpg, .png, etc.)."
       - name: "extension"
         field:
           element: "text"
