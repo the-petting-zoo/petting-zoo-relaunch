@@ -139,36 +139,36 @@ prose:
           label: "Show Product Listings"
           help: "Do you want to display product listings for this catalog, or just the PDF?"
           value: "false"
-      - name: "cover"
-        field:
-          element: "text"
-          label: "Cover Image"
-          help: "Enter the name of the uploaded cover image (including extension)"
       - name: "directory"
         field:
           element: "text"
-          label: "PDF Directory"
-          help: "Enter the name of the directory where you uploaded the PDF catalog. We assume it's located in products/catalogs/, so you can leave that off."
+          label: "Catalog Directory"
+          help: "Enter the name of the directory (on S3) where you uploaded the PDF catalog, cover image, etc., relative to products/catalogs/."
       - name: "pdf"
         field:
           element: "text"
           label: "PDF Filename"
-          help: "Enter the name of the uploaded PDF file (including extension)"
+          help: "Enter the name of the uploaded PDF file (including extension). Note: needs to be saved in the catalog directory listed above."
+      - name: "cover"
+        field:
+          element: "text"
+          label: "Cover Image"
+          help: "Enter the name of the uploaded cover image (including extension). Note: needs to be saved in the catalog directory listed above."
       - name: "filebase"
         field:
           element: "text"
           label: "PDF Images Path"
-          help: "Enter a path (URL-encoded) for the uploaded print catalog JPGs"
+          help: "Enter a path and filename for the uploaded print catalog JPGs, relative to the catalog directory listed above. Do not include the page number (number at end of filename) or extension (.jpg, .png, etc.)."
       - name: "extension"
         field:
           element: "text"
           label: "PDF Images Extension"
-          help: "Enter the extension (.jpg, .png, etc.) of the uploaded print catalog JPGs"
+          help: "Enter the extension (.jpg, .png, etc.) of the uploaded print catalog images."
       - name: "numslides"
         field:
           element: "number"
           label: "Number of PDF Images"
-          help: "Enter the number of PDF images for this catalog, ie the number of slides in the carousel"
+          help: "Enter the number of PDF images for this catalog, ie the number of slides in the carousel."
       - name: "spread"
         field:
           element: "checkbox"
