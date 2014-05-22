@@ -34,6 +34,7 @@ active: products
           <span class="filter-cat callout">Type</span>
            {% assign typeList = ',' %}
           {% for product in site.categories.products %}
+            {% if product.catalog == page.slug %}
             {% for item in product.type %}
               {% capture compareType %},{{ item }},{% endcapture %}
               {% if typeList contains compareType %}{% else %}
@@ -42,12 +43,14 @@ active: products
                 {% assign typeList = tempList %}
               {% endif %}
             {% endfor %}
+            {% endif %}
           {% endfor %}
         </fieldset>
         <fieldset class="filter-set">
           <span class="filter-cat callout">Size</span>
            {% assign typeList = ',' %}
           {% for product in site.categories.products %}
+            {% if product.catalog == page.slug %}
             {% for item in product.size %}
               {% capture compareType %},{{ item }},{% endcapture %}
               {% if typeList contains compareType %}{% else %}
@@ -56,12 +59,14 @@ active: products
                 {% assign typeList = tempList %}
               {% endif %}
             {% endfor %}
+            {% endif %}
           {% endfor %}
         </fieldset>
         <fieldset class="filter-set">
           <span class="filter-cat callout">Color</span>
            {% assign typeList = ',' %}
           {% for product in site.categories.products %}
+            {% if product.catalog == page.slug %}
             {% for item in product.color %}
               {% capture compareType %},{{ item }},{% endcapture %}
               {% if typeList contains compareType %}{% else %}
@@ -70,6 +75,7 @@ active: products
                 {% assign typeList = tempList %}
               {% endif %}
             {% endfor %}
+            {% endif %}
           {% endfor %}
         </fieldset>
       </form>

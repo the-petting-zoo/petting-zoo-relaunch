@@ -12,7 +12,9 @@ thumb: "http://pettingzoo-website.s3.amazonaws.com/products/catalogs/spring/brow
 
 type: bunny
 size: medium
-color: green
+color: 
+  - brown
+  - white
 
 ---
 
