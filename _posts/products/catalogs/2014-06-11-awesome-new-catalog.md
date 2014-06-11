@@ -14,7 +14,5 @@ extension: jpg
 numslides: 
   - "5"
   - 5
-  - .nan
-  - .nan
 ---
 
