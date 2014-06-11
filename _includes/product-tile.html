@@ -1,5 +1,5 @@
 <li class='tile vertical {% if include.filter == true %}mix{% for type in include.post.type %} {{ type | downcase | replace: ' ','' }}{% endfor %}{% for size in include.post.size %} {{ size | downcase | replace: ' ','' }}{% endfor %}{% for color in include.post.color %} {{ color | downcase | replace: ' ','' }}{% endfor %}{% endif %}'>
-  <a href="{{ include.post.url }}" class="product-thumb"><img src="{{ include.post.thumb }}" alt="{{ include.post.title }}" /></a>
+  <a href="{{ site.url }}{{ include.post.url }}" class="product-thumb"><img src="{{ include.post.thumb }}" alt="{{ include.post.title }}" /></a>
   <h5 class="tile-title product-thumb-name"><a href="{{ include.post.url }}">{{ include.post.title }}</a></h5>
   {% if include.post.item %}
   <h6 class="tile-title product-thumb-num"><a href="{{ include.post.url }}">{{ include.post.item }}</a></h6>
