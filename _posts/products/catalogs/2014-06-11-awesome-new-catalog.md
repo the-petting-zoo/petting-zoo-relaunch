@@ -1,7 +1,7 @@
 ---
 category: catalog
 layout: catalog
-published: false
+published: true
 title: Awesome New Catalog
 show_products: false
 spread: true
@@ -14,6 +14,7 @@ extension: jpg
 numslides: 
   - "5"
   - 5
+  - .nan
+  - .nan
 ---
-
 
