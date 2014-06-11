@@ -168,7 +168,7 @@ prose:
           help: "Enter the extension (.jpg, .png, etc.) of the uploaded print catalog images."
       - name: "numslides"
         field:
-          element: "number"
+          element: "text"
           label: "Number of PDF Images"
           help: "Enter the number of PDF images for this catalog, ie the number of slides in the carousel."
       - name: "spread"
