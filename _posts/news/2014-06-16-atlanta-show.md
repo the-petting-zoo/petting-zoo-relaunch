@@ -1,7 +1,7 @@
 ---
 category: blog
 layout: default
-published: false
+published: true
 title: "Atlanta Show "
 ---
 
