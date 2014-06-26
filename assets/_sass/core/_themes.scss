@@ -83,6 +83,13 @@
   border-color: darken($color-border, 10);
 }
 
+// kill custom icon on older IE
+.ie9, .lt-ie9 {
+  select {
+    background-image: none !important;
+  }
+}
+
 // text that needs to be stand out
 .highlight {
   color: $color-text--highlight;

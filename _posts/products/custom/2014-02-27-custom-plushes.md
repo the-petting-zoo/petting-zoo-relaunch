@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Custom Designed Plush"
-categories: custom
+category: custom
 ---
 
 - ![Lolly plush]({{ site.assets.s3 }}{{ site.assets.custom }}custom-plush-lollyplush.png)

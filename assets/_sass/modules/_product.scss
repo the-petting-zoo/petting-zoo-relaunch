@@ -1,0 +1,147 @@
+// ==========================================================================
+//  Product module
+// ==========================================================================
+
+
+// BASE
+// -----------------------------------------------------------------------------
+
+.product {
+  // @include grid-span(5, 1);
+  text-align: center;
+
+  p {
+    text-align: center;
+    border-width: $border-w--thick;
+    border-style: solid;
+    border-color: $gray;
+  }
+
+  img {
+    @include inline-block;
+    @include rem(margin, 8px 16px 8px 0);
+    // display: block;
+    position: relative;
+    max-height: 100%;
+    width: auto;
+  }
+
+  @include breakpoint($xsmall) {
+    @include grid-span(5, 1);
+  }
+}
+
+// SUBMODULES
+// -----------------------------------------------------------------------------
+
+.product-meta {
+  // @include grid-span(1, 6);
+  @include rem(font-size, 12px);
+  @include rem(margin-bottom, 12px);
+  width: 100%;
+  text-align: center;
+  color: $color-text--tertiary;
+  border-top: $hairline-w solid $gray;
+
+  dl {
+    @include unstyled-list;
+    @include inline-dl(false);
+    @include rem(padding-top, 12px);
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  dt, dd {
+    color: $color-text--tertiary;
+  }
+
+  @include breakpoint($xsmall) {
+    @include grid-span(1, 6, $options: right);
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    border: none;
+
+    dl {
+      @include inline-dl(true);
+      margin: 0;
+      padding: 0;
+      text-align: left;
+    }
+  }
+  
+}
+
+  .product-image {
+    @include transform(translateY(-50%)); // use translate to vertically center when we don't know the height of the img
+    @include inline-block;
+    position: relative;
+    top: 50%;
+    max-height: 100%;
+    width: auto;
+  }
+
+  .product-caption {
+    @extend %base-transition;
+    @include rem(bottom, 12px);
+    @include rem(left, 12px);
+    @include rem(right, 12px);
+    @include rem(padding, 6px);
+    display: block;
+    position: absolute;
+    background-color: $gray;
+    text-align: left;
+  }
+
+  .product-thumb {
+    @extend %base-transition;
+    @include rem(height, 220px);
+    @include rem(padding, 6px);
+    display: block;
+    position: relative;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center !important;
+    overflow: hidden;
+    border-width: $border-w--thick;
+    border-style: solid;
+    border-color: $gray;
+
+    &:hover {
+      border-color: darken($gray, 5);
+    }
+
+    @include breakpoint($medium) {
+      @include rem(height, 160px);
+    }
+
+    & > img {
+      // http://davidwalsh.name/css-vertical-center
+      @include inline-block;
+      @include transform(translateY(-50%)); // use translate to vertically center when we don't know the height of the img
+      position: relative;
+      top: 50%;
+      max-height: 100%;
+      width: auto;
+    }
+  }
+
+  .well .product-thumb {
+    background-color: white;
+    border-color: darken($gray, 5);
+
+    &:hover {
+      border-color: darken($gray, 10);
+    }
+  }
+
+    .product-thumb-name {
+      @extend %gentleman-bold;
+      @include rem(font-size, 12px);
+      // color: $turquoise;
+    }
+
+    .product-thumb-num {
+      @extend %gentleman;
+      color: $color-text--tertiary;
+    }

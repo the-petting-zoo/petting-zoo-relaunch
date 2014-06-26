@@ -271,6 +271,12 @@
 // General layout helpers
 // ==================================================================================
 
+@mixin vertical-center {
+  position: relative;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
 // Lists
 // ------------------------------------------------------------------------------
 
@@ -280,7 +286,7 @@
   // margin-left: 0;
   padding-left: 0;
 
-  li {
+  li, dt, dd {
     list-style: none;
     list-style-type: none;
   }
@@ -289,7 +295,7 @@
 @mixin inline-list {
   @include unstyled-list;
 
-  li {
+  li, dt, dd {
     @include inline-block;
   }
 }
@@ -323,7 +329,12 @@
 
 @mixin inline-dl($break: false) {
   & > dt, & > dd {
-    display: inline;
+    @if ($break == false) {
+      @include inline-block;
+    } @else {
+      display: inline;
+    }
+    
   }
   & > dt {
     margin-right: em(3);

@@ -32,7 +32,7 @@
   @include grid-margins(margin);
 }
 
-.wrapper {
+.wrapper, %wrapper {
   @include grid-margins;
   position: relative;
   max-width: ($layout-width + (last($layout-margins) * 2));
@@ -55,16 +55,16 @@
   text-align: center;
 }
 
-// .sidebar-right {
-//   max-width: ($layout-width--narrow + ($layout-width--narrow * .2) + (last($layout-margins) * 2));
-//   // overflow: visible;
+.sidebar-right {
+  max-width: ($layout-width--narrow + ($layout-width--narrow * (1/6)) + (last($layout-margins) * 2));
+  // overflow: visible;
   
 
-//   @include breakpoint($large) {
-//     left: ($layout-width--narrow * .2);
-//     padding-left: 0;
-//   }
-// }
+  @include breakpoint($large) {
+    left: ($layout-width--narrow * (1/6));
+    padding-left: 0;
+  }
+}
 
 [role="main"] {
   @include rem(padding-bottom, 24px);

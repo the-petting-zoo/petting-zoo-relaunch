@@ -69,7 +69,7 @@ h6, %h6 {
 .title {
 	// @extend %gentleman;
 	// @extend .callout;
-	@include rem(margin, 18px 0 12px 0);
+	@include rem(margin, 18px 0 24px 0);
 	// @include rem(font-size, 36px);
 	
 	& + img, & + figure {
@@ -216,33 +216,44 @@ figure {
 	background-repeat: no-repeat;
 }
 
-// Icons
-// --------------------------------------------------------------------------
+/* Icons
+// -------------------------------------------------------------------------- */
 
-// usage: 
-// <span aria-hidden="true" data-icon="&#xf008;"></span>
-// <span class="screen-reader-text">Menu</span>
-// %icon-font {
-//   font-style: normal;
-//   font-weight: normal;
-//   text-decoration: inherit;
-//   width: 1em;
-//   text-align: center;
-//   // font-family: YOUR_ICON_FONT_NAME;
-// }
+/* usage: 
+  <span aria-hidden="true" data-icon="&#xf008;"></span>
+  <span class="screen-reader-text">Menu</span> */
+.icon, %icon {
+  @include inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 0;
+}
 
-// // for icons placed before some text (such as in a button)
-// [data-icon]:before {
-//   @extend %icon-font;
-//   content: attr(data-icon);
-//   speak: none; /* Not to be trusted, but hey. */
-// }
+[class*="icon-"], %icon-grunticon {
+  @extend %icon;
+  // @include rem(width, 25px);
+  // @include rem(height, 25px);
+  // width: 100%;
+  // height: 100%;
+  margin: -0.15em 0 0 0;
+  padding: 0;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  line-height: inherit;
+  speak: none;
+}
 
-// .screen-reader-text, %screen-reader-text { /* For text that explains what the icon is (ie "RSS" or "Menu") */
-//    @include visuallyhidden;
-// }
+.icon-alone {
+  @extend %icon;
+  @include hide-text;
+  width: 16px;
+  width: 1rem;
+  height: 16px;
+  height: 1rem;
+}
 
-// // for standalone icons
-// %icon-alone {
-//   display: inline-block; /* Fix for clickability issue in WebKit */
+// a[href*=".pdf"]:before {
+  
 // }

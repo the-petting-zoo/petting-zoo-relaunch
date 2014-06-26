@@ -93,6 +93,8 @@ img,
 video {
   vertical-align: middle;
   max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
 }
 
 /*
@@ -119,6 +121,11 @@ input, textarea, select {
     outline: 0;
     outline: thin dotted \9; /* IE6-9 */
   }
+}
+
+// remove default arrow on ie10
+select::-ms-expand {
+    display: none;
 }
 
 [type="submit"]{

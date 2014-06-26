@@ -42,15 +42,18 @@
   font-size: 0;
   margin-left: 0;
   overflow: hidden;
-
+  
+  // NOTE: elements inside a grid must have a font-size assigned or they will disappear
+  // b/c of the font-size:0 (which is needed to overcome the inline-block whitespace bug)
   li {
     @include rem(margin-bottom, 16px);
     display: block;
+    width: 100%;
     padding: 0;
     overflow: hidden;
     font-size: 0;
 
-    & > * {
+    & > a, & > p {
       @include rem(font-size, 16px);
     }
 
