@@ -159,6 +159,17 @@
   }
 }
 
+.ie10,
+.ltie10 {
+  .logo {
+    @include rem(height, (first($logo-w) * $logo-aspect));
+
+    @include breakpoint($xsmall) {
+      @include rem(height, (nth-last($logo-w, 2) * $logo-aspect));
+    }
+  }
+}
+
 // copy of the main menu that appears in the footer
 // ------- Local nav -------------------------------------------
 footer.global [role="navigation"].global {
