@@ -144,8 +144,9 @@
 
   .logo {
     @include rem(top, first($logo-top));
-    @include rem(width, first($logo-w));
     @include rem(margin-left, -(first($logo-w)/2));
+    @include rem(width, first($logo-w));
+    @include rem(height, (first($logo-w) * $logo-aspect));
     display: block;
     position: absolute;
     left: 50%;
@@ -153,22 +154,22 @@
 
     @include breakpoint($xsmall) {
       @include rem(top, nth-last($logo-top, 2));
-      @include rem(width, nth-last($logo-w, 2));
       @include rem(margin-left, -(nth-last($logo-w, 2)/2));
-    }
-  }
-}
-
-.ie10,
-.ltie10 {
-  .logo {
-    @include rem(height, (first($logo-w) * $logo-aspect));
-
-    @include breakpoint($xsmall) {
+      @include rem(width, nth-last($logo-w, 2));
       @include rem(height, (nth-last($logo-w, 2) * $logo-aspect));
     }
   }
 }
+
+// .ie9 {
+//   .logo {
+//     @include rem(height, (first($logo-w) * $logo-aspect));
+
+//     @include breakpoint($xsmall) {
+//       @include rem(height, (nth-last($logo-w, 2) * $logo-aspect));
+//     }
+//   }
+// }
 
 // copy of the main menu that appears in the footer
 // ------- Local nav -------------------------------------------
