@@ -3,3 +3,5 @@ _site/
 *.sublime-workspace
 .sass-cache/
 .bundle/
+CNAME
+Gemfile.lock
