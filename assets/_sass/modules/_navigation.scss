@@ -258,13 +258,15 @@ footer.global [role="navigation"].global {
   }
 
   .logo {
-    @include rem(width, (first($logo-w)));
-    @include rem(margin-left, -(first($logo-w)/2));
     @include rem(top, -10px);
+    @include rem(margin-left, -(first($logo-w)/2));
+    @include rem(width, (first($logo-w)));
 
     @include breakpoint($xsmall) {
-      @include rem(width, (nth-last($logo-w, 2)/2));
       @include rem(margin-left, -(nth-last($logo-w, 2)/4));
+      @include rem(width, (nth-last($logo-w, 2)/2));
+      @include rem(height, ((nth-last($logo-w, 2) * $logo-aspect)/2));
+
     }
   }
 }
