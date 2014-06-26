@@ -26,7 +26,7 @@ end
 guard :compass, compile_on_start: true
 
 # This will concatenate the javascript files specified in :files to public/js/all.js
-guard :concat, type: "js", files: %w(_libs/console _libs/flexslider _libs/transit _libs/enquire _libs/equalsize _libs/typography _libs/ajaxchimp _libs/directory _libs/jquery.mixitup.min main), input_dir: "assets/js", output: "assets/js/app"
+guard :concat, type: "js", files: %w(_libs/console _libs/flexslider _libs/transit _libs/enquire _libs/equalsize _libs/typography _libs/ajaxchimp _libs/directory _libs/jquery.mixitup.min _main), input_dir: "assets/js", output: "assets/js/app"
 
 # guard "jekyll-plus", :serve => true do
 #   watch /.*/

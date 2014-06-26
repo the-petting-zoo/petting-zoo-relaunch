@@ -17,6 +17,13 @@
       // http://drublic.de/blog/add-main-element-modernizr/
       window.html5.elements = 'main'; // add to list
       window.html5.shivDocument(document); // re-invoke the `shivDocument` method
+
+      // test for media query support
+      // if not found, load up respond.js polyfill
+      Modernizr.load({
+        test: Modernizr.mq('only all'),
+        nope: '{{ site.url }}{{ site.assets.js }}vendor/respond.min.js'
+      });
     </script>
     {% include grunticon.html %}
   </head>
