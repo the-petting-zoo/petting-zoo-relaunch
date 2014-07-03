@@ -9,10 +9,7 @@ cover: "ValCover-01.jpg"
 directory: valentines
 filebase: pages/Val 2015 Catalog_noprice
 extension: jpg
-numslides: 
-  - 11
-  - "11"
-  - "11,11"
+numslides: "11"
 spread: true
 published: true
 ---
