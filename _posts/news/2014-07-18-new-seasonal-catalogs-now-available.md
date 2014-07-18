@@ -1,7 +1,7 @@
 ---
 category: blog
 layout: default
-published: false
+published: true
 title: "New Seasonal Catalogs now Available!"
 ---
 
@@ -9,4 +9,4 @@ title: "New Seasonal Catalogs now Available!"
 
 Check out our new Valentines catalog now available for download on our "Products" page. We have lots of huggable plush that will be perfect for your customers this Valentine's Day!  
 
-Keep in touch for more seasonal catalogs, like Spring and Holiday, that will be posted soon. 
+Keep in touch for more seasonal catalogs, like Spring and Holiday, that will be posted soon.
