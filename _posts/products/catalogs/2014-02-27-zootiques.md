@@ -9,8 +9,8 @@ cover: "TRI_FOLD_RESIN_2013-cover.jpg"
 directory: zootiques
 filebase: pages/TRI_FOLD_RESIN_2013
 extension: jpg
-numslides: 6
-spread: false
+numslides: "9"
+spread: true
 published: true
 ---
 
