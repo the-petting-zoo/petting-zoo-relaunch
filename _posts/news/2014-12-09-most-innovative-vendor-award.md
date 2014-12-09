@@ -1,11 +1,12 @@
 ---
 category: blog
 layout: default
-published: true
+published: false
 title: "Most Innovative Vendor Award!"
 ---
 
-![-1.jpg](/_posts/news/-1.jpg)
+![Most Innovative]({{ site.assets.s3 }}/blog/John_Tom_Award.jpg)
+
 John Lizewski & Tom Mulvaney Pictured*
 
 We are proud to have received the Most Innovative Vendor Award while working at the Hudson Group Vendor Show. Good job team Petting Zoo!
