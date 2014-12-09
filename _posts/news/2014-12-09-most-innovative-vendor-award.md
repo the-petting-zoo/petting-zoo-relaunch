@@ -5,7 +5,8 @@ published: true
 title: "Most Innovative Vendor Award!"
 ---
 
-![Most Innovative]({{ site.assets.s3 }}/blog/John_Tom_Award.jpg)
+ 	
+https://s3.amazonaws.com/pettingzoo-website/blog/John_Tom_Award.jpg
 
 John Lizewski & Tom Mulvaney Pictured*
 
