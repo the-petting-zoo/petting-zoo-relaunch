@@ -8,7 +8,7 @@ cover: ChristmasFlier_cover.jpg
 filebase: pages/ChristmasFlier_noprice
 extension: jpg
 numslides: "3"
-spread: false
+spread: true
 published: true
 title: "holiday-flier"
 ---
