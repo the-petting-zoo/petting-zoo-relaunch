@@ -1,7 +1,7 @@
 ---
 category: catalog
-slug: products
-show_products: true
+slug: "holiday-flier"
+show_products: false
 directory: "holiday-flier"
 pdf: "holiday-flier.pdf"
 cover: "holiday-flier_cover.jpg"
