@@ -1,14 +1,14 @@
 ---
 category: catalog
-slug: "holiday-flier"
-show_products: false
+slug: products
+show_products: true
 directory: "holiday-flier"
 pdf: "holiday-flier.pdf"
 cover: "holiday-flier_cover.jpg"
-filebase: "pages/holiday-flier_cover.jpg"
+filebase: "pages/holiday-flier_cover"
 extension: jpg
 numslides: "2"
-spread: false
+spread: true
 published: false
 title: "holiday-flier"
 ---
