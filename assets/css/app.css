@@ -3581,7 +3581,7 @@ nav.local.page {
     margin-right: 72px;
   }
 }
-/* line 65, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
+/* line 65, ../../../../../.rvm/gems/ruby-2.2.1/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
 nav.local.page:after {
   content: "";
   display: table;

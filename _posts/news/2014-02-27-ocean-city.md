@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "The Petting Zoo in Ocean City"
 category: "blog"
 tags:
