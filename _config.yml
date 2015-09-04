@@ -13,6 +13,13 @@ highlighter: pygments
 
 exclude: ["README.md", "config.rb", ".sublime-project", ".sublime-workspace", "Guardfile", "Gemfile", "Gemfile.lock", ".sass-cache", "assets/media/*"]
 
+defaults:
+  -
+    scope:
+      path: "/catalog/*"
+    values:
+      layout: "catalog"
+
 # asset paths
 assets:
   img: "/assets/images/"
