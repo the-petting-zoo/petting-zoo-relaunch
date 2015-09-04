@@ -8,7 +8,7 @@ baseurl:
 permalink: /:categories/:title/
 
 markdown: redcarpet
-highlighter: false
+highlighter: pygments
 
 
 exclude: ["README.md", "config.rb", ".sublime-project", ".sublime-workspace", "Guardfile", "Gemfile", "Gemfile.lock", ".sass-cache", "assets/media/*"]
