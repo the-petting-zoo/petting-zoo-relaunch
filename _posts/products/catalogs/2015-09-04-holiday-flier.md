@@ -1,13 +1,13 @@
 ---
 category: catalog
-slug: "holiday-flier"
+slug: products
 show_products: false
 directory: "holiday-flier"
 pdf: ChristmasFlier_noprice.pdf
 cover: ChristmasFlier_cover.jpg
-filebase: pages/ChristmasFlier_noprice1
+filebase: pages/ChristmasFlier_noprice
 extension: jpg
-numslides: "2"
+numslides: "3"
 spread: false
 published: true
 title: "holiday-flier"
