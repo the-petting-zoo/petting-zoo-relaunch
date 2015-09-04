@@ -9,7 +9,7 @@ filebase: "pages/holiday-flier_cover"
 extension: jpg
 numslides: "2"
 spread: true
-published: true
+published: false
 title: "holiday-flier"
 ---
 
