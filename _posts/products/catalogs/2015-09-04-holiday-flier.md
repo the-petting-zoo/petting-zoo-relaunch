@@ -6,7 +6,7 @@ directory: "holiday-flier"
 pdf: ChristmasFlier_noprice.pdf
 cover: ChristmasFlier_cover.jpg
 filebase: pages/ChristmasFlier_noprice
-extension: jpg
+extension: .jpg
 numslides: "3"
 spread: true
 published: true
