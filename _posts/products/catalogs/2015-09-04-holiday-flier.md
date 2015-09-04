@@ -1,7 +1,7 @@
 ---
 category: catalog
 slug: products
-show_products: false
+show_products: true
 directory: "holiday-flier"
 pdf: ChristmasFlier_noprice.pdf
 cover: ChristmasFlier_cover.jpg
