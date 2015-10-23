@@ -1,7 +1,7 @@
 ---
 category: staff
 job_title: Sales
-email: "DHarder@pettingzooplush.com"
+email: "dharder@pettingzooplush.com"
 portrait: ""
 published: true
 title: "Darwin Harder Jr. "
