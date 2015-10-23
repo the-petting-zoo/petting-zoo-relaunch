@@ -3,7 +3,7 @@ category: staff
 job_title: Territory Manager
 email: "gpeterson@pettingzooplush.com"
 portrait: ""
-published: false
+published: true
 title: Galen Peterson
 ---
 
