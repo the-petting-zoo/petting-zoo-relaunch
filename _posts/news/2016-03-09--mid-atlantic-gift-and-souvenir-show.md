@@ -3,7 +3,7 @@ category: blog
 layout: default
 categories: 
   - "null"
-published: false
+published: true
 title: " Mid-Atlantic Gift and Souvenir Show"
 ---
 
