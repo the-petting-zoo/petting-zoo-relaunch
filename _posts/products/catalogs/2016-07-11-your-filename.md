@@ -4,7 +4,7 @@ layout: catalog
 show_products: true
 spread: true
 published: false
-title: ''
+title: valentine
 slug: valentine
 directory: valentine
 pdf: Val_Catalog_noprice.pdf
