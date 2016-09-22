@@ -1,7 +1,7 @@
 ---
 category: blog
 layout: default
-published: false
+published: true
 title: IGES Already?!
 ---
 ![IGES Already?!](https://s3.amazonaws.com/pettingzoo-website/blog/409110-BE_longhorn-w_UT_bandana-2.jpg)
