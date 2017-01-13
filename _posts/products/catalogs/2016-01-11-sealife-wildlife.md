@@ -10,6 +10,6 @@ filebase: pages/Sealifewildlife_2017_NoPrice
 extension: jpg
 numslides: '45'
 spread: true
-published: false
+published: true
 title: Sealife Wildlife
 ---
