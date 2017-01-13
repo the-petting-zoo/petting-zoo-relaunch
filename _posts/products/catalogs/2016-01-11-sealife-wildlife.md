@@ -11,5 +11,5 @@ extension: jpg
 numslides: '45'
 spread: true
 published: true
-title: 2017-01-13 Sealife Wildlife
+title: Sealife Wildlife
 ---
