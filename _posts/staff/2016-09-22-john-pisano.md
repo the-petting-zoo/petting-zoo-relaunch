@@ -3,6 +3,6 @@ category: staff
 layout: default
 published: true
 title: John Pisano
-job_title: 'Sales - San Diego, California'
+job_title: National Account Executive - California
 email: jpisano@pettingzooplush.com
 ---
