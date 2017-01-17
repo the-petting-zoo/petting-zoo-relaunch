@@ -1,7 +1,7 @@
 ---
 category: staff
 layout: default
-published: false
+published: true
 title: christy cowell-rinkol
 email: Ccowell-rinkol@pettingzooplush.com
 job_title: Managing Director of Sales
