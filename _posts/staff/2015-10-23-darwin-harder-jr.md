@@ -1,9 +1,8 @@
 ---
 category: staff
-job_title: Sales
-email: "dharder@pettingzooplush.com"
-portrait: ""
+layout: default
+job_title: National Account Executive
+email: dharder@pettingzooplush.com
 published: true
-title: "Darwin Harder Jr. "
+title: 'Darwin Harder Jr. '
 ---
-
