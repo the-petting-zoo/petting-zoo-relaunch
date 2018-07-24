@@ -5,8 +5,8 @@ show_products: true
 spread: true
 published: true
 title: tutti frutti
-slug: Tutti Frutti
-directory: Tutti Frutti
+slug: tutti frutti
+directory: tutti frutti
 pdf: Tutti_Frutti_Flyer_NO_PRICE.pdf
 cover: Tutti_Frutti_Flyer_NO_PRICE_COVER.jpg
 filebase: pages/Tutti_Frutti_Flyer_NO_PRICE1.jpg
