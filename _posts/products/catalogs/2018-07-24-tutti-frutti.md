@@ -7,9 +7,9 @@ published: true
 title: tutti frutti
 slug: tutti frutti
 directory: tutti frutti
-pdf: tutti_frutti_catalog_No_Price.pdf
-cover: tutti_frutti_catalog_No_Price_COVER.jpg
-filebase: pages/tutti_frutti_catalog_NO_PRICE1
+pdf: Tutti_Frutti_No_Price.pdf
+cover: Tutti_Frutti_No_Price_Cover.jpg
+filebase: pages/Tutti_Frutti_No_Price
 extension: jpg
 numslides: '4'
 ---
