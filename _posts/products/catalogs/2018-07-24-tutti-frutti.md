@@ -3,7 +3,7 @@ category: catalog
 layout: catalog
 show_products: true
 spread: true
-published: false
+published: true
 title: tutti frutti
 slug: Tutti Frutti
 directory: Tutti Frutti
