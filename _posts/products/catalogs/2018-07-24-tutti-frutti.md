@@ -9,7 +9,7 @@ slug: tutti frutti
 directory: tutti frutti
 pdf: Tutti_Frutti_Flyer_NO_PRICE.pdf
 cover: Tutti_Frutti_Flyer_NO_PRICE_COVER.jpg
-filebase: pages/Tutti_Frutti_Flyer_NO_PRICE
+filebase: pages/Tutti_Frutti_Flyer_NO_PRICE1
 extension: jpg
 numslides: '4'
 ---
