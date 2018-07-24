@@ -8,7 +8,7 @@ title: tutti frutti
 slug: tutti frutti
 directory: tutti frutti
 pdf: tutti_frutti_No_Price.pdf
-cover: tutti_frutti_No_PriceCover.jpg
+cover: tutti_frutti_No_Price_Cover.jpg
 numslides: '4'
 filebase: pages/tutti_frutti_no_price
 extension: jpg
