@@ -11,5 +11,5 @@ pdf: Everyday_Supplement_NO_PRICE.pdf
 extension: pages/Everyday_Supplement_NO_PRICE1.jpg
 filebase: jpg
 cover: Everyday_Supplement_NO_PRICE_Cover.jpg
-numslides: '12'
+numslides: '7'
 ---
