@@ -8,8 +8,8 @@ title: Everyday Supplement
 slug: Everyday Supplement
 directory: Everyday Supplement
 pdf: Everyday_Supplement_NO_PRICE.pdf
-extension: pages/Everyday_Supplement_NO_PRICE1.jpg
-filebase: jpg
+filebase: pages/Everyday_Supplement_NO_PRICE
 cover: Everyday_Supplement_NO_PRICE_Cover.jpg
 numslides: '7'
+extension: jpg
 ---
