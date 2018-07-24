@@ -2,7 +2,7 @@
 category: catalog
 layout: catalog
 show_products: true
-spread: true
+spread: false
 published: true
 title: tutti frutti
 slug: tutti frutti
