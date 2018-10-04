@@ -7,9 +7,9 @@ published: true
 title: valentine
 slug: valentine
 directory: valentine
-pdf: Val_Catalog_noprice.pdf
+pdf: Val_Catalog_2019_noprice.pdf
 cover: Val_Catalog_COVER.jpg
 filebase: pages/Val_Catalog_noprice
 extension: jpg
-numslides: '7'
+numslides: '5'
 ---
