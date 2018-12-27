@@ -2,7 +2,7 @@
 layout: default
 title: Promo Banners
 category: promos
-published: false
+published: true
 categories: promos
 ---
 
