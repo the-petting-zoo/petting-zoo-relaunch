@@ -3,7 +3,7 @@ layout: default
 title: Promo Banners
 category: promos
 published: false
-categories: carousel
+categories: promos
 ---
 
 - [![Promo banner]({{ site.assets.s3 }}/banners/promos/homepage_ad_1.png)](http://google.com)
