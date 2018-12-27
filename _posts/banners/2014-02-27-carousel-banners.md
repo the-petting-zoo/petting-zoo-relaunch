@@ -1,7 +1,9 @@
 ---
 layout: default
-title: "Carousel Banners"
-category: "carousel"
+title: Carousel Banners
+category: carousel
+published: true
+categories: carousel
 ---
 
 - ![Baby Collection]({{ site.assets.s3 }}/banners/carousel/babyBanner.jpg)
