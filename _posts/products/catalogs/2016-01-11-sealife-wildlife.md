@@ -8,7 +8,7 @@ pdf: Sealifewildlife_2017_NoPrice.pdf
 cover: sealife-cover.jpg
 filebase: pages/Sealifewildlife_2017_NoPrice
 extension: jpg
-numslides: '45'
+numslides: '52'
 spread: true
 published: true
 title: Sealife Wildlife
