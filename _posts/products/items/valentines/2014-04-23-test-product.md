@@ -2,11 +2,19 @@
 category: products
 layout: product
 published: false
-title: Test product
+title: Luxy Bear
 catalog: valentines
-item: "123456"
+collection: valentines
+thumb: 11" Luxy Bear - Brown
+type:
+  - bear
+size:
+  - medium
+color:
+  - brown
+item: '618210'
+case: '2'
+master: '12'
 ---
 
-## A New Post
-
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
+[Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
