@@ -1,7 +1,7 @@
 ---
 category: products
 layout: product
-published: false
+published: true
 title: tutti frutti
 catalog: Tutti Frutti
 collection: Tutti Frutti
