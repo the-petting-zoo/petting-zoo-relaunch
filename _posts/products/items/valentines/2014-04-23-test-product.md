@@ -16,5 +16,4 @@ item: '618210'
 case: '2'
 master: '12'
 ---
-
-[Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
+! [Luxy Bear](https://s3.amazonaws.com/pettingzoo-website/products/items/valentines/11%22+Luxy+Bear+-+Brown.jpg)
