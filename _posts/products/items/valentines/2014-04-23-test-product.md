@@ -2,7 +2,7 @@
 category: products
 layout: product
 published: false
-title: Luxy Bear
+title: 11" Luxy Bear -   Brown
 catalog: valentines
 collection: valentines
 thumb: 11" Luxy Bear - Brown
