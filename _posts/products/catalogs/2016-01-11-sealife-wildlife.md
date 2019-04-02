@@ -1,7 +1,7 @@
 ---
 category: catalog
 layout: catalog
-slug: products
+slug: sealife
 show_products: true
 directory: sealife
 pdf: Sealifewildlife_2017_NoPrice.pdf
