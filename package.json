@@ -1,0 +1,35 @@
+{
+  "name": "petting-zoo-plush",
+  "version": "1.0.0",
+  "description": "Petting Zoo Plush's website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-petting-zoo/petting-zoo-relaunch.git"
+  },
+  "author": "Bivee, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/the-petting-zoo/petting-zoo-relaunch/issues"
+  },
+  "homepage": "https://github.com/the-petting-zoo/petting-zoo-relaunch#readme",
+  "dependencies": {
+    "bourbon": "^5.1.0",
+    "include-media": "^1.4.9",
+    "modularscale-sass": "^3.0.8",
+    "normalize-css": "^2.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^2.0.1",
+    "svgo": "^1.2.2",
+    "svgstore-cli": "^1.3.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  }
+}
