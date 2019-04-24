@@ -11,15 +11,4 @@ group :development do
   gem 'breakpoint', '~>2.0.2'
   gem 'bourbon'
   gem 'redcarpet'
-
-  # guard stuff, helps with precompiling assets
-  gem 'guard'
-
-  # guard plugins
-  gem 'guard-bundler'
-  gem 'guard-compass'
-  gem 'guard-concat'
-  gem 'guard-uglify'
-  gem 'guard-jekyll-plus'
-  gem 'guard-livereload'
 end 
