@@ -10,7 +10,7 @@
 # Ignore temp files
 .tmp
 
-# Ignore Jekyll build folder
+# Ignore build folder
 build/
 
 # Ignore cache

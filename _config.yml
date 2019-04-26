@@ -8,7 +8,7 @@ baseurl:
 permalink: /:categories/:title/
 
 source: source
-destination: build
+destination: .tmp
 sass:
   sass_dir: assets/stylesheets
 
