@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The Petting Zoo | Charms</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://pettingzooplush.com/assets/css/app.css">
+    <script src="http://pettingzooplush.com/assets/js/vendor/modernizr.custom.11128.js"></script>
+    <script>
+      // add the "main" element to html5 shiv -- modernizr does not include yet
+      // http://drublic.de/blog/add-main-element-modernizr/
+      window.html5.elements = 'main'; // add to list
+      window.html5.shivDocument(document); // re-invoke the `shivDocument` method
+
+      // test for media query support
+      // if not found, load up respond.js polyfill
+      Modernizr.load({
+        test: Modernizr.mq('only all'),
+        nope: 'http://pettingzooplush.com/assets/js/vendor/respond.min.js'
+      });
+    </script>
+    <script>
+/* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
+grunticon( [ "http://pettingzooplush.com/assets/css//icons.data.svg.css", "http://pettingzooplush.com/assets/css//icons.data.png.css", "http://pettingzooplush.com/assets/css//icons.fallback.css" ] );
+</script>
+<noscript>
+  <link href="http://pettingzooplush.com/assets/css//icons.fallback.css" rel="stylesheet">
+</noscript>
+  </head>
+  <body id="charms">
+    <header role="banner" class="global">
+      <nav role="navigation" class="global">
+  <a href="http://pettingzooplush.com/" class="logo">
+    <img src="http://pettingzooplush.com/assets/images/logo-pettingzoo.svg" alt="The Petting Zoo" data-fallback="http://pettingzooplush.com/assets/images/logo-pettingzoo.png" />
+  </a>
+  <ul class="menu">
+    <li><a href="http://pettingzooplush.com/about/">About us</a></li>
+    <li><a href="http://pettingzooplush.com/products/">Products</a></li>
+    <li class="split"><a href="http://pettingzooplush.com/news/">News</a></li>
+    <li><a href="http://pettingzooplush.com/contact/">Contact</a></li>
+  </ul>
+  
+
+  <select name="menu" class="menu-mobile" id="js-menu-mobile">
+    <option value="" disabled selected>Menu</option>
+    <option value="http://pettingzooplush.com/about/">About Us</option>
+    <option value="http://pettingzooplush.com/products/">Products</option>
+    <option value="http://pettingzooplush.com/news/">News</option>
+    <option value="http://pettingzooplush.com/contact/">Contacts</option>
+  </select>
+
+</nav>
+    </header>
+
+    <ul>
+  <li><img src="http://pettingzoo-website.s3.amazonaws.com/products/custom/easter_Charm.png" alt="Easter charm" /></li>
+  <li><img src="http://pettingzoo-website.s3.amazonaws.com/products/custom/Vegas_Charm.png" alt="Vegas charm" /></li>
+</ul>
+
+<p>A Great inexpensive way to customize the plush, our rubber charms come with a satin ribbon for easy tying on plush or can be purchased to be attached to a plush order.
+Charm design can be a logo, name, or image. Just ask us!</p>
+
+
+    <footer role="contentinfo" class="global">
+      <h3 class="callout">Get in Touch</h3>
+      <section class="wrapper narrow">
+ 
+        <form id="ajax-form" action="#">
+          <div class="control_group">
+            <label for="name">Your Name</label>
+            <input type="text" class="form-textbox" data-type="input-textbox" id="name" name="name" size="20" value="" required/>
+          </div>
+          <div class="control_group">
+            <label for="email">Your Email</label>
+            <input type="email" class="form-textbox" data-type="input-textbox" id="email" name="email" size="20" value="" required/>
+          </div>
+          <div class="control_group">
+          <select class="form-dropdown" id="subject" name="subject">
+            <option value="" disabled selected>How can we help? </option>
+            
+            <option value="order">I'd like to place an order </option>
+            
+            <option value="order_question">I have a question about an order I placed </option>
+            
+            <option value="sales">I'd like to speak to a sales representative </option>
+            
+            <option value="general">Just saying hi </option>
+            
+          </select>
+          </div>
+          <div class="control_group">
+            <label for="message">Your Message</label>
+            <textarea id="message" class="form-textarea" name="message" cols="40" rows="6" required></textarea>
+          </div>
+          <input type="hidden" class="form-hidden" value="http://pettingzooplush.com" id="url" name="url" />
+          <div class="control_group mailing-list">
+            <input type="checkbox" id="mailing-list" name="mailing-list" value="opted-in" />
+            <label for="mailing-list">Add me to <strong>The Petting Zoo's</strong> mailing&nbsp;list.</label>
+          </div>
+          <button name="contact-submit" id="contact-submit" type="submit" class="button primary small">Send</button>
+        </form>
+
+        <form id="mc-form" style="display:none;">
+          <input id="mc-email" type="email" name="mc-email" placeholder="email">
+          <label for="mc-email"></label>
+          <input type="text" value="" name="FNAME" name="mc-fname" class="" id="mc-FNAME">
+          <label for="mc-FNAME"></label>
+          <button type="submit">Submit</button>
+        </form>
+
+        <aside class="meta contact">
+          <h4 class="highlight">Call us!</h4>
+          <dl>
+            <dt>P</dt>
+            <dd>888.867.4059</dd>
+            <dt>F</dt>
+            <dd>443.557.1613</dd>
+          </dl>
+          <p class="address">
+            7222 Parkway Drive<br />
+            Hanover, MD 21076
+          </p>
+          
+          <ul class="social">
+            
+            <li>
+              <a href="https://www.facebook.com/pages/The-Petting-Zoo/564056906971473" class="icon">
+                <span class="icon-social-fb--yellow" aria-hidden="true"></span><span class="screen-reader-text">Facebook</span>
+              </a>
+            </li>
+            
+          </ul>
+          
+        </aside>
+
+
+      </section>
+      <section class="footer-menu">
+        <nav role="navigation" class="global">
+  <a href="http://pettingzooplush.com/" class="logo">
+    <img src="http://pettingzooplush.com/assets/images/logo-pettingzoo.svg" alt="The Petting Zoo" data-fallback="http://pettingzooplush.com/assets/images/logo-pettingzoo.png" />
+  </a>
+  <ul class="menu">
+    <li><a href="http://pettingzooplush.com/about/">About us</a></li>
+    <li><a href="http://pettingzooplush.com/products/">Products</a></li>
+    <li class="split"><a href="http://pettingzooplush.com/news/">News</a></li>
+    <li><a href="http://pettingzooplush.com/contact/">Contact</a></li>
+  </ul>
+  
+
+</nav>
+        <h5>Share &amp; Smile</h5>
+        <small role="copyright">&copy; Copyright 2019 The Petting Zoo, Inc. All rights reserved.</small>
+      </section>
+    </footer>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=&amp;sensor=false"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://pettingzooplush.com/assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="http://pettingzooplush.com/assets/js/app.js"></script>
+    
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133663378-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-133663378-1');
+    </script>
+  </body>
+</html>
