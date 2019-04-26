@@ -11,7 +11,7 @@
 .tmp
 
 # Ignore Jekyll build folder
-_site/
+build/
 
 # Ignore cache
 /.sass-cache

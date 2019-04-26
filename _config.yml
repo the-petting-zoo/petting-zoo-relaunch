@@ -9,6 +9,8 @@ permalink: /:categories/:title/
 
 source: source
 destination: build
+sass:
+  sass_dir: assets/stylesheets
 
 defaults:
   - scope:
