@@ -10,7 +10,7 @@
   "scripts": {
     "start": "npm run build && npm run watch",
     "watch": "webpack --watch -d --",
-    "build": "jekyll build && parcel build .tmp/**/*.html",
+    "build": "jekyll build && parcel build .tmp/**/*.html -d build",
     "icons": "svgstore -o $npm_package_config_icons_dest --inline $npm_package_config_icons_src/**/*.svg"
   },
   "repository": {

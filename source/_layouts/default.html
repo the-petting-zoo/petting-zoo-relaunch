@@ -96,7 +96,7 @@
     </footer>
     
     <!-- new module bundle -->
-    <script type="text/javascript" src="./assets/javascripts/main.js"></script>
+    <script type="text/javascript" src="{{ 'assets/javascripts/main.js' | relative_url }}"></script>
     
     <!-- google maps api -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=&amp;sensor=false"></script>
@@ -104,7 +104,7 @@
     <!-- deprecated old code w/ jquery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ site.url }}{{ site.assets.js }}vendor/jquery-1.10.2.min.js"><\/script>')</script>
-    <script src="{{ site.url }}{{ site.assets.js }}app-deprecated.js"></script>
+    <script src="{{ 'assets/javascripts/app-deprecated.js' | relative_url }}"></script>
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133663378-1"></script>
