@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="{{ 'assets/stylesheets/test.scss' | relative_url }}">
+    <link rel="stylesheet" href="{{ 'stylesheets/styles.bundle.css' | relative_url }}">
     {% include grunticon.html %}
   </head>
   <body id="{% if page.slug %}{{ page.slug | replace: " ", "-" | downcase }}{% else %}{{ page.title | replace: " ", "-" | downcase }}{% endif %}">
