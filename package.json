@@ -5,12 +5,16 @@
   "main": "index.html",
   "config": {
     "icons_src": "./source/assets/images/icons/_sprites",
-    "icons_dest": "./source/layouts/partials"
+    "icons_dest": "./source/layouts/partials",
+    "webpack": "./webpack_config"
   },
   "scripts": {
     "start": "npm run watch",
-    "watch": "webpack --config ./webpack_config/modern.config.js --watch -d && jekyll serve",
-    "build": "webpack --config webpack_config/modern.config.js -p && webpack --config webpack_config/legacy.config.js -p && jekyll build",
+    "watch": "webpack --config $npm_package_config_webpack/modern.config.js --watch -d & jekyll serve",
+    "build:modern": "webpack --config $npm_package_config_webpack/modern.config.js -p",
+    "build:legacy": "webpack --config $npm_package_config_webpack/legacy.config.js -p",
+    "build": "npm run build:modern && npm run build:legacy",
+    "postbuild": "jekyll build",
     "icons": "svgstore -o $npm_package_config_icons_dest --inline $npm_package_config_icons_src/**/*.svg"
   },
   "repository": {
@@ -31,10 +35,13 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
+    "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.4.3",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
     "fibers": "^4.0.0",
     "mini-css-extract-plugin": "^0.6.0",
     "sass": "^1.19.0",

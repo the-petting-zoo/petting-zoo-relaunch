@@ -1,9 +1,15 @@
+// Build both 'modern' and 'legacy' javascript bundles using separate configs
+// -> this is the base config, shared by both versions
+// -> based on Philip Walton's examples at 
+// -> https://philipwalton.com/articles/deploying-es2015-code-in-production-today/
+
 const Fiber = require('fibers')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 
 module.exports = {
+  prodMode: process.env.NODE_ENV !== 'production',
 
   // config used in both modern and legacy configs
   config: {
@@ -17,7 +23,7 @@ module.exports = {
           test: /\.m?js(\?.*)?$/i,
           sourceMap: true,
           terserOptions: {
-            safari10: true,
+            safari10: true
           }
         })
       ]
@@ -25,6 +31,7 @@ module.exports = {
   },
 
   // output path for all files
+  // -> relative to this file
   outputPath: '../source/',
 
   // set up babel loader rules
@@ -65,6 +72,7 @@ module.exports = {
         {
           loader: 'sass-loader',
           options: {
+            // prefer dart-sass because node-sass seems to have security vulnerabilities right now
             implementation: require('sass'),
             fiber: Fiber,
             includePaths: ['node_modules']

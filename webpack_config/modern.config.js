@@ -1,3 +1,6 @@
+// 'Modern' configuration for browsers that support ES2015+ modules
+// -> note: server must attach correct Content-Type 'text/javascript' headers to *.mjs files
+
 const base = require('./base.config.js')
 const path = require('path')
 

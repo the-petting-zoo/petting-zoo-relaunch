@@ -1,3 +1,5 @@
+// 'Legacy' configuration for older browsers that only support ES5
+
 const base = require('./base.config.js')
 const path = require('path')
 
