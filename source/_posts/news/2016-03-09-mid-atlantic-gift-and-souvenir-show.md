@@ -1,12 +1,9 @@
 ---
 category: blog
 layout: default
-categories: 
-  - "null"
 published: true
 title: " Mid-Atlantic Gift and Souvenir Show"
 ---
-
 
 ![Mid-Atlantic Gift and Souvenir Show](https://s3.amazonaws.com/pettingzoo-website/blog/midatlantic-header.jpg)
 

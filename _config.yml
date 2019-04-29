@@ -4,13 +4,10 @@ tag: "Share & Smile"
 # url: 'http://pettingzooplush.com/staging' # staging
 url: 'http://pettingzooplush.com' # live
 # url: 'http://localhost:4000' # local
-baseurl: 
 permalink: /:categories/:title/
 
 source: source
-destination: .tmp
-sass:
-  sass_dir: assets/stylesheets
+destination: build
 
 defaults:
   - scope:
