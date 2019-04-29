@@ -1,0 +1,561 @@
+// ==========================================================================
+//  Navigation modules
+// ==========================================================================
+
+// BASE
+// -----------------------------------------------------------------------------
+
+[role="navigation"], .nav {
+	// @extend .wrapper;
+}
+
+// SUBMODULES
+// -----------------------------------------------------------------------------
+
+// ------- Global/main nav -------------------------------------------
+
+[role="navigation"].global {
+  $bg: $gray;
+
+  @function ribbon-offset($i) {
+    @return (nth-last($header-ribbon-margins, $i) + $header-h - nth($layout-margins, $i));
+  }
+
+  @include rem(height, $header-h);
+  @include rem(margin-top, abs(first($logo-top)));
+  text-align: center;
+  position: relative;
+  padding: 0;
+  overflow: visible;
+  background: $bg;
+
+  &:before, &:after {
+    border-width: 0;
+    @include rem(bottom, $header-ribbon-bottom);
+    @include rem(border-top-width, abs($header-ribbon-bottom));
+    content: " ";
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-color: lighten($color-bg-reverse, 25) transparent transparent transparent;
+  }
+
+  &:before {
+    border-left-width: ribbon-offset(1);
+    left: 0;
+
+    @include breakpoint($small) {
+      border-left-width: ribbon-offset(2);
+    }
+
+    @include breakpoint($medium) {
+      border-left-width: ribbon-offset(3);
+    }
+  }
+
+  &:after {
+    border-right-width: ribbon-offset(1);
+    right: 0;
+
+    @include breakpoint($small) {
+      border-right-width: ribbon-offset(2);
+    }
+
+    @include breakpoint($medium) {
+      border-right-width: ribbon-offset(3);
+    }
+  }
+
+  @include breakpoint($xsmall) {
+    @include rem(margin-top, abs(nth-last($logo-top, 2)));
+  }
+
+  .menu {
+    @include inline-list;
+    @include rem(height, $header-h);
+    @include hidden;
+    text-transform: uppercase;
+
+    @include breakpoint($small) {
+      @include restore-visible;
+    }
+
+    a {
+      @extend %gentleman-bold;
+      @include inline-block--centered($header-h);
+      @include rem(width, 108px);
+      @include rem(height, $header-h);
+      @include rem(font-size, 14px);
+      display: block;
+      color: lighten($blue--dark, 4);
+      text-transform: uppercase;
+
+      &:hover, &:active {
+        background: darken($gray, 5);
+      }
+
+      &.active {
+        background: $pink;
+        color: white;
+      }
+
+      @include breakpoint($medium) {
+        @include rem(font-size, 16px);
+        @include rem(width, 120px);
+      }
+    }
+  }
+
+  .menu-mobile {
+    $height: 2.5em;
+    position: relative;
+    top: 50%;
+    height: $height;
+    margin: -($height/2) 1em 0 0;
+    float: right;
+    vertical-align: center;
+    background-color: lighten($bg, 5);
+
+    @include breakpoint($small) {
+      margin-right: 2em;
+    }
+
+    @include breakpoint($small) {
+      @include hidden;
+    }
+  }
+
+  li {
+    $margin: 1px;
+    @include rem(margin-right, $margin);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.split {
+      @include rem(margin-left, (first($logo-w) + 24px + $margin));
+
+      @include breakpoint($small) {
+        @include rem(margin-left, (nth-last($logo-w, 2) + 36px + $margin));
+      }
+    }
+  }
+
+  .logo {
+    @include rem(top, first($logo-top));
+    @include rem(margin-left, -(first($logo-w)/2));
+    @include rem(width, first($logo-w));
+    @include rem(height, (first($logo-w) * $logo-aspect));
+    display: block;
+    position: absolute;
+    left: 50%;
+    z-index: $z--high;
+
+    @include breakpoint($xsmall) {
+      @include rem(top, nth-last($logo-top, 2));
+      @include rem(margin-left, -(nth-last($logo-w, 2)/2));
+      @include rem(width, nth-last($logo-w, 2));
+      @include rem(height, (nth-last($logo-w, 2) * $logo-aspect));
+    }
+  }
+}
+
+// .ie9 {
+//   .logo {
+//     @include rem(height, (first($logo-w) * $logo-aspect));
+
+//     @include breakpoint($xsmall) {
+//       @include rem(height, (nth-last($logo-w, 2) * $logo-aspect));
+//     }
+//   }
+// }
+
+// copy of the main menu that appears in the footer
+// ------- Local nav -------------------------------------------
+footer.global [role="navigation"].global {
+  @include rem(margin, 0 0 6px 0);
+  @include rem(padding, 65px 0 0 0);
+  position: relative;
+  height: auto;
+  z-index: $z--high;
+  overflow: visible;
+  background: transparent;
+
+  &:before, &:after {
+    content: none;
+    border: none;
+  }
+
+  @include breakpoint($xsmall) {
+    @include rem(height, $header-h);
+    padding: 0;
+  }
+
+  .menu {
+    @include restore-visible;
+    width: 100%;
+    height: auto;
+
+    @include breakpoint($xsmall) {
+      @include rem(height, $header-h);
+    }
+
+    li {
+      @extend %theme-wash--primary;
+      display: block;
+      margin-bottom: 0;
+      border-width: $border-w--thin 0 0 0;
+      border-style: solid;
+
+      &:last-child {
+        border-bottom-width: $border-w--thin;
+      }
+
+      @include breakpoint($xsmall) {
+        @include inline-block;
+        border: 0;
+      }
+    }
+
+    a {
+      @include rem(font-size, 13px);
+      @include rem(padding, 12px 0);
+      height: auto;
+      width: 100%;
+      color: white;
+      display: block;
+
+      &:hover, &:active {
+        color: lighten($color-bg-wash--primary, 25);
+        background: transparent;
+      }
+
+      &.active {
+        color: $color-text--primary;
+        background: transparent;
+      }
+
+      @include breakpoint($xsmall) {
+        @include inline-block--centered($header-h);
+        @include rem(width, 80px);
+      }
+
+      @include breakpoint($small) {
+        @include rem(font-size, 16px);
+        @include rem(width, 108px);
+      }
+    }
+  }
+
+  .split {
+    margin-left: 0;
+    // @include rem(margin-left, ((first($logo-w)/2) + 18px));
+
+    @include breakpoint($xsmall) {
+      @include rem(margin-left, ((nth-last($logo-w, 2)/2) + 18px));
+    }
+  }
+
+  .logo {
+    @include rem(top, -10px);
+    @include rem(margin-left, -(first($logo-w)/2));
+    @include rem(width, (first($logo-w)));
+
+    @include breakpoint($xsmall) {
+      @include rem(margin-left, -(nth-last($logo-w, 2)/4));
+      @include rem(width, (nth-last($logo-w, 2)/2));
+      @include rem(height, ((nth-last($logo-w, 2) * $logo-aspect)/2));
+
+    }
+  }
+}
+
+
+// ------- Local nav -------------------------------------------
+
+[role="navigation"].local, nav.local {
+  // @extend .wrapper;
+}
+
+// ------- Pagination -------------------------------------------
+
+nav.local.page {
+  @include hidden;
+  @include grid-margins(margin);
+  @include rem(margin-top, 24px);
+  @include rem(margin-bottom, 18px);
+  @include clearfix;
+  position: relative;
+  padding: 0;
+  background: $gray;
+  overflow: hidden;
+  // font-size: 0;
+
+  @include breakpoint($small) {
+    @include restore-visible;
+    position: absolute;
+    background: transparent;
+    left: -1000px;
+    top: -1000px;
+  }
+}
+
+  .page-button {
+    // @include inline-block;
+    @include rem(padding, 12px);
+    position: relative;
+    width: 50%;
+    height: 100%;
+    border-right: $hairline-w solid white;
+
+    &:hover, &:active {
+      background: $turquoise;
+    }
+
+    &.prev {
+      text-align: left;
+      float: left;
+    }
+
+    &.next {
+      text-align: right;
+      float: right;
+    }
+
+    @include breakpoint($small) {
+      @include transform(translateY(-50%));
+      @include rem(padding, 16px 12px);
+      display: block;
+      position: fixed;
+      width: auto;
+      height: auto;
+      top: 50%;
+      z-index: 0;
+      background: $gray;
+
+      &.prev {
+        left: 0;
+      }
+
+      &.next {
+        right: 0;
+      }
+
+      .page-title {
+        @include visuallyhidden;
+        // @include inline-block;
+        // @include rem(margin, -12px 0);
+        // @include rem(padding, 0 12px);
+      }
+    }
+  }
+
+// ------- Filter nav -------------------------------------------
+$filter-highlight: $turquoise;
+
+.filter-nav {
+  @include rem(padding, 0 0 12px 0);
+  @include rem(margin-top, 24px);
+  border-bottom: $hairline-w solid $color-border;
+
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    &:focus {
+        outline: 0 none;
+    }
+  }
+}
+
+.filter-label, .filter-controls {
+  @include inline-block;
+}
+
+.filter-label {
+  @include rem(font-size, 13px);
+  margin-right: 0.5em;
+}
+
+.filter-controls {
+  margin: 0 0 0 0.5em;
+}
+
+.filter-set {
+  display: block;
+  margin-left: 0;
+  padding-left: 0;
+  border: none;
+
+  @include breakpoint($xsmall) {
+    @include inline-block;
+    margin-left: 0.2em;
+    padding-left: 0.7em;
+    border-left: $hairline-w solid $color-border;
+  }
+}
+
+.filter-cat {
+  @include rem(font-size, 13px);
+  margin-right: 0.7em;
+  color: lighten($color-text--primary, 50);
+}
+
+.filter-controls {
+  @include inline-dl;
+  font-size: 0;
+}
+
+.filter, #reset, %filter {
+  $padding-default: 0.5em;
+  $padding-active: 0.7em;
+
+  @include rem(font-size, 13px);
+  padding: 0.2em $padding-default;
+  // margin: 0 0.1em !important;
+  color: $filter-highlight;
+
+  // &:last-child {
+  //   margin-right: 0.4em;
+
+  //   &.active {
+  //     margin-right: 0.1em;
+  //   }
+  // }
+
+  & > a {
+    color: $filter-highlight;
+
+    &:hover {
+      color: darken($filter-highlight, 10);
+    }
+  }
+  
+  
+  &.active {
+    color: white;
+    border-radius: 100px;
+    padding-left: $padding-active;
+    padding-right: $padding-active;
+    margin-left: -($padding-active - $padding-default);
+    margin-right: -($padding-active - $padding-default);
+
+    & > a {
+      color: white;
+    }
+
+    background: $filter-highlight;
+  }
+}
+
+#filter-container .mix {
+  display: none;
+}
+
+// ------- Tabs/accordions -------------------------------------------
+.local.tabs {
+  @include hidden;
+
+  @include breakpoint($small) {
+    @include restore-visible;
+  }
+
+  ul {
+    @extend .wrapper;
+    // @extend .narrow;
+    @include inline-list;
+    @include grid-margins;
+    text-align: center;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    @extend %aleo;
+    @include rem(font-size, 18px);
+    display: block;
+    position: relative;
+    margin: 0 0.5em;
+    padding: 0 0 1em 0;
+
+    &.active {
+      @include triangle--centered($dir: up, $side: bottom, $width: 20px, $color: white);
+    }
+  }
+  
+}
+
+  .tabs-content {
+    @extend %base-transition;
+    @extend %theme-default;
+    @include rem(padding, 18px 0);
+    border-width: $border-w--thin 0 0 0;
+    border-style: solid;
+    border-color: darken($color-border, 10);
+
+    @include breakpoint($small) {
+      @include hidden;
+      border: none;
+    }
+
+    &.is-open {
+      @include restore-visible;
+    }
+  }
+
+  .tabs-content-header {
+    @include grid-margins;
+    position: relative;
+    display: block;
+    text-align: left !important;
+
+    a {
+      display: block;
+      position: relative;
+      color: $blue--dark !important;
+
+      &:after {
+        $size: 0.6em;
+        @extend %icon-arrow-down--blue;
+        content: " ";
+        position: absolute;
+        width: $size;
+        height: $size;
+        top: 50%;
+        right: 0.5em;
+        margin-top: -($size/2);
+        background-size: contain;
+        background-position: center center;
+      }
+    }
+
+    .active {
+      color: $pink !important;
+
+      &:after {
+        @extend %icon-arrow-up--pink;
+      }
+    }
+    
+    @include breakpoint($small) {
+      @include hidden;
+    }
+  }
+
+  .tabs-content-body {
+    @include hidden;
+    margin-top: 1em;
+
+    @include breakpoint($small) {
+      @include restore-visible;
+      margin-top: 0;
+    }
+
+    &.is-open {
+      @include restore-visible;
+    }
+  }

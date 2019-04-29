@@ -1,0 +1,72 @@
+// ==========================================================================
+//  Blog post modules
+// ==========================================================================
+
+
+// BASE
+// -----------------------------------------------------------------------------
+
+// include layout, 5 cols?
+// set sidebar to col 5
+.post {
+  @include rem(margin-bottom, 24px);
+  @include rem(padding-bottom, 18px);
+  position: relative;
+  clear: both;
+  overflow: hidden;
+  border-width: 0 0 $border-w--thin 0;
+  border-style: solid;
+  // margin-left: -20%;
+
+  &:last-child {
+    border: none;
+  }
+
+  #{headers()} {
+    text-align: left;
+  }
+
+  & > hgroup {
+    margin-bottom: 1em;
+  }
+
+  h6 {
+    color: darken($gray, 20);
+  }
+}
+
+// JS is used to add classes to images
+// make them half-width
+.js .post.has-image {
+  @include layout(4) {
+    @include breakpoint($small) {
+      p {
+        @include grid-span(2, 3, $options: right);
+        padding-right: 0;
+      }
+      
+      p.has-image {
+        @include grid-span(2, 1);
+      }
+    }
+  }
+}
+
+// SUBMODULES
+// -----------------------------------------------------------------------------
+.post-body {
+  margin-top: 1em;
+}
+
+
+// ------- Meta/info -------------------------------------------
+
+.post {
+  .meta {
+    // position: absolute;
+    // // float: left;
+    // width: 30%;
+    // right: -30%;
+    // padding-left: 24px;
+  }
+}

@@ -1,0 +1,136 @@
+// ==========================================================================
+//  Strip component
+// -> A full-width, vertically stacking section
+// ==========================================================================
+
+// CONFIG
+// -----------------------------------------------------------------------------
+
+
+
+
+// BASE
+// -----------------------------------------------------------------------------
+
+.strip {
+  @include rem(padding, 24px 0);
+  overflow: visible;
+  position: relative;
+
+  #{headers()} {
+    text-align: center;
+  }
+}
+
+// MODIFIERS
+// -----------------------------------------------------------------------------
+
+.strip.blurb {
+  h1 {
+    // @extend .callout;
+  }
+
+  h2 {
+    @extend .highlight;
+  }
+}
+
+// SUBMODULES
+// -----------------------------------------------------------------------------
+
+.strip-leader {
+  @include rem(margin-top, -(first($header-padding)));
+  @include rem(padding, first($header-padding) 0 24px 0);
+  // @include rem(margin-bottom, 24px);
+
+  @include breakpoint($xsmall) {
+    @include rem(margin-top, -(nth-last($header-padding, 2)));
+    @include rem(padding, nth-last($header-padding, 2) 0 24px 0);
+  }
+}
+
+.strip-int {
+  // @include rem(margin-top, 12px);
+  @include rem(padding, 18px 0);
+  border-top-width: $border-w--thin;
+  border-top-style: solid;
+}
+
+// MODIFIERS
+// -----------------------------------------------------------------------------
+
+.full_bleed-bottom {
+  padding-bottom: 0;
+}
+
+.full_bleed-top {
+  padding-top: 0;
+}
+
+@mixin half-circle($w:36px, $color: $color-bg-default) {
+  &:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -($w/2);
+    top: 0;
+    height: ($w/2);
+    width: $w;
+    border-radius: 0 0 $w $w;
+    background: $color;
+  }
+}
+
+.pointer, %pointer {
+  @include rem(padding-top, 36px);
+  @include half-circle;
+  margin-top: 0;
+}
+
+.pointer-well {
+  @extend %pointer;
+  
+  &:after {
+    background: $color-bg-well;
+  }
+
+}
+
+.pointer-wash--primary {
+  @extend %pointer;
+  
+  &:after {
+    background: $color-bg-wash--primary;
+  }
+
+}
+
+.pointer-wash--secondary {
+  @extend %pointer;
+  
+  &:after {
+    background: $color-bg-wash--secondary;
+  }
+}
+
+.pointer-reverse {
+  @extend %pointer;
+  
+  &:after {
+    background: $color-bg-reverse;
+  }
+}
+
+.no-borderradius,
+.ltie10 {
+  .pointer,
+  .pointer-well,
+  .pointer-wash--primary,
+  .pointer-wash--secondary,
+  .pointer-reverse {
+    &:after {
+      @include hidden;
+    }
+  }
+}

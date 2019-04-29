@@ -1,0 +1,93 @@
+// carousel for catalog PDFs
+// http://stackoverflow.com/questions/13202867/fixed-size-of-flexslider
+.flexslider {
+  position: relative;
+  background: darken($color-bg-reverse, 5);
+  border: $border-w--thick solid $gray;
+  box-shadow: none;
+}
+
+#pdf-viewer {
+  $slide-h:792;
+  $slide-w: 612;
+  $control-size: 36px;
+  $aspect: ($slide-h/$slide-w);
+  $aspect-spread: (($slide-w * 2)/$slide-h);
+  $viewer-h: 40%;
+  
+  @include rem(margin, 24px auto 0 auto);
+  // width: ($viewer-h/$aspect);
+  // margin: 0 auto;
+  background: $color-bg-reverse;
+
+  &.spread {
+    // width: ($viewer-h * $aspect-spread);
+  }
+
+  .flex-active-slide, li {
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .slides {
+
+    img {
+      margin: 0 auto;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+  .prev, .next {
+    $h: $control-size * 1.5;
+    @include hide-text;
+    @include rem(width, $control-size);
+    @include rem(height, $h);
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -($h/2);
+    z-index: 1000;
+    background-color: $color-bg-well;
+    background-position: center center;
+    background-size: ($control-size/2);
+
+    &:hover {
+      background-color: darken($color-bg-well, 5);
+    }
+  }
+
+  .prev {
+    @include rem(left, -($control-size + $border-w--thick + 6px));
+  }
+
+  .next {
+    @include rem(right, -($control-size + $border-w--thick + 6px));
+  }
+}
+
+#pdf-thumb {
+  @include rem(margin, 12px 0);
+
+  .flex-active-slide {
+    opacity: 0.75;
+  }
+
+  li {
+    margin-bottom: 0;
+  }
+
+  .flex-prev, .flex-next {
+    $w: 24px;
+    $h: $w * 1.2;
+    @include rem(width, $w);
+    @include rem(height, $h);
+    top: 50%;
+    margin-top: -($h/2);
+
+    &:before {
+      // content: none;
+      font-size: 1.2em;
+    }
+  }
+}
