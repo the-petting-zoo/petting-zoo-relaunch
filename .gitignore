@@ -10,8 +10,10 @@
 # Ignore temp files
 .tmp
 
-# Ignore build folder
+# Ignore generated files
 build/
+source/javascripts
+source/stylesheets
 
 # Ignore cache
 /.sass-cache

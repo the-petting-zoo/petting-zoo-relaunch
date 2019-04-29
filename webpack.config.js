@@ -1,15 +1,58 @@
-const path = require('path');
-const Fiber = require('fibers');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path')
+const Fiber = require('fibers')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-  entry: './webpack/stylesheets/test.scss',
+  entry: {
+    styles: './webpack_assets/stylesheets/test.scss',
+    main: './webpack_assets/javascripts/main.js'
+  },
   output: {
     filename: 'javascripts/[name].bundle.js',
-    path: path.resolve(__dirname, 'source/assets/')
+    path: path.resolve(__dirname, 'source/')
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env', {
+              modules: false,
+              useBuiltIns: true,
+              targets: {
+                browsers: [
+                  '> 1%',
+                  'last 2 versions',
+                  'Firefox ESR',
+                ],
+              }
+            }]
+          }
+        }
+      },
+      {
+        test: /\.mjs$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env', {
+              modules: false,
+              useBuiltIns: true,
+              targets: {
+                browsers: [
+                  '> 1%',
+                  'last 2 versions',
+                  'Firefox ESR',
+                ],
+              }
+            }]
+          }
+        }
+      },
       {
         test: /\.scss$/,
         use: [
@@ -35,8 +78,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: 'stylesheets/[name].css',
-      chunkFilename: '[id].css'
+      filename: 'stylesheets/[name].bundle.css',
+      chunkFilename: 'stylesheets/[id].css'
     })
   ]
 }
