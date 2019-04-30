@@ -4,10 +4,11 @@
 const config = require('./config.json')
 const base = require('./base.config')
 const path = require('path')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
-module.exports = Object.assign({}, base.config, {
+module.exports = Object.assign({}, base.commonConfig, {
   output: {
-    filename: 'javascripts/[name].bundle.mjs',
+    filename: 'javascripts/[name]-[chunkhash:10].mjs',
     path: path.resolve(__dirname, path.join(config.outputPath, config.assetsDir))
   },
   module: {
@@ -24,5 +25,10 @@ module.exports = Object.assign({}, base.config, {
       base.commonLoaderRules()
     ]
   },
-  plugins: base.commonPlugins()
+  plugins: [
+    // run Clean plugin here because we only want it to run once
+    // -> run this config first in node scripts
+    new CleanWebpackPlugin(),
+    ...base.commonPlugins()
+  ]
 })

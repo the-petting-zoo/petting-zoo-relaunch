@@ -4,9 +4,9 @@ const config = require('./config.json')
 const base = require('./base.config')
 const path = require('path')
 
-module.exports = Object.assign({}, base.config, {
+module.exports = Object.assign({}, base.commonConfig, {
   output: {
-    filename: 'javascripts/[name].es5.bundle.js',
+    filename: 'javascripts/[name]-[chunkhash:10].es5.js',
     path: path.resolve(__dirname, path.join(config.outputPath, config.assetsDir))
   },
   module: {
