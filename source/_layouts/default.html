@@ -102,7 +102,9 @@
     
     <!-- javascript bundles -->
     <script type="module" src="{{ site.data.webpack_manifest['main.bundle.mjs'] | relative_url }}"></script>
-    <script nomodule type="text/javascript" src="{{ site.data.webpack_manifest['main.es5.bundle.mjs'] | relative_url }}"></script>
+    {% if jekyll.environment == "production" %}
+      <script nomodule type="text/javascript" src="{{ site.data.webpack_manifest['main.es5.bundle.mjs'] | relative_url }}"></script>
+    {% endif %}
     
     <!-- google maps api -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=&amp;sensor=false"></script>
