@@ -18,8 +18,6 @@ defaults:
 # asset paths
 assets:
   img: "/static/images/"
-  css: "/stylesheets/"
-  js: "/javascripts/"
   fonts: "/static/fonts/"
   s3: "http://pettingzoo-website.s3.amazonaws.com"
   carousel: "/banners/carousel/"
