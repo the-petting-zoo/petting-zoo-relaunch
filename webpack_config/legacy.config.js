@@ -1,12 +1,13 @@
 // 'Legacy' configuration for older browsers that only support ES5
 
-const base = require('./base.config.js')
+const config = require('./config.json')
+const base = require('./base.config')
 const path = require('path')
 
 module.exports = Object.assign({}, base.config, {
   output: {
     filename: 'javascripts/[name].es5.bundle.js',
-    path: path.resolve(__dirname, base.outputPath)
+    path: path.resolve(__dirname, path.join(config.outputPath, config.assetsDir))
   },
   module: {
     rules: [

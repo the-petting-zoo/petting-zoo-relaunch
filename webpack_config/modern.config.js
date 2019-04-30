@@ -1,13 +1,14 @@
 // 'Modern' configuration for browsers that support ES2015+ modules
 // -> note: server must attach correct Content-Type 'text/javascript' headers to *.mjs files
 
-const base = require('./base.config.js')
+const config = require('./config.json')
+const base = require('./base.config')
 const path = require('path')
 
 module.exports = Object.assign({}, base.config, {
   output: {
     filename: 'javascripts/[name].bundle.mjs',
-    path: path.resolve(__dirname, base.outputPath)
+    path: path.resolve(__dirname, path.join(config.outputPath, config.assetsDir))
   },
   module: {
     rules: [

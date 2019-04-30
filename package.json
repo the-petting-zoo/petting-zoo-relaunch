@@ -11,10 +11,9 @@
   "scripts": {
     "start": "npm run watch",
     "watch": "webpack --config $npm_package_config_webpack/modern.config.js --watch -d & jekyll serve",
-    "build:modern": "webpack --config $npm_package_config_webpack/modern.config.js -p",
-    "build:legacy": "webpack --config $npm_package_config_webpack/legacy.config.js -p",
-    "build": "npm run build:modern && npm run build:legacy",
-    "postbuild": "jekyll build",
+    "build:modern": "webpack -p --config $npm_package_config_webpack/modern.config.js",
+    "build:legacy": "webpack -p --config $npm_package_config_webpack/legacy.config.js",
+    "build": "npm run build:modern && npm run build:legacy && jekyll build",
     "icons": "svgstore -o $npm_package_config_icons_dest --inline $npm_package_config_icons_src/**/*.svg"
   },
   "repository": {
@@ -43,6 +42,7 @@
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
     "fibers": "^4.0.0",
+    "fs-extra": "^7.0.1",
     "mini-css-extract-plugin": "^0.6.0",
     "sass": "^1.19.0",
     "sass-loader": "^7.1.0",

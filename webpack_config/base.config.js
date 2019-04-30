@@ -3,10 +3,13 @@
 // -> based on Philip Walton's examples at 
 // -> https://philipwalton.com/articles/deploying-es2015-code-in-production-today/
 
+const path = require('path')
+const config = require('./config.json')
 const Fiber = require('fibers')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
+const { getManifest, addAsset } = require('./utils/assets')
 
 module.exports = {
   prodMode: process.env.NODE_ENV !== 'production',
@@ -29,10 +32,6 @@ module.exports = {
       ]
     }
   },
-
-  // output path for all files
-  // -> relative to this file
-  outputPath: '../source/',
 
   // set up babel loader rules
   // -> pass in desired browser targets for specific build
@@ -90,6 +89,21 @@ module.exports = {
         // both options are optional
         filename: 'stylesheets/[name].bundle.css',
         chunkFilename: 'stylesheets/[id].css'
+      }),
+      new ManifestPlugin({
+        seed: getManifest(),
+        fileName: path.join('../', config.manifestFileName),
+        generate: (seed, files) => {
+          return files.reduce((manifest, opts) => {
+            // Needed until this issue is resolved:
+            // https://github.com/danethurber/webpack-manifest-plugin/issues/159
+            const unhashedName = path.basename(opts.path)
+              .replace(/[_.-][0-9a-f]{10}/, '')
+
+            addAsset(unhashedName, opts.path)
+            return getManifest()
+          }, seed)
+        },
       })
     ]
   }
