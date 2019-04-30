@@ -12,8 +12,8 @@
 
 # Ignore generated files
 build/
-source/javascripts
-source/stylesheets
+source/assets
+source/_data/webpack_manifest.json
 
 # Ignore cache
 /.sass-cache

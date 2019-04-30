@@ -93,6 +93,7 @@ module.exports = {
       new ManifestPlugin({
         seed: getManifest(),
         fileName: path.join('../', config.manifestFileName),
+        publicPath: config.assetsDir,
         generate: (seed, files) => {
           return files.reduce((manifest, opts) => {
             // Needed until this issue is resolved:
