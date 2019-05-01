@@ -1,0 +1,16 @@
+// Global color utility classes & custom properties
+
+@import 'config/color';
+
+@each $theme, $colors in $themes {
+  @if $theme != 'default' {
+    [data-theme~='#{$theme}'] {
+      @include theme($theme);
+    }
+  }
+}
+
+body,
+[data-theme] {
+  @include theme('default', true);
+}
