@@ -1,0 +1,10 @@
+{
+  "main.bundle.mjs": "javascripts/main.bundle.mjs",
+  "styles.bundle.css": "stylesheets/styles.bundle.css",
+  "styles.bundle.mjs": "javascripts/styles.bundle.mjs",
+  "main.es5.bundle.js": "javascripts/main.es5.bundle.js",
+  "styles.es5.bundle.js": "javascripts/styles.es5.bundle.js",
+  "main.js": "javascripts/main.es5.bundle.js",
+  "styles.css": "stylesheets/styles.bundle.css",
+  "styles.js": "javascripts/styles.es5.bundle.js"
+}

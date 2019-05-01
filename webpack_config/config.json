@@ -1,0 +1,6 @@
+{
+  "outputPath": "../source",
+  "assetsDir": "assets/",
+  "publicStaticPath": "/",
+  "manifestFileName": "_data/webpack_manifest.json"
+}
