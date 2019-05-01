@@ -1,10 +1,10 @@
-// =============================================================================
 //  Type config & scale
-// =============================================================================
-
 @import 'libs';
 @import 'scale';
 @import 'breakpoints';
+@import 'paths';
+
+// --- Config & helpers ---
 
 // default type sizes
 $type-size-default: 1rem !default;
@@ -53,25 +53,79 @@ $type-leading: (
   }
 }
 
-// Fonts
-// -----------------------------------------------------------------------------
+// --- Fonts ---
 // -> PUBLIC, use these to style type globally & in modules
 
-$font-weights: (
-  'xlight': 100,
-  'light': 200,
-  'normal': 300,
-  'bold': 600
-);
+/*
+ * Web Fonts from fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and 
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2014 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Juraj Chrastina
+ * License URL: http://www.fontspring.com/fflicense/juraj-chrastina
+ *
+ *
+ */
 
-@function font-weight($weight: normal) {
-  @return map-get($font-weights, $weight);
+@include font-face(
+  "gentleman-normal",
+  "{$path-fonts}/Gentleman-500-Book-webfont",
+  ("ttf", "woff")
+) {
+  font-display: swap;
+  font-style: normal;
+  font-weight: normal;
 }
 
-@mixin font($weight: normal, $style: normal) {
-  // swap in the webfont once it loads
+@include font-face(
+  "gentleman-bold",
+  "{$path-fonts}/Gentleman-500-Bold-webfont",
+  ("ttf", "woff")
+) {
   font-display: swap;
-  font-family: 'Libre Franklin', $font-stack-system;
-  font-style: $style;
-  font-weight: font-weight($weight);
+  font-style: normal;
+  font-weight: bold;
+}
+
+@include font-face(
+  "aleo-normal",
+  "{$path-fonts}/aleo-regular-webfont",
+  ("ttf", "woff")
+) {
+  font-display: swap;
+  font-style: normal;
+  font-weight: normal;
+}
+
+@include font-face(
+  "aleo-bold",
+  "{$path-fonts}/aleo-bold-webfont",
+  ("ttf", "woff")
+) {
+  font-display: swap;
+  font-style: normal;
+  font-weight: bold;
+}
+
+@mixin font($type: body, $weight: normal) {
+  @if $type == body {
+    font-family: 'aleo-#{$weight}', $font-stack-georgia;
+  }
+  @if $type == display {
+    font-family: 'genlemen-#{$weight}', $font-stack-helvetica;
+  }
+  font-weight: $weight;
 }
