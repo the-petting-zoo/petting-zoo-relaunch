@@ -1,0 +1,77 @@
+// =============================================================================
+//  Type config & scale
+// =============================================================================
+
+@import 'libs';
+@import 'scale';
+@import 'breakpoints';
+
+// default type sizes
+$type-size-default: 1rem !default;
+
+// global line heights
+$type-leading: (
+  'xtight': 1,
+  'tight': 1.25,
+  'default': 1.6
+);
+
+@function type-leading($height: 'default') {
+  @return map-get($type-leading, $height);
+}
+
+// set up viewport-sized fluid type scaling, with minimum and maximum sizes
+// -> a modified version of Indrek Paas' fluid type mixin: https://www.sassmeister.com/gist/7f22e44ace49b5124eec
+// -> which is based on Mike Riethmuller's formula: https://madebymike.com.au/writing/fluid-type-calc-examples/
+// -> also inspired by Eduardo Boucas' mixin: https://eduardoboucas.com/blog/2015/06/18/viewport-sized-typography-with-minimum-and-maximum-sizes.html
+@mixin type-fluid($properties: font-size, $size-min: 'eta', $size-max: 'alpha', $screen-min: 'xsmall', $screen-max: 'huge') {
+
+  // set base (min) size as default
+  @each $property in $properties {
+    #{$property}: scale-type($size-min);
+  }
+
+  // start to scale up at the minimum screen size
+  @include media('>#{$screen-min}') {
+    @each $property in $properties {
+      // sass-lint:disable no-duplicate-properties
+      // -> using redundant props as fallback here
+
+      // use an in-between value as the fallback where vw units or calc aren't supported
+      #{$property}: ((scale-type($size-min) + scale-type($size-max)) / 2);
+
+      // use calc and vw units to make the type scale fluidly between two sizes
+      #{$property}: calc(#{scale-type($size-min)} + #{strip-unit(scale-type($size-max) - scale-type($size-min))} * (100vw - #{strip-unit(screen($screen-min))}rem) / #{strip-unit(screen($screen-max) - screen($screen-min))});
+    }
+  }
+
+  // stop scaling at the maximum screen size
+  @include media('>#{$screen-max}') {
+    @each $property in $properties {
+      #{$property}: scale-type($size-max);
+    }
+  }
+}
+
+// Fonts
+// -----------------------------------------------------------------------------
+// -> PUBLIC, use these to style type globally & in modules
+
+$font-weights: (
+  'xlight': 100,
+  'light': 200,
+  'normal': 300,
+  'bold': 600
+);
+
+@function font-weight($weight: normal) {
+  @return map-get($font-weights, $weight);
+}
+
+@mixin font($weight: normal, $style: normal) {
+  // swap in the webfont once it loads
+  font-display: swap;
+  font-family: 'Libre Franklin', $font-stack-system;
+  font-style: $style;
+  font-weight: font-weight($weight);
+}
