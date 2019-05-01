@@ -2,6 +2,7 @@
 
 @import 'config/color';
 
+// --- Theme containers ---
 @each $theme, $colors in $themes {
   @if $theme != 'default' {
     [data-theme~='#{$theme}'] {
@@ -13,4 +14,34 @@
 body,
 [data-theme] {
   @include theme('default', true);
+}
+
+// --- Utilities ---
+.c-text-primary {
+  @include color-fg(text-primary, $important: true);
+}
+
+.c-text-secondary {
+  @include color-fg(text-secondary, $important: true);
+}
+
+.c-text-tertiary {
+  @include color-fg(text-tertiary, $important: true);
+}
+
+// make the text (or foreground element) the background color
+.c-fg-reverse {
+  @include color-fg(bg, $important: true);
+}
+
+.c-highlight {
+  @include color-fg('highlight', $important: true);
+}
+
+.c-well {
+  @include color-bg('well', $important: true);
+}
+
+.c-bg-transparent {
+  background-color: transparent !important;
 }

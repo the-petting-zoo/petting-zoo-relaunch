@@ -1,5 +1,6 @@
 // Global color config
 @import 'libs';
+@import 'helpers';
 
 // --- Base Palette ---
 // -> PRIVATE, do not use outside this settings file
@@ -117,9 +118,17 @@ $themes: (
 // -> PUBLIC
 // -> USAGE
 //    - @include color(background-color, highlight);
-@mixin color($prop, $color, $theme: 'default') {
-  #{$prop}: color($color, $theme);
-  #{$prop}: var(--color-#{$color}, color($color, $theme));
+@mixin color($prop, $color, $theme: 'default', $important: false) {
+  #{$prop}: important(color($color, $theme), $important);
+  #{$prop}: important(var(--color-#{$color}, color($color, $theme)), $important);
+}
+
+@mixin color-fg($color, $props...) {
+  @include color(color, $color, $props...);
+}
+
+@mixin color-bg($color, $props...) {
+  @include color(background-color, $color, $props...);
 }
 
 // set up custom properties with the right values for a theme container
@@ -127,8 +136,11 @@ $themes: (
 // -> USAGE
 //    - body { @include theme('default'); }
 @mixin theme($theme, $include-props: false) {
+  
+  // create a list of custom properties for each color role in a theme
+  // -> e.g. --color-text-primary
   $theme-colors: map-get($themes, $theme);
-
+  
   @each $name, $color in $theme-colors {
     --color-#{$name}: #{$color};
   }
