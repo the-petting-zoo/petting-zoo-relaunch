@@ -10,10 +10,9 @@
     <!-- deprecated stylesheet -->
     <link rel="stylesheet" href="{{ 'static/stylesheets/app-old.css' | relative_url }}">
     <!-- new stylesheet -->
+    <script type="text/javascript" src="/static/javascripts/modernizer-deprecated.js"></script>
     <link rel="stylesheet" href="{{ site.data.webpack_manifest['styles.bundle.css'] | relative_url }}">
     {% include grunticon.html %}
-
-    <script type="text/javascript" src="/static/javascripts/modernizer-deprecated.js"></script>
     <script>
       // Add a class to the html element to confirm JS is available
       // -> used by the CSS for styling JS-dependent elements

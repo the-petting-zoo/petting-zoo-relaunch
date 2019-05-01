@@ -123,10 +123,12 @@ $themes: (
   #{$prop}: important(var(--color-#{$color}, color($color, $theme)), $important);
 }
 
+// decorator to set color ('foreground') property
 @mixin color-fg($color, $props...) {
   @include color(color, $color, $props...);
 }
 
+// decorator to set background-color property
 @mixin color-bg($color, $props...) {
   @include color(background-color, $color, $props...);
 }
