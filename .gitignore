@@ -12,6 +12,7 @@
 
 # Ignore generated files
 build/
+_site/
 source/assets
 source/_data/webpack_manifest.json
 

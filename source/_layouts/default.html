@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="{{ site.data.webpack_manifest['styles.bundle.css'] | relative_url }}">
     {% include grunticon.html %}
 
+    <!-- Netlify Identity -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+
     <script type="text/javascript" src="/static/javascripts/modernizer-deprecated.js"></script>
   </head>
   <body id="{% if page.slug %}{{ page.slug | replace: " ", "-" | downcase }}{% else %}{{ page.title | replace: " ", "-" | downcase }}{% endif %}">
@@ -111,17 +115,17 @@
 
     <!-- deprecated old javascript w/ jquery -->
     <!-- note: requires the google maps api, above -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="{{ 'static/javascripts/app-deprecated.js' | relative_url }}"></script>
     
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133663378-1"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133663378-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'UA-133663378-1');
-    </script>
+    </script> -->
   </body>
 </html>
