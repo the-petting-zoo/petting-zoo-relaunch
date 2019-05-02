@@ -16,11 +16,9 @@
 [context.production]
   publish = "build"
   command = "jekyll build"
-  environment = { SITE_URL = "https://pettingzoo.netlify.com"} # @TODO This will change when we go live
 
 # Deploy Preview context: all deploys resulting from a pull/merge request will 
 # inherit these settings.
 [context.dev]
   publish = "build"
   command = "jekyll build"
-  environment = { SITE_URL = "https://pettingzoo.netlify.com"} 
