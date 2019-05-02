@@ -5,8 +5,6 @@ title: A new piece of content!
 date: 2019-05-02T20:40:50.926Z
 published: true
 ---
-
-
 **Lorem ipsum! I** _dont know why its bold.!_
 
 __
