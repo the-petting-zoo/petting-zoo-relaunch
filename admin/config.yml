@@ -1,6 +1,6 @@
 # Publish Settings
 backend:
-  name: github
+  name: git-gateway
   branch: netlify
 publish_mode: editorial_workflow
 
