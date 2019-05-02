@@ -1,7 +1,7 @@
 // ================================================================
 // Widon't & Best Ampersand
-// -> http://justinhileman.info/article/a-jquery-widont-snippet/
-// -> http://justinhileman.info/article/more-jquery-typography/
+// -> https://justinhileman.info/article/a-jquery-widont-snippet/
+// -> https://justinhileman.info/article/more-jquery-typography/
 // ================================================================
 
 jQuery(function($) {

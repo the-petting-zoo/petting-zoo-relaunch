@@ -116,7 +116,7 @@
     }
 
     & > img {
-      // http://davidwalsh.name/css-vertical-center
+      // https://davidwalsh.name/css-vertical-center
       @include inline-block;
       @include transform(translateY(-50%)); // use translate to vertically center when we don't know the height of the img
       position: relative;

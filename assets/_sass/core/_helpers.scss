@@ -3,14 +3,14 @@
 // ==========================================================================
 
 // Eric Meyer's awesome strip unit helper
-// http://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass/12335841#12335841
+// https://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass/12335841#12335841
 @function strip-units($number) {
   @return $number / ($number * 0 + 1);
 }
 
 // convert to rem
 // @param $base (optional): base font size
-// based on http://www.stubbornella.org/content/2013/07/01/easy-peasy-rem-conversion-with-sass/
+// based on https://www.stubbornella.org/content/2013/07/01/easy-peasy-rem-conversion-with-sass/
 @function rem($px-size, $base: $type-size--default) {
   @return #{strip-units($px-size/$base)}rem;
 }
@@ -46,7 +46,7 @@
 
 // ==================================================================================
 // Fun with SASS lists
-// -> check it: http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
+// -> check it: https://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
 // ==================================================================================
 
 // get last and first values of a list
@@ -123,7 +123,7 @@
 
 // use an invisible text-shadow to slim down light text over a dark background
 // in OSX/webkit
-// -> http://24ways.org/2006/knockout-type/
+// -> https://24ways.org/2006/knockout-type/
 @mixin reverse-text-fix {
   text-shadow: 0 0 0 #000;
 }
@@ -162,8 +162,8 @@
 }
 
 // use webkit/ie filters to make an image grayscale
-// http://www.cheesetoast.co.uk/add-grayscale-images-hover-css-black-white/
-// http://stackoverflow.com/questions/609273/convert-an-image-to-grayscale-in-html-css
+// https://www.cheesetoast.co.uk/add-grayscale-images-hover-css-black-white/
+// https://stackoverflow.com/questions/609273/convert-an-image-to-grayscale-in-html-css
 %img-grayscale {
 	@include single-transition;
   filter: grayscale(100%);

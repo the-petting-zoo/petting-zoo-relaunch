@@ -348,7 +348,7 @@
       // ----------------------------------------------------------------------------------
       init : function(el) {
         // ----- Local nav (tabs) -------------------------------------------------------------
-        //  -> http://www.jacklmoore.com/notes/jquery-tabs/
+        //  -> https://www.jacklmoore.com/notes/jquery-tabs/
 
 
         $(el).each(function(){
@@ -449,7 +449,7 @@
           //Send email via ajax & simpleform
           $.ajax({
             dataType: 'jsonp',
-            url: "http://getsimpleform.com/messages/ajax?form_api_token=" + pettingzoo.contactForm.simpleformToken,
+            url: "https://getsimpleform.com/messages/ajax?form_api_token=" + pettingzoo.contactForm.simpleformToken,
             data: $('#ajax-form').serialize() 
           }).done(function() {
             //Remove form and show success message.
@@ -473,7 +473,7 @@
             //Sets up form for ajax submit
             $('#mc-form').ajaxChimp({
                 callback: pettingzoo.contactForm.mailchimpResult,
-                url: 'http://pettingzooplush.us8.list-manage.com/subscribe/post?u=63768868a43809514e63f3953&id=0caa307af8'
+                url: 'https://pettingzooplush.us8.list-manage.com/subscribe/post?u=63768868a43809514e63f3953&id=0caa307af8'
             });
             //Submits mailchimp form
             $("#mc-form").submit();
