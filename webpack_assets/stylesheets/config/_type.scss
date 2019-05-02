@@ -101,7 +101,7 @@ $type-leading: (
 }
 
 @include font-face(
-  "aleo-normal",
+  "Aleo-Regular-webfont",
   "{$path-fonts}/aleo-regular-webfont",
   ("ttf", "woff")
 ) {
@@ -111,7 +111,17 @@ $type-leading: (
 }
 
 @include font-face(
-  "aleo-bold",
+  "Aleo-Italic-webfont",
+  "{$path-fonts}/aleo-regular-webfont",
+  ("ttf", "woff")
+) {
+  font-display: swap;
+  font-style: italic;
+  font-weight: normal;
+}
+
+@include font-face(
+  "Aleo-Bold-webfont",
   "{$path-fonts}/aleo-bold-webfont",
   ("ttf", "woff")
 ) {
@@ -120,7 +130,17 @@ $type-leading: (
   font-weight: bold;
 }
 
-@mixin font($type: body, $weight: normal) {
+@include font-face(
+  "Aleo-BoldItalic-webfont",
+  "{$path-fonts}/aleo-bold-webfont",
+  ("ttf", "woff")
+) {
+  font-display: swap;
+  font-style: italic;
+  font-weight: bold;
+}
+
+@mixin font($type: body, $weight: normal, $style: normal) {
   @if $type == body {
     font-family: 'aleo-#{$weight}', $font-stack-georgia;
   }
@@ -128,4 +148,5 @@ $type-leading: (
     font-family: 'genlemen-#{$weight}', $font-stack-helvetica;
   }
   font-weight: $weight;
+  font-style: $style;
 }

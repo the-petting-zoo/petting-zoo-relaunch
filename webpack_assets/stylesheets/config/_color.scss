@@ -6,14 +6,11 @@
 // -> PRIVATE, do not use outside this settings file
 $white: #fff;
 $gray: #ebf0f0;
-
-$turquoise: #7dbfcb;
 $light-turquoise: #b7d1d8;
-
-$blue: #3b57a0;
+$turquoise: #7dbfcb;
 $light-blue: #5899fc;
+$blue: #3b57a0;
 $dark-blue: #3c4b72;
-
 $yellow: #fed341;
 $pink: #f035a6;
 
@@ -29,7 +26,8 @@ $themes: (
     'bg': $white,
     'island': $white,
     'well': $gray,
-    'border': darken($gray, 10)
+    'border': darken($gray, 10),
+    'shadow': darken($gray, 30)
   ),
   'reverse': (
     'text-primary': $white,
@@ -40,7 +38,8 @@ $themes: (
     'bg': $dark-blue,
     'island': lighten($dark-blue, 10),
     'well': darken($dark-blue, 10),
-    'border': darken($dark-blue, 20)
+    'border': darken($dark-blue, 20),
+    'shadow': darken($dark-blue, 30)
   ),
   'wash-turquoise': (
     'text-primary': $white,
@@ -51,7 +50,8 @@ $themes: (
     'bg': $turquoise,
     'island': lighten($turquoise, 10),
     'well': darken($turquoise, 10),
-    'border': darken($turquoise, 20)
+    'border': darken($turquoise, 20),
+    'shadow': darken($turquoise, 30)
   ),
   'wash-blue': (
     'text-primary': $white,
@@ -62,7 +62,8 @@ $themes: (
     'bg': $blue,
     'island': lighten($blue, 10),
     'well': darken($blue, 10),
-    'border': darken($blue, 20)
+    'border': darken($blue, 20),
+    'shadow': darken($blue, 30)
   ),
   'wash-pink': (
     'text-primary': $white,
@@ -73,7 +74,8 @@ $themes: (
     'bg': $pink,
     'island': lighten($pink, 10),
     'well': darken($pink, 10),
-    'border': darken($pink, 20)
+    'border': darken($pink, 20),
+    'shadow': darken($pink, 30)
   )
 );
 
@@ -89,7 +91,7 @@ $themes: (
 //      -> pass in a positive number to lighten the color
 // -> PUBLIC
 // -> USAGE:
-//    - color: color('text' 'primary');
+//    - color: color('text-primary');
 //    - color: color('highlight' 'primary', 'reverse');
 @function color($color, $theme-name: 'default', $grade: 0, $opacity: 1) {
   // first extract the 'theme' nested map
