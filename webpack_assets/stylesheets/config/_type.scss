@@ -1,0 +1,152 @@
+//  Type config & scale
+@import 'libs';
+@import 'scale';
+@import 'breakpoints';
+@import 'paths';
+
+// --- Config & helpers ---
+
+// default type sizes
+$type-size-default: 1rem !default;
+
+// global line heights
+$type-leading: (
+  'xtight': 1,
+  'tight': 1.25,
+  'default': 1.6
+);
+
+@function type-leading($height: 'default') {
+  @return map-get($type-leading, $height);
+}
+
+// set up viewport-sized fluid type scaling, with minimum and maximum sizes
+// -> a modified version of Indrek Paas' fluid type mixin: https://www.sassmeister.com/gist/7f22e44ace49b5124eec
+// -> which is based on Mike Riethmuller's formula: https://madebymike.com.au/writing/fluid-type-calc-examples/
+// -> also inspired by Eduardo Boucas' mixin: https://eduardoboucas.com/blog/2015/06/18/viewport-sized-typography-with-minimum-and-maximum-sizes.html
+@mixin type-fluid($properties: font-size, $size-min: 'eta', $size-max: 'alpha', $screen-min: 'xsmall', $screen-max: 'huge') {
+
+  // set base (min) size as default
+  @each $property in $properties {
+    #{$property}: scale-type($size-min);
+  }
+
+  // start to scale up at the minimum screen size
+  @include media('>#{$screen-min}') {
+    @each $property in $properties {
+      // sass-lint:disable no-duplicate-properties
+      // -> using redundant props as fallback here
+
+      // use an in-between value as the fallback where vw units or calc aren't supported
+      #{$property}: ((scale-type($size-min) + scale-type($size-max)) / 2);
+
+      // use calc and vw units to make the type scale fluidly between two sizes
+      #{$property}: calc(#{scale-type($size-min)} + #{strip-unit(scale-type($size-max) - scale-type($size-min))} * (100vw - #{strip-unit(screen($screen-min))}rem) / #{strip-unit(screen($screen-max) - screen($screen-min))});
+    }
+  }
+
+  // stop scaling at the maximum screen size
+  @include media('>#{$screen-max}') {
+    @each $property in $properties {
+      #{$property}: scale-type($size-max);
+    }
+  }
+}
+
+// --- Fonts ---
+// -> PUBLIC, use these to style type globally & in modules
+
+/*
+ * Web Fonts from fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and 
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2014 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Juraj Chrastina
+ * License URL: http://www.fontspring.com/fflicense/juraj-chrastina
+ *
+ *
+ */
+
+@include font-face(
+  "gentleman-normal",
+  "{$path-fonts}/Gentleman-500-Book-webfont",
+  ("ttf", "woff")
+) {
+  font-display: swap;
+  font-style: normal;
+  font-weight: normal;
+}
+
+@include font-face(
+  "gentleman-bold",
+  "{$path-fonts}/Gentleman-500-Bold-webfont",
+  ("ttf", "woff")
+) {
+  font-display: swap;
+  font-style: normal;
+  font-weight: bold;
+}
+
+@include font-face(
+  "Aleo-Regular-webfont",
+  "{$path-fonts}/aleo-regular-webfont",
+  ("ttf", "woff")
+) {
+  font-display: swap;
+  font-style: normal;
+  font-weight: normal;
+}
+
+@include font-face(
+  "Aleo-Italic-webfont",
+  "{$path-fonts}/aleo-regular-webfont",
+  ("ttf", "woff")
+) {
+  font-display: swap;
+  font-style: italic;
+  font-weight: normal;
+}
+
+@include font-face(
+  "Aleo-Bold-webfont",
+  "{$path-fonts}/aleo-bold-webfont",
+  ("ttf", "woff")
+) {
+  font-display: swap;
+  font-style: normal;
+  font-weight: bold;
+}
+
+@include font-face(
+  "Aleo-BoldItalic-webfont",
+  "{$path-fonts}/aleo-bold-webfont",
+  ("ttf", "woff")
+) {
+  font-display: swap;
+  font-style: italic;
+  font-weight: bold;
+}
+
+@mixin font($type: body, $weight: normal, $style: normal) {
+  @if $type == body {
+    font-family: 'aleo-#{$weight}', $font-stack-georgia;
+  }
+  @if $type == display {
+    font-family: 'genlemen-#{$weight}', $font-stack-helvetica;
+  }
+  font-weight: $weight;
+  font-style: $style;
+}

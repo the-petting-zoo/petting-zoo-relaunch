@@ -11,9 +11,11 @@ const TerserPlugin = require('terser-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 const { getManifest, addAsset } = require('./utils/assets')
 
+
 const commonConfig = {
+  mode: 'development',
   entry: {
-    styles: './webpack_assets/stylesheets/test.scss',
+    styles: './webpack_assets/stylesheets/main.scss',
     main: './webpack_assets/javascripts/main.mjs'
   },
   optimization: {

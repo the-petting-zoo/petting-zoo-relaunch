@@ -1,0 +1,25 @@
+// =============================================================================
+// Global box model and scaling
+// =============================================================================
+
+@import '../config/scale';
+@import '../config/breakpoints';
+
+html {
+  box-sizing: border-box;
+  font-size: scale-base-type-size();
+
+  @each $screen, $size in $scale-base-type-percentages {
+    @if $screen != 'default' {
+      @include media('>#{$screen}') {
+        font-size: $size;
+      }
+    }
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
