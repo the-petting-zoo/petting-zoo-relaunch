@@ -10,7 +10,6 @@
     <!-- deprecated stylesheet -->
     <link rel="stylesheet" href="{{ 'static/stylesheets/app-old.css' | relative_url }}">
     <!-- new stylesheet -->
-    <script type="text/javascript" src="/static/javascripts/modernizer-deprecated.js"></script>
     <link rel="stylesheet" href="{{ site.data.webpack_manifest['styles.bundle.css'] | relative_url }}">
     {% include grunticon.html %}
     <script>
@@ -18,7 +17,9 @@
       // -> used by the CSS for styling JS-dependent elements
       document.documentElement.className = "js"
     </script>
-
+    <script type="text/javascript" src="/static/javascripts/modernizer-deprecated.js"></script>
+    <!-- Netlify Identity -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body id="{% if page.slug %}{{ page.slug | replace: " ", "-" | downcase }}{% else %}{{ page.title | replace: " ", "-" | downcase }}{% endif %}">
     <header role="banner" class="global">
@@ -40,17 +41,17 @@
 
     <!-- deprecated old javascript w/ jquery -->
     <!-- note: requires the google maps api, above -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="{{ 'static/javascripts/app-deprecated.js' | relative_url }}"></script>
     
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133663378-1"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133663378-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'UA-133663378-1');
-    </script>
+    </script> -->
   </body>
 </html>

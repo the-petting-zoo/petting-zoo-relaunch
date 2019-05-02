@@ -1,9 +1,6 @@
 # jekyll settings
 name: The Petting Zoo
 tag: "Share & Smile"
-# url: 'http://pettingzooplush.com/staging' # staging
-url: 'http://pettingzooplush.com' # live
-# url: 'http://localhost:4000' # local
 permalink: /:categories/:title/
 
 source: source
@@ -19,7 +16,7 @@ defaults:
 assets:
   img: "/static/images/"
   fonts: "/static/fonts/"
-  s3: "http://pettingzoo-website.s3.amazonaws.com"
+  s3: "https://pettingzoo-website.s3.amazonaws.com"
   carousel: "/banners/carousel/"
   promos: "/banners/promos/"
   catalog: "/products/catalogs/"
