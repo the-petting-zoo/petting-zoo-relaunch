@@ -5,7 +5,8 @@ backend:
 publish_mode: editorial_workflow
 
 # Media
-media_folder: "static/uploads"
+media_folder: "source/static/uploads"
+public_folder: "static/uploads"
 
 # Content Types
 collections:
