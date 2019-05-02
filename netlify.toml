@@ -14,7 +14,7 @@
 # Production context: all deploys from the Production branch set in your site's 
 # deploy contexts will inherit these settings.
 [context.production]
-  publish = "_site"
+  publish = "build"
   command = "jekyll build"
   environment = { SITE_URL = "https://pettingzoo.netlify.com"} # @TODO This will change when we go live
 
