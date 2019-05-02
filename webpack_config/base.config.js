@@ -31,8 +31,6 @@ const commonConfig = {
   }
 }
 
-console.log(`MODE: ${commonConfig.mode}`)
-
 // set up babel loader rules
 // -> pass in desired browser targets for specific build
 const configureBabelLoader = (browserlist) => {
