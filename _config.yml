@@ -1,9 +1,7 @@
 # jekyll settings
 name: The Petting Zoo
 tag: "Share & Smile"
-# url: 'http://pettingzooplush.com/staging' # staging
-url: 'http://pettingzooplush.com' # live
-# url: 'http://localhost:4000' # local
+url: SITE_URL
 permalink: /:categories/:title/
 
 source: source
