@@ -1,0 +1,22 @@
+# Publish Settings
+backend:
+  name: github
+  branch: netlify
+publish_mode: editorial_workflow
+
+# Media
+media_folder: "static/uploads"
+
+# Content Types
+collections:
+  - name: "news" # Used in routes, e.g., /admin/collections/blog
+    label: "News" # Used in the UI
+    folder: "_posts/news" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Published Status", name: "published", widget: "boolean", default: true}
+      - {label: "Body", name: "body", widget: "markdown"}
