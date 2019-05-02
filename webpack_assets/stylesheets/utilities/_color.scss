@@ -29,11 +29,6 @@ body,
   @include color-fg(text-tertiary, $important: true);
 }
 
-// make the text (or foreground element) the background color
-.c-fg-reverse {
-  @include color-fg(bg, $important: true);
-}
-
 .c-highlight {
   @include color-fg('highlight', $important: true);
 }

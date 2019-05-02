@@ -1,5 +1,7 @@
 // General helper functions and mixins
 
+$sides: ['top', 'right', 'bottom', 'left'];
+
 // add '!important' to the end of a property
 @function important($prop, $add: false) {
   @if $add == true {
