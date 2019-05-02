@@ -4,17 +4,18 @@
   "description": "Petting Zoo Plush's website",
   "main": "index.html",
   "config": {
-    "icons_src": "./source/assets/images/icons/_sprites",
-    "icons_dest": "./source/layouts/partials",
-    "webpack": "./webpack_config"
+    "icons_src": "./source/static/images/icons-new/**/*.svg",
+    "icons_dest": "./source/_includes/spritemap.html",
+    "webpack_modern": "./webpack_config/modern.config.js",
+    "webpack_legacy": "./webpack_config/legacy.config.js"
   },
   "scripts": {
     "start": "npm run build:modern && npm run watch & jekyll serve",
-    "watch": "webpack  -d --config $npm_package_config_webpack/modern.config.js --watch",
-    "build:modern": "webpack -p --config $npm_package_config_webpack/modern.config.js",
-    "build:legacy": "webpack -p --config $npm_package_config_webpack/legacy.config.js",
+    "watch": "webpack  -d --config $npm_package_config_webpack_modern --watch",
+    "build:modern": "webpack -p --config $npm_package_config_webpack_modern",
+    "build:legacy": "webpack -p --config $npm_package_config_webpack_legacy",
     "build": "npm run build:modern && npm run build:legacy && jekyll build",
-    "icons": "svgstore -o $npm_package_config_icons_dest --inline $npm_package_config_icons_src/**/*.svg"
+    "icons": "svgstore -o $npm_package_config_icons_dest --inline $npm_package_config_icons_src"
   },
   "repository": {
     "type": "git",
