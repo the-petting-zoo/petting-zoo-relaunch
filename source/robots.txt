@@ -2,4 +2,4 @@
 ---
 User-agent: *
 {{ site.access }}: /
-Sitemap: {{ site.url }}
+Sitemap: {{ site.url }}/sitemap.xml
