@@ -1,7 +1,15 @@
-# jekyll settings
+# Shared Jekyll settings
 name: The Petting Zoo
 tag: "Share & Smile"
 permalink: /:categories/:title/
+
+# Site Data 
+access: 'Disallow'
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+
 
 source: source
 destination: build
