@@ -1,34 +1,3 @@
 # Production Jekyll settings
-name: The Petting Zoo
-tag: "Share & Smile"
-permalink: /:categories/:title/
-
-# Site Data 
 url: 'https://pettingzooplush.com/'
 access: 'Allow'
-
-# Plugins
-plugins:
-  - jekyll-sitemap
-
-
-source: source
-destination: build
-
-defaults:
-  - scope:
-      path: "/catalog/*"
-    values:
-      layout: "catalog"
-
-# asset paths
-assets:
-  img: "/static/images/"
-  fonts: "/static/fonts/"
-  s3: "https://pettingzoo-website.s3.amazonaws.com"
-  carousel: "/banners/carousel/"
-  promos: "/banners/promos/"
-  catalog: "/products/catalogs/"
-  custom: "/products/custom/"
-  staff: "/staff/"
-  blog: "/blog/"
