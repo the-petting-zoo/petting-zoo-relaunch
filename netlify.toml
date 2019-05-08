@@ -15,10 +15,10 @@
 # deploy contexts will inherit these settings.
 [context.production]
   publish = "build"
-  command = "jekyll build"
+  command = "jekyll build JEKYLL_ENV=production --config _production_config.yml"
 
 # Deploy Preview context: all deploys resulting from a pull/merge request will 
 # inherit these settings.
 [context.dev]
   publish = "build"
-  command = "jekyll build"
+  command = "jekyll build JEKYLL_ENV=development --config _staging_config.yml"

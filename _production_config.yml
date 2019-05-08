@@ -1,10 +1,11 @@
-# Local Jekyll settings
+# Production Jekyll settings
 name: The Petting Zoo
 tag: "Share & Smile"
 permalink: /:categories/:title/
 
 # Site Data 
-access: 'Disallow'
+url: 'https://pettingzooplush.com/'
+access: 'Allow'
 
 # Plugins
 plugins:
