@@ -17,8 +17,13 @@
   publish = "build"
   command = "jekyll build JEKYLL_ENV=production --config _production_config.yml"
 
+# Deploy Branch: This is for any deployed branch (including dev)
+[context.branch-deploy]
+  publish = "build"
+  command = "jekyll build JEKYLL_ENV=development --config _staging_config.yml"
+
 # Deploy Preview context: all deploys resulting from a pull/merge request will 
 # inherit these settings.
-[context.dev]
+[context.deploy-preview]
   publish = "build"
   command = "jekyll build JEKYLL_ENV=development --config _staging_config.yml"
