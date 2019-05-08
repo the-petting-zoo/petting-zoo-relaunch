@@ -1,4 +1,4 @@
-# Local Jekyll settings
+# Shared Jekyll settings
 name: The Petting Zoo
 tag: "Share & Smile"
 permalink: /:categories/:title/
