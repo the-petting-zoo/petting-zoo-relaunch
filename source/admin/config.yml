@@ -184,6 +184,21 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
+  # Custom Products
+  # Description: 
+  #   These are examples of custom products
+  - name: "custom_products"
+    label: "Custom Products"
+    folder: "source/_posts/inventory/custom_products"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+      - {label: "Category", name: "category", widget: "hidden", default: "custom"}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
   # Site Settings
   - name: "config"
     label: "Site Settings"
