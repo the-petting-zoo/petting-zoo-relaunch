@@ -30,6 +30,7 @@ collections:
     label: "About Page"
     folder: "source/_posts/about"
     create: false
+    deelte: false
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
@@ -43,6 +44,7 @@ collections:
     label: "Home Page"
     folder: "source/_posts/home"
     create: false
+    deelte: false
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
@@ -91,7 +93,7 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
       - {label: "Category", name: "category", widget: "hidden", default: "catalog_topics"}
-      - {label: "Topic Name", name: "topic_name", widget: "string"}
+      - {label: "Topic Name", name: "title", widget: "string"}
       - {label: "Catalog Topic Cover", name: "image", widget: "image", allow_multiple: false}
 
   # Catalogs
@@ -115,8 +117,8 @@ collections:
         name: "topic"
         widget: "relation"
         collection: "catalog_topics"
-        searchFields: ["topic_name"]
-        valueField: "topic_name"
+        searchFields: ["title"]
+        valueField: "title"
 
   # Site Settings
   - name: "config"
