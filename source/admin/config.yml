@@ -92,7 +92,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
-      - {label: "Category", name: "category", widget: "hidden", default: "catalog_topics"}
+      - {label: "Category", name: "category", widget: "hidden", default: "catalog_topic"}
       - {label: "Topic Name", name: "title", widget: "string"}
       - {label: "Catalog Topic Cover", name: "image", widget: "image", allow_multiple: false}
 
@@ -119,6 +119,22 @@ collections:
         collection: "catalog_topics"
         searchFields: ["title"]
         valueField: "title"
+        multiple: true
+
+  # Product Collections
+  # Description: 
+  #   Product collections are groupings of products by a an arbitrary concept (ie mermaids)
+  #   These are used to showcase products in a variety of contexts and function akin to tags.
+  - name: "product_collections"
+    label: "Product Collections"
+    folder: "source/_posts/inventory/product_collections"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
+      - {label: "Category", name: "category", widget: "hidden", default: "product_collection"}
+      - {label: "Collection Name", name: "title", widget: "string"}
+      - {label: "Product Collection Cover", name: "image", widget: "image", allow_multiple: false}
 
   # Site Settings
   - name: "config"

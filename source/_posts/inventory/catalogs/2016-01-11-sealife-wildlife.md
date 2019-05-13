@@ -10,4 +10,3 @@ cover: sealife-cover.jpg
 topic:
   - Sealife
 ---
-
