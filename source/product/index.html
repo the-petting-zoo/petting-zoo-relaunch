@@ -15,11 +15,15 @@ layout: default
       </div>
     </div>
     <div class="padding-top">
-      <ul class="gutter-wrapper list-inline list-undecorated">
-        {% for item in (1..4) %}
-          <li class="gutter display-inline-block">
-            <img src="http://placehold.it/400?text=Product+thumbnail" alt="Thumbnail">
-            <h3 class="t-scale-gamma t-weight-bold padding-top-xnarrow">Product name lorem ipsum dolor sit</h3>
+      <h2 class="padding-bottom"><strong>Collections &amp; catalogs</strong> featuring this product</h2>
+      <ul data-ui-gallery="small">
+        {% for i in (1..4) %}
+          <li data-ui-gallery-item>
+            <div class="padding-bottom-xnarrow">
+              <img src="http://placehold.it/400x300?text=Product+thumbnail" alt="Thumbnail">
+            </div>
+            <h3 class="t-scale-gamma t-weight-bold padding-bottom-xnarrow">Product name lorem ipsum dolor sit</h3>
+            <a data-ui-button="small" href="#">See more</a>
           </li>
         {% endfor %}
       </ul>

@@ -1,0 +1,12 @@
+// Columns component
+// -> lay out children in columns
+@import '../config/spacing';
+
+// --- Base ---
+[data-ui-columns] {
+  display: block;
+
+  @supports (display: grid) {
+    
+  }
+}

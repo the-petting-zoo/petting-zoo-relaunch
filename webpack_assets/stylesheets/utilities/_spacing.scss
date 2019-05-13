@@ -3,6 +3,14 @@
 // sass-lint:disable no-important
 @import '../config/spacing';
 
+// --- global custom props ---
+
+:root {
+  @each $name, $length in $spacing {
+    --space-#{$name}: #{$length};
+  }
+}
+
 // --- Margin & padding ---
 
 @each $prop in (padding, margin) {
