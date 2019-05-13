@@ -78,6 +78,28 @@ collections:
       - {label: "Category", name: "category", widget: "hidden", default: "testimonials"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  # Catalog Topics
+  # Description: 
+  #   Catalog topcis are topics that are used to group catalogs.
+  #   These are used to fill the drop-down on the product menu.
+  - name: "inventory_management"
+    label: "Inventory Management"
+    editor:
+      preview: false
+    files:
+      - name: "catalog_topics"
+        label: "Catalog Topics"        
+        file: "source/_data/catalog_topics.yml"
+        widget: list
+        fields:          
+          - name: "name"
+            label: "Topic Name"
+            widget: "string"
+          - name: "image"
+            label: "Topic Image"
+            widget: "image"
+            allow_multiple: false
  
   # Site Settings
   - name: "config"
