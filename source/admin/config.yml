@@ -104,7 +104,7 @@ collections:
   #   A catalog is a grouping of products, with an associated PDF
   - name: "catalogs"
     label: "Catalogs"
-    folder: "source/_posts/investory/catalogs"
+    folder: "source/_posts/inventory/catalogs"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
