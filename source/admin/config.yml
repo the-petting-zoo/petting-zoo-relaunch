@@ -150,6 +150,8 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Slug", name: "slug", widget: "string"}    
       - {label: "Featured", name: "featured", widget: "boolean"}
+      - {label: "SKU", name: "sku", widget: "string"}
+      - {label: "Color", name: "color", widget: "string"}    
       - {label: "Product Image", name: "image", widget: "image", allow_multiple: false}
       - label: "Catalog"
         name: "catalog"
@@ -165,6 +167,7 @@ collections:
         searchFields: ["title"]
         valueField: "title"
         multiple: true
+      - {label: "Product Description", name: "body", widget: "markdown"}
 
   # Site Settings
   - name: "config"
