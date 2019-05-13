@@ -83,22 +83,17 @@ collections:
   # Description: 
   #   Catalog topcis are topics that are used to group catalogs.
   #   These are used to fill the drop-down on the product menu.
-  - name: "inventory_management"
-    label: "Inventory Management"
-    editor:
-      preview: false
-    files:
-      - name: "catalog_topics"
-        label: "Catalog Topics"        
-        file: "source/_data/catalog_topics.yml"
-        fields:
-          - name: "catalog_topics"
-            label: "Catalog topics"
-            widget: "list"
-            fields:
-              - {name: "name", label: "Topic Name", widget: "string"}
-              - {name: "image", label: "Topic Image", widget: "image", allow_multiple: false}
-  
+  - name: "catalog_topics"
+    label: "Catalog Topics"
+    folder: "source/_posts/inventory/catalog_topics"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
+      - {label: "Category", name: "category", widget: "hidden", default: "catalog_topics"}
+      - {label: "Topic Name", name: "topic_name", widget: "string"}
+      - {label: "Catalog Topic Cover", name: "image", widget: "image", allow_multiple: false}
+
   # Catalogs
   # Description: 
   #   A catalog is a grouping of products, with an associated PDF
@@ -120,8 +115,8 @@ collections:
         name: "topic"
         widget: "relation"
         collection: "catalog_topics"
-        searchFields: ["name"]
-        valueField: "name"
+        searchFields: ["topic_name"]
+        valueField: "topic_name"
 
   # Site Settings
   - name: "config"
