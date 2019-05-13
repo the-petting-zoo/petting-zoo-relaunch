@@ -10,6 +10,8 @@ public_folder: "static/uploads"
 
 # Content Types
 collections:
+
+  # News pages
   - name: "news" # Used in routes, e.g., /admin/collections/blog
     label: "News" # Used in the UI
     folder: "source/_posts/news" # The path to the folder where the documents are stored
@@ -22,3 +24,42 @@ collections:
       - {label: "Publish Date", name: "date", widget: "date", format: "MMM Do YY"}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}
       - {label: "Body", name: "body", widget: "markdown"}
+  
+  # Site Settings
+  - name: "config"
+    label: "Site Settings"
+    editor:
+      preview: false
+    files:
+      - label: "Contact Information"
+        name: "contact"
+        file: "source/_data/contact.yml"
+        fields:          
+          - name: "address"
+            label: "Address"
+            widget: "object"
+            fields: 
+              - {label: "Street", name: "street", widget: "string"}
+              - {label: "City", name: "city", widget: "string"}
+              - {label: "State", name: "state", widget: "string"}
+              - {label: "Zip", name: "zip", widget: "string"}
+          - name: "phone"
+            label: "Phone"
+            widget: "object"
+            fields: 
+              - {label: "Office", name: "office", widget: "string"}
+              - {label: "Fax", name: "fax", widget: "string"}
+          - name: "email"
+            label: "Email"
+            widget: "object"
+            fields: 
+              - {label: "Sales", name: "sales", widget: "string"}
+          - name: "social"
+            label: "Social Media Platform"
+            widget: "list"
+            fields: 
+              - {label: "Platform name", name: "platform", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+              - {label: "Icon", name: "icon", widget: "string"}
+          
+            
