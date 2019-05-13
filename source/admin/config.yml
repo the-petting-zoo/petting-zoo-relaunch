@@ -136,6 +136,36 @@ collections:
       - {label: "Collection Name", name: "title", widget: "string"}
       - {label: "Product Collection Cover", name: "image", widget: "image", allow_multiple: false}
 
+  # Products
+  # Description: 
+  #   A Product is a single product unit, it is in catalogs and collections.
+  - name: "product"
+    label: "Products"
+    folder: "source/_posts/inventory/products"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "product"}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}    
+      - {label: "Featured", name: "featured", widget: "boolean"}
+      - {label: "Product Image", name: "image", widget: "image", allow_multiple: false}
+      - label: "Catalog"
+        name: "catalog"
+        widget: "relation"
+        collection: "catalogs"
+        searchFields: ["title"]
+        valueField: "title"
+        multiple: true
+      - label: "Product Collection"
+        name: "product_collections"
+        widget: "relation"
+        collection: "product_collections"
+        searchFields: ["title"]
+        valueField: "title"
+        multiple: true
+
   # Site Settings
   - name: "config"
     label: "Site Settings"
