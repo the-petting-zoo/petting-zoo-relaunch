@@ -9,7 +9,13 @@
 
 ul,
 ol {
-  padding-left: 2em; // bump to the right a little @ mobile sizes so the numbers/bullets don't run off
+  padding-left: 1em; // bump to the right a little @ mobile sizes so the numbers/bullets don't run off
+}
+
+ul,
+ol,
+dl {
+  margin-top: 0;
 }
 
 li {

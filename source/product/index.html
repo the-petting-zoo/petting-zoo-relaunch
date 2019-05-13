@@ -3,8 +3,26 @@ title: Product FPO
 layout: default
 ---
 
-<article data-ui-panel>
+<article data-ui-panel class="margin-top-header no-padding-top">
   <div data-ui-wrapper>
-    hello
+    <h1 class="padding-bottom">Product name lorem ipsum</h1>
+    <div class="gutter-wrapper">
+      <div class="gutter">
+        <img src="http://placehold.it/600?text=Product+Image" alt="Product image FPO">
+      </div>
+      <div class="gutter">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero illo a debitis dolorem est veritatis, quaerat aliquam odit accusantium sequi nostrum saepe tempore quam temporibus repellat provident dignissimos, ad obcaecati.</p>
+      </div>
+    </div>
+    <div class="padding-top">
+      <ul class="gutter-wrapper list-inline list-undecorated">
+        {% for item in (1..4) %}
+          <li class="gutter display-inline-block">
+            <img src="http://placehold.it/400?text=Product+thumbnail" alt="Thumbnail">
+            <h3 class="t-scale-gamma t-weight-bold padding-top-xnarrow">Product name lorem ipsum dolor sit</h3>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 </article>

@@ -81,8 +81,8 @@ $type-leading: (
  */
 
 @include font-face(
-  "gentleman-normal",
-  "{$path-fonts}/Gentleman-500-Book-webfont",
+  "gentleman-normal-normal",
+  "#{$asset-path-fonts}/Gentleman-500-Book-webfont",
   ("ttf", "woff")
 ) {
   font-display: swap;
@@ -91,8 +91,8 @@ $type-leading: (
 }
 
 @include font-face(
-  "gentleman-bold",
-  "{$path-fonts}/Gentleman-500-Bold-webfont",
+  "gentleman-normal-bold",
+  "#{$asset-path-fonts}/Gentleman-800-Bold-webfont",
   ("ttf", "woff")
 ) {
   font-display: swap;
@@ -101,8 +101,8 @@ $type-leading: (
 }
 
 @include font-face(
-  "Aleo-Regular-webfont",
-  "{$path-fonts}/aleo-regular-webfont",
+  "aleo-normal-normal",
+  "#{$asset-path-fonts}/aleo-regular-webfont",
   ("ttf", "woff")
 ) {
   font-display: swap;
@@ -111,8 +111,8 @@ $type-leading: (
 }
 
 @include font-face(
-  "Aleo-Italic-webfont",
-  "{$path-fonts}/aleo-regular-webfont",
+  "aleo-italic-normal",
+  "#{$asset-path-fonts}/Aleo-Italic-webfont",
   ("ttf", "woff")
 ) {
   font-display: swap;
@@ -121,8 +121,8 @@ $type-leading: (
 }
 
 @include font-face(
-  "Aleo-Bold-webfont",
-  "{$path-fonts}/aleo-bold-webfont",
+  "aleo-normal-bold",
+  "#{$asset-path-fonts}/aleo-bold-webfont",
   ("ttf", "woff")
 ) {
   font-display: swap;
@@ -131,8 +131,8 @@ $type-leading: (
 }
 
 @include font-face(
-  "Aleo-BoldItalic-webfont",
-  "{$path-fonts}/aleo-bold-webfont",
+  "aleo-italic-bold",
+  "#{$asset-path-fonts}/Aleo-BoldItalic-webfont",
   ("ttf", "woff")
 ) {
   font-display: swap;
@@ -142,10 +142,10 @@ $type-leading: (
 
 @mixin font($type: body, $weight: normal, $style: normal) {
   @if $type == body {
-    font-family: 'aleo-#{$weight}', $font-stack-georgia;
+    font-family: 'aleo-#{$style}-#{$weight}', $font-stack-georgia;
   }
   @if $type == display {
-    font-family: 'genlemen-#{$weight}', $font-stack-helvetica;
+    font-family: 'gentleman-#{$style}-#{$weight}', $font-stack-helvetica;
   }
   font-weight: $weight;
   font-style: $style;

@@ -6,7 +6,7 @@
 [data-ui-panel] {
   @include space-outside();
   display: block;
-  position: relative;
+  padding-bottom: space('wide');
   padding-top: space('wide');
-  padding-left: space('wide');
+  position: relative;
 }

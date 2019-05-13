@@ -42,7 +42,6 @@ h6,
 h1,
 .t-scale-alpha {
   @include type-fluid($size-min: 'gamma', $size-max: 'alpha');
-  font-weight: font-weight(xlight);
   letter-spacing: -0.03em;
 
   @media print {
@@ -53,7 +52,6 @@ h1,
 h2,
 .t-scale-beta {
   @include type-fluid($size-min: 'gamma', $size-max: 'beta');
-  font-weight: font-weight(xlight);
   letter-spacing: -0.02em;
 
   @media print {
