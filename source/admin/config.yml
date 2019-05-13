@@ -50,6 +50,21 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  # Staff
+  - name: "staff"
+    label: "Staff"
+    folder: "source/_posts/staff"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+      - {label: "Category", name: "category", widget: "hidden", default: "staff"}
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Job Title", name: "job_title", widget: "string"}
+      - {label: "Email", name: "email", widget: "string"}
+      - {label: "Portrait", name: "portrait", allow_multiple: false, widget: "image"}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}      
   
   
   # Site Settings
