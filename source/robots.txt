@@ -1,0 +1,5 @@
+---
+---
+User-agent: *
+{{ site.access }}: /
+Sitemap: {{ site.url }}/sitemap.xml

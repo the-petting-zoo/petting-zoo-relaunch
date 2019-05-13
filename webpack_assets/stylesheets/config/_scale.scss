@@ -1,0 +1,45 @@
+//  Type & layout scale config
+@import 'libs';
+
+// -> 1:1.25 'major third' scale
+// -> https://www.modularscale.com/?1&rem&1.25
+$scale-base-type: 1rem;
+$scale-global: 1.25;
+
+$scale-base-type-percentages: (
+  'default': 95%,
+  'small': 100%,
+  'medium': 105%,
+  'large': 110%
+);
+
+@function scale-base-type-size($screen: 'default') {
+  @return map-get($scale-base-type-percentages, $screen);
+}
+
+// --- type scale & sizing ---
+
+// global type scale
+// -> we could compute this via the modular scale mixins,
+// -> but doing it by hand allows us to tweak certain sizes to suit the fonts we're using
+$scale-type: (
+  'alpha': 2.44rem,
+  'beta': 1.95rem,
+  'gamma': 1.56rem,
+  'delta': 1.25rem,
+  'epsilon': 1rem,
+  'zeta': 0.8rem,
+  'eta': 0.64rem
+) !default;
+
+@function scale-type($size) {
+  @return map-get($scale-type, $size);
+}
+
+// --- modular scale config ---
+// -> for layout and spacing
+
+$modularscale: (
+  base: $scale-base-type,
+  ratio: $scale-global
+);

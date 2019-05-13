@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ site.name }}{% unless page.title == "home" %} | {{ page.title }}{% endunless %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- deprecated stylesheet -->
+    <link rel="stylesheet" href="{{ 'static/stylesheets/app-old.css' | relative_url }}">
+    <!-- new stylesheet -->
+    <link rel="stylesheet" href="{{ site.data.webpack_manifest['styles.bundle.css'] | relative_url }}">
+    {% include grunticon.html %}
+    <script>
+      // Add a class to the html element to confirm JS is available
+      // -> used by the CSS for styling JS-dependent elements
+      document.documentElement.className = "js"
+    </script>
+    <script type="text/javascript" src="/static/javascripts/modernizer-deprecated.js"></script>
+    <!-- Netlify Identity -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body id="{% if page.slug %}{{ page.slug | replace: " ", "-" | downcase }}{% else %}{{ page.title | replace: " ", "-" | downcase }}{% endif %}">
+    <header role="banner" class="global">
+      {% include nav-global.html %}
+    </header>
+
+    {{ content }}
+
+    {% include main-footer.html %}
+    
+    <!-- javascript bundles -->
+    <script type="module" src="{{ site.data.webpack_manifest['main.bundle.mjs'] | relative_url }}"></script>
+    {% if jekyll.environment == "production" %}
+      <script nomodule type="text/javascript" src="{{ site.data.webpack_manifest['main.es5.bundle.mjs'] | relative_url }}"></script>
+    {% endif %}
+    
+    <!-- google maps api -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=&amp;sensor=false"></script>
+
+    <!-- deprecated old javascript w/ jquery -->
+    <!-- note: requires the google maps api, above -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="{{ 'static/javascripts/app-deprecated.js' | relative_url }}"></script>
+    
+    {% if jekyll.environment == "production" %}
+      <!-- Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133663378-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-133663378-1');
+      </script>
+    {% endif %}
+  </body>
+</html>

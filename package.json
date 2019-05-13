@@ -1,0 +1,58 @@
+{
+  "name": "petting-zoo-plush",
+  "version": "2.0.0",
+  "description": "Petting Zoo Plush's website",
+  "main": "index.html",
+  "config": {
+    "icons_src": "./source/static/images/icons-new/**/*.svg",
+    "icons_dest": "./source/_includes/spritemap.html",
+    "webpack_modern": "./webpack_config/modern.config.js",
+    "webpack_legacy": "./webpack_config/legacy.config.js"
+  },
+  "scripts": {
+    "start": "npm run build:modern && npm run watch & jekyll serve",
+    "watch": "webpack  -d --config $npm_package_config_webpack_modern --watch",
+    "build:modern": "webpack -p --config $npm_package_config_webpack_modern",
+    "build:legacy": "webpack -p --config $npm_package_config_webpack_legacy",
+    "build": "npm run build:modern && npm run build:legacy && jekyll build",
+    "icons": "svgstore -o $npm_package_config_icons_dest --inline $npm_package_config_icons_src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-petting-zoo/petting-zoo-relaunch.git"
+  },
+  "author": "Bivee, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/the-petting-zoo/petting-zoo-relaunch/issues"
+  },
+  "homepage": "https://github.com/the-petting-zoo/petting-zoo-relaunch#readme",
+  "dependencies": {
+    "bourbon": "^5.1.0",
+    "include-media": "^1.4.9",
+    "modularscale-sass": "^3.0.8",
+    "normalize-css": "^2.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^2.0.1",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "fibers": "^4.0.0",
+    "fs-extra": "^7.0.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "sass": "^1.19.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "svgo": "^1.2.2",
+    "svgstore-cli": "^1.3.1",
+    "terser-webpack-plugin": "^1.2.3",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1",
+    "webpack-manifest-plugin": "^2.0.4"
+  }
+}

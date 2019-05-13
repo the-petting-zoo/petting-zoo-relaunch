@@ -1,0 +1,80 @@
+// Global breakpoint config & helpers
+// -> uses include-media library (http://include-media.com)
+@import 'libs';
+
+// Global breakpoints map
+// -> also used by include-media library
+$breakpoints: (
+  'xsmall': 30em, // 480
+  'small': 48em, // 768
+  'medium': 64em, // 2014
+  'large': 80em, // 1280
+  'huge': 100em // 1600
+);
+
+// getter/helper function to pull breakpoints from the map
+@function screen($size) {
+  @return map-get($breakpoints, $size);
+}
+
+// Breakpointify mixin by Hugo Giraudel, lightly modified
+// -> https://twitter.com/HugoGiraudel/status/696707047946108929
+// -> Helper mixin to create suffixed modifiers of a class
+// -> to make it apply only at certain breakpoints.
+// -> @param {String} $class - Class to 'breakpointify'
+// -> USE JUDICIOUSLY, CAN CAUSE VERY MUCH HORRIBLE BLOATING
+@mixin breakpointify($class, $default: false, $sizes: all, $direction: '>') {
+  @if $default == true {
+    #{$class} { @content; }
+  }
+
+  @if $sizes == 'all' {
+    @each $name, $size in $breakpoints {
+      @include media('#{$direction}#{$name}') {
+        #{$class}\@#{$name} {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @each $name in $sizes {
+      @include media('#{$direction}#{$name}') {
+        #{$class}\@#{$name} {
+          @content;
+        }
+      }
+    }
+  }
+}
+
+@function _attr-selector($attr, $value: false, $screen: false) {
+  @if $value {
+    @return '[#{$attr}~="#{$value}#{if($screen, '\@#{$screen}', '')}"]';
+  } @else {
+    @return '[#{$attr}~="#{if($screen, '\@#{$screen}', '')}"]';
+  }
+}
+
+@mixin breakpointify-attr($attr, $value: false, $default: false, $sizes: all, $direction: '>') {
+  @if $default == true {
+    #{_attr-selector($attr, $value)} { @content; }
+  }
+
+  @if $sizes == 'all' {
+    @each $name, $size in $breakpoints {
+      @include media('#{$direction}#{$name}') {
+        #{_attr-selector($attr, $value, $name)} {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @each $name in $sizes {
+      @include media('#{$direction}#{$name}') {
+        #{_attr-selector($attr, $value, $name)} {
+          @content;
+        }
+      }
+    }
+  }
+}

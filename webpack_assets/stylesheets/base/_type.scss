@@ -1,0 +1,332 @@
+// =============================================================================
+//  Global type styles
+// =============================================================================
+// sass-lint:disable no-important
+// -> need important in utils that should always be true
+
+@import '../config/libs';
+@import '../config/scale';
+@import '../config/type';
+@import '../config/color';
+@import '../config/animation';
+@import '../config/spacing';
+@import '../config/borders';
+@import '../config/breakpoints';
+
+// Base styles & defaults
+// -----------------------------------------------------------------------------
+
+// --- headings ----------------------------------------------------------------
+
+// shared heading styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.t-heading {
+  @include color-fg('text-primary');
+  @include font('display');
+  display: block;
+  letter-spacing: 0;
+  line-height: type-leading('tight');
+  margin: 0;
+  position: relative;
+
+  strong {
+    @include font('bold');
+  }
+}
+
+h1,
+.t-scale-alpha {
+  @include type-fluid($size-min: 'gamma', $size-max: 'alpha');
+  font-weight: font-weight(xlight);
+  letter-spacing: -0.03em;
+
+  @media print {
+    page-break-after: avoid;
+  }
+}
+
+h2,
+.t-scale-beta {
+  @include type-fluid($size-min: 'gamma', $size-max: 'beta');
+  font-weight: font-weight(xlight);
+  letter-spacing: -0.02em;
+
+  @media print {
+    orphans: 3;
+    page-break-after: avoid;
+    widows: 3;
+  }
+}
+
+h3,
+.t-scale-gamma {
+  @include type-fluid($size-min: 'delta', $size-max: 'gamma');
+  letter-spacing: -0.01em;
+
+  @media print {
+    orphans: 3;
+    page-break-after: avoid;
+    widows: 3;
+  }
+}
+
+h4,
+.t-scale-delta {
+  @include type-fluid($size-min: 'epsilon', $size-max: 'delta');
+  letter-spacing: -0.005em;
+}
+
+h5,
+.t-scale-epsilon {
+  font-size: scale-type('epsilon');
+}
+
+h6,
+.t-scale-zeta {
+  font-size: scale-type('zeta');
+}
+
+.t-scale-eta {
+  font-size: scale-type('eta');
+}
+
+// --- body/inline text --------------------------------------------------------
+
+body {
+  @include font;
+  font-style: normal;
+  line-height: type-leading();
+}
+
+p {
+  @include color-fg('text-primary');
+  font-size: scale-type('epsilon');
+
+  margin: 0;
+
+  & + & {
+    margin-top: 1em;
+  }
+
+  @media print {
+    orphans: 3;
+    widows: 3;
+  }
+}
+
+a {
+  @include transition;
+  // border-bottom-style: border-style('secondary');
+  // border-bottom-width: border-width('thin');
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
+  color: inherit;
+  text-decoration: none;
+  // text-decoration-skip: objects edges box-decoration;
+
+  // 'active' state
+  &.is-active,
+  .is-active & {
+    @include color-fg('highlight');
+  }
+
+  &:hover,
+  &:active {
+    @include color-fg('highlight');
+  }
+}
+
+// see t-weight-* and t-style-* classes below for equivalent utilies
+strong {
+  @extend %t-weight-bold;
+
+  em {
+    @include font($weight: bold);
+  }
+}
+
+em {
+  @extend %t-style-italic;
+
+  strong {
+    @include font($weight: bold);
+  }
+}
+
+small,
+.t-small {
+  @include color-fg('text-tertiary');
+  font-size: scale-type('zeta');
+}
+
+figcaption,
+.t-caption {
+  @include color-fg('text-secondary');
+  font-size: scale-type('eta');
+}
+
+address,
+.t-address {
+  @include color-fg('text-secondary');
+  font-size: scale-type('eta');
+}
+
+blockquote,
+.t-blockquote {
+  @include border('left', $w: 'medium', $color: 'highlight');
+  padding-left: space('narrow');
+
+  @media print {
+    page-break-inside: avoid;
+  }
+}
+
+// this is a default for this element
+// -> to style with classes use t-scale-*, t-italic, etc.
+cite {
+  @include font($style: 'italic');
+  font-size: 0.6em;
+  line-height: type-leading('tight');
+}
+
+// Rendered content (markdown)
+// -> a container with running text content
+// -> use old school selectors to target generated elements with sane defaults
+// -> create automatic margins between all child elements, assume that everything stacks vertically
+// -----------------------------------------------------------------------------
+
+.t-content {
+  // add a line of whitespace between everything
+  > * + * {
+    margin-top: 1em;
+  }
+
+  // add more space before some elements
+  > * + blockquote,
+  > * + ul,
+  > * + ol {
+    margin-top: #{ms(2)}em;
+  }
+
+  // add more space after some elements
+  > blockquote + *,
+  > ul + *,
+  > ol + * {
+    margin-top: #{ms(2)}em;
+  }
+
+  // force some default type styles on blockquotes, since we can't add utilities
+  blockquote {
+    @include color-fg('text-secondary');
+    margin-left: 0;
+    margin-right: 0;
+
+    > ol,
+    > ul {
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-left: 1.3em;
+    }
+  }
+
+  p {
+    color: inherit;
+  }
+}
+
+// Utilities
+// -----------------------------------------------------------------------------
+
+.t-font-display {
+  @include font('display');
+}
+
+.t-font-body {
+  @include font('body');
+}
+
+.t-weight-normal {
+  @include font;
+
+  .t-heading &,
+  &.t-heading,
+  .t-font-display &,
+  &.t-font-display {
+    @include font('display');
+  }
+}
+
+// extended by strong base style above
+%t-weight-bold,
+.t-weight-bold {
+  @include font('bold');
+
+  .t-heading &,
+  &.t-heading,
+  .t-font-display &,
+  &.t-font-display {
+    @include font('display', 'bold');
+  }
+}
+
+// extended by em base style above
+%t-style-italic,
+.t-style-italic {
+  // italic style is only available for the body font
+  @include font($style: 'italic');
+
+  .t-weight-bold &,
+  &.t-weight-bold {
+    @include font($weight: 'bold', $style: 'italic')
+  }
+}
+
+.t-case-upper {
+  text-transform: uppercase !important;
+}
+
+.t-case-lower {
+  text-transform: lowercase !important;
+}
+
+.t-case-none {
+  text-transform: none !important;
+}
+
+.t-decoration-none {
+  border-bottom: 0 !important;
+}
+
+.t-decoration-hover {
+  border-bottom-width: 0;
+
+  &:hover,
+  &:active {
+    border-bottom-width: 1px;
+  }
+}
+
+// position text
+@include breakpointify('.t-align-center', true) {
+  text-align: center !important;
+}
+
+@include breakpointify('.t-align-left', true) {
+  text-align: left !important;
+}
+
+@include breakpointify('.t-align-right', true) {
+  text-align: right !important;
+}
+
+// leading utilities to set line height from global config
+@each $name, $height in $type-leading {
+  .t-leading-#{unquote($name)} {
+    line-height: type-leading($name) !important;
+  }
+}

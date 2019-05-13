@@ -1,0 +1,51 @@
+---
+layout: default
+title: home
+---
+
+<section class="strip full_bleed-bottom reverse">
+  <div class="wrapper wide">
+
+  <!-- hero carousel/feature banners -->
+  <div class="hero carousel flexslider">
+    {% for post in site.categories.carousel %}
+    {{ post.content }}
+    {% endfor %}
+    <a href="#" class="prev icon-arrow-left--yellow">&lsaquo; Previous</a>
+    <a href="#" class="next icon-arrow-right--yellow">Next &rsaquo;</a>
+  </div>
+
+  <!-- catalogs -->
+  <section class="strip-int reverse" id="js-catalogs">
+    <h3 class="callout">Our Latest Catalogs</h3>
+    <div class="wrapper">
+      <ul class="grid small center">
+        {% include catalogs.html limit="5" text="false" %}
+        <li class="tile vertical more"><a href="/products/" class="tile more island">See more catalogs</a></li>
+      </ul>
+    </div>
+  </section>
+</div>
+</section>
+
+<!-- intro copy -->
+<section class="strip blurb pointer-reverse well center">
+  <div class="wrapper narrow">
+    {% for post in site.categories.home %}
+      {{ post.content }}
+    {% endfor %}
+
+    <a href="/about/" class="button primary large">Learn more about The&nbsp;Petting&nbsp;Zoo &rsaquo;</a>
+  </div>
+</section>
+
+<!-- promo banners -->
+{% if site.categories.promos.size > 0 %}
+<section class="promos strip pointer-well">
+  <div class="wrapper">
+    {% for post in site.categories.promos %}
+      {{ post.content }}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
