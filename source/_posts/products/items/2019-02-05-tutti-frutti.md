@@ -1,6 +1,6 @@
 ---
 category: products
-layout: product
+layout: default
 published: true
 title: tutti frutti
 catalog: Tutti Frutti
