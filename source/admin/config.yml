@@ -66,7 +66,19 @@ collections:
       - {label: "Portrait", name: "portrait", allow_multiple: false, widget: "image"}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}      
   
-  
+  # Testimonials
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "source/_posts/testimonials"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
+      - {label: "Category", name: "category", widget: "hidden", default: "testimonials"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+ 
   # Site Settings
   - name: "config"
     label: "Site Settings"
