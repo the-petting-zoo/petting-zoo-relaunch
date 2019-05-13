@@ -1,7 +1,7 @@
 # Publish Settings
 backend:
   name: git-gateway
-  branch: dev
+  branch: 'add/more-cms' # CHANGE BACK TO DEV ON MERGE
 publish_mode: editorial_workflow
 
 # Media
@@ -91,16 +91,38 @@ collections:
       - name: "catalog_topics"
         label: "Catalog Topics"        
         file: "source/_data/catalog_topics.yml"
-        widget: list
-        fields:          
-          - name: "name"
-            label: "Topic Name"
-            widget: "string"
-          - name: "image"
-            label: "Topic Image"
-            widget: "image"
-            allow_multiple: false
- 
+        fields:
+          - name: "catalog_topics"
+            label: "Catalog topics"
+            widget: "list"
+            fields:
+              - {name: "name", label: "Topic Name", widget: "string"}
+              - {name: "image", label: "Topic Image", widget: "image", allow_multiple: false}
+  
+  # Catalogs
+  # Description: 
+  #   A catalog is a grouping of products, with an associated PDF
+  - name: "catalogs"
+    label: "Catalogs"
+    folder: "source/_posts/investory/catalogs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "catalog"}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
+      - {label: "Show Products", name: "show_products", widget: "hidden", default: true}
+      - {label: "Category", name: "category", widget: "hidden", default: "catalog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Catalog PDF", name: "pdf", widget: "file", allow_multiple: false}
+      - {label: "Catalog Cover", name: "cover", widget: "image", allow_multiple: false}
+      - label: "Catalog Topic"
+        name: "topic"
+        widget: "relation"
+        collection: "catalog_topics"
+        searchFields: ["name"]
+        valueField: "name"
+
   # Site Settings
   - name: "config"
     label: "Site Settings"
