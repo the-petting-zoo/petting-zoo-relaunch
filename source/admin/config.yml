@@ -169,6 +169,21 @@ collections:
         multiple: true
       - {label: "Product Description", name: "body", widget: "markdown"}
 
+  # Text Blurbs
+  # Description: 
+  #   These are pieces of content that are showcased across the site.
+  - name: "text_blurbs"
+    label: "Text Blurbs (intros to various sections of the site)"
+    folder: "source/_posts/text"
+    create: false
+    delete: false
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
   # Site Settings
   - name: "config"
     label: "Site Settings"
