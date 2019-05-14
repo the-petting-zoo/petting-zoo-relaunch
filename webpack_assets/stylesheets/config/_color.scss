@@ -2,6 +2,8 @@
 @import 'libs';
 @import 'helpers';
 
+$shade-value: 10;
+
 // --- Base Palette ---
 // -> PRIVATE, do not use outside this settings file
 $white: #fff;
@@ -116,13 +118,32 @@ $themes: (
   @return $value;
 }
 
+// create the string for color custom properties used in color() and theme() mixins below
+// --color-text-primary[-light]
+// -> PUBLIC
+@function color-property($color, $shade: 'none') {
+  @return --color-#{$color}#{if($shade != 'none', -#{$shade}, '')}
+}
+
 // create default and custom property versions of a color
 // -> PUBLIC
 // -> USAGE
-//    - @include color(background-color, highlight);
-@mixin color($prop, $color, $theme: 'default', $important: false) {
-  #{$prop}: important(color($color, $theme), $important);
-  #{$prop}: important(var(--color-#{$color}, color($color, $theme)), $important);
+//    - @include color(background-color, highlight, dark);
+@mixin color(
+  $prop, 
+  $color, 
+  $shade: 'none', 
+  $theme: 'default', 
+  $important: false) {
+  
+  $shades: (
+    'light': $shade-value,
+    'dark': ($shade-value * -1),
+    'none': 0
+  );
+
+  #{$prop}: important(color($color, $theme, $grade: map-get($shades, $shade)), $important);
+  #{$prop}: important(var(color-property($color, $shade)), $important);
 }
 
 // decorator to set color ('foreground') property
@@ -140,26 +161,28 @@ $themes: (
 // -> USAGE
 //    - body { @include theme('default'); }
 @mixin theme($theme, $include-props: false) {
-  
+
   // create a list of custom properties for each color role in a theme
   // -> e.g. --color-text-primary
   $theme-colors: map-get($themes, $theme);
-  
+
   @each $name, $color in $theme-colors {
-    --color-#{$name}: #{$color};
+    #{color-property($name, 'light')}: #{tint($color, $shade-value)};
+    #{color-property($name)}: #{$color};
+    #{color-property($name, 'dark')}: #{shade($color, $shade-value)};
   }
-  
+
   // include some background, border, etc. props in the selector?
   // -> use this only for setting defaults. Modifier classes can just redefine the custom properties (e.g. --color-text-primary).
   @if $include-props {
-    @include color('background-color', 'bg');
-    @include color('border-color', 'border');
-    @include color('color', 'text-secondary');
+    @include color('border-color', 'border', $theme: $theme);
+    @include color-bg('bg', $theme: $theme);
+    @include color-fg('text-secondary', $theme: $theme);
 
     // highlight color when you select something
     &::selection {
-      @include color('background-color', 'highlight');
-      @include color('color', 'bg');
+      @include color-bg('highlight', $theme: $theme);
+      @include color-fg('bg', $theme: $theme);
       text-shadow: none;
     }
   }

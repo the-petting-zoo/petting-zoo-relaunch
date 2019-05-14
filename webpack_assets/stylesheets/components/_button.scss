@@ -1,0 +1,43 @@
+// Button component
+// -> clickable <button> and <a> elements that trigger links or actions
+@import '../config/color';
+@import '../config/scale';
+@import '../config/type';
+
+// --- Base ---
+[data-ui-button] {
+  $font-size: scale-type('epsilon');
+  $padding: 0.8em 1.25em;
+  $bg-color: 'accent';
+
+  --font-size: #{$font-size};
+  --padding: #{$padding};
+  --color: var(#{color-property($bg-color)});
+
+  @include color-fg('bg');
+  @include font(display);
+  display: inline-block;
+  font-size: $font-size; // fallback/default for old browsers
+  font-size: var(--font-size);
+  padding: $padding; // fallback/default for old browsers
+  padding: var(--padding);
+  position: relative;
+  background-color: color($bg-color);
+  background-color: var(--color);
+}
+
+// --- Traits ---
+
+// prominence/size
+[data-ui-button~="small"] {
+  --font-size: #{scale-type('zeta')};
+}
+
+[data-ui-button~="large"] {
+  --font-size: #{scale-type('delta')};
+}
+
+// role
+[data-ui-button~="primary"] {
+  --color: var(#{color-property('highlight')});
+}
