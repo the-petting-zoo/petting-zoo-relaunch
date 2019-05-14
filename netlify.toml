@@ -15,7 +15,7 @@
 # deploy contexts will inherit these settings.
 [context.production]
   publish = "build"
-  command = "jekyll build JEKYLL_ENV=production --config '_config.yml,_production_config.yml"
+  command = "jekyll build JEKYLL_ENV=production --config '_config.yml,_production_config.yml'"
 
 # Deploy Branch: This is for any deployed branch (including dev)
 [context.branch-deploy]
