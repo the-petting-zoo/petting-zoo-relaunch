@@ -14,16 +14,16 @@ layout: default
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero illo a debitis dolorem est veritatis, quaerat aliquam odit accusantium sequi nostrum saepe tempore quam temporibus repellat provident dignissimos, ad obcaecati.</p>
       </div>
     </div>
-    <div class="padding-top">
-      <h2 class="padding-bottom"><strong>Collections &amp; catalogs</strong> featuring this product</h2>
+    <div class="padding-top-wide">
+      <h2 class="padding-bottom">Collections &amp; catalogs featuring this product</h2>
       <ul data-ui-gallery="small">
         {% for i in (1..4) %}
           <li data-ui-gallery-item>
-            <div class="padding-bottom-xnarrow">
-              <img src="http://placehold.it/400x300?text=Product+thumbnail" alt="Thumbnail">
-            </div>
-            <h3 class="t-scale-gamma t-weight-bold padding-bottom-xnarrow">Product name lorem ipsum dolor sit</h3>
-            {% include button.html label='See more' url='#' prominence='small' %}
+            {% include collection_listing.html 
+              title='Product name lorem ipsum dolor sit'
+              image='http://placehold.it/400x300?text=Product+thumbnail'
+              url='#'
+              %}
           </li>
         {% endfor %}
       </ul>
