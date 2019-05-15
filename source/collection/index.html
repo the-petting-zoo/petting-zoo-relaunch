@@ -1,0 +1,48 @@
+---
+layout: default
+title: Collection FPO
+---
+
+{% comment %}
+  Static/FPO styled product collection page
+  -> convert to layout and populate with data
+{% endcomment %}
+
+<section>
+  <header data-ui-billboard>
+    <h1 data-ui-billboard-title class="padding-x-outside margin-top-header">Collection name lorem ipsum</h1>
+    <img data-ui-billboard-image src="https://placehold.it/1600x800?text=Banner">
+  </header>
+  <section data-ui-panel class="padding-top">
+    <h2 class="t-scale-zeta t-case-upper t-align-center c-highlight">Products</h2>
+    <div data-ui-wrapper="wide" class="padding-top">
+      <ul data-ui-gallery="small">
+        {%- for i in (1..20) -%}
+          <li data-ui-gallery-item>
+            {%- include card.html 
+              title='Product name lorem ipsum dolor sit'
+              image='http://placehold.it/400x300?text=Product+thumbnail'
+              url='#'
+            -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </section>
+</section>
+<nav data-ui-panel class="border-top c-well">
+  <h2 class="t-align-center">More collections</h2>
+  <div data-ui-wrapper="wide" class="padding-top">
+    <ul data-ui-gallery>
+      {%- for i in (1..6) -%}
+        <li data-ui-gallery-item>
+          {%- include card.html 
+            title='Collection name lorem ipsum dolor sit'
+            image='http://placehold.it/400x300?text=Collection+thumbnail'
+            url='#'
+          -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</nav>

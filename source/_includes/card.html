@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
   Collection/catalog listing
   -> simple card to display a thumbnail, title, and button for a collection of products
 
@@ -6,14 +6,16 @@
   image - STRING: collection cover image
   title - STRING: collection title
   url - STRING: link to collection page
-{% endcomment %}
+  button_label - STRING (optional): the button label
+{%- endcomment -%}
+{%- assign button_label = include.button_label | default: 'See more &rsaquo;' -%}
 
 <div class="padding-bottom-xnarrow">
   <img src="{{ include.image }}" alt="{{ include.title }}">
 </div>
 <h3 class="t-scale-gamma t-weight-bold padding-bottom-xnarrow">{{ include.title }}</h3>
-{% include button.html 
-  label='See more &rsaquo;' 
+{%- include button_link.html 
+  label=button_label 
   url=include.url 
-  prominence='small' 
-%}
+  prominence='small'
+-%}
