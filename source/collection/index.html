@@ -12,7 +12,17 @@ title: Collection FPO
   {%- include billboard.html 
     image="https://placehold.it/1600x800?text=Banner" 
     title="Collection name lorem ipsum"
+    button_label="Download the PDF <small>(1.2 MB)</small>"
+    button_url="#"
   -%}
+  {% comment %}
+  <!-- if no banner image, just show a headline... -->
+  <div class="padding-x-outside">
+    <div data-ui-wrapper="wide" class="margin-top-header">
+      <h1>Collection name lorem ipsum</h1>
+    </div>
+  </div>
+  {% endcomment %}
   <section data-ui-panel class="padding-top">
     <div data-ui-wrapper="wide">
       <h2 class="t-scale-zeta t-case-upper t-align-center c-highlight padding-bottom">Products</h2>
