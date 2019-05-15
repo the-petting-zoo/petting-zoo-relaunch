@@ -15,14 +15,22 @@
 
 // --- Elements ---
 [data-ui-billboard-image] {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  object-fit: cover;
-  z-index: z('low');
+  display: none;
+
+  @supports (object-fit: cover) and (object-position: center) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    object-position: center;
+    z-index: z('low');
+    max-width: none;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 [data-ui-billboard-title] {

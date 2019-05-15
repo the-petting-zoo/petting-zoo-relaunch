@@ -3,10 +3,10 @@ title: Product FPO
 layout: default
 ---
 
-{% comment %}
+{%- comment -%}
   Static/FPO styled product details page
   -> convert to layout and populate with data
-{% endcomment %}
+{%- endcomment -%}
 
 <article data-ui-panel class="margin-top-header no-padding-top">
   <div data-ui-wrapper>
@@ -22,15 +22,15 @@ layout: default
     <div class="padding-top margin-top border-top">
       <h2 class="padding-bottom">Collections &amp; catalogs featuring this product</h2>
       <ul data-ui-gallery="small">
-        {% for i in (1..4) %}
+        {%- for i in (1..4) -%}
           <li data-ui-gallery-item>
-            {% include card.html 
+            {%- include card.html 
               title='Collection name lorem ipsum dolor sit'
               image='http://placehold.it/400x300?text=Collection+thumbnail'
               url='#'
-              %}
+            -%}
           </li>
-        {% endfor %}
+        {%- endfor -%}
       </ul>
     </div>
   </div>
