@@ -1,7 +1,7 @@
 # Publish Settings
 backend:
   name: git-gateway
-  branch: dev
+  branch: 'dev' # Change to your local branch for testing. 
 publish_mode: editorial_workflow
 
 # Media
@@ -10,6 +10,8 @@ public_folder: "static/uploads"
 
 # Content Types
 collections:
+
+  # News pages
   - name: "news" # Used in routes, e.g., /admin/collections/blog
     label: "News" # Used in the UI
     folder: "source/_posts/news" # The path to the folder where the documents are stored
@@ -22,3 +24,216 @@ collections:
       - {label: "Publish Date", name: "date", widget: "date", format: "MMM Do YY"}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  # About page
+  - name: "about"
+    label: "About Page"
+    folder: "source/_posts/about"
+    create: false
+    deelte: false
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+      - {label: "Category", name: "category", widget: "hidden", default: "about"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+# Home page
+  - name: "home"
+    label: "Home Page"
+    folder: "source/_posts/home"
+    create: false
+    deelte: false
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+      - {label: "Category", name: "category", widget: "hidden", default: "home"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Staff
+  - name: "staff"
+    label: "Staff"
+    folder: "source/_posts/staff"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+      - {label: "Category", name: "category", widget: "hidden", default: "staff"}
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Job Title", name: "job_title", widget: "string"}
+      - {label: "Email", name: "email", widget: "string"}
+      - {label: "Portrait", name: "portrait", allow_multiple: false, widget: "image"}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}      
+  
+  # Testimonials
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "source/_posts/testimonials"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
+      - {label: "Category", name: "category", widget: "hidden", default: "testimonials"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Catalog Topics
+  # Description: 
+  #   Catalog topcis are topics that are used to group catalogs.
+  #   These are used to fill the drop-down on the product menu.
+  - name: "catalog_topics"
+    label: "Catalog Topics"
+    folder: "source/_posts/inventory/catalog_topics"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
+      - {label: "Category", name: "category", widget: "hidden", default: "catalog_topic"}
+      - {label: "Topic Name", name: "title", widget: "string"}
+      - {label: "Catalog Topic Cover", name: "image", widget: "image", allow_multiple: false}
+
+  # Catalogs
+  # Description: 
+  #   A catalog is a grouping of products, with an associated PDF
+  - name: "catalogs"
+    label: "Catalogs"
+    folder: "source/_posts/inventory/catalogs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "catalog"}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
+      - {label: "Show Products", name: "show_products", widget: "hidden", default: true}
+      - {label: "Category", name: "category", widget: "hidden", default: "catalog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Catalog PDF", name: "pdf", widget: "file", allow_multiple: false}
+      - {label: "Catalog Cover", name: "cover", widget: "image", allow_multiple: false}
+      - label: "Catalog Topic"
+        name: "topic"
+        widget: "relation"
+        collection: "catalog_topics"
+        searchFields: ["title"]
+        valueField: "title"
+        multiple: true
+
+  # Product Collections
+  # Description: 
+  #   Product collections are groupings of products by a an arbitrary concept (ie mermaids)
+  #   These are used to showcase products in a variety of contexts and function akin to tags.
+  - name: "product_collections"
+    label: "Product Collections"
+    folder: "source/_posts/inventory/product_collections"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
+      - {label: "Category", name: "category", widget: "hidden", default: "product_collection"}
+      - {label: "Collection Name", name: "title", widget: "string"}
+      - {label: "Product Collection Cover", name: "image", widget: "image", allow_multiple: false}
+
+  # Products
+  # Description: 
+  #   A Product is a single product unit, it is in catalogs and collections.
+  - name: "product"
+    label: "Products"
+    folder: "source/_posts/inventory/products"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "product"}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}    
+      - {label: "Featured", name: "featured", widget: "boolean"}
+      - {label: "SKU", name: "sku", widget: "string"}
+      - {label: "Color", name: "color", widget: "string"}    
+      - {label: "Product Image", name: "image", widget: "image", allow_multiple: false}
+      - label: "Catalog"
+        name: "catalog"
+        widget: "relation"
+        collection: "catalogs"
+        searchFields: ["title"]
+        valueField: "title"
+        multiple: true
+      - label: "Product Collection"
+        name: "product_collections"
+        widget: "relation"
+        collection: "product_collections"
+        searchFields: ["title"]
+        valueField: "title"
+        multiple: true
+      - {label: "Product Description", name: "body", widget: "markdown"}
+
+  # Text Blurbs
+  # Description: 
+  #   These are pieces of content that are showcased across the site.
+  - name: "text_blurbs"
+    label: "Text Blurbs (intros to various sections of the site)"
+    folder: "source/_posts/text"
+    create: false
+    delete: false
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Custom Products
+  # Description: 
+  #   These are examples of custom products
+  - name: "custom_products"
+    label: "Custom Products"
+    folder: "source/_posts/inventory/custom_products"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+      - {label: "Category", name: "category", widget: "hidden", default: "custom"}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Site Settings
+  - name: "config"
+    label: "Site Settings"
+    editor:
+      preview: false
+    files:
+      - label: "Contact Information"
+        name: "contact"
+        file: "source/_data/contact.yml"
+        fields:          
+          - name: "address"
+            label: "Address"
+            widget: "object"
+            fields: 
+              - {label: "Street", name: "street", widget: "string"}
+              - {label: "City", name: "city", widget: "string"}
+              - {label: "State", name: "state", widget: "string"}
+              - {label: "Zip", name: "zip", widget: "string"}
+          - name: "phone"
+            label: "Phone"
+            widget: "object"
+            fields: 
+              - {label: "Office", name: "office", widget: "string"}
+              - {label: "Fax", name: "fax", widget: "string"}
+          - name: "email"
+            label: "Email"
+            widget: "object"
+            fields: 
+              - {label: "Sales", name: "sales", widget: "string"}
+          - name: "social"
+            label: "Social Media Platform"
+            widget: "list"
+            fields: 
+              - {label: "Platform name", name: "platform", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+              - {label: "Icon", name: "icon", widget: "string"}
+          
+            

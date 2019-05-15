@@ -1,4 +1,5 @@
-# robotstxt.org/
-
+---
+---
 User-agent: *
-Disallow: /
+{{ site.access }}: /
+Sitemap: {{ site.url }}/sitemap.xml
