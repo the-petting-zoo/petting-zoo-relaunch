@@ -1,0 +1,55 @@
+---
+title: Products
+layout: default
+---
+
+{%- comment -%}
+  Static/FPO styled product page
+  -> convert to layout and populate with data
+{%- endcomment -%}
+
+<section data-ui-panel="" class="no-padding-top margin-top-header">
+  <div data-ui-wrapper="wide">
+    <h1 class="padding-bottom">Catalogs</h1>
+    <ul data-ui-gallery>
+      {%- for i in (1..6) -%}
+        <li data-ui-gallery-item>
+          {%- include card.html 
+            title='Catalog name lorem ipsum dolor sit'
+            image='http://placehold.it/400x300?text=Catalog+thumbnail'
+            url='#'
+          -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+    <section class="margin-top padding-top border-top">
+      <h2 class="t-scale-gamma padding-bottom">Seasonal</h2>
+      <ul data-ui-gallery>
+        {%- for i in (1..4) -%}
+          <li data-ui-gallery-item>
+            {%- include card.html 
+              title='Catalog name lorem ipsum dolor sit'
+              image='http://placehold.it/400x300?text=Catalog+thumbnail'
+              url='#'
+            -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </section>
+  </div>
+</section>
+
+<section data-ui-panel class="border-top">
+  <h1 class="padding-bottom">Collections</h1>
+  <ul data-ui-gallery>
+    {%- for i in (1..5) -%}
+      <li data-ui-gallery-item>
+        {%- include card.html 
+          title='Catalog name lorem ipsum dolor sit'
+          image='http://placehold.it/400x300?text=Catalog+thumbnail'
+          url='#'
+        -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</section>
