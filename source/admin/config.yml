@@ -93,6 +93,7 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
       - {label: "Category", name: "category", widget: "hidden", default: "catalog_topic"}
+      - {label: "ID", name: "id", widget: "hidden", default: "{{slug}}-{{year}}{{month}}{{day}}{{minute}}{{second}}"}
       - {label: "Topic Name", name: "title", widget: "string"}
       - {label: "Catalog Topic Cover", name: "image", widget: "image", allow_multiple: false}
 
@@ -109,6 +110,7 @@ collections:
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
       - {label: "Show Products", name: "show_products", widget: "hidden", default: true}
       - {label: "Category", name: "category", widget: "hidden", default: "catalog"}
+      - {label: "ID", name: "id", widget: "hidden", default: "{{slug}}-{{year}}{{month}}{{day}}{{minute}}{{second}}"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Catalog PDF", name: "pdf", widget: "file", allow_multiple: false}
@@ -118,7 +120,7 @@ collections:
         widget: "relation"
         collection: "catalog_topics"
         searchFields: ["title"]
-        valueField: "title"
+        valueField: "id"
         multiple: true
 
   # Product Collections
@@ -132,7 +134,8 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
-      - {label: "Category", name: "category", widget: "hidden", default: "product_collection"}
+      - {label: "Category", name: "category", widget: "hidden", default: "product_collection"
+      - {label: "ID", name: "id", widget: "hidden", default: "{{slug}}-{{year}}{{month}}{{day}}{{minute}}{{second}}"}
       - {label: "Collection Name", name: "title", widget: "string"}
       - {label: "Product Collection Cover", name: "image", widget: "image", allow_multiple: false}
 
@@ -158,14 +161,14 @@ collections:
         widget: "relation"
         collection: "catalogs"
         searchFields: ["title"]
-        valueField: "title"
+        valueField: "id"
         multiple: true
       - label: "Product Collection"
         name: "product_collections"
         widget: "relation"
         collection: "product_collections"
         searchFields: ["title"]
-        valueField: "title"
+        valueField: "id"
         multiple: true
       - {label: "Product Description", name: "body", widget: "markdown"}
 
