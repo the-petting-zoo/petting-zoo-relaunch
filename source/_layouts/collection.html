@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<section>
+  {%- if page.image -%}
+    {%- include billboard.html 
+      image=page.image 
+      title=page.title
+    -%}
+  {%- else -%}
+    <div class="padding-x-outside">
+      <div data-ui-wrapper="wide" class="margin-top-header">
+        <h1>{{ page.title }}</h1>
+      </div>
+    </div>
+  {%- endif -%}
+  <section data-ui-panel class="padding-top">
+    <div data-ui-wrapper="wide">
+      <h2 class="t-scale-zeta t-case-upper t-align-center c-highlight padding-bottom">Products</h2>
+      <ul data-ui-gallery="small">
+        {%- for product in site.categories.products -%}
+          {%- if product.product_collections contains page.title -%}
+            <li data-ui-gallery-item>
+              {%- include card.html 
+                title=product.title
+                image=product.image
+                url=product.url
+              -%}
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </section>
+</section>
+
+<!-- More collections -->
+{%- comment -%} Check to see how many other collections exist {%- endcomment -%}
+{%- capture collections_length -%}
+  {{ site.categories.product_collections | size | minus: 1 }}
+{%- endcapture -%}
+{%- comment -%} If there are more than 0, show a gallery of them here {%- endcomment -%}
+{%- unless collections_length == '0' -%}
+  <nav data-ui-panel class="border-top c-well">
+    <div data-ui-wrapper="wide">
+      <h2 class="t-align-center padding-bottom">More collections</h2>
+      <ul data-ui-gallery>
+        {%- for collection in site.categories.product_collections -%}
+          {%- unless collection.title == page.title -%}
+            <li data-ui-gallery-item>
+              {%- include card.html 
+                title=collection.title
+                image=collection.image
+                url=collection.url
+              -%}
+            </li>
+          {%- endunless -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </nav>
+{%- endunless -%}

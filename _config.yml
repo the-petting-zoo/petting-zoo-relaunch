@@ -24,11 +24,19 @@ defaults:
       type: 'posts'
     values:
       layout: 'catalog'
+      category: 'catalog'
+  - scope:
+      path: '_posts/inventory/product_collections'
+      type: 'posts'
+    values:
+      layout: 'collection'
+      category: 'product_collections'
   - scope:
       path: '_posts/inventory/products'
       type: 'posts'
     values:
       layout: 'product'
+      category: 'products'
 
 # asset paths
 assets:
