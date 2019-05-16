@@ -3,85 +3,24 @@ layout: default
 active: products
 ---
 
-<h1 class="title first center">{{ page.title }}</h1>
-
-<main role="main" class="wrapper narrow sidebar-right">
-
-  <aside class="product-meta" role="contentinfo">
-    <dl>
-      {% if page.item %}
-      <dt class="callout">Item:</dt>
-      <dd>{{ page.item }}</dd>
-      {% endif %}
-      {% if page.case %}
-      <dt class="callout">Case PK:</dt>
-      <dd>{{ page.case }}</dd>
-      {% endif %}
-      {% if page.master %}
-      <dt class="callout">Master Case:</dt>
-      <dd>{{ page.master }}</dd>
-      {% endif %}
-    </dl>
-  </aside>
-    
-  <!-- catalog: main carousel -->
-  <div class="product js-scale-height">
-    {% comment %}{% for photo in page.photos %}
-     
-    <figure class="product js-scale-height">
-    <img src="{{ photo.src }}" alt="{% if photo.caption %}{{ photo.caption }}{% else %}{{ page.title }}{% endif %}" class="product-image" />
-    {% if photo.caption %}
-    <figcaption class="product-caption">{{ photo.caption }}</figcaption>
-    {% endif %}
-  </figure>
-
-    {% endfor %}{% endcomment %}
-    {{ content }}
+<article data-ui-panel class="margin-top-header no-padding-top">
+  <div data-ui-wrapper="wide">
+    <!-- product title -->
+    <h1 class="padding-bottom">{{ page.title }}</h1>
+    <div data-ui-columns class="gutter-wrapper">
+      <!-- product image -->
+      <div data-ui-columns-main class="gutter">
+        <img src="{{ page.image }}" alt="{{ page.title }}" style="width: 100%;">
+      </div>
+      <!-- description -->
+      <div data-ui-columns-sidebar class="gutter">
+        {{ content }}
+      </div>
+    </div>
+    <!-- collections and catalogs -->
+    <div class="padding-top margin-top border-top">
+      <h2 class="padding-bottom">Collections featuring this product</h2>
+      {% comment %}{%- include card-gallery.html cards=page.product_collections -%}{% endcomment %}
+    </div>
   </div>
-</main>
-
-<nav class="local page">
-  {% if page.previous.url %}
-    <a class="page-button prev" href="{{ page.previous.url }}">
-      <span class="icon-alone icon-arrow-left--blue"></span>
-      <span class="page-title">{{ page.previous.title }}</span>
-    </a> 
-  {% endif %}
-
-  {% if page.next.url %}
-    <a class="page-button next" href="{{ page.next.url }}">
-      <span class="page-title">{{ page.next.title }}</span>
-      <span class="icon-alone icon-arrow-right--blue"></span>
-    </a> 
-  {% endif %}
-</nav>
-
-<section class="strip well pointer">
-  {% if page.collection %}
-  <h3 class="callout">More products in the <span class="highlight">{{ page.collection }}</span> collection</h3>
-  <div class="wrapper">
-    <ul class="grid medium center">
-    {% for product in site.categories.products %}
-      {% if product.collection == page.collection %}
-      {% unless product.title == page.title %}
-      {% include product-tile.html post=product %}
-      {% endunless %}
-      {% endif %}
-    {% endfor %}
-    </ul>
-  </div>
-  {% else %}
-  <h3 class="callout">More products in the <span class="highlight">{{ page.catalog }}</span> catalog</h3>
-  <div class="wrapper">
-    <ul class="grid medium center">
-    {% for product in site.categories.products %}
-      {% if product.catalog == page.catalog %}
-      {% unless product.title == page.title %}
-      {% include product-tile.html post=product %}
-      {% endunless %}
-      {% endif %}
-    {% endfor %}
-    </ul>
-  </div>
-  {% endif %}
-</section>
+</article>

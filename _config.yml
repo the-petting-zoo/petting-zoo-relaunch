@@ -1,6 +1,6 @@
 # Shared Jekyll settings
 name: The Petting Zoo
-tag: "Share & Smile"
+tag: 'Share & Smile'
 permalink: /:categories/:title/
 
 # Site Data 
@@ -10,24 +10,34 @@ access: 'Disallow'
 plugins:
   - jekyll-sitemap
 
-
+# Folder structure
 source: source
 destination: build
 
 defaults:
   - scope:
-      path: "/catalog/*"
+      path: ''
     values:
-      layout: "catalog"
+      layout: 'default'
+  - scope:
+      path: '_posts/inventory/catalog'
+      type: 'posts'
+    values:
+      layout: 'catalog'
+  - scope:
+      path: '_posts/inventory/products'
+      type: 'posts'
+    values:
+      layout: 'product'
 
 # asset paths
 assets:
-  img: "/static/images/"
-  fonts: "/static/fonts/"
-  s3: "https://pettingzoo-website.s3.amazonaws.com"
-  carousel: "/banners/carousel/"
-  promos: "/banners/promos/"
-  catalog: "/products/catalogs/"
-  custom: "/products/custom/"
-  staff: "/staff/"
-  blog: "/blog/"
+  img: '/static/images/'
+  fonts: '/static/fonts/'
+  s3: 'https://pettingzoo-website.s3.amazonaws.com'
+  carousel: '/banners/carousel/'
+  promos: '/banners/promos/'
+  catalog: '/products/catalogs/'
+  custom: '/products/custom/'
+  staff: '/staff/'
+  blog: '/blog/'

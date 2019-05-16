@@ -1,0 +1,21 @@
+{%- comment -%}
+  Card gallery component
+  -> a fluid grid of cards for products, catalogs, etc.
+  -> see card.html partial
+
+  Locals:
+  cards - ARRAY of OBJECTS: collection of products, catalogs, etc. to populate the list with
+{%- endcomment -%}
+
+<ul data-ui-gallery="small">
+  {%- for item in include.cards -%}
+    <li data-ui-gallery-item>
+      {%- assign image = item.image | default: item.cover -%}
+      {%- include card.html 
+        title=item.title
+        image=item.image
+        url=item.post_url
+      -%}
+    </li>
+  {%- endfor -%}
+</ul>
