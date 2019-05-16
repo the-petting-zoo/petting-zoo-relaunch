@@ -20,6 +20,12 @@ defaults:
     values:
       layout: 'default'
   - scope:
+      path: '_posts/inventory/catalog_topics'
+      type: 'posts'
+    values:
+      layout: 'topic'
+      category: 'catalog_topics'
+  - scope:
       path: '_posts/inventory/catalogs'
       type: 'posts'
     values:

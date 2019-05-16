@@ -1,0 +1,51 @@
+---
+layout: default
+active: products
+---
+
+<!-- Topic catalogs -->
+<section data-ui-panel class="no-padding-top margin-top-header">
+  <div data-ui-wrapper="wide">
+    <h1 class="padding-bottom t-align-center">{{ page.title }}</h1>
+    <ul data-ui-gallery>
+      {%- for catalog in site.categories.catalogs -%}
+        {%- if catalog.topic contains page.unique_id -%}
+          <li data-ui-gallery-item>
+            {%- include card.html 
+              title='Catalog name lorem ipsum dolor sit'
+              image='http://placehold.it/400x300?text=Catalog+thumbnail'
+              url='#'
+            -%}
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+<!-- More topics -->
+{%- comment -%} Check to see how many other collections exist {%- endcomment -%}
+{%- capture topics_length -%}
+  {{ site.categories.catalog_topics | size | minus: 1 }}
+{%- endcapture -%}
+{%- comment -%} If there are more than 0, show a gallery of them here {%- endcomment -%}
+{%- unless topics_length == '0' -%}
+  <nav data-ui-panel class="border-top c-well">
+    <div data-ui-wrapper="wide">
+      <h2 class="t-align-center padding-bottom">More of our catalog topics</h2>
+      <ul data-ui-gallery="small">
+        {%- for collection in site.categories.catalog_topics -%}
+          {%- unless collection.title == page.title -%}
+            <li data-ui-gallery-item>
+              {%- include card.html 
+                title=collection.title
+                image=collection.image
+                url=collection.url
+              -%}
+            </li>
+          {%- endunless -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </nav>
+{%- endunless -%}
