@@ -21,7 +21,7 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
       - {label: "Category", name: "category", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "date", format: "MMM Do YY"}
+      - {label: "Publish Date", name: "date", widget: "date", format: "MMM Do YY", hint: "This is the date displayed for this news post"}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}
       - {label: "Body", name: "body", widget: "markdown"}
 
@@ -37,7 +37,7 @@ collections:
       - {label: "Category", name: "category", widget: "hidden", default: "about"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown", hint: "This is the content on the about page"}
 
 # Home page
   - name: "home"
@@ -51,7 +51,7 @@ collections:
       - {label: "Category", name: "category", widget: "hidden", default: "home"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown", hint: "This is the content on the home page"}
 
   # Staff
   - name: "staff"
@@ -65,7 +65,7 @@ collections:
       - {label: "Name", name: "title", widget: "string"}
       - {label: "Job Title", name: "job_title", widget: "string"}
       - {label: "Email", name: "email", widget: "string"}
-      - {label: "Portrait", name: "portrait", allow_multiple: false, widget: "image"}
+      - {label: "Portrait", name: "portrait", allow_multiple: false, widget: "image", required: false}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}      
   
   # Testimonials
@@ -93,8 +93,9 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
       - {label: "Category", name: "category", widget: "hidden", default: "catalog_topic"}
+      - {label: "ID", name: "id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
       - {label: "Topic Name", name: "title", widget: "string"}
-      - {label: "Catalog Topic Cover", name: "image", widget: "image", allow_multiple: false}
+      - {label: "Catalog Topic Cover", name: "image", widget: "image", allow_multiple: false, required: false, hint: "This is the image displayed on the top of the topic page"}
 
   # Catalogs
   # Description: 
@@ -109,17 +110,20 @@ collections:
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
       - {label: "Show Products", name: "show_products", widget: "hidden", default: true}
       - {label: "Category", name: "category", widget: "hidden", default: "catalog"}
+      - {label: "ID", name: "id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Catalog PDF", name: "pdf", widget: "file", allow_multiple: false}
-      - {label: "Catalog Cover", name: "cover", widget: "image", allow_multiple: false}
+      - {label: "Catalog PDF", name: "pdf", widget: "file", allow_multiple: false, required: false, hint: "This is the catalog file that can be downloaded"}
+      - {label: "Catalog Cover", name: "cover", widget: "image", allow_multiple: false, required: false, hint: "This is the image displayed on the top of the catalog page"}
       - label: "Catalog Topic"
         name: "topic"
         widget: "relation"
         collection: "catalog_topics"
         searchFields: ["title"]
-        valueField: "title"
+        displayFields: "title"
+        valueField: "id"
         multiple: true
+        required: false
+        hint: "This allows you to relate the catalog to a topic, a topic is what is used in the dropdown area on the home page."
 
   # Product Collections
   # Description: 
@@ -133,8 +137,9 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
       - {label: "Category", name: "category", widget: "hidden", default: "product_collection"}
+      - {label: "ID", name: "id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
       - {label: "Collection Name", name: "title", widget: "string"}
-      - {label: "Product Collection Cover", name: "image", widget: "image", allow_multiple: false}
+      - {label: "Product Collection Cover", name: "image", widget: "image", allow_multiple: false, hint: "This is the image displayed on the top of the collection page"}
 
   # Products
   # Description: 
@@ -148,26 +153,31 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "product"}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Slug", name: "slug", widget: "string"}    
-      - {label: "Featured", name: "featured", widget: "boolean"}
-      - {label: "SKU", name: "sku", widget: "string"}
-      - {label: "Color", name: "color", widget: "string"}    
+      - {label: "Featured", name: "featured", widget: "boolean", required: false, hint: "If a product is featured, it will be listed as one of the featured products on the home page in a catalog or collection"}
+      - {label: "SKU", name: "sku", widget: "string", required: false}
+      - {label: "Color", name: "color", widget: "string", required: false}    
       - {label: "Product Image", name: "image", widget: "image", allow_multiple: false}
       - label: "Catalog"
         name: "catalog"
         widget: "relation"
         collection: "catalogs"
         searchFields: ["title"]
-        valueField: "title"
+        displayFields: "title"
+        valueField: "id"
         multiple: true
+        required: false
+        hint: "This associates the product with one or many catalogs"
       - label: "Product Collection"
         name: "product_collections"
         widget: "relation"
         collection: "product_collections"
         searchFields: ["title"]
-        valueField: "title"
+        displayFields: "title"
+        valueField: "id"
         multiple: true
-      - {label: "Product Description", name: "body", widget: "markdown"}
+        required: false
+        hint: "This associates the product with one or many collections"
+      - {label: "Product Description", name: "body", widget: "markdown", required: false}
 
   # Text Blurbs
   # Description: 
@@ -190,7 +200,8 @@ collections:
   - name: "custom_products"
     label: "Custom Products"
     folder: "source/_posts/inventory/custom_products"
-    create: true
+    create: false
+    delete: false
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
