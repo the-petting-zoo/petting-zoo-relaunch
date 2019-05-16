@@ -11,9 +11,9 @@
 // -- Base styles ---
 // @import "base/form";
 // @import "base/html";
-// @import "base/list";
+@import "base/list";
 // @import "base/media";
-// @import "base/type";
+@import "base/type";
 
 // --- Utilities ---
 @import "utilities/borders";
@@ -29,4 +29,5 @@
 @import "components/columns";
 @import "components/gallery";
 @import "components/panel";
+@import "components/stats";
 @import "components/wrapper";

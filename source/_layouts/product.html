@@ -3,24 +3,94 @@ layout: default
 active: products
 ---
 
-<article data-ui-panel class="margin-top-header no-padding-top">
-  <div data-ui-wrapper="wide">
-    <!-- product title -->
-    <h1 class="padding-bottom">{{ page.title }}</h1>
-    <div data-ui-columns class="gutter-wrapper">
-      <!-- product image -->
-      <div data-ui-columns-main class="gutter">
-        <img src="{{ page.image }}" alt="{{ page.title }}" style="width: 100%;">
+<article class="margin-top-header">
+  <div data-ui-panel="" class="no-padding-top">
+    <div data-ui-wrapper="wide">
+    
+      <!-- product title -->
+      <h1 class="padding-bottom">{{ page.title }}</h1>
+      <div data-ui-columns class="gutter-wrapper">
+        
+        <!-- product image -->
+        <div data-ui-columns-main class="gutter">
+          <img src="{{ page.image }}" alt="{{ page.title }}" style="width: 100%;">
+        </div>
+
+        <!-- description -->
+        <div data-ui-columns-sidebar class="gutter margin-y-between-narrow">
+          <div class="t-content">{{ content }}</div>
+
+          <!-- product metadata -->
+          <aside class="padding-top-narrow border-top">
+            <dl data-ui-stats class="gutter-wrapper gutter-narrow">
+              {%- if page.sku -%}
+              <div data-ui-stats-group class="gutter">
+                <dt data-ui-stats-item class="t-scale-zeta t-weight-bold">
+                  SKU number:
+                </dt>
+                <dd data-ui-stats-item clas="t-scale-zeta">
+                  {{ page.sku }}
+                </dd>
+              </div>
+              {%- endif -%}
+              {%- if page.color -%}
+              <div data-ui-stats-group class="gutter">
+                <dt data-ui-stats-item class="t-scale-zeta t-weight-bold">
+                  Color:
+                </dt>
+                <dd data-ui-stats-item clas="t-scale-zeta">
+                  {{ page.color }}
+                </dd>
+              </div>
+              {%- endif -%}
+            </dl>
+          </aside>
+        </div>
       </div>
-      <!-- description -->
-      <div data-ui-columns-sidebar class="gutter">
-        {{ content }}
-      </div>
-    </div>
-    <!-- collections and catalogs -->
-    <div class="padding-top margin-top border-top">
-      <h2 class="padding-bottom">Collections featuring this product</h2>
-      {% comment %}{%- include card-gallery.html cards=page.product_collections -%}{% endcomment %}
     </div>
   </div>
+
+  <!-- catalogs -->
+  {%- if page.catalog -%}
+    <section data-ui-panel class="c-well border-top">
+      <div data-ui-wrapper="wide">
+        <h2 class="padding-bottom">Catalogs featuring this product</h2>
+        <ul data-ui-gallery>
+          {%- for catalog in site.categories.catalogs -%}
+            {%- if page.catalog contains catalog.unique_id -%}
+              <li data-ui-gallery-item>
+                {%- include card.html 
+                  title=catalog.title
+                  image=catalog.cover
+                  url=catalog.url
+                -%}
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </section>
+  {%- endif -%}
+
+  <!-- collections -->
+  {%- if page.product_collections -%}
+    <section data-ui-panel class="c-well border-top">
+      <div data-ui-wrapper="wide">
+        <h2 class="padding-bottom">Collections featuring this product</h2>
+        <ul data-ui-gallery>
+          {%- for collection in site.categories.product_collections -%}
+            {%- if page.product_collections contains collection.unique_id -%}
+              <li data-ui-gallery-item>
+                {%- include card.html 
+                  title=collection.title
+                  image=collection.image
+                  url=collection.url
+                -%}
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </section>
+  {%- endif -%}
 </article>

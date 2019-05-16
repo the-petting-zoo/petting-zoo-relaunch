@@ -1,0 +1,35 @@
+//  Stat component
+// -> a set of stats, or metadata/numbers, for a given piece of content
+
+// --- Base ---
+
+[data-ui-stats] {
+  list-style: none;
+  margin-left: 0;
+
+  @supports (display: flex) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+
+// --- Elements ---
+
+// a small group of stats, like a stat-label pair
+[data-ui-stats-group] {
+  margin: 0;
+
+  @supports (display: flex) {
+    font-size: 1rem;
+    min-width: 8rem;
+  }
+}
+
+[data-ui-stats-item] {
+  font-size: 1rem;
+  display: block;
+  margin-left: 0; // reset dt/dd default indent
+  vertical-align: baseline;
+}
