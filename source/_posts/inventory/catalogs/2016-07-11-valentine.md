@@ -4,7 +4,8 @@ layout: catalog
 show_products: true
 spread: true
 published: true
-title: valentine
+title: Valentine
+unique_id: valentine
 slug: valentine
 directory: valentine
 pdf: Val_Catalog_2019_noprice.pdf

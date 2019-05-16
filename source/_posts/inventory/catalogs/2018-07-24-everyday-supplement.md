@@ -5,6 +5,7 @@ show_products: true
 spread: true
 published: true
 title: Everyday Supplement
+unique_id: everyday supplement
 slug: Everyday Supplement
 directory: Everyday Supplement
 pdf: Everyday_Supplement_NO_PRICE.pdf

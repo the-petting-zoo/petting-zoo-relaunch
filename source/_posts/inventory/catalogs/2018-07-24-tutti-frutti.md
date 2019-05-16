@@ -4,7 +4,8 @@ layout: catalog
 show_products: true
 spread: true
 published: true
-title: tutti frutti
+title: Tutti Frutti
+unique_id: tutti frutti catalog
 slug: tutti frutti
 directory: tutti frutti
 pdf: tutti_frutti_No_Price.pdf

@@ -6,7 +6,7 @@ layout: default
   {%- if page.image -%}
     {%- include billboard.html 
       image=page.image 
-      title=page.title
+      title=page.id
     -%}
   {%- else -%}
     <div class="padding-x-outside">
@@ -20,7 +20,7 @@ layout: default
       <h2 class="t-scale-zeta t-case-upper t-align-center c-highlight padding-bottom">Products</h2>
       <ul data-ui-gallery="small">
         {%- for product in site.categories.products -%}
-          {%- if product.product_collections contains page.title -%}
+          {%- if product.product_collections contains page.unique_id -%}
             <li data-ui-gallery-item>
               {%- include card.html 
                 title=product.title

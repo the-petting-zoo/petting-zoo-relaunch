@@ -137,7 +137,7 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
       - {label: "Category", name: "category", widget: "hidden", default: "product_collection"}
-      - {label: "ID", name: "id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
+      - {label: "ID", name: "unique_id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
       - {label: "Collection Name", name: "title", widget: "string"}
       - {label: "Product Collection Cover", name: "image", widget: "image", allow_multiple: false, hint: "This is the image displayed on the top of the collection page"}
 
