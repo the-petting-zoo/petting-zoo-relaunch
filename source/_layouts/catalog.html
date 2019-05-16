@@ -9,6 +9,8 @@ active: products
     {%- include billboard.html 
       image=page.image 
       title=page.id
+      button_label='<strong>Download a PDF</strong> of this catalog'
+      button_url=page.pdf
     -%}
   {%- else -%}
     {%- comment -%} otherwise, just show the title {%- endcomment -%}
@@ -18,7 +20,7 @@ active: products
         {%- if page.pdf -%}
           <div class="padding-top">
             {%- include button_link.html
-              label='Download a PDF'
+              label='<strong>Download a PDF</strong> of this catalog'
               url=page.pdf
             -%}
           </div>
@@ -31,7 +33,7 @@ active: products
       <h2 class="t-scale-zeta t-case-upper t-align-center c-highlight padding-bottom">Products</h2>
       <ul data-ui-gallery="small">
         {%- for product in site.categories.products -%}
-          {%- if product.product_collections contains page.unique_id -%}
+          {%- if product.catalog contains page.unique_id -%}
             <li data-ui-gallery-item>
               {%- include card.html 
                 title=product.title
@@ -49,21 +51,21 @@ active: products
 <!-- More collections -->
 {%- comment -%} Check to see how many other collections exist {%- endcomment -%}
 {%- capture collections_length -%}
-  {{ site.categories.product_collections | size | minus: 1 }}
+  {{ site.categories.catalogs | size | minus: 1 }}
 {%- endcapture -%}
 {%- comment -%} If there are more than 0, show a gallery of them here {%- endcomment -%}
 {%- unless collections_length == '0' -%}
   <nav data-ui-panel class="border-top c-well">
     <div data-ui-wrapper="wide">
-      <h2 class="t-align-center padding-bottom">More of our collections</h2>
+      <h2 class="t-align-center padding-bottom">More of our catalogs</h2>
       <ul data-ui-gallery="small">
-        {%- for collection in site.categories.product_collections -%}
-          {%- unless collection.title == page.title -%}
+        {%- for catalog in site.categories.catalogs -%}
+          {%- unless catalog.unique_id == page.unique_id -%}
             <li data-ui-gallery-item>
               {%- include card.html 
-                title=collection.title
-                image=collection.image
-                url=collection.url
+                title=catalog.title
+                image=catalog.cover
+                url=catalog.url
               -%}
             </li>
           {%- endunless -%}

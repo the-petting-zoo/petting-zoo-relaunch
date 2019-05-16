@@ -23,7 +23,7 @@ defaults:
       path: '_posts/inventory/catalogs'
       type: 'posts'
     values:
-      layout: 'collection'
+      layout: 'catalog'
       category: 'catalogs'
   - scope:
       path: '_posts/inventory/product_collections'

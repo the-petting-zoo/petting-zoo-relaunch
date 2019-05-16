@@ -1,6 +1,4 @@
 ---
-category: products
-layout: default
 published: true
 title: 11" Luxy Bear -   Brown
 catalog: valentine
