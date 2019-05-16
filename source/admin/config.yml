@@ -109,7 +109,7 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "catalog"}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
       - {label: "Show Products", name: "show_products", widget: "hidden", default: true}
-      - {label: "Category", name: "category", widget: "hidden", default: "catalog"}
+      - {label: "Category", name: "category", widget: "hidden", default: "catalogs"}
       - {label: "ID", name: "unique_id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Catalog PDF", name: "pdf", widget: "file", allow_multiple: false, required: false, hint: "This is the catalog file that can be downloaded"}

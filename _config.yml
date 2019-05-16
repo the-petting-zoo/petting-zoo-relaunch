@@ -20,11 +20,11 @@ defaults:
     values:
       layout: 'default'
   - scope:
-      path: '_posts/inventory/catalog'
+      path: '_posts/inventory/catalogs'
       type: 'posts'
     values:
-      layout: 'catalog'
-      category: 'catalog'
+      layout: 'collection'
+      category: 'catalogs'
   - scope:
       path: '_posts/inventory/product_collections'
       type: 'posts'

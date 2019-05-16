@@ -1,17 +1,39 @@
 ---
 layout: default
+active: products
 ---
 
 <section>
+  {%- comment -%} if there's a banner image... {%- endcomment -%}
   {%- if page.image -%}
-    {%- include billboard.html 
-      image=page.image 
-      title=page.id
-    -%}
+    {%- comment -%} if there's a PDF download, show the button {%- endcomment -%}
+    {%- if page.pdf -%}
+      {%- include billboard.html 
+        image=page.image 
+        title=page.id
+        button_label='Download a PDF'
+        button_url=page.pdf
+      -%}
+    {%- comment -%} otherwise just show the banner {%- endcomment -%}
+    {%- else -%}
+      {%- include billboard.html 
+        image=page.image 
+        title=page.id
+      -%}
+    {%- endif -%}
   {%- else -%}
+    {%- comment -%} otherwise, just show the title {%- endcomment -%}
     <div class="padding-x-outside">
       <div data-ui-wrapper="wide" class="margin-top-header">
         <h1>{{ page.title }}</h1>
+        {%- if page.pdf -%}
+          <div class="padding-top">
+            {%- include button_link.html
+              label='Download a PDF'
+              url=page.pdf
+            -%}
+          </div>
+        {%- endif -%}
       </div>
     </div>
   {%- endif -%}
@@ -44,8 +66,13 @@ layout: default
 {%- unless collections_length == '0' -%}
   <nav data-ui-panel class="border-top c-well">
     <div data-ui-wrapper="wide">
-      <h2 class="t-align-center padding-bottom">More collections</h2>
-      <ul data-ui-gallery>
+      {%- if page.category == 'product_collections' -%}
+        {%- assign type = 'collections' -%}
+      {%- else -%}
+        {%- assign type = page.category -%}
+      {%- endif -%}
+      <h2 class="t-align-center padding-bottom">More of our {{ type }}</h2>
+      <ul data-ui-gallery="small">
         {%- for collection in site.categories.product_collections -%}
           {%- unless collection.title == page.title -%}
             <li data-ui-gallery-item>
