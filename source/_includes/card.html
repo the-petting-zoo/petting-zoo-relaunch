@@ -11,8 +11,8 @@
 {%- assign button_label = include.button_label | default: 'See more &rsaquo;' -%}
 {%- assign image = include.image | default: 'https://placehold.it/600x400?text=Thumbnail' -%}
 
-<a class="padding-bottom-xnarrow" href="{{ include.url }}">
-  <img src="{{ include.image }}" alt="{{ include.title }}">
+<a data-ui-aspect class="margin-bottom-xnarrow border" href="{{ include.url }}" style="background-image: url('{{ image }}');">
+  <img data-ui-aspect-image src="{{ image }}" alt="{{ include.title }}">
 </a>
 <h3 class="t-scale-gamma t-weight-bold padding-bottom-xnarrow">
   <a href="{{ include.url }}">{{ include.title }}</a>
