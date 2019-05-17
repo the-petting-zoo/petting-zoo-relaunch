@@ -8,7 +8,7 @@ active: products
   {%- if page.image -%}
     {%- include billboard.html 
       image=page.image 
-      title=page.id
+      title=page.title
       button_label='<strong>Download a PDF</strong> of this catalog'
       button_url=page.pdf
     -%}
@@ -16,9 +16,9 @@ active: products
     {%- comment -%} otherwise, just show the title {%- endcomment -%}
     <div class="padding-x-outside">
       <div data-ui-wrapper="wide" class="margin-top-header">
-        <h1>{{ page.title }}</h1>
+        <h1 class="t-align-center">{{ page.title }}</h1>
         {%- if page.pdf -%}
-          <div class="padding-top">
+          <div class="padding-top t-align-center">
             {%- include button_link.html
               label='<strong>Download a PDF</strong> of this catalog'
               url=page.pdf
@@ -30,7 +30,7 @@ active: products
   {%- endif -%}
   <section data-ui-panel class="padding-top">
     <div data-ui-wrapper="wide">
-      <h2 class="t-scale-zeta t-case-upper t-align-center c-highlight padding-bottom">Products</h2>
+      <h2 class="t-scale-zeta t-align-center c-highlight padding-bottom">Products</h2>
       <ul data-ui-gallery="small">
         {%- for product in site.categories.products -%}
           {%- if product.catalog contains page.unique_id -%}

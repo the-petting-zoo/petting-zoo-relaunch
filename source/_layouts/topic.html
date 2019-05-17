@@ -12,9 +12,9 @@ active: products
         {%- if catalog.topic contains page.unique_id -%}
           <li data-ui-gallery-item>
             {%- include card.html 
-              title='Catalog name lorem ipsum dolor sit'
-              image='http://placehold.it/400x300?text=Catalog+thumbnail'
-              url='#'
+              title=catalog.title
+              image=catalog.cover
+              url=catalog.url
             -%}
           </li>
         {%- endif -%}

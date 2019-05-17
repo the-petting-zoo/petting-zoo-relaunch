@@ -12,7 +12,7 @@
 {%- assign el = include.el | default: 'header' -%}
 {%- assign button_label = include.button_label | default: 'Download the PDF' -%}
 
-<{{ el }} data-ui-billboard style="background-image: url('{{ include.image }}');">
+<{{ el }} data-ui-billboard class="border-bottom" style="background-image: url('{{ include.image }}');">
   <h1 data-ui-billboard-title class="padding-x-outside margin-top-header">{{ include.title }}</h1>
   {%- if include.button_url -%}
     <div data-ui-billboard-action class="padding-x-outside padding-bottom">

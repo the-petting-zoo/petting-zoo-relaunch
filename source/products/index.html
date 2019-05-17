@@ -6,7 +6,7 @@ layout: default
 <!-- Catalogs -->
 <section data-ui-panel class="no-padding-top margin-top-header">
   <div data-ui-wrapper="wide">
-    <h1 class="padding-bottom">Catalogs</h1>
+    <h1 class="padding-bottom t-align-center">Catalogs</h1>
 
     <!-- unsorted catalogs -->
     <ul data-ui-gallery>
@@ -26,7 +26,7 @@ layout: default
     <!-- topics -->
     {%- for topic in site.categories.catalog_topics -%}
       <section class="margin-top padding-top border-top">
-        <h2 class="t-scale-gamma padding-bottom">{{ topic.title }}</h2>
+        <h2 class="t-scale-gamma t-align-center padding-bottom">{{ topic.title }}</h2>
         <ul data-ui-gallery>
           {%- for catalog in site.categories.catalogs -%}
             {%- if catalog.topic contains topic.unique_id -%}
@@ -47,7 +47,7 @@ layout: default
 
 <!-- Collections -->
 <section data-ui-panel class="border-top">
-  <h1 class="padding-bottom">Collections</h1>
+  <h1 class="t-align-center padding-bottom">Collections</h1>
   <ul data-ui-gallery>
     {%- for collection in site.categories.product_collections -%}
       <li data-ui-gallery-item>

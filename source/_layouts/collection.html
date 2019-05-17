@@ -8,11 +8,11 @@ active: products
   {%- if page.image -%}
     {%- include billboard.html 
       image=page.image 
-      title=page.id
+      title=page.title
     -%}
   {%- else -%}
     {%- comment -%} otherwise, just show the title {%- endcomment -%}
-    <div class="padding-x-outside">
+    <div class="padding-x-outside t-align-center">
       <div data-ui-wrapper="wide" class="margin-top-header">
         <h1>{{ page.title }}</h1>
         {%- if page.pdf -%}
@@ -28,7 +28,7 @@ active: products
   {%- endif -%}
   <section data-ui-panel class="padding-top">
     <div data-ui-wrapper="wide">
-      <h2 class="t-scale-zeta t-case-upper t-align-center c-highlight padding-bottom">Products</h2>
+      <h2 class="t-scale-zeta t-align-center c-highlight padding-bottom">Products</h2>
       <ul data-ui-gallery="small">
         {%- for product in site.categories.products -%}
           {%- if product.product_collections contains page.unique_id -%}

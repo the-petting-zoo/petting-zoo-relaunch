@@ -9,11 +9,14 @@
   button_label - STRING (optional): the button label
 {%- endcomment -%}
 {%- assign button_label = include.button_label | default: 'See more &rsaquo;' -%}
+{%- assign image = include.image | default: 'https://placehold.it/600x400?text=Thumbnail' -%}
 
-<div class="padding-bottom-xnarrow">
+<a class="padding-bottom-xnarrow" href="{{ include.url }}">
   <img src="{{ include.image }}" alt="{{ include.title }}">
-</div>
-<h3 class="t-scale-gamma t-weight-bold padding-bottom-xnarrow">{{ include.title }}</h3>
+</a>
+<h3 class="t-scale-gamma t-weight-bold padding-bottom-xnarrow">
+  <a href="{{ include.url }}">{{ include.title }}</a>
+</h3>
 {%- include button_link.html 
   label=button_label 
   url=include.url 
