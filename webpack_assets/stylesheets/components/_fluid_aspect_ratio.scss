@@ -72,6 +72,20 @@
 }
 
 // --- Modifiers ---
+[data-ui-aspect~='catalog'] {
+  background-size: contain;
+
+  &::before {
+    padding-top: (1.3 / 1 * 100%);
+  }
+
+  [data-ui-aspect-image] {
+    @supports (object-fit: cover) {
+      object-fit: cover;
+    }
+  }
+}
+
 @include _aspect-variation(16, 9, $use-scale: false);
 
 

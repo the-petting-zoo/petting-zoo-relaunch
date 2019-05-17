@@ -13,6 +13,7 @@ $gallery-max-percentage: 100%;
 [data-ui-gallery] {
   --gutter: var(--space-medium);
   --min-width: 240px;
+  --max-width: 1fr;
   --breakpoint: $gallery-breakpoint;
   --min-percentage: $gallery-min-percentage;
   --max-percentage: $gallery-max-percentage;
@@ -30,7 +31,7 @@ $gallery-max-percentage: 100%;
     display: grid;
     grid-column-gap: var(--gutter);
     grid-row-gap: var(--gutter);
-    grid-template-columns: repeat(auto-fit, minmax(var(--min-width), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-width), var(--max-width)));
     margin: 0;
   }
 }

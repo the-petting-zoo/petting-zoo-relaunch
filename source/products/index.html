@@ -5,11 +5,11 @@ layout: default
 
 <!-- Catalogs -->
 <section data-ui-panel class="no-padding-top margin-top-header">
-  <div data-ui-wrapper="wide">
+  <div data-ui-wrapper>
     <h1 class="padding-bottom t-align-center">Catalogs</h1>
 
     <!-- unsorted catalogs -->
-    <ul data-ui-gallery>
+    <ul data-ui-gallery="small">
       {%- for catalog in site.categories.catalogs -%}
         {%- unless catalog.topic -%}
           <li data-ui-gallery-item>
@@ -17,6 +17,7 @@ layout: default
               title=catalog.title
               image=catalog.cover
               url=catalog.url
+              aspect='catalog'
             -%}
           </li>
         {%- endunless -%}
@@ -24,41 +25,62 @@ layout: default
     </ul>
 
     <!-- topics -->
-    {%- for topic in site.categories.catalog_topics -%}
-      <section class="margin-top padding-top border-top">
-        <h2 class="t-scale-gamma t-align-center padding-bottom">{{ topic.title }}</h2>
-        <ul data-ui-gallery>
-          {%- for catalog in site.categories.catalogs -%}
-            {%- if catalog.topic contains topic.unique_id -%}
-              <li data-ui-gallery-item>
-                {%- include card.html 
-                  title=catalog.title
-                  image=catalog.cover
-                  url=catalog.url
-                -%}
-              </li>
+    {%- capture topics_length -%}
+      {{ site.categories.catalog_topics | size }}
+    {%- endcapture -%}
+    {%- unless topics_length == '0' -%}
+      {%- for topic in site.categories.catalog_topics -%}
+        <section class="margin-top padding-top border-top">
+          <h2 class="t-scale-gamma t-align-center padding-bottom">{{ topic.title }}</h2>
+          <ul data-ui-gallery="small">
+            {%- for catalog in site.categories.catalogs -%}
+              {%- if catalog.topic contains topic.unique_id -%}
+                <li data-ui-gallery-item>
+                  {%- include card.html 
+                    title=catalog.title
+                    image=catalog.cover
+                    url=catalog.url
+                    aspect='catalog'
+                  -%}
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+            {%- if topics_length <= '3' -%}
+              <!-- dummy list item to prevent a single item from becoming huge on large screens -->
+              <li data-ui-gallery-item class="hide-below@small"></li>
             {%- endif -%}
-          {%- endfor -%}
-        </ul>
-      </section>
-    {%- endfor -%}
+          </ul>
+        </section>
+      {%- endfor -%}
+    {%- endunless -%}
   </div>
 </section>
 
 <!-- Collections -->
-<section data-ui-panel class="border-top">
-  <h1 class="t-align-center padding-bottom">Collections</h1>
-  <ul data-ui-gallery>
-    {%- for collection in site.categories.product_collections -%}
-      <li data-ui-gallery-item>
-        {%- include card.html 
-          title=collection.title
-          image=collection.image
-          url=collection.url
-        -%}
-      </li>
-    {%- endfor -%}
-  </ul>
+{%- capture collections_length -%}
+    {{ site.categories.product_collections | size }}
+{%- endcapture -%}
+{%- unless collections_length == '0' -%}
+  <section data-ui-panel class="border-top">
+    <div data-ui-wrapper>
+      <h1 class="t-align-center padding-bottom">Collections</h1>
+      <ul data-ui-gallery>
+        {%- for collection in site.categories.product_collections -%}
+          <li data-ui-gallery-item>
+            {%- include card.html 
+              title=collection.title
+              image=collection.image 
+              url=collection.url 
+            -%}
+          </li>
+        {%- endfor -%}
+        {%- if collections_length < '3' -%}
+          <!-- dummy list item to prevent a single item from becoming huge on large screens -->
+          <li data-ui-gallery-item class="hide-below@small"></li>
+        {%- endif -%}
+      {%- endunless -%}
+        </ul>
+    </div>
 </section>
 
 <!-- Custom products -->

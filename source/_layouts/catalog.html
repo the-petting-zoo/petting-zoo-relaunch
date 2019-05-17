@@ -5,9 +5,9 @@ active: products
 
 <section>
   {%- comment -%} if there's a banner image... {%- endcomment -%}
-  {%- if page.image -%}
+  {%- if page.cover -%}
     {%- include billboard.html 
-      image=page.image 
+      image=page.cover 
       title=page.title
       button_label='<strong>Download a PDF</strong> of this catalog'
       button_url=page.pdf
