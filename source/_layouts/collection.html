@@ -7,7 +7,7 @@ active: products
   {%- comment -%} if there's a banner image... {%- endcomment -%}
   {%- if page.image -%}
     {%- include billboard.html 
-      image=page.image 
+      image='https://placehold.it/1200x600?text=Banner'
       title=page.title
     -%}
   {%- else -%}
@@ -41,6 +41,9 @@ active: products
             </li>
           {%- endif -%}
         {%- endfor -%}
+        <!-- dummy list item to prevent a single item from becoming huge on large screens -->
+        <li data-ui-gallery-item class="hide-below@small"></li>
+        <li data-ui-gallery-item class="hide-below@small"></li>
       </ul>
     </div>
   </section>
