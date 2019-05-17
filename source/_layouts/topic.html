@@ -5,7 +5,7 @@ active: products
 
 <!-- Topic catalogs -->
 <section data-ui-panel class="no-padding-top margin-top-header">
-  <div data-ui-wrapper="wide">
+  <div data-ui-wrapper>
     <h1 class="padding-bottom t-align-center">{{ page.title }}</h1>
     <ul data-ui-gallery>
       {%- for catalog in site.categories.catalogs -%}
@@ -15,10 +15,14 @@ active: products
               title=catalog.title
               image=catalog.cover
               url=catalog.url
+              aspect='catalog'
             -%}
           </li>
         {%- endif -%}
       {%- endfor -%}
+      <!-- dummy list item to prevent a single item from becoming huge on large screens -->
+      <li data-ui-gallery-item class="hide-below@small"></li>
+      <li data-ui-gallery-item class="hide-below@small"></li>
     </ul>
   </div>
 </section>
@@ -45,6 +49,9 @@ active: products
             </li>
           {%- endunless -%}
         {%- endfor -%}
+        <!-- dummy list item to prevent a single item from becoming huge on large screens -->
+        <li data-ui-gallery-item class="hide-below@small"></li>
+        <li data-ui-gallery-item class="hide-below@small"></li>
       </ul>
     </div>
   </nav>

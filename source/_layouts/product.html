@@ -13,7 +13,7 @@ active: products
         
         <!-- product image -->
         <div data-ui-columns-main class="gutter">
-          <img src="{{ page.image }}" alt="{{ page.title }}" style="width: 100%;">
+          <img class="border" src="{{ page.image }}" alt="{{ page.title }}" style="width: 100%;">
         </div>
 
         <!-- description -->
@@ -68,6 +68,9 @@ active: products
               </li>
             {%- endif -%}
           {%- endfor -%}
+          <!-- dummy list item to prevent a single item from becoming huge on large screens -->
+          <li data-ui-gallery-item class="hide-below@small"></li>
+          <li data-ui-gallery-item class="hide-below@small"></li>
         </ul>
       </div>
     </section>
@@ -90,6 +93,9 @@ active: products
               </li>
             {%- endif -%}
           {%- endfor -%}
+          <!-- dummy list item to prevent a single item from becoming huge on large screens -->
+          <li data-ui-gallery-item class="hide-below@small"></li>
+          <li data-ui-gallery-item class="hide-below@small"></li>
         </ul>
       </div>
     </section>

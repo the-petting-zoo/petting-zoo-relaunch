@@ -4,7 +4,7 @@
 // --- Mixins & helpers ---
 // create a modifier with width:height ratio values
 // PRIVATE
-@mixin _aspect-variation($w: 3, $h: 1, $use-scale: true) {
+@mixin _aspect-variation($w: 2, $h: 1, $use-scale: true) {
   [data-ui-aspect*='#{$w}x#{$h}'] {
     &::before {
       @if $use-scale {
@@ -29,7 +29,7 @@
   &::before {
     content: '';
     display: block;
-    padding-top: (ms(1, 1) / ms(3, 1) * 100%);
+    padding-top: (ms(1, 1) / ms(2, 1) * 100%);
   }
 }
 

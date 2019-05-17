@@ -71,6 +71,9 @@ active: products
             </li>
           {%- endunless -%}
         {%- endfor -%}
+        <!-- dummy list item to prevent a single item from becoming huge on large screens -->
+        <li data-ui-gallery-item class="hide-below@small"></li>
+        <li data-ui-gallery-item class="hide-below@small"></li>
       </ul>
     </div>
   </nav>
