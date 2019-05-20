@@ -120,7 +120,7 @@ collections:
         collection: "catalog_topics"
         searchFields: ["title"]
         displayFields: "title"
-        valueField: "id"
+        valueField: "unique_id"
         multiple: true
         required: false
         hint: "This allows you to relate the catalog to a topic, a topic is what is used in the dropdown area on the home page."
@@ -163,7 +163,7 @@ collections:
         collection: "catalogs"
         searchFields: ["title"]
         displayFields: "title"
-        valueField: "id"
+        valueField: "unique_id"
         multiple: true
         required: false
         hint: "This associates the product with one or many catalogs"
@@ -173,7 +173,7 @@ collections:
         collection: "product_collections"
         searchFields: ["title"]
         displayFields: "title"
-        valueField: "id"
+        valueField: "unique_id"
         multiple: true
         required: false
         hint: "This associates the product with one or many collections"
