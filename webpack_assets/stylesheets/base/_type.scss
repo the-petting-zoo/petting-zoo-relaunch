@@ -19,180 +19,178 @@
 // --- headings ----------------------------------------------------------------
 
 // shared heading styles
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.t-heading {
-  @include color-fg('text-primary');
-  @include font('display');
-  display: block;
-  letter-spacing: 0;
-  line-height: type-leading('tight');
-  margin: 0;
-  position: relative;
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// .t-heading {
+//   @include color-fg('text-primary');
+//   @include font('display');
+//   display: block;
+//   letter-spacing: 0;
+//   line-height: type-leading('tight');
+//   margin: 0;
+//   position: relative;
 
-  strong {
-    @include font('bold');
-  }
-}
+//   strong {
+//     @include font('bold');
+//   }
+// }
 
-h1,
-.t-scale-alpha {
-  @include type-fluid($size-min: 'gamma', $size-max: 'alpha');
-  font-weight: font-weight(xlight);
-  letter-spacing: -0.03em;
+// h1,
+// .t-scale-alpha {
+//   @include type-fluid($size-min: 'gamma', $size-max: 'alpha');
+//   letter-spacing: -0.03em;
 
-  @media print {
-    page-break-after: avoid;
-  }
-}
+//   @media print {
+//     page-break-after: avoid;
+//   }
+// }
 
-h2,
-.t-scale-beta {
-  @include type-fluid($size-min: 'gamma', $size-max: 'beta');
-  font-weight: font-weight(xlight);
-  letter-spacing: -0.02em;
+// h2,
+// .t-scale-beta {
+//   @include type-fluid($size-min: 'gamma', $size-max: 'beta');
+//   letter-spacing: -0.02em;
 
-  @media print {
-    orphans: 3;
-    page-break-after: avoid;
-    widows: 3;
-  }
-}
+//   @media print {
+//     orphans: 3;
+//     page-break-after: avoid;
+//     widows: 3;
+//   }
+// }
 
-h3,
-.t-scale-gamma {
-  @include type-fluid($size-min: 'delta', $size-max: 'gamma');
-  letter-spacing: -0.01em;
+// h3,
+// .t-scale-gamma {
+//   @include type-fluid($size-min: 'delta', $size-max: 'gamma');
+//   letter-spacing: -0.01em;
 
-  @media print {
-    orphans: 3;
-    page-break-after: avoid;
-    widows: 3;
-  }
-}
+//   @media print {
+//     orphans: 3;
+//     page-break-after: avoid;
+//     widows: 3;
+//   }
+// }
 
-h4,
-.t-scale-delta {
-  @include type-fluid($size-min: 'epsilon', $size-max: 'delta');
-  letter-spacing: -0.005em;
-}
+// h4,
+// .t-scale-delta {
+//   @include type-fluid($size-min: 'epsilon', $size-max: 'delta');
+//   letter-spacing: -0.005em;
+// }
 
-h5,
-.t-scale-epsilon {
-  font-size: scale-type('epsilon');
-}
+// h5,
+// .t-scale-epsilon {
+//   font-size: scale-type('epsilon');
+// }
 
-h6,
-.t-scale-zeta {
-  font-size: scale-type('zeta');
-}
+// h6,
+// .t-scale-zeta {
+//   font-size: scale-type('zeta');
+// }
 
-.t-scale-eta {
-  font-size: scale-type('eta');
-}
+// .t-scale-eta {
+//   font-size: scale-type('eta');
+// }
 
-// --- body/inline text --------------------------------------------------------
+// // --- body/inline text --------------------------------------------------------
 
-body {
-  @include font;
-  font-style: normal;
-  line-height: type-leading();
-}
+// body {
+//   @include font;
+//   font-style: normal;
+//   line-height: type-leading();
+// }
 
-p {
-  @include color-fg('text-primary');
-  font-size: scale-type('epsilon');
+// p {
+//   @include color-fg('text-primary');
+//   font-size: scale-type('epsilon');
 
-  margin: 0;
+//   margin: 0;
 
-  & + & {
-    margin-top: 1em;
-  }
+//   & + & {
+//     margin-top: 1em;
+//   }
 
-  @media print {
-    orphans: 3;
-    widows: 3;
-  }
-}
+//   @media print {
+//     orphans: 3;
+//     widows: 3;
+//   }
+// }
 
-a {
-  @include transition;
-  // border-bottom-style: border-style('secondary');
-  // border-bottom-width: border-width('thin');
-  border-bottom-style: dotted;
-  border-bottom-width: 1px;
-  color: inherit;
-  text-decoration: none;
-  // text-decoration-skip: objects edges box-decoration;
+// a {
+//   @include transition;
+//   // border-bottom-style: border-style('secondary');
+//   // border-bottom-width: border-width('thin');
+//   border-bottom-style: dotted;
+//   border-bottom-width: 1px;
+//   color: inherit;
+//   text-decoration: none;
+//   // text-decoration-skip: objects edges box-decoration;
 
-  // 'active' state
-  &.is-active,
-  .is-active & {
-    @include color-fg('highlight');
-  }
+//   // 'active' state
+//   &.is-active,
+//   .is-active & {
+//     @include color-fg('highlight');
+//   }
 
-  &:hover,
-  &:active {
-    @include color-fg('highlight');
-  }
-}
+//   &:hover,
+//   &:active {
+//     @include color-fg('highlight');
+//   }
+// }
 
-// see t-weight-* and t-style-* classes below for equivalent utilies
-strong {
-  @extend %t-weight-bold;
+// // see t-weight-* and t-style-* classes below for equivalent utilies
+// strong {
+//   @extend %t-weight-bold;
 
-  em {
-    @include font($weight: bold);
-  }
-}
+//   em {
+//     @include font($weight: bold);
+//   }
+// }
 
-em {
-  @extend %t-style-italic;
+// em {
+//   @extend %t-style-italic;
 
-  strong {
-    @include font($weight: bold);
-  }
-}
+//   strong {
+//     @include font($weight: bold);
+//   }
+// }
 
-small,
-.t-small {
-  @include color-fg('text-tertiary');
-  font-size: scale-type('zeta');
-}
+// small,
+// .t-small {
+//   @include color-fg('text-tertiary');
+//   font-size: scale-type('zeta');
+// }
 
-figcaption,
-.t-caption {
-  @include color-fg('text-secondary');
-  font-size: scale-type('eta');
-}
+// figcaption,
+// .t-caption {
+//   @include color-fg('text-secondary');
+//   font-size: scale-type('eta');
+// }
 
-address,
-.t-address {
-  @include color-fg('text-secondary');
-  font-size: scale-type('eta');
-}
+// address,
+// .t-address {
+//   @include color-fg('text-secondary');
+//   font-size: scale-type('eta');
+// }
 
-blockquote,
-.t-blockquote {
-  @include border('left', $w: 'medium', $color: 'highlight');
-  padding-left: space('narrow');
+// blockquote,
+// .t-blockquote {
+//   @include border('left', $w: 'medium', $color: 'highlight');
+//   padding-left: space('narrow');
 
-  @media print {
-    page-break-inside: avoid;
-  }
-}
+//   @media print {
+//     page-break-inside: avoid;
+//   }
+// }
 
-// this is a default for this element
-// -> to style with classes use t-scale-*, t-italic, etc.
-cite {
-  @include font($style: 'italic');
-  font-size: 0.6em;
-  line-height: type-leading('tight');
-}
+// // this is a default for this element
+// // -> to style with classes use t-scale-*, t-italic, etc.
+// cite {
+//   @include font($style: 'italic');
+//   font-size: 0.6em;
+//   line-height: type-leading('tight');
+// }
 
 // Rendered content (markdown)
 // -> a container with running text content
@@ -257,14 +255,14 @@ cite {
   &.t-heading,
   .t-font-display &,
   &.t-font-display {
-    @include font('display');
+  @include font('display');
   }
 }
 
 // extended by strong base style above
 %t-weight-bold,
 .t-weight-bold {
-  @include font('bold');
+  @include font($weight: 'bold');
 
   .t-heading &,
   &.t-heading,
@@ -282,7 +280,7 @@ cite {
 
   .t-weight-bold &,
   &.t-weight-bold {
-    @include font($weight: 'bold', $style: 'italic')
+    @include font($weight: 'bold', $style: 'italic');
   }
 }
 

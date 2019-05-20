@@ -1,0 +1,14 @@
+{%- comment -%}
+  Button component
+  -> an anchor tag styled like a button
+
+  Locals:
+  label - STRING: the label
+  url - STRING: link address
+  prominence - STRING (optional): "large", "small", empty (default). Using 'prominence' because 'size' is a reserved word in ruby.
+  role - STRING (optional): "primary", empty (default)
+{%- endcomment -%}
+
+<a data-ui-button="{{ include.role }} {{ include.prominence }}" href="{{ include.url }}">
+  {{ include.label }}
+</a>

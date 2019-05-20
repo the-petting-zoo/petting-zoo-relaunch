@@ -9,10 +9,10 @@
  */
 
 // -- Base styles ---
-@import "base/form";
-@import "base/html";
+// @import "base/form";
+// @import "base/html";
 @import "base/list";
-@import "base/media";
+// @import "base/media";
 @import "base/type";
 
 // --- Utilities ---
@@ -24,3 +24,11 @@
 @import "utilities/visibility";
 
 // --- UI components ---
+@import "components/billboard";
+@import "components/button";
+@import "components/columns";
+@import "components/fluid_aspect_ratio";
+@import "components/gallery";
+@import "components/panel";
+@import "components/stats";
+@import "components/wrapper";

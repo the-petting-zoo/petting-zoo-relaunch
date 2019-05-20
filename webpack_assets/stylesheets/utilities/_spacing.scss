@@ -3,6 +3,14 @@
 // sass-lint:disable no-important
 @import '../config/spacing';
 
+// --- global custom props ---
+
+:root {
+  @each $name, $length in $spacing {
+    --space-#{$name}: #{$length};
+  }
+}
+
 // --- Margin & padding ---
 
 @each $prop in (padding, margin) {
@@ -111,17 +119,7 @@
 // --- outside gutters ----
 // -> opinionated class to set consistent, responsive outside padding on full-width containers
 .padding-x-outside {
-  padding-left: space(space-outside('default'));
-  padding-right: space(space-outside('default'));
-
-  @each $screen, $width in $spacing-outside {
-    @if $screen != 'default' {
-      @include media('>#{$screen}') {
-        padding-left: space($width);
-        padding-right: space($width);
-      }
-    }
-  }
+  @include space-outside();
 }
 
 // --- Split gutters ---
@@ -173,4 +171,10 @@
       margin-#{$side}: -(space($name));
     }
   }
+}
+
+// --- Header padding (deprecated, temporary patch) ---
+
+.margin-top-header {
+  margin-top: 10rem;
 }

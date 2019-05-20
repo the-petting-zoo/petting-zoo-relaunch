@@ -1,12 +1,10 @@
 ---
-layout: catalog
 published: true
 show_products: true
-category: catalog
 title: Sealife Wildlife
-slug: sealife
-pdf: Sealifewildlife_2017_NoPrice.pdf
-cover: sealife-cover.jpg
+unique_id: sealife-wildlife
+pdf: /static/uploads/Sealifewildlife_2017_NoPrice.pdf
+cover: /static/uploads/sealife-cover.jpg
 topic:
   - Sealife
----
+--- 

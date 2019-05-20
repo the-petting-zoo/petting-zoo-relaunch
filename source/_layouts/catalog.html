@@ -3,108 +3,81 @@ layout: default
 active: products
 ---
 
-<main role="main" class="wrapper">
-
-  <h1 class="title">{{ page.title }}</h1>
-  
-  {% comment %}{% capture cat_name %}{{ page.title | downcase | replace: " ", "-" }}{% endcapture %}{% endcomment %}
-
-  {% if page.filebase %}
-  <!-- catalog: main carousel -->
-  <div id="pdf-viewer" class="flexslider{% if page.spread == true %} spread{% endif %} js-scale-height" data-directory="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ page.directory }}/" data-filebase="{{ page.filebase | xml_escape }}" data-extension="{{ page.extension }}" data-numslides="{{ page.numslides }}" >
-    <a href="#" class="prev icon-arrow-left--blue">&lsaquo; Previous</a>
-    <a href="#" class="next icon-arrow-right--blue">Next &rsaquo;</a>
-  </div>
-
-  <!-- thumbnail nav -->
-  <div id="pdf-thumb" class="flexslider" data-directory="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ page.directory }}/" data-filebase="{{ page.filebase | xml_escape }}" data-extension="{{ page.extension }}" data-numslides="{{ page.numslides }}"></div>
-
-  {% endif %}
-
-  {% if page.show_products == "true" %}
-
-  <section class="strip">
-    <h2>Featured products in this catalog</h2>
-
-    <aside id="filter-nav" class="filter-nav">
-      <form id="js-filters" class="controls">
-        <h3 class="callout filter-label">Filters</h3>
-        <button id="js-reset" class="filter active">Show All</button>
-        <fieldset class="filter-set">
-          <span class="filter-cat callout">Type</span>
-           {% assign typeList = ',' %}
-          {% for product in site.categories.products %}
-            {% if product.catalog == page.slug %}
-            {% for item in product.type %}
-              {% capture compareType %},{{ item }},{% endcapture %}
-              {% if typeList contains compareType %}{% else %}
-                <button class="filter" data-filter='.{{ item }}'>{{ item | capitalize }}</button>
-                {% capture tempList %}{{ typeList }}{{ item }},{% endcapture %}
-                {% assign typeList = tempList %}
-              {% endif %}
-            {% endfor %}
-            {% endif %}
-          {% endfor %}
-        </fieldset>
-        <fieldset class="filter-set">
-          <span class="filter-cat callout">Size</span>
-           {% assign typeList = ',' %}
-          {% for product in site.categories.products %}
-            {% if product.catalog == page.slug %}
-            {% for item in product.size %}
-              {% capture compareType %},{{ item }},{% endcapture %}
-              {% if typeList contains compareType %}{% else %}
-                <button class="filter" data-filter='.{{ item }}'>{{ item | capitalize }}</button>
-                {% capture tempList %}{{ typeList }}{{ item }},{% endcapture %}
-                {% assign typeList = tempList %}
-              {% endif %}
-            {% endfor %}
-            {% endif %}
-          {% endfor %}
-        </fieldset>
-        <fieldset class="filter-set">
-          <span class="filter-cat callout">Color</span>
-           {% assign typeList = ',' %}
-          {% for product in site.categories.products %}
-            {% if product.catalog == page.slug %}
-            {% for item in product.color %}
-              {% capture compareType %},{{ item }},{% endcapture %}
-              {% if typeList contains compareType %}{% else %}
-                <button class="filter" data-filter='.{{ item }}'>{{ item | capitalize }}</button>
-                {% capture tempList %}{{ typeList }}{{ item }},{% endcapture %}
-                {% assign typeList = tempList %}
-              {% endif %}
-            {% endfor %}
-            {% endif %}
-          {% endfor %}
-        </fieldset>
-      </form>
-    </aside>
-
-    <ul id="filter-container" class="grid medium">
-      {% for product in site.categories.products %}
-      {% if product.catalog == page.slug %}
-        {% include product-tile.html post=product filter=true %}
-      {% endif %}
-      {% endfor %}
-    </ul>
+<section>
+  {%- comment -%} if there's a banner image... {%- endcomment -%}
+  {%- if page.cover -%}
+    {%- include billboard.html 
+      image='https://placehold.it/1200x600?text=Banner'
+      title=page.title
+      button_label='<strong>Download a PDF</strong> of this catalog'
+      button_url=page.pdf
+    -%}
+  {%- else -%}
+    {%- comment -%} otherwise, just show the title {%- endcomment -%}
+    <div class="padding-x-outside">
+      <div data-ui-wrapper="wide" class="margin-top-header">
+        <h1 class="t-align-center">{{ page.title }}</h1>
+        {%- if page.pdf -%}
+          <div class="padding-top t-align-center">
+            {%- include button_link.html
+              label='<strong>Download a PDF</strong> of this catalog'
+              url=page.pdf
+            -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+  <section data-ui-panel class="padding-top">
+    <div data-ui-wrapper="wide">
+      <h2 class="t-scale-zeta t-align-center c-highlight padding-bottom">Products</h2>
+      <ul data-ui-gallery="small">
+        {%- for product in site.categories.products -%}
+          {%- if product.catalog contains page.unique_id -%}
+            <li data-ui-gallery-item>
+              {%- include card.html 
+                title=product.title
+                image=product.image
+                url=product.url
+              -%}
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+        <!-- dummy list item to prevent a single item from becoming huge on large screens -->
+        <li data-ui-gallery-item class="hide-below@small"></li>
+        <li data-ui-gallery-item class="hide-below@small"></li>
+      </ul>
+    </div>
   </section>
-
-  {% endif %}
-
-  <div class="center">
-    {% if page.pdf %}
-    <a href="{{ site.assets.s3 }}{{ site.assets.catalog }}{{ page.directory }}/{{ page.pdf }}" class="button small">Download a PDF of this catalog</a>
-    {% endif %}
-  </div>
-
-</main>
-
-<section class="strip well pointer">
-  <h3 class="callout">More catalogs</h3>
-  <div class="wrapper">
-    <ul class="grid medium center">
-    {% include catalogs.html %}
-    </ul>
-  </div>
 </section>
+
+<!-- More collections -->
+{%- comment -%} Check to see how many other collections exist {%- endcomment -%}
+{%- capture collections_length -%}
+  {{ site.categories.catalogs | size | minus: 1 }}
+{%- endcapture -%}
+{%- comment -%} If there are more than 0, show a gallery of them here {%- endcomment -%}
+{%- unless collections_length == '0' -%}
+  <nav data-ui-panel class="border-top c-well">
+    <div data-ui-wrapper="wide">
+      <h2 class="t-align-center padding-bottom">More of our catalogs</h2>
+      <ul data-ui-gallery="small">
+        {%- for catalog in site.categories.catalogs -%}
+          {%- unless catalog.unique_id == page.unique_id -%}
+            <li data-ui-gallery-item>
+              {%- include card.html 
+                title=catalog.title
+                image=catalog.cover
+                url=catalog.url
+                aspect='catalog'
+              -%}
+            </li>
+          {%- endunless -%}
+        {%- endfor -%}
+        <!-- dummy list item to prevent a single item from becoming huge on large screens -->
+        <li data-ui-gallery-item class="hide-below@small"></li>
+        <li data-ui-gallery-item class="hide-below@small"></li>
+      </ul>
+    </div>
+  </nav>
+{%- endunless -%}

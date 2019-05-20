@@ -1,0 +1,67 @@
+// Button component
+// -> clickable <button> and <a> elements that trigger links or actions
+@import '../config/animation';
+@import '../config/borders';
+@import '../config/color';
+@import '../config/scale';
+@import '../config/type';
+
+// --- Base ---
+[data-ui-button] {
+  $font-size: scale-type('epsilon');
+  $padding: 0.68em 1.56em 0.60em 1.56em;
+  $fg-color: $white;
+  $bg-color: 'text-primary';
+  $shadow-height: 0.25em;
+
+  --font-size: #{$font-size};
+  --padding: #{$padding};
+  --color: var(#{color-property($bg-color)});
+  --color-hover: var(#{color-property($bg-color, 'light')});
+  --color-shadow: var(#{color-property($bg-color, 'dark')});
+
+  @include font(display);
+  @include transition();
+  color: $fg-color; // using a color var directly because the label should forever and always be white no matter what
+  border-radius: border-radius('large');
+  display: inline-block;
+  font-size: $font-size; // fallback/default for old browsers
+  font-size: var(--font-size);
+  padding: $padding; // fallback/default for old browsers
+  padding: var(--padding);
+  position: relative;
+  background-color: color($bg-color);
+  background-color: var(--color);
+  box-shadow: 0 $shadow-height 0 0 var(--color-shadow);
+  top: ($shadow-height * -1);
+  margin-bottom: $shadow-height;
+
+  &:hover {
+    color: $fg-color;
+    background-color: var(--color-hover);
+  }
+
+  &:active {
+    color: $fg-color;
+    background-color: var(--color-shadow);
+  }
+}
+
+// --- Traits ---
+
+// prominence/size
+[data-ui-button~="small"] {
+  --font-size: #{scale-type('zeta')};
+}
+
+[data-ui-button~="large"] {
+  --font-size: #{scale-type('delta')};
+}
+
+// role
+[data-ui-button~="primary"] {
+  $color: 'highlight';
+  --color: var(#{color-property($color)});
+  --color-hover: var(#{color-property($color, 'light')});
+  --color-shadow: var(#{color-property($color, 'dark')});
+}

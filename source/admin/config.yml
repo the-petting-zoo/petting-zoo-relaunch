@@ -30,7 +30,7 @@ collections:
     label: "About Page"
     folder: "source/_posts/about"
     create: false
-    deelte: false
+    delete: false
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
@@ -44,7 +44,7 @@ collections:
     label: "Home Page"
     folder: "source/_posts/home"
     create: false
-    deelte: false
+    delete: false
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
@@ -93,7 +93,7 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
       - {label: "Category", name: "category", widget: "hidden", default: "catalog_topic"}
-      - {label: "ID", name: "id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
+      - {label: "ID", name: "unique_id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
       - {label: "Topic Name", name: "title", widget: "string"}
       - {label: "Catalog Topic Cover", name: "image", widget: "image", allow_multiple: false, required: false, hint: "This is the image displayed on the top of the topic page"}
 
@@ -109,8 +109,8 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "catalog"}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
       - {label: "Show Products", name: "show_products", widget: "hidden", default: true}
-      - {label: "Category", name: "category", widget: "hidden", default: "catalog"}
-      - {label: "ID", name: "id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
+      - {label: "Category", name: "category", widget: "hidden", default: "catalogs"}
+      - {label: "ID", name: "unique_id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Catalog PDF", name: "pdf", widget: "file", allow_multiple: false, required: false, hint: "This is the catalog file that can be downloaded"}
       - {label: "Catalog Cover", name: "cover", widget: "image", allow_multiple: false, required: false, hint: "This is the image displayed on the top of the catalog page"}
@@ -137,7 +137,7 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
       - {label: "Category", name: "category", widget: "hidden", default: "product_collection"}
-      - {label: "ID", name: "id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
+      - {label: "ID", name: "unique_id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
       - {label: "Collection Name", name: "title", widget: "string"}
       - {label: "Product Collection Cover", name: "image", widget: "image", allow_multiple: false, hint: "This is the image displayed on the top of the collection page"}
 

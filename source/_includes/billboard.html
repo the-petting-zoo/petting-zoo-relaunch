@@ -1,0 +1,26 @@
+{%- comment -%}
+  Billboard component
+  -> a banner image with a headline (and optional button) overlaid
+
+  Locals:
+  title - STRING: the headline text
+  image - STRING (optional): url or path of the banner image
+  button_label - STRING (optional): the label of the button
+  button_url - STRING (optional): the url of the button
+  el - STRING (optional): the containing element. defaults to header.
+{%- endcomment -%}
+{%- assign el = include.el | default: 'header' -%}
+{%- assign button_label = include.button_label | default: 'Download the PDF' -%}
+
+<{{ el }} data-ui-billboard class="border-bottom" style="background-image: url('{{ include.image }}');">
+  <h1 data-ui-billboard-title class="padding-x-outside margin-top-header">{{ include.title }}</h1>
+  {%- if include.button_url -%}
+    <div data-ui-billboard-action class="padding-x-outside padding-bottom">
+      {%- include button_link.html
+        label=button_label 
+        url=include.button_url
+      -%}
+    </div>
+  {%- endif -%}
+  <img data-ui-billboard-image src="{{ include.image }}" alt="{{ include.title }}">
+</{{ el }}>

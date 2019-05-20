@@ -1,0 +1,23 @@
+// Wrapper component
+// -> limits the layout of children and also horizontally centers them on larger screens
+@import '../config/breakpoints';
+@import '../config/layout_width';
+@import '../config/scale';
+@import '../config/spacing';
+
+// --- Base ---
+
+[data-ui-wrapper] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: layout-w();
+}
+
+// --- Traits ----
+
+@each $name, $width in $layout-widths {
+  [data-ui-wrapper~='#{$name}'] {
+    max-width: layout-w($name);
+  }
+}

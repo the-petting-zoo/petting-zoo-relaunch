@@ -10,7 +10,7 @@
     <!-- deprecated stylesheet -->
     <link rel="stylesheet" href="{{ 'static/stylesheets/app-old.css' | relative_url }}">
     <!-- new stylesheet -->
-    <link rel="stylesheet" href="{{ site.data.webpack_manifest['styles.bundle.css'] | relative_url }}">
+    <link rel="stylesheet" href="{{ site.data.webpack_manifest['styles.css'] | relative_url }}">
     {% include grunticon.html %}
     <script>
       // Add a class to the html element to confirm JS is available
@@ -31,9 +31,9 @@
     {% include main-footer.html %}
     
     <!-- javascript bundles -->
-    <script type="module" src="{{ site.data.webpack_manifest['main.bundle.mjs'] | relative_url }}"></script>
+    <script type="module" src="{{ site.data.webpack_manifest['main.mjs'] | relative_url }}"></script>
     {% if jekyll.environment == "production" %}
-      <script nomodule type="text/javascript" src="{{ site.data.webpack_manifest['main.es5.bundle.mjs'] | relative_url }}"></script>
+      <script nomodule type="text/javascript" src="{{ site.data.webpack_manifest['main.es5.mjs'] | relative_url }}"></script>
     {% endif %}
     
     <!-- google maps api -->

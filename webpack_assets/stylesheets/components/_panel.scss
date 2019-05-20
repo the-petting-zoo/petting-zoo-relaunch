@@ -1,0 +1,12 @@
+// Panel component
+// -> a full-width, themed chunk of content with padding
+@import '../config/spacing';
+
+// --- Base ---
+[data-ui-panel] {
+  @include space-outside();
+  display: block;
+  padding-bottom: space('wide');
+  padding-top: space('wide');
+  position: relative;
+}

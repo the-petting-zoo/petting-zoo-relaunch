@@ -1,0 +1,59 @@
+// Billboard component
+// -> a full-bleed image with overlay heading
+@import '../config/positioning';
+
+// --- Base ---
+[data-ui-billboard] {
+  display: block;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  height: 50rem;
+  height: 64vh;
+  overflow-y: hidden;
+}
+
+// --- Elements ---
+[data-ui-billboard-image] {
+  display: none;
+
+  @supports (object-fit: cover) and (object-position: center) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    object-position: center;
+    z-index: z('low');
+    max-width: none;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+[data-ui-billboard-title],
+[data-ui-billboard-action] {
+  
+}
+
+[data-ui-billboard-title] {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  text-align: center;
+  z-index: z('high');
+}
+
+[data-ui-billboard-action] {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: right;
+  z-index: z('high');
+}

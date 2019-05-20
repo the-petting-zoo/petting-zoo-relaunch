@@ -3,85 +3,101 @@ layout: default
 active: products
 ---
 
-<h1 class="title first center">{{ page.title }}</h1>
-
-<main role="main" class="wrapper narrow sidebar-right">
-
-  <aside class="product-meta" role="contentinfo">
-    <dl>
-      {% if page.item %}
-      <dt class="callout">Item:</dt>
-      <dd>{{ page.item }}</dd>
-      {% endif %}
-      {% if page.case %}
-      <dt class="callout">Case PK:</dt>
-      <dd>{{ page.case }}</dd>
-      {% endif %}
-      {% if page.master %}
-      <dt class="callout">Master Case:</dt>
-      <dd>{{ page.master }}</dd>
-      {% endif %}
-    </dl>
-  </aside>
+<article class="margin-top-header">
+  <div data-ui-panel="" class="no-padding-top">
+    <div data-ui-wrapper="wide">
     
-  <!-- catalog: main carousel -->
-  <div class="product js-scale-height">
-    {% comment %}{% for photo in page.photos %}
-     
-    <figure class="product js-scale-height">
-    <img src="{{ photo.src }}" alt="{% if photo.caption %}{{ photo.caption }}{% else %}{{ page.title }}{% endif %}" class="product-image" />
-    {% if photo.caption %}
-    <figcaption class="product-caption">{{ photo.caption }}</figcaption>
-    {% endif %}
-  </figure>
+      <!-- product title -->
+      <h1 class="padding-bottom">{{ page.title }}</h1>
+      <div data-ui-columns class="gutter-wrapper">
+        
+        <!-- product image -->
+        <div data-ui-columns-main class="gutter">
+          <img class="border" src="{{ page.image }}" alt="{{ page.title }}" style="width: 100%;">
+        </div>
 
-    {% endfor %}{% endcomment %}
-    {{ content }}
+        <!-- description -->
+        <div data-ui-columns-sidebar class="gutter margin-y-between-narrow">
+          <div class="t-content">{{ content }}</div>
+
+          <!-- product metadata -->
+          <aside class="padding-top-narrow border-top">
+            <dl data-ui-stats class="gutter-wrapper gutter-narrow">
+              {%- if page.sku -%}
+              <div data-ui-stats-group class="gutter">
+                <dt data-ui-stats-item class="t-scale-zeta t-weight-bold">
+                  SKU number:
+                </dt>
+                <dd data-ui-stats-item clas="t-scale-zeta">
+                  {{ page.sku }}
+                </dd>
+              </div>
+              {%- endif -%}
+              {%- if page.color -%}
+              <div data-ui-stats-group class="gutter">
+                <dt data-ui-stats-item class="t-scale-zeta t-weight-bold">
+                  Color:
+                </dt>
+                <dd data-ui-stats-item clas="t-scale-zeta">
+                  {{ page.color }}
+                </dd>
+              </div>
+              {%- endif -%}
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </div>
   </div>
-</main>
 
-<nav class="local page">
-  {% if page.previous.url %}
-    <a class="page-button prev" href="{{ page.previous.url }}">
-      <span class="icon-alone icon-arrow-left--blue"></span>
-      <span class="page-title">{{ page.previous.title }}</span>
-    </a> 
-  {% endif %}
+  <!-- catalogs -->
+  {%- if page.catalog -%}
+    <section data-ui-panel class="c-well border-top">
+      <div data-ui-wrapper="wide">
+        <h2 class="padding-bottom">Catalogs featuring this product</h2>
+        <ul data-ui-gallery>
+          {%- for catalog in site.categories.catalogs -%}
+            {%- if page.catalog contains catalog.unique_id -%}
+              <li data-ui-gallery-item>
+                {%- include card.html 
+                  title=catalog.title
+                  image=catalog.cover
+                  url=catalog.url
+                  aspect='catalog'
+                -%}
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+          <!-- dummy list item to prevent a single item from becoming huge on large screens -->
+          <li data-ui-gallery-item class="hide-below@small"></li>
+          <li data-ui-gallery-item class="hide-below@small"></li>
+        </ul>
+      </div>
+    </section>
+  {%- endif -%}
 
-  {% if page.next.url %}
-    <a class="page-button next" href="{{ page.next.url }}">
-      <span class="page-title">{{ page.next.title }}</span>
-      <span class="icon-alone icon-arrow-right--blue"></span>
-    </a> 
-  {% endif %}
-</nav>
-
-<section class="strip well pointer">
-  {% if page.collection %}
-  <h3 class="callout">More products in the <span class="highlight">{{ page.collection }}</span> collection</h3>
-  <div class="wrapper">
-    <ul class="grid medium center">
-    {% for product in site.categories.products %}
-      {% if product.collection == page.collection %}
-      {% unless product.title == page.title %}
-      {% include product-tile.html post=product %}
-      {% endunless %}
-      {% endif %}
-    {% endfor %}
-    </ul>
-  </div>
-  {% else %}
-  <h3 class="callout">More products in the <span class="highlight">{{ page.catalog }}</span> catalog</h3>
-  <div class="wrapper">
-    <ul class="grid medium center">
-    {% for product in site.categories.products %}
-      {% if product.catalog == page.catalog %}
-      {% unless product.title == page.title %}
-      {% include product-tile.html post=product %}
-      {% endunless %}
-      {% endif %}
-    {% endfor %}
-    </ul>
-  </div>
-  {% endif %}
-</section>
+  <!-- collections -->
+  {%- if page.product_collections -%}
+    <section data-ui-panel class="c-well border-top">
+      <div data-ui-wrapper="wide">
+        <h2 class="padding-bottom">Collections featuring this product</h2>
+        <ul data-ui-gallery>
+          {%- for collection in site.categories.product_collections -%}
+            {%- if page.product_collections contains collection.unique_id -%}
+              <li data-ui-gallery-item>
+                {%- include card.html 
+                  title=collection.title
+                  image=collection.image
+                  url=collection.url
+                -%}
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+          <!-- dummy list item to prevent a single item from becoming huge on large screens -->
+          <li data-ui-gallery-item class="hide-below@small"></li>
+          <li data-ui-gallery-item class="hide-below@small"></li>
+        </ul>
+      </div>
+    </section>
+  {%- endif -%}
+</article>
