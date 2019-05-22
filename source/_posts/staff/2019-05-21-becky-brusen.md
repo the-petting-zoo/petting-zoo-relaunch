@@ -2,7 +2,7 @@
 layout: default
 category: staff
 title: Becky Brusen
-job_title: Sales Representative
+job_title: ' National Account Manager'
 email: becky.brusen@gmail.com
 published: true
 ---
