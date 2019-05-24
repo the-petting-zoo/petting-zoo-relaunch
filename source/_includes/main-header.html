@@ -1,10 +1,17 @@
 <header role="banner">
   <div data-theme="wash-turquoise" class="padding-y-narrow padding-x-outside">
-    <p class="t-scale-eta">Contact info: lorem ipsum dolor sit</p>
+    <p data-ui-wrapper class="c-text-primary t-scale-zeta t-align-center">Contact info: lorem ipsum dolor sit</p>
   </div>
-  <nav>
-    <ul>
-      <li></li>
+  <nav class="padding-y-narrow padding-x-outside">
+    <a class="display-inline-block" href="/">
+      <img class="display-block" src="{{ site.assets.img }}{{ site.data.assets.logo.main }}" alt="The Petting Zoo" style="width: 8rem;">
+    </a>
+    <ul data-iu-wrapper class="t-align-center list-undecorated margin-x-between">
+      {%- for item in site.data.navigation -%}
+      <li class="display-inline-block no-margin-bottom">
+        <a href="{{ item.url }}">{{ item.label }}</a>
+      </li>
+      {%- endfor -%}
     </ul>
   </nav>
 </header>

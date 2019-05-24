@@ -1,0 +1,8 @@
+- label: About us
+  url: /about
+- label: Products
+  url: /products
+- label: News
+  url: /news
+- label: Contact us
+  url: /contact
