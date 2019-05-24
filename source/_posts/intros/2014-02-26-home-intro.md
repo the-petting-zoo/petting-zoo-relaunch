@@ -1,7 +1,7 @@
 ---
 layout: default
 display_title: Our Story
-label: Home Page Intro
+label: Home page introduction
 published: true
 category: home
 ---

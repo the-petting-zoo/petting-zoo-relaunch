@@ -1,7 +1,7 @@
 ---
 layout: default
 display_title: Custom Orders
-label: Custom Order Introduction
+label: Custom order Introduction
 categories: 
   - custom
   - intro
