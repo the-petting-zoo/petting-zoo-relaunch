@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Our Story
+display_title: Our Story
 label: Home Page Intro
 published: true
 category: home
