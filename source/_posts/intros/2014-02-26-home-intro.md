@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Our Story
-cms_label: Home Page Intro
+label: Home Page Intro
 published: true
 category: home
 ---
