@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Intro
+title: Our Story
+cms_label: Home Page Intro
 published: true
+category: home
 ---
 # For over 22 years
 

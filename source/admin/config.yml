@@ -157,8 +157,10 @@ collections:
   - name: "intro_text"
     label: "Intros"
     folder: "source/_posts/intros"
+    description: "These are pieces of content that are showcased across the site, mostly as introductions."
     create: false
     delete: false
+    identifier_field: cms_label
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
