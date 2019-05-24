@@ -1,0 +1,4 @@
+# Each FAQ has a question and option
+faq:
+  - question: "I'd like to place an order"
+    answer: "order"

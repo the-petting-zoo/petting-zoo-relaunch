@@ -1,7 +1,7 @@
 ---
 layout: default
 display_title: Catalogs
-label: Catalog page intro
+label: Catalog page introduction
 categories:
   - catalog
   - intro

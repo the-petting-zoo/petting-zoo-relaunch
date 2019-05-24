@@ -185,6 +185,23 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
+  # FAQ
+  - name: "faq"
+    label: "FAQ"
+    editor:
+      preview: false
+    files:
+      - label: "FAQ"
+        name: "faq"
+        file: "source/_data/faq.yml"
+        fields:          
+          - name: "faq"
+            label: "FAQ"
+            widget: "list"
+            fields: 
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Answer", name: "answer", widget: "string"}
+
   # Site Settings
   - name: "config"
     label: "Site Settings"
