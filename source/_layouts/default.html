@@ -22,9 +22,7 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body id="{% if page.slug %}{{ page.slug | replace: " ", "-" | downcase }}{% else %}{{ page.title | replace: " ", "-" | downcase }}{% endif %}">
-    <header role="banner" class="global">
-      {% include nav-global.html %}
-    </header>
+    {% include main-header.html %}
 
     {{ content }}
 

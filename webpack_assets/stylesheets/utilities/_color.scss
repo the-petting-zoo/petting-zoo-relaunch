@@ -3,17 +3,15 @@
 @import 'config/color';
 
 // --- Theme containers ---
-@each $theme, $colors in $themes {
-  @if $theme != 'default' {
-    [data-theme~='#{$theme}'] {
-      @include theme($theme);
-    }
-  }
-}
-
 body,
 [data-theme] {
   @include theme('default', true);
+}
+
+@each $theme, $colors in $themes {
+  [data-theme~='#{$theme}'] {
+    @include theme($theme);
+  }
 }
 
 // --- Utilities ---
