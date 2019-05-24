@@ -195,12 +195,12 @@ collections:
         name: "faq"
         file: "source/_data/faq.yml"
         fields:          
-          - name: "faq"
+          - name: "FAQ"
             label: "FAQ"
             widget: "list"
             fields: 
               - {label: "Question", name: "question", widget: "string"}
-              - {label: "Answer", name: "answer", widget: "string"}
+              - {label: "Answer", name: "answer", widget: "markdown"}
 
   # Site Settings
   - name: "config"
