@@ -1,4 +1,10 @@
-# Each FAQ has a question and option
 faq:
-  - question: "I'd like to place an order"
-    answer: "order"
+  - answer: >-
+      Please send an email to customer service or call 888.867.4059 to be
+      connected with your very own sales representative!
+    question: How can I place an order?
+  - answer: >-
+      From receipt of order to shipping is 2-3 weeks for plush that is not
+      custom. Overseas custom orders take 120 days from the point of sample
+      confirmation
+    question: How long will my order take?
