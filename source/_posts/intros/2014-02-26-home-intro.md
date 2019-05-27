@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Intro
+display_title: Our Story
+label: Home page introduction
 published: true
+category: home
 ---
 # For over 22 years
 

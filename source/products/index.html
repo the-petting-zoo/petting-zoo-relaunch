@@ -90,7 +90,7 @@ layout: default
     <div class="wrapper narrow">
     {% for post in site.categories.custom %}
       {% if post.categories contains "intro" %}
-      <h1 class="title">{{ post.title }}</h1>
+      <h1 class="title">{{ post.display_title }}</h1>
       {{ post.content }}
       {% endif %}
     {% endfor %}
