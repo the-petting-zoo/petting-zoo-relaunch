@@ -2,7 +2,6 @@
 layout: product
 published: true
 title: 12"  Tutti Frutti Puffin
-slug: Trend
 featured: true
 sku: '718412'
 color: Rainbow
