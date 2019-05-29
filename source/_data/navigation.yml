@@ -2,6 +2,7 @@
   url: /about
 - label: Products
   url: /products
+  dropdown: true
 - label: News
   url: /news
 - label: Contact us
