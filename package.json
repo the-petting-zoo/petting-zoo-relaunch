@@ -11,7 +11,7 @@
   },
   "scripts": {
     "prestart": "npm run build:modern",
-    "start": "jekyll serve & npm run watch",
+    "start": "npm run watch",
     "watch": "webpack  -d --config $npm_package_config_webpack_modern --watch",
     "build:modern": "webpack -p --config $npm_package_config_webpack_modern",
     "build:legacy": "webpack -p --config $npm_package_config_webpack_legacy",
