@@ -1,14 +1,16 @@
 product_dropdown:
-  - label: First Item
-    url: /about
-    order: 1
   - label: Fourth Item
+    order: 7
     url: /contact
-    order: 4
   - label: Second Item
-    url: /products
     order: 2
+    url: /products
   - label: Third Item
-    url: /news
     order: 3
- 
+    url: /news
+  - label: New Item
+    order: 5
+    url: /test
+  - label: First Item
+    order: 1
+    url: /about
