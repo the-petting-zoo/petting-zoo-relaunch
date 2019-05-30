@@ -1,7 +1,7 @@
 # Publish Settings
 backend:
   name: git-gateway
-  branch: 'dev' # Change to your local branch for testing. 
+  branch: 'add/main-nav-cms' # Change to your local branch for testing. 
 publish_mode: editorial_workflow
 
 # Media
@@ -209,6 +209,35 @@ collections:
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  # Main Navigation
+  - name: "nav"
+    label: "Main Navigation"
+    editor:
+      preview: false
+    files:
+      - label: "Main Navigation"
+        name: "contact"
+        file: "source/_data/navigation.yml"
+        fields:          
+          - name: "navigation_items"
+            label: "Navigation Item"
+            widget: "list"
+            fields: 
+              - {label: "URL", name: "url", widget: "string"}
+              - {label: "Text Label", name: "label", widget: "string"}
+              - {label: "Dropdown", name: "dropdown", widget: "hidden", default: false}
+      - label: "Product Dropdown"
+        name: "contact"
+        file: "source/_data/product_dropdown.yml"
+        fields:          
+          - name: "product_dropdown"
+            label: "Product Dropdown"
+            widget: "list"
+            fields: 
+              - {label: "Order", name: "order", widget: "number"}
+              - {label: "URL", name: "url", widget: "string"}
+              - {label: "Text Label", name: "label", widget: "string"}            
 
   # Site Settings
   - name: "config"
