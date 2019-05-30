@@ -12,8 +12,30 @@
       <img class="display-block" src="{{ site.assets.img }}{{ site.data.assets.logo.main }}" alt="The Petting Zoo">
     </a>
 
+    <!-- small-screen nav -->
+    <div class="hide-above@small">
+      <button-dropdown label="Menu">
+        <ul>
+          {%- for item in site.data.navigation -%}
+            {%- unless item.dropdown -%}
+              <li><a href="{{ item.url | relative_url }}">{{ item.label }}</a></li>
+            {%- else -%}
+              <li>
+                <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+                <ul>
+                  <li><a href="#">Lorem ipsum</a></li>
+                  <li><a href="#">Dolor sit</a></li>
+                  <li><a href="#">Amet adipiscig elit</a></li>
+                </ul>
+              </li>
+            {%- endunless -%}
+          {%- endfor -%}
+        </ul>
+      </button-dropdown>
+    </div>
+
     <!-- large-screen menu -->
-    <ul data-ui-main-nav-list id="main-nav-toggle">
+    <ul data-ui-main-nav-list class="hide-below@small">
       {%- assign half_nav_size = site.data.navigation | size | divided_by: 2 -%}
       {%- for item in site.data.navigation -%}
         {%- unless item.label == site.data.navigation[half_nav_size].label -%}
@@ -36,27 +58,5 @@
         </li>
       {%- endfor -%}
     </ul>
-
-    <!-- small-screen nav -->
-    <div class="hide@small">
-      <button-dropdown label="Menu">
-        <ul>
-          {%- for item in site.data.navigation -%}
-            {%- unless item.dropdown -%}
-              <li><a href="{{ item.url | relative_url }}">{{ item.label }}</a></li>
-            {%- else -%}
-              <li>
-                <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
-                <ul>
-                  <li><a href="#">Lorem ipsum</a></li>
-                  <li><a href="#">Dolor sit</a></li>
-                  <li><a href="#">Amet adipiscig elit</a></li>
-                </ul>
-              </li>
-            {%- endunless -%}
-          {%- endfor -%}
-        </ul>
-      </button-dropdown>
-    </div>
   </nav>
 </header>

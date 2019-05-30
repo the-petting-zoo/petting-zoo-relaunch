@@ -6,18 +6,24 @@ export default Vue.component('button-dropdown', {
   },
   data() {
     return {
-      show: false
+      open: true
     }
   },
   template: `
-    <div>
+    <div class="display-inline-block position-relative">
       <button
-        @click="show = !show"
-        :aria-expanded="show ? 'true' : 'false'"
+        data-ui-button-incognito
+        @click="open = !open"
+        :aria-expanded="open ? 'true' : 'false'"
       >
         {{ label }}
       </button>
-      <div v-if="show">
+      <div
+        v-show="open"
+       data-ui-button-dropdown
+       data-theme-default
+       class="margin-top-xnarrow padding-xnarrow se-shadow"
+      >
         <slot></slot>
       </div>
     </div>
