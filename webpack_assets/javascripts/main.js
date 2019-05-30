@@ -14,9 +14,13 @@
 
 import Vue from 'vue'
 
-new Vue({
+export let navToggle = new Vue({
   el: '#main-nav-toggle',
-  data: {
-    active: false
+  data() {
+    return {
+      show: false
+    }
   }
 })
+
+// console.log(navToggle.show)
