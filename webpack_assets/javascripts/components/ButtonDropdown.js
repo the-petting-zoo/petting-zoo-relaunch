@@ -13,7 +13,7 @@ export default Vue.component('button-dropdown', {
   },
   data() {
     return {
-      open: true
+      open: false
     }
   },
   template: `
@@ -29,7 +29,7 @@ export default Vue.component('button-dropdown', {
         v-show="open"
        :data-ui-button-dropdown="position === 'center' ? '' : position"
        data-theme-default
-       class="margin-top-xnarrow padding-xnarrow se-shadow"
+       class="margin-top-xnarrow padding-xnarrow se-shadow t-align-center"
       >
         <slot></slot>
       </div>
