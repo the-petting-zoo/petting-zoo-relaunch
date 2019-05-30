@@ -12,8 +12,6 @@
       <img class="display-block" src="{{ site.assets.img }}{{ site.data.assets.logo.main }}" alt="The Petting Zoo">
     </a>
 
-
-
     <!-- large-screen menu -->
     <ul data-ui-main-nav-list id="main-nav-toggle">
       {%- assign half_nav_size = site.data.navigation | size | divided_by: 2 -%}
@@ -24,22 +22,41 @@
         <li data-ui-main-nav-item="split">
         {%- endunless -%}
           {%- unless item.dropdown -%}
-            <a href="{{ item.url }}">{{ item.label }}</a>
+            <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
           {%- else -%}
-            <div id="main-nav-toggle">
+            <button-dropdown label="{{ item.label }}">
               <ul>
-                <li><a href="{{ item.url }}">See all {{ item.label }}</a></li>
-                <li><a href="#">lorem ipsum</a></li>
-                <li><a href="#">dolor sit</a></li>
+                <li><a href="{{ item.url | relative_url }}">See all {{ item.label | downcase }}</a></li>
+                <li><a href="#">Lorem ipsum</a></li>
+                <li><a href="#">Dolor sit</a></li>
+                <li><a href="#">Amet adipiscig elit</a></li>
               </ul>
-            </div>
-            <button v-on:click="show = !show" v-bind:aria-expanded="show ? 'true' : 'false'">{{ item.label }}</button>
-            <div v-if="show" id="main-nav-submenu">
-              
-            </div>
+            </button-dropdown>
           {%- endunless -%}
         </li>
       {%- endfor -%}
     </ul>
+
+    <!-- small-screen nav -->
+    <div class="hide@small">
+      <button-dropdown label="Menu">
+        <ul>
+          {%- for item in site.data.navigation -%}
+            {%- unless item.dropdown -%}
+              <li><a href="{{ item.url | relative_url }}">{{ item.label }}</a></li>
+            {%- else -%}
+              <li>
+                <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+                <ul>
+                  <li><a href="#">Lorem ipsum</a></li>
+                  <li><a href="#">Dolor sit</a></li>
+                  <li><a href="#">Amet adipiscig elit</a></li>
+                </ul>
+              </li>
+            {%- endunless -%}
+          {%- endfor -%}
+        </ul>
+      </button-dropdown>
+    </div>
   </nav>
 </header>

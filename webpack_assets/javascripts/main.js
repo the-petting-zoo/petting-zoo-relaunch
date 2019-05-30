@@ -13,14 +13,8 @@
 // })
 
 import Vue from 'vue'
+import ButtonDropdown from './components/ButtonDropdown'
 
-export let navToggle = new Vue({
-  el: '#main-nav-toggle',
-  data() {
-    return {
-      show: false
-    }
-  }
+export default new Vue({
+  el: '#js-main'
 })
-
-// console.log(navToggle.show)
