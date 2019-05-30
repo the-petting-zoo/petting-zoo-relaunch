@@ -9,5 +9,3 @@ navigation_items:
     url: /news
   - label: Contact us
     url: /contact
-  - label: New page
-    url: /new
