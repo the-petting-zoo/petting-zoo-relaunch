@@ -217,28 +217,30 @@ collections:
       preview: false
     files:
       - label: "Main Navigation"
-        name: "contact"
+        name: "main_nav"
         file: "source/_data/navigation.yml"
         fields:          
           - name: "navigation_items"
-            label: "Navigation Item"
+            label: "Navigation Items"
+            label_singular: "Navigation Item"
             widget: "list"
             fields: 
-              - {label: "URL", name: "url", widget: "string"}
               - {label: "Text Label", name: "label", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}        
               - {label: "Dropdown", name: "dropdown", widget: "hidden", default: false}
       - label: "Product Dropdown"
-        name: "contact"
+        name: "product_dropdown"
         file: "source/_data/product_dropdown.yml"
         fields:          
           - name: "product_dropdown"
-            label: "Product Dropdown"
+            label: "Product Dropdown Items"
+            label_singular: "Product Dropdown Item"
             widget: "list"
             fields: 
-              - {label: "Order", name: "order", widget: "number"}
-              - {label: "URL", name: "url", widget: "string"}
-              - {label: "Text Label", name: "label", widget: "string"}            
-
+              - {label: "Text Label", name: "label", widget: "string", hint: "This is the text that will be displayed in the dropdown"}
+              - {label: "URL", name: "url", widget: "string", hint: "Use a relative path, ex: /collections instead of http://pettingzoo.com/collections"}
+              - {label: "Order", name: "order", widget: "number", hint: "This number is used to order the items in the dropdown"}
+                                      
   # Site Settings
   - name: "config"
     label: "Site Settings"
