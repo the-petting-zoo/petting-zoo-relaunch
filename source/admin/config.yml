@@ -210,7 +210,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  # Main Navigation
+  # Main Navigation & Dropdown
   - name: "nav"
     label: "Main Navigation"
     editor:
@@ -228,6 +228,7 @@ collections:
               - {label: "Text Label", name: "label", widget: "string"}
               - {label: "URL", name: "url", widget: "string"}        
               - {label: "Dropdown", name: "dropdown", widget: "hidden", default: false}
+              - {label: "Dropdown Type", name: "dropdown_type", widget: "hidden", default: ''}
       - label: "Product Dropdown"
         name: "product_dropdown"
         file: "source/_data/product_dropdown.yml"

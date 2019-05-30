@@ -4,6 +4,7 @@ navigation_items:
   - label: Products
     url: /products
     dropdown: true
+    dropdown_type: product_dropdown
   - label: News
     url: /news
   - label: Contact us
