@@ -38,17 +38,17 @@ $type-leading: (
       // -> using redundant props as fallback here
 
       // use an in-between value as the fallback where vw units or calc aren't supported
-      #{$property}: ((scale-type($size-min) + scale-type($size-max)) / 2);
+      #{$property}: ((scale-type($size-min) + scale-type($size-max)) / 2) !important;
 
       // use calc and vw units to make the type scale fluidly between two sizes
-      #{$property}: calc(#{scale-type($size-min)} + #{strip-unit(scale-type($size-max) - scale-type($size-min))} * (100vw - #{strip-unit(screen($screen-min))}rem) / #{strip-unit(screen($screen-max) - screen($screen-min))});
+      #{$property}: calc(#{scale-type($size-min)} + #{strip-unit(scale-type($size-max) - scale-type($size-min))} * (100vw - #{strip-unit(screen($screen-min))}rem) / #{strip-unit(screen($screen-max) - screen($screen-min))}) !important;
     }
   }
 
   // stop scaling at the maximum screen size
   @include media('>#{$screen-max}') {
     @each $property in $properties {
-      #{$property}: scale-type($size-max);
+      #{$property}: scale-type($size-max) !important;
     }
   }
 }

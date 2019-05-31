@@ -1,7 +1,9 @@
 <header role="banner">
   <!-- contact bar -->
-  <div data-theme="wash-turquoise" class="padding-y-xnarrow padding-x-outside">
-    <p data-ui-wrapper class="c-text-primary t-scale-zeta t-align-center">Contact info: lorem ipsum dolor sit</p>
+  <div class="c-well padding-y-xnarrow padding-x-outside">
+    <p data-ui-wrapper class="t-font-display c-text-primary t-scale-zeta t-align-center">
+      <strong>Contact us:</strong> 888.867.4059 &bull; customercare@pettingzooplush.com
+    </p>
   </div>
 
   <!-- main nav -->
@@ -50,10 +52,12 @@
             {%- else -%}
               <button-dropdown label="{{ item.label }}" button-styles="c-highlight">
                 <ul class="margin-y-between-xnarrow">
-                  <li class="no-margin-bottom"><a href="{{ item.url | relative_url }}">See all {{ item.label | downcase }}</a></li>
-                  <li class="no-margin-bottom"><a href="#">Lorem ipsum</a></li>
-                  <li class="no-margin-bottom"><a href="#">Dolor sit</a></li>
-                  <li class="no-margin-bottom"><a href="#">Amet adipiscig elit</a></li>
+                  <li class="no-margin-bottom">
+                    <a href="{{ item.url | relative_url }}">See all {{ item.label | downcase }}</a>
+                  </li>
+                  <li class="no-margin-bottom">
+                    <a href="#">Lorem ipsum</a>
+                  </li>
                 </ul>
               </button-dropdown>
             {%- endunless -%}

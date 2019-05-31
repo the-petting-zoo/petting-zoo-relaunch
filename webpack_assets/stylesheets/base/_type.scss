@@ -81,16 +81,16 @@ h4,
 
 h5,
 .t-scale-epsilon {
-  font-size: scale-type('epsilon');
+  font-size: scale-type('epsilon') !important;
 }
 
 h6,
 .t-scale-zeta {
-  font-size: scale-type('zeta');
+  font-size: scale-type('zeta') !important;
 }
 
 .t-scale-eta {
-  font-size: scale-type('eta');
+  font-size: scale-type('eta') !important;
 }
 
 // --- body/inline text --------------------------------------------------------
