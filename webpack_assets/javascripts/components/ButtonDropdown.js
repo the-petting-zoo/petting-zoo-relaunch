@@ -14,7 +14,7 @@ export default Vue.component('button-dropdown', {
   },
   data() {
     return {
-      open: true
+      open: false
     }
   },
   template: `
