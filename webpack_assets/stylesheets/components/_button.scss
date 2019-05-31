@@ -7,16 +7,22 @@
 @import '../config/spacing';
 @import '../config/type';
 
+$button-padding-x: 1.56em;
+$button-padding-y: 0.68em;
+$button-padding-label-offset: 0.1em; // reduce bottom padding slightly so the label is visually centered
+$button-icon-margin: 1em;
+$button-icon-size: 1.2em;
+
 // --- Base ---
 [data-ui-button] {
   $font-size: scale-type('epsilon');
-  $padding: 0.68em 1.56em 0.60em 1.56em;
   $fg-color: $white;
   $bg-color: 'text-primary';
   $shadow-height: 0.25em;
 
   --font-size: #{$font-size};
-  --padding: #{$padding};
+  --padding-x: #{$button-padding-x};
+  --padding-y: #{$button-padding-y};
   --color: var(#{color-property($bg-color)});
   --color-hover: var(#{color-property($bg-color, 'light')});
   --color-shadow: var(#{color-property($bg-color, 'dark')});
@@ -28,8 +34,8 @@
   display: inline-block;
   font-size: $font-size; // fallback/default for old browsers
   font-size: var(--font-size);
-  padding: $padding; // fallback/default for old browsers
-  padding: var(--padding);
+  padding: $button-padding-y $button-padding-x ($button-padding-y - $button-padding-label-offset); // fallback/default for old browsers
+  padding: var(--padding-y) var(--padding-x) calc(var(--padding-y) - #{$button-padding-label-offset}); 
   position: relative;
   background-color: color($bg-color);
   background-color: var(--color);
@@ -69,7 +75,7 @@
 
 // special effects
 // a button that looks like any other text or link; displays only its child element (label or icon)
-// -> note uses 'element' naming because it does not inherit from base [data-ui-button] selector
+// -> note this is stylically a 'trait' but uses 'element' naming because it does not inherit from base [data-ui-button] selector
 [data-ui-button-incognito] {
   // use !important in color props to override all theme variations, e.g. [data-ui-button].c-theme-reverse
   background: transparent !important;
@@ -85,6 +91,52 @@
 
 // --- Elements ---
 
+// button icons
+[data-ui-button-icon][data-ui-button-icon] {
+  height: $button-icon-size;
+  margin-top: ($button-icon-size / 2 * -1);
+  position: absolute;
+  top: 50%;
+  width: $button-icon-size;
+}
+
+[data-ui-button~='icon'] {
+  padding-right: ($button-icon-margin + $button-icon-size + $button-padding-x);
+  padding-right: calc(#{$button-icon-margin + $button-icon-size} + var(--padding-x));
+
+  [data-ui-button-icon] {
+    right: $button-padding-x;
+    right: var(--padding-x);
+  }
+
+  &[data-ui-button~='left'] {
+    padding-right: $button-padding-x;
+    padding-right: var(--padding-x);
+    padding-left: ($button-icon-margin + $button-icon-size + $button-padding-x);
+    padding-left: calc(#{$button-icon-margin + $button-icon-size} + var(--padding-x));
+
+    [data-ui-button-icon] {
+      right: auto;
+      left: $button-padding-x;
+      left: var(--padding-x);
+    }
+  }
+}
+
+[data-ui-button-icognito~='icon'] {
+  [data-ui-button-icon] {
+    right: 0;
+  }
+
+  &[data-ui-button-incognito~='left'] {
+    [data-ui-button-icon] {
+      right: auto;
+      left: 0;
+    }
+  }
+}
+
+// dropdown
 [data-ui-button-dropdown] {
   $duration: 0.25s;
   $triangle-size: 1rem;

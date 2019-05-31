@@ -20,6 +20,9 @@
       <div class="hide-above@small">
         <button-dropdown label="Menu" position="right">
           <ul class="t-align-left margin-y-between-xnarrow">
+            <li class="no-margin-bottom">
+              <a href="/">Home</a>
+            </li>
             {%- for item in site.data.navigation.navigation_items -%}
               {%- unless item.dropdown -%}
                 <li class="no-margin-bottom">
