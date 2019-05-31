@@ -1,3 +1,4 @@
+
 <header role="banner">
   <!-- contact bar -->
   <div class="c-well padding-y-xnarrow padding-x-outside">
@@ -8,7 +9,6 @@
 
   <!-- main nav -->
   <nav data-ui-main-nav class="padding-y-narrow padding-x-outside t-align-right">
-
     <div class="position-relative">
       
       <!-- logo (home link) -->
@@ -19,17 +19,22 @@
       <!-- small-screen nav -->
       <div class="hide-above@small">
         <button-dropdown label="Menu" position="right">
-          <ul>
-            {%- for item in site.data.navigation -%}
+          <ul class="t-align-left margin-y-between-xnarrow">
+            {%- for item in site.data.navigation.navigation_items -%}
               {%- unless item.dropdown -%}
-                <li><a href="{{ item.url | relative_url }}">{{ item.label }}</a></li>
-              {%- else -%}
-                <li>
+                <li class="no-margin-bottom">
                   <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
-                  <ul>
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Dolor sit</a></li>
-                    <li><a href="#">Amet adipiscig elit</a></li>
+                </li>
+              {%- else -%}
+                <li class="no-margin-bottom">
+                  <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+                  <ul class="padding-top-xnarrow padding-left-xnarrow margin-y-between-xnarrow">
+                    {%- assign sorted_dropdown = site.data.[item.dropdown_type].[item.dropdown_type] | sort: "order" -%}
+                    {%- for dropdown_item in sorted_dropdown -%}
+                      <li class="no-margin-bottom">
+                        <a class="t-scale-zeta" href="{{ dropdown_item.url }}">{{ dropdown_item.label }}</a>
+                      </li>
+                    {%- endfor -%}
                   </ul>
                 </li>
               {%- endunless -%}
@@ -40,9 +45,9 @@
       
       <!-- large-screen menu -->
       <ul data-ui-main-nav-list class="hide-below@small">
-        {%- assign half_nav_size = site.data.navigation | size | divided_by: 2 -%}
-        {%- for item in site.data.navigation -%}
-          {%- unless item.label == site.data.navigation[half_nav_size].label -%}
+        {%- assign half_nav_size = site.data.navigation.navigation_items | size | divided_by: 2 -%}
+        {%- for item in site.data.navigation.navigation_items -%}
+          {%- unless item.label == site.data.navigation.navigation_items[half_nav_size].label -%}
           <li data-ui-main-nav-item>
           {%- else -%}
           <li data-ui-main-nav-item="split">
@@ -55,9 +60,12 @@
                   <li class="no-margin-bottom">
                     <a href="{{ item.url | relative_url }}">See all {{ item.label | downcase }}</a>
                   </li>
-                  <li class="no-margin-bottom">
-                    <a href="#">Lorem ipsum</a>
-                  </li>
+                  {% assign sorted_dropdown = site.data.[item.dropdown_type].[item.dropdown_type] | sort: "order" %}
+                  {%- for dropdown_item in sorted_dropdown -%}
+                    <li class="no-margin-bottom">
+                      <a href="{{ dropdown_item.url }}">{{ dropdown_item.label }}</a>
+                    </li>
+                  {%- endfor -%}
                 </ul>
               </button-dropdown>
             {%- endunless -%}

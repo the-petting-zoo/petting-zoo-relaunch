@@ -25,34 +25,6 @@ collections:
       - {label: "Published Status", name: "published", widget: "hidden", default: true}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  # About page
-  - name: "about"
-    label: "About Page"
-    folder: "source/_posts/about"
-    create: false
-    delete: false
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
-      - {label: "Category", name: "category", widget: "hidden", default: "about"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Published Status", name: "published", widget: "hidden", default: true}
-      - {label: "Body", name: "body", widget: "markdown", hint: "This is the content on the about page"}
-
-# Home page
-  - name: "home"
-    label: "Home Page"
-    folder: "source/_posts/home"
-    create: false
-    delete: false
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
-      - {label: "Category", name: "category", widget: "hidden", default: "home"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Published Status", name: "published", widget: "hidden", default: true}
-      - {label: "Body", name: "body", widget: "markdown", hint: "This is the content on the home page"}
-
   # Staff
   - name: "staff"
     label: "Staff"
@@ -179,19 +151,22 @@ collections:
         hint: "This associates the product with one or many collections"
       - {label: "Product Description", name: "body", widget: "markdown", required: false}
 
-  # Text Blurbs
+  # Intros
   # Description: 
-  #   These are pieces of content that are showcased across the site.
-  - name: "text_blurbs"
-    label: "Text Blurbs (intros to various sections of the site)"
-    folder: "source/_posts/text"
+  #   These are pieces of content that are showcased across the site, mostly as "intros".
+  - name: "intro_text"
+    label: "Intros"
+    folder: "source/_posts/intros"
+    description: "These are pieces of content that are showcased across the site, mostly as introductions."
     create: false
     delete: false
+    identifier_field: label
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{label}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title", name: "display_title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
   # Custom Products
@@ -210,6 +185,58 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
+<<<<<<< HEAD
+  # Main Navigation & Dropdown
+  - name: "nav"
+    label: "Main Navigation"
+    editor:
+      preview: false
+    files:
+      - label: "Main Navigation"
+        name: "main_nav"
+        file: "source/_data/navigation.yml"
+        fields:          
+          - name: "navigation_items"
+            label: "Navigation Items"
+            label_singular: "Navigation Item"
+            widget: "list"
+            fields: 
+              - {label: "Text Label", name: "label", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}        
+              - {label: "Dropdown", name: "dropdown", widget: "hidden", default: false}
+              - {label: "Dropdown Type", name: "dropdown_type", widget: "hidden", default: ''}
+      - label: "Product Dropdown"
+        name: "product_dropdown"
+        file: "source/_data/product_dropdown.yml"
+        fields:          
+          - name: "product_dropdown"
+            label: "Product Dropdown Items"
+            label_singular: "Product Dropdown Item"
+            widget: "list"
+            fields: 
+              - {label: "Text Label", name: "label", widget: "string", hint: "This is the text that will be displayed in the dropdown"}
+              - {label: "URL", name: "url", widget: "string", hint: "Use a relative path, ex: /collections instead of http://pettingzoo.com/collections"}
+              - {label: "Order", name: "order", widget: "number", hint: "This number is used to order the items in the dropdown"}
+                                      
+=======
+  # FAQ
+  - name: "faq"
+    label: "FAQ"
+    editor:
+      preview: false
+    files:
+      - label: "FAQ"
+        name: "faq"
+        file: "source/_data/faq.yml"
+        fields:          
+          - name: "FAQ"
+            label: "FAQ"
+            widget: "list"
+            fields: 
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Answer", name: "answer", widget: "markdown"}
+
+>>>>>>> dev
   # Site Settings
   - name: "config"
     label: "Site Settings"
