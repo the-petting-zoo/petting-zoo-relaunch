@@ -15,12 +15,15 @@ $main-nav-gutter: space();
 
 // --- Elements ---
 [data-ui-main-nav-logo] {
+  $logo-aspect-ratio: 1.125;
+  $logo-h: ($main-nav-logo-w / $logo-aspect-ratio);
+
   display: inline-block;
-  height: $main-nav-logo-w;
+  height: $logo-h;
   position: absolute;
   left: 0;
   top: 50%;
-  margin-top: ($main-nav-logo-w / 2 * -1);
+  margin-top: ($logo-h / 2 * -1);
   width: $main-nav-logo-w;
   z-index: z('high');
 

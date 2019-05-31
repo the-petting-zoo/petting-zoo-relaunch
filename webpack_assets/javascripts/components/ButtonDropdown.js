@@ -9,7 +9,8 @@ export default Vue.component('button-dropdown', {
       validator(value) {
         return ['center', 'right'].indexOf(value) !== -1
       }
-    }
+    },
+    buttonStyles: String
   },
   data() {
     return {
@@ -22,6 +23,7 @@ export default Vue.component('button-dropdown', {
         data-ui-button-incognito
         @click="open = !open"
         :aria-expanded="open ? 'true' : 'false'"
+        :class="buttonStyles"
       >
         {{ label }}
       </button>
