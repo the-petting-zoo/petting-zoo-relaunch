@@ -1,0 +1,11 @@
+navigation_items:
+  - label: About us
+    url: /about
+  - dropdown: true
+    dropdown_type: product_dropdown
+    label: Products
+    url: /products
+  - label: News
+    url: /news
+  - label: Contact us
+    url: /contact

@@ -16,7 +16,12 @@ const commonConfig = {
   mode: 'development',
   entry: {
     styles: './webpack_assets/stylesheets/main.scss',
-    main: './webpack_assets/javascripts/main.mjs'
+    main: './webpack_assets/javascripts/main.js'
+  },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    }
   },
   optimization: {
     minimizer: [

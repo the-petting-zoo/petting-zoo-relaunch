@@ -8,7 +8,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = Object.assign({}, base.commonConfig, {
   output: {
-    filename: 'javascripts/[name]-[chunkhash:10].mjs',
+    filename: 'javascripts/[name]-[chunkhash:10].js',
     path: path.resolve(__dirname, path.join(config.outputPath, config.assetsDir))
   },
   module: {

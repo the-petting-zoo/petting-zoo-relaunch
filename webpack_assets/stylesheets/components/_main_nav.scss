@@ -1,0 +1,45 @@
+// Main header component
+@import '../config/spacing';
+@import '../config/positioning';
+
+$main-nav-logo-w: 6.5rem;
+$main-nav-gutter: space();
+
+// --- Base ---
+[data-ui-main-nav] {
+  display: block;
+  position: relative;
+}
+
+// --- Elements ---
+[data-ui-main-nav-logo] {
+  height: $main-nav-logo-w;
+  left: 50%;
+  margin-left: ($main-nav-logo-w / 2 * -1);
+  position: absolute;
+  top: 50%;
+  margin-top: ($main-nav-logo-w / 2 * -1);
+  width: $main-nav-logo-w;
+  z-index: z('high');
+}
+
+[data-ui-main-nav-list] {
+  display: block;
+  list-decoration: none;
+  text-align: center;
+}
+
+[data-ui-main-nav-item] {
+  display: inline-block;
+  margin-bottom: 0;
+
+  & + & {
+    margin-left: $main-nav-gutter;
+  }
+}
+
+// add a wider space in the middle of the menu for the logo
+// -> double selectors here to increase specificity to override margin rules above
+[data-ui-main-nav-item~='split'][data-ui-main-nav-item~='split'] {
+  margin-left: ($main-nav-logo-w + ($main-nav-gutter * 2));
+}

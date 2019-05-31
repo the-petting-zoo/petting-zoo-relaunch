@@ -1,0 +1,44 @@
+<header role="banner">
+  <!-- contact bar -->
+  <div data-theme="wash-turquoise" class="padding-y-xnarrow padding-x-outside">
+    <p data-ui-wrapper class="c-text-primary t-scale-zeta t-align-center">Contact info: lorem ipsum dolor sit</p>
+  </div>
+
+  <!-- main nav -->
+  <nav data-ui-main-nav class="padding-y-narrow padding-x-outside">
+
+    <!-- logo (home link) -->
+    <a data-ui-main-nav-logo class="display-inline-block" href="/">
+      <img class="display-block" src="{{ site.assets.img }}{{ site.data.assets.logo.main }}" alt="The Petting Zoo">
+    </a>
+    <!-- large-screen menu -->
+    <ul data-ui-main-nav-list id="main-nav-toggle">
+      {%- assign half_nav_size = site.data.navigation | size | divided_by: 2 -%}
+      {%- for item in site.data.navigation.navigation_items -%}
+        {%- unless item.label == site.data.navigation[half_nav_size].label -%}
+        <li data-ui-main-nav-item>
+        {%- else -%}
+        <li data-ui-main-nav-item="split">
+        {%- endunless -%}
+          {%- unless item.dropdown -%}
+            <a href="{{ item.url }}">{{ item.label }}</a>
+          {%- else -%}
+            <div id="main-nav-toggle">
+                <ul>
+                  <li><a href="{{ item.url }}">See all {{ item.label }}</a></li>
+                  {% assign sorted_dropdown = site.data.[item.dropdown_type].[item.dropdown_type] | sort:"order" %}
+                  {%- for dropdown_item in sorted_dropdown -%}
+                    <li><a href="{{ dropdown_item.url }}">{{ dropdown_item.label }}</a></li>
+                  {%- endfor -%}
+              </ul>
+            </div>
+            <button v-on:click="show = !show" v-bind:aria-expanded="show ? 'true' : 'false'">{{ item.label }}</button>
+            <div v-if="show" id="main-nav-submenu">
+              
+            </div>
+          {%- endunless -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+</header>
