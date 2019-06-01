@@ -1,3 +1,14 @@
+{%- comment -%}
+Main Header
+-> the main navigation, contact info bar, and logo at the top of each page
+
+Locals:
+current-url - STRING: pass in the url of the current page from the layout (e.g. page.url)
+{%- endcomment -%}
+{%- assign active-class = 'c-highlight' -%}
+{%- assign default-class = 'c-text-primary' -%}
+{%- assign secondary-class = 'c-text-secondary' -%}
+
 
 <header role="banner">
   <!-- contact bar -->
@@ -17,21 +28,41 @@
       </a>
       
       <!-- small-screen nav -->
-      <div class="hide-above@small">
-        <button-dropdown label="Menu" icon="menu" position="right" button-styles="c-text-primary">
+      <div class="hide-above@small c-text-primary">
+        <button-dropdown label="Menu" icon="menu" position="right">
           <ul class="t-align-left margin-y-between-xnarrow">
             <li class="no-margin-bottom">
               <a class="c-text-primary t-font-body" href="/">Home</a>
             </li>
             {%- for item in site.data.navigation.navigation_items -%}
+
+              {%- comment -%} Apply an active class if the item url matches the current page url {%- endcomment -%}
+              {%- capture color -%}
+                {%- if include.current_url == item.url -%}
+                  {{ active-class }}
+                {%- else -%}
+                  {{ default-class }}
+                {%- endif -%}
+              {%- endcapture -%}
+
               <li class="no-margin-bottom">
-                <a class="c-text-primary t-font-body" href="{{ item.url | relative_url }}">{{ item.label }}</a>
+                <a class="t-font-body {{ color }}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
                 {%- if item.dropdown -%}
                   <ul class="padding-top-xnarrow padding-left-xnarrow margin-y-between-xnarrow">
                     {%- assign sorted_dropdown = site.data.[item.dropdown_type].[item.dropdown_type] | sort: "order" -%}
                     {%- for dropdown_item in sorted_dropdown -%}
+                      
+                      {%- comment -%} Apply an active class if the item url matches the current page url {%- endcomment -%}
+                      {%- capture color -%}
+                        {%- if include.current_url == dropdown_item.url -%}
+                          {{ active-class }}
+                        {%- else -%}
+                          {{ secondary-class }}
+                        {%- endif -%}
+                      {%- endcapture -%}
+
                       <li class="no-margin-bottom">
-                        <a class="c-text-secondary t-scale-zeta t-font-body" href="{{ dropdown_item.url }}">{{ dropdown_item.label }}</a>
+                        <a class="t-scale-zeta t-font-body {{ color }}" href="{{ dropdown_item.url }}">{{ dropdown_item.label }}</a>
                       </li>
                     {%- endfor -%}
                   </ul>
@@ -49,23 +80,43 @@
         
 
         {%- for item in site.data.navigation.navigation_items -%}
+          
+          {%- comment -%} Apply an active class if the item url matches the current page url {%- endcomment -%}
+          {%- capture color -%}
+            {%- if include.current_url == item.url -%}
+              {{ active-class }}
+            {%- else -%}
+              {{ default-class }}
+            {%- endif -%}
+          {%- endcapture -%}
+
           {%- unless item.label == site.data.navigation.navigation_items[half_nav_size].label -%}
           <li data-ui-main-nav-item>
           {%- else -%}
-          <li data-ui-main-nav-item="split">
+          <li data-ui-main-nav-item="split c-text-primary">
           {%- endunless -%}
             {%- unless item.dropdown -%}
-              <a class="c-text-primary t-font-body" href="{{ item.url | relative_url }}">{{ item.label }}</a>
+              <a class="t-font-body {{ color }}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
             {%- else -%}
-              <button-dropdown label="{{ item.label }}" button-styles="c-text-primary t-font-body">
+              <button-dropdown label="{{ item.label }}" button-styles="t-font-body{% if include.current_url == item.url %} {{ color }}{% endif %}">
                 <ul class="margin-y-between-xnarrow">
                   <li class="no-margin-bottom">
-                    <a class="c-text-secondary t-font-body" href="{{ item.url | relative_url }}"><strong>See all {{ item.label | downcase }}</strong></a>
+                    <a class="t-font-body {{ color }}" href="{{ item.url | relative_url }}"><strong>See all {{ item.label | downcase }}</strong></a>
                   </li>
                   {% assign sorted_dropdown = site.data.[item.dropdown_type].[item.dropdown_type] | sort: "order" %}
                   {%- for dropdown_item in sorted_dropdown -%}
+                    
+                    {%- comment -%} Apply an active class if the item url matches the current page url {%- endcomment -%}
+                    {%- capture color -%}
+                      {%- if include.current_url == dropdown_item.url -%}
+                        {{ active-class }}
+                      {%- else -%}
+                        {{ secondary-class }}
+                      {%- endif -%}
+                    {%- endcapture -%}
+
                     <li class="no-margin-bottom">
-                      <a class="c-text-secondary t-font-body" href="{{ dropdown_item.url }}">{{ dropdown_item.label }}</a>
+                      <a class="t-font-body {{ color }}" href="{{ dropdown_item.url }}">{{ dropdown_item.label }}</a>
                     </li>
                   {%- endfor -%}
                 </ul>

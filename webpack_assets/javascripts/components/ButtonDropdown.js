@@ -18,10 +18,15 @@ export default Vue.component('button-dropdown', {
       open: false
     }
   },
+  computed: {
+    buttonAttributes() {
+      return `${this.icon ? 'has-icon both' : 'has-icon'}${this.open ? ' active': ''}`
+    }
+  },
   template: `
     <div class="display-inline-block position-relative">
       <button
-        :data-ui-button-incognito="icon ? 'has-icon both' : 'has-icon'"
+        :data-ui-button-incognito="buttonAttributes"
         @click="open = !open"
         :aria-expanded="open ? 'true' : 'false'"
         :class="buttonStyles"

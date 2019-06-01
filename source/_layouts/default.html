@@ -24,7 +24,7 @@
   <body id="{% if page.slug %}{{ page.slug | replace: " ", "-" | downcase }}{% else %}{{ page.title | replace: " ", "-" | downcase }}{% endif %}">
     <div id="js-main">
       <div style="display: none;">{% include spritemap.html %}</div>
-      {% include main-header.html %}
+      {% include main-header.html current_url=page.url %}
       
       {{ content }}
       
