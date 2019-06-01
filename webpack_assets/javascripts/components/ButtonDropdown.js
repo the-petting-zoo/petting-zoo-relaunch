@@ -10,7 +10,8 @@ export default Vue.component('button-dropdown', {
         return ['center', 'right'].indexOf(value) !== -1
       }
     },
-    buttonStyles: String
+    buttonStyles: String,
+    icon: String
   },
   data() {
     return {
@@ -20,12 +21,18 @@ export default Vue.component('button-dropdown', {
   template: `
     <div class="display-inline-block position-relative">
       <button
-        data-ui-button-incognito
+        :data-ui-button-incognito="icon ? 'has-icon both' : 'has-icon'"
         @click="open = !open"
         :aria-expanded="open ? 'true' : 'false'"
         :class="buttonStyles"
       >
+        <svg v-if="icon" data-ui-icon data-ui-button-icon role="presentation">
+          <use :xlink:href="'#' + icon"></use>
+        </svg>
         {{ label }}
+        <svg data-ui-icon data-ui-button-icon role="presentation">
+          <use :xlink:href="open ? '#arrow-up' : '#arrow-down'"></use>
+        </svg>
       </button>
       <div
         v-show="open"

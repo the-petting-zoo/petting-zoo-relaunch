@@ -1,0 +1,29 @@
+{%- comment -%}
+  Icon
+  -> A simple partial for inserting SVG sprites.
+  -> "presentation" designates it as simply decoration (and should be ignored by screenreaders)
+  -> while "img" says it should have its own description. In the latter case, the title attribute acts like an alt tag.
+
+  Locals:
+  id - STRING: the ID of the sprite you want
+  classes - STRING: additional modifier classes, if needed.
+  size - STRING: how big it is
+  space - STRING: how much space (margin) around it
+  title - STRING: title attribute
+  role - STRING: ARIA role. use either 'img' (default) or 'presentation'.
+  parent - STRING: pass in a parent component to 'extend' this one, if needed; e.g. 'data-ui-button-icon'
+
+  props = [
+    (size if size),
+    ("space-#{space}" if space)
+  ]
+{%- endcomment -%}
+{%- assign role = include.role | default: 'presentation' -%}
+
+<svg data-ui-icon="{{ include.size }}" {{ include.parent }} class="{{ include.class }}" title="{{ include.title }}" role="{{ role }}">
+  <!-- This excellent icon is from iconmonstr.com -->
+  <use xlink:href="#{{ include.id }}"></use>
+  {%- unless role == "presentation" -%}
+    <desc>{{ include.title }}</desc>
+  {%- end -%}
+</svg>

@@ -9,7 +9,7 @@
 
   <!-- main nav -->
   <nav data-ui-main-nav class="padding-y-narrow padding-x-outside t-align-right border-top border-bottom">
-    <div class="position-relative">
+    <div data-ui-wrapper>
       
       <!-- logo (home link) -->
       <a data-ui-main-nav-logo href="/">
@@ -18,29 +18,25 @@
       
       <!-- small-screen nav -->
       <div class="hide-above@small">
-        <button-dropdown label="Menu" position="right">
+        <button-dropdown label="Menu" icon="menu" position="right" button-styles="c-text-primary">
           <ul class="t-align-left margin-y-between-xnarrow">
             <li class="no-margin-bottom">
-              <a href="/">Home</a>
+              <a class="c-text-primary t-font-body" href="/">Home</a>
             </li>
             {%- for item in site.data.navigation.navigation_items -%}
-              {%- unless item.dropdown -%}
-                <li class="no-margin-bottom">
-                  <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
-                </li>
-              {%- else -%}
-                <li class="no-margin-bottom">
-                  <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+              <li class="no-margin-bottom">
+                <a class="c-text-primary t-font-body" href="{{ item.url | relative_url }}">{{ item.label }}</a>
+                {%- if item.dropdown -%}
                   <ul class="padding-top-xnarrow padding-left-xnarrow margin-y-between-xnarrow">
                     {%- assign sorted_dropdown = site.data.[item.dropdown_type].[item.dropdown_type] | sort: "order" -%}
                     {%- for dropdown_item in sorted_dropdown -%}
                       <li class="no-margin-bottom">
-                        <a class="t-scale-zeta" href="{{ dropdown_item.url }}">{{ dropdown_item.label }}</a>
+                        <a class="c-text-secondary t-scale-zeta t-font-body" href="{{ dropdown_item.url }}">{{ dropdown_item.label }}</a>
                       </li>
                     {%- endfor -%}
                   </ul>
-                </li>
-              {%- endunless -%}
+                {%- endif -%}
+              </li>
             {%- endfor -%}
           </ul>
         </button-dropdown>
@@ -48,7 +44,10 @@
       
       <!-- large-screen menu -->
       <ul data-ui-main-nav-list class="hide-below@small">
-        {%- assign half_nav_size = site.data.navigation.navigation_items | size | divided_by: 2 -%}
+        {%- assign nav_size = site.data.navigation.navigation_items | size -%}
+        {%- assign half_nav_size = nav_size | divided_by: 2 -%}
+        
+
         {%- for item in site.data.navigation.navigation_items -%}
           {%- unless item.label == site.data.navigation.navigation_items[half_nav_size].label -%}
           <li data-ui-main-nav-item>
@@ -56,17 +55,17 @@
           <li data-ui-main-nav-item="split">
           {%- endunless -%}
             {%- unless item.dropdown -%}
-              <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+              <a class="c-text-primary t-font-body" href="{{ item.url | relative_url }}">{{ item.label }}</a>
             {%- else -%}
-              <button-dropdown label="{{ item.label }}" button-styles="c-highlight">
+              <button-dropdown label="{{ item.label }}" button-styles="c-text-primary t-font-body">
                 <ul class="margin-y-between-xnarrow">
                   <li class="no-margin-bottom">
-                    <a href="{{ item.url | relative_url }}">See all {{ item.label | downcase }}</a>
+                    <a class="c-text-secondary t-font-body" href="{{ item.url | relative_url }}"><strong>See all {{ item.label | downcase }}</strong></a>
                   </li>
                   {% assign sorted_dropdown = site.data.[item.dropdown_type].[item.dropdown_type] | sort: "order" %}
                   {%- for dropdown_item in sorted_dropdown -%}
                     <li class="no-margin-bottom">
-                      <a href="{{ dropdown_item.url }}">{{ dropdown_item.label }}</a>
+                      <a class="c-text-secondary t-font-body" href="{{ dropdown_item.url }}">{{ dropdown_item.label }}</a>
                     </li>
                   {%- endfor -%}
                 </ul>

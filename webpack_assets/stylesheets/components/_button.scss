@@ -10,8 +10,8 @@
 $button-padding-x: 1.56em;
 $button-padding-y: 0.68em;
 $button-padding-label-offset: 0.1em; // reduce bottom padding slightly so the label is visually centered
-$button-icon-margin: 1em;
-$button-icon-size: 1.2em;
+$button-icon-margin: 0.3em;
+$button-icon-size: 0.8em;
 
 // --- Base ---
 [data-ui-button] {
@@ -79,20 +79,22 @@ $button-icon-size: 1.2em;
 [data-ui-button-incognito] {
   // use !important in color props to override all theme variations, e.g. [data-ui-button].c-theme-reverse
   background: transparent !important;
-  border: 0 !important;
   border-radius: 0 !important;
+  border: 0 !important;
   box-shadow: none !important;
+  display: inline-block;
+  font-size: inherit;
   padding: 0;
   position: relative;
   text-decoration: none;
   text-shadow: none;
-  font-size: inherit;
 }
 
 // --- Elements ---
 
 // button icons
 [data-ui-button-icon][data-ui-button-icon] {
+  display: inline-block;
   height: $button-icon-size;
   margin-top: ($button-icon-size / 2 * -1);
   position: absolute;
@@ -100,7 +102,7 @@ $button-icon-size: 1.2em;
   width: $button-icon-size;
 }
 
-[data-ui-button~='icon'] {
+[data-ui-button~='has-icon'] {
   padding-right: ($button-icon-margin + $button-icon-size + $button-padding-x);
   padding-right: calc(#{$button-icon-margin + $button-icon-size} + var(--padding-x));
 
@@ -109,30 +111,52 @@ $button-icon-size: 1.2em;
     right: var(--padding-x);
   }
 
-  &[data-ui-button~='left'] {
-    padding-right: $button-padding-x;
-    padding-right: var(--padding-x);
+  &[data-ui-button~='left'],
+  &[data-ui-button~='both'] {
     padding-left: ($button-icon-margin + $button-icon-size + $button-padding-x);
     padding-left: calc(#{$button-icon-margin + $button-icon-size} + var(--padding-x));
 
-    [data-ui-button-icon] {
-      right: auto;
+    [data-ui-button-icon]:first-of-type {
       left: $button-padding-x;
       left: var(--padding-x);
+      right: auto;
     }
+
+    [data-ui-button-icon]:last-of-type {
+      right: $button-padding-x;
+      right: var(--padding-x);
+    }
+  }
+
+  &[data-ui-button~='left'] {
+    padding-right: $button-padding-x;
+    padding-right: var(--padding-x);
   }
 }
 
-[data-ui-button-icognito~='icon'] {
+[data-ui-button-incognito~='has-icon'] {
+  padding-right: ($button-icon-margin + $button-icon-size);
+
   [data-ui-button-icon] {
     right: 0;
   }
 
-  &[data-ui-button-incognito~='left'] {
-    [data-ui-button-icon] {
-      right: auto;
+  &[data-ui-button-incognito~='left'],
+  &[data-ui-button-incognito~='both'] {
+    padding-left: ($button-icon-margin + $button-icon-size);
+
+    [data-ui-button-icon]:first-of-type {
       left: 0;
+      right: auto;
     }
+
+    [data-ui-button-icon]:last-of-type {
+      right: 0;
+    }
+  }
+
+  &[data-ui-button-incognito~='left'] {
+    padding-right: 0;
   }
 }
 
@@ -143,6 +167,7 @@ $button-icon-size: 1.2em;
   @include border-radius;
   @include border;
   @include color-bg('bg');
+  display: block;
   left: 50%;
   max-width: 16rem;
   min-width: 12rem;

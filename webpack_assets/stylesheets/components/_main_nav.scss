@@ -42,14 +42,21 @@ $main-nav-gutter: space();
 [data-ui-main-nav-item] {
   display: inline-block;
   margin-bottom: 0;
+  min-width: 6rem;
+  padding-left: ($main-nav-gutter / 2);
+  padding-right: ($main-nav-gutter / 2);
 
-  & + & {
-    margin-left: $main-nav-gutter;
+  &:first-of-type {
+    padding-left: 0;
+  }
+
+  &:last-of-type {
+    padding-right: 0;
   }
 }
 
 // add a wider space in the middle of the menu for the logo
 // -> double selectors here to increase specificity to override margin rules above
-[data-ui-main-nav-item~='split'][data-ui-main-nav-item~='split'] {
+[data-ui-main-nav-item~='split'] {
   margin-left: ($main-nav-logo-w + ($main-nav-gutter * 2));
 }
