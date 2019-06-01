@@ -3,49 +3,49 @@ layout: default
 title: home
 ---
 
-<section class="strip full_bleed-bottom reverse">
-  <div class="wrapper wide">
+<!-- hero carousel -->
+{% include billboard.html
+  image='https://placehold.it/1200x600?text=Banner'
+%}
 
-  <!-- hero carousel/feature banners -->
-  <div class="hero carousel flexslider">
-    {% for post in site.categories.carousel %}
-    {{ post.content }}
-    {% endfor %}
-    <a href="#" class="prev icon-arrow-left--yellow">&lsaquo; Previous</a>
-    <a href="#" class="next icon-arrow-right--yellow">Next &rsaquo;</a>
+<!-- intro copy -->
+<section data-ui-panel class="t-align-center">
+  <div data-ui-wrapper="narrow">
+    <div class="t-content padding-bottom">
+      {% for post in site.categories.home %}
+        {{ post.content }}
+      {% endfor %}
+    </div>
+
+    {% include button_link.html
+      label="Learn more about The&nbsp;Petting&nbsp;Zoo &rsaquo;"
+      url="/about/" 
+      prominence="large"
+    %}
   </div>
+</section>
 
-  <!-- catalogs -->
-  <section class="strip-int reverse" id="js-catalogs">
-    <h3 class="callout">Our Latest Catalogs</h3>
-    <div class="wrapper">
-      <ul class="grid small center">
-        {% include catalogs.html limit="5" text="false" %}
-        <li class="tile vertical more"><a href="/products/" class="tile more island">See more catalogs</a></li>
+<!-- featured catalogs/collections -->
+{%- for feature in (0..3) -%}
+  <section data-ui-panel class="border-top">
+    {% include billboard.html
+      image='https://placehold.it/1200x600?text=Banner'
+      title="Lorem ipsum collection"
+      button_label="See more in this collection"
+      button_url="#"
+    %}
+    <div data-ui-wrapper="wide" class="padding-top">
+      <ul data-ui-gallery="small">
+        {%- for product in (0..3) -%}
+          <li data-ui-gallery-item>
+            {%- include card.html 
+              title="Lorem ipsum product"
+              image="http://placehold.it/600x500"
+              url="#"
+            -%}
+          </li>
+        {%- endfor -%}
       </ul>
     </div>
   </section>
-</div>
-</section>
-
-<!-- intro copy -->
-<section class="strip blurb pointer-reverse well center">
-  <div class="wrapper narrow">
-    {% for post in site.categories.home %}
-      {{ post.content }}
-    {% endfor %}
-
-    <a href="/about/" class="button primary large">Learn more about The&nbsp;Petting&nbsp;Zoo &rsaquo;</a>
-  </div>
-</section>
-
-<!-- promo banners -->
-{% if site.categories.promos.size > 0 %}
-<section class="promos strip pointer-well">
-  <div class="wrapper">
-    {% for post in site.categories.promos %}
-      {{ post.content }}
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
+{%- endfor -%}
