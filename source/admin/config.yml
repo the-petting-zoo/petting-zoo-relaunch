@@ -185,7 +185,6 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-<<<<<<< HEAD
   # Main Navigation & Dropdown
   - name: "nav"
     label: "Main Navigation"
@@ -218,7 +217,6 @@ collections:
               - {label: "URL", name: "url", widget: "string", hint: "Use a relative path, ex: /collections instead of http://pettingzoo.com/collections"}
               - {label: "Order", name: "order", widget: "number", hint: "This number is used to order the items in the dropdown"}
                                       
-=======
   # FAQ
   - name: "faq"
     label: "FAQ"
@@ -236,7 +234,6 @@ collections:
               - {label: "Question", name: "question", widget: "string"}
               - {label: "Answer", name: "answer", widget: "markdown"}
 
->>>>>>> dev
   # Site Settings
   - name: "config"
     label: "Site Settings"
