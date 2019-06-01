@@ -45,7 +45,35 @@ title: home
             -%}
           </li>
         {%- endfor -%}
+        {%- comment -%}
+        <!-- dummy list item to prevent a single item from becoming huge on large screens -->
+        <li data-ui-gallery-item class="hide-below@small"></li>
+        <li data-ui-gallery-item class="hide-below@small"></li>
+        {%- endcomment -%}
       </ul>
     </div>
   </section>
 {%- endfor -%}
+
+<section data-ui-panel class="border-top">
+  <header>
+    <h2 class="t-scale-alpha t-align-center padding-bottom-narrow">#ShareAndSmile</h2>
+    <div data-ui-wrapper="narrow" class="t-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rem ullam fugit repellendus quisquam et quis ut, consectetur earum ad, in explicabo itaque dolorem pariatur dolor praesentium aut aliquid culpa.</p>
+    </div>
+  </header>
+  <div data-ui-wrapper="wide" class="padding-top">
+    <ul data-ui-gallery="small">
+      {%- for item in (1..20) -%}
+      <li data-ui-gallery-item>
+        <a href="#"><img src="http://placehold.it/600x500" alt="Instagram photo"></a>
+      </li>
+      {%- endfor -%}
+      {%- comment -%}
+      <!-- dummy list item to prevent a single item from becoming huge on large screens -->
+      <li data-ui-gallery-item class="hide-below@small"></li>
+      <li data-ui-gallery-item class="hide-below@small"></li>
+      {%- endcomment -%}
+    </ul>
+  </div>
+</section>
