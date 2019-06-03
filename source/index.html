@@ -39,7 +39,10 @@ title: home
 <!-- featured collections -->
 {%- for collection in site.categories.product_collections -%}
   {%- if collection.featured -%}
-    {% include featured-banner.html collection=collection %}
+    {% include featured-banner.html
+      collection=collection
+      type="collection"
+    %}
   {%- endif -%}
 {%- endfor -%}
 
