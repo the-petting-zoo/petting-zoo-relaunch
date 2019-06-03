@@ -122,6 +122,10 @@
   @include space-outside();
 }
 
+.padding-left-outside {
+  @include space-outside('left');
+}
+
 // --- Split gutters ---
 
 // add uniform gutters to a group of elements

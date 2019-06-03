@@ -1,6 +1,7 @@
 // Billboard component
 // -> a full-bleed image with overlay heading
 @import '../config/positioning';
+@import '../config/breakpoints';
 
 // --- Base ---
 [data-ui-billboard] {
@@ -9,8 +10,16 @@
   background-position: center;
   background-size: cover;
   height: 50rem;
-  height: 64vh;
+  height: 40vh;
   overflow-y: hidden;
+
+  @include media('>small') {
+    height: 50vh;
+  }
+
+  @include media('>medium') {
+    height: 64vh;
+  }
 }
 
 // --- Elements ---

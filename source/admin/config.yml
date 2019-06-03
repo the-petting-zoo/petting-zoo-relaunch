@@ -96,6 +96,7 @@ collections:
         multiple: true
         required: false
         hint: "This allows you to relate the catalog to a topic, a topic is what is used in the dropdown area on the home page."
+      - {label: "Featured", name: "featured", widget: "boolean", required: false, hint: "If a catalog is featured, it will be listed on the home page"}
 
   # Product Collections
   # Description: 
@@ -112,6 +113,7 @@ collections:
       - {label: "ID", name: "unique_id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
       - {label: "Collection Name", name: "title", widget: "string"}
       - {label: "Product Collection Cover", name: "image", widget: "image", allow_multiple: false, hint: "This is the image displayed on the top of the collection page"}
+      - {label: "Featured", name: "featured", widget: "boolean", required: false, hint: "If a product collection is featured, it will be listed on the home page"}
 
   # Products
   # Description: 

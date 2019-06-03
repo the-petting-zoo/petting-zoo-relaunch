@@ -1,3 +1,4 @@
+{%- comment -%} DEPRECATED {%- endcomment -%}
 {% capture limit %}{% if include.limit %}{{ include.limit }}{% else %}{{ site.categories.catalog.size }}{% endif %}{% endcapture %}
 
 {% for catalog in site.categories.catalog limit: limit %}

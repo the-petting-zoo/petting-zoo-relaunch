@@ -1,6 +1,7 @@
 // Main header component
 @import '../config/spacing';
 @import '../config/positioning';
+@import '../config/breakpoints';
 
 $main-nav-logo-w: 6.5rem;
 $main-nav-gutter: space();
@@ -9,18 +10,27 @@ $main-nav-gutter: space();
 [data-ui-main-nav] {
   display: block;
   position: relative;
+  text-align: right;
 }
 
 // --- Elements ---
 [data-ui-main-nav-logo] {
-  height: $main-nav-logo-w;
-  left: 50%;
-  margin-left: ($main-nav-logo-w / 2 * -1);
+  $logo-aspect-ratio: 1.125;
+  $logo-h: ($main-nav-logo-w / $logo-aspect-ratio);
+
+  display: inline-block;
+  height: $logo-h;
   position: absolute;
+  left: 0;
   top: 50%;
-  margin-top: ($main-nav-logo-w / 2 * -1);
+  margin-top: ($logo-h / 2 * -1);
   width: $main-nav-logo-w;
   z-index: z('high');
+
+  @include media('>xsmall') {
+    left: 50%;
+    margin-left: ($main-nav-logo-w / 2 * -1);
+  }
 }
 
 [data-ui-main-nav-list] {
@@ -32,14 +42,21 @@ $main-nav-gutter: space();
 [data-ui-main-nav-item] {
   display: inline-block;
   margin-bottom: 0;
+  min-width: 6rem;
+  padding-left: ($main-nav-gutter / 2);
+  padding-right: ($main-nav-gutter / 2);
 
-  & + & {
-    margin-left: $main-nav-gutter;
+  &:first-of-type {
+    padding-left: 0;
+  }
+
+  &:last-of-type {
+    padding-right: 0;
   }
 }
 
 // add a wider space in the middle of the menu for the logo
 // -> double selectors here to increase specificity to override margin rules above
-[data-ui-main-nav-item~='split'][data-ui-main-nav-item~='split'] {
+[data-ui-main-nav-item~='split'] {
   margin-left: ($main-nav-logo-w + ($main-nav-gutter * 2));
 }

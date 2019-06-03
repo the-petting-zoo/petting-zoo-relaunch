@@ -8,6 +8,7 @@ color: Rainbow
 image: /static/uploads/12”_tutti-fruitti-flamingo_718413.png
 catalog:
   - tutti frutti
+  - sealife-wildlife
 product_collections:
   - Rainbow
 ---

@@ -4,18 +4,26 @@
 @import '../config/borders';
 @import '../config/color';
 @import '../config/scale';
+@import '../config/spacing';
 @import '../config/type';
+
+$button-padding-x: 1.56em;
+$button-padding-y: 0.68em;
+$button-padding-label-offset: 0.1em; // reduce bottom padding slightly so the label is visually centered
+$button-icon-margin: 0.4em; // space between the icon and the label
+$button-icon-size: 0.6em; // size of icon relative to label
+$button-icon-offset: 0.3em; // amount the icon should rest 'outside' the normal button padding to be optically balanced
 
 // --- Base ---
 [data-ui-button] {
   $font-size: scale-type('epsilon');
-  $padding: 0.68em 1.56em 0.60em 1.56em;
   $fg-color: $white;
   $bg-color: 'text-primary';
   $shadow-height: 0.25em;
 
   --font-size: #{$font-size};
-  --padding: #{$padding};
+  --padding-x: #{$button-padding-x};
+  --padding-y: #{$button-padding-y};
   --color: var(#{color-property($bg-color)});
   --color-hover: var(#{color-property($bg-color, 'light')});
   --color-shadow: var(#{color-property($bg-color, 'dark')});
@@ -27,8 +35,8 @@
   display: inline-block;
   font-size: $font-size; // fallback/default for old browsers
   font-size: var(--font-size);
-  padding: $padding; // fallback/default for old browsers
-  padding: var(--padding);
+  padding: $button-padding-y $button-padding-x ($button-padding-y - $button-padding-label-offset); // fallback/default for old browsers
+  padding: var(--padding-y) var(--padding-x) calc(var(--padding-y) - #{$button-padding-label-offset}); 
   position: relative;
   background-color: color($bg-color);
   background-color: var(--color);
@@ -64,4 +72,143 @@
   --color: var(#{color-property($color)});
   --color-hover: var(#{color-property($color, 'light')});
   --color-shadow: var(#{color-property($color, 'dark')});
+}
+
+// special effects
+// a button that looks like any other text or link; displays only its child element (label or icon)
+// -> note this is stylically a 'trait' but uses 'element' naming because it does not inherit from base [data-ui-button] selector
+[data-ui-button-incognito] {
+  // use !important in color props to override all theme variations, e.g. [data-ui-button].c-theme-reverse
+  background: transparent !important;
+  border-radius: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  display: inline-block;
+  font-size: inherit;
+  padding: 0;
+  position: relative;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+[data-ui-button-incognito~="active"] {
+  @include color-fg('highlight');
+}
+
+// --- Elements ---
+
+// button icons
+[data-ui-button-icon][data-ui-button-icon] {
+  display: inline-block;
+  height: $button-icon-size;
+  margin-top: (($button-icon-size / 2 - 0.05em) * -1); // margin-top = half the icon's size minus a small offset, to align it with the x-height and baseline a little better
+  position: absolute;
+  top: 50%;
+  width: $button-icon-size;
+}
+
+[data-ui-button~='has-icon'] {
+  padding-right: ($button-icon-margin + $button-icon-size + $button-padding-x - $button-icon-offset);
+  padding-right: calc(#{$button-icon-margin + $button-icon-size - $button-icon-offset} + var(--padding-x));
+
+  [data-ui-button-icon] {
+    right: $button-padding-x;
+    right: calc(var(--padding-x) - #{$button-icon-offset});
+  }
+
+  &[data-ui-button~='left'],
+  &[data-ui-button~='both'] {
+    padding-left: ($button-icon-margin + $button-icon-size + $button-padding-x - $button-icon-offset);
+    padding-left: calc(#{$button-icon-margin + $button-icon-size - $button-icon-offset} + var(--padding-x));
+
+    [data-ui-button-icon]:first-of-type {
+      left: $button-padding-x;
+      left: calc(var(--padding-x) - #{$button-icon-offset});
+      right: auto;
+    }
+
+    [data-ui-button-icon]:last-of-type {
+      right: $button-padding-x;
+      right: calc(var(--padding-x) - #{$button-icon-offset});
+    }
+  }
+
+  &[data-ui-button~='left'] {
+    padding-right: $button-padding-x;
+    padding-right: var(--padding-x);
+  }
+}
+
+[data-ui-button-incognito~='has-icon'] {
+  padding-right: ($button-icon-margin + $button-icon-size);
+
+  [data-ui-button-icon] {
+    right: 0;
+  }
+
+  &[data-ui-button-incognito~='left'],
+  &[data-ui-button-incognito~='both'] {
+    padding-left: ($button-icon-margin + $button-icon-size);
+
+    [data-ui-button-icon]:first-of-type {
+      left: 0;
+      right: auto;
+    }
+
+    [data-ui-button-icon]:last-of-type {
+      right: 0;
+    }
+  }
+
+  &[data-ui-button-incognito~='left'] {
+    padding-right: 0;
+  }
+}
+
+// dropdown
+[data-ui-button-dropdown] {
+  $duration: 0.25s;
+  $triangle-size: 1rem;
+  @include border-radius;
+  @include border;
+  @include color-bg('bg');
+  display: block;
+  left: 50%;
+  max-width: 16rem;
+  min-width: 12rem;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: opacity $duration, visibility $duration;
+  z-index: z('high');
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    left: 50%;
+    margin-left: ($triangle-size / 2 * -1);
+    position: absolute;
+  }
+
+  &::before {
+    @include triangle('up', $triangle-size, ($triangle-size / 2), color('border'));
+    top: -($triangle-size / 2);
+  }
+
+  &::after {
+    @include triangle('up', $triangle-size, ($triangle-size / 2), color('bg'));
+    top: -(($triangle-size / 2) - 0.0625rem);
+  }
+}
+
+[data-ui-button-dropdown~="right"] {
+  left: auto;
+  right: (space('xnarrow') * -1);
+  transform: none;
+
+  &::before,
+  &::after {
+    left: auto;
+    right: space('narrow');
+  }
 }
