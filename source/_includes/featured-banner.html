@@ -45,7 +45,6 @@ button_label - STRING (optional): the label for the button
             {{ product.catalog }}
           {%- endif -%}
         {%- endcapture -%}
-
         {%- if type contains include.collection.unique_id -%}
           {%- if product.featured -%}
             <li data-ui-gallery-item>

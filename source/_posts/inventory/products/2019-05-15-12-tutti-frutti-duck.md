@@ -8,6 +8,7 @@ color: Rainbow
 image: /static/uploads/12”_tutti-fruitti-duck_718414.jpg
 catalog:
   - tutti frutti
+  - spring
 product_collections:
   - Rainbow
 ---

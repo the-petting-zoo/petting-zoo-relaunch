@@ -7,5 +7,4 @@ pdf: /static/uploads/Sealifewildlife_2017_NoPrice.pdf
 cover: /static/uploads/sealife-cover.jpg
 topic:
   - Sealife
-featured: true
 --- 
