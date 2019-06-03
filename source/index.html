@@ -18,43 +18,32 @@ title: home
     </div>
 
     {% include button_link.html
-      label="Learn more about The&nbsp;Petting&nbsp;Zoo &rsaquo;"
+      label="Learn more about The&nbsp;Petting&nbsp;Zoo"
       url="/about/" 
+      icon-right="arrow-right"
       prominence="large"
     %}
   </div>
 </section>
 
-<!-- featured catalogs/collections -->
-{%- for feature in (0..3) -%}
-  <section data-ui-panel class="border-top">
-    {% include billboard.html
-      image='https://placehold.it/1200x600?text=Banner'
-      title="Lorem ipsum collection"
-      button_label="See more in this collection"
-      button_url="#"
+<!-- featured catalogs -->
+{%- for catalog in site.categories.catalogs -%}
+  {%- if catalog.featured -%}
+    {% include featured-banner.html
+      collection=catalog
+      button_label='See more in this catalog'
     %}
-    <div data-ui-wrapper="wide" class="padding-top">
-      <ul data-ui-gallery="small">
-        {%- for product in (0..3) -%}
-          <li data-ui-gallery-item>
-            {%- include card.html 
-              title="Lorem ipsum product"
-              image="http://placehold.it/600x500"
-              url="#"
-            -%}
-          </li>
-        {%- endfor -%}
-        {%- comment -%}
-        <!-- dummy list item to prevent a single item from becoming huge on large screens -->
-        <li data-ui-gallery-item class="hide-below@small"></li>
-        <li data-ui-gallery-item class="hide-below@small"></li>
-        {%- endcomment -%}
-      </ul>
-    </div>
-  </section>
+  {%- endif -%}
 {%- endfor -%}
 
+<!-- featured collections -->
+{%- for collection in site.categories.product_collections -%}
+  {%- if collection.featured -%}
+    {% include featured-banner.html collection=collection %}
+  {%- endif -%}
+{%- endfor -%}
+
+<!-- Shared images from instagram -->
 <section data-ui-panel class="border-top">
   <header>
     <h2 class="t-scale-alpha t-align-center padding-bottom-narrow">#ShareAndSmile</h2>
@@ -63,10 +52,10 @@ title: home
     </div>
   </header>
   <div data-ui-wrapper="wide" class="padding-top">
-    <ul data-ui-gallery="small">
-      {%- for item in (1..20) -%}
+    <ul data-ui-gallery style="--gutter: var(--space-xnarrow);">
+      {%- for item in (1..10) -%}
       <li data-ui-gallery-item>
-        <a href="#"><img src="http://placehold.it/600x500" alt="Instagram photo"></a>
+        <a href="#"><img src="http://placehold.it/600x600" alt="Instagram photo"></a>
       </li>
       {%- endfor -%}
       {%- comment -%}
@@ -75,5 +64,8 @@ title: home
       <li data-ui-gallery-item class="hide-below@small"></li>
       {%- endcomment -%}
     </ul>
+    <div class="border-top margin-top-xnarrow padding-top t-align-center">
+      {% include button_link.html url="https://instagram.com" label="Find us on <strong>Instagram</strong> to see more photos" %}
+    </div>
   </div>
 </section>

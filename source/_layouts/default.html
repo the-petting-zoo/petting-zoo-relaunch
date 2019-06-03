@@ -23,16 +23,19 @@
   </head>
   <body id="{% if page.slug %}{{ page.slug | replace: " ", "-" | downcase }}{% else %}{{ page.title | replace: " ", "-" | downcase }}{% endif %}">
     <div id="js-main">
+      <!-- spritemap -->
       <div style="display: none;">{% include spritemap.html %}</div>
+      
+      <!-- header -->
       {% include main-header.html current_url=page.url %}
       
       {{ content }}
       
+      <!-- footer -->
       {% include main-footer.html %}
     </div>
     
     <!-- javascript bundles -->
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script type="module" src="{{ site.data.webpack_manifest['main.js'] | relative_url }}"></script>
     {% if jekyll.environment == "production" %}
       <script nomodule type="text/javascript" src="{{ site.data.webpack_manifest['main.es5.mjs'] | relative_url }}"></script>
@@ -40,6 +43,9 @@
     
     <!-- google maps api -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=&amp;sensor=false"></script>
+
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="{{'/static/javascripts/app-deprecated.js' | relative_url }}"></script> -->
     
     {% if jekyll.environment == "production" %}
       <!-- Google Analytics -->

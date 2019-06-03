@@ -1,0 +1,52 @@
+{% comment %}
+Featured product banner
+-> displays a cover billboard and featured products from a given catalog or collection
+-> mainly used on the homepage
+
+Locals:
+collection - OBJECT: the collection (product collection or catalog) used to populate the billboard, etc.
+button_label - STRING (optional): the label for the button
+{% endcomment %}
+{%- assign cover = include.collection.cover | default: 'https://placehold.it/1200x600?text=Cover' -%}
+{%- assign label = include.button_label | default: 'See more in this collection' -%}
+
+<section data-ui-panel class="border-top">
+  <div data-ui-wrapper="wide">
+    <a data-ui-aspect="4x1" class="c-well border" href="{{ include.collection.url }}">
+      <img data-ui-aspect-image src="{{ cover }}" alt="{{ include.collection.title }}">
+    </a>
+    <header class="padding-top padding-bottom-narrow margin-bottom-narrow border-bottom">
+      <div data-ui-bookend="horizontal@small" class="gutter-wrapper gutter-xnarrow offset-margin-xnarrow">
+        <h2 data-ui-bookend-item="left" class="gutter t-scale-alpha">{{ include.collection.title }}</h2>
+        <div data-ui-bookend-item="right" class="gutter">
+          {% include button_link.html
+            label=label 
+            url=include.collection.url
+            icon-right="arrow-right"
+          %}
+        </div>
+      </div>
+    </header>
+    <h3 class="t-font-display t-scale-zeta t-case-upper t-weight-bold t-align-center c-highlight padding-bottom-narrow">Featured products</h3>
+    <ul data-ui-gallery="small">
+      {%- for product in site.categories.products -%}
+        {%- if product.catalog == include.collection.unique_id -%}
+          {%- if product.featured -%}
+            <li data-ui-gallery-item>
+              {%- include card.html 
+                title=product.title
+                image=product.image
+                url=product.url
+              -%}
+            </li>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- comment -%}
+      <!-- dummy list item to prevent a single item from becoming huge on large screens -->
+      <li data-ui-gallery-item class="hide-below@small"></li>
+      <li data-ui-gallery-item class="hide-below@small"></li>
+      {%- endcomment -%}
+    </ul>
+  </div>
+</section>

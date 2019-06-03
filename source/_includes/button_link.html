@@ -7,8 +7,24 @@
   url - STRING: link address
   prominence - STRING (optional): "large", "small", empty (default). Using 'prominence' because 'size' is a reserved word in ruby.
   role - STRING (optional): "primary", empty (default)
+  icon-left - STRING (optional): id of icon to use on the left side
 {%- endcomment -%}
+{%- capture attributes -%}
+  {{ include.role }} {{ include.prominence }}{% if include.icon-right %} has-icon{% endif %}{% if include.icon-left and include.icon-right %} both{% endif %}{% if include.icon-left %} left{% endif %}
+{%- endcapture -%}
 
-<a data-ui-button="{{ include.role }} {{ include.prominence }}" href="{{ include.url }}">
+<a data-ui-button="{{ attributes }}" href="{{ include.url }}">
+  {%- if include.icon-left -%}
+    {% include icon.html
+      id=include.icon-left
+      parent="data-ui-button-icon"
+    %}
+  {%- endif -%}
   {{ include.label }}
+  {%- if include.icon-right -%}
+    {% include icon.html
+      id=include.icon-right
+      parent="data-ui-button-icon"
+    %}
+  {%- endif -%}
 </a>

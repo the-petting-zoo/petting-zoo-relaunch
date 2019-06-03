@@ -10,7 +10,7 @@
   size - STRING: how big it is
   space - STRING: how much space (margin) around it
   title - STRING: title attribute
-  role - STRING: ARIA role. use either 'img' (default) or 'presentation'.
+  role - STRING: ARIA role. use either 'img' or 'presentation' (default).
   parent - STRING: pass in a parent component to 'extend' this one, if needed; e.g. 'data-ui-button-icon'
 
   props = [
@@ -25,5 +25,5 @@
   <use xlink:href="#{{ include.id }}"></use>
   {%- unless role == "presentation" -%}
     <desc>{{ include.title }}</desc>
-  {%- end -%}
+  {%- endunless -%}
 </svg>

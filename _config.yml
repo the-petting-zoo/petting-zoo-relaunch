@@ -48,7 +48,6 @@ defaults:
 assets:
   img: '/static/images/'
   fonts: '/static/fonts/'
-  s3: 'https://pettingzoo-website.s3.amazonaws.com'
   carousel: '/banners/carousel/'
   promos: '/banners/promos/'
   catalog: '/products/catalogs/'

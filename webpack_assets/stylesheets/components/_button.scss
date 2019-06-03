@@ -10,8 +10,9 @@
 $button-padding-x: 1.56em;
 $button-padding-y: 0.68em;
 $button-padding-label-offset: 0.1em; // reduce bottom padding slightly so the label is visually centered
-$button-icon-margin: 0.4em;
-$button-icon-size: 0.6em;
+$button-icon-margin: 0.4em; // space between the icon and the label
+$button-icon-size: 0.6em; // size of icon relative to label
+$button-icon-offset: 0.3em; // amount the icon should rest 'outside' the normal button padding to be optically balanced
 
 // --- Base ---
 [data-ui-button] {
@@ -100,35 +101,35 @@ $button-icon-size: 0.6em;
 [data-ui-button-icon][data-ui-button-icon] {
   display: inline-block;
   height: $button-icon-size;
-  margin-top: ($button-icon-size / 2 * -1);
+  margin-top: (($button-icon-size / 2 - 0.05em) * -1); // margin-top = half the icon's size minus a small offset, to align it with the x-height and baseline a little better
   position: absolute;
   top: 50%;
   width: $button-icon-size;
 }
 
 [data-ui-button~='has-icon'] {
-  padding-right: ($button-icon-margin + $button-icon-size + $button-padding-x);
-  padding-right: calc(#{$button-icon-margin + $button-icon-size} + var(--padding-x));
+  padding-right: ($button-icon-margin + $button-icon-size + $button-padding-x - $button-icon-offset);
+  padding-right: calc(#{$button-icon-margin + $button-icon-size - $button-icon-offset} + var(--padding-x));
 
   [data-ui-button-icon] {
     right: $button-padding-x;
-    right: var(--padding-x);
+    right: calc(var(--padding-x) - #{$button-icon-offset});
   }
 
   &[data-ui-button~='left'],
   &[data-ui-button~='both'] {
-    padding-left: ($button-icon-margin + $button-icon-size + $button-padding-x);
-    padding-left: calc(#{$button-icon-margin + $button-icon-size} + var(--padding-x));
+    padding-left: ($button-icon-margin + $button-icon-size + $button-padding-x - $button-icon-offset);
+    padding-left: calc(#{$button-icon-margin + $button-icon-size - $button-icon-offset} + var(--padding-x));
 
     [data-ui-button-icon]:first-of-type {
       left: $button-padding-x;
-      left: var(--padding-x);
+      left: calc(var(--padding-x) - #{$button-icon-offset});
       right: auto;
     }
 
     [data-ui-button-icon]:last-of-type {
       right: $button-padding-x;
-      right: var(--padding-x);
+      right: calc(var(--padding-x) - #{$button-icon-offset});
     }
   }
 
