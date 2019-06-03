@@ -3,7 +3,7 @@ layout: product
 published: true
 title: 12" Tutti Frutti Bird Pink
 featured: true
-sku: '718408'
+item_number: '718408'
 color: Rainbow
 image: /static/uploads/12”_tutti-fruitti-bird-pink_718408.png
 catalog:

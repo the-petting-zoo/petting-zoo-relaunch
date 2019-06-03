@@ -3,7 +3,7 @@ layout: product
 published: true
 title: 12"  Tutti Frutti Puffin
 featured: true
-sku: '718412'
+item_number: '718412'
 color: Rainbow
 image: /static/uploads/12_tutti-fruitti-puffin_718412.jpg
 catalog:
