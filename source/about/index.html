@@ -3,19 +3,19 @@ layout: default
 title: About Us
 ---
 
-<main role="main" class="wrapper">
-  {% for post in site.categories.about %}
-  <h1 class="title highlight">{{ post.display_title }}</h1>
+<article data-ui-panel>
+  {%- for post in site.categories.about -%}
+    <h1 class="t-scale-alpha t-align-center">{{ post.display_title }}</h1>
 
-  <div class="narrow">
-    {% if post.feature %}
-    <figure>
-      <img src="{{ post.feature }}" alt="{{ post.feature_caption | xml_escape }}" />
-      <figcaption>{{ post.feature_caption }}</figcaption>
-    </figure>
-    {% endif %}
-    
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</main>
+    <main data-ui-wrapper="narrow" class="padding-top">
+      {% if post.feature %}
+      <figure>
+        <img src="{{ post.feature }}" alt="{{ post.feature_caption | xml_escape }}" />
+        <figcaption>{{ post.feature_caption }}</figcaption>
+      </figure>
+      {% endif %}
+      
+      {{ post.content }}
+    </main>
+  {%- endfor -%}
+</article>
