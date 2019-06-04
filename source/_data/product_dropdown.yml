@@ -8,6 +8,9 @@ product_dropdown:
   - label: Third Item
     order: 3
     url: /news/
-  - label: Fourth Item
+  - label: Test item
     order: 4
+    url: /news/
+  - label: Fourth Item
+    order: 5
     url: /contact/
