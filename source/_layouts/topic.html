@@ -4,12 +4,14 @@ active: products
 ---
 
 <!-- Topic catalogs -->
-<section data-ui-panel class="no-padding-top margin-top-header">
+<section data-ui-panel>
   <div data-ui-wrapper>
     <h1 class="padding-bottom t-align-center">{{ page.title }}</h1>
     <ul data-ui-gallery>
+      {%- assign id = page.unique_id | downcase -%}
       {%- for catalog in site.categories.catalogs -%}
-        {%- if catalog.topic contains page.unique_id -%}
+      {%- assign topic = catalog.topic | downcase -%}
+        {%- if topic contains id -%}
           <li data-ui-gallery-item>
             {%- include card.html 
               title=catalog.title

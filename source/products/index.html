@@ -25,13 +25,13 @@ layout: default
     </ul>
 
     <!-- topics -->
-    {%- capture topics_length -%}
-      {{ site.categories.catalog_topics | size }}
-    {%- endcapture -%}
-    {%- unless topics_length == '0' -%}
+    {%- assign topics_length = site.categories.catalog_topics | size -%}
+    {%- unless topics_length == 0 -%}
       {%- for topic in site.categories.catalog_topics -%}
         <section class="margin-top padding-top border-top">
-          <h2 class="t-scale-gamma t-align-center padding-bottom">{{ topic.title }}</h2>
+          <h2 class="t-scale-gamma t-align-center padding-bottom">
+            <a href="{{ topic.url | relative_url }}">{{ topic.title | escape }}</a>
+          </h2>
           <ul data-ui-gallery="small">
             {%- for catalog in site.categories.catalogs -%}
               {%- if catalog.topic contains topic.unique_id -%}
@@ -45,7 +45,7 @@ layout: default
                 </li>
               {%- endif -%}
             {%- endfor -%}
-            {%- if topics_length <= '3' -%}
+            {%- if topics_length <= 3 -%}
               <!-- dummy list item to prevent a single item from becoming huge on large screens -->
               <li data-ui-gallery-item class="hide-below@small"></li>
             {%- endif -%}

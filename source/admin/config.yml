@@ -19,7 +19,6 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
-      - {label: "Category", name: "category", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "date", format: "MMM Do YY", hint: "This is the date displayed for this news post"}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}
@@ -33,7 +32,6 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
-      - {label: "Category", name: "category", widget: "hidden", default: "staff"}
       - {label: "Name", name: "title", widget: "string"}
       - {label: "Job Title", name: "job_title", widget: "string"}
       - {label: "Email", name: "email", widget: "string"}
@@ -49,7 +47,6 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
-      - {label: "Category", name: "category", widget: "hidden", default: "testimonials"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
@@ -202,22 +199,18 @@ collections:
             label_singular: "Navigation Item"
             widget: "list"
             fields: 
-              - {label: "Text Label", name: "label", widget: "string"}
-              - {label: "URL", name: "url", widget: "string"}        
-              - {label: "Dropdown", name: "dropdown", widget: "hidden", default: false}
-              - {label: "Dropdown Type", name: "dropdown_type", widget: "hidden", default: ''}
-      - label: "Product Dropdown"
-        name: "product_dropdown"
-        file: "source/_data/product_dropdown.yml"
-        fields:          
-          - name: "product_dropdown"
-            label: "Product Dropdown Items"
-            label_singular: "Product Dropdown Item"
-            widget: "list"
-            fields: 
-              - {label: "Text Label", name: "label", widget: "string", hint: "This is the text that will be displayed in the dropdown"}
-              - {label: "URL", name: "url", widget: "string", hint: "Use a relative path, ex: /collections instead of http://pettingzoo.com/collections"}
-              - {label: "Order", name: "order", widget: "number", hint: "This number is used to order the items in the dropdown"}
+              - {label: "Text Label", name: "label", widget: "string", hint: "This is what will appear in the main menu on-screen."}
+              - {label: "URL", name: "url", widget: "string", hint: "This is the address where the link will point. Use a 'relative path', without the domain name (e.g. '/collections/sloths/')."}        
+              - label: "Submenu"
+                label_singular: "Submenu item"
+                name: "submenu"
+                widget: "list"
+                default: false
+                required: false
+                hint: "If you add a submenu, it will appear as a dropdown on larger screens."
+                fields:
+                  - {label: "Text Label", name: "label", widget: "string", hint: "This is what will appear in the submenu or dropdown on-screen."}
+                  - {label: "URL", name: "url", widget: "string", hint: "This is the address where the link will point. Use a 'relative path', without the domain name (e.g. '/collections/sloths/')."}
                                       
   # FAQ
   - name: "faq"
@@ -229,7 +222,7 @@ collections:
         name: "faq"
         file: "source/_data/faq.yml"
         fields:          
-          - name: "FAQ"
+          - name: "faq"
             label: "FAQ"
             widget: "list"
             fields: 
