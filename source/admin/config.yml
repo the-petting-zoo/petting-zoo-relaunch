@@ -201,12 +201,13 @@ collections:
             fields: 
               - {label: "Text Label", name: "label", widget: "string", hint: "This is what will appear in the main menu on-screen."}
               - {label: "URL", name: "url", widget: "string", hint: "This is the address where the link will point. Use a 'relative path', without the domain name (e.g. '/collections/sloths/')."}        
-              - name: "submenu"
-                label: "Submenu"
+              - label: "Submenu"
                 label_singular: "Submenu item"
+                name: "submenu"
                 widget: "list"
                 default: false
                 required: false
+                hint: "If you add a submenu, it will appear as a dropdown on larger screens."
                 fields:
                   - {label: "Text Label", name: "label", widget: "string", hint: "This is what will appear in the submenu or dropdown on-screen."}
                   - {label: "URL", name: "url", widget: "string", hint: "This is the address where the link will point. Use a 'relative path', without the domain name (e.g. '/collections/sloths/')."}
@@ -221,7 +222,7 @@ collections:
         name: "faq"
         file: "source/_data/faq.yml"
         fields:          
-          - name: "FAQ"
+          - name: "faq"
             label: "FAQ"
             widget: "list"
             fields: 
