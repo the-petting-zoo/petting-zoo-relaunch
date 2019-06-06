@@ -199,22 +199,17 @@ collections:
             label_singular: "Navigation Item"
             widget: "list"
             fields: 
-              - {label: "Text Label", name: "label", widget: "string"}
-              - {label: "URL", name: "url", widget: "string"}        
-              - {label: "Dropdown", name: "dropdown", widget: "hidden", default: false}
-              - {label: "Dropdown Type", name: "dropdown_type", widget: "hidden", default: ''}
-      - label: "Product Dropdown"
-        name: "product_dropdown"
-        file: "source/_data/product_dropdown.yml"
-        fields:          
-          - name: "product_dropdown"
-            label: "Product Dropdown Items"
-            label_singular: "Product Dropdown Item"
-            widget: "list"
-            fields: 
-              - {label: "Text Label", name: "label", widget: "string", hint: "This is the text that will be displayed in the dropdown"}
-              - {label: "URL", name: "url", widget: "string", hint: "Use a relative path, ex: /collections instead of http://pettingzoo.com/collections"}
-              - {label: "Order", name: "order", widget: "number", hint: "This number is used to order the items in the dropdown"}
+              - {label: "Text Label", name: "label", widget: "string", hint: "This is what will appear in the main menu on-screen."}
+              - {label: "URL", name: "url", widget: "string", hint: "This is the address where the link will point. Use a 'relative path', without the domain name (e.g. '/collections/sloths/')."}        
+              - name: "submenu"
+                label: "Submenu"
+                label_singular: "Submenu item"
+                widget: "list"
+                default: false
+                required: false
+                fields:
+                  - {label: "Text Label", name: "label", widget: "string", hint: "This is what will appear in the submenu or dropdown on-screen."}
+                  - {label: "URL", name: "url", widget: "string", hint: "This is the address where the link will point. Use a 'relative path', without the domain name (e.g. '/collections/sloths/')."}
                                       
   # FAQ
   - name: "faq"
