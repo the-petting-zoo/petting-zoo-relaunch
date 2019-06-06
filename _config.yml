@@ -19,30 +19,54 @@ defaults:
       path: ''
     values:
       layout: 'default'
+  # Topics
   - scope:
       path: '_posts/inventory/catalog_topics'
       type: 'posts'
     values:
       layout: 'topic'
       category: 'catalog_topics'
+      permalink: /topics/:title
+  # Catalogs
   - scope:
       path: '_posts/inventory/catalogs'
       type: 'posts'
     values:
       layout: 'catalog'
       category: 'catalogs'
+  # Collections
   - scope:
       path: '_posts/inventory/product_collections'
       type: 'posts'
     values:
       layout: 'collection'
       category: 'product_collections'
+      permalink: /collections/:title
+  # Products
   - scope:
       path: '_posts/inventory/products'
       type: 'posts'
     values:
       layout: 'product'
       category: 'products'
+  # News
+  - scope:
+      path: '_posts/news'
+      type: 'posts'
+    values:
+      category: 'blog'
+  # Staff
+  - scope:
+      path: '_posts/staff'
+      type: 'posts'
+    values:
+      category: 'staff'
+  # Testimonials
+  - scope:
+      path: '_posts/testimonials'
+      type: 'posts'
+    values:
+      category: 'testimonials'
 
 # asset paths
 assets:

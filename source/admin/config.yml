@@ -19,7 +19,6 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
-      - {label: "Category", name: "category", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "date", format: "MMM Do YY", hint: "This is the date displayed for this news post"}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}
@@ -33,7 +32,6 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
-      - {label: "Category", name: "category", widget: "hidden", default: "staff"}
       - {label: "Name", name: "title", widget: "string"}
       - {label: "Job Title", name: "job_title", widget: "string"}
       - {label: "Email", name: "email", widget: "string"}
@@ -49,7 +47,6 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
-      - {label: "Category", name: "category", widget: "hidden", default: "testimonials"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 

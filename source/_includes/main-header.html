@@ -47,14 +47,13 @@ current-url - STRING: pass in the url of the current page from the layout (e.g. 
 
               <li class="no-margin-bottom">
                 <a class="t-font-body {{ color }}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
-                {%- if item.dropdown -%}
+                {%- if item.submenu -%}
                   <ul class="padding-top-xnarrow padding-left-xnarrow margin-y-between-xnarrow">
-                    {%- assign sorted_dropdown = site.data.[item.dropdown_type].[item.dropdown_type] | sort: "order" -%}
-                    {%- for dropdown_item in sorted_dropdown -%}
+                    {%- for submenu_item in item.submenu -%}
                       
                       {%- comment -%} Apply an active class if the item url matches the current page url {%- endcomment -%}
                       {%- capture color -%}
-                        {%- if include.current_url == dropdown_item.url -%}
+                        {%- if include.current_url == submenu_item.url -%}
                           {{ active-class }}
                         {%- else -%}
                           {{ secondary-class }}
@@ -62,7 +61,7 @@ current-url - STRING: pass in the url of the current page from the layout (e.g. 
                       {%- endcapture -%}
 
                       <li class="no-margin-bottom">
-                        <a class="t-scale-zeta t-font-body {{ color }}" href="{{ dropdown_item.url }}">{{ dropdown_item.label }}</a>
+                        <a class="t-scale-zeta t-font-body {{ color }}" href="{{ submenu_item.url }}">{{ submenu_item.label }}</a>
                       </li>
                     {%- endfor -%}
                   </ul>
@@ -95,7 +94,7 @@ current-url - STRING: pass in the url of the current page from the layout (e.g. 
           {%- else -%}
           <li data-ui-main-nav-item="split c-text-primary">
           {%- endunless -%}
-            {%- unless item.dropdown -%}
+            {%- unless item.submenu -%}
               <a class="t-font-body {{ color }}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
             {%- else -%}
               <button-dropdown label="{{ item.label }}" button-styles="t-font-body{% if include.current_url == item.url %} {{ color }}{% endif %}">
@@ -103,12 +102,11 @@ current-url - STRING: pass in the url of the current page from the layout (e.g. 
                   <li class="no-margin-bottom">
                     <a class="t-font-body {{ color }}" href="{{ item.url | relative_url }}"><strong>See all {{ item.label | downcase }}</strong></a>
                   </li>
-                  {% assign sorted_dropdown = site.data.[item.dropdown_type].[item.dropdown_type] | sort: "order" %}
-                  {%- for dropdown_item in sorted_dropdown -%}
+                  {%- for submenu_item in item.submenu -%}
                     
                     {%- comment -%} Apply an active class if the item url matches the current page url {%- endcomment -%}
                     {%- capture color -%}
-                      {%- if include.current_url == dropdown_item.url -%}
+                      {%- if include.current_url == submenu_item.url -%}
                         {{ active-class }}
                       {%- else -%}
                         {{ secondary-class }}
@@ -116,7 +114,7 @@ current-url - STRING: pass in the url of the current page from the layout (e.g. 
                     {%- endcapture -%}
 
                     <li class="no-margin-bottom">
-                      <a class="t-font-body {{ color }}" href="{{ dropdown_item.url }}">{{ dropdown_item.label }}</a>
+                      <a class="t-font-body {{ color }}" href="{{ submenu_item.url }}">{{ submenu_item.label }}</a>
                     </li>
                   {%- endfor -%}
                 </ul>

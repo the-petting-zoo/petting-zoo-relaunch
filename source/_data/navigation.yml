@@ -1,10 +1,21 @@
 navigation_items:
   - label: About us
     url: /about/
-  - dropdown: true
-    dropdown_type: product_dropdown
-    label: Products test
+  - label: Products
     url: /products/
+    submenu:
+      - label: Seasonal
+        url: /topics/seasonal
+      - label: Gifts
+        url: /topics/gifts/
+      - label: Trend
+        url: /topics/trend/
+      - label: Sealife &amp; Wildlife
+        url: /topics/sealife/
+      - label: Catalogs
+        url: /catalogs/
+      - label: Custom
+        url: /custom/
   - label: News
     url: /news/
   - label: Contact us
