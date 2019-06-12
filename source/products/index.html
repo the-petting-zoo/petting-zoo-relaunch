@@ -4,23 +4,24 @@ layout: default
 ---
 
 <!-- Catalogs -->
-<section data-ui-panel>
-  <div data-ui-wrapper>
-    <h1 class="padding-bottom t-align-center">Catalogs</h1>
+{%- assign catalogs_length = site.categories.catalogs | size -%}
+{%- unless catalogs_length == '0' -%}
+  <section data-ui-panel>
+    <div data-ui-wrapper>
+      <h1 class="padding-bottom t-align-center">Catalogs</h1>
 
-    {% include category-list.html
-      category=site.categories.catalogs
-      grid-size='small'
-      show-topics=true
-      aspect='catalog'
-    %}
-  </div>
-</section>
+      {% include category-list.html
+        category=site.categories.catalogs
+        grid-size='small'
+        show-topics=true
+        aspect='catalog'
+      %}
+    </div>
+  </section>
+{%- endunless -%}
 
 <!-- Collections -->
-{%- capture collections_length -%}
-    {{ site.categories.product_collections | size }}
-{%- endcapture -%}
+{%- assign collections_length = site.categories.product_collections | size -%}
 {%- unless collections_length == '0' -%}
   <section data-ui-panel class="border-top">
     <div data-ui-wrapper>

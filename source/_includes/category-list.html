@@ -9,8 +9,6 @@
   subhead-level - NUMBER (optional): heading level of the 'topic' subheadings. defaults to h2.
   subhead-scale - STRING (optional): type scale size of the 'topic' subheadings. defaults to 'gamma'.
 {%- endcomment -%}
-{%- assign show-topics = include show-topics | default: false -%}
-{%- assign aspect = include.aspect | default: '' -%}
 {%- assign subhead-level = include.subhead-level | default: 2 -%}
 {%- assign subhead-scale = include.subhead-scale | default: 'gamma' -%}
 
@@ -25,7 +23,7 @@
             title=item.title
             image=item.cover
             url=item.url
-            aspect=aspect
+            aspect=include.aspect
           -%}
         </li>
       {%- endunless -%}
@@ -34,7 +32,7 @@
 </ul>
 
 <!-- topics -->
-{%- if show-topics -%}
+{%- if include.show-topics -%}
   {%- assign topics_length = site.categories.catalog_topics | size -%}
   {%- unless topics_length == 0 -%}
     {%- for topic in site.categories.catalog_topics -%}
@@ -50,7 +48,7 @@
                   title=item.title
                   image=item.cover
                   url=item.url
-                  aspect=aspect
+                  aspect=include.aspect
                 -%}
               </li>
             {%- endif -%}
