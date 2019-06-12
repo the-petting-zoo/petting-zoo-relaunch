@@ -2,6 +2,7 @@
 layout: product
 published: true
 title: 17” Boho Mermaid & Unicorn Assortment
+featured: true
 sku: 3185X1
 color: 'Pink, Blue, Purple'
 image: /static/uploads/17-_boho_mermaid_unicorn_assortment.png
