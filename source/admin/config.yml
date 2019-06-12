@@ -10,6 +10,8 @@ public_folder: "static/uploads"
 
 # Content Types
 collections:
+
+  # Home page
   - name: "home"
     label: "Home"
     editor:
