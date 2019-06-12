@@ -34,43 +34,34 @@ layout: default
 {%- endunless -%}
 
 <!-- Custom products -->
-{%- comment -%} Copied from existing site. To be refactored. {%- endcomment -%}
-<section class="strip pointer full_bleed-bottom wash secondary">
-  <section class="strip full_bleed-bottom">
-    <div class="wrapper narrow">
-    {% for post in site.categories.custom %}
-      {% if post.categories contains "intro" %}
-      <h1 class="title">{{ post.display_title }}</h1>
-      {{ post.content }}
-      {% endif %}
-    {% endfor %}
-    </div>
-  </section>
-
-  <!-- tabs -->
-  <section class="js-tabs">
-    <nav class="local tabs">
-      <ul>
-      {% for post in site.categories.custom %}
-        {% unless post.categories contains "intro" %}
-        <li><a href="#{{ post.title | replace: " ", "-" | downcase }}">{{ post.title }}</a></li>
-        {% endunless %}
-      {% endfor %}
-      </ul>
-    </nav>
-
-    {% for post in site.categories.custom %}
-    {% unless post.categories contains "intro" %}
-      <section id="{{ post.title | replace: " ", "-" | downcase }}" class="tabs-content">
-        <h4 class="tabs-content-header"><a href="#{{ post.title | replace: " ", "-" | downcase }}-content">{{ post.title }}</a></h4>
-        <div class="tabs-content-body wrapper narrow" id="{{ post.title | replace: " ", "-" | downcase }}-content">
-          {{ post.content }}
-        </div>
-      </section>
-    {% endunless %}
-    {% endfor %}
-    </section>
-  </section>
+<section data-ui-panel class="border-top">
+  <div data-ui-wrapper>
+    <h1 class="t-align-center padding-bottom">Custom products</h1>
+    <ul class="list-undecorated margin-y-between">
+      {%- assign sorted_custom = site.categories.custom | sort: 'weight' -%}
+      {%- for product in sorted_custom -%}
+        {%- unless product.categories contains 'intro' -%}
+          <li class="border-top border-secondary padding-top">
+            <!-- title -->
+            <h2 class="t-align-center padding-bottom">{{ product.title }}</h2>
+            <!-- product image(s) -->
+            <ul class="list-undecorated margin-y-between-xnarrow">
+              {%- for image in product.images -%}
+                <li>
+                  <img class="display-block align-center-block border border-secondary" src="{{ image.source }}" alt="{{ image.alt | default: 'Custom product' }}">
+                </li>
+              {%- endfor -%}
+            </ul>
+            <!-- description -->
+            <div data-ui-wrapper="narrow" class="t-content padding-top">
+              {{ product.content }}
+            </div>
+          </li>
+        {%- endunless -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
 
   <!-- testimonials -->
   {% if site.categories.testimonials.size > 0 %}
