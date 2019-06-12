@@ -43,7 +43,7 @@ export default Vue.component('button-dropdown', {
         v-show="open"
        :data-ui-button-dropdown="position === 'center' ? '' : position"
        data-theme-default
-       class="margin-top-xnarrow padding-xnarrow se-shadow t-align-center"
+       class="z-top margin-top-xnarrow padding-xnarrow se-shadow t-align-center"
       >
         <slot></slot>
       </div>
