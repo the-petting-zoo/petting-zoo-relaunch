@@ -93,10 +93,9 @@ current-url - STRING: pass in the url of the current page from the layout (e.g. 
           {%- else -%}
           <li data-ui-main-nav-item="split c-text-primary">
           {%- endunless -%}
-            {%- unless item.submenu -%}
-              <a class="t-font-body {{ color }}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
-            {%- else -%}
-              <button-dropdown label="{{ item.label }}" button-styles="t-font-body{% if include.current_url == item.url %} {{ color }}{% endif %}">
+            <a class="t-font-body {{ color }}{% if item.submenu %} hide@js{% endif %}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
+            {%- if item.submenu -%}
+              <button-dropdown label="{{ item.label }}" button-styles="t-font-body{% if include.current_url == item.url %} {{ color }}{% endif %}" class="show@js">
                 <ul class="margin-y-between-xnarrow">
                   <li class="no-margin-bottom">
                     <a class="t-font-body {{ color }}" href="{{ item.url | relative_url }}"><strong>See all {{ item.label | downcase }}</strong></a>
@@ -118,7 +117,7 @@ current-url - STRING: pass in the url of the current page from the layout (e.g. 
                   {%- endfor -%}
                 </ul>
               </button-dropdown>
-            {%- endunless -%}
+            {%- endif -%}
           </li>
         {%- endfor -%}
       </ul>

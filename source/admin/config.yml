@@ -11,6 +11,33 @@ public_folder: "static/uploads"
 # Content Types
 collections:
 
+  # Home page
+  - name: "home"
+    label: "Home"
+    editor:
+      preview: false
+    files:
+      - label: "Home"
+        name: "home"
+        file: "source/_data/home.yml"
+        fields:   
+          - name: "cover_image"
+            label: "Cover image"
+            widget: object
+            required: false
+            hint: "The large banner at the top of the homepage."
+            fields: 
+              - name: "source"
+                label: "Image"
+                widget: "image"
+                required: false,
+                allow_multiple: false
+              - name: "alt"
+                label: "Alternate label"
+                widget: "string"
+                required: false
+                hint: "An alternate label (alt attribute) that will display if the image doesn't load correctly, or if the user is using a screen reader."
+
   # News pages
   - name: "news" # Used in routes, e.g., /admin/collections/blog
     label: "News" # Used in the UI

@@ -6,9 +6,11 @@ active: products
 <section>
   {%- comment -%} if there's a banner image... {%- endcomment -%}
   {%- if page.image -%}
+    {%- capture alt -%}The Petting Zoo: {{ page.title }}{%- endcapture -%}
     {%- include billboard.html 
       image='https://placehold.it/1200x600?text=Banner'
       title=page.title
+      alt=alt
     -%}
   {%- else -%}
     {%- comment -%} otherwise, just show the title {%- endcomment -%}
