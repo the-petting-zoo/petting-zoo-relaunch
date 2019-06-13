@@ -7,7 +7,7 @@ layout: default
 {%- assign catalogs_length = site.categories.catalogs | size -%}
 {%- unless catalogs_length == '0' -%}
   <section data-ui-panel>
-    <div data-ui-wrapper>
+    <div data-ui-wrapper="wide">
       <h1 class="padding-bottom t-align-center">Catalogs</h1>
 
       {% include category-list.html
@@ -24,7 +24,7 @@ layout: default
 {%- assign collections_length = site.categories.product_collections | size -%}
 {%- unless collections_length == '0' -%}
   <section data-ui-panel class="border-top">
-    <div data-ui-wrapper>
+    <div data-ui-wrapper="wide">
       <h1 class="t-align-center padding-bottom">Collections</h1>
       {% include category-list.html
         category=site.categories.product_collections
@@ -35,29 +35,33 @@ layout: default
 
 <!-- Custom products -->
 <section data-ui-panel class="border-top">
-  <div data-ui-wrapper>
+  <div data-ui-wrapper="wide">
     <h1 class="t-align-center padding-bottom">Custom products</h1>
+    <div data-ui-wrapper="narrow" class="t-content padding-bottom">
+      {%- for intro in site.categories.intro -%}
+        {%- if intro.categories contains 'custom' -%}
+          {{ intro.content }}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
     <ul class="list-undecorated margin-y-between">
-      {%- assign sorted_custom = site.categories.custom | sort: 'weight' -%}
-      {%- for product in sorted_custom -%}
-        {%- unless product.categories contains 'intro' -%}
-          <li class="border-top border-secondary padding-top">
-            <!-- title -->
-            <h2 class="t-align-center padding-bottom">{{ product.title }}</h2>
-            <!-- product image(s) -->
-            <ul class="list-undecorated margin-y-between-xnarrow">
-              {%- for image in product.images -%}
-                <li>
-                  <img class="display-block align-center-block border border-secondary" src="{{ image.source }}" alt="{{ image.alt | default: 'Custom product' }}">
-                </li>
-              {%- endfor -%}
-            </ul>
-            <!-- description -->
-            <div data-ui-wrapper="narrow" class="t-content padding-top">
-              {{ product.content }}
-            </div>
-          </li>
-        {%- endunless -%}
+      {%- for product in site.data.custom_products.listings -%}
+        <li class="border-top border-secondary padding-top">
+          <!-- title -->
+          <h2 class="t-align-center padding-bottom">{{ product.title }}</h2>
+          <!-- product image(s) -->
+          <ul class="list-undecorated margin-y-between-xnarrow">
+            {%- for image in product.images -%}
+              <li>
+                <img class="display-block align-center-block border border-secondary" src="{{ image.source }}" alt="{{ image.alt | default: 'Custom product' }}">
+              </li>
+            {%- endfor -%}
+          </ul>
+          <!-- description -->
+          <div data-ui-wrapper="narrow" class="t-content padding-top">
+            {{ product.description | markdownify }}
+          </div>
+        </li>
       {%- endfor -%}
     </ul>
   </div>

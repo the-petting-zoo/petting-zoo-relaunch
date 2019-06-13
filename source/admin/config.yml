@@ -1,7 +1,7 @@
 # Publish Settings
 backend:
   name: git-gateway
-  branch: 'dev' # Change to your local branch for testing. 
+  branch: 'custom-products' # Change to your local branch for testing. 
 publish_mode: editorial_workflow
 
 # Media
@@ -200,16 +200,27 @@ collections:
   #   These are examples of custom products
   - name: "custom_products"
     label: "Custom Products"
-    folder: "source/_posts/inventory/custom_products"
-    create: false
-    delete: false
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
-      - {label: "Category", name: "category", widget: "hidden", default: "custom"}
-      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
+    files: 
+      - label: "Custom Products"
+        name: "custom_products"
+        file: "source/_posts/inventory/custom_products"
+        fields:
+          - name: "listings"
+            label: "Listings"
+            label_singular: "Listing"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string", hint: "The name of the custom product collection, e.g. 'hoodies'."}
+              - {label: "Description", name: "description", widget: "markdown", required: false, hint: "A short (optional) product descrption."}
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                hint: "Product images. Add as many as you like."
+                fields:
+                  - {label: "Source", name: "source", widget: "image"}
+                  - {label: "Alternate label", name: "alt", widget: "string", hint: "An alternate description (alt attribute) for the image, in case it does not load or the user is using a screen reader."}
+
+
 
   # Main Navigation & Dropdown
   - name: "nav"
