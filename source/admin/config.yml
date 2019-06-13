@@ -38,45 +38,6 @@ collections:
                 required: false
                 hint: "An alternate label (alt attribute) that will display if the image doesn't load correctly, or if the user is using a screen reader."
 
-  # News pages
-  - name: "news" # Used in routes, e.g., /admin/collections/blog
-    label: "News" # Used in the UI
-    folder: "source/_posts/news" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "date", format: "MMM Do YY", hint: "This is the date displayed for this news post"}
-      - {label: "Published Status", name: "published", widget: "hidden", default: true}
-      - {label: "Body", name: "body", widget: "markdown"}
-
-  # Staff
-  - name: "staff"
-    label: "Staff"
-    folder: "source/_posts/staff"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
-      - {label: "Name", name: "title", widget: "string"}
-      - {label: "Job Title", name: "job_title", widget: "string"}
-      - {label: "Email", name: "email", widget: "string"}
-      - {label: "Portrait", name: "portrait", allow_multiple: false, widget: "image", required: false}
-      - {label: "Published Status", name: "published", widget: "hidden", default: true}      
-  
-  # Testimonials
-  - name: "testimonials"
-    label: "Testimonials"
-    folder: "source/_posts/testimonials"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
-      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-
   # Catalog Topics
   # Description: 
   #   Catalog topcis are topics that are used to group catalogs.
@@ -136,7 +97,7 @@ collections:
       - {label: "Category", name: "category", widget: "hidden", default: "product_collection"}
       - {label: "ID", name: "unique_id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
       - {label: "Collection Name", name: "title", widget: "string"}
-      - {label: "Product Collection Cover", name: "image", widget: "image", allow_multiple: false, hint: "This is the image displayed on the top of the collection page"}
+      - {label: "Product Collection Cover", name: "cover", widget: "image", allow_multiple: false, hint: "This is the image displayed on the top of the collection page"}
       - {label: "Featured", name: "featured", widget: "boolean", required: false, hint: "If a product collection is featured, it will be listed on the home page"}
 
   # Products
@@ -177,6 +138,89 @@ collections:
         hint: "This associates the product with one or many collections"
       - {label: "Product Description", name: "body", widget: "markdown", required: false}
 
+  # Custom Products
+  # Description: 
+  #   These are examples of custom products
+  - name: "custom_products"
+    label: "Custom Products"
+    editor:
+      preview: false
+    files: 
+      - label: "Custom Products"
+        name: "custom_products"
+        file: "source/_data/custom_products.yml"
+        fields:
+          - name: "listings"
+            label: "Listings"
+            label_singular: "Listing"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string", hint: "The name of the custom product collection, e.g. 'hoodies'."}
+              - {label: "Description", name: "description", widget: "markdown", required: false, hint: "A short (optional) product descrption."}
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                hint: "Product images. Add as many as you like."
+                fields:
+                  - {label: "Source", name: "source", widget: "image"}
+                  - {label: "Alternate label", name: "alt", widget: "string", hint: "An alternate description (alt attribute) for the image, in case it does not load or the user is using a screen reader."}
+
+  # News pages
+  - name: "news" # Used in routes, e.g., /admin/collections/blog
+    label: "News" # Used in the UI
+    folder: "source/_posts/news" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "date", format: "MMM Do YY", hint: "This is the date displayed for this news post"}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Staff
+  - name: "staff"
+    label: "Staff"
+    folder: "source/_posts/staff"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Job Title", name: "job_title", widget: "string"}
+      - {label: "Email", name: "email", widget: "string"}
+      - {label: "Portrait", name: "portrait", allow_multiple: false, widget: "image", required: false}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}      
+  
+  # Testimonials
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "source/_posts/testimonials"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # FAQ
+  - name: "faq"
+    label: "FAQ"
+    editor:
+      preview: false
+    files:
+      - label: "FAQ"
+        name: "faq"
+        file: "source/_data/faq.yml"
+        fields:          
+          - name: "faq"
+            label: "FAQ"
+            widget: "list"
+            fields: 
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Answer", name: "answer", widget: "markdown"}
+
   # Intros
   # Description: 
   #   These are pieces of content that are showcased across the site, mostly as "intros".
@@ -195,23 +239,7 @@ collections:
       - {label: "Title", name: "display_title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  # Custom Products
-  # Description: 
-  #   These are examples of custom products
-  - name: "custom_products"
-    label: "Custom Products"
-    folder: "source/_posts/inventory/custom_products"
-    create: false
-    delete: false
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
-      - {label: "Category", name: "category", widget: "hidden", default: "custom"}
-      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-
-  # Main Navigation & Dropdown
+  # Main Navigation
   - name: "nav"
     label: "Main Navigation"
     editor:
@@ -238,23 +266,6 @@ collections:
                 fields:
                   - {label: "Text Label", name: "label", widget: "string", hint: "This is what will appear in the submenu or dropdown on-screen."}
                   - {label: "URL", name: "url", widget: "string", hint: "This is the address where the link will point. Use a 'relative path', without the domain name (e.g. '/collections/sloths/')."}
-                                      
-  # FAQ
-  - name: "faq"
-    label: "FAQ"
-    editor:
-      preview: false
-    files:
-      - label: "FAQ"
-        name: "faq"
-        file: "source/_data/faq.yml"
-        fields:          
-          - name: "faq"
-            label: "FAQ"
-            widget: "list"
-            fields: 
-              - {label: "Question", name: "question", widget: "string"}
-              - {label: "Answer", name: "answer", widget: "markdown"}
 
   # Site Settings
   - name: "config"

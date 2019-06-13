@@ -13,7 +13,7 @@
 {%- assign button_label = include.button_label | default: 'See more' -%}
 {%- assign image = include.image | default: 'https://placehold.it/800x500?text=Thumbnail' -%}
 
-<a data-ui-aspect="{{ include.aspect }}" class="margin-bottom-xnarrow border c-well" href="{{ include.url }}" style="background-image: url('{{ image }}');">
+<a data-ui-aspect="{{ include.aspect }}" class="margin-bottom-xnarrow border" href="{{ include.url }}" style="background-image: url('{{ image }}');">
   <img data-ui-aspect-image src="{{ image }}" alt="The Petting Zoo: {{ include.title | escape }}">
 </a>
 <h3 class="t-scale-gamma t-weight-bold padding-bottom-narrow">

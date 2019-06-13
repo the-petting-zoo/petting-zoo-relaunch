@@ -1,5 +1,5 @@
 {%- comment -%}
-  Catalog listings with heading and intro
+  Collection listings with heading and intro
   -> used in the main products page and also the catalog index page
 
   Locals: 
@@ -7,10 +7,10 @@
 {%- endcomment -%}
 
 <!-- intro -->
-<h1 class="padding-bottom t-align-center">{{ include.title | default: 'Catalogs' }}</h1>
+<h1 class="t-align-center padding-bottom">{{ include.title | default: 'Collections' }}</h1>
 {%- capture intro -%}
   {%- for intro in site.categories.intro -%}
-    {%- if intro.categories contains 'catalog' -%}
+    {%- if intro.categories contains 'product_collections' -%}
       {{ intro.content }}
     {%- endif -%}
   {%- endfor -%}
@@ -22,10 +22,7 @@
   </div>
 {%- endif -%}
 
-<!-- catalog listings -->
+<!-- listings -->
 {% include category-list.html
-  category=site.categories.catalogs
-  grid-size='small'
-  show-topics=true
-  aspect='catalog'
+  category=site.categories.product_collections
 %}

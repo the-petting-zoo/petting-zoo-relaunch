@@ -4,123 +4,31 @@ layout: default
 ---
 
 <!-- Catalogs -->
-<section data-ui-panel>
-  <div data-ui-wrapper>
-    <h1 class="padding-bottom t-align-center">Catalogs</h1>
-
-    <!-- unsorted catalogs -->
-    <ul data-ui-gallery="small">
-      {%- for catalog in site.categories.catalogs -%}
-        {%- unless catalog.topic -%}
-          <li data-ui-gallery-item>
-            {%- include card.html 
-              title=catalog.title
-              image=catalog.cover
-              url=catalog.url
-              aspect='catalog'
-            -%}
-          </li>
-        {%- endunless -%}
-      {%- endfor -%}
-    </ul>
-
-    <!-- topics -->
-    {%- assign topics_length = site.categories.catalog_topics | size -%}
-    {%- unless topics_length == 0 -%}
-      {%- for topic in site.categories.catalog_topics -%}
-        <section class="margin-top padding-top border-top">
-          <h2 class="t-scale-gamma t-align-center padding-bottom">
-            <a href="{{ topic.url | relative_url }}">{{ topic.title | escape }}</a>
-          </h2>
-          <ul data-ui-gallery="small">
-            {%- for catalog in site.categories.catalogs -%}
-              {%- if catalog.topic contains topic.unique_id -%}
-                <li data-ui-gallery-item>
-                  {%- include card.html 
-                    title=catalog.title
-                    image=catalog.cover
-                    url=catalog.url
-                    aspect='catalog'
-                  -%}
-                </li>
-              {%- endif -%}
-            {%- endfor -%}
-            {%- if topics_length <= 3 -%}
-              <!-- dummy list item to prevent a single item from becoming huge on large screens -->
-              <li data-ui-gallery-item class="hide-below@small"></li>
-            {%- endif -%}
-          </ul>
-        </section>
-      {%- endfor -%}
-    {%- endunless -%}
-  </div>
-</section>
+{%- assign catalogs_length = site.categories.catalogs | size -%}
+{%- unless catalogs_length == '0' -%}
+  <section data-ui-panel>
+    <div data-ui-wrapper="wide">
+      {% include catalogs.html %}
+    </div>
+  </section>
+{%- endunless -%}
 
 <!-- Collections -->
-{%- capture collections_length -%}
-    {{ site.categories.product_collections | size }}
-{%- endcapture -%}
+{%- assign collections_length = site.categories.product_collections | size -%}
 {%- unless collections_length == '0' -%}
   <section data-ui-panel class="border-top">
-    <div data-ui-wrapper>
-      <h1 class="t-align-center padding-bottom">Collections</h1>
-      <ul data-ui-gallery>
-        {%- for collection in site.categories.product_collections -%}
-          <li data-ui-gallery-item>
-            {%- include card.html 
-              title=collection.title
-              image=collection.image 
-              url=collection.url 
-            -%}
-          </li>
-        {%- endfor -%}
-        {%- if collections_length < '3' -%}
-          <!-- dummy list item to prevent a single item from becoming huge on large screens -->
-          <li data-ui-gallery-item class="hide-below@small"></li>
-        {%- endif -%}
-      {%- endunless -%}
-        </ul>
+    <div data-ui-wrapper="wide">
+      {% include collections.html %}
     </div>
-</section>
+  </section>
+{%- endunless -%}
 
 <!-- Custom products -->
-{%- comment -%} Copied from existing site. To be refactored. {%- endcomment -%}
-<section class="strip pointer full_bleed-bottom wash secondary">
-  <section class="strip full_bleed-bottom">
-    <div class="wrapper narrow">
-    {% for post in site.categories.custom %}
-      {% if post.categories contains "intro" %}
-      <h1 class="title">{{ post.display_title }}</h1>
-      {{ post.content }}
-      {% endif %}
-    {% endfor %}
-    </div>
-  </section>
-
-  <!-- tabs -->
-  <section class="js-tabs">
-    <nav class="local tabs">
-      <ul>
-      {% for post in site.categories.custom %}
-        {% unless post.categories contains "intro" %}
-        <li><a href="#{{ post.title | replace: " ", "-" | downcase }}">{{ post.title }}</a></li>
-        {% endunless %}
-      {% endfor %}
-      </ul>
-    </nav>
-
-    {% for post in site.categories.custom %}
-    {% unless post.categories contains "intro" %}
-      <section id="{{ post.title | replace: " ", "-" | downcase }}" class="tabs-content">
-        <h4 class="tabs-content-header"><a href="#{{ post.title | replace: " ", "-" | downcase }}-content">{{ post.title }}</a></h4>
-        <div class="tabs-content-body wrapper narrow" id="{{ post.title | replace: " ", "-" | downcase }}-content">
-          {{ post.content }}
-        </div>
-      </section>
-    {% endunless %}
-    {% endfor %}
-    </section>
-  </section>
+<section data-ui-panel class="border-top">
+  <div data-ui-wrapper="wide">
+    {% include custom-products.html %}
+  </div>
+</section>
 
   <!-- testimonials -->
   {% if site.categories.testimonials.size > 0 %}
