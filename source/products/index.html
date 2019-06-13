@@ -8,14 +8,7 @@ layout: default
 {%- unless catalogs_length == '0' -%}
   <section data-ui-panel>
     <div data-ui-wrapper="wide">
-      <h1 class="padding-bottom t-align-center">Catalogs</h1>
-
-      {% include category-list.html
-        category=site.categories.catalogs
-        grid-size='small'
-        show-topics=true
-        aspect='catalog'
-      %}
+      {% include catalogs.html %}
     </div>
   </section>
 {%- endunless -%}
@@ -25,10 +18,7 @@ layout: default
 {%- unless collections_length == '0' -%}
   <section data-ui-panel class="border-top">
     <div data-ui-wrapper="wide">
-      <h1 class="t-align-center padding-bottom">Collections</h1>
-      {% include category-list.html
-        category=site.categories.product_collections
-      %}
+      {% include collections.html %}
     </div>
   </section>
 {%- endunless -%}

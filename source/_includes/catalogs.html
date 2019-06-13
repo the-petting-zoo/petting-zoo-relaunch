@@ -1,0 +1,31 @@
+{%- comment -%}
+  Catalog listings with heading and intro
+  -> used in the main products page and also the catalog index page
+
+  Locals: 
+  title - STRING (optional): the main heading
+{%- endcomment -%}
+
+<!-- intro -->
+<h1 class="padding-bottom t-align-center">{{ include.title | default: 'Catalogs' }}</h1>
+{%- capture intro -%}
+  {%- for intro in site.categories.intro -%}
+    {%- if intro.categories contains 'catalog' -%}
+      {{ intro.content }}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign intro_length = intro | size -%}
+{%- if intro_length > 0 -%}
+  <div data-ui-wrapper="narrow" class="t-content padding-bottom">
+    {{ intro }}
+  </div>
+{%- endif -%}
+
+<!-- catalog listings -->
+{% include category-list.html
+  category=site.categories.catalogs
+  grid-size='small'
+  show-topics=true
+  aspect='catalog'
+%}

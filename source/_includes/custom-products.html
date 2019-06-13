@@ -1,9 +1,13 @@
 {%- comment -%}
   Custom product listings
   -> displayed on the main products page and also the custom products index page
+
+  Locals: 
+  title - STRING (optional): the main heading
 {%- endcomment -%}
 
-<h1 class="t-align-center padding-bottom">Custom products</h1>
+<!-- intro -->
+<h1 class="t-align-center padding-bottom">{{ include.title | default: 'Custom products' }}</h1>
 {%- capture intro -%}
   {%- for intro in site.categories.intro -%}
     {%- if intro.categories contains 'custom' -%}
@@ -17,6 +21,8 @@
     {{ intro }}
   </div>
 {%- endif -%}
+
+<!-- custom product listings -->
 <ul class="list-undecorated margin-y-between">
   {%- for product in site.data.custom_products.listings -%}
     <li class="border-top border-secondary padding-top">
