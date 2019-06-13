@@ -200,6 +200,8 @@ collections:
   #   These are examples of custom products
   - name: "custom_products"
     label: "Custom Products"
+    editor:
+      preview: false
     files: 
       - label: "Custom Products"
         name: "custom_products"
