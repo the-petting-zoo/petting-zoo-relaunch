@@ -1,0 +1,39 @@
+{%- comment -%}
+  Custom product listings
+  -> displayed on the main products page and also the custom products index page
+{%- endcomment -%}
+
+<h1 class="t-align-center padding-bottom">Custom products</h1>
+{%- capture intro -%}
+  {%- for intro in site.categories.intro -%}
+    {%- if intro.categories contains 'custom' -%}
+      {{ intro.content }}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign intro_length = intro | size -%}
+{%- if intro_length > 0 -%}
+  <div data-ui-wrapper="narrow" class="t-content padding-bottom">
+    {{ intro }}
+  </div>
+{%- endif -%}
+<ul class="list-undecorated margin-y-between">
+  {%- for product in site.data.custom_products.listings -%}
+    <li class="border-top border-secondary padding-top">
+      <!-- title -->
+      <h2 class="t-align-center padding-bottom">{{ product.title }}</h2>
+      <!-- product image(s) -->
+      <ul class="list-undecorated margin-y-between-xnarrow">
+        {%- for image in product.images -%}
+          <li>
+            <img class="display-block align-center-block border border-secondary" src="{{ image.source }}" alt="{{ image.alt | default: 'Custom product' }}">
+          </li>
+        {%- endfor -%}
+      </ul>
+      <!-- description -->
+      <div data-ui-wrapper="narrow" class="t-content padding-top">
+        {{ product.description | markdownify }}
+      </div>
+    </li>
+  {%- endfor -%}
+</ul>
