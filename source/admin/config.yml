@@ -203,7 +203,7 @@ collections:
     files: 
       - label: "Custom Products"
         name: "custom_products"
-        file: "source/_posts/inventory/custom_products"
+        file: "source/_data/custom_products.yml"
         fields:
           - name: "listings"
             label: "Listings"
