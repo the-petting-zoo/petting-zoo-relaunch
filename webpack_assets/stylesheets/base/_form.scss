@@ -45,7 +45,7 @@ select {
   @extend %form-field;
 }
 
-.form-field--invisible {
+.form-field-hidden {
   // sass-lint:disable no-important
   background-color: transparent !important;
   border: 0 !important;
