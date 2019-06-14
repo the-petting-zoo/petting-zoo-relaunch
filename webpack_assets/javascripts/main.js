@@ -14,6 +14,7 @@
 
 import Vue from 'vue'
 import ButtonDropdown from './components/ButtonDropdown'
+import ContactForm from './components/ContactForm'
 
 export default new Vue({
   el: '#js-main'

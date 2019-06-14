@@ -38,7 +38,7 @@
     <!-- javascript bundles -->
     <script type="module" src="{{ site.data.webpack_manifest['main.js'] | relative_url }}"></script>
     {% if jekyll.environment == "production" %}
-      <script nomodule type="text/javascript" src="{{ site.data.webpack_manifest['main.es5.mjs'] | relative_url }}"></script>
+      <script nomodule type="text/javascript" src="{{ site.data.webpack_manifest['main.es5.js'] | relative_url }}"></script>
     {% endif %}
     
     <!-- google maps api -->
