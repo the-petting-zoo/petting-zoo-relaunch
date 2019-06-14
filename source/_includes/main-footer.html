@@ -3,7 +3,7 @@
   <section class="wrapper narrow">
     <contact-form url="{{ site.url }}" question="{{ site.data.contact.contact_subjects.question }}">
 
-      <template v-slot:subject-options class="show@js">
+      <template v-slot:subject-options class="">
         <option value="" disabled selected>{{ site.data.contact.contact_subjects.question }}</option>
         {%- for subject in site.data.contact.contact_subjects.answers -%}
           <option value="{{ subject.value }}">{{ subject.option }}</option>
