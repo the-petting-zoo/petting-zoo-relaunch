@@ -6,27 +6,30 @@ title: Contact Us
 <section data-ui-panel>
   <div data-ui-wrapper="wide">
     <h1 class="t-align-center">Contact our staff</h1>
-    <ul class="grid large">
-      {% for post in site.categories.staff %}
-      <li class="tile horizontal">
-        {% comment %}<img src="{{ post.portrait }}" class="portrait" alt="{{ post.title }}" />{% endcomment %}
-        <!-- <div class="info"> -->
-          <h3>{{ post.title }}</h3>
-          <h6>{{ post.job_title }}</h6>
-          <a href="mailto:{{ post.email }}">{{ post.email }}</a>
-        <!-- </div> -->
-      </li>
-      {% endfor %}
-    </ul>
-    <div class="center">
-      <a href="{{ site.assets.s3 }}/forms/MASTER%20CREDIT%20APPLICATION.pdf" class="button primary large">Download an order form</a>
+    <div class="padding-top-wide">
+      <ul data-ui-gallery>
+        {% for post in site.categories.staff %}
+        <li data-ui-gallery-item>
+          <h2 class="t-scale-gamma">{{ post.title }}</h2>
+          <p class="t-scale-zeta padding-top-xxnarrow">{{ post.job_title }}</p>
+          <a class="display-block padding-top-xxnarrow" href="mailto:{{ post.email }}">{{ post.email }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="t-align-center padding-top-narrow">
+      <a href="{{ site.data.contact.order_form }}" class="button primary large">Download an order form</a>
     </div>
   </div>
 </section>
 
-<section class="strip full_bleed-bottom well pointer">
-  <h1>Our headquarters</h1>
-  <div class="wrapper">
+<section data-ui-panel class="border-top c-well">
+  <h1 class="t-align-center padding-bottom-narrow">Our headquarters</h1>
+  <address class="display-block t-align-center t-scale-epsilon t-font-body">
+    <span class="display-inline-block">{{ site.data.contact.address.street }},</span>
+    <span class="display-inline-block">{{ site.data.contact.address.city }}, {{ site.data.contact.address.state }} {{ site.data.contact.address.zip }}</span>
+  </address>
+  <div data-ui-wrapper="wide" class="padding-top-narrow">
     <div id="js-map_canvas" class="map">
       {%- capture map_query -%}
         {{ site.data.contact.address.street | split: ' ' | join: '+' }},{{ site.data.contact.address.city }},{{ site.data.contact.address.state }}+{{ site.data.contact.address.zip }}

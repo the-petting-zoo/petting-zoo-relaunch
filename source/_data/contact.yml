@@ -1,3 +1,7 @@
+# order form PDF linked to the contact page
+order_form: /static/uploads/MASTER-CREDIT-APPLICATION.pdf
+
+# contact info
 address:
   street: "7222 Parkway Drive"
   city: "Hanover"
