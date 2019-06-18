@@ -32,6 +32,12 @@
   border: 0 !important;
 }
 
+.border-y-between {
+  > * + * {
+    @include border('top');
+  }
+}
+
 // --- Variations ---
 
 // make a border thicker
