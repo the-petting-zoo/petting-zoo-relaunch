@@ -24,8 +24,8 @@ export default Vue.component('button-dropdown', {
     }
   },
   template: `
-    <div class="display-inline-block position-relative">
-      <button
+    <details class="display-inline-block position-relative">
+      <summary
         :data-ui-button-incognito="buttonAttributes"
         @click="open = !open"
         :aria-expanded="open ? 'true' : 'false'"
@@ -38,15 +38,15 @@ export default Vue.component('button-dropdown', {
         <svg data-ui-icon data-ui-button-icon role="presentation">
           <use :xlink:href="open ? '#arrow-up' : '#arrow-down'"></use>
         </svg>
-      </button>
+      </summary>
       <div
         v-show="open"
-       :data-ui-button-dropdown="position === 'center' ? '' : position"
-       data-theme-default
-       class="z-top margin-top-xnarrow padding-xnarrow se-shadow t-align-center"
+        :data-ui-button-dropdown="position === 'center' ? '' : position"
+        data-theme-default
+        class="z-top margin-top-xnarrow padding-xnarrow se-shadow t-align-center"
       >
         <slot></slot>
       </div>
-    </div>
+    </details>
   `
 })

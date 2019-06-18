@@ -31,6 +31,7 @@ $button-icon-offset: 0.3em; // amount the icon should rest 'outside' the normal 
   @include font(display);
   @include transition();
   color: $fg-color; // using a color var directly because the label should forever and always be white no matter what
+  cursor: pointer;
   border-radius: border-radius('large');
   display: inline-block;
   font-size: $font-size; // fallback/default for old browsers
@@ -83,6 +84,7 @@ $button-icon-offset: 0.3em; // amount the icon should rest 'outside' the normal 
   border-radius: 0 !important;
   border: 0 !important;
   box-shadow: none !important;
+  cursor: pointer;
   display: inline-block;
   font-size: inherit;
   padding: 0;

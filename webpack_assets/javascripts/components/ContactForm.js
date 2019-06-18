@@ -1,7 +1,3 @@
-// <option value="" disabled selected>{{ question }}</option>
-// <option v-for="subject in subjectData" :value="subject.value">{{ subject.option }}</option>
-//  name="FNAME"
-
 import Vue from 'vue'
 import axios from 'axios'
 
