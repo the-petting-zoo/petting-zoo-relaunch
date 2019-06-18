@@ -26,7 +26,7 @@ export default Vue.component('contact-form', {
     submitForm (event) {
       event.preventDefault()
       axios.post(
-        `${this.simpleForm.url}${this.simpleForm.testToken}`, 
+        `${this.simpleForm.url}${this.simpleForm.token}`, 
         this.formContent
       ).then(response => {
         console.log(`${response.status}: ${response.statusText}`)
