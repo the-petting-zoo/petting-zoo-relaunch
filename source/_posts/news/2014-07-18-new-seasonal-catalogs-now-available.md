@@ -5,7 +5,7 @@ published: true
 title: "New Seasonal Catalogs now Available!"
 ---
 
-![Valentines Catalog](https://s3.amazonaws.com/pettingzoo-website/blog/ValCover-01.jpg)
+![Valentines Catalog](/static/uploads/blog-ValCover-01.jpg)
 
 Check out our new Valentines catalog now available for download and flip-through on our "Products" page. We have lots of huggable plush that will be perfect for your customers this Valentine's Day!  
 
