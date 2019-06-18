@@ -40,10 +40,7 @@
     {% if jekyll.environment == "production" %}
       <script nomodule type="text/javascript" src="{{ site.data.webpack_manifest['main.es5.js'] | relative_url }}"></script>
     {% endif %}
-    
-    <!-- google maps api -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=&amp;sensor=false"></script>
-    
+        
     {% if jekyll.environment == "production" %}
       <!-- Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133663378-1"></script>

@@ -27,6 +27,12 @@ title: Contact Us
 <section class="strip full_bleed-bottom well pointer">
   <h1>Our headquarters</h1>
   <div class="wrapper">
-    <div id="js-map_canvas" class="map"></div>
+    <div id="js-map_canvas" class="map">
+      {%- capture map_query -%}
+        {{ site.data.contact.address.street | split: ' ' | join: '+' }},{{ site.data.contact.address.city }},{{ site.data.contact.address.state }}+{{ site.data.contact.address.zip }}
+      {%- endcapture -%}
+      <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAeI5yED4DT79ui40D4ihtCrMzO4O93SfU&q={{ map_query }}" frameborder="0" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></iframe>
+      }
+    </div>
   </div>
 </section>
