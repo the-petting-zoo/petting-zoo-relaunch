@@ -34,9 +34,12 @@ active: products
       <ul data-ui-gallery="small">
         {%- for product in site.categories.products -%}
           {%- if product.product_collections contains page.unique_id -%}
+            {%- capture title -%}
+              {% if product.size %}{{ product.size }}" {% endif %}{{ product.title }}
+            {%- endcapture -%}
             <li data-ui-gallery-item>
               {%- include card.html 
-                title=product.title
+                title=title
                 image=product.image
                 url=product.url
               -%}
