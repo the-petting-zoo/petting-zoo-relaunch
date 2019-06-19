@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 12" Tutti Frutti Kiwi
-sku: '718415'
+size: 12
+title: Tutti Frutti Kiwi
+item_number: '718415'
 color: Rainbow
 image: /static/uploads/12”_tutti-fruitti-kiwi_718415.png
 catalog:

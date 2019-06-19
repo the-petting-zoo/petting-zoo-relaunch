@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 13" Holiday Penguin Noel
-sku: '919027'
+size: 13
+title: Holiday Penguin Noel
+item_number: '919027'
 color: Silver
 image: /static/uploads/8”-13-holiday-penguin-noel-919028-919027.jpg
 catalog:

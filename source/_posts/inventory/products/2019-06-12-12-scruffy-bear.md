@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 12" Scruffy Bear
-sku: '715210'
+size: 12
+title: Scruffy Bear
+item_number: '715210'
 color: Cream
 image: /static/uploads/scruffy-cream-bear-with-jacket.jpg
 catalog:

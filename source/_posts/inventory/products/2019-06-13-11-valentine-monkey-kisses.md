@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 11"  Valentine Monkey Kisses
-sku: '618554'
+size: 11
+title:  Valentine Monkey Kisses
+item_number: '618554'
 color: Brown
 image: /static/uploads/11in-chocolate-scented-valentine-monkey-618554.jpg
 catalog:

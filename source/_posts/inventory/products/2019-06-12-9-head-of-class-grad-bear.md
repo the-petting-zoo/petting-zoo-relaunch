@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 9" Head Of Class Grad Bear
-sku: 513411K
+size: 9
+title: Head Of Class Grad Bear
+item_number: 513411K
 color: White
 image: /static/uploads/cece-grad-bear-513411k.jpg
 catalog:

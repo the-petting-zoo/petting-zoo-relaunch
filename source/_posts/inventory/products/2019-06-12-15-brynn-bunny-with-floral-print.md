@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 15"  Brynn Bunny With Floral Print
-sku: '519135'
+size: 15
+title:  Brynn Bunny With Floral Print
+item_number: '519135'
 color: Tan
 image: /static/uploads/15in-bunny-floral-print-girl-519135.jpg
 catalog:

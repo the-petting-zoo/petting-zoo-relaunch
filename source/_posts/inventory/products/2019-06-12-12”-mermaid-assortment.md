@@ -1,9 +1,10 @@
 ---
 layout: product
 published: true
-title: 12” Mermaid Assortment
+title: Mermaid Assortment
+size: 12
 featured: true
-sku: 3143X1
+item_number: 3143X1
 color: 'Pink, Blue, Purple'
 image: /static/uploads/12”-mermaid-assortment.png
 catalog:

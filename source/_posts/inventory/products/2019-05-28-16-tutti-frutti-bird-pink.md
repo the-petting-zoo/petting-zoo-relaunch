@@ -1,9 +1,10 @@
 ---
 layout: product
 published: true
-title: 16" Tutti Frutti Bird Pink
+size: 16
+title: Tutti Frutti Bird Pink
 featured: true
-sku: '718416'
+item_number: '718416'
 color: Rainbow
 image: /static/uploads/16”_tutti-fruitti-bird-pink_718416.jpg
 catalog:

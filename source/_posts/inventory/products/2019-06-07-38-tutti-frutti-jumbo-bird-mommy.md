@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 38" Tutti Frutti Jumbo Bird Mommy
-sku: '718407'
+size: 38
+title: Tutti Frutti Jumbo Bird Mommy
+item_number: '718407'
 color: Rainbow
 image: /static/uploads/tutti-fruitti_jumbo-mommy-bird_718407.png
 catalog:

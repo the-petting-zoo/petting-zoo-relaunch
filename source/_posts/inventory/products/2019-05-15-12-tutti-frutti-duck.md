@@ -1,7 +1,8 @@
 ---
 layout: product
 published: true
-title: 12"  Tutti Frutti Duck
+title: Tutti Frutti Duck
+size: 12
 featured: true
 item_number: '718414'
 color: Rainbow

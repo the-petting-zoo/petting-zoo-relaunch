@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 10" Holiday Tabby Cashew
-sku: '919240'
+size: 10
+title: Holiday Tabby Cashew
+item_number: '919240'
 color: Grey
 image: /static/uploads/10”-holiday-tabby-cashew-919240.jpg
 catalog:

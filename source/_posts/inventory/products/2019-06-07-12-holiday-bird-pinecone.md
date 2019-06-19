@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 12"  Holiday Bird Pinecone
-sku: '919026'
+size: 12
+title: Holiday Bird Pinecone
+item_number: '919026'
 color: Brown
 image: /static/uploads/12”-holiday-bird-pinecone-919026.jpg
 catalog:

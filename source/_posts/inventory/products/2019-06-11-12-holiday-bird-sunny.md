@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 12"  Holiday Bird Sunny
-sku: '919219'
+size: 12
+title: Holiday Bird Sunny
+item_number: '919219'
 color: Cream
 image: /static/uploads/screen-shot-2019-04-30-at-10.58.44-am.jpg
 catalog:

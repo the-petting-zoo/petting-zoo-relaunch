@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 11"  Holiday Reindeer Snowy
-sku: '919036'
+size: 11
+title:  Holiday Reindeer Snowy
+item_number: '919036'
 color: White
 image: /static/uploads/11”-holiday-reindeer-snowy-919036.jpg
 catalog:

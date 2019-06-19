@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 11" Holiday Reindeer Nutmeg
-sku: '919037'
+size: 11
+title: Holiday Reindeer Nutmeg
+item_number: '919037'
 color: Tan
 image: /static/uploads/11”-holiday-reindeer-nutmeg-919037.jpg
 catalog:

@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 12" Classic Creme Bunny
-sku: 5171X5
+size: 12
+title: Classic Creme Bunny
+item_number: 5171X5
 color: Cream
 image: /static/uploads/12in-classic-cream-bunny-5171x5.jpg
 catalog:

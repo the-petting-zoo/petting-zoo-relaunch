@@ -3,12 +3,15 @@ layout: default
 active: products
 ---
 
-<article class="margin-top-header">
-  <div data-ui-panel="" class="no-padding-top">
+<article>
+  <div data-ui-panel>
     <div data-ui-wrapper="wide">
     
       <!-- product title -->
-      <h1 class="padding-bottom">{{ page.title }}</h1>
+      {%- capture title -%}
+        {% if page.size %}{{ page.size }}&rdquo; {% endif %}{{ page.title }}
+      {%- endcapture -%}
+      <h1 class="padding-bottom">{{ title }}</h1>
       <div data-ui-columns class="gutter-wrapper">
         
         <!-- product image -->
@@ -23,25 +26,41 @@ active: products
           <!-- product metadata -->
           <aside class="padding-top-narrow border-top">
             <dl data-ui-stats class="gutter-wrapper gutter-narrow">
-              {%- if page.sku -%}
-              <div data-ui-stats-group class="gutter">
-                <dt data-ui-stats-item class="t-scale-zeta t-weight-bold">
-                  Item number:
-                </dt>
-                <dd data-ui-stats-item clas="t-scale-zeta">
-                  {{ page.sku }}
-                </dd>
-              </div>
+              
+              <!-- item number -->
+              {%- if page.item_number -%}
+                <div data-ui-stats-group class="gutter">
+                  <dt data-ui-stats-item class="t-scale-zeta t-weight-bold">
+                    Item Number:
+                  </dt>
+                  <dd data-ui-stats-item clas="t-scale-zeta">
+                    {{ page.item_number }}
+                  </dd>
+                </div>
               {%- endif -%}
+
+              <!-- size -->
+              {%- if page.size -%}
+                <div data-ui-stats-group class="gutter">
+                  <dt data-ui-stats-item class="t-scale-zeta t-weight-bold">
+                    Size:
+                  </dt>
+                  <dd data-ui-stats-item clas="t-scale-zeta">
+                    {{ page.size }}
+                  </dd>
+                </div>
+              {%- endif -%}
+              
+              <!-- color -->
               {%- if page.color -%}
-              <div data-ui-stats-group class="gutter">
-                <dt data-ui-stats-item class="t-scale-zeta t-weight-bold">
-                  Color:
-                </dt>
-                <dd data-ui-stats-item clas="t-scale-zeta">
-                  {{ page.color }}
-                </dd>
-              </div>
+                <div data-ui-stats-group class="gutter">
+                  <dt data-ui-stats-item class="t-scale-zeta t-weight-bold">
+                    Color:
+                  </dt>
+                  <dd data-ui-stats-item clas="t-scale-zeta">
+                    {{ page.color }}
+                  </dd>
+                </div>
               {%- endif -%}
             </dl>
           </aside>

@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 10" Blue Brynn Bunny Mixed Fur
-sku: '517148'
+size: 10
+title: Blue Brynn Bunny Mixed Fur
+item_number: '517148'
 color: Blue
 image: /static/uploads/10in-blue-brynn-bunny-517148.jpg
 catalog:

@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 10" Holiday Llamacorn Maisy
-sku: '919242'
+size: 10
+title: Holiday Llamacorn Maisy
+item_number: '919242'
 color: White
 image: /static/uploads/10”-holiday-llamacorn-maisy-919242.jpg
 catalog:

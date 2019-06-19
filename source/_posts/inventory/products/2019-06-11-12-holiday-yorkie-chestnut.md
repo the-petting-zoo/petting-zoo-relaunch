@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 12" Holiday Yorkie Chestnut
-sku: '919233'
+size: 12
+title: Holiday Yorkie Chestnut
+item_number: '919233'
 color: Brown
 image: /static/uploads/12”-holiday-yorkie-chestnut-919233.jpg
 catalog:

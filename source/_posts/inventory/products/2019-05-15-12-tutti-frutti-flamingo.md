@@ -1,7 +1,8 @@
 ---
 layout: product
 published: true
-title: 12"  Tutti Frutti Flamingo
+title: Tutti Frutti Flamingo
+size: 12
 featured: true
 item_number: '718413'
 color: Rainbow

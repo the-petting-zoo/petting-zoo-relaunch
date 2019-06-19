@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 22"  Holiday Penguin Noel
-sku: '919029'
+size: 22
+title:   Holiday Penguin Noel
+item_number: '919029'
 color: Silver
 image: /static/uploads/22”-holiday-penguin-noel-919029.jpg
 catalog:

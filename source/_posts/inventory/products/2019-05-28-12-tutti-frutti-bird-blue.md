@@ -1,9 +1,10 @@
 ---
 layout: product
 published: true
-title: 12"  Tutti Frutti Bird Blue
+size: 12
+title: Tutti Frutti Bird Blue
 featured: true
-sku: '718409'
+item_number: '718409'
 color: Rainbow
 image: /static/uploads/12”_tutti-fruitti-bird-blue_718409.jpg
 catalog:

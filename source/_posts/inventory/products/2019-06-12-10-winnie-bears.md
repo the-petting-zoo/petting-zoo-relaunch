@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 10" Winnie Bears
-sku: 5173X1
+size: 10
+title: Winnie Bears
+item_number: 5173X1
 color: 'White, Tan'
 image: /static/uploads/10in-winnie-bear-mom-asst.jpg
 catalog:

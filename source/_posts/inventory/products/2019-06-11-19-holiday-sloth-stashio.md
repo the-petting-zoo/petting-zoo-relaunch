@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 19" Holiday Sloth 'Stashio
-sku: '919243'
+size: 19
+title: Holiday Sloth 'Stashio
+item_number: '919243'
 color: White
 image: /static/uploads/19”-holiday-sloth-‘stashio-919243.jpg
 catalog:

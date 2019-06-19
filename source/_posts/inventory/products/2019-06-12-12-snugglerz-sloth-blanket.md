@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 12" Snugglerz Sloth Blanket
-sku: '718554'
+size: 12
+title: Snugglerz Sloth Blanket
+item_number: '718554'
 color: Tan
 image: /static/uploads/slothblanketiso.jpg
 catalog:

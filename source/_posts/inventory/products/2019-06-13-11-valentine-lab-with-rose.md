@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: '11" Valentine Lab with Rose '
-sku: '618555'
+title: Valentine Lab with Rose
+size: 11
+item_number: '618555'
 color: Brown
 image: /static/uploads/11in-chocolate-scented-valentine-lab-618555.jpg
 catalog:
