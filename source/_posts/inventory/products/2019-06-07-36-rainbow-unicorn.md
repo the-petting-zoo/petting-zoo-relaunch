@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 36" Rainbow Unicorn
-sku: '718617'
+size: 36
+title: Rainbow Unicorn
+item_number: '718617'
 color: Rainbow
 image: /static/uploads/36”_rainbow_unicorn_718617.jpg
 catalog:

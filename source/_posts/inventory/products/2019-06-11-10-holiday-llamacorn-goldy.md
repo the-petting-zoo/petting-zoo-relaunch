@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 10" Holiday Llamacorn Goldy
-sku: '919247'
+size: 10
+title: Holiday Llamacorn Goldy
+item_number: '919247'
 color: Cream
 image: /static/uploads/10”-holiday-llamacorn-goldy-919247.jpg
 catalog:

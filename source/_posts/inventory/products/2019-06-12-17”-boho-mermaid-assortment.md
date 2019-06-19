@@ -1,9 +1,10 @@
 ---
 layout: product
 published: true
-title: 17” Boho Mermaid Assortment
+title: Boho Mermaid Assortment
+size: 17
 featured: true
-sku: 3185X3
+item_number: 3185X3
 color: 'Pink, Purple, Aqua'
 image: /static/uploads/17-_boho_mermaid_assortment.png
 catalog:

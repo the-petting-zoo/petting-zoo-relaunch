@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 10" Holiday Llamacorn Corny
-sku: '919241'
+size: 10
+title: Holiday Llamacorn Corny
+item_number: '919241'
 color: Tan
 image: /static/uploads/10”-holiday-llamacorn-corny-919241.jpg
 catalog:

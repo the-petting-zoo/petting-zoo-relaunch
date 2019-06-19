@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 12" Holiday Yorkie Coconut
-sku: '919234'
+size: 12
+title: Holiday Yorkie Coconut
+item_number: '919234'
 color: White
 image: /static/uploads/12”-holiday-yorkie-coconut-919234.jpg
 catalog:

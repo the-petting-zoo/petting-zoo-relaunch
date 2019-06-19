@@ -1,9 +1,10 @@
 ---
 layout: product
 published: true
-title: '17” Boho Mermaid &  Turtles Assortment '
+title: Boho Mermaid & Turtles Assortment
+size: 17
 featured: true
-sku: 3185X0
+item_number: 3185X0
 color: 'Pink, Blue, Purple'
 image: /static/uploads/17”-boho-mermaid-turtles-assortment-.png
 catalog:

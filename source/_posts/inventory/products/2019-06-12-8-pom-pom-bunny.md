@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 8"  Pom Pom Bunny
-sku: 7181X2
+size: 8
+title: Pom Pom Bunny
+item_number: 7181X2
 color: White
 image: /static/uploads/8-pom-pom-bunny.jpg
 catalog:

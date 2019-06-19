@@ -28,13 +28,13 @@ active: products
             <dl data-ui-stats class="gutter-wrapper gutter-narrow">
               
               <!-- item number -->
-              {%- if page.sku -%}
+              {%- if page.item_number -%}
                 <div data-ui-stats-group class="gutter">
                   <dt data-ui-stats-item class="t-scale-zeta t-weight-bold">
-                    Item number:
+                    Item Number:
                   </dt>
                   <dd data-ui-stats-item clas="t-scale-zeta">
-                    {{ page.sku }}
+                    {{ page.item_number }}
                   </dd>
                 </div>
               {%- endif -%}

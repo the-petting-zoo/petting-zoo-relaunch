@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 7" Sugarcakes Spring Assortment
-sku: 7181X4
+size: 7
+title: Sugarcakes Spring Assortment
+item_number: 7181X4
 color: White
 image: /static/uploads/7in-sugarcakes-spring-asst-.png
 catalog:

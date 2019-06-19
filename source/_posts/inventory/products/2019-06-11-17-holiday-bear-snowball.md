@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 17" Holiday Bear Snowball
-sku: '919237'
+size: 17
+title: Holiday Bear Snowball
+item_number: '919237'
 color: White
 image: /static/uploads/17”-holiday-bear-snowball-919237.jpg
 catalog:

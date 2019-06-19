@@ -1,9 +1,10 @@
 ---
 layout: product
 published: true
-title: 14" Snugglerz Sloth
+size: 14
+title: Snugglerz Sloth
 featured: true
-sku: '718553'
+item_number: '718553'
 color: Tan
 image: /static/uploads/snugglerslothiso2.jpg
 catalog:

@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: 12" Brynn Bunny With Floral Accents
-sku: '519136'
+size: 12
+title: Brynn Bunny With Floral Accents
+item_number: '519136'
 color: Tan
 image: /static/uploads/12in-bunny-floral-print-boy-519136.jpg
 catalog:

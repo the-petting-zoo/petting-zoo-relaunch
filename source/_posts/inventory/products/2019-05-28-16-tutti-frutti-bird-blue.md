@@ -1,9 +1,10 @@
 ---
 layout: product
 published: true
-title: 16" Tutti Frutti Bird Blue
+size: 16
+title: Tutti Frutti Bird Blue
 featured: true
-sku: '718419'
+item_number: '718419'
 color: Rainbow
 image: /static/uploads/stuffed30.jpg
 catalog:

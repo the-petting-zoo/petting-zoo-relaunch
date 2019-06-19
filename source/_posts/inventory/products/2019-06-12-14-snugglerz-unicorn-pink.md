@@ -1,9 +1,10 @@
 ---
 layout: product
 published: true
-title: 14" Snugglerz Unicorn Pink
+size: 14
+title: Snugglerz Unicorn Pink
 featured: true
-sku: '718302'
+item_number: '718302'
 color: Pink
 image: /static/uploads/14in-snugglerz-unicorn-pink-718302.jpg
 catalog:

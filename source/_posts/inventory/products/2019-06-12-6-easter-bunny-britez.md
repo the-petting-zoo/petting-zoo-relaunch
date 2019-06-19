@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-title: '6" Easter Bunny Britez '
-sku: 7181X9
+title: Easter Bunny Britez
+size: 6
+item_number: 7181X9
 color: White
 image: /static/uploads/6in-easter-bunny-britez-asst-.png
 catalog:
