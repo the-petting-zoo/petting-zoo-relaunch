@@ -27,7 +27,11 @@
   {%- for product in site.data.custom_products.listings -%}
     <li class="border-top border-secondary padding-top">
       <!-- title -->
-      <h2 class="t-align-center padding-bottom">{{ product.title }}</h2>
+      <h2 class="t-align-center padding-bottom-xnarrow">{{ product.title }}</h2>
+      <!-- description -->
+      <div data-ui-wrapper="narrow" class="t-content padding-bottom">
+        {{ product.description | markdownify }}
+      </div>
       <!-- product image(s) -->
       <ul class="list-undecorated margin-y-between-xnarrow">
         {%- for image in product.images -%}
@@ -36,10 +40,6 @@
           </li>
         {%- endfor -%}
       </ul>
-      <!-- description -->
-      <div data-ui-wrapper="narrow" class="t-content padding-top">
-        {{ product.description | markdownify }}
-      </div>
     </li>
   {%- endfor -%}
 </ul>
