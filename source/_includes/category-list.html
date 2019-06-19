@@ -19,9 +19,10 @@
     {%- for item in include.category -%}
       {%- unless item.topic -%}
         <li data-ui-gallery-item>
+          {%- assign thumbnail = item.thumbnail | default: item.cover -%}
           {%- include card.html 
             title=item.title
-            image=item.cover
+            image=thumbnail
             url=item.url
             aspect=include.aspect
           -%}
@@ -43,10 +44,11 @@
         <ul data-ui-gallery="{{ include.grid-size }}">
           {%- for item in include.category -%}
             {%- if item.topic contains topic.unique_id -%}
+              {%- assign thumbnail = item.thumbnail | default: item.cover -%}
               <li data-ui-gallery-item>
                 {%- include card.html 
                   title=item.title
-                  image=item.cover
+                  image=thumbnail
                   url=item.url
                   aspect=include.aspect
                 -%}

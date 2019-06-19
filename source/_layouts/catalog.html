@@ -8,7 +8,7 @@ active: products
   {%- capture alt -%}The Petting Zoo: {{ page.title }}{%- endcapture -%}
   {%- if page.cover -%}
     {%- include billboard.html 
-      image='https://placehold.it/1200x600?text=Banner'
+      image=page.cover
       title=page.title
       button_label='<strong>Download a PDF</strong> of this catalog'
       button_url=page.pdf
@@ -17,7 +17,7 @@ active: products
   {%- else -%}
     {%- comment -%} otherwise, just show the title {%- endcomment -%}
     <div class="padding-x-outside">
-      <div data-ui-wrapper="wide" class="margin-top-header">
+      <div data-ui-wrapper="wide">
         <h1 class="t-align-center">{{ page.title }}</h1>
         {%- if page.pdf -%}
           <div class="padding-top t-align-center">

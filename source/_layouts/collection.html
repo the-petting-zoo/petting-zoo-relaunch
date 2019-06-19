@@ -5,17 +5,17 @@ active: products
 
 <section>
   {%- comment -%} if there's a banner image... {%- endcomment -%}
-  {%- if page.image -%}
+  {%- if page.cover -%}
     {%- capture alt -%}The Petting Zoo: {{ page.title }}{%- endcapture -%}
     {%- include billboard.html 
-      image='https://placehold.it/1200x600?text=Banner'
+      image=page.cover
       title=page.title
       alt=alt
     -%}
   {%- else -%}
     {%- comment -%} otherwise, just show the title {%- endcomment -%}
     <div class="padding-x-outside t-align-center">
-      <div data-ui-wrapper="wide" class="margin-top-header">
+      <div data-ui-wrapper="wide" class="padding-top-wide">
         <h1>{{ page.title }}</h1>
         {%- if page.pdf -%}
           <div class="padding-top">
@@ -70,7 +70,7 @@ active: products
             <li data-ui-gallery-item>
               {%- include card.html 
                 title=collection.title
-                image=collection.image
+                image=collection.cover
                 url=collection.url
               -%}
             </li>

@@ -52,7 +52,8 @@ collections:
       - {label: "Category", name: "category", widget: "hidden", default: "catalog_topic"}
       - {label: "ID", name: "unique_id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
       - {label: "Topic Name", name: "title", widget: "string"}
-      - {label: "Catalog Topic Cover", name: "image", widget: "image", allow_multiple: false, required: false, hint: "This is the image displayed on the top of the topic page"}
+      - {label: "Cover Image", name: "image", widget: "image", allow_multiple: false, required: false, hint: "This is the image displayed on the top of the topic page"}
+      - {label: "Thumbnail Image", name: "thumbnail", widget: "image", allow_multiple: false, required: false, hint: "This is a smaller image displayed on cards in lists, such as the 'More topics' section at the bottom of the topic page."}
 
   # Catalogs
   # Description: 
@@ -69,8 +70,10 @@ collections:
       - {label: "Category", name: "category", widget: "hidden", default: "catalogs"}
       - {label: "ID", name: "unique_id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured", name: "featured", widget: "boolean", required: false, hint: "If a catalog is featured, it will be listed on the home page"}
       - {label: "Catalog PDF", name: "pdf", widget: "file", allow_multiple: false, required: false, hint: "This is the catalog file that can be downloaded"}
-      - {label: "Catalog Cover", name: "cover", widget: "image", allow_multiple: false, required: false, hint: "This is the image displayed on the top of the catalog page"}
+      - {label: "Cover Image", name: "cover", widget: "image", allow_multiple: false, required: false, hint: "This is the image displayed on the top of the catalog page, and the home if the catalog is featured."}
+      - {label: "Thumbnail Image", name: "thumbnail", widget: "image", allow_multiple: false, required: false, hint: "This is a smaller image displayed on cards in lists, such as on the 'all products' page."}
       - label: "Catalog Topic"
         name: "topic"
         widget: "relation"
@@ -81,7 +84,6 @@ collections:
         multiple: true
         required: false
         hint: "This allows you to relate the catalog to a topic, a topic is what is used in the dropdown area on the home page."
-      - {label: "Featured", name: "featured", widget: "boolean", required: false, hint: "If a catalog is featured, it will be listed on the home page"}
 
   # Product Collections
   # Description: 
@@ -97,7 +99,8 @@ collections:
       - {label: "Category", name: "category", widget: "hidden", default: "product_collection"}
       - {label: "ID", name: "unique_id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
       - {label: "Collection Name", name: "title", widget: "string"}
-      - {label: "Product Collection Cover", name: "cover", widget: "image", allow_multiple: false, hint: "This is the image displayed on the top of the collection page"}
+      - {label: "Cover Image", name: "cover", widget: "image", allow_multiple: false, hint: "This is the image displayed on the top of the collection page, and the home if the collection is featured."}
+      - {label: "Thumbnail Image", name: "thumbnail", widget: "image", allow_multiple: false, required: false, hint: "This is a smaller image displayed on cards in lists, such as on the 'all products' page."}
       - {label: "Featured", name: "featured", widget: "boolean", required: false, hint: "If a product collection is featured, it will be listed on the home page"}
 
   # Products
@@ -117,6 +120,7 @@ collections:
       - {label: "Item Number", name: "item_number", widget: "number", required: false}
       - {label: "Color", name: "color", widget: "string", required: false}    
       - {label: "Product Image", name: "image", widget: "image", allow_multiple: false}
+      - {label: "Thumbnail Image", name: "thumbnail", widget: "image", allow_multiple: false, required: false, hint: "This is a smaller image displayed on cards in lists, such as on a catalog or collection page."}
       - label: "Catalog"
         name: "catalog"
         widget: "relation"
