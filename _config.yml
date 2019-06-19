@@ -9,6 +9,7 @@ access: 'Disallow'
 # Plugins
 plugins:
   - jekyll-sitemap
+  - jekyll-paginate
 
 # Folder structure
 source: source
@@ -68,6 +69,10 @@ defaults:
     values:
       category: 'testimonials'
 
+# blog (news) pagination
+paginate: 12
+paginate_path: "/news/page:num"
+ 
 # asset paths
 assets:
   img: '/static/images/'

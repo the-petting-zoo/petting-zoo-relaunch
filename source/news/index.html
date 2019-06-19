@@ -5,14 +5,14 @@ title: News
 
 <main data-ui-panel>
   <div data-ui-wrapper="narrow" class="border-y-between padding-y-between margin-y-between">
-    {% for post in site.categories.blog %}
-      <article>
-        <header>
-          <h1>{{ post.title }}</h1>
-          <time class="t-font-display t-scale-zeta c-text-tertiary" datetime="{{ post.date }}">{{ post.date | date: "%B %d" }}</time>
-        </header>
-        <div class="t-content padding-top-xnarrow">{{ post.content }}</div>
-      </article>
-    {% endfor %}
+    {%- for post in paginator.posts -%}
+        <article>
+          <header>
+            <h1>{{ post.title }}</h1>
+            <time class="t-font-display t-scale-zeta c-text-tertiary" datetime="{{ post.date }}">{{ post.date | date: "%B %d" }}</time>
+          </header>
+          <div class="t-content padding-top-xnarrow">{{ post.content }}</div>
+        </article>
+    {%- endfor -%}
   </div>
 </main>
