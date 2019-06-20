@@ -51,8 +51,8 @@ export default Vue.component('contact-form', {
       <form v-if="!sent" action="#">
 
         <!-- contact form -->
-        <div class="control_group">
-          <label for="name">Your Name</label>
+        <div class="padding-bottom-xnarrow">
+          <label class="form-label padding-bottom-xnarrow" for="name">Your name</label>
           <input 
             v-model="formContent.name"
             type="text"
@@ -63,8 +63,8 @@ export default Vue.component('contact-form', {
             required
           />
         </div>
-        <div class="control_group">
-          <label for="email">Your Email</label>
+        <div class="padding-bottom-xnarrow">
+          <label class="form-label padding-bottom-xnarrow" for="email">Your email</label>
           <input
             v-model="formContent.email"
             type="email"
@@ -75,17 +75,18 @@ export default Vue.component('contact-form', {
             required
           />
         </div>
-        <div class="control_group">
-        <select
-          v-model="formContent.subject"
-          class="form-dropdown"
-          id="contact-subject"
-        >
-          <slot name="subject-options"></slot>
-        </select>
+        <div class="padding-bottom-xnarrow">
+          <label class="form-label padding-bottom-xnarrow" for="email">How can we help?</label>
+          <select
+            v-model="formContent.subject"
+            class="form-dropdown"
+            id="contact-subject"
+          >
+            <slot name="subject-options"></slot>
+          </select>
         </div>
-        <div class="control_group">
-          <label for="message">Your Message</label>
+        <div class="padding-bottom-xnarrow">
+          <label class="form-label padding-bottom-xnarrow" for="message">Your message</label>
           <textarea
             v-model="formContent.message"
             id="contact-message"
@@ -96,31 +97,32 @@ export default Vue.component('contact-form', {
           ></textarea>
         </div>
         <input type="hidden" class="form-hidden" :value="url" id="contact-url" name="url" />
-        <div class="control_group mailing-list">
+        <div class="padding-bottom-xnarrow mailing-list">
           <input
             v-model="subscribed"
             type="checkbox"
             id="contact-mailing-list"
-            value="opted-in"
+            class="form-checkbox"
           />
-          <label for="mailing-list">Add me to <strong>The Petting Zoo's</strong> mailing&nbsp;list.</label>
+          <label class="form-label display-inline-block padding-left-xxnarrow padding-bottom-xnarrow" for="mailing-list">Add me to <strong>The Petting Zoo's</strong> mailing list.</label>
         </div>
         <button
           @click="submitForm"
-          id="contact-contact-submit"
+          data-ui-button="primary"
+          id="contact-submit"
           type="submit"
-          class="button primary small">
-            Send
-          </button>
+        >
+          Send
+        </button>
       </form>
       
       <!-- Mailchimp/newsletter form -->
       <!-- this can probably go away since we're using Vue -->
       <form id="mc-form" style="display:none;">
         <input id="mc-email" type="email" placeholder="email">
-        <label for="mc-email"></label>
+        <label class="form-label padding-bottom-xnarrow" for="mc-email"></label>
         <input type="text" value="" class="" id="mc-FNAME">
-        <label for="mc-FNAME"></label>
+        <label class="form-label padding-bottom-xnarrow" for="mc-FNAME"></label>
         <button type="submit">Submit</button>
       </form>
 

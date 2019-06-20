@@ -31,10 +31,10 @@ layout: default
 </section>
 
   <!-- testimonials -->
-  {% if site.categories.testimonials.size > 0 %}
-  <section class="strip flood">
-    <div class="wrapper">
-      <h3 class="callout">What our customers are saying</h3>
+{% if site.categories.testimonials.size > 0 %}
+  <section data-ui-panel data-theme="wash-pink">
+    <div data-ui-wrapper>
+      <h3 class="t-align-center t-weight-bold">What our customers are saying</h3>
       <ul class="grid large center">
         {% for post in site.categories.testimonials %}
         <li class="tile-quote">
@@ -45,5 +45,4 @@ layout: default
       </ul>
     </div>
   </section>
-  {% endif %}
-</section>
+{% endif %}

@@ -5,20 +5,24 @@
 @import '../config/animation';
 @import '../config/type';
 @import '../config/borders';
+@import '../config/color';
 
 %form-field {
   @include border;
-  @include color-fg('text-secondary');
+  @include color-fg('text-primary');
   @include color-bg('well');
-  @include font;
+  @include font('display');
   @include transition;
   border-radius: 3px;
   box-shadow: none;
   box-sizing: border-box;
-  padding: 0.5em 1em;
+  padding: 0.6em;
   text-shadow: none;
+  display: block;
+  width: 100%;
 
   &:focus {
+    @include border($color: 'accent');
     box-shadow: none;
     outline: 0;
   }
@@ -29,7 +33,7 @@
 
 .form,
 form {
-  @include font;
+  @include font('display');
 }
 
 // .form-fieldset,
@@ -59,8 +63,9 @@ select {
 
 .form-checkbox,
 [type='checkbox'] {
-  height: 1em;
-  width: 1em;
+  display: inline-block;
+  height: 1.2em;
+  width: 1.2em;
 }
 
 // .form-search,
@@ -76,8 +81,31 @@ textarea {
   resize: vertical;
 }
 
-// .form-select,
-// select {}
+.form-select,
+select {
+  @extend %form-field;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewbox%3D'0 0 16 16' xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cpath d%3D'M8 8.842L2.623 4.369a1.602 1.602 0 0 0-2.253.207 1.595 1.595 0 0 0 .207 2.249L8 13l7.425-6.177c.679-.565.77-1.572.203-2.25a1.602 1.602 0 0 0-2.253-.202L8 8.842z' fill%3D'%23#{str-slice("#{color('text-secondary')}", 2)}'%2F%3E%3C%2Fsvg%3E");
+  background-position: center right 0.6em;
+  background-repeat: no-repeat;
+  background-size: 1em 1em;
+  padding-right: 2em;
 
-// .form-label,
-// label {}
+  @each $name, $roles in $themes {
+    [data-theme~="#{$name}"] & {
+      background-image: url("data:image/svg+xml;utf8,%3Csvg viewbox%3D'0 0 16 16' xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cpath d%3D'M8 8.842L2.623 4.369a1.602 1.602 0 0 0-2.253.207 1.595 1.595 0 0 0 .207 2.249L8 13l7.425-6.177c.679-.565.77-1.572.203-2.25a1.602 1.602 0 0 0-2.253-.202L8 8.842z' fill%3D'%23#{str-slice("#{color('text-secondary', $theme-name: $name)}", 2)}'%2F%3E%3C%2Fsvg%3E");
+    }
+  }
+}
+
+.form-label,
+label {
+  @include font('display');
+  display: block;
+
+  strong {
+    @include font('display', $weight: 'bold');
+  }
+}

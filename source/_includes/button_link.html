@@ -10,7 +10,7 @@
   icon-left - STRING (optional): id of icon to use on the left side
 {%- endcomment -%}
 {%- capture attributes -%}
-  {{ include.role }} {{ include.prominence }}{% if include.icon-right %} has-icon{% endif %}{% if include.icon-left and include.icon-right %} both{% endif %}{% if include.icon-left %} left{% endif %}
+  {{ include.role }} {{ include.prominence }}{% if include.icon-right or include.icon-left %} has-icon{% endif %}{% if include.icon-left and include.icon-right %} both{% endif %}{% if include.icon-left %} left{% endif %}
 {%- endcapture -%}
 
 <a data-ui-button="{{ attributes }}" href="{{ include.url }}">

@@ -1,10 +1,9 @@
-<footer role="contentinfo" class="global">
-  <h3 class="callout">Get in Touch</h3>
-  <section class="wrapper narrow">
+<footer data-ui-panel data-theme="reverse" class="border-top" role="contentinfo">
+  <h2 class="t-align-center">Get in Touch</h2>
+  <section data-ui-wrapper="xnarrow" class="padding-top">
     <contact-form url="{{ site.url }}" question="{{ site.data.contact.contact_subjects.question }}">
 
-      <template v-slot:subject-options class="">
-        <option value="" disabled selected>{{ site.data.contact.contact_subjects.question }}</option>
+      <template v-slot:subject-options class="hide@no-js">
         {%- for subject in site.data.contact.contact_subjects.answers -%}
           <option value="{{ subject.value }}">{{ subject.option }}</option>
         {%- endfor -%}
@@ -36,7 +35,9 @@
 
   </section>
   <section class="footer-menu">
-    <h5>{{ site.tag | xml_escape }}</h5>
-    <small role="copyright">&copy; Copyright {{ site.time | date: "%Y" }} The Petting Zoo, Inc. All rights reserved.</small>
+    <div data-ui-wrapper>
+      <h5>{{ site.tag | xml_escape }}</h5>
+      <small role="copyright">&copy; Copyright {{ site.time | date: "%Y" }} The Petting Zoo, Inc. All rights reserved.</small>
+    </div>
   </section>
 </footer>
