@@ -1,5 +1,6 @@
 import Vue from 'vue'
-import axios from 'axios'
+import jsonp from 'jsonp'
+import queryString from 'query-string'
 
 export default Vue.component('contact-form', {
   props: {
@@ -8,42 +9,71 @@ export default Vue.component('contact-form', {
   data () {
     return {
       simpleForm: {
-        url: 'https://getsimpleform.com/messages?form_api_token=',
+        url: 'https://getsimpleform.com/messages/ajax?form_api_token=',
         token: '9e785bffbf9337d08052b2b07bb8ef67',
-        testToken: 'd785a1918d67317a7cd4f65c805f1c61'
+        testToken: 'd785a1918d67317a7cd4f65c805f1c61',
+        scottToken: '1697c4297b68bce50f046e36880ae4f8',
       },
-      mailChimpUrl: 'http://pettingzooplush.us8.list-manage.com/subscribe/post?u=63768868a43809514e63f3953&id=0caa307af8',
+      mailChimpUrl: 'https://gpoba.us8.list-manage.com/subscribe/post?u=0eb271cf853e657ebe61f0e9f&amp;id=a142a0b83f',
       formContent: {},
       sent: false,
+      error: false,
       subscribed: false
     }
   },
   methods: {
     submitForm (event) {
       event.preventDefault()
-      axios.post(
-        `${this.simpleForm.url}${this.simpleForm.token}`, 
-        this.formContent
-      ).then(response => {
-        console.log(`${response.status}: ${response.statusText}`)
-        if (this.subscribed) {
-          this.subscribe()
+      const urlData = queryString.stringify(this.formContent)
+      console.log(urlData)
+
+      jsonp(
+        `${this.simpleForm.url}${this.simpleForm.scottToken}${urlData}`,
+        null,
+        (err, data) => {
+          if (err) {
+            console.log("Error!")
+            console.error(err.message)
+            this.error = true
+            return false
+          } else {
+            console.log("Success Email")
+            this.sent = true
+            if (this.subscribed) {
+              this.subscribe()
+            }
+            console.log(data)
+          }
         }
-      })
-      this.sent = true
+      )
     },
     subscribe () {
-      // not sure if this is the correct data to send to MC - @scott can you double check against API v3?
-      axios.post(this.mailChimpUrl, {
-        'email_address': this.formContent.email,
-        'status': 'subscribed',
-        'merge_fields': {
-          'mc-FNAME': this.formContent.name.split(' ')[0],
-          'mc-LNAME': this.formContent.name.split(' ')[1]
+      const url = this.mailChimpUrl.replace("/post?", "/post-json?")
+      const params = {
+        EMAIL: this.formContent.email,
+        FNAME: this.formContent.name.split(' ')[0],
+        LNAME: this.formContent.name.split(' ')[1]
+      }
+      const urlData = queryString.stringify(params)
+      console.log(urlData)
+
+      jsonp(
+        `${url}&${urlData}`,
+        {
+          param: "c"
+        },
+         (err, data) => {
+          if (err) {
+            console.log("Error!")
+            console.error(err.message)
+            this.error = true
+            this.sent = false
+          } else {
+            console.log("Success Subscribe")
+            console.log(data)
+          }
         }
-      }).then(response => {
-        console.log(`${response.status}: ${response.statusText}`)
-      })
+      )
     }
   },
   template: `
@@ -113,18 +143,17 @@ export default Vue.component('contact-form', {
             Send
           </button>
       </form>
-      
-      <!-- Mailchimp/newsletter form -->
-      <!-- this can probably go away since we're using Vue -->
-      <form id="mc-form" style="display:none;">
-        <input id="mc-email" type="email" placeholder="email">
-        <label for="mc-email"></label>
-        <input type="text" value="" class="" id="mc-FNAME">
-        <label for="mc-FNAME"></label>
-        <button type="submit">Submit</button>
-      </form>
 
       <div v-if="sent" class="sent">
+        <!-- Success message -->
+        <h3>Thanks for contacting us!</h3>
+        <p class="center">We'll be in touch with you soon.</p>
+        <p v-if="subscribed && sent" class="t-align-center">
+          Thank you for subscribing to our mailing list. We have sent you a confirmation email.
+        </p>
+      </div>
+
+      <div v-if="error" class="error">
         <!-- Success message -->
         <h3>Thanks for contacting us!</h3>
         <p class="center">We'll be in touch with you soon.</p>
