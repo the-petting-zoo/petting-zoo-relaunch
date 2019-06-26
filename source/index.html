@@ -63,7 +63,7 @@ title: home
     {%- endfor -%}
     <div data-ui-wrapper="wide" class="padding-top">
       <ul data-ui-gallery style="--gutter: var(--space-xnarrow);">
-        {%- for photo in site.data.customer_photos.photos -%}
+        {%- for photo in site.data.customer_photos.photos limit: 16 -%}
         <li data-ui-gallery-item>
           <a data-ui-aspect="1x1" class="link-undecorated border" href="{{ photo.url }}" target="_blank">
             <img data-ui-aspect-image src="{{ photo.source }}" alt="The Petting Zoo: {{ photo.alt | default: 'Instagram photo' }}">

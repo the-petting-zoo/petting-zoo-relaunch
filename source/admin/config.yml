@@ -52,7 +52,7 @@ collections:
             label: "Photos"
             widget: list
             required: false
-            hint: "The photos displayed on the homepage in the customer photos (#ShareAndSmile) section."
+            hint: "The photos displayed on the homepage in the customer photos (#ShareAndSmile) section. Note the homepage is limited to 16 photos, to keep it from getting too huge."
             fields:
               - {label: "Source", name: "source", widget: "image"}
               - {label: "Link", name: "url", widget: "string", hint: "The link/url of the original image on Instagram."}
