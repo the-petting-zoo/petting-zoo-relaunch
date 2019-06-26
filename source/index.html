@@ -48,28 +48,36 @@ title: home
 {%- endfor -%}
 
 <!-- Shared images from instagram -->
-<section data-ui-panel class="border-top">
-  <header>
-    <h2 class="t-scale-alpha t-align-center padding-bottom-narrow">#ShareAndSmile</h2>
-    <div data-ui-wrapper="narrow" class="t-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rem ullam fugit repellendus quisquam et quis ut, consectetur earum ad, in explicabo itaque dolorem pariatur dolor praesentium aut aliquid culpa.</p>
+{%- capture customer_photos_length -%}
+  {{ site.data.customer_photos.photos | size }}
+{%- endcapture -%}
+{%- unless customer_photos_length == '0' -%}
+  <section data-ui-panel class="border-top">
+    {%- for intro in site.categories.instagram -%}
+      <header>
+        <h2 class="t-scale-alpha t-align-center padding-bottom-narrow">{{ intro.display_title }}</h2>
+        <div data-ui-wrapper="narrow" class="t-content">
+          {{ intro.content }}
+        </div>
+      </header>
+    {%- endfor -%}
+    <div data-ui-wrapper="wide" class="padding-top">
+      <ul data-ui-gallery style="--gutter: var(--space-xnarrow);">
+        {%- for photo in site.data.customer_photos.photos -%}
+        <li data-ui-gallery-item>
+          <a data-ui-aspect="1x1" class="link-undecorated border" href="{{ photo.url }}" target="_blank">
+            <img data-ui-aspect-image src="{{ photo.source }}" alt="{{ photo.alt | default: 'Instagram photo' }}">
+          </a>
+        </li>
+        {%- endfor -%}
+      </ul>
+      <div class="border-top margin-top-xnarrow padding-top t-align-center">
+        {% include button_link.html
+          url="https://instagram.com"
+          label="Find us on <strong>Instagram</strong> to see more photos" 
+          icon-left="social-instagram"
+        %}
+      </div>
     </div>
-  </header>
-  <div data-ui-wrapper="wide" class="padding-top">
-    <ul data-ui-gallery style="--gutter: var(--space-xnarrow);">
-      {%- for item in (1..10) -%}
-      <li data-ui-gallery-item>
-        <a href="#"><img src="https://placehold.it/600x600" alt="Instagram photo"></a>
-      </li>
-      {%- endfor -%}
-      {%- comment -%}
-      <!-- dummy list item to prevent a single item from becoming huge on large screens -->
-      <li data-ui-gallery-item class="hide-below@small"></li>
-      <li data-ui-gallery-item class="hide-below@small"></li>
-      {%- endcomment -%}
-    </ul>
-    <div class="border-top margin-top-xnarrow padding-top t-align-center">
-      {% include button_link.html url="https://instagram.com" label="Find us on <strong>Instagram</strong> to see more photos" %}
-    </div>
-  </div>
-</section>
+  </section>
+{%- endunless -%}
