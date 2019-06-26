@@ -66,7 +66,7 @@ title: home
         {%- for photo in site.data.customer_photos.photos -%}
         <li data-ui-gallery-item>
           <a data-ui-aspect="1x1" class="link-undecorated border" href="{{ photo.url }}" target="_blank">
-            <img data-ui-aspect-image src="{{ photo.source }}" alt="{{ photo.alt | default: 'Instagram photo' }}">
+            <img data-ui-aspect-image src="{{ photo.source }}" alt="The Petting Zoo: {{ photo.alt | default: 'Instagram photo' }}">
           </a>
         </li>
         {%- endfor -%}
