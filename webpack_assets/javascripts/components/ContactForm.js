@@ -126,11 +126,11 @@ export default Vue.component('contact-form', {
         <button type="submit">Submit</button>
       </form>
 
-      <div v-if="sent" class="sent">
-        <!-- Success message -->
-        <h3>Thanks for contacting us!</h3>
-        <p class="center">We'll be in touch with you soon.</p>
-        <p v-if="subscribed && sent" class="t-align-center">
+      <!-- Success message -->
+      <div v-if="sent" class="t-align-center border border-round padding">
+        <h3 class="t-scale-beta padding-bottom-xnarrow">Thanks for contacting us!</h3>
+        <p>We'll be in touch with you soon.</p>
+        <p v-if="subscribed && sent" class="padding-top-narrow margin-top-narrow border-top c-text-tertiary">
           Thank you for subscribing to our mailing list. We have sent you a confirmation email.
         </p>
       </div>

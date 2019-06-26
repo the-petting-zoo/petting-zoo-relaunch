@@ -325,3 +325,10 @@ cite {
     line-height: type-leading($name) !important;
   }
 }
+
+.link-undecorated {
+  &:hover,
+  &:active {
+    border-bottom: 0 !important;
+  }
+}

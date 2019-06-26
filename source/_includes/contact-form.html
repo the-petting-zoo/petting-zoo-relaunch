@@ -1,0 +1,10 @@
+{% comment %}
+  Contact form partial
+  -> a Vue contact form component with subject dropdown options passed into the slot
+{% endcomment %}
+
+<contact-form url="{{ site.url }}" question="{{ site.data.contact.contact_subjects.question }}" class="hide@no-js">
+  {%- for subject in site.data.contact.contact_subjects.answers -%}
+    <option value="{{ subject.value }}">{{ subject.option }}</option>
+  {%- endfor -%}
+</contact-form>

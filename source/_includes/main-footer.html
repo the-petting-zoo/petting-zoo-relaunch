@@ -7,16 +7,14 @@ hide_contact_form - BOOLEAN: pass in 'true' to hide the contact form. Displayed 
 {%- endcomment -%}
 
 <footer data-theme="reverse" role="contentinfo">
+  
   {% if include.hide_contact_form == nil %}
     <section data-ui-panel class="padding-bottom border-top">
       <div data-ui-wrapper="xnarrow">
         <h2 class="t-align-center padding-bottom">Get in Touch</h2>
-        <contact-form url="{{ site.url }}" question="{{ site.data.contact.contact_subjects.question }}" class="hide@no-js">
-          {%- for subject in site.data.contact.contact_subjects.answers -%}
-            <option value="{{ subject.value }}">{{ subject.option }}</option>
-          {%- endfor -%}
-        </contact-form>
-        
+        {% include contact-form.html %}
+
+        <!-- Social media channels -->
         <aside class="border-top border-secondary margin-top padding-top-narrow">
           {% if site.data.contact.social.size > 0 %}
             <h2 class="t-scale-delta t-align-center padding-bottom-xnarrow">Connect with us:</h2>
@@ -36,9 +34,10 @@ hide_contact_form - BOOLEAN: pass in 'true' to hide the contact form. Displayed 
       </div>
     </section>
   {% endif %}
+
   <section data-theme="wash-turquoise" class="border-top padding-x-outside padding-bottom-narrow">
     <div data-ui-wrapper class="t-align-center">
-      <a href="/" class="display-inline-block" style="width: 6rem; margin-top: -0.6rem;">
+      <a href="/" class="display-inline-block link-undecorated" style="width: 6rem; margin-top: -0.6rem;">
         <img class="display-inline-block" src="{{ site.assets.img }}{{ site.data.assets.logo.main }}" alt="The Petting Zoo">
       </a>
       <h2 class="t-scale-epsilon padding-top-xnarrow padding-bottom-xxnarrow">{{ site.tag | xml_escape }}</h2>
