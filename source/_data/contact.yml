@@ -20,9 +20,9 @@ social:
   - platform: Facebook
     url: "https://www.facebook.com/pages/The-Petting-Zoo/564056906971473"
     icon: "fb"
-  # - platform: twitter
-  #   url: "http://www.twitter.com"
-  #   icon: "twitter"
+  - platform: Instagram
+    url: "https://www.instagram.com/pettingzooplush/"
+    icon: "instagram"
 
 # for the "subject" dropdown on the contact form
 # asks the user to specify what their question is

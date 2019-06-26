@@ -7,18 +7,18 @@
 
 // --- show & hide ---
 
-@mixin _hide-visually() {
+@mixin _hide-visually($focusable: false) {
   border: 0;
   clip-path: rect(0 0 0 0);
   height: 1px;
   overflow: hidden;
   position: absolute;
   width: 1px;
-
-  &.hide-visually--focusable {
+  
+  @if $focusable {
     &:active,
     &:focus {
-      clip-path: auto;
+      clip-path: none;
       height: auto;
       overflow: visible;
       position: static;
@@ -28,7 +28,7 @@
 }
 
 @mixin _show-visually() {
-  clip-path: auto;
+  clip-path: none;
   height: auto;
   overflow: visible;
   position: relative;

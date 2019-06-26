@@ -117,27 +117,24 @@ p {
   }
 }
 
-// a {
-//   @include transition;
-//   // border-bottom-style: border-style('secondary');
-//   // border-bottom-width: border-width('thin');
-//   border-bottom-style: dotted;
-//   border-bottom-width: 1px;
-//   color: inherit;
-//   text-decoration: none;
-//   // text-decoration-skip: objects edges box-decoration;
+a {
+  @include transition;
+  @include color-fg('highlight');
+  text-decoration: none;
+  // text-decoration-skip: objects edges box-decoration;
 
-//   // 'active' state
-//   &.is-active,
-//   .is-active & {
-//     @include color-fg('highlight');
-//   }
+  // 'active' state
+  &.is-active,
+  .is-active & {
+    @include color-fg('highlight');
+  }
 
-//   &:hover,
-//   &:active {
-//     @include color-fg('highlight');
-//   }
-// }
+  &:hover,
+  &:active {
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+  }
+}
 
 // see t-weight-* and t-style-* classes below for equivalent utilies
 strong {
@@ -326,5 +323,12 @@ cite {
 @each $name, $height in $type-leading {
   .t-leading-#{unquote($name)} {
     line-height: type-leading($name) !important;
+  }
+}
+
+.link-undecorated {
+  &:hover,
+  &:active {
+    border-bottom: 0 !important;
   }
 }
