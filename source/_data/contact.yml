@@ -1,6 +1,3 @@
-# order form PDF linked to the contact page
-order_form: /static/uploads/MASTER-CREDIT-APPLICATION.pdf
-
 # contact info
 address:
   street: "7222 Parkway Drive"
@@ -8,12 +5,8 @@ address:
   state: "MD"
   zip: "21076"
 
-phone:
-  office: "888.867.4059"
-  fax: "443.557.1613"
-
-email:
-  sales: "CS@pettingzooplush.com"
+phone: "888.867.4059"
+email: "customercare@pettingzooplush.com"
 
 # social media channels
 social:
@@ -37,3 +30,6 @@ contact_subjects:
       value: "sales"
     - option: "Just saying hi"
       value: "general"
+
+# order form PDF linked to the contact page
+order_form: /static/uploads/MASTER-CREDIT-APPLICATION.pdf
