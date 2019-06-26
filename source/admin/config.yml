@@ -40,11 +40,11 @@ collections:
 
   # Customer photos (instagram)
   - name: "customer_photos"
-    label: "Customer photos (Instagram)"
+    label: "Customer photos"
     editor:
       preview: false
     files:
-      - label: "Customer photos (Instagram)"
+      - label: "Photos"
         name: "photos"
         file: "source/_data/customer_photos.yml"
         fields:
