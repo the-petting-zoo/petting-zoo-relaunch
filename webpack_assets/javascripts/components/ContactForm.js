@@ -82,7 +82,7 @@ export default Vue.component('contact-form', {
             class="form-dropdown"
             id="contact-subject"
           >
-            <slot name="subject-options"></slot>
+            <slot></slot>
           </select>
         </div>
         <div class="padding-bottom-xnarrow">
@@ -134,11 +134,6 @@ export default Vue.component('contact-form', {
           Thank you for subscribing to our mailing list. We have sent you a confirmation email.
         </p>
       </div>
-      
-      <!-- Contact info sidebar -->
-      <aside class="meta contact">
-        <slot></slot>
-      </aside>
     </div>
   `
 })

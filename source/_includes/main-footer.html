@@ -1,43 +1,39 @@
-<footer data-ui-panel data-theme="reverse" class="border-top" role="contentinfo">
-  <h2 class="t-align-center">Get in Touch</h2>
-  <section data-ui-wrapper="xnarrow" class="padding-top">
-    <contact-form url="{{ site.url }}" question="{{ site.data.contact.contact_subjects.question }}">
-
-      <template v-slot:subject-options class="hide@no-js">
+<footer data-theme="reverse" class="border-top" role="contentinfo">
+  <section data-ui-panel class="padding-bottom">
+    <div data-ui-wrapper="xnarrow">
+      <h2 class="t-align-center padding-bottom">Get in Touch</h2>
+      <contact-form url="{{ site.url }}" question="{{ site.data.contact.contact_subjects.question }}" class="hide@no-js">
         {%- for subject in site.data.contact.contact_subjects.answers -%}
           <option value="{{ subject.value }}">{{ subject.option }}</option>
         {%- endfor -%}
-      </template>
-
-      <h4 class="highlight">Call us!</h4>
-      <dl>
-        <dt>P</dt>
-        <dd>{{ site.data.contact.phone.office }}</dd>
-        <dt>F</dt>
-        <dd>{{ site.data.contact.phone.fax }}</dd>
-      </dl>
-      <p class="address">
-        {{ site.data.contact.address.street }}<br />
-        {{ site.data.contact.address.city }}, {{ site.data.contact.address.state }} {{ site.data.contact.address.zip }}
-      </p>
-      {% if site.data.contact.social.size > 0 %}
-        <ul class="social">
-          {% for profile in site.data.contact.social %}
-            <li>
-              <a href="{{ profile.url }}" class="icon">
-                <span class="icon-social-{{ profile.icon }}--yellow" aria-hidden="true"></span><span class="screen-reader-text">{{ profile.platform }}</span>
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    </contact-form>
+      </contact-form>
+      
+      <aside class="border-top border-secondary margin-top padding-top-narrow">
+        {% if site.data.contact.social.size > 0 %}
+          <h2 class="t-scale-delta t-align-center padding-bottom-xnarrow">Connect with us:</h2>
+          <ul class="gutter-wrapper gutter-narrow t-align-center list-undecorated">
+            {% for channel in site.data.contact.social %}
+              <li class="display-inline-block gutter">
+                <a href="{{ channel.url }}" class="display-inline-block">
+                  {% capture id %}social-{{ channel.icon }}{% endcapture %}
+                  {% include icon.html id=id space="right" size="small" %}
+                  {{ channel.platform }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </aside>
+    </div>
 
   </section>
-  <section class="footer-menu">
-    <div data-ui-wrapper>
-      <h5>{{ site.tag | xml_escape }}</h5>
-      <small role="copyright">&copy; Copyright {{ site.time | date: "%Y" }} The Petting Zoo, Inc. All rights reserved.</small>
+  <section data-theme="wash-turquoise" class="border-top padding-x-outside padding-bottom-narrow">
+    <div data-ui-wrapper class="t-align-center">
+      <a href="/" class="display-inline-block" style="width: 6rem; margin-top: -0.6rem;">
+        <img class="display-inline-block" src="{{ site.assets.img }}{{ site.data.assets.logo.main }}" alt="The Petting Zoo">
+      </a>
+      <h2 class="t-scale-epsilon padding-top-xnarrow padding-bottom-xxnarrow">{{ site.tag | xml_escape }}</h2>
+      <small class="c-text-tertiary" role="copyright">&copy; Copyright {{ site.time | date: "%Y" }} The Petting Zoo, Inc. All rights reserved.</small>
     </div>
   </section>
 </footer>

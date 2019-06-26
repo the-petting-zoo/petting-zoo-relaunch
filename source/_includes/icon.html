@@ -12,15 +12,11 @@
   title - STRING: title attribute
   role - STRING: ARIA role. use either 'img' or 'presentation' (default).
   parent - STRING: pass in a parent component to 'extend' this one, if needed; e.g. 'data-ui-button-icon'
-
-  props = [
-    (size if size),
-    ("space-#{space}" if space)
-  ]
 {%- endcomment -%}
 {%- assign role = include.role | default: 'presentation' -%}
+{% capture space %}{% if include.space %} space-{{ include.space }}{% endif %}{% endcapture %}
 
-<svg data-ui-icon="{{ include.size }}" {{ include.parent }} class="{{ include.class }}" title="{{ include.title }}" role="{{ role }}">
+<svg data-ui-icon="{{ include.size }}{{ space }}" {{ include.parent }} class="{{ include.class }}" title="{{ include.title }}" role="{{ role }}">
   <!-- This excellent icon is from iconmonstr.com -->
   <use xlink:href="#{{ include.id }}"></use>
   {%- unless role == "presentation" -%}
