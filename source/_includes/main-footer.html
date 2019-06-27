@@ -6,7 +6,7 @@
       <template v-slot:subject-options class="">
         <option value="" disabled selected>{{ site.data.contact.contact_subjects.question }}</option>
         {%- for subject in site.data.contact.contact_subjects.answers -%}
-          <option value="{{ subject.value }}">{{ subject.option }}</option>
+          <option value="{{ subject.option }}">{{ subject.option }}</option>
         {%- endfor -%}
       </template>
 
