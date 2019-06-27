@@ -31,6 +31,10 @@ body,
   @include color-fg('highlight', $important: true);
 }
 
+.c-accent {
+  @include color-fg('accent', $important: true);
+}
+
 .c-well {
   @include color-bg('well', $important: true);
 }

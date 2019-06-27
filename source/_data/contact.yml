@@ -1,6 +1,3 @@
-# order form PDF linked to the contact page
-order_form: /static/uploads/MASTER-CREDIT-APPLICATION.pdf
-
 # contact info
 address:
   street: "7222 Parkway Drive"
@@ -8,21 +5,17 @@ address:
   state: "MD"
   zip: "21076"
 
-phone:
-  office: "888.867.4059"
-  fax: "443.557.1613"
-
-email:
-  sales: "CS@pettingzooplush.com"
+phone: "888.867.4059"
+email: "customercare@pettingzooplush.com"
 
 # social media channels
 social:
   - platform: Facebook
     url: "https://www.facebook.com/pages/The-Petting-Zoo/564056906971473"
     icon: "fb"
-  # - platform: twitter
-  #   url: "http://www.twitter.com"
-  #   icon: "twitter"
+  - platform: Instagram
+    url: "https://www.instagram.com/pettingzooplush/"
+    icon: "instagram"
 
 # for the "subject" dropdown on the contact form
 # asks the user to specify what their question is
@@ -37,3 +30,6 @@ contact_subjects:
       value: "sales"
     - option: "Just saying hi"
       value: "general"
+
+# order form PDF linked to the contact page
+order_form: /static/uploads/MASTER-CREDIT-APPLICATION.pdf

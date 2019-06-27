@@ -1,41 +1,55 @@
 ---
 layout: default
 title: Contact Us
+show_contact_form: true
 ---
 
 <section data-ui-panel>
+  <h1 class="t-align-center padding-bottom">Get in Touch</h1>
+  <div data-ui-wrapper="xnarrow">
+    {% include contact-form.html %}
+  </div>
+</section>
+
+<!-- Sales staff -->
+<section data-ui-panel class="border-top">
   <div data-ui-wrapper="wide">
-    <h1 class="t-align-center">Contact our staff</h1>
-    <div class="padding-top-wide">
+    <h2 class="t-align-center">Contact our staff</h2>
+    <div class="padding-top">
       <ul data-ui-gallery>
         {% for post in site.categories.staff %}
         <li data-ui-gallery-item>
           <h2 class="t-scale-gamma">{{ post.title }}</h2>
-          <p class="t-scale-zeta padding-top-xxnarrow">{{ post.job_title }}</p>
-          <a class="display-block padding-top-xxnarrow" href="mailto:{{ post.email }}">{{ post.email }}</a>
+          <p class="t-heading t-scale-epsilon c-text-tertiary padding-top-xnarrow">{{ post.job_title }}</p>
+          <a class="t-font-display display-block padding-top-xnarrow" href="mailto:{{ post.email }}">{{ post.email }}</a>
         </li>
         {% endfor %}
       </ul>
     </div>
-    <div class="t-align-center padding-top-narrow">
-      <a href="{{ site.data.contact.order_form }}" class="button primary large">Download an order form</a>
+    <div class="t-align-center padding-top margin-top border-top">
+      {% include button_link.html
+        url=site.data.contact.order_form
+        label="Download an order form" 
+        prominence="large"
+        icon-left="pdf"
+      %}
     </div>
   </div>
 </section>
 
+<!-- Map -->
 <section data-ui-panel class="border-top c-well">
-  <h1 class="t-align-center padding-bottom-narrow">Our headquarters</h1>
-  <address class="display-block t-align-center t-scale-epsilon t-font-body">
+  <h2 class="t-align-center padding-bottom-xnarrow">Our headquarters</h2>
+  <address class="display-block t-align-center t-scale-epsilon t-heading c-highlight padding-bottom">
     <span class="display-inline-block">{{ site.data.contact.address.street }},</span>
     <span class="display-inline-block">{{ site.data.contact.address.city }}, {{ site.data.contact.address.state }} {{ site.data.contact.address.zip }}</span>
   </address>
-  <div data-ui-wrapper="wide" class="padding-top-narrow">
-    <div id="js-map_canvas" class="map">
+  <div data-ui-wrapper="wide" class="border border-thick">
+    <div style="height: 40vh;">
       {%- capture map_query -%}
         {{ site.data.contact.address.street | split: ' ' | join: '+' }},{{ site.data.contact.address.city }},{{ site.data.contact.address.state }}+{{ site.data.contact.address.zip }}
       {%- endcapture -%}
-      <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAeI5yED4DT79ui40D4ihtCrMzO4O93SfU&q={{ map_query }}" frameborder="0" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></iframe>
-      }
+      <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAeI5yED4DT79ui40D4ihtCrMzO4O93SfU&q={{ map_query }}" frameborder="0" style="display: block; width: 100%; height: 100%; position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></iframe>
     </div>
   </div>
 </section>

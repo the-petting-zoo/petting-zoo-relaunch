@@ -36,9 +36,11 @@
 // --- Elements ---
 [data-ui-aspect-content],
 [data-ui-aspect] > iframe {
+  bottom: 0;
   height: 100%;
   left: 0;
   position: absolute;
+  right: 0;
   top: 0;
   width: 100%;
 
@@ -51,7 +53,7 @@
 [data-ui-aspect-image] {
   display: none;
 
-  @supports (object-fit: scale-down) and (object-position: center) {
+  @supports (object-fit: contain) and (object-position: center) {
     bottom: 0;
     display: block;
     height: 100%;
@@ -71,6 +73,12 @@
   }
 }
 
+[data-ui-aspect-image~="cover"] {
+  @supports (object-fit: cover) {
+    object-fit: cover;
+  }
+}
+
 // --- Modifiers ---
 [data-ui-aspect~='catalog'] {
   background-size: contain;
@@ -86,6 +94,7 @@
   }
 }
 
+@include _aspect-variation(1, 1);
 @include _aspect-variation(4, 1);
 @include _aspect-variation(16, 9, $use-scale: false);
 

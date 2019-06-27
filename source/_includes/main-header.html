@@ -13,41 +13,94 @@ current-url - STRING: pass in the url of the current page from the layout (e.g. 
   <!-- contact bar -->
   <div class="c-well padding-y-xnarrow padding-x-outside">
     <p data-ui-wrapper class="t-font-display c-text-primary t-scale-zeta t-align-center">
-      <strong>Contact us:</strong> 888.867.4059 &bull; customercare@pettingzooplush.com
+      <strong>Contact us:</strong> {{ site.data.contact.phone }} &bull; {{ site.data.contact.email }}
     </p>
   </div>
 
   <!-- main nav -->
-  <nav data-ui-main-nav class="padding-y-narrow padding-x-outside t-align-right border-top border-bottom">
+  <nav data-ui-main-nav class="padding-x-outside t-align-right border-top border-bottom">
     <div data-ui-wrapper>
       
       <!-- logo (home link) -->
-      <a data-ui-main-nav-logo href="/">
+      <a data-ui-main-nav-logo class="link-undecorated" href="/">
         <img class="display-inline-block" src="{{ site.assets.img }}{{ site.data.assets.logo.main }}" alt="The Petting Zoo">
       </a>
       
-      <!-- small-screen nav -->
-      <div class="hide-above@small c-text-primary">
-        <button-dropdown label="Menu" icon="menu" position="right">
-          <ul class="t-align-left margin-y-between-xnarrow">
-            <li class="no-margin-bottom">
-              <a class="c-text-primary t-font-body" href="/">Home</a>
-            </li>
-            {%- for item in site.data.navigation.navigation_items -%}
+      <div class="padding-y-narrow">
 
-              {%- comment -%} Apply an active class if the item url matches the current page url {%- endcomment -%}
-              {%- capture color -%}
-                {%- if include.current_url == item.url -%}
-                  {{ active-class }}
-                {%- else -%}
-                  {{ default-class }}
-                {%- endif -%}
-              {%- endcapture -%}
-
+        <!-- small-screen nav -->
+        <div class="hide-above@small c-text-primary">
+          <button-dropdown label="Menu" icon="menu" position="right">
+            <ul class="t-align-left margin-y-between-xnarrow list-undecorated">
               <li class="no-margin-bottom">
-                <a class="t-font-body {{ color }}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
-                {%- if item.submenu -%}
-                  <ul class="padding-top-xnarrow padding-left-xnarrow margin-y-between-xnarrow">
+                <a class="c-text-primary t-font-body" href="/">Home</a>
+              </li>
+              {%- for item in site.data.navigation.navigation_items -%}
+        
+                {%- comment -%} Apply an active class if the item url matches the current page url {%- endcomment -%}
+                {%- capture color -%}
+                  {%- if include.current_url == item.url -%}
+                    {{ active-class }}
+                  {%- else -%}
+                    {{ default-class }}
+                  {%- endif -%}
+                {%- endcapture -%}
+        
+                <li class="no-margin-bottom">
+                  <a class="t-font-body {{ color }}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
+                  {%- if item.submenu -%}
+                    <ul class="padding-top-xnarrow padding-left-xnarrow margin-y-between-xnarrow list-undecorated">
+                      {%- for submenu_item in item.submenu -%}
+                        
+                        {%- comment -%} Apply an active class if the item url matches the current page url {%- endcomment -%}
+                        {%- capture color -%}
+                          {%- if include.current_url == submenu_item.url -%}
+                            {{ active-class }}
+                          {%- else -%}
+                            {{ secondary-class }}
+                          {%- endif -%}
+                        {%- endcapture -%}
+        
+                        <li class="no-margin-bottom">
+                          <a class="t-scale-zeta t-font-body {{ color }}" href="{{ submenu_item.url }}">{{ submenu_item.label }}</a>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </button-dropdown>
+        </div>
+        
+        <!-- large-screen menu -->
+        <ul data-ui-main-nav-list class="hide-below@small">
+          {%- assign nav_size = site.data.navigation.navigation_items | size -%}
+          {%- assign half_nav_size = nav_size | divided_by: 2 -%}
+          
+          {%- for item in site.data.navigation.navigation_items -%}
+            
+            {%- comment -%} Apply an active class if the item url matches the current page url {%- endcomment -%}
+            {%- capture color -%}
+              {%- if include.current_url == item.url -%}
+                {{ active-class }}
+              {%- else -%}
+                {{ default-class }}
+              {%- endif -%}
+            {%- endcapture -%}
+        
+            {%- unless item.label == site.data.navigation.navigation_items[half_nav_size].label -%}
+            <li data-ui-main-nav-item>
+            {%- else -%}
+            <li data-ui-main-nav-item="split" class="c-text-primary">
+            {%- endunless -%}
+              <a class="t-font-body {{ color }}{% if item.submenu %} hide@js{% endif %}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
+              {%- if item.submenu -%}
+                <button-dropdown label="{{ item.label }}" button-styles="t-font-body{% if include.current_url == item.url %} {{ color }}{% else %} c-text-primary{% endif %}" class="show@js">
+                  <ul class="margin-y-between-xnarrow list-undecorated">
+                    <li class="no-margin-bottom">
+                      <a class="t-font-body {{ color }}" href="{{ item.url | relative_url }}"><strong>See all {{ item.label | downcase }}</strong></a>
+                    </li>
                     {%- for submenu_item in item.submenu -%}
                       
                       {%- comment -%} Apply an active class if the item url matches the current page url {%- endcomment -%}
@@ -58,69 +111,18 @@ current-url - STRING: pass in the url of the current page from the layout (e.g. 
                           {{ secondary-class }}
                         {%- endif -%}
                       {%- endcapture -%}
-
+        
                       <li class="no-margin-bottom">
-                        <a class="t-scale-zeta t-font-body {{ color }}" href="{{ submenu_item.url }}">{{ submenu_item.label }}</a>
+                        <a class="t-font-body {{ color }}" href="{{ submenu_item.url }}">{{ submenu_item.label }}</a>
                       </li>
                     {%- endfor -%}
                   </ul>
-                {%- endif -%}
-              </li>
-            {%- endfor -%}
-          </ul>
-        </button-dropdown>
+                </button-dropdown>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
       </div>
-      
-      <!-- large-screen menu -->
-      <ul data-ui-main-nav-list class="hide-below@small">
-        {%- assign nav_size = site.data.navigation.navigation_items | size -%}
-        {%- assign half_nav_size = nav_size | divided_by: 2 -%}
-        
-
-        {%- for item in site.data.navigation.navigation_items -%}
-          
-          {%- comment -%} Apply an active class if the item url matches the current page url {%- endcomment -%}
-          {%- capture color -%}
-            {%- if include.current_url == item.url -%}
-              {{ active-class }}
-            {%- else -%}
-              {{ default-class }}
-            {%- endif -%}
-          {%- endcapture -%}
-
-          {%- unless item.label == site.data.navigation.navigation_items[half_nav_size].label -%}
-          <li data-ui-main-nav-item>
-          {%- else -%}
-          <li data-ui-main-nav-item="split c-text-primary">
-          {%- endunless -%}
-            <a class="t-font-body {{ color }}{% if item.submenu %} hide@js{% endif %}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
-            {%- if item.submenu -%}
-              <button-dropdown label="{{ item.label }}" button-styles="t-font-body{% if include.current_url == item.url %} {{ color }}{% endif %}" class="show@js">
-                <ul class="margin-y-between-xnarrow">
-                  <li class="no-margin-bottom">
-                    <a class="t-font-body {{ color }}" href="{{ item.url | relative_url }}"><strong>See all {{ item.label | downcase }}</strong></a>
-                  </li>
-                  {%- for submenu_item in item.submenu -%}
-                    
-                    {%- comment -%} Apply an active class if the item url matches the current page url {%- endcomment -%}
-                    {%- capture color -%}
-                      {%- if include.current_url == submenu_item.url -%}
-                        {{ active-class }}
-                      {%- else -%}
-                        {{ secondary-class }}
-                      {%- endif -%}
-                    {%- endcapture -%}
-
-                    <li class="no-margin-bottom">
-                      <a class="t-font-body {{ color }}" href="{{ submenu_item.url }}">{{ submenu_item.label }}</a>
-                    </li>
-                  {%- endfor -%}
-                </ul>
-              </button-dropdown>
-            {%- endif -%}
-          </li>
-        {%- endfor -%}
-      </ul>
     </div>
   </nav>
 </header>

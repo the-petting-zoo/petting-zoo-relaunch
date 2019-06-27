@@ -120,8 +120,8 @@ export default Vue.component('contact-form', {
       <form v-if="!sent" action="#">
 
         <!-- contact form -->
-        <div class="control_group">
-          <label for="name">Your Name</label>
+        <div class="padding-bottom-xnarrow">
+          <label class="form-label padding-bottom-xnarrow" for="name">Your name</label>
           <input 
             v-model="formContent.name"
             type="text"
@@ -132,8 +132,8 @@ export default Vue.component('contact-form', {
             required
           />
         </div>
-        <div class="control_group">
-          <label for="email">Your Email</label>
+        <div class="padding-bottom-xnarrow">
+          <label class="form-label padding-bottom-xnarrow" for="email">Your email</label>
           <input
             v-model="formContent.email"
             type="email"
@@ -144,18 +144,19 @@ export default Vue.component('contact-form', {
             required
           />
         </div>
-        <div class="control_group">
-        <select
-          v-model="formContent.subject"
-          class="form-dropdown"
-          name="subject"
-          id="contact-subject"
-        >
-          <slot name="subject-options"></slot>
-        </select>
+        <div class="padding-bottom-xnarrow">
+          <label class="form-label padding-bottom-xnarrow" for="email">How can we help?</label>
+          <select
+            v-model="formContent.subject"
+            class="form-dropdown"
+            id="contact-subject"
+            name="subject"
+          >
+            <slot></slot>
+          </select>
         </div>
-        <div class="control_group">
-          <label for="message">Your Message</label>
+        <div class="padding-bottom-xnarrow">
+          <label class="form-label padding-bottom-xnarrow" for="message">Your message</label>
           <textarea
             v-model="formContent.message"
             id="contact-message"
@@ -167,37 +168,33 @@ export default Vue.component('contact-form', {
           ></textarea>
         </div>
         <input type="hidden" class="form-hidden" :value="url" id="contact-url" name="url" />
-        <div class="control_group mailing-list">
+        <div class="padding-bottom-xnarrow mailing-list">
           <input
             v-model="subscribed"
             type="checkbox"
             id="contact-mailing-list"
-            value="opted-in"
+            class="form-checkbox"
           />
-          <label for="mailing-list">Add me to <strong>The Petting Zoo's</strong> mailing&nbsp;list.</label>
+          <label class="form-label display-inline-block padding-left-xxnarrow padding-bottom-xnarrow" for="mailing-list">Add me to <strong>The Petting Zoo's</strong> mailing list.</label>
         </div>
         <button
           @click="checkForm"
-          id="contact-contact-submit"
+          data-ui-button="primary"
+          id="contact-submit"
           type="submit"
-          class="button primary small">
-            Send
-          </button>
+        >
+          Send
+        </button>
       </form>
 
-      <div v-if="sent" class="sent">
-        <!-- Success message -->
-        <h3>Thanks for contacting us!</h3>
-        <p class="center">We'll be in touch with you soon.</p>
-        <p v-if="subscribed && sent" class="t-align-center">
-          {{mcMessage}} We have sent you a confirmation email.
+      <!-- Success message -->
+      <div v-if="sent" class="t-align-center border border-round padding">
+        <h3 class="t-scale-beta padding-bottom-xnarrow">Thanks for contacting us!</h3>
+        <p>We'll be in touch with you soon.</p>
+        <p v-if="subscribed && sent" class="padding-top-narrow margin-top-narrow border-top c-text-tertiary">
+          Thank you for subscribing to our mailing list. We have sent you a confirmation email.
         </p>
       </div>
-      
-      <!-- Contact info sidebar -->
-      <aside class="meta contact">
-        <slot></slot>
-      </aside>
     </div>
   `
 })

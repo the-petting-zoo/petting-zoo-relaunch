@@ -8,11 +8,13 @@
  *
  */
 
+@import "~normalize-css/normalize.css";
+
 // -- Base styles ---
-// @import "base/form";
-// @import "base/html";
+@import "base/form";
+@import "base/html";
 @import "base/list";
-// @import "base/media";
+@import "base/media";
 @import "base/type";
 
 // --- Utilities ---

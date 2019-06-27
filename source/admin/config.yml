@@ -38,6 +38,27 @@ collections:
                 required: false
                 hint: "An alternate label (alt attribute) that will display if the image doesn't load correctly, or if the user is using a screen reader."
 
+  # Customer photos (instagram)
+  - name: "customer_photos"
+    label: "Customer photos"
+    editor:
+      preview: false
+    files:
+      - label: "Photos"
+        name: "photos"
+        file: "source/_data/customer_photos.yml"
+        fields:
+          - name: "photos"
+            label: "Photos"
+            widget: list
+            required: false
+            hint: "The photos displayed on the homepage in the customer photos (#ShareAndSmile) section. Note the homepage is limited to 16 photos, to keep it from getting too huge."
+            fields:
+              - {label: "Source", name: "source", widget: "image"}
+              - {label: "Link", name: "url", widget: "string", hint: "The link/url of the original image on Instagram."}
+              - {label: "Description (alt tag)", name: "alt", widget: "string", required: false, hint: "A short description/caption for the image; will be used as the alt tag."}
+
+
   # Catalog Topics
   # Description: 
   #   Catalog topcis are topics that are used to group catalogs.
