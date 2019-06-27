@@ -9,7 +9,7 @@ export default Vue.component('sticky-nav', {
   },
   computed: {
     fixed () {
-      return this.scrollPosition > 43
+      return this.scrollPosition > 43 // approx height of contact bar
     },
     reduced () {
       return this.scrollPosition > 300
