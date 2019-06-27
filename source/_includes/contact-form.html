@@ -5,6 +5,6 @@
 
 <contact-form url="{{ site.url }}" question="{{ site.data.contact.contact_subjects.question }}" class="hide@no-js">
   {%- for subject in site.data.contact.contact_subjects.answers -%}
-    <option value="{{ subject.value }}">{{ subject.option }}</option>
+    <option value="{{ subject.option }}">{{ subject.option }}</option>
   {%- endfor -%}
 </contact-form>

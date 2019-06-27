@@ -1,5 +1,8 @@
 import Vue from 'vue'
-import axios from 'axios'
+import jsonp from 'jsonp'
+import queryString from 'query-string'
+
+// See README_ContactForm for details on simpleform configuration
 
 export default Vue.component('contact-form', {
   props: {
@@ -8,46 +11,111 @@ export default Vue.component('contact-form', {
   data () {
     return {
       simpleForm: {
-        url: 'https://getsimpleform.com/messages?form_api_token=',
-        token: '9e785bffbf9337d08052b2b07bb8ef67',
-        testToken: 'd785a1918d67317a7cd4f65c805f1c61'
+        url: 'https://getsimpleform.com/messages/ajax?',
+        token: '9e785bffbf9337d08052b2b07bb8ef67'
       },
-      mailChimpUrl: 'http://pettingzooplush.us8.list-manage.com/subscribe/post?u=63768868a43809514e63f3953&id=0caa307af8',
+      mailChimpUrl: 'https://gpoba.us8.list-manage.com/subscribe/post?u=0eb271cf853e657ebe61f0e9f&amp;id=a142a0b83f',
       formContent: {},
       sent: false,
-      subscribed: false
+      error: false,
+      subscribed: false,
+      mcMessage:'',
+      errors: []
     }
   },
   methods: {
-    submitForm (event) {
+    checkForm: function (event) {
+      this.errors = []
       event.preventDefault()
-      axios.post(
-        `${this.simpleForm.url}${this.simpleForm.token}`, 
-        this.formContent
-      ).then(response => {
-        console.log(`${response.status}: ${response.statusText}`)
-        if (this.subscribed) {
-          this.subscribe()
+
+      if (!this.formContent.name) {
+        this.errors.push("Name required.")
+      }
+
+      if (!this.formContent.subject) {
+        this.errors.push("Email subject required.")
+      }
+
+      if (!this.formContent.message) {
+        this.errors.push("Email body required.")
+      }
+
+      if (!this.formContent.email) {
+        this.errors.push('Email required.')
+      } else if (!this.validEmail(this.formContent.email)) {
+        this.errors.push('Valid email required.')
+      }
+
+      if (!this.errors.length) {
+        this.submitForm()
+      }
+      
+    },
+    validEmail: function (email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    },
+    submitForm () {
+      // Add API token for simpleform (note form_api_token must remain the name of thie variable)
+      // convert to URL string
+      this.formContent.form_api_token = this.simpleForm.token
+      const urlData = queryString.stringify(this.formContent)
+
+      jsonp(
+        `${this.simpleForm.url}${urlData}`,
+        null,
+        (err, data) => {
+          if (err) {
+            this.errors.push(err.message)
+            this.sent = false
+          } else {
+            this.sent = true
+            // If checkbox for subscribe, then send to mailchimp
+            if (this.subscribed) {
+              this.subscribe()
+            }
+          }
         }
-      })
-      this.sent = true
+      )
     },
     subscribe () {
-      // not sure if this is the correct data to send to MC - @scott can you double check against API v3?
-      axios.post(this.mailChimpUrl, {
-        'email_address': this.formContent.email,
-        'status': 'subscribed',
-        'merge_fields': {
-          'mc-FNAME': this.formContent.name.split(' ')[0],
-          'mc-LNAME': this.formContent.name.split(' ')[1]
+      // @JAY 
+      // This will need to be updated with whatever fields PZP's MC has.
+      const params = {
+        EMAIL: this.formContent.email,
+        FNAME: this.formContent.name.split(' ')[0],
+        LNAME: this.formContent.name.split(' ')[1]
+      }
+      const url = this.mailChimpUrl.replace("/post?", "/post-json?")      
+      const urlData = queryString.stringify(this.params)
+
+      jsonp(
+        `${url}&${urlData}`,
+        {
+          param: "c"
+        },
+         (err, data) => {
+          if (err || data.result === "error") {
+            this.mcMessage = data.msg
+            this.errors.push(this.mcMessage)
+            this.sent = false
+          } else {
+            this.mcMessage = data.msg
+          }
         }
-      }).then(response => {
-        console.log(`${response.status}: ${response.statusText}`)
-      })
+      )
     }
   },
   template: `
-    <div>
+    <div>    
+      <!-- @JAY - Error message -->
+      <p v-if="errors.length">
+        <b>Please correct the following error(s):</b>
+        <ul>
+          <li v-for="error in errors">{{ error }}</li>
+        </ul>
+      </p>
+
       <form v-if="!sent" action="#">
 
         <!-- contact form -->
@@ -81,6 +149,7 @@ export default Vue.component('contact-form', {
             v-model="formContent.subject"
             class="form-dropdown"
             id="contact-subject"
+            name="subject"
           >
             <slot></slot>
           </select>
@@ -92,6 +161,7 @@ export default Vue.component('contact-form', {
             id="contact-message"
             class="form-textarea"
             cols="40"
+            name="message"
             rows="6"
             required
           ></textarea>
@@ -107,23 +177,13 @@ export default Vue.component('contact-form', {
           <label class="form-label display-inline-block padding-left-xxnarrow padding-bottom-xnarrow" for="mailing-list">Add me to <strong>The Petting Zoo's</strong> mailing list.</label>
         </div>
         <button
-          @click="submitForm"
+          @click="checkForm"
           data-ui-button="primary"
           id="contact-submit"
           type="submit"
         >
           Send
         </button>
-      </form>
-      
-      <!-- Mailchimp/newsletter form -->
-      <!-- this can probably go away since we're using Vue -->
-      <form id="mc-form" style="display:none;">
-        <input id="mc-email" type="email" placeholder="email">
-        <label class="form-label padding-bottom-xnarrow" for="mc-email"></label>
-        <input type="text" value="" class="" id="mc-FNAME">
-        <label class="form-label padding-bottom-xnarrow" for="mc-FNAME"></label>
-        <button type="submit">Submit</button>
       </form>
 
       <!-- Success message -->
