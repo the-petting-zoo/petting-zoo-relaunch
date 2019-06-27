@@ -11,7 +11,9 @@ export default Vue.component('contact-form', {
   data () {
     return {
       simpleForm: {
-        url: 'https://getsimpleform.com/messages/ajax?',
+        url: 'https://getsimpleform.com/messages',
+        ajax: '/ajax?',
+        post: '?form_api_token=',
         token: '9e785bffbf9337d08052b2b07bb8ef67'
       },
       // @TODO pull in PZP submit url
@@ -32,7 +34,9 @@ export default Vue.component('contact-form', {
     }
   },
   methods: {
-    checkForm: function (event) {
+    validateForm: function (event) {
+      console.log(`${this.simpleForm.url}${this.simpleForm.ajax}`)
+
       this.errors = []
       event.preventDefault()
 
@@ -70,7 +74,7 @@ export default Vue.component('contact-form', {
       const urlData = queryString.stringify(this.formContent)
 
       jsonp(
-        `${this.simpleForm.url}${urlData}`,
+        `${this.simpleForm.url}${this.simpleForm.ajax}${urlData}`,
         null,
         (err, data) => {
           if (err) {
@@ -127,7 +131,7 @@ export default Vue.component('contact-form', {
         </ul>
       </aside>
 
-      <form v-if="!sent" action="#">
+      <form v-if="!sent" method="POST" :action="simpleForm.url + simpleForm.post + simpleForm.token">
 
         <!-- contact form -->
         <div class="padding-bottom-xnarrow">
@@ -178,17 +182,17 @@ export default Vue.component('contact-form', {
           ></textarea>
         </div>
         <input type="hidden" class="form-hidden" :value="url" id="contact-url" name="url" />
-        <div class="padding-bottom-xnarrow mailing-list">
+        <div class="padding-bottom-xnarrow">
           <input
             v-model="subscribed"
             type="checkbox"
             id="contact-mailing-list"
             class="form-checkbox"
           />
-          <label class="form-label display-inline-block padding-left-xxnarrow padding-bottom-xnarrow" for="mailing-list">Add me to <strong>The Petting Zoo's</strong> mailing list.</label>
+          <label class="form-label display-inline-block padding-left-xxnarrow padding-bottom-xnarrow" for="contact-mailing-list">Add me to <strong>The Petting Zoo's</strong> mailing list.</label>
         </div>
         <button
-          @click="checkForm"
+          @click="validateForm"
           data-ui-button="primary"
           id="contact-submit"
           type="submit"
