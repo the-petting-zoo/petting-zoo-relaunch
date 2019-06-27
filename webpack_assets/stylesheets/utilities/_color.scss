@@ -39,6 +39,10 @@ body,
   @include color-bg('well', $important: true);
 }
 
+.c-island {
+  @include color-bg('island', $important: true);
+}
+
 // add the default bg color to an element that would otherwise be transparent (e.g. a div or span)
 .c-bg {
   @include color-bg('bg');

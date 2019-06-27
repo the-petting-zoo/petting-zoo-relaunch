@@ -3,81 +3,83 @@ layout: default
 title: home
 ---
 
-<!-- hero carousel -->
-{% include billboard.html
-  image=site.data.home.cover_image.source
-  alt=site.data.home.cover_image.alt
-%}
-
-<!-- intro copy -->
-<section data-ui-panel class="t-align-center">
-  <div data-ui-wrapper="narrow">
-    <div class="t-content padding-bottom">
-      {% for post in site.categories.home %}
-        {{ post.content }}
-      {% endfor %}
-    </div>
-
-    {% include button_link.html
-      label="Learn more about The&nbsp;Petting&nbsp;Zoo"
-      url="/about/" 
-      icon-right="arrow-right"
-      prominence="large"
-    %}
-  </div>
-</section>
-
-<!-- featured catalogs -->
-{%- for catalog in site.categories.catalogs -%}
-  {%- if catalog.featured -%}
-    {% include featured-banner.html
-      collection=catalog
-      button_label='See more in this catalog'
-    %}
-  {%- endif -%}
-{%- endfor -%}
-
-<!-- featured collections -->
-{%- for collection in site.categories.product_collections -%}
-  {%- if collection.featured -%}
-    {% include featured-banner.html
-      collection=collection
-      type="collection"
-    %}
-  {%- endif -%}
-{%- endfor -%}
-
-<!-- Shared images from instagram -->
-{%- capture customer_photos_length -%}
-  {{ site.data.customer_photos.photos | size }}
-{%- endcapture -%}
-{%- unless customer_photos_length == '0' -%}
-  <section data-ui-panel class="border-top">
-    {%- for intro in site.categories.customer_photos -%}
-      <header>
-        <h2 class="t-scale-alpha t-align-center padding-bottom-narrow">{{ intro.display_title }}</h2>
-        <div data-ui-wrapper="narrow" class="t-content">
-          {{ intro.content }}
-        </div>
-      </header>
-    {%- endfor -%}
-    <div data-ui-wrapper="wide" class="padding-top">
-      <ul data-ui-gallery style="--gutter: var(--space-xnarrow);">
-        {%- for photo in site.data.customer_photos.photos limit: 16 -%}
-        <li data-ui-gallery-item>
-          <a data-ui-aspect="1x1" class="link-undecorated border" href="{{ photo.url }}" target="_blank">
-            <img data-ui-aspect-image src="{{ photo.source }}" alt="The Petting Zoo: {{ photo.alt | default: 'Instagram photo' }}">
-          </a>
-        </li>
-        {%- endfor -%}
-      </ul>
-      <div class="border-top margin-top-xnarrow padding-top t-align-center">
-        {% include button_link.html
-          url="https://instagram.com"
-          label="Find us on <strong>Instagram</strong> to see more photos" 
-          icon-left="social-instagram"
-        %}
+<section>
+  <!-- hero carousel -->
+  {% include billboard.html
+    image=site.data.home.cover_image.source
+    alt=site.data.home.cover_image.alt
+  %}
+  
+  <!-- intro copy -->
+  <section data-ui-panel class="t-align-center">
+    <div data-ui-wrapper="narrow">
+      <div class="t-content padding-bottom">
+        {% for post in site.categories.home %}
+          {{ post.content }}
+        {% endfor %}
       </div>
+  
+      {% include button_link.html
+        label="Learn more about The&nbsp;Petting&nbsp;Zoo"
+        url="/about/" 
+        icon-right="arrow-right"
+        prominence="large"
+      %}
     </div>
   </section>
-{%- endunless -%}
+  
+  <!-- featured catalogs -->
+  {%- for catalog in site.categories.catalogs -%}
+    {%- if catalog.featured -%}
+      {% include featured-banner.html
+        collection=catalog
+        button_label='See more in this catalog'
+      %}
+    {%- endif -%}
+  {%- endfor -%}
+  
+  <!-- featured collections -->
+  {%- for collection in site.categories.product_collections -%}
+    {%- if collection.featured -%}
+      {% include featured-banner.html
+        collection=collection
+        type="collection"
+      %}
+    {%- endif -%}
+  {%- endfor -%}
+  
+  <!-- Shared images from instagram -->
+  {%- capture customer_photos_length -%}
+    {{ site.data.customer_photos.photos | size }}
+  {%- endcapture -%}
+  {%- unless customer_photos_length == '0' -%}
+    <section data-ui-panel class="border-top">
+      {%- for intro in site.categories.customer_photos -%}
+        <header>
+          <h2 class="t-scale-alpha t-align-center padding-bottom-narrow">{{ intro.display_title }}</h2>
+          <div data-ui-wrapper="narrow" class="t-content">
+            {{ intro.content }}
+          </div>
+        </header>
+      {%- endfor -%}
+      <div data-ui-wrapper="wide" class="padding-top">
+        <ul data-ui-gallery style="--gutter: var(--space-xnarrow);">
+          {%- for photo in site.data.customer_photos.photos limit: 16 -%}
+          <li data-ui-gallery-item>
+            <a data-ui-aspect="1x1" class="link-undecorated border" href="{{ photo.url }}" target="_blank">
+              <img data-ui-aspect-image src="{{ photo.source }}" alt="The Petting Zoo: {{ photo.alt | default: 'Instagram photo' }}">
+            </a>
+          </li>
+          {%- endfor -%}
+        </ul>
+        <div class="border-top margin-top-xnarrow padding-top t-align-center">
+          {% include button_link.html
+            url="https://instagram.com"
+            label="Find us on <strong>Instagram</strong> to see more photos" 
+            icon-left="social-instagram"
+          %}
+        </div>
+      </div>
+    </section>
+  {%- endunless -%}
+</section>

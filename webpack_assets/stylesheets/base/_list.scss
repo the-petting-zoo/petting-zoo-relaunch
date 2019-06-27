@@ -7,24 +7,24 @@
 // Base styles
 // -----------------------------------------------------------------------------
 
-// ul,
-// ol {
-//   padding-left: 1em; // bump to the right a little @ mobile sizes so the numbers/bullets don't run off
-// }
+ul,
+ol {
+  padding-left: 1em; // bump to the right a little @ mobile sizes so the numbers/bullets don't run off
+}
 
-// ul,
-// ol,
-// dl {
-//   margin-top: 0;
-// }
+ul,
+ol,
+dl {
+  margin-top: 0;
+}
 
-// li {
-//   font-size: scale-type('epsilon');
+li {
+  font-size: scale-type('epsilon');
 
-//   & + & {
-//     margin-top: 0.25em;
-//   }
-// }
+  & + & {
+    margin-top: 0.25em;
+  }
+}
 
 .list-undecorated {
   // sass-lint:disable no-important

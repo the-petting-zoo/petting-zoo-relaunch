@@ -1,24 +1,51 @@
 // Main header component
-@import '../config/spacing';
-@import '../config/positioning';
+@import '../config/animation';
 @import '../config/breakpoints';
+@import '../config/positioning';
+@import '../config/spacing';
 
+$main-nav-h: 5.125rem;
+$main-nav-h-fixed: 3rem;
 $main-nav-logo-w: 6.5rem;
 $main-nav-gutter: space();
 
 // --- Base ---
-[data-ui-main-nav] {
+[data-ui-main-nav],
+sticky-nav {
+  @include transition;
+  @include space-outside;
+  @include border('top' 'bottom');
   display: block;
   position: relative;
   text-align: right;
+  height: $main-nav-h;
+
+}
+
+// --- Traits ---
+[data-ui-main-nav~='fixed'] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: z('top');
+}
+
+[data-ui-main-nav~='reduced'] {
+  height: $main-nav-h-fixed;
 }
 
 // --- Elements ---
+[data-ui-main-nav-wrapper] {
+  height: 100%;
+}
+
 [data-ui-main-nav-logo] {
   $logo-aspect-ratio: 1.125;
   $logo-h: ($main-nav-logo-w / $logo-aspect-ratio);
-
-  display: inline-block;
+  
+  @include transition;
+  display: block;
   height: $logo-h;
   position: absolute;
   left: 0;
@@ -31,14 +58,28 @@ $main-nav-gutter: space();
     left: 50%;
     margin-left: ($main-nav-logo-w / 2 * -1);
   }
+
+  [data-ui-main-nav~='reduced'] & {
+    $w: 2.7rem;
+    $h: ($w / $logo-aspect-ratio);
+    height: $h;
+    margin-top: ($h / 2 * -1);
+    width: $w;
+
+    @include media('>xsmall') {
+      margin-left: ($w / 2 * -1);
+    }
+  }
 }
 
 [data-ui-main-nav-list] {
+  @include inline-block-centered;
   display: block;
   list-style: none;
   text-align: center;
   margin: 0 0 0 ($main-nav-gutter * -1);
   padding-left: 0;
+  padding-top: 0.25em; // add a little padding to nudge the list down a little
 }
 
 [data-ui-main-nav-item] {
@@ -55,4 +96,8 @@ $main-nav-gutter: space();
 // -> double selectors here to increase specificity to override margin rules above
 [data-ui-main-nav-item~='split'] {
   margin-left: ($main-nav-logo-w + $main-nav-gutter);
+}
+
+[data-ui-main-nav-padding] {
+  padding-bottom: $main-nav-h;
 }

@@ -54,6 +54,10 @@
   margin-right: auto;
 }
 
+.align-center-block-vertical {
+  @include inline-block-centered;
+}
+
 .position-relative {
   position: relative !important;
 }
