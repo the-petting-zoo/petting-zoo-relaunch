@@ -107,9 +107,8 @@ export default Vue.component('contact-form', {
     }
   },
   template: `
-    <div>
-    ${*/ @JAY YOU SHOULD PROBABLY THEME THIS ERROR FIELDS!*/}
-      <!-- Error message -->
+    <div>    
+      <!-- @JAY - Error message -->
       <p v-if="errors.length">
         <b>Please correct the following error(s):</b>
         <ul>
