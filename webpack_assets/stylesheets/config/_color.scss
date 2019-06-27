@@ -38,7 +38,7 @@ $themes: (
     'highlight': $yellow,
     'accent': $turquoise,
     'bg': $dark-blue,
-    'island': lighten($dark-blue, 10),
+    'island': lighten($dark-blue, 5),
     'well': darken($dark-blue, 10),
     'border': darken($dark-blue, 20),
     'shadow': darken($dark-blue, 30)

@@ -14,13 +14,21 @@ export default Vue.component('contact-form', {
         url: 'https://getsimpleform.com/messages/ajax?',
         token: '9e785bffbf9337d08052b2b07bb8ef67'
       },
+      // @TODO pull in PZP submit url
       mailChimpUrl: 'https://gpoba.us8.list-manage.com/subscribe/post?u=0eb271cf853e657ebe61f0e9f&amp;id=a142a0b83f',
       formContent: {},
       sent: false,
       error: false,
       subscribed: false,
       mcMessage:'',
-      errors: []
+      errors: [],
+      errorMessages: {
+        name: "Your <strong class='c-highlight'>name</strong> is required.",
+        subject: "Please select an <strong class='c-highlight'>email subject</strong>.",
+        message: "The <strong class='c-highlight'>email body</strong> is required.",
+        email: "Your <strong class='c-highlight'>email address</strong> is required, so we can respond.",
+        invalidEmail: "Your <strong class='c-highlight'>email address</strong> appears to be invalid; please check to make sure it has been entered correctly."
+      }
     }
   },
   methods: {
@@ -29,21 +37,21 @@ export default Vue.component('contact-form', {
       event.preventDefault()
 
       if (!this.formContent.name) {
-        this.errors.push("Name required.")
+        this.errors.push(this.errorMessages.name)
       }
 
       if (!this.formContent.subject) {
-        this.errors.push("Email subject required.")
+        this.errors.push(this.errorMessages.subject)
       }
 
       if (!this.formContent.message) {
-        this.errors.push("Email body required.")
+        this.errors.push(this.errorMessages.message)
       }
 
       if (!this.formContent.email) {
-        this.errors.push('Email required.')
+        this.errors.push(this.errorMessages.email)
       } else if (!this.validEmail(this.formContent.email)) {
-        this.errors.push('Valid email required.')
+        this.errors.push(this.errorMessages.invalidEmail)
       }
 
       if (!this.errors.length) {
@@ -108,13 +116,16 @@ export default Vue.component('contact-form', {
   },
   template: `
     <div>    
-      <!-- @JAY - Error message -->
-      <p v-if="errors.length">
-        <b>Please correct the following error(s):</b>
-        <ul>
-          <li v-for="error in errors">{{ error }}</li>
+      <!-- Error message -->
+      <aside
+        v-if="errors.length"
+        class="border border-round padding-narrow margin-bottom c-island"
+      >
+        <h3 class="padding-bottom-xnarrow t-scale-epsilon">Sorry, there were a few errors in your message. Please correct them and try to submit again.</h3>
+        <ul class="no-margin">
+          <li v-for="error in errors" v-html="error"></li>
         </ul>
-      </p>
+      </aside>
 
       <form v-if="!sent" action="#">
 
@@ -124,7 +135,7 @@ export default Vue.component('contact-form', {
           <input 
             v-model="formContent.name"
             type="text"
-            class="form-textbox"
+            class="form-field"
             id="contact-name"
             size="20"
             value=""
@@ -136,7 +147,7 @@ export default Vue.component('contact-form', {
           <input
             v-model="formContent.email"
             type="email"
-            class="form-textbox"
+            class="form-field"
             id="contact-email"
             size="20"
             value=""
