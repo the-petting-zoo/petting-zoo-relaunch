@@ -182,8 +182,6 @@ address,
 
 blockquote,
 .t-blockquote {
-  @include border('left', $w: 'medium', $color: 'highlight');
-  padding-left: space('narrow');
 
   @media print {
     page-break-inside: avoid;
@@ -193,8 +191,7 @@ blockquote,
 // this is a default for this element
 // -> to style with classes use t-scale-*, t-italic, etc.
 cite {
-  @include font($style: 'italic');
-  font-size: 0.6em;
+  @include font($style: normal);
   line-height: type-leading('tight');
 }
 

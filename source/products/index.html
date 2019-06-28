@@ -33,16 +33,15 @@ layout: default
   <!-- testimonials -->
 {% if site.categories.testimonials.size > 0 %}
   <section data-ui-panel data-theme="wash-pink">
-    <div data-ui-wrapper>
-      <h3 class="t-align-center t-weight-bold">What our customers are saying</h3>
-      <ul class="grid large center">
-        {% for post in site.categories.testimonials %}
-        <li class="tile-quote">
-          {{ post.content }}
-          <small>- {{post.title }}</small>
-        </li>
-        {% endfor %}
-      </ul>
+    <div data-ui-wrapper="xnarrow">
+      <h3 class="t-align-center t-heading">What our customers are saying</h3>
+      {%- assign testimonial = site.data.testimonials.quotes | sample -%}
+      <blockquote class="t-align-center padding-top-narrow">
+        {{ testimonial.quote | markdownify }}
+        <cite class="display-block t-scale-epsilon padding-top-xnarrow">
+          - {{ testimonial.attribution }}
+        </cite>
+      </blockquote>
     </div>
   </section>
 {% endif %}
