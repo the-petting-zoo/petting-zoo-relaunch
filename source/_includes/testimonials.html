@@ -1,0 +1,23 @@
+{%- comment -%}
+  Testimonials partial
+
+  Locals:
+  theme - STRING (optional): color theme to apply. Defaults to pink wash.
+{%- endcomment -%}
+
+{% if site.data.testimonials.quotes.size > 0 %}
+  <section data-ui-panel data-theme="{{ include.theme | default: 'wash-pink' }}">
+    <div data-ui-wrapper="xnarrow">
+      <h3 class="t-align-center t-heading">What our customers are saying</h3>
+      {%- assign testimonial = site.data.testimonials.quotes | sample -%}
+      <blockquote class="t-align-center padding-top-narrow">
+        {{ testimonial.quote | markdownify }}
+        {%- if testimonial.attribution -%}
+          <cite class="display-block t-scale-epsilon padding-top-xnarrow">
+            - {{ testimonial.attribution }}
+          </cite>
+        {%- endif -%}
+      </blockquote>
+    </div>
+  </section>
+{% endif %}
