@@ -2,7 +2,7 @@
 @import 'libs';
 @import 'helpers';
 
-$shade-value: 10;
+$shade-value: 15;
 
 // --- Base Palette ---
 // -> PRIVATE, do not use outside this settings file unless you have a really really good reason
@@ -21,63 +21,63 @@ $pink: #f035a6;
 $themes: (
   'default': (
     'text-primary': $dark-blue,
-    'text-secondary': #666d7d,
-    'text-tertiary': darken($gray, 30),
+    'text-secondary': shade($gray, 60),
+    'text-tertiary': shade($gray, 30),
     'highlight': $pink,
     'accent': $turquoise,
     'bg': $white,
     'island': $white,
     'well': $gray,
-    'border': darken($gray, 10),
-    'shadow': darken($gray, 30)
+    'border': shade($gray, 10),
+    'shadow': shade($gray, 30)
   ),
   'reverse': (
     'text-primary': $white,
-    'text-secondary': lighten($dark-blue, 60),
-    'text-tertiary': lighten($dark-blue, 40),
+    'text-secondary': tint($dark-blue, 90),
+    'text-tertiary': tint($dark-blue, 60),
     'highlight': $yellow,
     'accent': $turquoise,
     'bg': $dark-blue,
-    'island': lighten($dark-blue, 5),
-    'well': darken($dark-blue, 10),
-    'border': darken($dark-blue, 20),
-    'shadow': darken($dark-blue, 30)
+    'island': tint($dark-blue, 5),
+    'well': shade($dark-blue, 20),
+    'border': shade($dark-blue, 80),
+    'shadow': shade($dark-blue, 40)
   ),
   'wash-turquoise': (
     'text-primary': $white,
     'text-secondary': $dark-blue,
-    'text-tertiary': darken($turquoise, 40),
+    'text-tertiary': shade($turquoise, 40),
     'highlight': $white,
     'accent': $dark-blue,
     'bg': $turquoise,
-    'island': lighten($turquoise, 10),
-    'well': darken($turquoise, 10),
-    'border': darken($turquoise, 20),
-    'shadow': darken($turquoise, 30)
+    'island': tint($turquoise, 10),
+    'well': shade($turquoise, 10),
+    'border': shade($turquoise, 20),
+    'shadow': shade($turquoise, 30)
   ),
   'wash-blue': (
     'text-primary': $white,
     'text-secondary': $dark-blue,
-    'text-tertiary': darken($blue, 30),
+    'text-tertiary': shade($blue, 30),
     'highlight': $white,
     'accent': $dark-blue,
     'bg': $blue,
-    'island': lighten($blue, 10),
-    'well': darken($blue, 10),
-    'border': darken($blue, 20),
-    'shadow': darken($blue, 30)
+    'island': tint($blue, 10),
+    'well': shade($blue, 10),
+    'border': shade($blue, 20),
+    'shadow': shade($blue, 30)
   ),
   'wash-pink': (
     'text-primary': $white,
     'text-secondary': $dark-blue,
-    'text-tertiary': darken($pink, 30),
+    'text-tertiary': shade($pink, 30),
     'highlight': $white,
     'accent': $dark-blue,
-    'bg': $pink,
-    'island': lighten($pink, 10),
-    'well': darken($pink, 10),
-    'border': darken($pink, 20),
-    'shadow': darken($pink, 30)
+    'bg': tint($pink, 30),
+    'island': tint($pink, 10),
+    'well': shade($pink, 10),
+    'border': shade($pink, 20),
+    'shadow': shade($pink, 30)
   )
 );
 
@@ -89,8 +89,8 @@ $themes: (
 //    - STRING/LIST $colors: the name(s) of the color roles, e.g. 'highlight'
 //    - STRING $name (optional): the name of the theme, e.g. 'default', 'dark'
 //    - NUMBER $grade (optional): 'grade' (as in 'gradation') the color to be darker or lighter
-//      -> pass in a negative number to darken the color
-//      -> pass in a positive number to lighten the color
+//      -> pass in a negative number to shade the color
+//      -> pass in a positive number to tint the color
 // -> PUBLIC
 // -> USAGE:
 //    - color: color('text-primary');
@@ -102,7 +102,7 @@ $themes: (
   // grab the color value from the $themes map
   $value: map-get($theme, $color);
 
-  // lighten or darken the color
+  // tint or shade the color
   @if ($grade < 0) {
     $value: shade($value, abs($grade));
   } 
