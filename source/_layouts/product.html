@@ -16,7 +16,9 @@ active: products
         
         <!-- product image -->
         <div data-ui-columns-main class="gutter">
-          <img class="border" src="{{ page.image }}" alt="The Petting Zoo: {{ page.title }}" style="width: 100%;">
+          <div data-ui-aspect class="border">
+            <img data-ui-aspect-image src="{{ page.image }}" alt="The Petting Zoo: {{ page.title }}">
+          </div>
         </div>
 
         <!-- description -->
@@ -30,7 +32,7 @@ active: products
               <!-- item number -->
               {%- if page.item_number -%}
                 <div data-ui-stats-group class="gutter">
-                  <dt data-ui-stats-item class="t-scale-zeta t-weight-bold">
+                  <dt data-ui-stats-item class="t-heading t-scale-zeta t-weight-bold t-case-upper c-text-tertiary">
                     Item Number:
                   </dt>
                   <dd data-ui-stats-item clas="t-scale-zeta">
@@ -42,11 +44,11 @@ active: products
               <!-- size -->
               {%- if page.size -%}
                 <div data-ui-stats-group class="gutter">
-                  <dt data-ui-stats-item class="t-scale-zeta t-weight-bold">
+                  <dt data-ui-stats-item class="t-heading t-scale-zeta t-weight-bold t-case-upper c-text-tertiary">
                     Size:
                   </dt>
                   <dd data-ui-stats-item clas="t-scale-zeta">
-                    {{ page.size }}
+                    {{ page.size }} inches
                   </dd>
                 </div>
               {%- endif -%}
@@ -54,7 +56,7 @@ active: products
               <!-- color -->
               {%- if page.color -%}
                 <div data-ui-stats-group class="gutter">
-                  <dt data-ui-stats-item class="t-scale-zeta t-weight-bold">
+                  <dt data-ui-stats-item class="t-heading t-scale-zeta t-weight-bold t-case-upper c-text-tertiary">
                     Color:
                   </dt>
                   <dd data-ui-stats-item clas="t-scale-zeta">
@@ -73,7 +75,7 @@ active: products
   {%- if page.catalog -%}
     <section data-ui-panel class="c-well border-top">
       <div data-ui-wrapper="wide">
-        <h2 class="padding-bottom">Catalogs featuring this product</h2>
+        <h2 class="t-heading padding-bottom"><strong>Catalogs</strong> featuring this product</h2>
         <ul data-ui-gallery>
           {%- for catalog in site.categories.catalogs -%}
             {%- if page.catalog contains catalog.unique_id -%}
@@ -99,7 +101,7 @@ active: products
   {%- if page.product_collections -%}
     <section data-ui-panel class="c-well border-top">
       <div data-ui-wrapper="wide">
-        <h2 class="padding-bottom">Collections featuring this product</h2>
+        <h2 class="t-heading padding-bottom"><strong>Collections</strong> featuring this product</h2>
         <ul data-ui-gallery>
           {%- for collection in site.categories.product_collections -%}
             {%- if page.product_collections contains collection.unique_id -%}

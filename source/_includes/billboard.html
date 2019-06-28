@@ -7,21 +7,26 @@
   image - STRING (optional): url or path of the banner image
   button_label - STRING (optional): the label of the button
   button_url - STRING (optional): the url of the button
+  button_icon - STRING (optional): icon to place on the button
   el - STRING (optional): the containing element. defaults to header.
   alt - STRING (optional): an alt tag for the image. defaults to the title.
 {%- endcomment -%}
 {%- assign el = include.el | default: 'header' -%}
 {%- assign button_label = include.button_label | default: 'Download the PDF' -%}
+{%- assign button_icon = include.button_icon | default: 'pdf' -%}
 
 <{{ el }} data-ui-billboard class="border-bottom" style="background-image: url('{{ include.image }}');">
-  <h1 data-ui-billboard-title class="padding-x-outside padding-top-wide">{{ include.title }}</h1>
   {%- if include.button_url -%}
     <div data-ui-billboard-action class="padding-x-outside padding-bottom">
       {%- include button_link.html
         label=button_label 
         url=include.button_url
+        icon-left=button_icon
       -%}
     </div>
   {%- endif -%}
   <img data-ui-billboard-image src="{{ include.image }}" alt="{{ include.alt  | default: include.title }}">
 </{{ el }}>
+{%- if include.title -%}
+  <h1 class="padding-x-outside padding-top t-align-center">{{ include.title }}</h1>
+{%- endif -%}

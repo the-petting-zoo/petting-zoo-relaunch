@@ -37,10 +37,10 @@ $themes: (
     'text-tertiary': tint($dark-blue, 60),
     'highlight': $yellow,
     'accent': $turquoise,
-    'bg': $dark-blue,
-    'island': tint($dark-blue, 5),
-    'well': shade($dark-blue, 20),
-    'border': shade($dark-blue, 80),
+    'bg': tint($dark-blue, 5),
+    'island': tint($dark-blue, 10),
+    'well': shade($dark-blue, 10),
+    'border': shade($dark-blue, 30),
     'shadow': shade($dark-blue, 40)
   ),
   'wash-turquoise': (
