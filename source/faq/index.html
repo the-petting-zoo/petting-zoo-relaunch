@@ -1,0 +1,18 @@
+---
+layout: default
+title: Frequently Asked Questions
+---
+
+<article data-ui-panel="">
+  <h1 class="t-align-center">{{ page.title }}</h1>
+  <div data-ui-wrapper="narrow" class="padding-top">
+    <dl class=" list-undecorated padding-y-between">
+      {%- for item in site.data.faq.faq -%}
+      <div>
+        <dt class="t-heading t-font-body t-weight-bold t-scale-delta">{{ item.question }}</dt>
+        <dd class="padding-top-xxnarrow">{{ item.answer }}</dd>
+      </div>
+      {%- endfor -%}
+    </dl>
+  </div>
+</article>

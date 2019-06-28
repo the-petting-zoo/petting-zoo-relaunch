@@ -37,6 +37,15 @@ h6,
   strong {
     @include font('bold');
   }
+
+  a {
+    color: inherit;
+
+    &:hover,
+    &:active {
+      color: inherit;
+    }
+  }
 }
 
 h1,
@@ -252,7 +261,7 @@ cite {
   &.t-heading,
   .t-font-display &,
   &.t-font-display {
-  @include font('display');
+    @include font('display');
   }
 }
 

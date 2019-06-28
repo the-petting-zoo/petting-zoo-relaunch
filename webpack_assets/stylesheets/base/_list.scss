@@ -33,6 +33,13 @@ li {
   padding: 0;
 }
 
+dl.list-undecorated {
+  dt,
+  dd {
+    margin-left: 0;
+  }
+}
+
 .list-inline {
   display: block;
   list-style: none;
