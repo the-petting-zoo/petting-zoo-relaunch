@@ -1,7 +1,7 @@
 # Publish Settings
 backend:
   name: git-gateway
-  branch: 'styles-cleanup' # Change to your local branch for testing. 
+  branch: 'dev' # Change to your local branch for testing. 
 publish_mode: editorial_workflow
 
 # Media
@@ -233,7 +233,7 @@ collections:
             widget: "list"
             fields:
               - {label: "Quote", name: "quote", widget: "markdown"}
-              - {label: "Attribution", name: "attribution", widget: "string", hint: "The name of the person who said this quote."}
+              - {label: "Attribution", name: "attribution", widget: "string", required: false, hint: "The name of the person who said this quote."}
 
   # FAQ
   - name: "faq"
