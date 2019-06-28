@@ -1,8 +1,8 @@
 navigation_items:
   - label: About us
+    submenu: []
     url: /about/
   - label: Products
-    url: /products/
     submenu:
       - label: Seasonal
         url: /topics/seasonal
@@ -16,6 +16,7 @@ navigation_items:
         url: /catalogs/
       - label: Custom
         url: /custom/
+    url: /products/
   - label: News
     url: /news/
   - label: Contact us
