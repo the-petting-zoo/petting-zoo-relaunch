@@ -16,7 +16,7 @@ button_label - STRING (optional): the label for the button
 
     <!-- banner image -->
     <a data-ui-aspect="4x1" class="c-bg border" href="{{ include.collection.url }}">
-      <img data-ui-aspect-image src="{{ cover }}" alt="{{ include.collection.title }}">
+      <img data-ui-aspect-image="cover" src="{{ cover }}" alt="{{ include.collection.title }}">
     </a>
 
     <!-- title and button -->
@@ -45,6 +45,7 @@ button_label - STRING (optional): the label for the button
             {{ product.catalog }}
           {%- endif -%}
         {%- endcapture -%}
+        
         {%- if type contains include.collection.unique_id -%}
           {%- if product.featured -%}
             <li data-ui-gallery-item>
