@@ -30,7 +30,7 @@ active: products
   {%- endif -%}
   <section data-ui-panel class="padding-top">
     <div data-ui-wrapper="wide">
-      <h2 class="t-scale-zeta t-align-center c-highlight padding-bottom">Products</h2>
+      <h2 class="t-heading t-scale-zeta t-align-center c-highlight padding-bottom t-case-upper t-weight-bold">Products</h2>
       <ul data-ui-gallery="small">
         {%- for product in site.categories.products -%}
           {%- if product.product_collections contains page.unique_id -%}
@@ -72,6 +72,7 @@ active: products
                 title=collection.title
                 image=collection.cover
                 url=collection.url
+                image_size='cover'
               -%}
             </li>
           {%- endunless -%}
@@ -83,3 +84,5 @@ active: products
     </div>
   </nav>
 {%- endunless -%}
+
+{% include testimonials.html %}

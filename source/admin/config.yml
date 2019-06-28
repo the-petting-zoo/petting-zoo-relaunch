@@ -221,14 +221,19 @@ collections:
   # Testimonials
   - name: "testimonials"
     label: "Testimonials"
-    folder: "source/_posts/testimonials"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
-      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
+    editor:
+      preview: false
+    files: 
+      - label: "Testimonials"
+        name: "testimonials"
+        file: "source/_data/testimonials.yml"
+        fields:
+          - name: "quotes"
+            label: "Quotes"
+            widget: "list"
+            fields:
+              - {label: "Quote", name: "quote", widget: "markdown"}
+              - {label: "Attribution", name: "attribution", widget: "string", required: false, hint: "The name of the person who said this quote."}
 
   # FAQ
   - name: "faq"

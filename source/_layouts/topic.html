@@ -17,7 +17,7 @@ active: products
               title=catalog.title
               image=catalog.cover
               url=catalog.url
-              aspect='catalog'
+              image_size='cover'
             -%}
           </li>
         {%- endif -%}
@@ -37,7 +37,7 @@ active: products
 {%- comment -%} If there are more than 0, show a gallery of them here {%- endcomment -%}
 {%- unless topics_length == '0' -%}
   <nav data-ui-panel class="border-top c-well">
-    <div data-ui-wrapper="wide">
+    <div data-ui-wrapper>
       <h2 class="t-align-center padding-bottom">More of our catalog topics</h2>
       <ul data-ui-gallery="small">
         {%- for collection in site.categories.catalog_topics -%}
@@ -47,6 +47,7 @@ active: products
                 title=collection.title
                 image=collection.image
                 url=collection.url
+                image_size="cover"
               -%}
             </li>
           {%- endunless -%}
@@ -58,3 +59,5 @@ active: products
     </div>
   </nav>
 {%- endunless -%}
+
+{% include testimonials.html %}

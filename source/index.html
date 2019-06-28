@@ -53,7 +53,7 @@ title: home
     {{ site.data.customer_photos.photos | size }}
   {%- endcapture -%}
   {%- unless customer_photos_length == '0' -%}
-    <section data-ui-panel class="border-top">
+    <section data-ui-panel class="c-well border-top">
       {%- for intro in site.categories.customer_photos -%}
         <header>
           <h2 class="t-scale-alpha t-align-center padding-bottom-narrow">{{ intro.display_title }}</h2>
@@ -66,7 +66,8 @@ title: home
         <ul data-ui-gallery style="--gutter: var(--space-xnarrow);">
           {%- for photo in site.data.customer_photos.photos limit: 16 -%}
           <li data-ui-gallery-item>
-            <a data-ui-aspect="1x1" class="link-undecorated border" href="{{ photo.url }}" target="_blank">
+            <a data-ui-aspect="1x1" class="t-link-undecorated
+title:  border" href="{{ photo.url }}" target="_blank">
               <img data-ui-aspect-image src="{{ photo.source }}" alt="The Petting Zoo: {{ photo.alt | default: 'Instagram photo' }}">
             </a>
           </li>

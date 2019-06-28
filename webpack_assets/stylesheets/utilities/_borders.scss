@@ -62,6 +62,13 @@
   }
 }
 
+.border-highlight-hover {
+  &:hover,
+  &:active {
+    @include color('border-color', 'highlight');
+  }
+}
+
 // --- Rounded corners ---
 
 .border-round {

@@ -12,8 +12,8 @@ $type-size-default: 1rem !default;
 // global line heights
 $type-leading: (
   'xtight': 1,
-  'tight': 1.25,
-  'default': 1.6
+  'tight': 1.3,
+  'default': 1.8
 );
 
 @function type-leading($height: 'default') {

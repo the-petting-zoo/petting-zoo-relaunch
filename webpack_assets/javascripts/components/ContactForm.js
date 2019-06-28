@@ -17,7 +17,7 @@ export default Vue.component('contact-form', {
         token: '9e785bffbf9337d08052b2b07bb8ef67'
       },
       // @TODO pull in PZP submit url
-      mailChimpUrl: 'https://gpoba.us8.list-manage.com/subscribe/post?u=0eb271cf853e657ebe61f0e9f&amp;id=a142a0b83f',
+      mailChimpUrl: 'https://pettingzooplush.us8.list-manage.com/subscribe/post?u=63768868a43809514e63f3953&amp;id=0caa307af8',
       formContent: {},
       sent: false,
       error: false,
@@ -35,8 +35,6 @@ export default Vue.component('contact-form', {
   },
   methods: {
     validateForm: function (event) {
-      console.log(`${this.simpleForm.url}${this.simpleForm.ajax}`)
-
       this.errors = []
       event.preventDefault()
 
@@ -91,8 +89,6 @@ export default Vue.component('contact-form', {
       )
     },
     subscribe () {
-      // @JAY 
-      // This will need to be updated with whatever fields PZP's MC has.
       const params = {
         EMAIL: this.formContent.email,
         FNAME: this.formContent.name.split(' ')[0],
@@ -177,7 +173,7 @@ export default Vue.component('contact-form', {
             class="form-textarea"
             cols="40"
             name="message"
-            rows="6"
+            rows="6"  
             required
           ></textarea>
         </div>

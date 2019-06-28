@@ -22,7 +22,8 @@ current-url - STRING: pass in the url of the current page from the layout (e.g. 
     <div data-ui-wrapper data-ui-main-nav-wrapper>
       
       <!-- logo (home link) -->
-      <a data-ui-main-nav-logo class="link-undecorated" href="/">
+      <a data-ui-main-nav-logo class="t-link-undecorated
+title: " href="/">
         <img class="display-inline-block" src="{{ site.assets.img }}{{ site.data.assets.logo.main }}" alt="The Petting Zoo">
       </a>
       
@@ -46,7 +47,7 @@ current-url - STRING: pass in the url of the current page from the layout (e.g. 
               {%- endcapture -%}
       
               <li class="no-margin-bottom">
-                <a class="t-font-body {{ color }}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
+                <a class="t-font-body t-link-undecorated {{ color }}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
                 {%- if item.submenu -%}
                   <ul class="padding-top-xnarrow padding-left-xnarrow margin-y-between-xnarrow list-undecorated">
                     {%- for submenu_item in item.submenu -%}
@@ -61,7 +62,7 @@ current-url - STRING: pass in the url of the current page from the layout (e.g. 
                       {%- endcapture -%}
       
                       <li class="no-margin-bottom">
-                        <a class="t-scale-zeta t-font-body {{ color }}" href="{{ submenu_item.url }}">{{ submenu_item.label }}</a>
+                        <a class="t-scale-zeta t-font-body t-link-undecorated {{ color }}" href="{{ submenu_item.url }}">{{ submenu_item.label }}</a>
                       </li>
                     {%- endfor -%}
                   </ul>
@@ -93,12 +94,12 @@ current-url - STRING: pass in the url of the current page from the layout (e.g. 
           {%- else -%}
           <li data-ui-main-nav-item="split" class="c-text-primary">
           {%- endunless -%}
-            <a class="t-font-body {{ color }}{% if item.submenu %} hide@js{% endif %}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
+            <a class="t-font-body t-link-undecorated {{ color }}{% if item.submenu %} hide@js{% endif %}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
             {%- if item.submenu -%}
               <button-dropdown label="{{ item.label }}" button-styles="t-font-body{% if include.current_url == item.url %} {{ color }}{% else %} c-text-primary{% endif %}" class="show@js">
                 <ul class="margin-y-between-xnarrow list-undecorated">
                   <li class="no-margin-bottom">
-                    <a class="t-font-body {{ color }}" href="{{ item.url | relative_url }}"><strong>See all {{ item.label | downcase }}</strong></a>
+                    <a class="t-font-body t-link-undecorated {{ color }}" href="{{ item.url | relative_url }}"><strong>See all {{ item.label | downcase }}</strong></a>
                   </li>
                   {%- for submenu_item in item.submenu -%}
                     
@@ -112,7 +113,7 @@ current-url - STRING: pass in the url of the current page from the layout (e.g. 
                     {%- endcapture -%}
       
                     <li class="no-margin-bottom">
-                      <a class="t-font-body {{ color }}" href="{{ submenu_item.url }}">{{ submenu_item.label }}</a>
+                      <a class="t-font-body t-link-undecorated {{ color }}" href="{{ submenu_item.url }}">{{ submenu_item.label }}</a>
                     </li>
                   {%- endfor -%}
                 </ul>

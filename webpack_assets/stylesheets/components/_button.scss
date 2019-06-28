@@ -30,7 +30,7 @@ $button-icon-offset: 0.3em; // amount the icon should rest 'outside' the normal 
   --color-active: var(#{color-property($bg-color, 'dark')});
   --color-shadow: var(#{color-property('shadow')});
 
-  @include font(display, $weight: bold);
+  @include font(display);
   @include transition();
   background-color: color($bg-color);
   background-color: var(--color);
@@ -63,6 +63,11 @@ $button-icon-offset: 0.3em; // amount the icon should rest 'outside' the normal 
 
   &:active {
     background-color: var(--color-active);
+  }
+
+  // remove the marker if the button is in a details/summary elements
+  &::-webkit-details-marker {
+    display: none;
   }
 }
 
@@ -103,6 +108,11 @@ $button-icon-offset: 0.3em; // amount the icon should rest 'outside' the normal 
   position: relative;
   text-decoration: none;
   text-shadow: none;
+
+  // remove the marker if the button is in a details/summary elements
+  &::-webkit-details-marker {
+    display: none;
+  }
 }
 
 [data-ui-button-incognito~="active"] {
