@@ -82,7 +82,7 @@ active: products
                   title=catalog.title
                   image=catalog.cover
                   url=catalog.url
-                  aspect='catalog'
+                  image_size='cover'
                 -%}
               </li>
             {%- endif -%}
@@ -108,6 +108,7 @@ active: products
                   title=collection.title
                   image=collection.image
                   url=collection.url
+                  image_size='cover'
                 -%}
               </li>
             {%- endif -%}

@@ -12,7 +12,6 @@
 {%- endcomment -%}
 {%- assign el = include.el | default: 'header' -%}
 {%- assign button_label = include.button_label | default: 'Download the PDF' -%}
-{%- assign alt = include.alt | default: include.title -%}
 
 <{{ el }} data-ui-billboard class="border-bottom" style="background-image: url('{{ include.image }}');">
   <h1 data-ui-billboard-title class="padding-x-outside padding-top-wide">{{ include.title }}</h1>
@@ -24,5 +23,5 @@
       -%}
     </div>
   {%- endif -%}
-  <img data-ui-billboard-image src="{{ include.image }}" alt="{{ include.alt }}">
+  <img data-ui-billboard-image src="{{ include.image }}" alt="{{ include.alt  | default: include.title }}">
 </{{ el }}>

@@ -27,7 +27,7 @@ $themes: (
     'accent': $turquoise,
     'bg': $white,
     'island': $white,
-    'well': $gray,
+    'well': tint($gray, 20),
     'border': shade($gray, 10),
     'shadow': shade($gray, 30)
   ),
