@@ -199,7 +199,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "date", format: "MMM Do YY", hint: "This is the date displayed for this news post"}
+      - {label: "Publish Date", name: "date", widget: "date", format: "MMM Do YY", hint: "This is the date displayed for this news post", required: false}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}
       - {label: "Body", name: "body", widget: "markdown"}
 
