@@ -1,0 +1,31 @@
+/*
+ * The Petting Zoo website admin styles
+ * -> used the style the preview pane in Netlify CMS
+ * https://github.com/the-petting-zoo/
+ *
+ * Designed & built by Bivee, Inc.
+ * https://bivee.co
+ * https://github.com/biveeco
+ *
+ */
+
+// -- Base styles ---
+@import "base/html";
+@import "base/list";
+@import "base/media";
+@import "base/type";
+
+// --- Utilities ---
+@import "utilities/borders";
+@import "utilities/color";
+@import "utilities/spacing";
+
+// --- UI components ---
+@import "components/fluid_aspect_ratio";
+@import "components/gallery";
+@import "components/stats";
+
+// add a space between all rendered elements
+* + * {
+  margin-top: 1em !important;
+}

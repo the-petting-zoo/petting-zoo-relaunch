@@ -1,6 +1,4 @@
 ---
-category: blog
-layout: default
 published: true
 title: Panama City Beach Florida Show
 ---

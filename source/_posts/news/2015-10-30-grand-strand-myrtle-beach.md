@@ -1,7 +1,6 @@
 ---
-layout: default
-title: "Grand Strand Myrtle Beach"
-category: "blog"
+title: Grand Strand Myrtle Beach
+published: true
 tags:
   - shows
 ---

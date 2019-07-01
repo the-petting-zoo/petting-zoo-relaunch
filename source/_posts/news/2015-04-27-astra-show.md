@@ -1,10 +1,7 @@
 ---
-category: blog
-layout: default
 published: true
-title: "Astra Show!"
+title: Astra Show!
 ---
-
 ![Astra Show!](/static/uploads/blog-ASTRA.jpg)
 
 Will you be attending ASTRA's 2015 Marketplace & Academy

@@ -66,6 +66,8 @@ collections:
   - name: "catalog_topics"
     label: "Catalog Topics"
     folder: "source/_posts/inventory/catalog_topics"
+    editor:
+      preview: false
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
@@ -82,6 +84,8 @@ collections:
   - name: "catalogs"
     label: "Catalogs"
     folder: "source/_posts/inventory/catalogs"
+    editor:
+      preview: false
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
@@ -113,6 +117,8 @@ collections:
   - name: "product_collections"
     label: "Product Collections"
     folder: "source/_posts/inventory/product_collections"
+    editor:
+      preview: false
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
@@ -198,9 +204,7 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "date", format: "MMM Do YY", hint: "This is the date displayed for this news post"}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}
       - {label: "Body", name: "body", widget: "markdown"}
 
@@ -211,11 +215,9 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
       - {label: "Name", name: "title", widget: "string"}
       - {label: "Job Title", name: "job_title", widget: "string"}
       - {label: "Email", name: "email", widget: "string"}
-      - {label: "Portrait", name: "portrait", allow_multiple: false, widget: "image", required: false}
       - {label: "Published Status", name: "published", widget: "hidden", default: true}      
   
   # Testimonials

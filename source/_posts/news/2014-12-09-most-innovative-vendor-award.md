@@ -1,11 +1,7 @@
 ---
-category: blog
-layout: default
 published: true
-title: "Most Innovative Vendor Award!"
+title: Most Innovative Vendor Award!
 ---
-
-
 ![Most Innovative Vendor Award](/static/uploads/blog-John_Tom_Award.jpg)
 
 John Lizewski &amp; Tom Mulvaney Pictured*

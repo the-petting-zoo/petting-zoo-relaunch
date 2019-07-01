@@ -1,7 +1,6 @@
 ---
-layout: default
 title: "Ocean City Resort Gift Expo"
-category: "blog"
+published: true
 tags:
   - shows
 ---
