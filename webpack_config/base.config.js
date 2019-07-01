@@ -16,6 +16,7 @@ const commonConfig = {
   mode: 'development',
   entry: {
     styles: './webpack_assets/stylesheets/main.scss',
+    adminStyles: './webpack_assets/stylesheets/admin.scss',
     main: './webpack_assets/javascripts/main.js'
   },
   resolve: {

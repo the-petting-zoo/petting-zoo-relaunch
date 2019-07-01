@@ -66,6 +66,8 @@ collections:
   - name: "catalog_topics"
     label: "Catalog Topics"
     folder: "source/_posts/inventory/catalog_topics"
+    editor:
+      preview: false
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
@@ -82,6 +84,8 @@ collections:
   - name: "catalogs"
     label: "Catalogs"
     folder: "source/_posts/inventory/catalogs"
+    editor:
+      preview: false
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
@@ -113,6 +117,8 @@ collections:
   - name: "product_collections"
     label: "Product Collections"
     folder: "source/_posts/inventory/product_collections"
+    editor:
+      preview: false
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields for each document, usually in front matter
