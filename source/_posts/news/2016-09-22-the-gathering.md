@@ -1,6 +1,4 @@
 ---
-category: blog
-layout: default
 published: true
 title: The Gathering
 ---
