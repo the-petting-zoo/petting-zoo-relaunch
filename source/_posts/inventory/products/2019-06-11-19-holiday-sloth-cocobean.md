@@ -3,7 +3,6 @@ layout: product
 published: true
 title: 19" Holiday Sloth CocoBean
 featured: true
-sku: '919244'
 color: Brown
 image: /static/uploads/19”-holiday-sloth-coco-bean-919244.jpg
 catalog:
