@@ -1,8 +1,9 @@
 ---
 layout: product
 published: true
-size: 17
 title: Rainbow Unicorn Assortment
+featured: true
+size: 17
 item_number: 7184X8
 color: Rainbow
 image: /static/uploads/16”_rainbow_unicorn_assortment_pink_7184x8.jpg
