@@ -12,10 +12,10 @@ email: "customercare@pettingzooplush.com"
 social:
   - platform: Facebook
     url: "https://www.facebook.com/pages/The-Petting-Zoo/564056906971473"
-    icon: "fb"
+    icon: "social-facebook"
   - platform: Instagram
     url: "https://www.instagram.com/pettingzooplush/"
-    icon: "instagram"
+    icon: "social-instagram"
 
 # for the "subject" dropdown on the contact form
 # asks the user to specify what their question is

@@ -324,12 +324,29 @@ collections:
           - name: "email"
             label: "Email"
             widget: "string"
+          - name: "contact_subjects"
+            label: "Contact form subject dropdown"
+            hint: "The contact form has a dropdown button with subjects users can choose for the email they send. You can edit those options here."
+            widget: "object"
+            fields: 
+              - {label: "Question", name: "question", widget: "string"}
+              - label: "Answers"
+                name: "answers"
+                widget: "list"
+                fields:
+                  - {label: "Option", name: "option", widget: "string", hint: "Describe the email subject in first-person, e.g. 'I'd like to place an order.'"}
+                  - {label: "Value", name: "value", widget: "string", hint: "A keyword the form uses to send information. Use a 1-2 word summary of the Option field with no spaces, e.g. 'order_question'"}
+          - name: "order_form"
+            label: "Order Form"
+            widget: "file"
+            allow_multiple: false
+            hint: "The order form PDF that users can download from the Contact page."
           - name: "social"
             label: "Social Media Platform"
             widget: "list"
             fields: 
               - {label: "Platform name", name: "platform", widget: "string"}
               - {label: "URL", name: "url", widget: "string"}
-              - {label: "Icon", name: "icon", widget: "string"}
+              - {label: "Icon", name: "icon", widget: "string", required: false}
           
             

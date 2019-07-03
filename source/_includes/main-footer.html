@@ -22,8 +22,9 @@ hide_contact_form - BOOLEAN: pass in 'true' to hide the contact form. Displayed 
               {% for channel in site.data.contact.social %}
                 <li class="display-inline-block gutter">
                   <a href="{{ channel.url }}" class="display-inline-block">
-                    {% capture id %}social-{{ channel.icon }}{% endcapture %}
-                    {% include icon.html id=id space="right" size="small" %}
+                    {% if channel.icon %}
+                      {% include icon.html id=channel.icon space="right" size="small" %}
+                    {% endif %}
                     {{ channel.platform }}
                   </a>
                 </li>
