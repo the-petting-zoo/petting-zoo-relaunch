@@ -267,8 +267,8 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     summary: "{{label}}"
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
-      - {label: "Published Status", name: "published", widget: "hidden", default: true}     
+      - {label: "Published Status", name: "published", widget: "hidden", default: true} 
+      - {label: "Label", name: "label", widget: "hidden"}
       - {label: "Title", name: "display_title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
