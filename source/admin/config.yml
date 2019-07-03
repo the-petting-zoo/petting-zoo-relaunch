@@ -320,15 +320,10 @@ collections:
               - {label: "Zip", name: "zip", widget: "string"}
           - name: "phone"
             label: "Phone"
-            widget: "object"
-            fields: 
-              - {label: "Office", name: "office", widget: "string"}
-              - {label: "Fax", name: "fax", widget: "string"}
+            widget: "string"
           - name: "email"
             label: "Email"
-            widget: "object"
-            fields: 
-              - {label: "Sales", name: "sales", widget: "string"}
+            widget: "string"
           - name: "social"
             label: "Social Media Platform"
             widget: "list"
