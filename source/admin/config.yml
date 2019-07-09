@@ -271,6 +271,9 @@ collections:
       - {label: "Label", name: "label", widget: "hidden"}
       - {label: "Title", name: "display_title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Categories"
+        name: "categories"
+        widget: "hidden"
 
   # Main Navigation
   - name: "nav"

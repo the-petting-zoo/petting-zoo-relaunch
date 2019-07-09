@@ -3,7 +3,9 @@ layout: default
 display_title: Our Story
 label: Home page introduction
 published: true
-category: home
+categories: 
+  - home
+  - intro
 ---
 
 ## **For over 22 years**, The Petting Zoo has consistently offered the highest quality wholesale plush at the greatest value.
