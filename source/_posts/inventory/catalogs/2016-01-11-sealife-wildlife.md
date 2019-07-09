@@ -1,6 +1,5 @@
 ---
 published: true
-show_products: true
 title: Sealife Wildlife
 unique_id: sealife-wildlife
 pdf: /static/uploads/Sealifewildlife_2017_NoPrice.pdf

@@ -30,13 +30,16 @@
         </li>
       {%- endunless -%}
     {%- endfor -%}
+    <!-- dummy list item to prevent a single item from becoming huge on large screens -->
+    <li data-ui-gallery-item class="hide-below@small"></li>
+    <li data-ui-gallery-item class="hide-below@small"></li>
+    <li data-ui-gallery-item class="hide-below@small"></li>
   {%- endunless -%}
 </ul>
 
 <!-- topics -->
 {%- if include.show-topics -%}
-  {%- assign topics_length = site.categories.catalog_topics | size -%}
-  {%- unless topics_length == 0 -%}
+  {%- unless site.categories.catalog_topics.size == 0 -%}
     {%- for topic in site.categories.catalog_topics -%}
       <section class="margin-top padding-top border-top">
         <h{{ subhead-level }} class="t-scale-{{ subhead-scale }} t-align-center padding-bottom">
@@ -57,10 +60,10 @@
               </li>
             {%- endif -%}
           {%- endfor -%}
-          {%- if topics_length <= 3 -%}
             <!-- dummy list item to prevent a single item from becoming huge on large screens -->
             <li data-ui-gallery-item class="hide-below@small"></li>
-          {%- endif -%}
+            <li data-ui-gallery-item class="hide-below@small"></li>
+            <li data-ui-gallery-item class="hide-below@small"></li>
         </ul>
       </section>
     {%- endfor -%}
