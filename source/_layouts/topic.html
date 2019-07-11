@@ -10,14 +10,16 @@ active: products
     <ul data-ui-gallery>
       {%- assign id = page.unique_id | downcase -%}
       {%- for catalog in site.categories.catalogs -%}
-      {%- assign topic = catalog.topic | downcase -%}
+        {%- assign topic = catalog.topic | downcase -%}
+        {%- assign thumbnail = catalog.thumbnail | default: catalog.cover -%}
         {%- if topic contains id -%}
           <li data-ui-gallery-item>
             {%- include card.html 
               title=catalog.title
-              image=catalog.cover
+              image=thumbnail
               url=catalog.url
-              image_size='cover'
+              aspect="catalog"
+              image_size="cover"
             -%}
           </li>
         {%- endif -%}
@@ -39,7 +41,7 @@ active: products
   <nav data-ui-panel class="border-top c-well">
     <div data-ui-wrapper>
       <h2 class="t-align-center padding-bottom">More of our catalog topics</h2>
-      <ul data-ui-gallery="small">
+      <ul data-ui-gallery>
         {%- for collection in site.categories.catalog_topics -%}
           {%- unless collection.title == page.title -%}
             <li data-ui-gallery-item>
