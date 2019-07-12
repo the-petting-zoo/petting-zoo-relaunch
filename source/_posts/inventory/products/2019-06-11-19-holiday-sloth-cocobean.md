@@ -1,9 +1,10 @@
 ---
 layout: product
 published: true
-title: 19" Holiday Sloth CocoBean
+title: Holiday Sloth CocoBean
 featured: true
 color: Brown
+size: 19
 image: /static/uploads/19”-holiday-sloth-coco-bean-919244.jpg
 catalog:
   - Trov
