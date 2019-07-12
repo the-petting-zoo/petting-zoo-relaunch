@@ -1,10 +1,11 @@
 ---
 layout: product
 published: true
-title: 14" Snugglerz Sloth
+title: Snugglerz Sloth
 featured: true
 sku: '718553'
 color: Tan
+size: 14
 image: /static/uploads/snugglerslothiso2.jpg
 catalog:
   - sealife-wildlife
