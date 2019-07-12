@@ -44,10 +44,11 @@ active: products
       <ul data-ui-gallery>
         {%- for collection in site.categories.catalog_topics -%}
           {%- unless collection.title == page.title -%}
+            {%- assign thumbnail = collection.thumbnail | default: collection.image -%}
             <li data-ui-gallery-item>
               {%- include card.html 
                 title=collection.title
-                image=collection.image
+                image=thumbnail
                 url=collection.url
                 image_size="cover"
               -%}

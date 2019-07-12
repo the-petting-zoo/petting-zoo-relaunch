@@ -37,10 +37,11 @@ active: products
             {%- capture title -%}
               {% if product.size %}{{ product.size }}" {% endif %}{{ product.title }}
             {%- endcapture -%}
+            {%- assign thumbnail = product.thumbnail | default: product.image -%}
             <li data-ui-gallery-item>
               {%- include card.html 
                 title=title
-                image=product.image
+                image=thumbnail
                 url=product.url
               -%}
             </li>
@@ -67,10 +68,11 @@ active: products
       <ul data-ui-gallery="small">
         {%- for collection in site.categories.product_collections -%}
           {%- unless collection.title == page.title -%}
+            {%- assign thumbnail = collection.thumbnail | default: collection.cover -%}
             <li data-ui-gallery-item>
               {%- include card.html 
                 title=collection.title
-                image=collection.cover
+                image=thumbnail
                 url=collection.url
                 image_size='cover'
               -%}

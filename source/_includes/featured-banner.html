@@ -48,10 +48,11 @@ button_label - STRING (optional): the label for the button
         
         {%- if type contains include.collection.unique_id -%}
           {%- if product.featured -%}
+            {%- assign thumbnail = product.thumbnail | default: product.image -%}
             <li data-ui-gallery-item>
               {%- include card.html 
                 title=product.title
-                image=product.image
+                image=thumbnail
                 url=product.url
               -%}
             </li>

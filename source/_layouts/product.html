@@ -79,10 +79,11 @@ active: products
         <ul data-ui-gallery>
           {%- for catalog in site.categories.catalogs -%}
             {%- if page.catalog contains catalog.unique_id -%}
+              {%- assign thumbnail = catalog.thumbnail | default: catalog.cover -%}
               <li data-ui-gallery-item>
                 {%- include card.html 
                   title=catalog.title
-                  image=catalog.cover
+                  image=thumbnail
                   url=catalog.url
                   image_size='cover'
                 -%}
@@ -105,10 +106,11 @@ active: products
         <ul data-ui-gallery>
           {%- for collection in site.categories.product_collections -%}
             {%- if page.product_collections contains collection.unique_id -%}
+              {%- assign thumbnail = collection.thumbnail | default: collection.cover -%}
               <li data-ui-gallery-item>
                 {%- include card.html 
                   title=collection.title
-                  image=collection.image
+                  image=thumbnail
                   url=collection.url
                   image_size='cover'
                 -%}
