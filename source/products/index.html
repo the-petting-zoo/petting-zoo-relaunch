@@ -8,7 +8,7 @@ layout: default
 {%- unless catalogs_length == '0' -%}
   <section data-ui-panel>
     <div data-ui-wrapper="wide">
-      {% include catalogs.html %}
+      {% include catalogs.html show-topics="true" %}
     </div>
   </section>
 {%- endunless -%}

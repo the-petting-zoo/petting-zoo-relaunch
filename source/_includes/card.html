@@ -12,11 +12,11 @@
   image_size - STRING (optional): how the image displays in its frame; defaults to 'contain'. See components/fluid_aspect_ratio.scss
 {%- endcomment -%}
 {%- assign button_label = include.button_label | default: 'See more' -%}
-{%- assign image = include.image | default: 'https://placehold.it/800x500?text=Thumbnail' -%}
+{%- assign image = include.image | default: '/static/images/default-thumbnail.jpg' -%}
 
 <a data-ui-aspect="{{ include.aspect }}" class="margin-bottom-xnarrow border border-highlight-hover" href="{{ include.url }}" style="background-image: url('{{ image }}');">
   <img data-ui-aspect-image="{{ include.image_size }}" src="{{ image }}" alt="The Petting Zoo: {{ include.title | escape }}">
 </a>
-<h3 class="t-heading t-scale-delta t-scale-gamma padding-bottom-xnarrow">
+<h3 class="t-heading t-scale-delta t-scale-gamma padding-bottom-xnarrow t-align-left">
   <a href="{{ include.url }}">{{ include.title | escape }}</a>
 </h3>
