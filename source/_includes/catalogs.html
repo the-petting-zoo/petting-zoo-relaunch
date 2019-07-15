@@ -4,6 +4,7 @@
 
   Locals: 
   title - STRING (optional): the main heading
+  show-topics - BOOLEAN (optional): show topic subheadings?
 {%- endcomment -%}
 
 <!-- intro -->
@@ -25,6 +26,6 @@
 <!-- catalog listings -->
 {% include category-list.html
   category=site.categories.catalogs
-  show-topics=true
+  show-topics=include.show-topics
   aspect='catalog'
 %}

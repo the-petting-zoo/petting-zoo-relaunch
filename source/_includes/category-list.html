@@ -17,7 +17,7 @@
   {%- assign category_length = include.category | size -%}
   {%- unless category_length == 0 -%}
     {%- for item in include.category -%}
-      {%- unless item.topic -%}
+      {%- unless include.show-topics and item.topic -%}
         <li data-ui-gallery-item>
           {%- assign thumbnail = item.thumbnail | default: item.cover -%}
           {%- include card.html 
