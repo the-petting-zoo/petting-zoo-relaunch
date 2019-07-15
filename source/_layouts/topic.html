@@ -4,27 +4,38 @@ active: products
 ---
 
 <!-- Topic catalogs -->
-<section data-ui-panel>
-  <div data-ui-wrapper>
-    <h1 class="padding-bottom t-align-center">{{ page.title }}</h1>
-    <ul data-ui-gallery="centered">
-      {%- assign id = page.unique_id | downcase -%}
-      {%- for catalog in site.categories.catalogs -%}
-        {%- assign topic = catalog.topic | downcase -%}
-        {%- assign thumbnail = catalog.thumbnail | default: catalog.cover -%}
-        {%- if topic contains id -%}
-          <li data-ui-gallery-item>
-            {%- include card.html 
-              title=catalog.title
-              image=thumbnail
-              url=catalog.url
-              aspect="catalog"
-              image_size="cover"
-            -%}
-          </li>
-        {%- endif -%}
-      {%- endfor -%}
-    </ul>
+<section>
+  {%- if page.image -%}
+    {%- capture alt -%}The Petting Zoo: {{ page.title }}{%- endcapture -%}
+    {%- include billboard.html 
+      image=page.image
+      title=page.title
+      alt=alt
+    -%}
+  {%- else -%}
+    <h1 class="padding-top-wide t-align-center">{{ page.title }}</h1>
+  {%- endif -%}
+  <div data-ui-panel class="padding-top">
+    <div data-ui-wrapper>
+      <ul data-ui-gallery="centered">
+        {%- assign id = page.unique_id | downcase -%}
+        {%- for catalog in site.categories.catalogs -%}
+          {%- assign topic = catalog.topic | downcase -%}
+          {%- assign thumbnail = catalog.thumbnail | default: catalog.cover -%}
+          {%- if topic contains id -%}
+            <li data-ui-gallery-item>
+              {%- include card.html 
+                title=catalog.title
+                image=thumbnail
+                url=catalog.url
+                aspect="catalog"
+                image_size="cover"
+              -%}
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
   </div>
 </section>
 
