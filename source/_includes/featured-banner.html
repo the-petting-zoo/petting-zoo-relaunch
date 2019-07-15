@@ -35,7 +35,7 @@ button_label - STRING (optional): the label for the button
 
     <!-- featured product cards -->
     <h3 class="t-font-display t-scale-zeta t-case-upper t-weight-bold t-align-center c-highlight padding-bottom-narrow">Featured products</h3>
-    <ul data-ui-gallery="small">
+    <ul data-ui-gallery="centered">
       {%- for product in site.categories.products -%}
         
         {%- capture type -%}
@@ -49,9 +49,16 @@ button_label - STRING (optional): the label for the button
         {%- if type contains include.collection.unique_id -%}
           {%- if product.featured -%}
             {%- assign thumbnail = product.thumbnail | default: product.image -%}
+            {%- capture title -%}
+              {%- if product.size -%}
+                {{ product.size }}" {{ product.title }}
+              {%- else -%}
+                {{ product.title }}
+              {%- endif -%}
+            {%- endcapture -%}
             <li data-ui-gallery-item>
               {%- include card.html 
-                title=product.title
+                title=title
                 image=thumbnail
                 url=product.url
               -%}
@@ -59,9 +66,6 @@ button_label - STRING (optional): the label for the button
           {%- endif -%}
         {%- endif -%}
       {%- endfor -%}
-      <!-- dummy list item to prevent a single item from becoming huge on large screens -->
-      <li data-ui-gallery-item class="hide-below@small"></li>
-      <li data-ui-gallery-item class="hide-below@small"></li>
     </ul>
 
   </div>
