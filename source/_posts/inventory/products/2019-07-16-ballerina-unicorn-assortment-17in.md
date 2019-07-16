@@ -1,6 +1,6 @@
 ---
 published: true
-title: Ballerina Unicorn Assortment
+title: Ballerina with Unicorn Assortment
 size: '17'
 item_number: 7174X5U
 color: 'Pink, Purple, and Green'
