@@ -1,6 +1,6 @@
 ---
 published: true
-title: 'GWS Muffin Bears '
+title: 'Get Well Soon Muffin Bears '
 size: '6'
 item_number: '806701'
 color: Tan or White
