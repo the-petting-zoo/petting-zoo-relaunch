@@ -1,6 +1,6 @@
 ---
 published: true
-title: Ballerina Butterfly Assortment
+title: Ballerina with Butterfly Assortment
 size: '17'
 item_number: 7174X2
 color: 'Pink, Purple, and Green'
