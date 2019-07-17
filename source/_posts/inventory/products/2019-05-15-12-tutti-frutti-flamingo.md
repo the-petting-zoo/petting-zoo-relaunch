@@ -1,15 +1,13 @@
 ---
-layout: product
 published: true
 title: Tutti Frutti Flamingo
-size: 12
 featured: true
+size: 12
 item_number: '718413'
 color: Rainbow
 image: /static/uploads/12”_tutti-fruitti-flamingo_718413.png
 catalog:
   - tutti frutti
-  - sealife-wildlife
 product_collections:
   - Rainbow
 ---
