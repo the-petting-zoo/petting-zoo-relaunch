@@ -7,5 +7,6 @@ color: Rainbow
 image: /static/uploads/11in-rainbow-unicorn-714409.jpg
 catalog:
   - everyday
+  - sealife-wildlife
 ---
 
