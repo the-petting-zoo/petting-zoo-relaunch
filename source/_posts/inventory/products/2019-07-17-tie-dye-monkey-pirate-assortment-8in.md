@@ -1,10 +1,10 @@
 ---
 published: true
 title: Tie Dye Monkey Pirate Assortment
-size: '8'
-item_number: '409202'
-color: Green
-image: /static/uploads/8-hoodie_bright_eye_gator_409202.jpg
+size: '20'
+item_number: 4144X7
+color: ''
+image: /static/uploads/screen-shot-2019-07-17-at-10.38.45-am.png
 catalog:
   - sealife-wildlife
 ---
