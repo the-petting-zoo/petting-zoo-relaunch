@@ -7,5 +7,6 @@ color: Tan or White
 image: /static/uploads/14in-festive-llama-assortment-7184x1.jpg
 catalog:
   - everyday
+  - sealife-wildlife
 ---
 
