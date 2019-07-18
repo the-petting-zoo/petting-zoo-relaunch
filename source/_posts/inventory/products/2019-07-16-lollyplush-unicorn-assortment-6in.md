@@ -1,6 +1,6 @@
 ---
 published: true
-title: Lollyplush Unicorn Assortment
+title: Lolly Plush Unicorn Assortment
 size: '6'
 item_number: 2171X2
 color: 'Pink, Purple, and White'
