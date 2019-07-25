@@ -4,31 +4,31 @@ layout: default
 ---
 
 <!-- Catalogs -->
-{%- assign catalogs_length = site.categories.catalogs | size -%}
-{%- unless catalogs_length == '0' -%}
+{%- if site.categories.catalogs.size -%}
   <section data-ui-panel>
     <div data-ui-wrapper="wide">
       {% include catalogs.html show-topics="true" %}
     </div>
   </section>
-{%- endunless -%}
+{%- endif -%}
 
 <!-- Collections -->
-{%- assign collections_length = site.categories.product_collections | size -%}
-{%- unless collections_length == '0' -%}
+{%- if site.categories.product_collections.size -%}
   <section data-ui-panel class="border-top">
     <div data-ui-wrapper="wide">
       {% include collections.html %}
     </div>
   </section>
-{%- endunless -%}
+{%- endif -%}
 
 <!-- Custom products -->
-<section data-ui-panel class="border-top">
-  <div data-ui-wrapper="wide">
-    {% include custom-products.html %}
-  </div>
-</section>
+{%- if site.data.custom_products.listings.size -%}
+  <section data-ui-panel class="border-top">
+    <div data-ui-wrapper="wide">
+      {% include custom-products.html %}
+    </div>
+  </section>
+{%- endif -%}
 
 <!-- testimonials -->
 {% include testimonials.html %}
