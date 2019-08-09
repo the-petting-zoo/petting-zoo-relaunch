@@ -10,7 +10,7 @@ navigation_items:
       - label: Trend
         url: /topics/trend/
       - label: Sealife & Wildlife
-        url: catalogs/sealife-wildlife/
+        url: /catalogs/sealife-wildlife/
       - label: Catalogs
         url: /catalogs/
     url: /products/
