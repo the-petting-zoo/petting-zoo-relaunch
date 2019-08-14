@@ -1,7 +1,6 @@
 ---
-layout: product
 published: true
-title: Valentine Lab with Rose
+title: Chocolate Scented Lab with Rose
 size: 11
 item_number: '618555'
 color: Brown
