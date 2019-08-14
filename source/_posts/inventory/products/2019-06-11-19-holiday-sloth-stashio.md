@@ -1,14 +1,14 @@
 ---
-layout: product
 published: true
 title: Holiday Sloth 'Stashio
 featured: true
-sku: '919243'
-color: White
 size: 19
+item_number: '919243'
+color: White
 image: /static/uploads/19”-holiday-sloth-‘stashio-919243.jpg
 catalog:
   - Trov
+  - valentine
 product_collections:
   - Sloths
 ---
