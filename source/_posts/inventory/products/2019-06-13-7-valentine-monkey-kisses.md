@@ -1,9 +1,8 @@
 ---
 layout: product
 published: true
-size: 7
-title: Valentine Monkey Kisses
-item_number: '618550'
+title: 7" Valentine Monkey Kisses
+sku: '618550'
 color: Brown
 image: /static/uploads/7in-chocolate-scented-valentine-monkey-618550.jpg
 catalog:
