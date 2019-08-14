@@ -1,8 +1,7 @@
 ---
-layout: product
 published: true
+title: Chocolate Scented Valentine Monkey with Kiss
 size: 22
-title:   Valentine Monkey Kisses
 item_number: '618557'
 color: Brown
 image: /static/uploads/22in-chocolate-scented-valentine-monkey-618557.jpg
