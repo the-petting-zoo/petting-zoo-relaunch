@@ -15,7 +15,7 @@
     "watch": "webpack  -d --config $npm_package_config_webpack_modern --watch",
     "build:modern": "webpack -p --config $npm_package_config_webpack_modern",
     "build:legacy": "webpack -p --config $npm_package_config_webpack_legacy",
-    "build": "npm run build:modern && npm run build:legacy && bundle exec jekyll build",
+    "build": "npm run build:modern && npm run build:legacy && JEKYLL_ENV=production bundle exec jekyll build",
     "icons": "svgstore -o $npm_package_config_icons_dest --inline $npm_package_config_icons_src"
   },
   "repository": {
