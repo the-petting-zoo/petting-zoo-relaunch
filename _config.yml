@@ -4,7 +4,8 @@ tag: 'Share & Smile'
 permalink: /:categories/:title/
 
 # Site Data 
-access: 'Disallow'
+access: 'Allow'
+url: https://pettingzooplush.com
 
 # Plugins
 plugins:
