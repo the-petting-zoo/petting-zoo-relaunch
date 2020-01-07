@@ -6,7 +6,7 @@ publish_mode: editorial_workflow
 
 # Media
 media_folder: "source/static/uploads"
-public_folder: "static/uploads"
+public_folder: "/static/uploads"
 
 # Content Types
 collections:
