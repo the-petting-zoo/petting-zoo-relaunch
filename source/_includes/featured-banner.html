@@ -8,27 +8,46 @@ collection - OBJECT: the collection (product collection or catalog) used to popu
 type - STRING (optional): is it a catalog (default) or collection?
 button_label - STRING (optional): the label for the button
 {% endcomment %}
-{%- assign cover = include.collection.cover | default: 'https://placehold.it/1200x612?text=Cover' -%}
 {%- assign label = include.button_label | default: 'See more in this collection' -%}
 
 <section data-ui-panel class="border-top">
   <div data-ui-wrapper="wide">
 
-    <!-- banner image -->
-    <a data-ui-aspect="4x1" class="c-bg border" href="{{ include.collection.url }}">
-      <img data-ui-aspect-image="cover" src="{{ cover }}" alt="{{ include.collection.title }}">
-    </a>
+    <header class="padding-bottom-narrow margin-bottom-narrow border-bottom">
 
-    <!-- title and button -->
-    <header class="padding-top padding-bottom-narrow margin-bottom-narrow border-bottom">
-      <div data-ui-bookend="horizontal@small" class="gutter-wrapper gutter-xnarrow offset-margin-xnarrow">
-        <h2 data-ui-bookend-item="left" class="gutter t-scale-alpha">{{ include.collection.title }}</h2>
-        <div data-ui-bookend-item="right" class="gutter">
-          {% include button_link.html
-            label=label 
-            url=include.collection.url
-            icon-right="arrow-right"
-          %}
+      <!-- banner image -->
+      {%- if include.collection.cover -%}
+        <a data-ui-aspect="4x1" class="c-bg border" href="{{ include.collection.url }}">
+          <img data-ui-aspect-image="cover" src="{{ include.collection.cover }}" alt="{{ include.collection.title }}">
+        </a>
+      {%- endif -%}
+      
+      {%- if include.collection.video -%}
+        {%- assign video = include.collection.video | default: 'https://www.youtube.com/embed/ScMzIvxBSi4' -%}
+        <div data-ui-aspect="16x9" class="c-bg border">
+          <iframe 
+            data-ui-aspect-content 
+            src="{{ video }}" 
+            frameborder="0" 
+            allow="encrypted-media; gyroscope;"
+            allowfullscreen
+           ></iframe>
+        </div>
+      {%- endif -%}
+
+      <!-- title and button -->
+      <div class="padding-top">
+        <div data-ui-bookend="horizontal@small" class="gutter-wrapper gutter-xnarrow offset-margin-xnarrow">
+          <h2 data-ui-bookend-item="left" class="gutter t-scale-alpha">
+            <a href="{{ include.collection.url }}">{{ include.collection.title }}</a>
+          </h2>
+          <div data-ui-bookend-item="right" class="gutter">
+            {% include button_link.html
+              label=label 
+              url=include.collection.url
+              icon-right="arrow-right"
+            %}
+          </div>
         </div>
       </div>
     </header>
