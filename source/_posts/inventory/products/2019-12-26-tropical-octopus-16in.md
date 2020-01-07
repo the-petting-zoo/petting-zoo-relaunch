@@ -8,4 +8,4 @@ image: /static/uploads/16-_tropical_octopus_319555.jpg
 catalog:
   - sealife-wildlife
 ---
-Meet our Tropical Sealife Line~ Wavy soft fur, bright rainbow colors, and a large glitter eye with lids are featured on each ocean friend. Collect them all!
+Meet our Tropical Sealife Line. Wavy soft fur, bright rainbow colors, and a large glitter eye with lids are featured on each ocean friend. Collect them all!
