@@ -14,25 +14,23 @@ button_label - STRING (optional): the label for the button
   <div data-ui-wrapper="wide">
 
     <header class="padding-bottom-narrow margin-bottom-narrow border-bottom">
-
-      <!-- banner image -->
-      {%- if include.collection.cover -%}
-        <a data-ui-aspect="4x1" class="c-bg border" href="{{ include.collection.url }}">
-          <img data-ui-aspect-image="cover" src="{{ include.collection.cover }}" alt="{{ include.collection.title }}">
-        </a>
-      {%- endif -%}
-      
+        
+      <!-- banner video -->
       {%- if include.collection.video -%}
-        {%- assign video = include.collection.video | default: 'https://www.youtube.com/embed/ScMzIvxBSi4' -%}
         <div data-ui-aspect="16x9" class="c-bg border">
           <iframe 
             data-ui-aspect-content 
-            src="{{ video }}" 
+            src="{{ include.collection.video }}" 
             frameborder="0" 
             allow="encrypted-media; gyroscope;"
             allowfullscreen
            ></iframe>
         </div>
+      <!-- banner image, if there's no video -->
+      {%- elsif include.collection.cover -%}
+        <a data-ui-aspect="4x1" class="c-bg border" href="{{ include.collection.url }}">
+          <img data-ui-aspect-image="cover" src="{{ include.collection.cover }}" alt="{{ include.collection.title }}">
+        </a>
       {%- endif -%}
 
       <!-- title and button -->
