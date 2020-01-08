@@ -1,7 +1,7 @@
 # Publish Settings
 backend:
   name: git-gateway
-  branch: 'master' # Change to your local branch for testing. 
+  branch: 'video-banners' # Change to your local branch for testing. 
 publish_mode: editorial_workflow
 
 # Media
@@ -122,6 +122,7 @@ collections:
       - {label: "ID", name: "unique_id", widget: "string", hint: 'This ID is used to associate this with other items, it must be unique and dont change it once its set.'}
       - {label: "Collection Name", name: "title", widget: "string"}
       - {label: "Cover Image", name: "cover", widget: "image", allow_multiple: false, hint: "This is the image displayed on the top of the collection page, and the home if the collection is featured."}
+      - {label: "Cover Video", name: "video", widget: "string", required: false, hint: "You can, optionally, display a video instead of a cover image for the topic. Add the url of the video here."}
       - {label: "Thumbnail Image", name: "thumbnail", widget: "image", allow_multiple: false, required: false, hint: "This is a smaller image displayed on cards in lists, such as on the 'all products' page."}
       - {label: "Featured", name: "featured", widget: "boolean", required: false, hint: "If a product collection is featured, it will be listed on the home page"}
 
