@@ -136,8 +136,8 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Published Status", name: "published", widget: "hidden", default: true}     
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Size (inches)", name: "size", widget: "string", hint: "The size in inches. Do not add any units or quote marks here - these will be added in the templates as needed."}
       - {label: "Featured", name: "featured", widget: "boolean", required: false, hint: "If a product is featured, it will be listed as one of the featured products on the home page in a catalog or collection"}
-      - {label: "Size (inches)", name: "size", widget: "string", required: false, hint: "The size in inches. Do not add any units or quote marks here - these will be added in the templates as needed."}
       - {label: "Item Number", name: "item_number", widget: "string", required: false}
       - {label: "Color", name: "color", widget: "string", required: false}    
       - {label: "Product Image", name: "image", widget: "image", allow_multiple: false}
