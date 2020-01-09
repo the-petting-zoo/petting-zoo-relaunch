@@ -3,6 +3,9 @@ backend:
   name: git-gateway
   branch: 'cms-debug' # Change to your local branch for testing. 
 publish_mode: editorial_workflow
+slug:
+  encoding: "ascii"
+  clean_accents: true
 
 # Media
 media_folder: "source/static/uploads"
@@ -133,6 +136,7 @@ collections:
   - name: "product"
     label: "Products"
     folder: "source/_posts/inventory/products"
+    format: yaml-frontmatter
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}-{{size}}in"
     fields: # The fields for each document, usually in front matter
