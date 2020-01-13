@@ -2,6 +2,7 @@
 published: true
 title: Wild Onez Lion
 size: '12'
+featured: true
 item_number: 416423RCY
 color: Tan
 image: /static/uploads/12_Wild_onez_Lion_416423RCY.jpg
