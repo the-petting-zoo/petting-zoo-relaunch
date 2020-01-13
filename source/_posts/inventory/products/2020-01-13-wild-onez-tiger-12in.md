@@ -2,6 +2,7 @@
 published: true
 title: Wild Onez Tiger
 size: '12'
+featured: true
 item_number: 416422RCY
 color: Orange
 image: /static/uploads/12_Wild_onez_Tiger_416422RCY.jpg
