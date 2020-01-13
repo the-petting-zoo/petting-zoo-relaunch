@@ -2,7 +2,7 @@
 published: true
 title: Wild One Tiger
 size: '20'
-featured: true
+featured: false
 item_number: 415454RCY
 color: Orange
 image: /static/uploads/20_Wildonez_Tiger_415454RCY.jpg
