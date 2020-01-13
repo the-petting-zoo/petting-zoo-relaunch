@@ -2,6 +2,7 @@
 published: true
 title: Wild Onez Lioness
 size: '12'
+featured: true
 item_number: 416424RCY
 color: Tan
 image: /static/uploads/12_Wild_onez_lioness_416424RCY.jpg
