@@ -2,7 +2,7 @@
 published: true
 title: Wild Onez Jaguar
 size: '12'
-featured: false
+featured: true
 item_number: 415436RCY
 color: Gold
 image: /static/uploads/12_Wild_onez-Jaguar_415436RCY.jpg
