@@ -10,4 +10,4 @@ catalog:
 product_collections:
   - Recycle
 ---
-sloths are slow moving, tree hugging sleepy climbers. They live in the rainforests and thick long fur. Their long claws help them to hang from the trees. This guy is made from recycled materials and comes with a recycled symbol.
+Sloths are slow moving, tree hugging sleepy climbers. They live in the rainforests and thick long fur. Their long claws help them to hang from the trees. This guy is made from recycled materials and comes with a recycled symbol.
