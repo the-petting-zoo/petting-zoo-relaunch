@@ -4,7 +4,7 @@ title: Wild Onez Hippo
 size: '10'
 item_number: 415444RCY
 color: grey
-image: /static/uploads/10"_Wild_Onez_Hippo_415444RCY.jpg
+image: /static/uploads/10_Wild_Onez_Hippo_415444RCY.jpg
 catalog:
   - sealife-wildlife
 product_collections:
