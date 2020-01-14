@@ -11,4 +11,4 @@ catalog:
 product_collections:
   - Recycle
 ---
-
+Our cute cownose ray is tan and white, and when you flip him over has a huge smile. Gentle gliders, they can be seen at aquariums and are often featured in touch tanks. Our swimmer is made of soft recycled materials, and as these rays can reach up to 7 feet, we offer our plush in several sizes.
