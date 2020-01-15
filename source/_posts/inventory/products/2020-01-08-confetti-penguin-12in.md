@@ -4,7 +4,7 @@ title: Confetti Penguin
 size: '12'
 item_number: '319205'
 color: 'Pink, Purple'
-image: /static/uploads/12"_Confetti_Penguin_Purple_319205_Kid_pic.jpg
+image: /static/uploads/12_Confetti_Penguin_Purple_319205_Kid_pic.jpg
 catalog:
   - sealife-wildlife
 ---
