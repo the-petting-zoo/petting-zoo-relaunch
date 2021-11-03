@@ -1,6 +1,6 @@
 ---
-title: Paul Cugini
-job_title: National Account Executive
-email: pcugini@pettingzooplush.com
+title: Looking to connect?
+job_title: Email all sales questions to
+email: salesinquiries@pettingzooplush.com
 published: true
 ---
