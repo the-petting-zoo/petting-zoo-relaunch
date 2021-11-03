@@ -1,6 +1,6 @@
 ---
 title: Sales
-job_title: For All Sales Inquires Please Contact us At
+job_title: For All Sales Inquiries Please Contact us At
 email: salesinquiries@pettingzooplush.com
 published: true
 ---
