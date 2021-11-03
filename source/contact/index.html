@@ -1,4 +1,4 @@
----
+
 layout: default
 title: Contact Us
 show_contact_form: true
@@ -19,9 +19,7 @@ show_contact_form: true
         <li data-ui-gallery-item>
           <h2 class="t-scale-gamma">{{ post.title }}</h2>
           <p class="t-heading t-scale-epsilon c-text-tertiary padding-top-xnarrow">{{ post.job_title }}</p>
-          <a class="t-font-display display-block padding-top-xnarrow" href="mailto:{{ salesinquiries@pettingzooplush.com.email
-}}">{{ salesinquiries@pettingzooplush.com.email
-}}</a>
+          <a class="t-font-display display-block padding-top-xnarrow" href="mailto:{{ post.email }}">{{ post.email }}</a>
         </li>
         {% endfor %}
       </ul>
