@@ -1,24 +1,27 @@
+---
 layout: default
 title: Contact Us
 show_contact_form: true
 ---
+
 <section data-ui-panel>
   <h1 class="t-align-center padding-bottom">Get in Touch</h1>
   <div data-ui-wrapper="xnarrow">
     {% include contact-form.html %}
   </div>
 </section>
+
 <!-- Sales staff -->
 <section data-ui-panel class="border-top">
   <div data-ui-wrapper="wide">
     <h2 class="t-align-center">Contact Sales</h2>
     <div class="padding-top">
       <ul data-ui-gallery>
-        {% for post in site.categories.staff %}
+        {% for post in site.categories.sales %}
         <li data-ui-gallery-item>
           <h2 class="t-scale-gamma">{{ post.title }}</h2>
-          <p class="t-heading t-scale-epsilon c-text-tertiary padding-top-xnarrow">{{ post.job_title }}</p>
-          <a class="t-font-display display-block padding-top-xnarrow" href="mailto:{{ post.email }}">{{ post.email }}</a>
+          <p class="t-heading t-scale-epsilon c-text-tertiary padding-top-xnarrow">{{ Looking to connect with a sales rep? }}</p>
+          <a class="t-font-display display-block padding-top-xnarrow" href="mailto:{{ post.email }}">{{ salesinquiries@pettingzooplush.com }}</a>
         </li>
         {% endfor %}
       </ul>
@@ -33,6 +36,7 @@ show_contact_form: true
     </div>
   </div>
 </section>
+
 <!-- Map -->
 <section data-ui-panel class="border-top c-well">
   <h2 class="t-align-center padding-bottom-xnarrow">Our headquarters</h2>
